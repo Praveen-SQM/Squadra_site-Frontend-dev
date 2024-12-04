@@ -13,9 +13,9 @@ const AboutUs = () => {
         {/* Content */}
         <h1 className="text-[48px]">About the company</h1>
         <p className="mx-auto mt-4 ">
-          Imagine a team that's part tech wiz, part creative genius, and totally
+          Imagine a team that&apos;s part tech wiz, part creative genius, and totally
           obsessed with making your business shine. As a leading digital
-          marketing agency in Bangalore, that's us – Squadra Media!
+          marketing agency in Bangalore, that&apos;s us – Squadra Media!
         </p>
         <FoundingMembersSection />
         <CoreTeamMember/>

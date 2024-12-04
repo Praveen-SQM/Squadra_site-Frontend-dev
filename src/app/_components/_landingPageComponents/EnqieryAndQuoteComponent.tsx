@@ -4,7 +4,7 @@ import React, { useState } from "react";
 export default function EnqieryAndQuoteComponent() {
   const [activeTab, setActiveTab] = useState("quote");
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: React.SetStateAction<string>) => {
     setActiveTab(tab);
   };
 

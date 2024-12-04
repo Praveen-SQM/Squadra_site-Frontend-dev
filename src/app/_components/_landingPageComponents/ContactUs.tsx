@@ -29,7 +29,7 @@ const ContactUs = () => {
 
           <p className="text-[#6D6D6D] mb-8 max-w-[600px]">
             Feel free to reach out with any thoughts, questions, or suggestions.
-            Whether it's a brief conversation or a deeper discussion, we're here
+            Whether it&apos;s a brief conversation or a deeper discussion, we&apos;re here
             to connect.
           </p>
 

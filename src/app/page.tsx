@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ClientsSection from "./_components/_landingPageComponents/ClientsSection";
 import PeoplesWhoGetThingsDone from "./_components/_landingPageComponents/PeoplesWoGetsThingsDone";
 import CustomerJourneySection from "./_components/_landingPageComponents/CustomerJourneySection";
