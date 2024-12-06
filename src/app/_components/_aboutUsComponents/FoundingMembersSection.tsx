@@ -23,8 +23,8 @@ const FoundingMembersSection = () => {
     },
   ];
   return (
-    <div className="py-16">
-      <h2 className="text-[32px] font-[500] text-start mb-8 text-[#6D6D6D]">
+    <div className="py-8 px-6">
+      <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
         Founding Members
       </h2>
 
@@ -34,7 +34,7 @@ const FoundingMembersSection = () => {
             <Image
               src={member.imageUrl}
               alt={member.name}
-              className={`w-64 h-64 md:w-96 md:h-96 object-cover mb-8 md:mb-0 max-h-320 ${
+              className={` h-64 md:w-96 md:h-96 object-cover mb-8 md:mb-0 max-h-320 ${
                 index % 2 != 0 ? "md:mt-8  md:mb-0" : ""
               }`}
               width={384} 

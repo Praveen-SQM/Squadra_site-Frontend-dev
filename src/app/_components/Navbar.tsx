@@ -7,6 +7,7 @@ import logoWhite from "../../utilities/icons/Logo-White.svg";
 import callIcon from "../../utilities/icons/Call.svg";
 import callIconBlack from "../../utilities/icons/call-icon-black.svg";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,12 +36,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed z-50 w-full p-4 transition-all duration-300 ${
-        isScrolled ? "bg-white text-black" : "bg-transparent text-[#D0D0D0]"
+      className={`fixed z-50 w-full p-4 md:px-32  transition-all duration-300 ${
+        isScrolled ? "bg-white text-black" : "bg-transparent text-white"
       }`}
     >
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
-        <div>
+        <Link              href={"/"} 
+>
           <Image
             src={isScrolled ? logo : logoWhite}
             alt="Logo"
@@ -48,15 +50,15 @@ const Navbar = () => {
             height={40}
             layout="intrinsic"
           />
-        </div>
+        </Link>
 
         <ul className="md:flex hidden font-[500] space-x-8">
-          <li
+          <Link
             className="hover:text-white cursor-pointer"
-            onClick={() => handleNavigation("/about-us")} // Navigate to About Us page
+             href={"/about-us"} 
           >
             About Us
-          </li>
+          </Link>
           <li
             className="hover:text-white cursor-pointer"
             onClick={() => handleNavigation("/services")} // Navigate to Services page

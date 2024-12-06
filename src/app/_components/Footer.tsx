@@ -8,7 +8,7 @@ import navigation from "../../utilities/icons/location_on-footer.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-16 px-4">
+    <footer className="bg-black text-white py-16 md:px-32">
       <div className="max-w-screen-2xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
@@ -96,7 +96,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t flex flex-col md:flex-row items-center justify-between border-gray-600 mt-8 pt-6 text-center md:text-left px-4 sm:px-6">
+        <div className="border-t flex flex-col md:flex-row items-center justify-between border-gray-600 mt-8 pt-6 text-center md:text-left">
           <p className="text-gray-400 mb-4 md:mb-0">
             &copy; Copyright Squadra Media Private Limited 2021. All rights
             reserved.

@@ -43,8 +43,8 @@ const CoreTeamMember = () => {
   ];
 
   return (
-    <div className="py-16">
-      <h2 className="text-[32px] font-[500] text-start mb-8 text-[#6D6D6D]">
+    <div className="py-12 px-6">
+     <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
         Core Team Members
       </h2>
 
@@ -61,7 +61,7 @@ const CoreTeamMember = () => {
               <Image
                 src={member.imageUrl}
                 alt={member.name}
-                className={`w-64 h-64 md:w-70 md:h-70 object-cover max-h-320 ${
+                className={`h-64 md:w-70 md:h-70 object-cover max-h-320 ${
                   index % 2 !== 0 ? "md:mt-8" : ""
                 }`}
                 width={384}

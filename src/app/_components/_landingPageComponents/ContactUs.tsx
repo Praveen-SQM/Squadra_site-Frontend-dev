@@ -1,45 +1,38 @@
-"use client";
-import React from "react";
+import image from "../../../utilities/icons/contatc-us.svg";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-// Import the contact image using Next.js image optimization
-import image from "../../../utilities/icons/contatc-us.svg";
-
-const ContactUs = () => {
+export default function ContactSection() {
   return (
-    <section className="contact-us flex justify-center items-center bg-[#F8F8F8] mb-8">
-      <div className="flex flex-col max-w-screen-2xl w-full sm:flex-row gap-12 sm:gap-[112px] px-4 py-16">
-        {/* Left side: Image */}
-        <div className="w-full sm:w-[419px]">
+    <section className="w-full mx-auto px-4 py-8 lg:py-16 bg-gray-100">
+      <div className="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+        <div className="rounded-2xl overflow-hidden">
           <Image
-            src={image} // Use Image component
-            alt="Contact Us"
-            width={419} // Specify the width for optimization
-            height={419} // Specify the height for optimization
-            className="w-full h-auto rounded-lg object-cover"
+            src={image}
+            alt="Person working on laptop"
+            width={500}
+            height={500}
+            className="object-cover"
           />
         </div>
 
-        {/* Right side: Contact Us content */}
-        <div className="w-full sm:w-[50%] text-center sm:text-left">
-          <h2 className="text-[18px] text-[#6D6D6D] mb-1">CONTACT US</h2>
-          <p className="text-[36px] sm:text-[46px] font-[600] mb-4">
-            Get in touch with us!
+        <div className="space-y-6">
+          <div className="space-y-4">
+            <p className="text-sm text-gray-600 uppercase tracking-wider">
+              CONTACT US
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Get in touch with us!
+            </h2>
+          </div>
+          <p className="text-gray-400">
+            Feel free to reach out with any thoughts, questions, or suggestions. <br /> Whether it&lsquo;s a brief conversation or a deeper discussion, we&apos;re here to connect.
           </p>
-
-          <p className="text-[#6D6D6D] mb-8 max-w-[600px]">
-            Feel free to reach out with any thoughts, questions, or suggestions.
-            Whether it&apos;s a brief conversation or a deeper discussion, we&apos;re here
-            to connect.
-          </p>
-
-          <button className="px-6 py-3 bg-[#FFFFFF] text-[#131313] font-semibold text-lg rounded-lg border-2 border-[#E7E7E7] hover:bg-[#F4F4F4] hover:text-[#131313] hover:border-[#B8B8B8]">
+          <Button size={"lg"} variant="outline" className="bg-white px-12 py-6">
             Contact Us
-          </button>
+          </Button>
         </div>
       </div>
     </section>
   );
-};
-
-export default ContactUs;
+}

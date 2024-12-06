@@ -5,7 +5,7 @@ import Image from "next/image";
   const PeoplesWhoGetThingsDone = () => {
     return (
       <div className="min-h-screen flex flex-col justify-center max-w-screen-2xl px-4 py-12 mx-auto">
-        <h1 className="text-[46px] font-[600] text-center mb-12">
+<h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-[600] text-center mb-12">
           The <strong className="text-[#FBAE17] font-[600]">People</strong> Who
           Get Things Done
         </h1>
@@ -63,7 +63,7 @@ import Image from "next/image";
   
             <div className="rounded-lg h-full w-full">
               <div className="flex justify-between gap-4 h-full w-full">
-                <div className="lg:w-2/3 w-full space-y-4 flex flex-col w-full h-full">
+                <div className="lg:w-2/3  space-y-4 flex flex-col w-full h-full">
                   <div className="bg-[#F8F8F8] border border-[#E7E7E7] text-black md:p-[24px] md:py-[24px] rounded-lg h-full flex items-center justify-center">
                     <h4 className="md:text-xl font-semibold text-center">
                       <strong className="text-[64px] font-[700]">4+</strong> <br />

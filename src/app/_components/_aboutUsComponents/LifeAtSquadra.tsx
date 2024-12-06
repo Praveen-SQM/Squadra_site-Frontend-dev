@@ -4,17 +4,18 @@ import img from "../../../utilities/icons/contatc-us.svg";
 
 const LifeAtSquadra = () => {
   return (
-    <section className="life-at-squadra py-12 px-4 mb-6">
+    <section className="life-at-squadra py-12 px-4 mb-6 bg-gray-100 max-w-full mx-auto">
       {/* Heading and Subheading */}
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-semibold text-gray-800 mb-4">
-          Life at Squadra Media
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          A space to unlock your true potential, chase your dreams, and embrace
-          your passion all while enjoying every moment with fun and laughter!
-        </p>
-      </div>
+    <div className="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-8 text-center">
+  <h1 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-800 mb-4">
+    Life at <span className="text-yellow-500">Squadra Media</span>
+  </h1>
+  <p className="text-base sm:text-lg md:text-md text-gray-600 max-w-2xl mx-auto">
+    A space to unlock your true potential, chase your dreams, and embrace your passion 
+    all while enjoying every moment with fun and laughter!
+  </p>
+</div>
+
 
       {/* Image Block 1 */}
       <div className="flex justify-between gap-4 mb-4 md:h-70  h-36   lg:h-[480px]">
@@ -75,7 +76,7 @@ const LifeAtSquadra = () => {
           className="shadow-lg object-cover md:w-2/3 w-full md:h-70  h-36 md:h-[380px]"
         />
         <div className="join-us-text flex flex-col justify-center w-full md:w-1/2 px-12">
-          <h1 className="text-[#131313] text-[52px] font-[300]">Join Us</h1>
+          <h1 className="text-[#131313] text-4xl lg:text-4xl font-[300]">Join Us</h1>
           <h2 className="md:text-[20px] w-full text-start font-[300] text-gray-800 lg:mb-24 md:mb-16 mb-8">
             Join Us and View Open Positions
           </h2>
