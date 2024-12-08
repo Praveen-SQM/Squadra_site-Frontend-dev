@@ -1,10 +1,10 @@
 import Image from "next/image"
-import img from "../../../utilities/icons/contatc-us.svg";
 import flag from "../../../utilities/icons/flag.svg";
 import mail from "../../../utilities/icons/mail-03.svg";
 import enquiry from "../../../utilities/icons/enquiry.svg";
 import user from "../../../utilities/icons/user.svg";
 import message from "../../../utilities/icons/message.svg";
+import location from '@/utilities/images/image 58.svg'
 export default function Locations() {
   return (
     <div className="w-full min-h-screen bg-[#F8F8F8] px-6 py-12">
@@ -16,11 +16,11 @@ export default function Locations() {
           We work in all corners of the world. Find a Squadra media location near you.
         </p>
 
-        <div className="grid lg:grid-cols-[1fr,1fr] gap-8">
+        <div className="grid lg:grid-cols-[1fr,1fr] gap-16">
           <div className="space-y-6">
-            <div className="relative h-[200px] sm:h-[300px] w-full rounded-lg overflow-hidden">
+            <div className="relative h-[200px] sm:h-[300px] w-full rounded-none overflow-hidden">
               <Image
-                src={img}
+                src={location}
                 alt="Bangalore Office"
                 fill
                 className="object-cover"

@@ -1,8 +1,11 @@
+"use client"
 import image from "../../../utilities/icons/contatc-us.svg";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function ContactSection() {
+  const router=useRouter();
   return (
     <section className="w-full mx-auto px-4 py-8 lg:py-16 bg-gray-100">
       <div className="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto">
@@ -28,7 +31,7 @@ export default function ContactSection() {
           <p className="text-gray-400">
             Feel free to reach out with any thoughts, questions, or suggestions. <br /> Whether it&lsquo;s a brief conversation or a deeper discussion, we&apos;re here to connect.
           </p>
-          <Button size={"lg"} variant="outline" className="bg-white px-12 py-6">
+          <Button onClick={()=>router.push("/contact-us")}   size={"lg"} variant="outline" className="bg-white px-12 py-6">
             Contact Us
           </Button>
         </div>
