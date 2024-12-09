@@ -24,18 +24,18 @@ const FoundingMembersSection = () => {
     },
   ];
   return (
-    <div className="py-8 px-6">
+    <div className="py-8 px-6  md:px-44">
       <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
         Founding Members
       </h2>
 
-      <div className="md:flex justify-between">
+      <div className="md:flex  justify-between">
         {members.map((member, index) => (
           <div key={index} className="relative flex flex-col items-center ">
             <Image
               src={member.imageUrl}
               alt={member.name}
-              className={` md:w-96 md:h-96 object-cover mb-8 md:mb-0 max-h-320 ${
+              className={` md:w-72 md:h-96 object-cover mb-8 md:mb-0 max-h-320 ${
                 index % 2 != 0 ? "md:mt-8  md:mb-0" : ""
               }`}
               width={384} 
@@ -46,7 +46,7 @@ const FoundingMembersSection = () => {
               className={`absolute z-1 top-0 -left-[30px] w-0 h-0 border-l-0 border-r-[30px] border-b-[15px] border-transparent border-b-[#F8C96F] rotate-180`}
             ></div>
               <p className="font-semibold">{member.name}</p>
-              <p>{member.designation}</p>
+              <p className="text-sm">{member.designation}</p>
             </div>
           </div>
         ))}

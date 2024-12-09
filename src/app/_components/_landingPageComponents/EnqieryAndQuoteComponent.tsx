@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 "use client";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, } from "lucide-react";
+import { ArrowRight, Loader2, } from "lucide-react";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -35,16 +35,17 @@ export default function ContactUsForm() {
                   cc: [''], 
                   bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
                   message: {
-                     subject:activeTab==="inquiry tab"? `GENERAL INQUIRY` : `QUOTE ENQUIRY`,
+                     subject:activeTab==="inquiry"? `GENERAL INQUIRY` : `QUOTE ENQUIRY`,
                      text: 'YOUR TEXT',
                      html: `
                      <html>
                         <head></head>
                         <body>
-                           <p>Hello user</p>
+                           <p>Hello Team</p>
                            <p><b>Full Name:</b> ${data.firstName}  ${data.lastName}</p>
                            <p><b>Email:</b> ${data.email}</p>
                            <p><b>Phone number: </b> ${data.phone}</p>
+                            ${activeTab==="inquiry"? `<p><b>Subject:</b> ${data.subject}</p>`:''}
                            <p><b>Message:</b> ${data.message}</p>
                            <br>
                            <p>Thank you & Regards,<br><b>Team</b></p>
@@ -187,7 +188,7 @@ export default function ContactUsForm() {
             </div>
           </div>
           
-             <div className="mb-4">
+              {activeTab==="inquiry" &&   <div className="mb-4">
               <label htmlFor="subject" className="block text-sm mb-2">
                 Subject
               </label>
@@ -200,6 +201,7 @@ export default function ContactUsForm() {
               />
              
             </div>
+              }
           {/* Tell Us More */}
           <div className="mb-4">
             <label htmlFor="message" className="block text-sm mb-2">
@@ -217,8 +219,9 @@ export default function ContactUsForm() {
           </div>
 
           {/* Submit Button */}
-          <Button disabled={loading} type="submit" className="px-6 py-2 float-right bg-black text-white rounded-md">
-  {loading ? "Please wait..." : (activeTab === "inquiry" ? "Send Inquiry" : "Submit")}            <ArrowRight className="ml-2 h-4 w-4" />
+         <Button disabled={loading} type="submit" className="px-6 py-2 float-right bg-black text-white rounded-md">
+          {loading && <Loader2 className="animate-spin" /> }  {loading ? "Please wait..." : (activeTab === "quote" ? "Send Inquiry" : "Submit")} 
+          {!loading && <ArrowRight className="ml-2 h-4 w-4" />  }
           </Button>
         </form>
       </div>

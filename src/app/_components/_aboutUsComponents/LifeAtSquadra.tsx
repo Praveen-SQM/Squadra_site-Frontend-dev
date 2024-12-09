@@ -8,7 +8,7 @@ import image4 from '@/utilities/images/DSC_2971 2.jpg'
 import image5 from '@/utilities/images//2.1.png'
 const LifeAtSquadra = () => {
   return (
-    <section className="life-at-squadra py-12 px-4 mb-6 bg-gray-100 max-w-full mx-auto h-full">
+    <section className="life-at-squadra py-12 px-0 mb-6 bg-gray-100 max-w-fit mx-auto h-full">
       {/* Heading and Subheading */}
     <div className="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-8 text-center">
   <h1 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-800 mb-4">
@@ -20,7 +20,7 @@ const LifeAtSquadra = () => {
   </p>
 </div>
 
-<div className="px-4 sm:px-8 md:px-16 lg:px-20 xl:px-40">
+<div className="px-0 sm:px-8 md:px-16 lg:px-20 xl:px-40">
  
 
 

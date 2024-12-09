@@ -9,8 +9,8 @@
         loop 
         playsInline
         className="absolute inset-0 h-full w-full object-cover"
-        src="https://s3-figma-videos-production-sig.figma.com/video/1312412244029964973/TEAM/eff6/0010/-92e2-4815-b26d-cb6b0dbf738e?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fDwAd1~VfELq25rulQgKvweBr4~t4QYwqAVqw6VGdKodR37an5i09WdwjjdOa9pPk5nSEGAi~ZiZ0AZcFV3wnDKfyfU7K1lnXXis5lvcbaaF1XDTnhL63A~BPDaVsTm40fzSVIJtCkBpTBxz3smz4bUISIWkeLnLpOpTVZAoZQiYvowOTfCBI988fNQGezMLUf~w6yRcNSu8aooiGvhhnaoaDyBDyM8MsC6pl2o0-xfAMPpgneaVPnIqA0925zx6AsKLnfmBkaBCFACjiV4nVQBnFTQg5PN82zh7jyWpB-6Mox-hCmGUpgWty7yU68WwduKRLmRGQ5m1PY4-ATKFgQ__"
-      />
+src="https://squadra-media.s3.ap-south-1.amazonaws.com/1112819_Concentration_Teamwork_3840x2160_4065f959c6.mp4"
+/>
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50" />

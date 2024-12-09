@@ -1,9 +1,8 @@
 import Image from "next/image"
-import flag from "../../../utilities/icons/flag.svg";
-import mail from "../../../utilities/icons/mail-03.svg";
-import enquiry from "../../../utilities/icons/enquiry.svg";
-import user from "../../../utilities/icons/user.svg";
-import message from "../../../utilities/icons/message.svg";
+import mail from "@/utilities/icons/mail-03.svg";
+import enquiry from "@/utilities/icons/enquiry.svg";
+import user from "@/utilities/icons/user.svg";
+import message from "@/utilities/icons/message.svg";
 import location from '@/utilities/images/image 58.svg'
 export default function Locations() {
   return (
@@ -27,13 +26,7 @@ export default function Locations() {
               />
             </div>
             <div className="flex items-center gap-3">
-              <Image
-                 src={flag}
-                alt="India Flag"
-                width={32}
-                height={20}
-                className="rounded"
-              />
+            
               <h2 className="text-2xl font-medium">Bangalore, India</h2>
             </div>
             <p className="text-gray-500">
@@ -56,7 +49,7 @@ export default function Locations() {
               <div>
 
               <h3 className="font-medium mb-1">General Enquiry</h3>
-              <p className="text-gray-600">+91 96068 27067</p>
+              <p className="text-gray-600">info@squadramedia.com</p>
               </div>
             </div>
               <div className="bg-[#F8F8F8] flex flex-row gap-4 items-center justify-start md:justify-start p-6 rounded-lg shadow-sm border border-[#E7E7E7]">
@@ -72,7 +65,7 @@ export default function Locations() {
               <div>
 
               <h3 className="font-medium mb-1">Sales Enquiry</h3>
-              <p className="text-gray-600">+91 96068 27067</p>
+              <p className="text-gray-600">+91 96068 27607</p>
               </div>
             </div>
               <div className="bg-[#F8F8F8] flex flex-row gap-4 items-center justify-start md:justify-start p-6 rounded-lg shadow-sm border border-[#E7E7E7]">
@@ -88,7 +81,7 @@ export default function Locations() {
               <div>
 
               <h3 className="font-medium mb-1">HR enquiry</h3>
-              <p className="text-gray-600">+91 96068 27067</p>
+              <p className="text-gray-600">hr@squadramedia.com</p>
               </div>
             </div>
 

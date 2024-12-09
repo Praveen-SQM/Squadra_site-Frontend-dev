@@ -11,8 +11,8 @@ const AboutUs = () => {
       <AboutUsHeroSection />
       <div className="max-w-screen-3xl p-4">
         {/* Content */}
-       <div className="px-4 sm:px-8 md:px-12 lg:px-4 py-8 text-start">
-  <h2 className="font-weight-[400] text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
+       <div className="px-8 sm:px-8 md:px-12 lg:px-32 py-8 text-start">
+  <h2 className="font-weight-[400] text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-medium mb-4">
     About the company
   </h2>
   <p className="text-base sm:text-md md:text-md max-w-4xl text-gray-600">

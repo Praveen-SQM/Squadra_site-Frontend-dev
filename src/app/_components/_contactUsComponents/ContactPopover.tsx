@@ -1,27 +1,73 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Phone } from 'lucide-react'
-
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
+import * as React from "react";
+import { Phone } from "lucide-react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
-import { useRouter } from "next/navigation"
+} from "@/components/ui/popover";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import callIcon from "@/utilities/icons/Call.svg";
+import callIconBlack from "@/utilities/icons/call-icon-black.svg";
 
-export function ContactPopover() {
-  const [open, setOpen] = React.useState(false)
-  const [phoneNumber, setPhoneNumber] = React.useState("+91")
-const router=useRouter();
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle the submission logic here
-    console.log("Submitted phone number:", phoneNumber)
-  }
+interface FormData {
+  phone: string;
+}
+
+export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
+  const [open, setOpen] = React.useState(false);
+  const pathname = usePathname();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
+
+  const [loading, setLoading] = React.useState(false);
+
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+          cc: [""],
+          bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+          message: {
+            subject: "Callback Request",
+            text: `Callback requested for phone number: ${data.phone}`,
+            html: `
+            <html>
+              <head></head>
+              <body>
+                <p>Hello Team,</p>
+                <p>A user has requested a callback.</p>
+                <p><b>Phone Number:</b> ${data.phone}</p>
+                <br>
+                <p>Thank you & Regards,<br><b>Team</b></p>
+              </body>
+            </html>`
+          },
+        }),
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    } catch (error) {
+      console.error("Error sending callback request:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -30,15 +76,17 @@ const router=useRouter();
         onMouseLeave={() => setOpen(false)}
         asChild
       >
-      <button onClick={()=>router.push("/contact-us")}
-  className="text-md text-white p-0 border-none h-auto hover:no-underline focus:ring-0 focus:outline-none"
->
-  Contact Us
-</button>
-
+       
+          <Image className="cursor-pointer"
+            src={pathname.includes("/contact-us") ? callIconBlack : isScrolled ? callIconBlack : callIcon}
+            alt="Call Icon"
+            width={24}
+            height={24}
+          />
+        
       </PopoverTrigger>
       <PopoverContent
-        className="w-[400px] p-1 bg-gray-200"
+        className="w-[400px] p-1 bg-gray-200 m"
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
       >
@@ -49,57 +97,50 @@ const router=useRouter();
               Our team of experts is available around the clock to guide you toward the perfect solution for your business.
             </p>
           </CardHeader>
-            <CardContent className="grid gap-6">
+          <CardContent className="grid gap-6">
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
               <a
                 href="tel:+917204701593"
                 className="text-lg font-semibold hover:underline"
               >
-                +91 7204701593
+                +91  96068 27607
               </a>
             </div>
-            </CardContent>
-           </Card>
-           <Card className="mt-2 py-4 shadow-none border-none">
+          </CardContent>
+        </Card>
 
-           
+        <Card className="mt-2 py-4 shadow-none border-none">
           <CardContent className="grid gap-6">
-          
             <div className="grid gap-4">
               <h3 className="text-lg font-semibold">Request a call back</h3>
-              <form onSubmit={handleSubmit} className="grid gap-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4">
                 <div className="grid gap-2">
                   <label htmlFor="phone" className="text-sm font-medium">
                     Phone Number*
                   </label>
-                  <div className="flex gap-2">
-                    {/* <div className="flex items-center gap-1 rounded-md border px-3">
-                      <img
-                        src="https://flagcdn.com/w20/in.png"
-                        alt="India"
-                        className="h-4 w-6"
-                      />
-                      <span className="text-sm">+91</span>
-                    </div> */}
                   <Input
-  id="phone"
-  type="number"
-  value={phoneNumber}
-  onChange={(e) => {
-    const maxLength = 10; 
-    if (e.target.value.length <= maxLength) {
-      setPhoneNumber(e.target.value);
-    }
-  }}
-  className="flex-1"
-  required
-/>
-
-                  </div>
+                    id="phone"
+                    type="text"
+                    className="flex-1"
+                    {...register("phone", {
+                      required: "Phone number is required",
+                      pattern: {
+                        value: /^[0-9]{10}$/,
+                        message: "Enter a valid 10-digit phone number",
+                      },
+                    })}
+                  />
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm">{errors.phone.message}</p>
+                  )}
                 </div>
-                <Button type="submit" className="w-full bg-gray-500 hover:bg-gray-600">
-                  Send Request
+                <Button
+                  type="submit"
+                  className="w-full bg-gray-500 hover:bg-gray-600"
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : "Send Request"}
                 </Button>
                 <p className="text-center text-sm text-muted-foreground">
                   Our team usually responds in a matter of minutes.
@@ -107,9 +148,8 @@ const router=useRouter();
               </form>
             </div>
           </CardContent>
-       </Card>
+        </Card>
       </PopoverContent>
     </Popover>
-  )
+  );
 }
-

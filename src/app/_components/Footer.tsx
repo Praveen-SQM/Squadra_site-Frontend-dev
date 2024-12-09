@@ -72,7 +72,7 @@ const Footer = () => {
                   height={24}
                   className=""
                 />
-                <span>+91 7204701593</span>
+                <span>+91 96068 27607</span>
               </div>
               <div className="flex flex-column items-start gap-2 ">
                 <Image
@@ -109,7 +109,7 @@ const Footer = () => {
             <p>Follow Us</p>
             <div className="flex flex-row items-center gap-8">
               <Link target="_blank"
-                href="https://www.instagram.com/_squadra_media_?igsh=MXhtN252NW56Nm9ibg=="
+                href="https://www.instagram.com/_squadra_media_?igsh=MW1lZWJjMW51NXhweA=="
 >
                 <Image src={Instagram}
                   height={24}

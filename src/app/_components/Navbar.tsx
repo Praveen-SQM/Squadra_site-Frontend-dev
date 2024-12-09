@@ -5,8 +5,7 @@ import Image from "next/image";
 import logo from "../../utilities/icons/Logo-1.svg";
 import logoWhite from "../../utilities/icons/Logo-White.svg";
 import callIcon from "../../utilities/icons/Call.svg";
-import callIconBlack from "../../utilities/icons/call-icon-black.svg";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ArrowRight, ChevronDown, ChevronRight } from 'lucide-react';
 import { ContactPopover } from "./_contactUsComponents/ContactPopover";
@@ -16,6 +15,7 @@ const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isServicesHovered, setIsServicesHovered] = useState(false);
   const pathname = usePathname();
+  const router=useRouter()
 
   useEffect(() => {
     if (pathname.includes("/contact-us")) return;
@@ -34,10 +34,10 @@ const Navbar = () => {
     };
   }, [pathname]);
 
-  // const handleNavigation = (path: string) => {
-  //   router.push(path);
-  //   setIsSidebarOpen(false);
-  // };
+  const handleNavigation = (path: string) => {
+    router.push(path);
+    setIsSidebarOpen(false);
+  };
 
   const primaryColor = "#FBAE17";
 
@@ -52,45 +52,45 @@ const Navbar = () => {
     {
       title: "Branding & Creative",
       items: [
-        "Brand Strategy & Consulting",
-        "Logo Design & Brand Identity",
-        "Graphic Design",
-        "2D/3D Visualisation",
-        "Brand Collateral",
-        "Industrial Product Design",
+        // "Brand Strategy & Consulting",
+        // "Logo Design & Brand Identity",
+        // "Graphic Design",
+        // "2D/3D Visualisation",
+        // "Brand Collateral",
+        // "Industrial Product Design",
       ],
     },
     {
       title: "Digital Marketing & PR",
       items: [
-        "Social Media Management",
-        "SEO & SEM",
-        "Performance Marketing",
-        "Content Marketing",
-        "Public Relations (PR)",
-        "Marketing Automation",
-        "Data & Analytics",
+        // "Social Media Management",
+        // "SEO & SEM",
+        // "Performance Marketing",
+        // "Content Marketing",
+        // "Public Relations (PR)",
+        // "Marketing Automation",
+        // "Data & Analytics",
       ],
     },
     {
       title: "Visual Impact",
       items: [
-        "Commercial Photography",
-        "Corporate Films",
-        "Promotional Videos",
-        "Event & Product Photography",
-        "Cinematic Visuals",
+        // "Commercial Photography",
+        // "Corporate Films",
+        // "Promotional Videos",
+        // "Event & Product Photography",
+        // "Cinematic Visuals",
       ],
     },
     {
       title: "Technology & Development",
       items: [
-        "Web & Mobile App Development",
-        "E-commerce Solutions",
-        "AI & Machine Learning",
-        "Cloud Solutions",
-        "DevOps & Cybersecurity",
-        "Quality Assurance & Testing",
+        // "Web & Mobile App Development",
+        // "E-commerce Solutions",
+        // "AI & Machine Learning",
+        // "Cloud Solutions",
+        // "DevOps & Cybersecurity",
+        // "Quality Assurance & Testing",
       ],
     },
   ];
@@ -245,24 +245,27 @@ const Navbar = () => {
           </ul>
 
           <ul className="flex font-[500] space-x-8 md:space-x-8">
-            <ContactPopover/>
-            {/* <li
+            <li
               className={`hidden md:block cursor-pointer ${
                 pathname.includes("/contact-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
               }`}
               onClick={() => handleNavigation("/contact-us")}
             >
               Contact Us
-            </li> */}
+            </li>
+             <ContactPopover isScrolled={isScrolled}/>
+
             
-            <li>
+            {/* <li>
+              <Link href='/contact-us'>
               <Image
                 src={pathname.includes("/contact-us") ? callIconBlack : isScrolled ? callIconBlack : callIcon}
                 alt="Call Icon"
                 width={24}
                 height={24}
-              />
-            </li>
+                />
+                </Link>
+            </li> */}
             {/* Hamburger menu icon for mobile and tablet */}
             <button
               className="md:hidden"
@@ -276,12 +279,12 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Sidebar */}
-        <div
+    <div
       className={`fixed top-0 right-0 h-full w-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
         isSidebarOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      <div className="relative h-full">
+      <div className="relative h-full flex flex-col">
         <div className="p-6">
            <Image
               src={logo}
@@ -299,7 +302,7 @@ const Navbar = () => {
           <X className="h-6 w-6" />
         </button>
 
-        <div className="pt-4 px-6">
+        <div className="pt-4 px-6 flex-grow overflow-y-auto">
           <ul className="space-y-0">
             <li>
               <Link
@@ -329,10 +332,10 @@ const Navbar = () => {
               </div>
               <div
                className={`transition-transform duration-500 ${
-    isServicesOpen
-      ? "max-h-[1000px] opacity-100 scale-100"
-      : "max-h-0 opacity-0 scale-95"
-  } overflow-hidden`}
+                 isServicesOpen
+                   ? "max-h-[1000px] opacity-100 scale-100"
+                   : "max-h-0 opacity-0 scale-95"
+               } overflow-hidden`}
               >
                 <ul className="pl-4 space-y-0">
                   {services.map((service, index) => (
@@ -342,11 +345,11 @@ const Navbar = () => {
                         onClick={() => toggleSubmenu(index)}
                       >
                         <span>{service.title}</span>
-                        {activeService === index ? (
+                        {/* {activeService === index ? (
                           <ChevronDown className="h-5 w-5" />
                         ) : (
                           <ChevronRight className="h-5 w-5" />
-                        )}
+                        )} */}
                       </div>
                       <div
                         className={`overflow-hidden transition-max-height duration-500 ${
@@ -369,7 +372,7 @@ const Navbar = () => {
                 </ul>
               </div>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/contact-us"
                 className={`block py-4 text-base ${
@@ -381,8 +384,26 @@ const Navbar = () => {
               >
                 Contact Us
               </Link>
-            </li>
+            </li> */}
           </ul>
+        </div>
+        
+        {/* Contact Us Button */}
+        <div className="p-6">
+          <Link
+            href="/contact-us"
+            className="flex items-center justify-center w-full py-3 px-4 text-white bg-black hover:bg-gray-800 transition-colors duration-300"
+            onClick={toggleSidebar}
+          >
+            <Image
+              src={callIcon}
+              alt="Call Icon"
+              width={24}
+              height={24}
+              className="mr-2"
+            />
+            <span>Contact Us</span>
+          </Link>
         </div>
       </div>
     </div>

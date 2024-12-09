@@ -12,47 +12,47 @@ const CoreTeamMember = () => {
   const members = [
       {
       name: "Aby Abraham",
-      designation: "Frontend Developer",
+      designation: "Storyboard Lead",
       imageUrl: aby, 
     },
           {
       name: "Aslam KV",
-      designation: "Frontend Developer",
+      designation: "Illustration Lead",
       imageUrl: aslam, 
     },
    {
       name: "Wilson George",
-      designation: "Frontend Developer",
+      designation: "Animation Lead",
       imageUrl: wilson, 
     },
      {
       name: "Shawn S",
-      designation: "UX/UI Designer",
+      designation: "Campaign Strategist",
       imageUrl: shawn, 
     },
    
    
     {
       name: "Sujata Singh",
-      designation: "Backend Developer",
+      designation: "Account Lead",
       imageUrl: sujata, 
     },
    
-  
-     {
-      name: "Ashwinth Mohan",
-      designation: "Product Manager",
-      imageUrl: ashwinth, 
-    }
-      ,{
+      {
       name: "Praveen Rao",
-      designation: "Marketing Head",
+      designation: "Product Manager",
       imageUrl: praveen, 
     },
+     {
+      name: "Ashwinth Mohan",
+      designation: "Photography Lead",
+      imageUrl: ashwinth, 
+    }
+  
   ];
 
   return (
-    <div className="py-12 px-6">
+    <div className="py-12 px-6 md:px-44 lg:px-60">
      <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
         Core Team Members
       </h2>
@@ -69,8 +69,8 @@ const CoreTeamMember = () => {
             <div key={index} className="relative flex flex-col items-center max-w-[300px]">
               <Image
                 src={member.imageUrl}
-                alt={member.name}
-                className={` h-fit md:w-70 md:h-70 object-cover max-h-320 ${
+                alt={member.name} 
+                className={` h-fit md:w-52 md:h-70 object-cover max-h-320 ${
                   index % 2 !== 0 ? "md:mt-8" : ""
                 }`}
                 width={384}
@@ -85,7 +85,7 @@ const CoreTeamMember = () => {
                   className={`absolute z-1 top-0 -left-[30px] w-0 h-0 border-l-0 border-r-[30px] border-b-[15px] border-transparent border-b-[#F8C96F] rotate-180`}
                 ></div>
                 <p className="font-semibold text-center">{member.name}</p>
-                {/* <p className="text-center">{member.designation}</p> */}
+                <p className="text-center text-sm">{member.designation}</p>
               </div>
             </div>
           ))}
@@ -103,7 +103,7 @@ const CoreTeamMember = () => {
               <Image
                 src={member.imageUrl}
                 alt={member.name}
-                className={`w-64 h-fit md:w-70 md:h-70 object-cover max-h-320 ${
+                className={`w-64 h-fit md:w-52 md:h-70 object-cover max-h-320 ${
                   index % 2 !== 0 ? "md:mt-8" : ""
                 }`}
                 width={384}
@@ -118,7 +118,7 @@ const CoreTeamMember = () => {
                   className={`absolute z-1 top-0 -left-[30px] w-0 h-0 border-l-0 border-r-[30px] border-b-[15px] border-transparent border-b-[#F8C96F] rotate-180`}
                 ></div>
                 <p className="font-semibold text-center">{member.name}</p>
-                {/* <p className="text-center">{member.designation}</p> */}
+                <p className="text-center text-sm">{member.designation}</p>
               </div>
             </div>
           ))}
