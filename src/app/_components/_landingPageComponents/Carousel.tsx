@@ -36,7 +36,7 @@ export default function Carousel() {
           prevIndex === images.length - 1 ? 0 : prevIndex + 1
         )
       },
-      1500
+      2000
     )
 
     return () => {
