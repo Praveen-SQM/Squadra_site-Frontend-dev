@@ -9,11 +9,11 @@ import image3 from '@/utilities/images/DSC_8285 2.jpg'
 import image4 from '@/utilities/images/DSC_2971 2.jpg'
 import image5 from '@/utilities/images/2.1.png'
 const images = [
- image1,
- image2,
- image3,
- image4,
- image5
+ "https://squadra-media.s3.ap-south-1.amazonaws.com/c1.jpg",
+ "https://squadra-media.s3.ap-south-1.amazonaws.com/c2.jpg",
+ "https://squadra-media.s3.ap-south-1.amazonaws.com/c3.jpg",
+ "https://squadra-media.s3.ap-south-1.amazonaws.com/c4.jpg",
+ "https://squadra-media.s3.ap-south-1.amazonaws.com/c5.jpg"
 ]
 
 export default function Carousel() {
@@ -68,7 +68,7 @@ export default function Carousel() {
 
   return (
     <div className="bg-gray-200 rounded-md relative w-full  max-w-3xl mx-auto">
-      <div className="relative h-[460px] w-full overflow-hidden rounded-lg">
+      <div className="relative h-[300px] md:h-[460px] w-full overflow-hidden rounded-lg">
         {images.map((src, index) => (
           <div
             key={index}
