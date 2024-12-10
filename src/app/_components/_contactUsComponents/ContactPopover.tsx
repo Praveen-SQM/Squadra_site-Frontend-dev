@@ -15,6 +15,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import callIcon from "@/utilities/icons/Call.svg";
 import callIconBlack from "@/utilities/icons/call-icon-black.svg";
+import toast from "react-hot-toast";
 
 interface FormData {
   phone: string;
@@ -31,42 +32,49 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
 
   const [loading, setLoading] = React.useState(false);
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    setLoading(true);
-    try {
-      const response = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-          cc: [""],
-          bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
-          message: {
-            subject: "Callback Request",
-            text: `Callback requested for phone number: ${data.phone}`,
-            html: `
-            <html>
-              <head></head>
-              <body>
-                <p>Hello Team,</p>
-                <p>A user has requested a callback.</p>
-                <p><b>Phone Number:</b> ${data.phone}</p>
-                <br>
-                <p>Thank you & Regards,<br><b>Team</b></p>
-              </body>
-            </html>`
-          },
-        }),
-      });
 
-      const result = await response.json();
-      alert(result.message);
-    } catch (error) {
-      console.error("Error sending callback request:", error);
-    } finally {
-      setLoading(false);
+const onSubmit: SubmitHandler<FormData> = async (data) => {
+  setLoading(true);
+  try {
+    const response = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+        cc: [""],
+        bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+        message: {
+          subject: "Callback Request",
+          text: `Callback requested for phone number: ${data.phone}`,
+          html: `
+          <html>
+            <head></head>
+            <body>
+              <p>Hello Team,</p>
+              <p>A user has requested a callback.</p>
+              <p><b>Phone Number:</b> ${data.phone}</p>
+              <br>
+              <p>Thank you & Regards,<br><b>Team</b></p>
+            </body>
+          </html>`
+        },
+      }),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      toast.success("Callback Requested successfully");
+    } else {
+      toast.error(result.message || 'Failed to send callback request');
     }
-  };
+  } catch (error) {
+    toast.error('An error occurred while sending the callback request');
+    console.error("Error sending callback request:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -120,7 +128,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
                   </label>
                   <Input
                     id="phone"
-                    type="text"
+                    type="number"
                     className="flex-1"
                     {...register("phone", {
                       required: "Phone number is required",

@@ -8,33 +8,33 @@ const FoundingMembersSection = () => {
     {
       name: "Anu Js",
       designation: "Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Anu+JS.jpg", // Replace with actual image path
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Anu+JS.jpg", 
     },
     {
       name: "Sandesh K",
       designation: "Co-Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Sandesh+K.jpg", // Replace with actual image path
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Sandesh+K.jpg", 
     },
     {
       name: "Tarush Chandani",
       designation: "Co-Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Tarush+Chandnani.jpg", // Replace with actual image path
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Tarush+Chandnani.jpg", 
     },
   ];
   return (
-    <div className="py-8 px-6  md:px-44">
+    <div className="py-8 px-6 lg:px-16 xl:px-24">
       <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
         Founding Members
       </h2>
 
-<div className="md:flex justify-between">
+<div className="md:flex justify-evenly">
   {members.map((member, index) => (
     <div key={index} className="relative flex flex-col items-center">
       <div className="relative">
         <Image
           src={member.imageUrl}
           alt={member.name}
-          className={`md:w-72 md:h-96 object-cover mb-8 md:mb-0 max-h-320 ${
+          className={`md:w-72 md:h-96 object-cover rounded-md mb-8 md:mb-0 max-h-320 ${
             index % 2 != 0 ? "md:mt-8 md:mb-0" : ""
           }`}
           width={384}

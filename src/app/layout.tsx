@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -28,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body 
        className={`${plusJakartaSans.className} antialiased`}>
-      
+        <Toaster />
         <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="bg-white text-gray-800">

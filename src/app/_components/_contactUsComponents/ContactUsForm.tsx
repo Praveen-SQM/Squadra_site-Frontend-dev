@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Loader2, } from "lucide-react";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export default function ContactUsForm() {
   const [activeTab, setActiveTab] = useState("quote");
@@ -24,48 +25,52 @@ export default function ContactUsForm() {
   subject: string;
 };
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-   setLoading(true);
-        try {
-            const response = await fetch('/api/sendEmail', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-                  cc: [''], 
-                  bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
-                  message: {
-                     subject:activeTab==="inquiry"? `GENERAL INQUIRY` : `QUOTE ENQUIRY`,
-                     text: 'YOUR TEXT',
-                     html: `
-                     <html>
-                        <head></head>
-                        <body>
-                           <p>Hello Team</p>
-                           <p><b>Full Name:</b> ${data.firstName}  ${data.lastName}</p>
-                           <p><b>Email:</b> ${data.email}</p>
-                           <p><b>Phone number: </b> ${data.phone}</p>
-                            ${activeTab==="inquiry"? `<p><b>Subject:</b> ${data.subject}</p>`:''}
-                           <p><b>Message:</b> ${data.message}</p>
-                           
-                           <br>
-                           <p>Thank you & Regards,<br><b>Team</b></p>
-                        </body>
-                     </html>`,
-                  },
-               }),
-            });
 
-            const result = await response.json();
-            alert(result.message); 
-        } catch (error) {
-          setLoading(false);
-            console.error('Error sending email:', error);
-        }
-        finally {
-          setLoading(false);
-        }
-    };
+const onSubmit: SubmitHandler<FormData> = async (data) => {
+  setLoading(true);
+  try {
+    const response = await fetch('/api/sendEmail', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+        cc: [''], 
+        bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+        message: {
+          subject: activeTab === "inquiry" ? `GENERAL INQUIRY` : `QUOTE ENQUIRY`,
+          text: 'YOUR TEXT',
+          html: `
+          <html>
+            <head></head>
+            <body>
+              <p>Hello Team</p>
+              <p><b>Full Name:</b> ${data.firstName}  ${data.lastName}</p>
+              <p><b>Email:</b> ${data.email}</p>
+              <p><b>Phone number: </b> ${data.phone}</p>
+              ${activeTab === "inquiry" ? `<p><b>Subject:</b> ${data.subject}</p>` : ''}
+              <p><b>Message:</b> ${data.message}</p>
+              <br>
+              <p>Thank you & Regards,<br><b>Team</b></p>
+            </body>
+          </html>`,
+        },
+      }),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      toast.success(result.message,{duration:3000});
+    } else {
+      toast.error(result.message || 'Failed to send email',{duration:3000});
+    }
+  } catch (error) {
+    toast.error('An error occurred while sending the email');
+    console.error('Error sending email:', error);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
 
   const handleTabClick = (tab: React.SetStateAction<string>) => {

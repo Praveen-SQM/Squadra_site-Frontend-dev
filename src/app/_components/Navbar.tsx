@@ -7,7 +7,7 @@ import logoWhite from "../../utilities/icons/Logo-White.svg";
 import callIcon from "../../utilities/icons/Call.svg";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Menu, X, ArrowRight, ChevronDown, ChevronRight } from 'lucide-react';
+import { Menu, X,  ChevronDown, ChevronRight } from 'lucide-react';
 import { ContactPopover } from "./_contactUsComponents/ContactPopover";
 
 const Navbar = () => {
@@ -140,16 +140,18 @@ const Navbar = () => {
               
               {/* Services Mega Menu */}
               <div 
-                className={`absolute top-50 -left-14 w-screen transform ${
-                  isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
-                } transition-all duration-300 bg-white text-black shadow-xl -ml-[40rem]`}
-                style={{ width: '90vw', maxWidth: '1400px' }}
+            className={`absolute top-50 left-2/2 transform -translate-x-1/2 ${
+  isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
+} transition-all duration-300 bg-white text-black shadow-xl`}
+style={{ width: '90vw', maxWidth: '1600px' }}
+
+
               >
-                <div className="p-12 flex flex-col">
+                <div className="p-8 flex flex-col">
                   <div className="flex mb-4">
                     {/* Left Column - Heading */}
                     <div className="w-[25%] pr-0">
-                      <h2 className="text-4xl font-light leading-tight">
+                      <h2 className="text-3xl lg:text-4xl font-light leading-tight">
                         Developing<br />
                         Robust<br />
                         Skills to<br />
@@ -231,14 +233,14 @@ const Navbar = () => {
                 
 
                   {/* Go to overview link */}
-                  <div className="text-start">
+                  {/* <div className="text-start">
                     <Link 
                       href="#" 
                       className="inline-flex items-center text-gray-900 hover:underline"
                     >
                       Go to overview <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </li>
