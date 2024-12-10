@@ -3,11 +3,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 
-import image1 from '@/utilities/images/444.png'
-import image2 from '@/utilities/images/5555.png'
-import image3 from '@/utilities/images/DSC_8285 2.jpg'
-import image4 from '@/utilities/images/DSC_2971 2.jpg'
-import image5 from '@/utilities/images/2.1.png'
 const images = [
  "https://squadra-media.s3.ap-south-1.amazonaws.com/c1.jpg",
  "https://squadra-media.s3.ap-south-1.amazonaws.com/c2.jpg",

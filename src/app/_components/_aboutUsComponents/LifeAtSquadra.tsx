@@ -1,11 +1,7 @@
 import React from "react";
 import Image from "next/image";
 // import { ArrowUpRight } from "lucide-react";
-import image1 from '@/utilities/images/444.png'
-import image2 from '@/utilities/images/5555.png'
-import image3 from '@/utilities/images/DSC_8285 2.jpg'
-import image4 from '@/utilities/images/DSC_2971 2.jpg'
-import image5 from '@/utilities/images//2.1.png'
+
 const LifeAtSquadra = () => {
   return (
     <section className="life-at-squadra py-12 px-0 mb-6 bg-gray-100 max-w-fit mx-auto h-full">
@@ -29,8 +25,8 @@ const LifeAtSquadra = () => {
  <div className="grid grid-cols-10 gap-4 mb-5">
   <div className="col-span-6">
   <div className="relative w-full h-full">
-    <Image
-      src={image1}
+    <Image width={860} height={480}
+      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
       priority
       alt="Left Placeholder Image"
       className="w-full h-full object-cover"
@@ -40,8 +36,8 @@ const LifeAtSquadra = () => {
 
  <div className="col-span-4">
   <div className="relative w-full h-full">
-    <Image
-      src={image2}
+    <Image width={860} height={480}
+      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5555.png"}
       priority
       alt="Left Placeholder Image"
       className="w-full h-full object-cover"
@@ -54,8 +50,8 @@ const LifeAtSquadra = () => {
      <div className="grid grid-cols-10 gap-4 my-5">
 <div className="col-span-3">
   <div className="relative w-full h-full">
-    <Image
-      src={image3}
+    <Image width={860} height={480}
+      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8285+2.jpg"}
       priority
       alt="Left Placeholder Image"
       className="w-full h-full object-cover"
@@ -66,8 +62,8 @@ const LifeAtSquadra = () => {
 
   <div className="col-span-7">
   <div className="aspect-w-7 aspect-h-3">
-    <Image
-      src={image4}
+    <Image width={860} height={480}
+      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_2971+2.jpg"}
       alt="Right Placeholder Image"
       className="w-full h-full object-cover"
     />
@@ -82,8 +78,8 @@ const LifeAtSquadra = () => {
 {/* change this line after adding join us section md:col-span-10 to col-span-10 */}
   <div className="col-span-10 md:col-span-10">
   <div className="relative w-full h-full">
-    <Image
-      src={image5}
+    <Image width={860} height={480}
+      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/2.1.png"}
       priority
       alt="Left Placeholder Image"
       className="w-full h-full object-cover"

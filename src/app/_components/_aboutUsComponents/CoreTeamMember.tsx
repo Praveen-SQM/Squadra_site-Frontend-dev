@@ -1,52 +1,46 @@
 import React from "react";
 import Image from "next/image";
-import praveen from '@/utilities/images/file.jpg'
-import ashwinth from '@/utilities/images/Ashwinth Mohan.jpg'
-import shawn from '@/utilities/images/Shawn S.jpg'
-import sujata from '@/utilities/images/Sujata Singh.jpg'
-import wilson from '@/utilities/images/Wilson George.jpg'
-import aby from '@/utilities/images/Aby Abraham.jpg'
-import aslam from '@/utilities/images/Aslam KV.jpg'
+
 // Example data for the core team members
 const CoreTeamMember = () => {
   const members = [
       {
       name: "Aby Abraham",
       designation: "Storyboard Lead",
-      imageUrl: aby, 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Aby+Abraham.jpg", 
     },
           {
       name: "Aslam KV",
       designation: "Illustration Lead",
-      imageUrl: aslam, 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Aslam+KV.jpg", 
     },
    {
       name: "Wilson George",
       designation: "Animation Lead",
-      imageUrl: wilson, 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Wilson+George.jpg", 
     },
      {
       name: "Shawn S",
       designation: "Campaign Strategist",
-      imageUrl: shawn, 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Shawn+S.jpg", 
     },
    
    
     {
       name: "Sujata Singh",
       designation: "Account Lead",
-      imageUrl: sujata, 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Sujata+Singh.jpg", 
     },
    
       {
       name: "Praveen Rao",
       designation: "Product Manager",
-      imageUrl: praveen, 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Praveen.jpg", 
     },
      {
       name: "Ashwinth Mohan",
       designation: "Photography Lead",
-      imageUrl: ashwinth, 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Ashwinth+Mohan.jpg", 
     }
   
   ];
@@ -65,65 +59,59 @@ const CoreTeamMember = () => {
         />
 
         <div className="flex flex-wrap justify-center md:justify-between relative z-10 gap-8">
-          {members.slice(0, 4).map((member, index) => (
-            <div key={index} className="relative flex flex-col items-center max-w-[300px]">
-              <Image
-                src={member.imageUrl}
-                alt={member.name} 
-                className={` h-fit md:w-52 md:h-70 object-cover max-h-320 ${
-                  index % 2 !== 0 ? "md:mt-8" : ""
-                }`}
-                width={384}
-                height={384}
-              />
-              <div
-                className={`absolute -right-8 ${
-                  index % 2 !== 0 ? "md:-bottom-8 bottom-0" : "bottom-0"
-                } bg-[#FDDF8A] py-2 px-4 mt-2`}
-              >
-                <div
-                  className={`absolute z-1 top-0 -left-[30px] w-0 h-0 border-l-0 border-r-[30px] border-b-[15px] border-transparent border-b-[#F8C96F] rotate-180`}
-                ></div>
-                <p className="font-semibold text-center">{member.name}</p>
-                <p className="text-center text-sm">{member.designation}</p>
-              </div>
-            </div>
-          ))}
+  {members.slice(0, 4).map((member, index) => (
+    <div key={index} className="relative flex flex-col items-center max-w-[300px]">
+      <div className="relative">
+        <Image
+          src={member.imageUrl}
+          alt={member.name} 
+          className={`h-fit md:w-52 md:h-70 object-cover max-h-320`}
+          width={384}
+          height={384}
+        />
+        {/* Name and Designation overlay */}
+        <div
+          className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white py-1 px-2 rounded-md"
+        >
+          <p className="font-semibold text-sm">{member.name}</p>
+          <p className="text-xs">{member.designation}</p>
         </div>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
 
       {/* Bottom row: 3 images */}
-      <div className="relative md:p-24">
-        {/* Background Yellow Stripe */}
-        <div className="absolute inset-0 -z-10 h-8 bg-yellow-500 -rotate-45 transform translate-y-[-50%]" />
+   <div className="relative md:p-24">
+  {/* Background Yellow Stripe */}
+  <div className="absolute inset-0 -z-10 h-8 bg-yellow-500 -rotate-45 transform translate-y-[-50%]" />
 
-        <div className="flex flex-wrap justify-center md:justify-between relative z-10 gap-8">
-          {members.slice(4, 7).map((member, index) => (
-            <div key={index} className="relative flex flex-col items-center max-w-[300px]">
-              <Image
-                src={member.imageUrl}
-                alt={member.name}
-                className={`w-64 h-fit md:w-52 md:h-70 object-cover max-h-320 ${
-                  index % 2 !== 0 ? "md:mt-8" : ""
-                }`}
-                width={384}
-                height={384}
-              />
-              <div
-                className={`absolute -right-8 ${
-                  index % 2 !== 0 ? "md:-bottom-8 bottom-0" : "bottom-0"
-                } bg-[#FDDF8A] py-2 px-4 mt-2`}
-              >
-                <div
-                  className={`absolute z-1 top-0 -left-[30px] w-0 h-0 border-l-0 border-r-[30px] border-b-[15px] border-transparent border-b-[#F8C96F] rotate-180`}
-                ></div>
-                <p className="font-semibold text-center">{member.name}</p>
-                <p className="text-center text-sm">{member.designation}</p>
-              </div>
-            </div>
-          ))}
+  <div className="flex flex-wrap justify-center md:justify-between relative z-10 gap-8">
+    {members.slice(4, 7).map((member, index) => (
+      <div key={index} className="relative flex flex-col items-center max-w-[300px]">
+        <div className="relative">
+          <Image
+            src={member.imageUrl}
+            alt={member.name}
+            className={`w-64 h-fit md:w-52 md:h-70 object-cover max-h-320 ${
+              index % 2 !== 0 ? "md:mt-8" : ""
+            }`}
+            width={384}
+            height={384}
+          />
+          {/* Name and Designation Overlay */}
+          <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white py-1 px-2 rounded-md">
+            <p className="font-semibold text-sm">{member.name}</p>
+            <p className="text-xs">{member.designation}</p>
+          </div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 };

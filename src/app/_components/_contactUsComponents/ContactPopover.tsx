@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/popover";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import callIcon from "@/utilities/icons/Call.svg";
 import callIconBlack from "@/utilities/icons/call-icon-black.svg";
 
