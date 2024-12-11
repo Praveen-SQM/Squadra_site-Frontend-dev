@@ -13,7 +13,7 @@ function CustomerJourneySection() {
       title: "Brand Identity &\nLogo Design",
       description: "Our team designs logos that capture your vision and values.",
       image: image, 
-      video: "https://squadra-media.s3.ap-south-1.amazonaws.com/1112893_Teamwork_Coworking_1920x1080_1_9d0e3b0d07.mp4",
+      video: "https://squadra-media.s3.ap-south-1.amazonaws.com/1112893_Teamwork_Coworking_1920x1080_1_9d0e3b0d07+(1).mp4",
     },
     {
       title: "Product Photography &\nMedia Production",
