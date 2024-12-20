@@ -146,6 +146,7 @@ const Footer = () => {
               &copy; Copyright Squadra Media Private Limited 2021. All rights
               reserved.
             </p>
+            
           </div>
           <div>
             <div className="space-x-6 mb-4  md:mb-0">

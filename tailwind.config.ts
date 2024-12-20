@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import defaultTheme from 'tailwindcss/defaultTheme';
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -56,7 +56,10 @@ const config: Config = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		}
-  	}
+  	},
+	 fontFamily: {
+        sans: ['SF Pro Text', ...defaultTheme.fontFamily.sans],
+      },
   },
   plugins: [require("tailwindcss-animate")],
 };
