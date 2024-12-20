@@ -3,6 +3,197 @@ import starSvg from '@/utilities/images/star.svg'
 import Image from 'next/image';
 import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Network from '@/utilities/images/Network.svg'
+import Saas from '@/utilities/images/Saas.svg'
+import Solution from '@/utilities/images/Solution.svg'
+import Connection from '@/utilities/images/Connection.svg'
+import UserWorkFlow from '@/utilities/images/User workflow.svg'
+import codeSquare from '@/utilities/images/Code Square.svg'
+import Container from '@/utilities/images/Container.svg'
+import SaasMain from '@/utilities/images/Saas-main.svg'
+import netWorkBlack from '@/utilities/images/netWorkBlack.svg'
+import HandShake from '@/utilities/images/Handshake.svg'
+import Archive from '@/utilities/images/Archive.svg'
+import Book from '@/utilities/images/Book.svg'
+import DB from '@/utilities/images/db.svg'
+import CloudConnection from '@/utilities/images/cloud connection.svg'
+import Graphs from '@/utilities/images/Graphs.svg'
+import CustomServices from '@/utilities/images/CustomSerivces.svg'
+import ITImage from '@/utilities/images/ITImage.svg'
+import uiux from '@/utilities/images/uiux.svg'
+import devops from '@/utilities/images/devops.svg'
+import cybersecurity from '@/utilities/images/cybersecurity.svg'
+import qa from '@/utilities/images/qa.svg'
+import progressiveWebapp from '@/utilities/images/progressivewebapp.svg'
+import customwebSites from '@/utilities/images/websites.svg'
+import crossPlatforms from '@/utilities/images/crossplatforms.svg';
+import apiDevelopment from '@/utilities/images/apiDevelopment.svg';
+import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
+import teleMedicine from '@/utilities/images/telemedicine.svg';
+import wellness from '@/utilities/images/wellness.svg';
+import patientManagement from '@/utilities/images/patientmanagement.svg';
+import healthRecords from '@/utilities/images/healthrecords.svg';
+import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
+import aiMain from '@/utilities/images/aiMain.svg'
+import aiDrivenProcess from '@/utilities/images/sparkles.svg';
+import workflow from '@/utilities/images/workflow.svg';
+import digitaltransformation from '@/utilities/images/digitaltransformation.svg';
+import cloud from '@/utilities/images/cloud.svg';
+
+const data = [
+  { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
+  { icon: Solution, title: "Data & AI Solutions", description: "Leveraging data and AI to drive smarter decisions and automation." },
+  { icon: codeSquare, title: "Web & Mobile Application Development", description: "Creating fast, intuitive web and mobile apps." },
+  { icon: Saas, title: "SaaS Development", description: "Scalable, cloud-based applications for subscription-based services." },
+  { icon: UserWorkFlow, title: "End-to-End IT Services", description: "Complete IT support from design to deployment and security." },
+  { icon: Connection, title: "Industry-Specific Solutions", description: "Customised solutions for finance, healthcare, and other industries." },
+]
+
+const customSoftwareDevData = [
+  {
+    icon: netWorkBlack, title: "ERP Systems", description: "Chat seamlessly with friends and communities."
+  },
+  {
+    icon: HandShake, title: "CRM Platforms", description: "Share life moments through photos and videos."
+  },
+  {
+    icon: Archive, title: "Inventory Management", description: "Personalize your profile with themes and layouts."
+  },
+  {
+    icon: Book, title: "LMS Platforms", description: "Join or create groups around shared interests."
+  },
+]
+
+const saasData = [
+  {
+    icon: DB, title: "Subscription Management Solutions", description: "Streamline subscriptions with efficient tools for tracking, billing, and renewals."
+  },
+  {
+    icon: CloudConnection, title: "Cloud-Based Applications", description: "Leverage scalable, secure, and accessible solutions powered by the cloud."
+  },
+  {
+    icon: Graphs, title: "Data-Driven SaaS Tools", description: "Personalise your profile with themes and layouts."
+  },
+  {
+    icon: CustomServices, title: "Custom Integration Services", description: "Connect systems to streamline workflows and improve data sharing."
+  },
+]
+
+const ItServices = [
+  {
+    "icon": uiux,
+    "title": "UI/UX Design",
+    "description": "Seamless interfaces for intuitive experiences."
+  },
+  {
+    "icon": devops,
+    "title": "DevOps",
+    "description": "Streamlined processes for smooth deployments."
+  },
+  {
+    "icon": cybersecurity,
+    "title": "Cybersecurity",
+    "description": "Safeguarding your assets through advanced protection."
+  },
+  {
+    "icon": qa,
+    "title": "QA & Automation",
+    "description": "Ensuring flawless performance through rigorous testing."
+  }
+]
+
+const webAndMobDev = [
+  {
+    "icon": progressiveWebapp,
+    "title": "Progressive Web Apps",
+    "description": "Delivering speed and reliability for seamless user experiences."
+  },
+  {
+    "icon": customwebSites,
+    "title": "Custom Websites",
+    "description": "Tailored designs that reflect your brand's identity."
+  },
+  {
+    "icon": crossPlatforms,
+    "title": "Cross-Platform Mobile Apps",
+    "description": "Expanding your reach to more users across devices."
+  },
+  {
+    "icon": apiDevelopment,
+    "title": "API Development",
+    "description": "Building robust and scalable APIs for seamless integration across platforms."
+  }
+]
+
+
+const healthcare = [
+  {
+    "icon": teleMedicine,
+    "title": "Telemedicine Platforms",
+    "description": "Streamline healthcare workflows for better patient care."
+  },
+  {
+    "icon": wellness,
+    "title": "Wellness and Fitness Apps",
+    "description": "Promote healthy living with personalized fitness solutions."
+  },
+  {
+    "icon": patientManagement,
+    "title": "Patient Management Systems",
+    "description": "Streamline healthcare workflows for efficiency and better care."
+  },
+  {
+    "icon": healthRecords,
+    "title": "Electronic Health Records",
+    "description": "Digitize patient info for seamless access and better care."
+  }
+]
+
+const aiAndDigital = [
+  {
+    "icon": aiDrivenProcess,
+    "title": "AI-Driven Process Automation",
+    "description": "Automate tasks with AI to boost efficiency and reduce human error."
+  },
+  {
+    "icon":workflow,
+    "title": "Workflow Optimization Tools",
+    "description": "Streamline processes and improve team collaboration for higher productivity."
+  },
+  {
+    "icon": digitaltransformation,
+    "title": "Complete Digital Transformation Strategies",
+    "description": "Implement digital solutions to drive growth and innovation across your business."
+  },
+  {
+    "icon": cloud,
+    "title": "Cloud Integration Solutions",
+    "description": "Integrate cloud technologies for enhanced scalability and operational flexibility."
+  }
+]
+
+const finTech = [
+  {
+    "icon": "Icon1",
+    "title": "AI-Driven Process Automation",
+    "description": "Automate tasks with AI to boost efficiency and reduce human error."
+  },
+  {
+    "icon": "Icon2",
+    "title": "Workflow Optimization Tools",
+    "description": "Streamline processes and improve team collaboration for higher productivity."
+  },
+  {
+    "icon": "Icon3",
+    "title": "Complete Digital Transformation Strategies",
+    "description": "Implement digital solutions to drive growth and innovation across your business."
+  },
+  {
+    "icon": "Icon4",
+    "title": "Cloud Integration Solutions",
+    "description": "Integrate cloud technologies for enhanced scalability and operational flexibility."
+  }
+]
+
 import "./styles/MobileUI.css"
 
 import sliderIcon from "../../../utilities/icons/slider-icon.svg"
@@ -106,37 +297,534 @@ function MobileUi() {
       </div>
 
       {/* Feature Cards */}
-      <div
-        className="w-[335px] mt-[42px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
-      >
-        <div className='flex gap-[8px]'>
-          <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
-            <Image
-              src={Network}
-              width={23}
-              height={23}
-              alt='Network'
-            />
-          </div>
-          <div className='w-[237px] h-[38px]'><p
-            className="text-white text-left text-[16px] font-medium leading-[19.09px]"
 
-          >
-            Custom Software Development
-          </p>
-          </div>
-        </div>
-        <div className='w-[303px] h-[40px] mt-[12px]'>
+      <div className='mt-[42px]'>
+        {
+          data?.map((el) => (
+
+            <div key={el.title}
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+            >
+              <div className='flex gap-[8px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                  <Image
+                    src={el?.icon}
+                    width={23}
+                    height={23}
+                    alt='Network'
+                  />
+                </div>
+                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <p
+                    className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                  >
+                    {el?.title}
+                  </p>
+                </div>
+              </div>
+              <div className='w-[303px] h-[40px] mt-[12px]'>
+                <p
+                  className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                >
+                  {el?.description}
+                </p>
+
+              </div>
+            </div>
+          ))}
+      </div>
+
+      <div className='w-[335px] h-[124px] mt-[42px] mb-[72px] flex flex-col items-center justify-center'>
+        <p
+          className="text-left text-[14px] font-normal leading-[24px] text-[#888888] uppercase"
+
+        >
+          Delivering excellence.
+        </p>
+        <div className='w-[295px] h-[92px] mt-[8px]'>
+
           <p
-            className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
-
+            className="text-center text-[24px] font-medium leading-[28.64px] text-white"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
           >
-            Bespoke software solutions tailored to your business needs.
+            Squadra delivers cutting-edge solutions for{" "}
+            <span
+              className="text-center text-[28px] font-medium leading-[33.41px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+                background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                WebkitBackgroundClip: 'text', // For Safari
+                backgroundClip: 'text',
+                color: 'transparent',
+              }}
+            >
+              Business Success
+            </span>
+
+
           </p>
+
 
         </div>
       </div>
 
+      {/*  Custom Software Development */}
+      <div className='bg-white w-full flex flex-col items-center justify-center pt-[48px]'>
+        <div className='w-[335px] h-[76px] '>
+          <p
+            className="text-center text-[32px] text-[#222222] font-semibold leading-[38.19px]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            Custom Software{" "}
+            <span
+              className="text-[32px] text-[#94969D] font-semibold leading-[38.19px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+              }}
+            >
+              Development
+            </span>
+          </p>
+
+        </div>
+        <div className='w-[340px] h-[425px] mt-[48px]'>
+          <Image
+            src={Container}
+            width={340}
+            height={425}
+            alt='Container'
+
+          />
+        </div>
+        {/* Customer Software Development */}
+        <div className='mt-[42px] mb-[48px]'>
+          {
+            customSoftwareDevData?.map((el) => (
+
+              <div key={el.title}
+                className="w-[335px] mt-[16px] bg-[#F2F2F2] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              >
+                <div className='flex gap-[8px]'>
+                  <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                    <Image
+                      src={el?.icon}
+                      width={23}
+                      height={23}
+                      alt='Network'
+                    />
+                  </div>
+                  <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                    <p
+                      className="text-[#222222] text-start  text-[16px] font-medium leading-[19.09px]"
+
+                    >
+                      {el?.title}
+                    </p>
+                  </div>
+                </div>
+                <div className='w-[303px] h-[40px] mt-[12px]'>
+                  <p
+                    className="text-left text-[14px] font-medium leading-[20px] text-[#717171]"
+
+                  >
+                    {el?.description}
+                  </p>
+
+                </div>
+              </div>
+            ))}
+        </div>
+        {/* Saas Development */}
+        <div className='w-[335px] h-[63px]'>
+          <p
+            className="text-center text-[32px] font-semibold leading-[38.19px]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            SaaS{" "}
+            <span
+              className="text-[32px] font-medium leading-[38.19px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+                background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+              }}
+            >
+              Development
+            </span>
+          </p>
+          <p
+            className="text-center mt-[8px] text-[14px] font-medium leading-[17.08px] text-[#797B85]"
+            style={{
+              fontFamily: 'Instrument Sans, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            Deliver scalable, cloud-first experiences.
+          </p>
+
+
+        </div>
+        <div className='w-[342px] h-[275px] mt-[44px]'>
+          <Image
+            src={SaasMain}
+            width={342}
+            height={275}
+            alt='SaaS'
+          />
+        </div>
+        <div className='mt-[44px] mb-[48px]'>
+          {
+            saasData?.map((el) => (
+
+              <div key={el.title}
+                className="w-[335px] mt-[16px] bg-[#F2F2F2] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              >
+                <div className='flex gap-[8px]'>
+                  <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                    <Image
+                      src={el?.icon}
+                      width={23}
+                      height={23}
+                      alt='Network'
+                    />
+                  </div>
+                  <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                    <p
+                      className="text-[#222222] text-start  text-[16px] font-medium leading-[19.09px]"
+
+                    >
+                      {el?.title}
+                    </p>
+                  </div>
+                </div>
+                <div className='w-[303px] h-[40px] mt-[12px]'>
+                  <p
+                    className="text-left text-[14px] font-medium leading-[20px] text-[#717171]"
+
+                  >
+                    {el?.description}
+                  </p>
+
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+
+      {/* End-to-End
+IT Services */}
+      <div className='w-[335px] h-[76px] mt-[72px]'>
+        <p
+          className="flex flex-col text-center text-[#FFFFFF] text-[32px] font-medium leading-[38.19px]"
+          style={{
+            fontFamily: 'SF UI Display, sans-serif',
+            textUnderlinePosition: 'from-font',
+            textDecorationSkipInk: 'none',
+          }}
+        >
+          End-to-End{' '}
+          <span
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textUnderlinePosition: 'from-font',
+              textDecorationSkipInk: 'none',
+            }}
+          >
+            IT Services
+          </span>
+        </p>
+
+      </div>
+      <div className='w-[342px] h-[427px] mt-[42px]'>
+        <Image
+          src={ITImage}
+          width={342}
+          height={427}
+          alt='It SErvices'
+        />
+      </div>
+      <div className='mt-[42px]'>
+        {
+          ItServices?.map((el) => (
+
+            <div key={el.title}
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+            >
+              <div className='flex gap-[8px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                  <Image
+                    src={el?.icon}
+                    width={23}
+                    height={23}
+                    alt='Network'
+                  />
+                </div>
+                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <p
+                    className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                  >
+                    {el?.title}
+                  </p>
+                </div>
+              </div>
+              <div className='w-[303px] h-[40px] mt-[12px]'>
+                <p
+                  className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                >
+                  {el?.description}
+                </p>
+
+              </div>
+            </div>
+          ))}
+      </div>
+
+      {/* Web & Mobile App
+Development */}
+      <div className='w-[335px] h-[76px] mt-[72px]'>
+        <p
+          className="flex flex-col text-center text-[#FFFFFF] text-[32px] font-medium leading-[38.19px]"
+          style={{
+            fontFamily: 'SF UI Display, sans-serif',
+            textUnderlinePosition: 'from-font',
+            textDecorationSkipInk: 'none',
+          }}
+        >
+          Web & Mobile App
+          <span
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textUnderlinePosition: 'from-font',
+              textDecorationSkipInk: 'none',
+            }}
+          >
+            Development
+          </span>
+        </p>
+
+      </div>
+      <div className='w-[342px] h-[398px] mt-[42px]'>
+        <Image
+          src={webandMobileMain}
+          width={342}
+          height={398}
+          alt='webandMobileMain'
+        />
+      </div>
+      <div className='mt-[42px] mb-[32px]'>
+        {
+          webAndMobDev?.map((el) => (
+
+            <div key={el.title}
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+            >
+              <div className='flex gap-[8px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                  <Image
+                    src={el?.icon}
+                    width={23}
+                    height={23}
+                    alt='Network'
+                  />
+                </div>
+                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <p
+                    className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                  >
+                    {el?.title}
+                  </p>
+                </div>
+              </div>
+              <div className='w-[303px] h-[40px] mt-[12px]'>
+                <p
+                  className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                >
+                  {el?.description}
+                </p>
+
+              </div>
+            </div>
+          ))}
+      </div>
+
+  
+      {/*  Health Care*/}
+      <div className='bg-white w-full flex flex-col items-center justify-center pt-[48px]'>
+        <div className='w-[335px] h-[76px] '>
+          <p
+            className="text-center text-[32px] text-[#222222] font-semibold leading-[38.19px]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            Healthcare{" "}
+            <span
+              className="text-[32px] text-[#94969D] font-semibold leading-[38.19px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+              }}
+            >
+              Applications
+            </span>
+          </p>
+
+        </div>
+        <div className='w-[342px] h-[427px] mt-[48px]'>
+          <Image
+            src={HealthCareMain}
+            width={342}
+            height={427}
+            alt='HealthCareMain'
+
+          />
+        </div>
+        {/* Ai */}
+        <div className='mt-[42px] mb-[48px]'>
+          {
+            healthcare?.map((el) => (
+
+              <div key={el.title}
+                className="w-[335px] mt-[16px] bg-[#F2F2F2] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              >
+                <div className='flex gap-[8px]'>
+                  <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                    <Image
+                      src={el?.icon}
+                      width={23}
+                      height={23}
+                      alt='Network'
+                    />
+                  </div>
+                  <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                    <p
+                      className="text-[#222222] text-start  text-[16px] font-medium leading-[19.09px]"
+
+                    >
+                      {el?.title}
+                    </p>
+                  </div>
+                </div>
+                <div className='w-[303px] h-[40px] mt-[12px]'>
+                  <p
+                    className="text-left text-[14px] font-medium leading-[20px] text-[#717171]"
+
+                  >
+                    {el?.description}
+                  </p>
+
+                </div>
+              </div>
+            ))}
+        </div>
+        <div className='w-[335px] h-[63px] mt-[72px]'>
+          <p
+            className="text-center text-[32px] font-semibold leading-[38.19px]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            Automation & Digital {" "}
+            <span
+              className="text-[32px] font-medium leading-[38.19px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+                background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+              }}
+            >
+              Transformation
+            </span>
+          </p>
+         
+
+
+        </div>
+        <div className='w-[342px] h-[427px] mt-[44px]'>
+          <Image
+            src={aiMain}
+            width={342}
+            height={427}
+            alt='SaaS'
+          />
+        </div>
+        <div className='mt-[44px] mb-[48px]'>
+          {
+            aiAndDigital?.map((el) => (
+
+              <div key={el.title}
+                className="w-[335px] mt-[16px] bg-[#F2F2F2] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              >
+                <div className='flex gap-[8px]'>
+                  <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                    <Image
+                      src={el?.icon}
+                      width={23}
+                      height={23}
+                      alt='Network'
+                    />
+                  </div>
+                  <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                    <p
+                      className="text-[#222222] text-start  text-[16px] font-medium leading-[19.09px]"
+
+                    >
+                      {el?.title}
+                    </p>
+                  </div>
+                </div>
+                <div className='w-[303px] h-[40px] mt-[12px]'>
+                  <p
+                    className="text-left text-[14px] font-medium leading-[20px] text-[#717171]"
+
+                  >
+                    {el?.description}
+                  </p>
+
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+ 
     </div>
   );
 }
