@@ -38,6 +38,8 @@ import aiDrivenProcess from '@/utilities/images/sparkles.svg';
 import workflow from '@/utilities/images/workflow.svg';
 import digitaltransformation from '@/utilities/images/digitaltransformation.svg';
 import cloud from '@/utilities/images/cloud.svg';
+import whyChooseUsImage from '@/utilities/images/why-choose-us.svg'
+import dottedLine from '@/utilities/images/dotted-line.svg'
 
 const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
@@ -155,7 +157,7 @@ const aiAndDigital = [
     "description": "Automate tasks with AI to boost efficiency and reduce human error."
   },
   {
-    "icon":workflow,
+    "icon": workflow,
     "title": "Workflow Optimization Tools",
     "description": "Streamline processes and improve team collaboration for higher productivity."
   },
@@ -676,7 +678,7 @@ Development */}
           ))}
       </div>
 
-  
+
       {/*  Health Care*/}
       <div className='bg-white w-full flex flex-col items-center justify-center pt-[48px]'>
         <div className='w-[335px] h-[76px] '>
@@ -774,7 +776,7 @@ Development */}
               Transformation
             </span>
           </p>
-         
+
 
 
         </div>
@@ -823,8 +825,37 @@ Development */}
               </div>
             ))}
         </div>
+
+        {/* Why Choose Us*/}
+        <div className='mt-[72px] flex flex-col gap-[12px] w-[335px] h-[101px] mb-[40px]'>
+          <p className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#131313]">
+            Why Choose <span className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#FBAE17]">Us</span>
+          </p>
+          <div className="flex items-center justify-center h-full">
+            <p className='font-normal text-[14px] leading-[16.71px] text-[#6D6D6D] text-center'>
+              We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
+            </p>
+          </div>
+        </div>
+
+          <div className='relative w-full' style={{ height: '800px' }}>
+            <Image
+              src={whyChooseUsImage}
+              width={335}
+              height={731}
+              className='absolute z-10 top-0 left-[22px]'
+              alt='Network'
+            />
+            <Image
+              src={dottedLine}
+              width={335}
+              height={0}
+              className='absolute h-[700px] z-0 top-[50px] left-[22px]'
+              alt='Network'
+            />
+          </div>
       </div>
- 
+
     </div>
   );
 }
