@@ -3,12 +3,64 @@ import starSvg from '@/utilities/images/star.svg'
 import Image from 'next/image';
 import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Network from '@/utilities/images/Network.svg'
+import "./styles/MobileUI.css"
 
+import sliderIcon from "../../../utilities/icons/slider-icon.svg"
 
 function MobileUi() {
+  const logos = [
+    { name: "VIDA", url: sliderIcon },
+    { name: "Brand 8", url: sliderIcon },
+    { name: "E-ZONE", url: sliderIcon },
+    { name: "Brand 3", url: sliderIcon },
+    { name: "GREE", url: sliderIcon },
+    { name: "Habitat India", url: sliderIcon },
+    { name: "Double Tree", url: sliderIcon },
+    { name: "Brand 10", url: sliderIcon },
+    { name: "Cafe Noir", url: sliderIcon },
+    { name: "Brand 9", url: sliderIcon },
+    { name: "Brand 11", url: sliderIcon },
+    { name: "Brand 12", url: sliderIcon },
+    { name: "Brand 13", url: sliderIcon },
+    { name: "Brand 14", url: sliderIcon },
+    { name: "Brand 15", url: sliderIcon },
+  ];
+
   return (
     <div className="h-fit pt-32 flex flex-col  border-1 border-red-300  w-full  items-center bg-black">
       {/* Carousel */}
+
+      <div className='mb-[42px] flex flex-col items-center justify-center'>
+        <div className="scrolling-container">
+          <div className="scrolling-content">
+            {logos?.map((logo, index) => (
+              <div key={index} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+              </div>
+            ))}
+            {logos?.map((logo, index) => (
+              <div key={`duplicate-${index}`} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="scrolling-container">
+          <div className="scrolling-content">
+            {logos?.map((logo, index) => (
+              <div key={index} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+              </div>
+            ))}
+            {logos?.map((logo, index) => (
+              <div key={`duplicate-${index}`} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
 
       {/* Our Benefits */}
@@ -30,7 +82,7 @@ function MobileUi() {
 
       <p
         className="text-center mt-[13px] text-white text-[32px] font-bold leading-[38.19px]"
-      
+
       >
         What we do
       </p>
@@ -46,9 +98,9 @@ function MobileUi() {
 
       <div className='w-[321px] h-[600px] mt-[42px]'>
         <Image
-        src={BenefitFrame}
-        width={321}
-        height={586}
+          src={BenefitFrame}
+          width={321}
+          height={586}
           alt='BenefitFrame'
         />
       </div>
@@ -60,24 +112,24 @@ function MobileUi() {
         <div className='flex gap-[8px]'>
           <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
             <Image
-            src={Network}
-            width={23}
-            height={23}
+              src={Network}
+              width={23}
+              height={23}
               alt='Network'
             />
           </div>
           <div className='w-[237px] h-[38px]'><p
             className="text-white text-left text-[16px] font-medium leading-[19.09px]"
-         
+
           >
             Custom Software Development
           </p>
-</div>
+          </div>
         </div>
         <div className='w-[303px] h-[40px] mt-[12px]'>
           <p
             className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
-           
+
           >
             Bespoke software solutions tailored to your business needs.
           </p>
