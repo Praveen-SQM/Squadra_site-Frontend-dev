@@ -40,9 +40,22 @@ import aiDrivenProcess from '@/utilities/images/sparkles.svg';
 import workflow from '@/utilities/images/workflow.svg';
 import digitaltransformation from '@/utilities/images/digitaltransformation.svg';
 import cloud from '@/utilities/images/cloud.svg';
+<<<<<<< HEAD
+import secure from '@/utilities/images/secure.svg';
+import financial from '@/utilities/images/financial.svg';
+import wallet from '@/utilities/images/wallet.svg';
+import invoice from '@/utilities/images/invoice.svg';
+import finTechMain from '@/utilities/images/finTechMain.svg';
+import cloudMain  from '@/utilities/images/cloudMain.svg';
+import cloudsolution from '@/utilities/images/cloudsolution.svg';
+import architecturedesign from '@/utilities/images/architecturedesign.svg';
+import clouddev from '@/utilities/images/clouddev.svg';
+import cloudsecurity from '@/utilities/images/cloudsecurity.svg';
+=======
 import whyChooseUsImage from '@/utilities/images/why-choose-us.svg'
 import dottedLine from '@/utilities/images/dotted-line.svg'
 
+>>>>>>> f328adbe1e51f73dcd594c51ec3313adcdff81c3
 const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
   { icon: Solution, title: "Data & AI Solutions", description: "Leveraging data and AI to drive smarter decisions and automation." },
