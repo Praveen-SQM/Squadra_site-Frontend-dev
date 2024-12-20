@@ -1,5 +1,7 @@
 import React from 'react';
 import starSvg from '@/utilities/images/star.svg'
+import "./styles/MobileUI.css"
+import sliderIcon from "@/utilities/icons/slider-icon.svg"
 import Image from 'next/image';
 import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Network from '@/utilities/images/Network.svg'
@@ -38,7 +40,16 @@ import aiDrivenProcess from '@/utilities/images/sparkles.svg';
 import workflow from '@/utilities/images/workflow.svg';
 import digitaltransformation from '@/utilities/images/digitaltransformation.svg';
 import cloud from '@/utilities/images/cloud.svg';
-
+import secure from '@/utilities/images/secure.svg';
+import financial from '@/utilities/images/financial.svg';
+import wallet from '@/utilities/images/wallet.svg';
+import invoice from '@/utilities/images/invoice.svg';
+import finTechMain from '@/utilities/images/finTechMain.svg';
+import cloudMain  from '@/utilities/images/cloudMain.svg';
+import cloudsolution from '@/utilities/images/cloudsolution.svg';
+import architecturedesign from '@/utilities/images/architecturedesign.svg';
+import clouddev from '@/utilities/images/clouddev.svg';
+import cloudsecurity from '@/utilities/images/cloudsecurity.svg';
 const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
   { icon: Solution, title: "Data & AI Solutions", description: "Leveraging data and AI to drive smarter decisions and automation." },
@@ -173,49 +184,74 @@ const aiAndDigital = [
 
 const finTech = [
   {
-    "icon": "Icon1",
+    "icon": secure,
     "title": "AI-Driven Process Automation",
     "description": "Automate tasks with AI to boost efficiency and reduce human error."
   },
   {
-    "icon": "Icon2",
+    "icon": financial,
     "title": "Workflow Optimization Tools",
     "description": "Streamline processes and improve team collaboration for higher productivity."
   },
   {
-    "icon": "Icon3",
+    "icon": wallet,
     "title": "Complete Digital Transformation Strategies",
     "description": "Implement digital solutions to drive growth and innovation across your business."
   },
   {
-    "icon": "Icon4",
+    "icon": invoice,
     "title": "Cloud Integration Solutions",
     "description": "Integrate cloud technologies for enhanced scalability and operational flexibility."
   }
 ]
 
-import "./styles/MobileUI.css"
+const cloudData = [
+  {
+    "icon": cloudsolution,
+    "title": "Cloud Solutions",
+    "description": "Provide scalable, flexible cloud services to meet business needs."
+  },
+  {
+    "icon": architecturedesign,
+    "title": "Architecture Design",
+    "description": "Design scalable cloud infrastructures for optimal performance."
+  },
+  {
+    "icon": clouddev,
+    "title": "Cloud Dev",
+    "description": "Develop cloud-native applications with agility and innovation."
+  },
+  {
+    "icon": cloudsecurity,
+    "title": "Cloud Security",
+    "description": "Ensure robust protection for data and applications in the cloud."
+  }
+]
 
-import sliderIcon from "../../../utilities/icons/slider-icon.svg"
+
+
+const logos = [
+  { name: "VIDA", url: sliderIcon },
+  { name: "Brand 8", url: sliderIcon },
+  { name: "E-ZONE", url: sliderIcon },
+  { name: "Brand 3", url: sliderIcon },
+  { name: "GREE", url: sliderIcon },
+  { name: "Habitat India", url: sliderIcon },
+  { name: "Double Tree", url: sliderIcon },
+  { name: "Brand 10", url: sliderIcon },
+  { name: "Cafe Noir", url: sliderIcon },
+  { name: "Brand 9", url: sliderIcon },
+  { name: "Brand 11", url: sliderIcon },
+  { name: "Brand 12", url: sliderIcon },
+  { name: "Brand 13", url: sliderIcon },
+  { name: "Brand 14", url: sliderIcon },
+  { name: "Brand 15", url: sliderIcon },
+];
+
+
 
 function MobileUi() {
-  const logos = [
-    { name: "VIDA", url: sliderIcon },
-    { name: "Brand 8", url: sliderIcon },
-    { name: "E-ZONE", url: sliderIcon },
-    { name: "Brand 3", url: sliderIcon },
-    { name: "GREE", url: sliderIcon },
-    { name: "Habitat India", url: sliderIcon },
-    { name: "Double Tree", url: sliderIcon },
-    { name: "Brand 10", url: sliderIcon },
-    { name: "Cafe Noir", url: sliderIcon },
-    { name: "Brand 9", url: sliderIcon },
-    { name: "Brand 11", url: sliderIcon },
-    { name: "Brand 12", url: sliderIcon },
-    { name: "Brand 13", url: sliderIcon },
-    { name: "Brand 14", url: sliderIcon },
-    { name: "Brand 15", url: sliderIcon },
-  ];
+ 
 
   return (
     <div className="h-fit pt-32 flex flex-col  border-1 border-red-300  w-full  items-center bg-black">
@@ -824,7 +860,146 @@ Development */}
             ))}
         </div>
       </div>
- 
+      {/* End-to-End
+IT Services */}
+      <div className='w-[335px] h-[76px] mt-[72px]'>
+        <p
+          className="flex flex-col text-center text-[#FFFFFF] text-[32px] font-medium leading-[38.19px]"
+          style={{
+            fontFamily: 'SF UI Display, sans-serif',
+            textUnderlinePosition: 'from-font',
+            textDecorationSkipInk: 'none',
+          }}
+        >
+          FinTech
+          <span
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textUnderlinePosition: 'from-font',
+              textDecorationSkipInk: 'none',
+            }}
+          >
+            Applications
+          </span>
+        </p>
+
+      </div>
+      <div className='w-[342px] h-[427px] mt-[42px]'>
+        <Image
+          src={finTechMain}
+          width={342}
+          height={427}
+          alt='It SErvices'
+        />
+      </div>
+      <div className='mt-[42px]'>
+        {
+          finTech?.map((el) => (
+
+            <div key={el.title}
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+            >
+              <div className='flex gap-[8px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                  <Image
+                    src={el?.icon}
+                    width={23}
+                    height={23}
+                    alt='Network'
+                  />
+                </div>
+                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <p
+                    className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                  >
+                    {el?.title}
+                  </p>
+                </div>
+              </div>
+              <div className='w-[303px] h-[40px] mt-[12px]'>
+                <p
+                  className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                >
+                  {el?.description}
+                </p>
+
+              </div>
+            </div>
+          ))}
+      </div>
+
+      {/* Cloud */}
+      <div className='w-[335px] h-[76px] mt-[72px] flex items-center justify-center'>
+        <p
+          className="flex  text-center text-[#FFFFFF] text-[32px] font-medium leading-[38.19px]"
+          style={{
+            fontFamily: 'SF UI Display, sans-serif',
+            textUnderlinePosition: 'from-font',
+            textDecorationSkipInk: 'none',
+          }}
+        >
+          Cloud&nbsp;
+          <span
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textUnderlinePosition: 'from-font',
+              textDecorationSkipInk: 'none',
+            }}
+          >
+            Solutions
+          </span>
+        </p>
+
+      </div>
+      <div className='w-[342px] h-[427px] mt-[42px]'>
+        <Image className='object-cover' 
+          src={cloudMain} unoptimized={true}
+          width={342} quality={80}
+          height={427} priority
+          alt='webandMobileMain'
+        />
+      </div>
+      <div className='mt-[42px] mb-[32px]'>
+        {
+          cloudData?.map((el) => (
+
+            <div key={el.title}
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+            >
+              <div className='flex gap-[8px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                  <Image
+                    src={el?.icon}
+                    width={23}
+                    height={23}
+                    alt='Network'
+                  />
+                </div>
+                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <p
+                    className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                  >
+                    {el?.title}
+                  </p>
+                </div>
+              </div>
+              <div className='w-[303px] h-[40px] mt-[12px]'>
+                <p
+                  className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                >
+                  {el?.description}
+                </p>
+
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
