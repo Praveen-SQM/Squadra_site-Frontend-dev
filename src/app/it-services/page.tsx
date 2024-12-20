@@ -12,7 +12,7 @@ function ITServices() {
       <div className="hidden md:block lg:hidden">
         <TabUi />
       </div>
-         <div className="block md:hidden max-w-[410px] mx-auto">
+         <div className="block md:hidden min-w-fit max-w-[410px] mx-auto">
         <MobileUi />
       </div>
     </div>
