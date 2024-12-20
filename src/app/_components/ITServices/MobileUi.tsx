@@ -194,12 +194,64 @@ const finTech = [
   }
 ]
 
+import "./styles/MobileUI.css"
 
+import sliderIcon from "../../../utilities/icons/slider-icon.svg"
 
 function MobileUi() {
+  const logos = [
+    { name: "VIDA", url: sliderIcon },
+    { name: "Brand 8", url: sliderIcon },
+    { name: "E-ZONE", url: sliderIcon },
+    { name: "Brand 3", url: sliderIcon },
+    { name: "GREE", url: sliderIcon },
+    { name: "Habitat India", url: sliderIcon },
+    { name: "Double Tree", url: sliderIcon },
+    { name: "Brand 10", url: sliderIcon },
+    { name: "Cafe Noir", url: sliderIcon },
+    { name: "Brand 9", url: sliderIcon },
+    { name: "Brand 11", url: sliderIcon },
+    { name: "Brand 12", url: sliderIcon },
+    { name: "Brand 13", url: sliderIcon },
+    { name: "Brand 14", url: sliderIcon },
+    { name: "Brand 15", url: sliderIcon },
+  ];
+
   return (
     <div className="h-fit pt-32 flex flex-col  border-1 border-red-300  w-full  items-center bg-black">
       {/* Carousel */}
+
+      <div className='mb-[42px] flex flex-col items-center justify-center'>
+        <div className="scrolling-container">
+          <div className="scrolling-content">
+            {logos?.map((logo, index) => (
+              <div key={index} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+              </div>
+            ))}
+            {logos?.map((logo, index) => (
+              <div key={`duplicate-${index}`} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="scrolling-container">
+          <div className="scrolling-content">
+            {logos?.map((logo, index) => (
+              <div key={index} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+              </div>
+            ))}
+            {logos?.map((logo, index) => (
+              <div key={`duplicate-${index}`} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
 
       {/* Our Benefits */}
