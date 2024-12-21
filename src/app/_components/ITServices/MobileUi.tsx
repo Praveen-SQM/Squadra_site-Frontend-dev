@@ -268,8 +268,8 @@ const logos = [
 
 function MobileUi() {
 
-  const imageRef = useRef(null);
-  const [isInView, setIsInView] = useState(false);
+  const imageRef = useRef<HTMLImageElement | null>(null);
+    const [isInView, setIsInView] = useState(false);
 
   console.log(imageRef)
 
@@ -277,8 +277,8 @@ function MobileUi() {
     const handleScroll = () => {
       if (!imageRef.current) return;
 
-      const rect = imageRef.current.getBoundingClientRect();
-      const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+      const rect = imageRef.current?.getBoundingClientRect();
+            const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
 
       // Set the state based on whether the image is in view
       setIsInView(inView);

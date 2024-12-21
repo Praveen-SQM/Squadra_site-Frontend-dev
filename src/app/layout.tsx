@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import '../../styles/fonts.css';
 import "./globals.css";
 import Navbar from "./_components/Navbar";
@@ -8,11 +7,6 @@ import { Toaster } from "react-hot-toast";
 
 
 
-const plusJakartaSans = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-});
 
 export const metadata: Metadata = {
   title: "Squadra Media",
