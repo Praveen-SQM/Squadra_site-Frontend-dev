@@ -1,6 +1,12 @@
 import React from 'react';
 import starSvg from '@/utilities/images/star.svg'
 import "./styles/MobileUI.css"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import sliderIcon from "@/utilities/icons/slider-icon.svg"
 import Image from 'next/image';
 import BenefitFrame from '@/utilities/images/benefitFrame.svg'
@@ -45,7 +51,7 @@ import financial from '@/utilities/images/financial.svg';
 import wallet from '@/utilities/images/wallet.svg';
 import invoice from '@/utilities/images/invoice.svg';
 import finTechMain from '@/utilities/images/finTechMain.svg';
-import cloudMain  from '@/utilities/images/cloudMain.svg';
+import cloudMain from '@/utilities/images/cloudMain.svg';
 import cloudsolution from '@/utilities/images/cloudsolution.svg';
 import architecturedesign from '@/utilities/images/architecturedesign.svg';
 import clouddev from '@/utilities/images/clouddev.svg';
@@ -53,6 +59,7 @@ import cloudsecurity from '@/utilities/images/cloudsecurity.svg';
 
 import whyChooseUsImage from '@/utilities/images/why-choose-us.svg'
 import dottedLine from '@/utilities/images/dotted-line.svg'
+import reactImage from '@/utilities/images/react.svg'
 
 
 const data = [
@@ -256,7 +263,7 @@ const logos = [
 
 
 function MobileUi() {
- 
+
 
   return (
     <div className="h-fit pt-32 flex flex-col  border-1 border-red-300  w-full  items-center bg-black">
@@ -877,22 +884,22 @@ Development */}
           </div>
         </div>
 
-          <div className='relative w-full' style={{ height: '800px' }}>
-            <Image
-              src={whyChooseUsImage}
-              width={335}
-              height={731}
-              className='absolute z-10 top-0 left-[22px]'
-              alt='Network'
-            />
-            <Image
-              src={dottedLine}
-              width={335}
-              height={0}
-              className='absolute h-[700px] z-0 top-[50px] left-[22px]'
-              alt='Network'
-            />
-          </div>
+        <div className='relative w-full' style={{ height: '800px' }}>
+          <Image
+            src={whyChooseUsImage}
+            width={335}
+            height={731}
+            className='absolute z-10 top-0 left-[22px]'
+            alt='Network'
+          />
+          <Image
+            src={dottedLine}
+            width={335}
+            height={0}
+            className='absolute h-[700px] z-0 top-[50px] left-[22px]'
+            alt='Network'
+          />
+        </div>
       </div>
       {/* End-to-End
 IT Services */}
@@ -990,7 +997,7 @@ IT Services */}
 
       </div>
       <div className='w-[342px] h-[427px] mt-[42px]'>
-        <Image className='object-cover' 
+        <Image className='object-cover'
           src={cloudMain} unoptimized={true}
           width={342} quality={80}
           height={427} priority
@@ -1033,6 +1040,218 @@ IT Services */}
               </div>
             </div>
           ))}
+      </div>
+      <div className='bg-[#FAFAFA] min-w-[375px] w-full flex flex-col items-center justify-center'>
+        <div className='w-[335px] h-[118px] mt-[42px]'>
+          <p
+            className="text-center text-[32px] text-[#222222] font-semibold leading-[38.19px]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            Technologies&nbsp;
+                        <span
+              className="text-[32px] text-[#94969D] font-semibold leading-[38.19px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+              }}
+            >
+              we use
+            </span>
+          </p>
+          <p className="w-[335px] h-[68px] mt-[12px] text-[#6D6D6D] text-center text-[14px] font-normal leading-[16.71px] ">
+            Discover the cutting-edge technologies we use to deliver innovative and impactful solutions, from modern frameworks to advanced cloud and machine learning tools
+          </p>
+
+        </div>
+        <div className="md:hidden w-full max-w-sm mx-auto p-4 my-[40px] ">
+          <Accordion type="single" collapsible className="w-full space-y-4 border-none">
+            <AccordionItem value="backend" className="border-none rounded-none bg-[white]">
+              <AccordionTrigger className="px-4 hover:no-underline text-[16px]">
+                Backend
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+
+            </AccordionItem>
+
+            <AccordionItem value="frontend" className="border-none rounded-none bg-white">
+              <AccordionTrigger className="px-4 hover:no-underline text-[16px]">
+                Frontend
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="mobile" className="border-none rounded-none bg-white">
+              <AccordionTrigger className="px-4 hover:no-underline text-[16px]">
+                Mobile
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="devops" className="border-none rounded-none bg-white">
+              <AccordionTrigger className="px-4 hover:no-underline text-[16px]">
+                DevOps
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="analytics" className="border-none rounded-none bg-white">
+              <AccordionTrigger  className="px-4 hover:no-underline text-[16px]">
+                Analytics & Engagement
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
       </div>
     </div>
   );
