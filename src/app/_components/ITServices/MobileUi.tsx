@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+import React from 'react'; 
+import { useState,useRef,useEffect } from 'react';
 import starSvg from '@/utilities/images/star.svg'
 import "./styles/MobileUI.css"
 import {
@@ -13,7 +15,7 @@ import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Network from '@/utilities/images/Network.svg'
 import Saas from '@/utilities/images/Saas.svg'
 import Solution from '@/utilities/images/Solution.svg'
-import Connection from '@/utilities/images/Connection.svg'
+import Connection from '@/utilities/images/Connection.svg' 
 import UserWorkFlow from '@/utilities/images/User workflow.svg'
 import codeSquare from '@/utilities/images/Code Square.svg'
 import Container from '@/utilities/images/Container.svg'
@@ -60,6 +62,7 @@ import cloudsecurity from '@/utilities/images/cloudsecurity.svg';
 import whyChooseUsImage from '@/utilities/images/why-choose-us.svg'
 import dottedLine from '@/utilities/images/dotted-line.svg'
 import reactImage from '@/utilities/images/react.svg'
+import heroImage from '@/utilities/images/hero-image.svg'
 import ContactUsForm from './components/ContactUsForm';
 
 
@@ -265,12 +268,39 @@ const logos = [
 
 function MobileUi() {
 
+  const imageRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  console.log(imageRef)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!imageRef.current) return;
+
+      const rect = imageRef.current.getBoundingClientRect();
+      const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+      if (inView) {
+        setIsInView(true);
+        window.removeEventListener('scroll', handleScroll);
+      }else{
+        setIsInView(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Check if the image is already in view on initial render
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="h-fit pt-32 flex flex-col  border-1 border-red-300  w-full  items-center bg-black">
       {/* Intro Section */}
-      <div className='w-[375px] h-[786px] flex flex-col items-center'>
-        <div className='mt-[145px] w-[327px] h-[86px] border-1 border-red-500 flex flex-col'>
+      <div className='w-[375px] h-[830px] flex flex-col items-center'>
+        <div className='mt-[145px] w-[327px] h-[174px] border-1 flex flex-col'>
           <p className="font-medium text-[31px] leading-[42.96px] text-center text-[#FFFFFF]">
             Your Trusted Partner <br />
             <span
@@ -288,16 +318,36 @@ function MobileUi() {
               in IT Innovation
             </span>
           </p>
-           <div className='w-[311px] h=[72px] flex items-center justify-center text-center mt-[16px]'>
+          <div className='w-[311px] h=[72px] flex items-center justify-center text-center mt-[16px]'>
             <p className='font-[16px] text-white'>Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.</p>
-            
-           </div>
+          </div>
         </div>
 
-       
+        <div className="w-[135px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+          <div className="w-[115px] h-[41px] p-[5px] px-[15px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
+            {/* Content goes here */}
+            <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
+              Connect Us
+            </p>
 
-      </div> 
-    
+          </div>
+        </div>
+
+        <div className='mb-[43px]'>
+          <div className='w-[347.42px] h-[263px]'>
+            <Image
+              src={heroImage}
+              ref={imageRef}
+              alt="Hero Image"
+              width={0}
+              height={0}
+              className={`image ${isInView ? 'expand' : ''}`}
+            />
+          </div>
+        </div>
+
+      </div>
+
 
       {/* Carousel */}
 

@@ -77,4 +77,12 @@
     transform: translateX(100%); /* Move content to the right by the full width */
   }
 }
-  
+
+.image {
+  transition: transform 1s ease-out;
+  transform: scale(0.5);
+}
+
+.image.expand {
+  transform: scale(1); /* Adjust the scale as needed */
+}
