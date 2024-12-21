@@ -80,7 +80,7 @@
 
 .image {
   transition: transform 0.8s ease-out;
-  transform: scale(0.5);
+  transform: scale(0.75);
 }
 
 .image.expand {
