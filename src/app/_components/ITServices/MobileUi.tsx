@@ -60,6 +60,7 @@ import cloudsecurity from '@/utilities/images/cloudsecurity.svg';
 import whyChooseUsImage from '@/utilities/images/why-choose-us.svg'
 import dottedLine from '@/utilities/images/dotted-line.svg'
 import reactImage from '@/utilities/images/react.svg'
+import ContactUsForm from './components/ContactUsForm';
 
 
 const data = [
@@ -872,34 +873,7 @@ Development */}
             ))}
         </div>
 
-        {/* Why Choose Us*/}
-        <div className='mt-[72px] flex flex-col gap-[12px] w-[335px] h-[101px] mb-[40px]'>
-          <p className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#131313]">
-            Why Choose <span className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#FBAE17]">Us</span>
-          </p>
-          <div className="flex items-center justify-center h-full">
-            <p className='font-normal text-[14px] leading-[16.71px] text-[#6D6D6D] text-center'>
-              We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
-            </p>
-          </div>
-        </div>
-
-        <div className='relative w-full' style={{ height: '800px' }}>
-          <Image
-            src={whyChooseUsImage}
-            width={335}
-            height={731}
-            className='absolute z-10 top-0 left-[22px]'
-            alt='Network'
-          />
-          <Image
-            src={dottedLine}
-            width={335}
-            height={0}
-            className='absolute h-[700px] z-0 top-[50px] left-[22px]'
-            alt='Network'
-          />
-        </div>
+      
       </div>
       {/* End-to-End
 IT Services */}
@@ -1041,6 +1015,99 @@ IT Services */}
             </div>
           ))}
       </div>
+
+{/*    sQuadra tech Team */}
+      <div className='pt-[44px] pb-[40px] px-[20px] flex flex-col gap-[24px] bg-[#F7F7F7]'>
+        <div className='flex flex-col gap-[12px] items-center justify-center'>
+          <p className="font-semibold text-[32px] leading-[38.19px] text-center text-[#FBAE17]">
+            Squadra <span className="font-semibold text-[32px] leading-[38.19px] text-center text-[#131313]">Tech Team</span>
+          </p>
+          <p className="font-normal text-[14px] leading-[16.71px] text-center text-[#888888]">
+            Discover a workplace where creativity thrives, teamwork shines, and careers take flight.
+          </p>
+        </div>
+        <div className='flex flex-col gap-[12px] items-center'>
+          <div className='flex flex-col gap-[12px]'>
+            <div className='w-[335px] h-[194px] bg-gray-200'>
+              <Image
+                src={cloud}
+                alt='Tech Team'
+              />
+            </div>
+            <div className='flex items-center gap-[12px]'>
+              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+            </div>
+          </div>
+          <div className='flex flex-col gap-[12px]'>
+            <div className='w-[335px] h-[194px] bg-gray-200'>
+              <Image
+                src={cloud}
+                alt='Tech Team'
+              />
+            </div>
+            <div className='flex items-center gap-[12px]'>
+              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Why Choose Us*/}
+      <div className='bg-white w-full flex items-center justify-center flex-col'>
+
+    
+      <div className='mt-[72px] flex flex-col gap-[12px] w-[335px] h-[101px] mb-[40px] '>
+        <p className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#131313]">
+          Why Choose <span className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#FBAE17]">Us</span>
+        </p>
+        <div className="flex items-center justify-center h-full">
+          <p className='font-normal text-[14px] leading-[16.71px] text-[#6D6D6D] text-center'>
+            We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
+          </p>
+        </div>
+      </div>
+
+      <div className='relative w-full' style={{ height: '800px' }}>
+        <Image
+          src={whyChooseUsImage}
+          width={335}
+          height={731}
+          className='absolute z-10 top-0 left-[22px]'
+          alt='Network'
+        />
+        <Image
+          src={dottedLine}
+          width={335}
+          height={0}
+          className='absolute h-[700px] z-0 top-[50px] left-[22px]'
+          alt='Network'
+        />
+        </div>  </div>
+
+
+      {/* technologies we use  */}
       <div className='bg-[#FAFAFA] min-w-[375px] w-full flex flex-col items-center justify-center'>
         <div className='w-[335px] h-[118px] mt-[42px]'>
           <p
@@ -1253,6 +1320,8 @@ IT Services */}
           </Accordion>
         </div>
       </div>
+
+      <ContactUsForm/>
     </div>
   );
 }
