@@ -79,7 +79,7 @@
 }
 
 .image {
-  transition: transform 1s ease-out;
+  transition: transform 0.8s ease-out;
   transform: scale(0.5);
 }
 

@@ -280,12 +280,8 @@ function MobileUi() {
       const rect = imageRef.current.getBoundingClientRect();
       const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
 
-      if (inView) {
-        setIsInView(true);
-        window.removeEventListener('scroll', handleScroll);
-      }else{
-        setIsInView(true);
-      }
+      // Set the state based on whether the image is in view
+      setIsInView(inView);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -334,7 +330,7 @@ function MobileUi() {
         </div>
 
         <div className='mb-[43px]'>
-          <div className='w-[347.42px] h-[263px]'>
+          <div className='w-full h-[263px]'>
             <Image
               src={heroImage}
               ref={imageRef}
