@@ -1,5 +1,13 @@
 import React from 'react';
 import starSvg from '@/utilities/images/star.svg'
+import "./styles/MobileUI.css"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import sliderIcon from "@/utilities/icons/slider-icon.svg"
 import Image from 'next/image';
 import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Network from '@/utilities/images/Network.svg'
@@ -38,6 +46,22 @@ import aiDrivenProcess from '@/utilities/images/sparkles.svg';
 import workflow from '@/utilities/images/workflow.svg';
 import digitaltransformation from '@/utilities/images/digitaltransformation.svg';
 import cloud from '@/utilities/images/cloud.svg';
+import secure from '@/utilities/images/secure.svg';
+import financial from '@/utilities/images/financial.svg';
+import wallet from '@/utilities/images/wallet.svg';
+import invoice from '@/utilities/images/invoice.svg';
+import finTechMain from '@/utilities/images/finTechMain.svg';
+import cloudMain from '@/utilities/images/cloudMain.svg';
+import cloudsolution from '@/utilities/images/cloudsolution.svg';
+import architecturedesign from '@/utilities/images/architecturedesign.svg';
+import clouddev from '@/utilities/images/clouddev.svg';
+import cloudsecurity from '@/utilities/images/cloudsecurity.svg';
+
+import whyChooseUsImage from '@/utilities/images/why-choose-us.svg'
+import dottedLine from '@/utilities/images/dotted-line.svg'
+import reactImage from '@/utilities/images/react.svg'
+import ContactUsForm from './components/ContactUsForm';
+
 
 const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
@@ -155,7 +179,7 @@ const aiAndDigital = [
     "description": "Automate tasks with AI to boost efficiency and reduce human error."
   },
   {
-    "icon":workflow,
+    "icon": workflow,
     "title": "Workflow Optimization Tools",
     "description": "Streamline processes and improve team collaboration for higher productivity."
   },
@@ -173,49 +197,74 @@ const aiAndDigital = [
 
 const finTech = [
   {
-    "icon": "Icon1",
+    "icon": secure,
     "title": "AI-Driven Process Automation",
     "description": "Automate tasks with AI to boost efficiency and reduce human error."
   },
   {
-    "icon": "Icon2",
+    "icon": financial,
     "title": "Workflow Optimization Tools",
     "description": "Streamline processes and improve team collaboration for higher productivity."
   },
   {
-    "icon": "Icon3",
+    "icon": wallet,
     "title": "Complete Digital Transformation Strategies",
     "description": "Implement digital solutions to drive growth and innovation across your business."
   },
   {
-    "icon": "Icon4",
+    "icon": invoice,
     "title": "Cloud Integration Solutions",
     "description": "Integrate cloud technologies for enhanced scalability and operational flexibility."
   }
 ]
 
-import "./styles/MobileUI.css"
+const cloudData = [
+  {
+    "icon": cloudsolution,
+    "title": "Cloud Solutions",
+    "description": "Provide scalable, flexible cloud services to meet business needs."
+  },
+  {
+    "icon": architecturedesign,
+    "title": "Architecture Design",
+    "description": "Design scalable cloud infrastructures for optimal performance."
+  },
+  {
+    "icon": clouddev,
+    "title": "Cloud Dev",
+    "description": "Develop cloud-native applications with agility and innovation."
+  },
+  {
+    "icon": cloudsecurity,
+    "title": "Cloud Security",
+    "description": "Ensure robust protection for data and applications in the cloud."
+  }
+]
 
-import sliderIcon from "../../../utilities/icons/slider-icon.svg"
+
+
+const logos = [
+  { name: "VIDA", url: sliderIcon },
+  { name: "Brand 8", url: sliderIcon },
+  { name: "E-ZONE", url: sliderIcon },
+  { name: "Brand 3", url: sliderIcon },
+  { name: "GREE", url: sliderIcon },
+  { name: "Habitat India", url: sliderIcon },
+  { name: "Double Tree", url: sliderIcon },
+  { name: "Brand 10", url: sliderIcon },
+  { name: "Cafe Noir", url: sliderIcon },
+  { name: "Brand 9", url: sliderIcon },
+  { name: "Brand 11", url: sliderIcon },
+  { name: "Brand 12", url: sliderIcon },
+  { name: "Brand 13", url: sliderIcon },
+  { name: "Brand 14", url: sliderIcon },
+  { name: "Brand 15", url: sliderIcon },
+];
+
+
 
 function MobileUi() {
-  const logos = [
-    { name: "VIDA", url: sliderIcon },
-    { name: "Brand 8", url: sliderIcon },
-    { name: "E-ZONE", url: sliderIcon },
-    { name: "Brand 3", url: sliderIcon },
-    { name: "GREE", url: sliderIcon },
-    { name: "Habitat India", url: sliderIcon },
-    { name: "Double Tree", url: sliderIcon },
-    { name: "Brand 10", url: sliderIcon },
-    { name: "Cafe Noir", url: sliderIcon },
-    { name: "Brand 9", url: sliderIcon },
-    { name: "Brand 11", url: sliderIcon },
-    { name: "Brand 12", url: sliderIcon },
-    { name: "Brand 13", url: sliderIcon },
-    { name: "Brand 14", url: sliderIcon },
-    { name: "Brand 15", url: sliderIcon },
-  ];
+
 
   return (
     <div className="h-fit pt-32 flex flex-col  border-1 border-red-300  w-full  items-center bg-black">
@@ -676,7 +725,7 @@ Development */}
           ))}
       </div>
 
-  
+
       {/*  Health Care*/}
       <div className='bg-white w-full flex flex-col items-center justify-center pt-[48px]'>
         <div className='w-[335px] h-[76px] '>
@@ -774,7 +823,7 @@ Development */}
               Transformation
             </span>
           </p>
-         
+
 
 
         </div>
@@ -823,8 +872,456 @@ Development */}
               </div>
             ))}
         </div>
+
+      
       </div>
- 
+      {/* End-to-End
+IT Services */}
+      <div className='w-[335px] h-[76px] mt-[72px]'>
+        <p
+          className="flex flex-col text-center text-[#FFFFFF] text-[32px] font-medium leading-[38.19px]"
+          style={{
+            fontFamily: 'SF UI Display, sans-serif',
+            textUnderlinePosition: 'from-font',
+            textDecorationSkipInk: 'none',
+          }}
+        >
+          FinTech
+          <span
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textUnderlinePosition: 'from-font',
+              textDecorationSkipInk: 'none',
+            }}
+          >
+            Applications
+          </span>
+        </p>
+
+      </div>
+      <div className='w-[342px] h-[427px] mt-[42px]'>
+        <Image
+          src={finTechMain}
+          width={342}
+          height={427}
+          alt='It SErvices'
+        />
+      </div>
+      <div className='mt-[42px]'>
+        {
+          finTech?.map((el) => (
+
+            <div key={el.title}
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+            >
+              <div className='flex gap-[8px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                  <Image
+                    src={el?.icon}
+                    width={23}
+                    height={23}
+                    alt='Network'
+                  />
+                </div>
+                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <p
+                    className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                  >
+                    {el?.title}
+                  </p>
+                </div>
+              </div>
+              <div className='w-[303px] h-[40px] mt-[12px]'>
+                <p
+                  className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                >
+                  {el?.description}
+                </p>
+
+              </div>
+            </div>
+          ))}
+      </div>
+
+      {/* Cloud */}
+      <div className='w-[335px] h-[76px] mt-[72px] flex items-center justify-center'>
+        <p
+          className="flex  text-center text-[#FFFFFF] text-[32px] font-medium leading-[38.19px]"
+          style={{
+            fontFamily: 'SF UI Display, sans-serif',
+            textUnderlinePosition: 'from-font',
+            textDecorationSkipInk: 'none',
+          }}
+        >
+          Cloud&nbsp;
+          <span
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textUnderlinePosition: 'from-font',
+              textDecorationSkipInk: 'none',
+            }}
+          >
+            Solutions
+          </span>
+        </p>
+
+      </div>
+      <div className='w-[342px] h-[427px] mt-[42px]'>
+        <Image className='object-cover'
+          src={cloudMain} unoptimized={true}
+          width={342} quality={80}
+          height={427} priority
+          alt='webandMobileMain'
+        />
+      </div>
+      <div className='mt-[42px] mb-[32px]'>
+        {
+          cloudData?.map((el) => (
+
+            <div key={el.title}
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+            >
+              <div className='flex gap-[8px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                  <Image
+                    src={el?.icon}
+                    width={23}
+                    height={23}
+                    alt='Network'
+                  />
+                </div>
+                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <p
+                    className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                  >
+                    {el?.title}
+                  </p>
+                </div>
+              </div>
+              <div className='w-[303px] h-[40px] mt-[12px]'>
+                <p
+                  className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                >
+                  {el?.description}
+                </p>
+
+              </div>
+            </div>
+          ))}
+      </div>
+
+{/*    sQuadra tech Team */}
+      <div className='pt-[44px] pb-[40px] px-[20px] flex flex-col gap-[24px] bg-[#F7F7F7]'>
+        <div className='flex flex-col gap-[12px] items-center justify-center'>
+          <p className="font-semibold text-[32px] leading-[38.19px] text-center text-[#FBAE17]">
+            Squadra <span className="font-semibold text-[32px] leading-[38.19px] text-center text-[#131313]">Tech Team</span>
+          </p>
+          <p className="font-normal text-[14px] leading-[16.71px] text-center text-[#888888]">
+            Discover a workplace where creativity thrives, teamwork shines, and careers take flight.
+          </p>
+        </div>
+        <div className='flex flex-col gap-[12px] items-center'>
+          <div className='flex flex-col gap-[12px]'>
+            <div className='w-[335px] h-[194px] bg-gray-200'>
+              <Image
+                src={cloud}
+                alt='Tech Team'
+              />
+            </div>
+            <div className='flex items-center gap-[12px]'>
+              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+            </div>
+          </div>
+          <div className='flex flex-col gap-[12px]'>
+            <div className='w-[335px] h-[194px] bg-gray-200'>
+              <Image
+                src={cloud}
+                alt='Tech Team'
+              />
+            </div>
+            <div className='flex items-center gap-[12px]'>
+              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Why Choose Us*/}
+      <div className='bg-white w-full flex items-center justify-center flex-col'>
+
+    
+      <div className='mt-[72px] flex flex-col gap-[12px] w-[335px] h-[101px] mb-[40px] '>
+        <p className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#131313]">
+          Why Choose <span className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#FBAE17]">Us</span>
+        </p>
+        <div className="flex items-center justify-center h-full">
+          <p className='font-normal text-[14px] leading-[16.71px] text-[#6D6D6D] text-center'>
+            We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
+          </p>
+        </div>
+      </div>
+
+      <div className='relative w-full' style={{ height: '800px' }}>
+        <Image
+          src={whyChooseUsImage}
+          width={335}
+          height={731}
+          className='absolute z-10 top-0 left-[22px]'
+          alt='Network'
+        />
+        <Image
+          src={dottedLine}
+          width={335}
+          height={0}
+          className='absolute h-[700px] z-0 top-[50px] left-[22px]'
+          alt='Network'
+        />
+        </div>  </div>
+
+
+      {/* technologies we use  */}
+      <div className='bg-[#FAFAFA] min-w-[375px] w-full flex flex-col items-center justify-center'>
+        <div className='w-[335px] h-[118px] mt-[42px]'>
+          <p
+            className="text-center text-[32px] text-[#222222] font-semibold leading-[38.19px]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            Technologies&nbsp;
+                        <span
+              className="text-[32px] text-[#94969D] font-semibold leading-[38.19px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+              }}
+            >
+              we use
+            </span>
+          </p>
+          <p className="w-[335px] h-[68px] mt-[12px] text-[#6D6D6D] text-center text-[14px] font-normal leading-[16.71px] ">
+            Discover the cutting-edge technologies we use to deliver innovative and impactful solutions, from modern frameworks to advanced cloud and machine learning tools
+          </p>
+
+        </div>
+        <div className="md:hidden w-full max-w-sm mx-auto p-4 my-[40px] ">
+          <Accordion type="single" collapsible className="w-full space-y-4 border-none">
+            <AccordionItem value="backend" className="border-none rounded-none bg-[white]">
+              <AccordionTrigger className="px-4 hover:no-underline text-[16px]">
+                Backend
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+
+            </AccordionItem>
+
+            <AccordionItem value="frontend" className="border-none rounded-none bg-white">
+              <AccordionTrigger className="px-4 hover:no-underline text-[16px]">
+                Frontend
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="mobile" className="border-none rounded-none bg-white">
+              <AccordionTrigger className="px-4 hover:no-underline text-[16px]">
+                Mobile
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="devops" className="border-none rounded-none bg-white">
+              <AccordionTrigger className="px-4 hover:no-underline text-[16px]">
+                DevOps
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="analytics" className="border-none rounded-none bg-white">
+              <AccordionTrigger  className="px-4 hover:no-underline text-[16px]">
+                Analytics & Engagement
+              </AccordionTrigger>
+              <AccordionContent className="bg-[#FAFAFA]">
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {[
+                    { id: 1, image: reactImage, title: "JavaScript" },
+                    { id: 2, image: reactImage, title: "React" },
+                    { id: 3, image: reactImage, title: "Angular" },
+                    { id: 4, image: reactImage, title: "Vue.js" },
+                    { id: 5, image: reactImage, title: "Svelte" },
+                    { id: 6, image: reactImage, title: "Next.js" },
+                    { id: 7, image: reactImage, title: "Nuxt.js" },
+                    { id: 8, image: reactImage, title: "Preact" },
+                    { id: 9, image: reactImage, title: "Solid.js" },
+                    { id: 10, image: reactImage, title: "Gatsby" },
+                  ].map((item) => (
+                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                        <Image
+                          src={item.image}
+                          width={80}
+                          height={80}
+                          alt={item.title.toLowerCase()}
+                        />
+                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
+                          {item.title}
+                        </p>
+                      </AccordionContent>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
+
+      <ContactUsForm/>
     </div>
   );
 }
