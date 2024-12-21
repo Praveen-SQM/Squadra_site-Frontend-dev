@@ -268,6 +268,30 @@ function MobileUi() {
 
   return (
     <div className="h-fit pt-32 flex flex-col  border-1 border-red-300  w-full  items-center bg-black">
+      {/* Intro Section */}
+      <div className='w-[375px] h-[786px] flex flex-col items-center'>
+        <div className='mt-[145px] w-[308px] h-[174px] flex flex-col gap-[16px]'>
+          <p className="font-medium text-[36px] leading-[42.96px] text-center text-[#FFFFFF]">
+            Your Trusted Partner
+            <span
+              className=""
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+                background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                WebkitBackgroundClip: 'text', // For Safari
+                backgroundClip: 'text',
+                color: 'transparent',
+              }}
+            >
+              in IT Innovation
+            </span>
+          </p>
+
+        </div>
+      </div>
+
       {/* Carousel */}
 
       <div className='mb-[42px] flex flex-col items-center justify-center'>
@@ -873,7 +897,7 @@ Development */}
             ))}
         </div>
 
-      
+
       </div>
       {/* End-to-End
 IT Services */}
@@ -1016,7 +1040,7 @@ IT Services */}
           ))}
       </div>
 
-{/*    sQuadra tech Team */}
+      {/*    sQuadra tech Team */}
       <div className='pt-[44px] pb-[40px] px-[20px] flex flex-col gap-[24px] bg-[#F7F7F7]'>
         <div className='flex flex-col gap-[12px] items-center justify-center'>
           <p className="font-semibold text-[32px] leading-[38.19px] text-center text-[#FBAE17]">
@@ -1073,37 +1097,37 @@ IT Services */}
           </div>
         </div>
       </div>
-      
+
       {/* Why Choose Us*/}
       <div className='bg-white w-full flex items-center justify-center flex-col'>
 
-    
-      <div className='mt-[72px] flex flex-col gap-[12px] w-[335px] h-[101px] mb-[40px] '>
-        <p className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#131313]">
-          Why Choose <span className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#FBAE17]">Us</span>
-        </p>
-        <div className="flex items-center justify-center h-full">
-          <p className='font-normal text-[14px] leading-[16.71px] text-[#6D6D6D] text-center'>
-            We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
-          </p>
-        </div>
-      </div>
 
-      <div className='relative w-full' style={{ height: '800px' }}>
-        <Image
-          src={whyChooseUsImage}
-          width={335}
-          height={731}
-          className='absolute z-10 top-0 left-[22px]'
-          alt='Network'
-        />
-        <Image
-          src={dottedLine}
-          width={335}
-          height={0}
-          className='absolute h-[700px] z-0 top-[50px] left-[22px]'
-          alt='Network'
-        />
+        <div className='mt-[72px] flex flex-col gap-[12px] w-[335px] h-[101px] mb-[40px] '>
+          <p className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#131313]">
+            Why Choose <span className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#FBAE17]">Us</span>
+          </p>
+          <div className="flex items-center justify-center h-full">
+            <p className='font-normal text-[14px] leading-[16.71px] text-[#6D6D6D] text-center'>
+              We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
+            </p>
+          </div>
+        </div>
+
+        <div className='relative w-full' style={{ height: '800px' }}>
+          <Image
+            src={whyChooseUsImage}
+            width={335}
+            height={731}
+            className='absolute z-10 top-0 left-[22px]'
+            alt='Network'
+          />
+          <Image
+            src={dottedLine}
+            width={335}
+            height={0}
+            className='absolute h-[700px] z-0 top-[50px] left-[22px]'
+            alt='Network'
+          />
         </div>  </div>
 
 
@@ -1119,7 +1143,7 @@ IT Services */}
             }}
           >
             Technologies&nbsp;
-                        <span
+            <span
               className="text-[32px] text-[#94969D] font-semibold leading-[38.19px]"
               style={{
                 fontFamily: 'SF UI Display, sans-serif',
@@ -1283,7 +1307,7 @@ IT Services */}
             </AccordionItem>
 
             <AccordionItem value="analytics" className="border-none rounded-none bg-white">
-              <AccordionTrigger  className="px-4 hover:no-underline text-[16px]">
+              <AccordionTrigger className="px-4 hover:no-underline text-[16px]">
                 Analytics & Engagement
               </AccordionTrigger>
               <AccordionContent className="bg-[#FAFAFA]">
@@ -1321,7 +1345,7 @@ IT Services */}
         </div>
       </div>
 
-      <ContactUsForm/>
+      <ContactUsForm />
     </div>
   );
 }
