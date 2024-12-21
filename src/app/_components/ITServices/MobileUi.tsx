@@ -352,12 +352,12 @@ function MobileUi() {
           <div className="scrolling-content">
             {logos?.map((logo, index) => (
               <div key={index} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
-                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0} className='w-[82.24px] h-[18.04px]' />
               </div>
             ))}
             {logos?.map((logo, index) => (
               <div key={`duplicate-${index}`} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
-                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0} className='w-[82.24px] h-[18.04px]' />
               </div>
             ))}
           </div>
@@ -367,12 +367,12 @@ function MobileUi() {
           <div className="scrolling-content">
             {logos?.map((logo, index) => (
               <div key={index} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
-                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0}  className='w-[82.24px] h-[18.04px]' />
               </div>
             ))}
             {logos?.map((logo, index) => (
               <div key={`duplicate-${index}`} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
-                <img src={logo?.url?.src} alt={logo?.name} className='w-[82.24px] h-[18.04px]' />
+                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0} className='w-[82.24px] h-[18.04px]' />
               </div>
             ))}
           </div>
