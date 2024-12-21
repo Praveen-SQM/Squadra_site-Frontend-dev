@@ -280,13 +280,11 @@ function MobileUi() {
       const rect = imageRef.current.getBoundingClientRect();
       const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
 
-      // Set the state based on whether the image is in view
       setIsInView(inView);
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    // Check if the image is already in view on initial render
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);

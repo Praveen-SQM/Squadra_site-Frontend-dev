@@ -68,7 +68,7 @@
   }
 }
 
-/* Keyframe for left to right scrolling */
+
 @keyframes scroll-left-to-right {
   0% {
     transform: translateX(0%);
