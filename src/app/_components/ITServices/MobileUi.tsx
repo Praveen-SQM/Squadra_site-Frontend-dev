@@ -270,9 +270,9 @@ function MobileUi() {
     <div className="h-fit pt-32 flex flex-col  border-1 border-red-300  w-full  items-center bg-black">
       {/* Intro Section */}
       <div className='w-[375px] h-[786px] flex flex-col items-center'>
-        <div className='mt-[145px] w-[308px] h-[174px] flex flex-col gap-[16px]'>
-          <p className="font-medium text-[36px] leading-[42.96px] text-center text-[#FFFFFF]">
-            Your Trusted Partner
+        <div className='mt-[145px] w-[327px] h-[86px] border-1 border-red-500 flex flex-col'>
+          <p className="font-medium text-[31px] leading-[42.96px] text-center text-[#FFFFFF]">
+            Your Trusted Partner <br />
             <span
               className=""
               style={{
@@ -280,7 +280,7 @@ function MobileUi() {
                 textDecorationSkipInk: 'none',
                 textUnderlinePosition: 'from-font',
                 background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
-                WebkitBackgroundClip: 'text', // For Safari
+                WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
               }}
@@ -288,9 +288,16 @@ function MobileUi() {
               in IT Innovation
             </span>
           </p>
-
+           <div className='w-[311px] h=[72px] flex items-center justify-center text-center mt-[16px]'>
+            <p className='font-[16px] text-white'>Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.</p>
+            
+           </div>
         </div>
-      </div>
+
+       
+
+      </div> 
+    
 
       {/* Carousel */}
 
