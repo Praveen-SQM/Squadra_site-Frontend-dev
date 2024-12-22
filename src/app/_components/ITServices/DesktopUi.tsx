@@ -4,6 +4,8 @@ import React from 'react'
 import starSvg from '@/utilities/images/star.svg'
 import sliderIcon from "@/utilities/icons/slider-icon.svg"
 import cloud from '@/utilities/images/cloud.svg';
+import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
+import dottedLineDesktopImage from '@/utilities/images/dottedLineDesktop.svg'
 
 const logos = [
   { name: "VIDA", url: sliderIcon },
@@ -183,32 +185,25 @@ function DesktopUi() {
 
 
         <div className='flex flex-col gap-[12px] w-[662px] h-[128px] mb-[120px] '>
-          <p className="font-sans text-[62px] font-semibold leading-[73.99px] text-center text-[#131313]">
-            Why Choose <span className="font-sans text-[32px] font-semibold leading-[38.19px] text-center text-[#FBAE17]">Us</span>
+          <p className="font-sans text-[62px] font-semibold leading-[73.99px] text-center text-[#000000]">
+            Why Choose <span className="font-sans text-[62px] font-semibold leading-[73.99px] text-center text-[#FBAE17]">Us</span>
           </p>
           <div className="flex items-center justify-center h-full">
-            <p className='font-normal text-[14px] leading-[16.71px] text-[#6D6D6D] text-center'>
+            <p className='font-normal text-[16px] leading-[20.8px] text-[#000000] text-center'>
               We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
             </p>
           </div>
         </div>
 
-        {/* <div className='relative w-full' style={{ height: '800px' }}>
+        <div className='relative w-full flex items-center justify-center' style={{ height: '280px' }}>
           <Image
-            src={whyChooseUsImage}
-            width={335}
-            height={731}
-            className='absolute z-10 top-0 left-[22px]'
-            alt='Network'
-          />
-          <Image
-            src={dottedLine}
-            width={335}
+            src={whyChooseImage}
+            width={0}
             height={0}
-            className='absolute h-[700px] z-0 top-[50px] left-[22px]'
+            className='absolute z-10 top-0'
             alt='Network'
           />
-        </div> */}
+        </div>
       </div>
     </div>
   )
