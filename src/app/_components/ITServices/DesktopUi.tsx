@@ -1,11 +1,11 @@
 
 import Image from 'next/image'
 import React from 'react'
+import ContactUsForm from './components/DesktopContactUsForm'
 import starSvg from '@/utilities/images/star.svg'
 import sliderIcon from "@/utilities/icons/slider-icon.svg"
 import cloud from '@/utilities/images/cloud.svg';
 import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
-import dottedLineDesktopImage from '@/utilities/images/dottedLineDesktop.svg'
 
 const logos = [
   { name: "VIDA", url: sliderIcon },
@@ -205,6 +205,9 @@ function DesktopUi() {
           />
         </div>
       </div>
+
+      {/* Contact us */}
+      <ContactUsForm/>
     </div>
   )
 }
