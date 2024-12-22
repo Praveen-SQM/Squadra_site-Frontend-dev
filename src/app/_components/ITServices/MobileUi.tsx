@@ -1,6 +1,6 @@
 "use client";
-import React from 'react'; 
-import { useState,useRef,useEffect } from 'react';
+import React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import starSvg from '@/utilities/images/star.svg'
 import "./styles/MobileUI.css"
 import {
@@ -15,7 +15,7 @@ import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Network from '@/utilities/images/Network.svg'
 import Saas from '@/utilities/images/Saas.svg'
 import Solution from '@/utilities/images/Solution.svg'
-import Connection from '@/utilities/images/Connection.svg' 
+import Connection from '@/utilities/images/Connection.svg'
 import UserWorkFlow from '@/utilities/images/User workflow.svg'
 import codeSquare from '@/utilities/images/Code Square.svg'
 import Container from '@/utilities/images/Container.svg'
@@ -271,6 +271,10 @@ function MobileUi() {
   const imageRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
+  const [activeCards, setActiveCards] = useState([]);
+
+  const cardsRef = useRef([]);
+
   console.log(imageRef)
 
   useEffect(() => {
@@ -288,6 +292,35 @@ function MobileUi() {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null, // Use the viewport as the root
+      rootMargin: '0px',
+      threshold: 0.5, // Trigger when 50% of the card is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // Add or remove the animated border class based on visibility
+        if (entry.isIntersecting) {
+          setActiveCards((prev) => [...prev, entry.target.id]);
+        } else {
+          setActiveCards((prev) => prev.filter(id => id !== entry.target.id));
+        }
+      });
+    }, observerOptions);
+
+    // Observe each card element
+    cardsRef.current.forEach((card) => {
+      observer.observe(card);
+    });
+
+    // Cleanup observer on unmount
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -365,7 +398,7 @@ function MobileUi() {
           <div className="scrolling-content">
             {logos?.map((logo, index) => (
               <div key={index} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
-                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0}  className='w-[82.24px] h-[18.04px]' />
+                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0} className='w-[82.24px] h-[18.04px]' />
               </div>
             ))}
             {logos?.map((logo, index) => (
@@ -424,10 +457,12 @@ function MobileUi() {
 
       <div className='mt-[42px]'>
         {
-          data?.map((el) => (
+          data?.map((el, index) => (
 
             <div key={el.title}
-              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              className={`w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent ${activeCards.includes(`card-${index}`) ? 'animated-border' : ''}`}
+              ref={(el) => cardsRef.current.push(el)} // Add each card element to the ref
+              id={`card-${index}`}
             >
               <div className='flex gap-[8px]'>
                 <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>

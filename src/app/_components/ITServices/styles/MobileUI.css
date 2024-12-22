@@ -86,3 +86,24 @@
 .image.expand {
   transform: scale(1); /* Adjust the scale as needed */
 }
+
+/* CSS */
+@keyframes borderAnimation {
+  0% {
+    border-image-source: linear-gradient(101.16deg, #ED5EFF 5.34%, #6065FF 58.24%);
+  }
+  50% {
+    border-image-source: linear-gradient(191.16deg, #ED5EFF 5.34%, #6065FF 58.24%);
+  }
+  100% {
+    border-image-source: linear-gradient(101.16deg, #ED5EFF 5.34%, #6065FF 58.24%);
+  }
+}
+
+.animated-border {
+  border: 1px solid transparent;
+  border-image: linear-gradient(101.16deg, #ED5EFF 5.34%, #6065FF 58.24%) 1;
+  animation: borderAnimation 1s linear infinite; /* Adjust the duration as needed */
+}
+
+
