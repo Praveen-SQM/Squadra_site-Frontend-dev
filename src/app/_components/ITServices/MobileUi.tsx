@@ -75,7 +75,7 @@ export const data = [
   { icon: Connection, title: "Industry-Specific Solutions", description: "Customised solutions for finance, healthcare, and other industries." },
 ]
 
-const customSoftwareDevData = [
+export const customSoftwareDevData = [
   {
     icon: netWorkBlack, title: "ERP Systems", description: "Chat seamlessly with friends and communities."
   },
