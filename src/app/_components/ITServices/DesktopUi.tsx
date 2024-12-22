@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import starSvg from '@/utilities/images/star.svg'
-import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, webAndMobDev } from './MobileUi'
+import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, logos, webAndMobDev } from './MobileUi'
 import frame from '@/utilities/images/mobile-frame.svg'
 import Container from '@/utilities/images/Container.svg'
 import arrowRight from '@/utilities/images/arrow-right.svg'
@@ -10,8 +10,9 @@ import "./styles/DesktopUI.css"
 import { useState, useRef, useEffect } from 'react';
 import heroImage from '@/utilities/images/desktop-hero-image.svg'
 import TabComponent from './Tabs'
-
-
+import cloud from '@/utilities/images/cloud.svg';
+import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
+import ContactUsForm from './components/DesktopContactUsForm'
 
 
 function DesktopUi() {
@@ -89,6 +90,24 @@ function DesktopUi() {
       {/* Carousel */}
       {/*  add code here*/}
 
+      <div className='mb-[42px] flex flex-col items-center justify-center'>
+        <div className="scrolling-container">
+          <div className="scrolling-content">
+            {logos?.map((logo, index) => (
+              <div key={index} className="inline-block [176.4px] h-[58.8px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0} className='w-[176.4px] h-[58.8px]' />
+              </div>
+            ))}
+            {logos?.map((logo, index) => (
+              <div key={`duplicate-${index}`} className="inline-block [176.4px] h-[58.8px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
+                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0} className='w-[176.4px] h-[58.8px]' />
+              </div>
+            ))}
+          </div>
+        </div>
+
+     
+      </div>
 
 
       {/* What we Do */}
@@ -1061,13 +1080,98 @@ function DesktopUi() {
 
         </div>
       </section>
+   
+      {/* Squadra Tech Team */}
+      <div className='w-full py-[72px] px-[124px] flex flex-col gap-[62px] bg-[#FAFAFA] items-center'>
+        <div className='flex flex-col gap-[12px] items-center justify-center w-[668px] h-[132px]'>
+          <p className="font-semibold text-[62px] leading-[72px] text-center text-[#FBAE17]">
+            Squadra <span className="font-semibold text-[62px] leading-[72px] text-center text-[#131313]">Tech Team</span>
+          </p>
+          <p className="font-normal text-[18px] leading-[24px] text-center text-[#888888]">
+            Discover a workplace where creativity thrives, teamwork shines, and careers take flight.
+          </p>
+        </div>
+        <div className='flex gap-[24px] items-center'>
+          <div className='flex flex-col gap-[24px]'>
+            <div className='w-[584px] h-[263px] bg-gray-200'>
+              <Image
+                src={cloud}
+                alt='Tech Team'
+              />
+            </div>
+            <div className='flex items-center gap-[24px]'>
+              <div className='w-[280px] h-[262px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+              <div className='w-[280px] h-[262px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className='flex flex-col gap-[24px]'>
+            <div className='flex items-center gap-[24px]'>
+              <div className='w-[280px] h-[262px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+              <div className='w-[280px] h-[262px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+            </div>
+            <div className='w-[584px] h-[263px] bg-gray-200'>
+              <Image
+                src={cloud}
+                alt='Tech Team'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Why Choose us */}
+      <div className='bg-white w-[1440px] h-[762px] flex items-center justify-center flex-col'>
+
+
+        <div className='flex flex-col gap-[12px] w-[662px] h-[128px] mb-[120px] '>
+          <p className="font-sans text-[62px] font-semibold leading-[73.99px] text-center text-[#000000]">
+            Why Choose <span className="font-sans text-[62px] font-semibold leading-[73.99px] text-center text-[#FBAE17]">Us</span>
+          </p>
+          <div className="flex items-center justify-center h-full">
+            <p className='font-normal text-[16px] leading-[20.8px] text-[#000000] text-center'>
+              We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
+            </p>
+          </div>
+        </div>
+
+        <div className='relative w-full flex items-center justify-center' style={{ height: '280px' }}>
+          <Image
+            src={whyChooseImage}
+            width={0}
+            height={0}
+            className='absolute z-10 top-0'
+            alt='Network'
+          />
+        </div>
+      </div>
       <div className='max-w-[1440px] mx-auto h-[796px]'>
-          <TabComponent/>
+        <TabComponent />
 
       </div>
-  
-
-
+      {/* Contact us */}
+      <ContactUsForm />
     </div>
   )
 }

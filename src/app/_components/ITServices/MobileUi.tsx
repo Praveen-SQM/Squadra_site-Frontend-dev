@@ -246,7 +246,7 @@ export const cloudData = [
 
 
 
-const logos = [
+export const logos = [
   { name: "VIDA", url: sliderIcon },
   { name: "Brand 8", url: sliderIcon },
   { name: "E-ZONE", url: sliderIcon },
