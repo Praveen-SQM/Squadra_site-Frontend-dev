@@ -1,15 +1,14 @@
-"use client";
+"use client";'use client'
 import Image from 'next/image'
 import React from 'react'
 import "./styles/DesktopUI.css"
 import { useState, useRef, useEffect } from 'react';
 import starSvg from '@/utilities/images/star.svg'
-import { customSoftwareDevData, data } from './MobileUi'
+import { customSoftwareDevData, data } from './MobileUi';
 import frame from '@/utilities/images/mobile-frame.svg'
 import Container from '@/utilities/images/Container.svg'
 import arrowRight from '@/utilities/images/arrow-right.svg'
 import heroImage from '@/utilities/images/desktop-hero-image.svg'
-
 function DesktopUi() {
 
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -128,15 +127,11 @@ function DesktopUi() {
 
           <p
             className="text-center mt-[13px] text-white text-[54px] font-bold leading-[69.6px]"
-          <p
-            className="text-center mt-[13px] text-white text-[54px] font-bold leading-[69.6px]"
-
+      
           >
             What we do
           </p>
-          >
-            What we do
-          </p>
+        
 
           <div className="w-[620px] h-[44px] gap-0 mt-[12px]">
             <p
@@ -151,7 +146,6 @@ function DesktopUi() {
               Empowering businesses with transformative IT solutions for efficiency and success
             </p>
 
-          </div>
           </div>
         </div>
 
@@ -460,7 +454,11 @@ function DesktopUi() {
         </div>
       </section>
     </div>
+    </div>
+      </div>
+    </div>
+
   )
 }
 
-export default DesktopUi
+export default DesktopUi;
