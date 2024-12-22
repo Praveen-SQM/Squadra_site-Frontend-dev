@@ -6,14 +6,14 @@ import TabUi from '@/app/_components/ITServices/TabUi';
 function ITServices() {
   return (
     <div>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block max-w-[1440px] mx-auto">
         <DesktopUi />
       </div>
       <div className="hidden md:block lg:hidden">
         <TabUi />
       </div>
          <div className="block md:hidden min-w-fit max-w-[410px] mx-auto">
-        <MobileUi />
+        <MobileUi /> 
       </div>
     </div>
   );

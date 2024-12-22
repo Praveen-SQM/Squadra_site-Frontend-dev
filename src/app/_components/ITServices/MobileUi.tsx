@@ -20,7 +20,7 @@ import UserWorkFlow from '@/utilities/images/User workflow.svg'
 import codeSquare from '@/utilities/images/Code Square.svg'
 import Container from '@/utilities/images/Container.svg'
 import SaasMain from '@/utilities/images/Saas-main.svg'
-import netWorkBlack from '@/utilities/images/netWorkBlack.svg'
+import netWorkBlack from '@/utilities/images/NetworkBlack.svg'
 import HandShake from '@/utilities/images/Handshake.svg'
 import Archive from '@/utilities/images/Archive.svg'
 import Book from '@/utilities/images/Book.svg'
@@ -52,8 +52,8 @@ import secure from '@/utilities/images/secure.svg';
 import financial from '@/utilities/images/financial.svg';
 import wallet from '@/utilities/images/wallet.svg';
 import invoice from '@/utilities/images/invoice.svg';
-import finTechMain from '@/utilities/images/finTechMain.svg';
-import cloudMain from '@/utilities/images/cloudMain.svg';
+import finTechMain from '@/utilities/images/fintechMain.svg';
+import cloudMain from '@/utilities/images/cloudmain.svg';
 import cloudsolution from '@/utilities/images/cloudsolution.svg';
 import architecturedesign from '@/utilities/images/architecturedesign.svg';
 import clouddev from '@/utilities/images/clouddev.svg';
@@ -291,7 +291,7 @@ function MobileUi() {
   }, []);
 
   return (
-    <div className="h-fit pt-32 flex flex-col  border-1 border-red-300  w-full  items-center bg-black">
+    <div className="h-fit pt-32 flex flex-col  w-full  items-center bg-black">
       {/* Intro Section */}
       <div className='w-[375px] h-[830px] flex flex-col items-center'>
         <div className='mt-[145px] w-[327px] h-[174px] border-1 flex flex-col'>
