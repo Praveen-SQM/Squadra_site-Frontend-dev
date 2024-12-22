@@ -66,7 +66,7 @@ import heroImage from '@/utilities/images/hero-image.svg'
 import ContactUsForm from './components/ContactUsForm';
 
 
-const data = [
+export const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
   { icon: Solution, title: "Data & AI Solutions", description: "Leveraging data and AI to drive smarter decisions and automation." },
   { icon: codeSquare, title: "Web & Mobile Application Development", description: "Creating fast, intuitive web and mobile apps." },
