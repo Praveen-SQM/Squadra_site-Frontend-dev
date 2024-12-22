@@ -105,7 +105,7 @@ const saasData = [
   },
 ]
 
-const ItServices = [
+export const ItServices = [
   {
     "icon": uiux,
     "title": "UI/UX Design",
@@ -128,7 +128,7 @@ const ItServices = [
   }
 ]
 
-const webAndMobDev = [
+export const webAndMobDev = [
   {
     "icon": progressiveWebapp,
     "title": "Progressive Web Apps",
@@ -152,7 +152,7 @@ const webAndMobDev = [
 ]
 
 
-const healthcare = [
+export const healthcare = [
   {
     "icon": teleMedicine,
     "title": "Telemedicine Platforms",
@@ -175,7 +175,7 @@ const healthcare = [
   }
 ]
 
-const aiAndDigital = [
+export const aiAndDigital = [
   {
     "icon": aiDrivenProcess,
     "title": "AI-Driven Process Automation",
@@ -198,7 +198,7 @@ const aiAndDigital = [
   }
 ]
 
-const finTech = [
+export const finTech = [
   {
     "icon": secure,
     "title": "AI-Driven Process Automation",
@@ -221,7 +221,7 @@ const finTech = [
   }
 ]
 
-const cloudData = [
+export const cloudData = [
   {
     "icon": cloudsolution,
     "title": "Cloud Solutions",

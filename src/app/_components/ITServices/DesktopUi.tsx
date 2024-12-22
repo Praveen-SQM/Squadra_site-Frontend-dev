@@ -1,38 +1,41 @@
-"use client";'use client'
+'use client'
 import Image from 'next/image'
 import React from 'react'
-import "./styles/DesktopUI.css"
-import { useState, useRef, useEffect } from 'react';
 import starSvg from '@/utilities/images/star.svg'
-import { customSoftwareDevData, data } from './MobileUi';
+import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, webAndMobDev } from './MobileUi'
 import frame from '@/utilities/images/mobile-frame.svg'
 import Container from '@/utilities/images/Container.svg'
 import arrowRight from '@/utilities/images/arrow-right.svg'
+import "./styles/DesktopUI.css"
+import { useState, useRef, useEffect } from 'react';
 import heroImage from '@/utilities/images/desktop-hero-image.svg'
-function DesktopUi() {
+import TabComponent from './Tabs'
 
+
+
+
+function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-      const handleScroll = () => {
-        if (!imageRef.current) return;
-  
-        const rect = imageRef.current?.getBoundingClientRect();
-              const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
-  
-        setIsInView(inView);
-      };
-  
-      window.addEventListener('scroll', handleScroll);
-  
-      handleScroll();
-  
-      return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const handleScroll = () => {
+      if (!imageRef.current) return;
 
+      const rect = imageRef.current?.getBoundingClientRect();
+      const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+      setIsInView(inView);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <div className="h-fit flex flex-col  w-full  items-center bg-black">
+    <div className="h-fit pt-16 flex flex-col  w-full  items-center bg-black">
       {/* Intro Section */}
       <div className='w-[1200px] h-[1165px] mt-[145px] flex flex-col items-center mb-[88px]'>
         <div className='w-[976px] h-[322px] flex flex-col gap-[16px] items-center mt-[80px]'>
@@ -81,10 +84,9 @@ function DesktopUi() {
           </div>
         </div>
 
-      </div>
+      </div>      
 
       {/* Carousel */}
-      {/*  add code here*/}
       {/*  add code here*/}
 
 
@@ -92,23 +94,7 @@ function DesktopUi() {
       {/* What we Do */}
       <div className="w-[1130.32px] h-fit mb-[50px]">
         <div className='flex flex-col items-center w-[672px] mx-auto'>
-      <div style={{ border: "1px solid red" }} className="w-[1130.32px] h-[1043px] ">
-        <div style={{ border: "1px solid red" }} className='flex flex-col items-center w-[672px] mx-auto'>
 
-          <div className="w-[140.88px] h-[44px] flex justify-center items-center rounded-[100px] bg-[#131315]">
-            <div className="flex items-center gap-[2px] h-full">
-              <Image
-                className="flex-shrink-0"
-                src={starSvg}
-                width={20}
-                height={20}
-                alt="Star"
-              />
-              <p className="text-white font-medium text-[16px] leading-[24px] text-center">
-                Our Benefits
-              </p>
-            </div>
-          </div>
           <div className="w-[140.88px] h-[44px] flex justify-center items-center rounded-[100px] bg-[#131315]">
             <div className="flex items-center gap-[2px] h-full">
               <Image
@@ -127,18 +113,11 @@ function DesktopUi() {
 
           <p
             className="text-center mt-[13px] text-white text-[54px] font-bold leading-[69.6px]"
-      
+
           >
             What we do
           </p>
-        
 
-          <div className="w-[620px] h-[44px] gap-0 mt-[12px]">
-            <p
-              className="text-center text-[#797B85] text-[18px] font-medium leading-[21.96px]"
-            >
-              Empowering businesses with transformative IT solutions for efficiency and success
-            </p>
           <div className="w-[620px] h-[44px] gap-0 mt-[12px]">
             <p
               className="text-center text-[#797B85] text-[18px] font-medium leading-[21.96px]"
@@ -245,7 +224,7 @@ function DesktopUi() {
       <section className='bg-white max-w-full flex items-center'>
 
 
-        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[143px]">
+        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
           {/* First Div */}
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
@@ -342,7 +321,7 @@ function DesktopUi() {
       <section className='bg-white max-w-full flex items-center'>
 
 
-        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[78px]">
+        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
           {/* First Div */}
           <div className="w-[664px] h-full">
             <div className='w-[664px] h-[76px] '>
@@ -453,12 +432,644 @@ function DesktopUi() {
          
         </div>
       </section>
-    </div>
-    </div>
-      </div>
-    </div>
 
+
+
+      {/* End to End It Services */}
+       <section className=' max-w-full flex items-center'>
+
+
+        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px]">
+          {/* First Div */}
+          <div className="w-[438px] h-full">
+            <div className='w-[438px] h-[547px] mt-[48px]'>
+              <Image
+                src={Container}
+                width={438}
+                height={547}
+                alt='Container'
+
+              />
+            </div>        </div>
+          {/* Second Div */}
+          <div className="w-[664px] h-full">
+            <div className='w-[664px] h-[76px] '>
+              <p
+                className="text-[46px] text-white font-semibold leading-[54.89px]"
+                style={{
+                  fontFamily: 'SF UI Display, sans-serif',
+                  textDecorationSkipInk: 'none',
+                  textUnderlinePosition: 'from-font',
+                }}
+              >
+                End-to-End{" "} <br />
+                <span
+                  className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
+                  style={{
+                    fontFamily: 'SF UI Display, sans-serif',
+                    textDecorationSkipInk: 'none',
+                    textUnderlinePosition: 'from-font',
+                    background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    color: 'transparent',
+                  }}
+                >
+                  IT Services
+                </span>
+              </p>
+
+            </div>
+
+            <div className='mt-[42px] mb-[48px] grid grid-cols-2'>
+              {
+                ItServices?.map((el) => (
+
+                  <div key={el.title}
+                    className="w-[322px] mt-[16px] bg-[#19191C] h-[148px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+                  >
+                    <div className='flex gap-[8px]'>
+                      <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-600 rounded-[10.62px]'>
+                        <Image
+                          src={el?.icon}
+                          width={23}
+                          height={23}
+                          alt='Network'
+                        />
+                      </div>
+                      <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                        <p
+                          className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                        >
+                          {el?.title}
+                        </p>
+                      </div>
+                    </div>
+                    <div className='w-[303px] h-[40px] mt-[12px]'>
+                      <p
+                        className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                      >
+                        {el?.description}
+                      </p>
+
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#19191C]">
+              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
+                Get a Quote</p>
+              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
+                <Image
+                src={arrowRight}
+                width={36}
+                height={36}
+                alt='ArrowRight'
+                />
+              </div>
+              
+                          </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Web & Mobile Application Development */}
+      <section className=' max-w-full flex items-center'>
+
+
+        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px]">
+          {/* First Div */}
+          <div className="w-[664px] h-full">
+            <div className='w-[664px] h-[76px] '>
+              <p
+                className="text-[46px] text-white font-semibold leading-[54.89px]"
+                style={{
+                  fontFamily: 'SF UI Display, sans-serif',
+                  textDecorationSkipInk: 'none',
+                  textUnderlinePosition: 'from-font',
+                }}
+              >
+                Web & Mobile Application {" "}
+                <span
+                  className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
+                  style={{
+                    fontFamily: 'SF UI Display, sans-serif',
+                    textDecorationSkipInk: 'none',
+                    textUnderlinePosition: 'from-font',
+                    background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    color: 'transparent',
+                  }}
+                >
+                  Development
+                </span>
+              </p>
+          
+            </div>
+
+            <div className='mt-[42px] mb-[48px] grid grid-cols-2'>
+              {
+                webAndMobDev?.map((el) => (
+
+                  <div key={el.title}
+                    className="w-[322px] mt-[16px] bg-[#19191C] h-[148px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+                  >
+                    <div className='flex gap-[8px]'>
+                      <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-600 rounded-[10.62px]'>
+                        <Image
+                          src={el?.icon}
+                          width={23}
+                          height={23}
+                          alt='Network'
+                        />
+                      </div>
+                      <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                        <p
+                          className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                        >
+                          {el?.title}
+                        </p>
+                      </div>
+                    </div>
+                    <div className='w-[303px] h-[40px] mt-[12px]'>
+                      <p
+                        className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                      >
+                        {el?.description}
+                      </p>
+
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
+                Get a Quote</p>
+              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
+                <Image
+                  src={arrowRight}
+                  width={36}
+                  height={36}
+                  alt='ArrowRight'
+                />
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+          {/* Second Div */}
+          <div className="w-[438px] h-full">
+            <div className='w-[438px] h-[547px] mt-[48px]'>
+              <Image
+                src={Container}
+                width={438}
+                height={547}
+                alt='Container'
+
+              />
+            </div>        </div>
+
+
+        </div>
+      </section>
+
+
+      {/* Healthcare Applications */}
+      <section className='bg-white max-w-full flex items-center'>
+
+
+        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
+          {/* First Div */}
+          <div className="w-[664px] h-full">
+            <div className='w-[664px] h-[76px] '>
+              <p
+                className="text-[46px] text-[#222222] font-semibold leading-[54.89px]"
+                style={{
+                  fontFamily: 'SF UI Display, sans-serif',
+                  textDecorationSkipInk: 'none',
+                  textUnderlinePosition: 'from-font',
+                }}
+              >
+                Healthcare{" "}
+                <span
+                  className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
+                  style={{
+                    fontFamily: 'SF UI Display, sans-serif',
+                    textDecorationSkipInk: 'none',
+                    textUnderlinePosition: 'from-font',
+                  }}
+                >
+                  Applications
+                </span>
+              </p>
+
+            </div>
+
+            <div className='mt-[42px] mb-[48px] grid grid-cols-2'>
+              {
+                healthcare?.map((el) => (
+
+                  <div key={el.title}
+                    className="w-[322px] mt-[16px] bg-[#F2F2F2] h-[148px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+                  >
+                    <div className='flex gap-[8px]'>
+                      <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                        <Image
+                          src={el?.icon}
+                          width={23}
+                          height={23}
+                          alt='Network'
+                        />
+                      </div>
+                      <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                        <p
+                          className="text-[#222222] text-start  text-[16px] font-medium leading-[19.09px]"
+
+                        >
+                          {el?.title}
+                        </p>
+                      </div>
+                    </div>
+                    <div className='w-[303px] h-[40px] mt-[12px]'>
+                      <p
+                        className="text-left text-[14px] font-medium leading-[20px] text-[#717171]"
+
+                      >
+                        {el?.description}
+                      </p>
+
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
+                Get a Quote</p>
+              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
+                <Image
+                  src={arrowRight}
+                  width={36}
+                  height={36}
+                  alt='ArrowRight'
+                />
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          {/* Second Div */}
+          <div className="w-[438px] h-full">
+            <div className='w-[438px] h-[547px] mt-[48px]'>
+              <Image
+                src={Container}
+                width={438}
+                height={547}
+                alt='Container'
+
+              />
+            </div>   
+                 </div>
+       
+          
+        </div>
+      </section>
+
+      {/* Automation & Digital Transformation */}
+      <section className='bg-white max-w-full flex items-center'>
+
+
+        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
+          {/* First Div */}
+
+          <div className="w-[438px] h-full">
+            <div className='w-[438px] h-[547px] mt-[48px]'>
+              <Image
+                src={Container}
+                width={438}
+                height={547}
+                alt='Container'
+
+              />
+            </div>
+
+          </div>
+
+          {/* Second Div */}
+          <div className="w-[664px] h-full">
+            <div className='w-[664px] h-[76px] '>
+              <p
+                className="text-[46px] text-[#222222] font-semibold leading-[54.89px]"
+                style={{
+                  fontFamily: 'SF UI Display, sans-serif',
+                  textDecorationSkipInk: 'none',
+                  textUnderlinePosition: 'from-font',
+                }}
+              >
+                Automation & Digital{" "}
+                <span
+                  className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
+                  style={{
+                    fontFamily: 'SF UI Display, sans-serif',
+                    textDecorationSkipInk: 'none',
+                    textUnderlinePosition: 'from-font',
+                    background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    color: 'transparent',
+                  }}
+                >
+                  Transformation
+                </span>
+              </p>
+           
+            </div>
+
+            <div className='mt-[42px] mb-[48px] grid grid-cols-2'>
+              {
+                aiAndDigital?.map((el) => (
+
+                  <div key={el.title}
+                    className="w-[322px] mt-[16px] bg-[#F2F2F2] h-[148px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+                  >
+                    <div className='flex gap-[8px]'>
+                      <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                        <Image
+                          src={el?.icon}
+                          width={23}
+                          height={23}
+                          alt='Network'
+                        />
+                      </div>
+                      <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                        <p
+                          className="text-[#222222] text-start  text-[16px] font-medium leading-[19.09px]"
+
+                        >
+                          {el?.title}
+                        </p>
+                      </div>
+                    </div>
+                    <div className='w-[303px] h-[40px] mt-[12px]'>
+                      <p
+                        className="text-left text-[14px] font-medium leading-[20px] text-[#717171]"
+
+                      >
+                        {el?.description}
+                      </p>
+
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
+                Get a Quote</p>
+              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
+                <Image
+                  src={arrowRight}
+                  width={36}
+                  height={36}
+                  alt='ArrowRight'
+                />
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+      </section>
+
+
+      {/*FinTech Applications */}
+      <section className=' max-w-full flex items-center'>
+
+
+        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px]">
+          {/* First Div */}
+          <div className="w-[438px] h-full">
+            <div className='w-[438px] h-[547px] mt-[48px]'>
+              <Image
+                src={Container}
+                width={438}
+                height={547}
+                alt='Container'
+
+              />
+            </div>        </div>
+          {/* Second Div */}
+          <div className="w-[664px] h-full">
+            <div className='w-[664px] h-[76px] '>
+              <p
+                className="text-[46px] text-white font-semibold leading-[54.89px]"
+                style={{
+                  fontFamily: 'SF UI Display, sans-serif',
+                  textDecorationSkipInk: 'none',
+                  textUnderlinePosition: 'from-font',
+                }}
+              >
+                FinTech{" "} <br />
+                <span
+                  className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
+                  style={{
+                    fontFamily: 'SF UI Display, sans-serif',
+                    textDecorationSkipInk: 'none',
+                    textUnderlinePosition: 'from-font',
+                    background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    color: 'transparent',
+                  }}
+                >
+                  Applications
+                </span>
+              </p>
+
+            </div>
+
+            <div className='mt-[42px] mb-[48px] grid grid-cols-2'>
+              {
+                finTech?.map((el) => (
+
+                  <div key={el.title}
+                    className="w-[322px] mt-[16px] bg-[#19191C] h-[148px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+                  >
+                    <div className='flex gap-[8px]'>
+                      <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-600 rounded-[10.62px]'>
+                        <Image
+                          src={el?.icon}
+                          width={23}
+                          height={23}
+                          alt='Network'
+                        />
+                      </div>
+                      <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                        <p
+                          className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                        >
+                          {el?.title}
+                        </p>
+                      </div>
+                    </div>
+                    <div className='w-[303px] h-[40px] mt-[12px]'>
+                      <p
+                        className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                      >
+                        {el?.description}
+                      </p>
+
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#19191C]">
+              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
+                Get a Quote</p>
+              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
+                <Image
+                  src={arrowRight}
+                  width={36}
+                  height={36}
+                  alt='ArrowRight'
+                />
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/*Cloud Solutions */}
+      <section className=' max-w-full flex items-center'>
+
+
+        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px]">
+          {/* First Div */}
+          <div className="w-[664px] h-full">
+            <div className='w-[664px] h-[76px] '>
+              <p
+                className="text-[46px] text-white font-semibold leading-[54.89px]"
+                style={{
+                  fontFamily: 'SF UI Display, sans-serif',
+                  textDecorationSkipInk: 'none',
+                  textUnderlinePosition: 'from-font',
+                }}
+              >
+                Cloud {" "}
+                <span
+                  className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
+                  style={{
+                    fontFamily: 'SF UI Display, sans-serif',
+                    textDecorationSkipInk: 'none',
+                    textUnderlinePosition: 'from-font',
+                    background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    color: 'transparent',
+                  }}
+                >
+                  Solutions
+                </span>
+              </p>
+
+            </div>
+
+            <div className='mt-[42px] mb-[48px] grid grid-cols-2'>
+              {
+                cloudData?.map((el) => (
+
+                  <div key={el.title}
+                    className="w-[322px] mt-[16px] bg-[#19191C] h-[148px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+                  >
+                    <div className='flex gap-[8px]'>
+                      <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-600 rounded-[10.62px]'>
+                        <Image
+                          src={el?.icon}
+                          width={23}
+                          height={23}
+                          alt='Network'
+                        />
+                      </div>
+                      <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                        <p
+                          className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
+
+                        >
+                          {el?.title}
+                        </p>
+                      </div>
+                    </div>
+                    <div className='w-[303px] h-[40px] mt-[12px]'>
+                      <p
+                        className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
+
+                      >
+                        {el?.description}
+                      </p>
+
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
+                Get a Quote</p>
+              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
+                <Image
+                  src={arrowRight}
+                  width={36}
+                  height={36}
+                  alt='ArrowRight'
+                />
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+          {/* Second Div */}
+          <div className="w-[438px] h-full">
+            <div className='w-[438px] h-[547px] mt-[48px]'>
+              <Image
+                src={Container}
+                width={438}
+                height={547}
+                alt='Container'
+
+              />
+            </div>        </div>
+
+        </div>
+      </section>
+      <div className='max-w-[1440px] mx-auto h-[796px]'>
+          <TabComponent/>
+
+      </div>
+  
+
+
+    </div>
   )
 }
 
-export default DesktopUi;
+export default DesktopUi
