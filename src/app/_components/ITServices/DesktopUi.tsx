@@ -346,7 +346,7 @@ function DesktopUi() {
       <section className='bg-white w-full flex items-center'>
 
 
-        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
+        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px] gap-[28px]">
           {/* First Div */}
           <div className="w-[664px] h-full">
             <div className='w-[664px] h-[76px] '>
@@ -463,7 +463,7 @@ function DesktopUi() {
       <section className=' max-w-full flex items-center'>
 
 
-        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px]">
+        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px] gap-[28px]">
           {/* First Div */}
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
@@ -563,7 +563,7 @@ function DesktopUi() {
       <section className=' max-w-full flex items-center'>
 
 
-        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px]">
+        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px] gap-[28px]">
           {/* First Div */}
           <div className="w-[664px] h-full">
             <div className='w-[664px] h-[76px] '>
@@ -670,7 +670,7 @@ function DesktopUi() {
       <section className='bg-white w-full flex items-center'>
 
 
-        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
+        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px] gap-[28px]">
           {/* First Div */}
           <div className="w-[664px] h-full">
             <div className='w-[664px] h-[76px] '>
@@ -773,7 +773,7 @@ function DesktopUi() {
       <section className='bg-white w-full flex items-center'>
 
 
-        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
+        <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px] gap-[28px]">
           {/* First Div */}
 
           <div className="w-[438px] h-full">
@@ -880,7 +880,7 @@ function DesktopUi() {
       <section className=' max-w-full flex items-center'>
 
 
-        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px]">
+        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px] gap-[28px]">
           {/* First Div */}
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
@@ -980,7 +980,7 @@ function DesktopUi() {
       <section className=' max-w-full flex items-center'>
 
 
-        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px]">
+        <div className="w-[1152px] h-full flex items-center mx-auto py-[70px] gap-[28px]">
           {/* First Div */}
           <div className="w-[664px] h-full">
             <div className='w-[664px] h-[76px] '>
