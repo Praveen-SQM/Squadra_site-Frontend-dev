@@ -1213,7 +1213,7 @@ function DesktopUi() {
         <div className='w-full'>
 
        
-      <div className='min-w-[1440px] mx-auto h-[796px] bg-[#FAFAFA] pt-[100px]'>
+      <div className='min-w-[1440px] mx-auto h-[830px] bg-[#FAFAFA] pt-[100px]'>
         <div className='w-full h-[120px] flex flex-col  items-center justify-center text-center mb-[70px]'>
           <div className='w-[664px] h-[76px] '>
             <p
