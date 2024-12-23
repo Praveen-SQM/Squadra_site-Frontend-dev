@@ -2,10 +2,10 @@
 import React from 'react'
 import { useState, useRef, useEffect } from 'react';
 import heroImage from '@/utilities/images/desktop-hero-image.svg'
-import "./styles/DesktopUI.css"
+import "./styles/TabletUI.css"
 import Image from 'next/image';
 import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, logos, saasData, webAndMobDev } from './MobileUi';
-import starSvg from '@/utilities/images/star.svg'
+import starSvg from '@/utilities/images/star.svg' 
 import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import SaasMain from '@/utilities/images/Saas-main.svg'
 import Container from '@/utilities/images/Container.svg'
@@ -101,7 +101,7 @@ function TabUi() {
       {/*  add code here*/}
 
       <div className='mb-[42px] flex flex-col items-center justify-center'>
-        <div className="scrolling-container">
+        <div className="scrolling-container-tablet">
           <div className="scrolling-content">
             {logos?.map((logo, index) => (
               <div key={index} className="inline-block [176.4px] h-[58.8px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">

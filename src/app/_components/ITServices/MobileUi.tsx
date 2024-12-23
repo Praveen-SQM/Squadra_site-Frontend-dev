@@ -61,10 +61,10 @@ import cloudsecurity from '@/utilities/images/cloudsecurity.svg';
 
 import whyChooseUsImage from '@/utilities/images/why-choose-us.svg'
 import dottedLine from '@/utilities/images/dotted-line.svg'
-import reactImage from '@/utilities/images/react.svg'
 import heroImage from '@/utilities/images/hero-image.svg'
 import ContactUsForm from './components/ContactUsForm';
-
+import FintechImage from '@/utilities/images/Fintech.webp'
+import { analyticsTools, backendTools, devopsTools, frontendTools, mobileTools } from './Tabs';
 
 export const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
@@ -351,21 +351,6 @@ function MobileUi() {
             {logos?.map((logo, index) => (
               <div key={index} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
                 <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0} className='w-[82.24px] h-[18.04px]' />
-              </div>
-            ))}
-            {logos?.map((logo, index) => (
-              <div key={`duplicate-${index}`} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
-                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0} className='w-[82.24px] h-[18.04px]' />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="scrolling-container">
-          <div className="scrolling-content">
-            {logos?.map((logo, index) => (
-              <div key={index} className="inline-block w-[92px] h-[52px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
-                <Image src={logo?.url?.src} alt={logo?.name} width={0} height={0}  className='w-[82.24px] h-[18.04px]' />
               </div>
             ))}
             {logos?.map((logo, index) => (
@@ -912,7 +897,7 @@ Development */}
             height={427}
             alt='SaaS'
           /> */}
-           <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="342" height="400" controls className='rounded-[24px]'></video>
+           <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="342" height="400" className='rounded-[24px]'></video>
         </div>
         <div className='mt-[44px] mb-[48px]'>
           {
@@ -1241,29 +1226,16 @@ IT Services */}
               </AccordionTrigger>
               <AccordionContent className="bg-[#FAFAFA]">
                 <div className="grid grid-cols-2 gap-2 mt-2">
-                  {[
-                    { id: 1, image: reactImage, title: "JavaScript" },
-                    { id: 2, image: reactImage, title: "React" },
-                    { id: 3, image: reactImage, title: "Angular" },
-                    { id: 4, image: reactImage, title: "Vue.js" },
-                    { id: 5, image: reactImage, title: "Svelte" },
-                    { id: 6, image: reactImage, title: "Next.js" },
-                    { id: 7, image: reactImage, title: "Nuxt.js" },
-                    { id: 8, image: reactImage, title: "Preact" },
-                    { id: 9, image: reactImage, title: "Solid.js" },
-                    { id: 10, image: reactImage, title: "Gatsby" },
-                  ].map((item) => (
-                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                  {
+                    backendTools.map((item) => (
+                    <div key={item.name} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
                       <AccordionContent className="px-4 flex flex-col items-center justify-center">
                         <Image
-                          src={item.image}
-                          width={80}
-                          height={80}
-                          alt={item.title.toLowerCase()}
+                          src={item?.logo}
+                          width={171}
+                          height={120}
+                          alt={item?.name.toLowerCase()}
                         />
-                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
-                          {item.title}
-                        </p>
                       </AccordionContent>
                     </div>
                   ))}
@@ -1278,29 +1250,15 @@ IT Services */}
               </AccordionTrigger>
               <AccordionContent className="bg-[#FAFAFA]">
                 <div className="grid grid-cols-2 gap-2 mt-2">
-                  {[
-                    { id: 1, image: reactImage, title: "JavaScript" },
-                    { id: 2, image: reactImage, title: "React" },
-                    { id: 3, image: reactImage, title: "Angular" },
-                    { id: 4, image: reactImage, title: "Vue.js" },
-                    { id: 5, image: reactImage, title: "Svelte" },
-                    { id: 6, image: reactImage, title: "Next.js" },
-                    { id: 7, image: reactImage, title: "Nuxt.js" },
-                    { id: 8, image: reactImage, title: "Preact" },
-                    { id: 9, image: reactImage, title: "Solid.js" },
-                    { id: 10, image: reactImage, title: "Gatsby" },
-                  ].map((item) => (
-                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                  {frontendTools?.map((item) => (
+                    <div key={item.name} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
                       <AccordionContent className="px-4 flex flex-col items-center justify-center">
                         <Image
-                          src={item.image}
-                          width={80}
-                          height={80}
-                          alt={item.title.toLowerCase()}
+                          src={item.logo}
+                          width={171}
+                          height={120}
+                          alt={item.name.toLowerCase()}
                         />
-                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
-                          {item.title}
-                        </p>
                       </AccordionContent>
                     </div>
                   ))}
@@ -1314,29 +1272,15 @@ IT Services */}
               </AccordionTrigger>
               <AccordionContent className="bg-[#FAFAFA]">
                 <div className="grid grid-cols-2 gap-2 mt-2">
-                  {[
-                    { id: 1, image: reactImage, title: "JavaScript" },
-                    { id: 2, image: reactImage, title: "React" },
-                    { id: 3, image: reactImage, title: "Angular" },
-                    { id: 4, image: reactImage, title: "Vue.js" },
-                    { id: 5, image: reactImage, title: "Svelte" },
-                    { id: 6, image: reactImage, title: "Next.js" },
-                    { id: 7, image: reactImage, title: "Nuxt.js" },
-                    { id: 8, image: reactImage, title: "Preact" },
-                    { id: 9, image: reactImage, title: "Solid.js" },
-                    { id: 10, image: reactImage, title: "Gatsby" },
-                  ].map((item) => (
-                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                  {mobileTools?.map((item) => (
+                    <div key={item.name} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
                       <AccordionContent className="px-4 flex flex-col items-center justify-center">
                         <Image
-                          src={item.image}
-                          width={80}
-                          height={80}
-                          alt={item.title.toLowerCase()}
+                          src={item.logo}
+                          width={171}
+                          height={120}
+                          alt={item.name.toLowerCase()}
                         />
-                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
-                          {item.title}
-                        </p>
                       </AccordionContent>
                     </div>
                   ))}
@@ -1350,29 +1294,15 @@ IT Services */}
               </AccordionTrigger>
               <AccordionContent className="bg-[#FAFAFA]">
                 <div className="grid grid-cols-2 gap-2 mt-2">
-                  {[
-                    { id: 1, image: reactImage, title: "JavaScript" },
-                    { id: 2, image: reactImage, title: "React" },
-                    { id: 3, image: reactImage, title: "Angular" },
-                    { id: 4, image: reactImage, title: "Vue.js" },
-                    { id: 5, image: reactImage, title: "Svelte" },
-                    { id: 6, image: reactImage, title: "Next.js" },
-                    { id: 7, image: reactImage, title: "Nuxt.js" },
-                    { id: 8, image: reactImage, title: "Preact" },
-                    { id: 9, image: reactImage, title: "Solid.js" },
-                    { id: 10, image: reactImage, title: "Gatsby" },
-                  ].map((item) => (
-                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                  {devopsTools?.map((item) => (
+                    <div key={item.name} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
                       <AccordionContent className="px-4 flex flex-col items-center justify-center">
                         <Image
-                          src={item.image}
-                          width={80}
-                          height={80}
-                          alt={item.title.toLowerCase()}
+                          src={item.logo}
+                          width={171}
+                          height={120}
+                          alt={item.name.toLowerCase()}
                         />
-                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
-                          {item.title}
-                        </p>
                       </AccordionContent>
                     </div>
                   ))}
@@ -1386,29 +1316,15 @@ IT Services */}
               </AccordionTrigger>
               <AccordionContent className="bg-[#FAFAFA]">
                 <div className="grid grid-cols-2 gap-2 mt-2">
-                  {[
-                    { id: 1, image: reactImage, title: "JavaScript" },
-                    { id: 2, image: reactImage, title: "React" },
-                    { id: 3, image: reactImage, title: "Angular" },
-                    { id: 4, image: reactImage, title: "Vue.js" },
-                    { id: 5, image: reactImage, title: "Svelte" },
-                    { id: 6, image: reactImage, title: "Next.js" },
-                    { id: 7, image: reactImage, title: "Nuxt.js" },
-                    { id: 8, image: reactImage, title: "Preact" },
-                    { id: 9, image: reactImage, title: "Solid.js" },
-                    { id: 10, image: reactImage, title: "Gatsby" },
-                  ].map((item) => (
-                    <div key={item.id} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                  {analyticsTools?.map((item) => (
+                    <div key={item.name} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
                       <AccordionContent className="px-4 flex flex-col items-center justify-center">
                         <Image
-                          src={item.image}
-                          width={80}
-                          height={80}
-                          alt={item.title.toLowerCase()}
+                          src={item.logo}
+                          width={171}
+                          height={120}
+                          alt={item.name.toLowerCase()}
                         />
-                        <p className="text-[#888888] mt-[8px] text-center text-[14px] font-medium leading-[16.71px]">
-                          {item.title}
-                        </p>
                       </AccordionContent>
                     </div>
                   ))}
