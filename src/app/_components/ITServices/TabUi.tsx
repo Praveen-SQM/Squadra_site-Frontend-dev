@@ -11,7 +11,6 @@ import Container from '@/utilities/images/Container.svg'
 import ITImage from '@/utilities/images/ITImage.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
 import finTechMain from '@/utilities/images/fintechMain.svg';
-import cloud from '@/utilities/images/cloud.svg';
 import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
 import TabComponent from './TabletTab';
 import ContactUsForm from './components/TabletContactUsForm';
