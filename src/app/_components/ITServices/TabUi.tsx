@@ -848,21 +848,30 @@ IT Services */}
           <div className='flex flex-col gap-[12px]'>
             <div className='w-[351px] h-[268.5px] bg-gray-200'>
               <Image
-                src={cloud}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/2.1.png"}
                 alt='Tech Team'
+                width={351}
+                height={268.5}
+                className='object-cover h-[268.5px] w-[351px]'
               />
             </div>
             <div className='flex items-center gap-[12px]'>
               <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
                 <Image
-                  src={cloud}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5555.png"}
                   alt='Tech Team'
+                  width={169.5}
+                height={268.5}
+                className='object-cover h-[268.5px] w-[169.5px]'
                 />
               </div>
               <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
                 <Image
-                  src={cloud}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8317+2.jpg"}
                   alt='Tech Team'
+                  width={169.5}
+                height={268.5}
+                className='object-cover h-[268.5px] w-[169.5px]'
                 />
               </div>
             </div>
@@ -872,21 +881,30 @@ IT Services */}
             <div className='flex items-center gap-[12px]'>
               <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
                 <Image
-                  src={cloud}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8330.jpg"}
                   alt='Tech Team'
+                  width={169.5}
+                height={268.5}
+                className='object-cover h-[268.5px] w-[169.5px]'
                 />
               </div>
               <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
                 <Image
-                  src={cloud}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg"}
                   alt='Tech Team'
+                  width={169.5}
+                height={268.5}
+                className='object-cover h-[268.5px] w-[169.5px]'
                 />
               </div>
             </div>
             <div className='w-[351px] h-[268.5px] bg-gray-200'>
               <Image
-                src={cloud}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                 alt='Tech Team'
+                width={351}
+                height={268.5}
+                className='object-cover h-[268.5px] w-[351px]'
               />
             </div>
 
