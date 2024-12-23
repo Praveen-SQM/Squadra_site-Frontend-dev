@@ -17,6 +17,9 @@ import ContactUsForm from './components/DesktopContactUsForm'
 import ITImage from '@/utilities/images/ITImage.svg'
 import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
+import aiMain from '@/utilities/images/aiMain.svg'
+import finTechMain from '@/utilities/images/fintechMain.svg';
+import cloudMain from '@/utilities/images/cloudmain.svg';
 
 function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -753,12 +756,12 @@ function DesktopUi() {
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
               <Image
-            src={HealthCareMain}
-            width={438}
-            height={547}
-            alt='HealthCareMain'
+                src={HealthCareMain}
+                width={438}
+                height={547}
+                alt='HealthCareMain'
 
-          />
+              />
             </div>
           </div>
 
@@ -776,11 +779,10 @@ function DesktopUi() {
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
               <Image
-                src={Container}
+                src={aiMain}
                 width={438}
                 height={547}
-                alt='Container'
-
+                alt='SaaS'
               />
             </div>
 
@@ -883,11 +885,10 @@ function DesktopUi() {
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
               <Image
-                src={Container}
+                src={finTechMain}
                 width={438}
                 height={547}
-                alt='Container'
-
+                alt='It SErvices'
               />
             </div>        </div>
           {/* Second Div */}
@@ -1069,12 +1070,11 @@ function DesktopUi() {
           {/* Second Div */}
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
-              <Image
-                src={Container}
-                width={438}
-                height={547}
-                alt='Container'
-
+              <Image className='object-cover'
+                src={cloudMain} unoptimized={true}
+                width={438} quality={80}
+                height={547} priority
+                alt='webandMobileMain'
               />
             </div>        </div>
 
