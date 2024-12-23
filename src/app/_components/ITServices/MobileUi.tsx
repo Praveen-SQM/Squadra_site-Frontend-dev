@@ -90,7 +90,7 @@ export const customSoftwareDevData = [
   },
 ]
 
-const saasData = [
+export const saasData = [
   {
     icon: DB, title: "Subscription Management Solutions", description: "Streamline subscriptions with efficient tools for tracking, billing, and renewals."
   },
