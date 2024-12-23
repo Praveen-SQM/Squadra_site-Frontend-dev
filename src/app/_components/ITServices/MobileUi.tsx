@@ -60,7 +60,6 @@ import whyChooseUsImage from '@/utilities/images/why-choose-us.svg'
 import dottedLine from '@/utilities/images/dotted-line.svg'
 import heroImage from '@/utilities/images/hero-image.svg'
 import ContactUsForm from './components/ContactUsForm';
-import FintechImage from '@/utilities/images/Fintech.webp'
 import { analyticsTools, backendTools, devopsTools, frontendTools, mobileTools } from './Tabs';
 
 export const data = [

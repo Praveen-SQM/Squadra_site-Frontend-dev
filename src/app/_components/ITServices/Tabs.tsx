@@ -1,7 +1,6 @@
 'use client'
 import Image from "next/image";
 import { useState } from "react";
-import nodejsImage from "@/utilities/images/nodejs-image.svg"
 import expressjsImage from "@/utilities/images/express-image (2).svg"
 import pythonImage from "@/utilities/images/python-image (2).svg"
 import graphqlImage from "@/utilities/images/graphql-image (2).svg"
