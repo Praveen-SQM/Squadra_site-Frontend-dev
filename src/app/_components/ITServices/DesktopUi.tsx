@@ -12,8 +12,11 @@ import heroImage from '@/utilities/images/desktop-hero-image.svg'
 import TabComponent from './Tabs'
 import cloud from '@/utilities/images/cloud.svg';
 import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
+import SaasMain from '@/utilities/images/Saas-main.svg'
 import ContactUsForm from './components/DesktopContactUsForm'
-
+import ITImage from '@/utilities/images/ITImage.svg'
+import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
+import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
 
 function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -85,7 +88,7 @@ function DesktopUi() {
           </div>
         </div>
 
-      </div>      
+      </div>
 
       {/* Carousel */}
       {/*  add code here*/}
@@ -106,7 +109,7 @@ function DesktopUi() {
           </div>
         </div>
 
-     
+
       </div>
 
 
@@ -323,14 +326,14 @@ function DesktopUi() {
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
                 <Image
-                src={arrowRight}
-                width={36}
-                height={36}
-                alt='ArrowRight'
+                  src={arrowRight}
+                  width={36}
+                  height={36}
+                  alt='ArrowRight'
                 />
               </div>
-              
-                          </div>
+
+            </div>
 
           </div>
         </div>
@@ -438,24 +441,23 @@ function DesktopUi() {
 
           {/* Second Div */}
           <div className="w-[438px] h-full">
-            <div className='w-[438px] h-[547px] mt-[48px]'>
+            <div className='w-[540px] h-[388px] mt-[48px]'>
               <Image
-                src={Container}
-                width={438}
-                height={547}
-                alt='Container'
-
+                src={SaasMain}
+                width={540}
+                height={388}
+                alt='SaaS'
               />
             </div>        </div>
-          
-         
+
+
         </div>
       </section>
 
 
 
       {/* End to End It Services */}
-       <section className=' max-w-full flex items-center'>
+      <section className=' max-w-full flex items-center'>
 
 
         <div className="w-[1152px] h-full flex items-center mx-auto py-[70px]">
@@ -463,11 +465,10 @@ function DesktopUi() {
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
               <Image
-                src={Container}
+                src={ITImage}
                 width={438}
                 height={547}
-                alt='Container'
-
+                alt='It SErvices'
               />
             </div>        </div>
           {/* Second Div */}
@@ -542,14 +543,14 @@ function DesktopUi() {
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
                 <Image
-                src={arrowRight}
-                width={36}
-                height={36}
-                alt='ArrowRight'
+                  src={arrowRight}
+                  width={36}
+                  height={36}
+                  alt='ArrowRight'
                 />
               </div>
-              
-                          </div>
+
+            </div>
 
           </div>
         </div>
@@ -587,7 +588,7 @@ function DesktopUi() {
                   Development
                 </span>
               </p>
-          
+
             </div>
 
             <div className='mt-[42px] mb-[48px] grid grid-cols-2'>
@@ -650,11 +651,10 @@ function DesktopUi() {
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
               <Image
-                src={Container}
+                src={webandMobileMain}
                 width={438}
                 height={547}
-                alt='Container'
-
+                alt='webandMobileMain'
               />
             </div>        </div>
 
@@ -753,16 +753,16 @@ function DesktopUi() {
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
               <Image
-                src={Container}
-                width={438}
-                height={547}
-                alt='Container'
+            src={HealthCareMain}
+            width={438}
+            height={547}
+            alt='HealthCareMain'
 
-              />
-            </div>   
-                 </div>
-       
-          
+          />
+            </div>
+          </div>
+
+
         </div>
       </section>
 
@@ -813,7 +813,7 @@ function DesktopUi() {
                   Transformation
                 </span>
               </p>
-           
+
             </div>
 
             <div className='mt-[42px] mb-[48px] grid grid-cols-2'>
@@ -1080,7 +1080,7 @@ function DesktopUi() {
 
         </div>
       </section>
-   
+
       {/* Squadra Tech Team */}
       <div className='w-full py-[72px] px-[124px] flex flex-col gap-[62px] bg-[#FAFAFA] items-center'>
         <div className='flex flex-col gap-[12px] items-center justify-center w-[668px] h-[132px]'>
