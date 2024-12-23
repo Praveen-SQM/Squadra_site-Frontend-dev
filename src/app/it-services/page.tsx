@@ -6,13 +6,13 @@ import TabUi from '@/app/_components/ITServices/TabUi';
 function ITServices() {
   return (
     <div className='min-h-screen max-w-full bg-black mx-auto'>
-      <div className="hidden lg:block w-screen min-w-[1440px] mx-auto">
+      <div className="hidden lg:block min-w-fit max-w-[1440px] mx-auto">
         <DesktopUi />
       </div>
       <div className="hidden md:block lg:hidden">
         <TabUi />
       </div>
-         <div className="block md:hidden min-w-fit max-w-[410px] mx-auto">
+         <div className="block sm:hidden min-w-fit max-w-[410px] mx-auto">
         <MobileUi /> 
       </div>
     </div>

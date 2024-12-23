@@ -117,7 +117,7 @@ function DesktopUi() {
 
 
       {/* What we Do */}
-      <div className="w-[1130.32px] h-fit mb-[50px]">
+      <div className="w-[1130.32px] h-fit mb-[50px] mt-[140px]">
         <div className='flex flex-col items-center w-[672px] mx-auto'>
 
           <div className="w-[140.88px] h-[44px] flex justify-center items-center rounded-[100px] bg-[#131315]">
@@ -243,6 +243,45 @@ function DesktopUi() {
           </div>
         </div>
 
+      </div>
+      <div className='w-[727px] h-[153px] mt-[42px] mb-[72px] flex flex-col items-center justify-center'>
+        <p
+          className="text-left text-[20px] font-normal leading-[24px] text-[#888888] uppercase"
+
+        >
+          Delivering excellence.
+        </p>
+        <div className='w-[727px] h-[113px] mt-[8px]'>
+
+          <p
+            className="text-center text-[46px] font-medium leading-[54.64px] text-white"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            Squadra delivers cutting-edge solutions for{" "}
+            <span
+              className="text-center font-medium"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+                background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                WebkitBackgroundClip: 'text', // For Safari
+                backgroundClip: 'text',
+                color: 'transparent',
+              }}
+            >
+              Business Success
+            </span>
+
+
+          </p>
+
+
+        </div>
       </div>
 
       {/* Custom Software Devlopment */}
