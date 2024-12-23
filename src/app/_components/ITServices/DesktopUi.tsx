@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import starSvg from '@/utilities/images/star.svg'
-import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, logos, webAndMobDev } from './MobileUi'
+import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, webAndMobDev } from './MobileUi'
 import frame from '@/utilities/images/mobile-frame.svg'
 import Container from '@/utilities/images/Container.svg'
 import arrowRight from '@/utilities/images/arrow-right.svg'
@@ -94,7 +94,7 @@ function DesktopUi() {
       {/* Carousel */}
       {/*  add code here*/}
 
-      <div className='mb-[42px] flex flex-col items-center justify-center'>
+      {/* <div className='mb-[42px] flex flex-col items-center justify-center'>
         <div className="scrolling-container-desktop">
           <div className="scrolling-content">
             {logos?.map((logo, index) => (
@@ -111,7 +111,7 @@ function DesktopUi() {
         </div>
 
 
-      </div>
+      </div> */}
 
 
       {/* What we Do */}

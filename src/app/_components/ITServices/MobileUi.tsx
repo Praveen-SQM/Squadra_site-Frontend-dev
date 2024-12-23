@@ -341,7 +341,7 @@ function MobileUi() {
 
       {/* Carousel */}
 
-      <div className='mb-[42px] flex flex-col items-center justify-center'>
+      {/* <div className='mb-[42px] flex flex-col items-center justify-center'>
         <div className="scrolling-container">
           <div className="scrolling-content">
             {logos?.map((logo, index) => (
@@ -356,7 +356,7 @@ function MobileUi() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
 
       {/* Our Benefits */}

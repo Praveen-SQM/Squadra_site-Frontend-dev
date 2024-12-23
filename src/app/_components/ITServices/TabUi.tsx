@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import heroImage from '@/utilities/images/desktop-hero-image.svg'
 import "./styles/TabletUI.css"
 import Image from 'next/image';
-import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, logos, saasData, webAndMobDev } from './MobileUi';
+import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, saasData, webAndMobDev } from './MobileUi';
 import starSvg from '@/utilities/images/star.svg' 
 import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Container from '@/utilities/images/Container.svg'
@@ -95,7 +95,7 @@ function TabUi() {
       {/* Carousel */}
       {/*  add code here*/}
 
-      <div className='mb-[42px] flex flex-col items-center justify-center'>
+      {/* <div className='mb-[42px] flex flex-col items-center justify-center'>
         <div className="scrolling-container-tablet">
           <div className="scrolling-content">
             {logos?.map((logo, index) => (
@@ -112,7 +112,7 @@ function TabUi() {
         </div>
 
 
-      </div>
+      </div> */}
 
       {/* Our Benefits */}
       <div className="w-[140.88px] h-[44px] flex justify-center items-center rounded-[100px] bg-[#131315]">
