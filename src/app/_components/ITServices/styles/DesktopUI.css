@@ -9,7 +9,7 @@
     animation: scroll 10s linear infinite;
   } */
 
-  .scrolling-container {
+  .scrolling-container-desktop {
     overflow: hidden;
     white-space: nowrap;
     width: 100%; /* Ensures container takes the full width */
