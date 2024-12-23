@@ -80,7 +80,7 @@ export default function ContactUsForm() {
     };
 
     return (
-        <div className="w-[1440px] h-[900px] bg-[#06135B] flex pt-[60px] pl-[120px] pr-[124px] justify-between">
+        <div className="w-full h-[900px] bg-[#06135B] flex pt-[60px] pl-[120px] pr-[124px] justify-between">
             {/* Left Section */}
             <div className="flex flex-col">
                 <div className="flex flex-col gap-[12px]">

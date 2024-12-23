@@ -240,7 +240,7 @@ function DesktopUi() {
       </div>
 
       {/* Custom Software Devlopment */}
-      <section className='bg-white max-w-full flex items-center'>
+      <section className='bg-white w-full flex items-center'>
 
 
         <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
@@ -337,7 +337,7 @@ function DesktopUi() {
       </section>
 
       {/* Saas Development */}
-      <section className='bg-white max-w-full flex items-center'>
+      <section className='bg-white w-full flex items-center'>
 
 
         <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
@@ -664,7 +664,7 @@ function DesktopUi() {
 
 
       {/* Healthcare Applications */}
-      <section className='bg-white max-w-full flex items-center'>
+      <section className='bg-white w-full flex items-center'>
 
 
         <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
@@ -767,7 +767,7 @@ function DesktopUi() {
       </section>
 
       {/* Automation & Digital Transformation */}
-      <section className='bg-white max-w-full flex items-center'>
+      <section className='bg-white w-full flex items-center'>
 
 
         <div className="w-[1152px] h-full flex items-center mx-auto bg-white py-[70px]">
@@ -1142,7 +1142,10 @@ function DesktopUi() {
 
 
       {/* Why Choose us */}
-      <div className='bg-white w-[1440px] h-[762px] flex items-center justify-center flex-col'>
+      <div className='w-full flex items-center'>
+
+     
+      <div className='bg-white min-w-[1440px] mx-auto h-[762px] flex items-center justify-center flex-col'>
 
 
         <div className='flex flex-col gap-[12px] w-[662px] h-[128px] mb-[120px] '>
@@ -1165,8 +1168,13 @@ function DesktopUi() {
             alt='Network'
           />
         </div>
-      </div>
-      <div className='max-w-[1440px] mx-auto h-[796px] bg-[#FAFAFA] pt-[100px]'>
+        </div> </div>
+
+        {/* technologies we use */}
+        <div className='w-full'>
+
+       
+      <div className='min-w-[1440px] mx-auto h-[796px] bg-[#FAFAFA] pt-[100px]'>
         <div className='w-full h-[120px] flex flex-col  items-center justify-center text-center mb-[70px]'>
           <div className='w-[664px] h-[76px] '>
             <p
@@ -1194,7 +1202,7 @@ function DesktopUi() {
         </div>
         <TabComponent />
 
-      </div>
+        </div> </div>
       {/* Contact us */}
       <ContactUsForm />
     </div>
