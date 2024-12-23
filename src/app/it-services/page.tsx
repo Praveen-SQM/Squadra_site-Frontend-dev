@@ -9,7 +9,7 @@ function ITServices() {
       <div className="hidden lg:block min-w-fit max-w-[1440px] mx-auto">
         <DesktopUi />
       </div>
-      <div className="hidden md:block lg:hidden">
+      <div className="hidden sm:block lg:hidden">
         <TabUi />
       </div>
          <div className="block sm:hidden min-w-fit max-w-[410px] mx-auto">
