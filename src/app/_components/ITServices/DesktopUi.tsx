@@ -97,7 +97,7 @@ function DesktopUi() {
       {/*  add code here*/}
 
       <div className='mb-[42px] flex flex-col items-center justify-center'>
-        <div className="scrolling-container">
+        <div className="scrolling-container-desktop">
           <div className="scrolling-content">
             {logos?.map((logo, index) => (
               <div key={index} className="inline-block [176.4px] h-[58.8px] rounded-[5.31px] py-[16.98px] px-[5.31px] flex items-center justify-center border border-gray-900">
