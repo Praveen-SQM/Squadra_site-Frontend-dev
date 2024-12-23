@@ -7,14 +7,10 @@ import Image from 'next/image';
 import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, logos, saasData, webAndMobDev } from './MobileUi';
 import starSvg from '@/utilities/images/star.svg'
 import BenefitFrame from '@/utilities/images/benefitFrame.svg'
-import SaasMain from '@/utilities/images/Saas-main.svg'
 import Container from '@/utilities/images/Container.svg'
 import ITImage from '@/utilities/images/ITImage.svg'
-import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
-import aiMain from '@/utilities/images/aiMain.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
 import finTechMain from '@/utilities/images/fintechMain.svg';
-import cloudMain from '@/utilities/images/cloudmain.svg';
 import cloud from '@/utilities/images/cloud.svg';
 import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
 import TabComponent from './TabletTab';

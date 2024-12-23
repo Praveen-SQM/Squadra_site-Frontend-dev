@@ -10,16 +10,12 @@ import "./styles/DesktopUI.css"
 import { useState, useRef, useEffect } from 'react';
 import heroImage from '@/utilities/images/desktop-hero-image.svg'
 import TabComponent from './Tabs'
-import cloud from '@/utilities/images/cloud.svg';
 import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
-import SaasMain from '@/utilities/images/Saas-main.svg'
 import ContactUsForm from './components/DesktopContactUsForm'
 import ITImage from '@/utilities/images/ITImage.svg'
 import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
-import aiMain from '@/utilities/images/aiMain.svg'
 import finTechMain from '@/utilities/images/fintechMain.svg';
-import cloudMain from '@/utilities/images/cloudmain.svg';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 
 function DesktopUi() {

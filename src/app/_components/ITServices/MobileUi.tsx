@@ -19,7 +19,6 @@ import Connection from '@/utilities/images/Connection.svg'
 import UserWorkFlow from '@/utilities/images/User workflow.svg'
 import codeSquare from '@/utilities/images/Code Square.svg'
 import Container from '@/utilities/images/Container.svg'
-import SaasMain from '@/utilities/images/Saas-main.svg'
 import netWorkBlack from '@/utilities/images/NetworkBlack.svg'
 import HandShake from '@/utilities/images/Handshake.svg'
 import Archive from '@/utilities/images/Archive.svg'
@@ -43,7 +42,6 @@ import wellness from '@/utilities/images/wellness.svg';
 import patientManagement from '@/utilities/images/patientmanagement.svg';
 import healthRecords from '@/utilities/images/healthrecords.svg';
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
-import aiMain from '@/utilities/images/aiMain.svg'
 import aiDrivenProcess from '@/utilities/images/sparkles.svg';
 import workflow from '@/utilities/images/workflow.svg';
 import digitaltransformation from '@/utilities/images/digitaltransformation.svg';
@@ -53,7 +51,6 @@ import financial from '@/utilities/images/financial.svg';
 import wallet from '@/utilities/images/wallet.svg';
 import invoice from '@/utilities/images/invoice.svg';
 import finTechMain from '@/utilities/images/fintechMain.svg';
-import cloudMain from '@/utilities/images/cloudmain.svg';
 import cloudsolution from '@/utilities/images/cloudsolution.svg';
 import architecturedesign from '@/utilities/images/architecturedesign.svg';
 import clouddev from '@/utilities/images/clouddev.svg';
