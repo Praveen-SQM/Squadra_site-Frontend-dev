@@ -1166,7 +1166,32 @@ function DesktopUi() {
           />
         </div>
       </div>
-      <div className='max-w-[1440px] mx-auto h-[796px]'>
+      <div className='max-w-[1440px] mx-auto h-[796px] bg-[#FAFAFA] pt-[100px]'>
+        <div className='w-full h-[120px] flex flex-col  items-center justify-center text-center mb-[70px]'>
+          <div className='w-[664px] h-[76px] '>
+            <p
+              className="text-[46px] text-[#222222] font-semibold leading-[54.89px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+              }}
+            >
+              Technologies {" "}
+              <span
+                className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
+                style={{
+                  fontFamily: 'SF UI Display, sans-serif',
+                  textDecorationSkipInk: 'none',
+                  textUnderlinePosition: 'from-font',
+                }}
+              >
+                we use
+              </span>
+            </p>
+            <p className="text-[16px] mt-[24px] font-normal leading-[19.09px] text-center text-[#4E4D4D]">              Discover the cutting-edge technologies we use to deliver innovative and impactful solutions, from modern frameworks to advanced cloud and machine learning tools</p>
+          </div>
+        </div>
         <TabComponent />
 
       </div>
