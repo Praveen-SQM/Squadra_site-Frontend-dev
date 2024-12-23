@@ -43,7 +43,7 @@ function DesktopUi() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  
+
   return (
     <div className="h-fit pt-16 flex flex-col  w-full  items-center bg-black">
       {/* Intro Section */}
@@ -248,7 +248,7 @@ function DesktopUi() {
 
       </div>
       <div className='w-[727px] h-[153px] mt-[42px] mb-[72px] flex flex-col items-center justify-center'>
-       
+
         <p
           className="text-left text-[20px] font-normal leading-[24px] text-[#888888] uppercase"
 
@@ -463,13 +463,16 @@ function DesktopUi() {
 
           {/* Second Div */}
           <div className="w-[438px] h-full">
-            <div className='w-[540px] h-[388px] mt-[48px]'>
-              <Image
+            <div className='w-[540px] h-[400px]'>
+              {/* <Image
                 src={SaasMain}
                 width={540}
                 height={388}
                 alt='SaaS'
-              />
+              /> */}
+              <video autoPlay loop width="400" height="250" className='rounded-[24px]'>
+                <source src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" type="video/mp4" />
+              </video>
             </div>        </div>
 
 
@@ -797,12 +800,13 @@ function DesktopUi() {
 
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
-              <Image
+              {/* <Image
                 src={aiMain}
                 width={438}
                 height={547}
                 alt='SaaS'
-              />
+              /> */}
+              <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="438" height="547" className='rounded-[24px]'></video>
             </div>
 
           </div>
@@ -1087,14 +1091,15 @@ function DesktopUi() {
 
 
           {/* Second Div */}
-          <div className="w-[438px] h-full">
-            <div className='w-[438px] h-[547px] mt-[48px]'>
-              <Image className='object-cover'
+          <div className="w-[438px] h-[538px]">
+            <div className='w-[300px] h-[400px]'>
+              {/* <Image className='object-cover'
                 src={cloudMain} unoptimized={true}
                 width={438} quality={80}
                 height={547} priority
                 alt='webandMobileMain'
-              />
+              /> */}
+               <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="438" height="300" className='rounded-[24px]'></video>
             </div>        </div>
 
         </div>
@@ -1114,21 +1119,30 @@ function DesktopUi() {
           <div className='flex flex-col gap-[24px]'>
             <div className='w-[584px] h-[263px] bg-gray-200'>
               <Image
-                src={cloud}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/2.1.png"}
                 alt='Tech Team'
+                width={584}
+                height={263}
+                className='object-cover h-[263px] w-[584px]'
               />
             </div>
             <div className='flex items-center gap-[24px]'>
               <div className='w-[280px] h-[262px] bg-gray-200'>
                 <Image
-                  src={cloud}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5555.png"}
                   alt='Tech Team'
+                  width={280}
+                height={262}
+                className='object-cover h-[262px] w-[280px]'
                 />
               </div>
               <div className='w-[280px] h-[262px] bg-gray-200'>
                 <Image
-                  src={cloud}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8317+2.jpg"}
                   alt='Tech Team'
+                  width={280}
+                height={262}
+                className='object-cover h-[262px] w-[280px]'
                 />
               </div>
             </div>
@@ -1138,21 +1152,30 @@ function DesktopUi() {
             <div className='flex items-center gap-[24px]'>
               <div className='w-[280px] h-[262px] bg-gray-200'>
                 <Image
-                  src={cloud}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8330.jpg"}
                   alt='Tech Team'
+                  width={280}
+                  height={262}
+                  className='object-cover h-[262px] w-[280px]'
                 />
               </div>
               <div className='w-[280px] h-[262px] bg-gray-200'>
                 <Image
-                  src={cloud}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg"}
                   alt='Tech Team'
+                  width={280}
+                  height={262}
+                  className='object-cover h-[262px] w-[280px]'
                 />
               </div>
             </div>
             <div className='w-[584px] h-[263px] bg-gray-200'>
               <Image
-                src={cloud}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                 alt='Tech Team'
+                width={584}
+                height={263}
+                className='object-cover h-[263px] w-[584px]'
               />
             </div>
           </div>
@@ -1163,63 +1186,63 @@ function DesktopUi() {
       {/* Why Choose us */}
       <div className='w-full flex items-center'>
 
-     
-      <div className='bg-white min-w-[1440px] mx-auto h-[762px] flex items-center justify-center flex-col'>
+
+        <div className='bg-white min-w-[1440px] mx-auto h-[762px] flex items-center justify-center flex-col'>
 
 
-        <div className='flex flex-col gap-[12px] w-[662px] h-[128px] mb-[120px] '>
-          <p className="font-sans text-[62px] font-semibold leading-[73.99px] text-center text-[#000000]">
-            Why Choose <span className="font-sans text-[62px] font-semibold leading-[73.99px] text-center text-[#FBAE17]">Us</span>
-          </p>
-          <div className="flex items-center justify-center h-full">
-            <p className='font-normal text-[16px] leading-[20.8px] text-[#000000] text-center'>
-              We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
+          <div className='flex flex-col gap-[12px] w-[662px] h-[128px] mb-[120px] '>
+            <p className="font-sans text-[62px] font-semibold leading-[73.99px] text-center text-[#000000]">
+              Why Choose <span className="font-sans text-[62px] font-semibold leading-[73.99px] text-center text-[#FBAE17]">Us</span>
             </p>
+            <div className="flex items-center justify-center h-full">
+              <p className='font-normal text-[16px] leading-[20.8px] text-[#000000] text-center'>
+                We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className='relative w-full flex items-center justify-center' style={{ height: '280px' }}>
-          <Image
-            src={whyChooseImage}
-            width={0}
-            height={0}
-            className='absolute z-10 top-0'
-            alt='Network'
-          />
-        </div>
+          <div className='relative w-full flex items-center justify-center' style={{ height: '280px' }}>
+            <Image
+              src={whyChooseImage}
+              width={0}
+              height={0}
+              className='absolute z-10 top-0'
+              alt='Network'
+            />
+          </div>
         </div> </div>
 
-        {/* technologies we use */}
-        <div className='w-full'>
+      {/* technologies we use */}
+      <div className='w-full'>
 
-       
-      <div className='min-w-[1440px] mx-auto h-[830px] bg-[#FAFAFA] pt-[100px]'>
-        <div className='w-full h-[120px] flex flex-col  items-center justify-center text-center mb-[70px]'>
-          <div className='w-[664px] h-[76px] '>
-            <p
-              className="text-[46px] text-[#222222] font-semibold leading-[54.89px]"
-              style={{
-                fontFamily: 'SF UI Display, sans-serif',
-                textDecorationSkipInk: 'none',
-                textUnderlinePosition: 'from-font',
-              }}
-            >
-              Technologies {" "}
-              <span
-                className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
+
+        <div className='min-w-[1440px] mx-auto h-[830px] bg-[#FAFAFA] pt-[100px]'>
+          <div className='w-full h-[120px] flex flex-col  items-center justify-center text-center mb-[70px]'>
+            <div className='w-[664px] h-[76px] '>
+              <p
+                className="text-[46px] text-[#222222] font-semibold leading-[54.89px]"
                 style={{
                   fontFamily: 'SF UI Display, sans-serif',
                   textDecorationSkipInk: 'none',
                   textUnderlinePosition: 'from-font',
                 }}
               >
-                we use
-              </span>
-            </p>
-            <p className="text-[16px] mt-[24px] font-normal leading-[19.09px] text-center text-[#4E4D4D]">              Discover the cutting-edge technologies we use to deliver innovative and impactful solutions, from modern frameworks to advanced cloud and machine learning tools</p>
+                Technologies {" "}
+                <span
+                  className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
+                  style={{
+                    fontFamily: 'SF UI Display, sans-serif',
+                    textDecorationSkipInk: 'none',
+                    textUnderlinePosition: 'from-font',
+                  }}
+                >
+                  we use
+                </span>
+              </p>
+              <p className="text-[16px] mt-[24px] font-normal leading-[19.09px] text-center text-[#4E4D4D]">              Discover the cutting-edge technologies we use to deliver innovative and impactful solutions, from modern frameworks to advanced cloud and machine learning tools</p>
+            </div>
           </div>
-        </div>
-        <TabComponent />
+          <TabComponent />
 
         </div> </div>
       {/* Contact us */}

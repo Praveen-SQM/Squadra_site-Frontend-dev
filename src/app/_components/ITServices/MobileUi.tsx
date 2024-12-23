@@ -611,13 +611,16 @@ function MobileUi() {
 
 
         </div>
-        <div className='w-[342px] h-[275px] mt-[44px]'>
-          <Image
+        <div className='w-[342px] h-[330px] mt-[44px]'>
+          {/* <Image
             src={SaasMain}
             width={342}
             height={275}
             alt='SaaS'
-          />
+          /> */}
+           <video autoPlay loop width="342" height="275" className='rounded-md'>
+           <source src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" type="video/mp4"/>
+           </video>
         </div>
         <div className='mt-[44px] mb-[48px]'>
           {
@@ -902,13 +905,14 @@ Development */}
 
 
         </div>
-        <div className='w-[342px] h-[427px] mt-[44px]'>
-          <Image
+        <div className='w-[342px] h-[400px] mt-[44px]'>
+          {/* <Image
             src={aiMain}
             width={342}
             height={427}
             alt='SaaS'
-          />
+          /> */}
+           <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="342" height="400" controls className='rounded-[24px]'></video>
         </div>
         <div className='mt-[44px] mb-[48px]'>
           {
@@ -1045,13 +1049,14 @@ IT Services */}
         </p>
 
       </div>
-      <div className='w-[342px] h-[427px] mt-[42px]'>
-        <Image className='object-cover'
-          src={cloudMain} unoptimized={true}
+      <div className='w-[342px] h-[600px] mt-[42px]'>
+        {/* <Image className='object-cover'
+          src={"https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4"} unoptimized={true}
           width={342} quality={80}
           height={427} priority
           alt='webandMobileMain'
-        />
+        /> */}
+         <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="342" height="427" className='rounded-[24px]'></video>
       </div>
       <div className='mt-[42px] mb-[32px]'>
         {
