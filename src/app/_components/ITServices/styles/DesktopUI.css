@@ -9,11 +9,11 @@
     animation: scroll 10s linear infinite;
   } */
 
-  .scrolling-container {
+  .scrolling-container-desktop {
     overflow: hidden;
     white-space: nowrap;
     width: 100%; /* Ensures container takes the full width */
-    /* max-width: 1148px; */
+    max-width: 1148px;
   }
   
   .scrolling-content {
