@@ -2,11 +2,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import nodejsImage from "@/utilities/images/nodejs-image.svg"
-import expressjsImage from "@/utilities/images/express-image.svg"
-import pythonImage from "@/utilities/images/python-image.svg"
-import graphqlImage from "@/utilities/images/graphql-image.svg"
-import mongodbImage from "@/utilities/images/mongodb-image.svg"
-import mysqlImage from "@/utilities/images/mysql-image.svg"
+import expressjsImage from "@/utilities/images/express-image (2).svg"
+import pythonImage from "@/utilities/images/python-image (2).svg"
+import graphqlImage from "@/utilities/images/graphql-image (2).svg"
+import mongodbImage from "@/utilities/images/mongodb-image (2).svg"
+import mysqlImage from "@/utilities/images/mysql-image (2).svg"
 import javaImage from "@/utilities/images/java-image.svg"
 import springImage from "@/utilities/images/spring-image.svg"
 import nestImage from "@/utilities/images/nest-image.svg"
@@ -43,67 +43,69 @@ import vmImage from "@/utilities/images/vm-image.svg"
 import jenkinsImage from "@/utilities/images/jenkins-image.svg"
 import ga4Image from "@/utilities/images/ga4-image.svg"
 import gtmImage from "@/utilities/images/gtm-image.svg"
+import nodeImage from '@/utilities/images/node-image.svg'
+
+export const backendTools = [
+    { name: "Node.js", logo: nodeImage },
+    { name: "Express.js", logo: expressjsImage },
+    { name: "Python", logo: pythonImage },
+    { name: "GraphQL", logo: graphqlImage },
+    { name: "MongoDB", logo: mongodbImage },
+    { name: "MySQL", logo: mysqlImage },
+    { name: "Java", logo: javaImage },
+    { name: "Spring Boot", logo: springImage },
+    { name: "Nestjs", logo: nestImage },
+    { name: "GO", logo: goImage },
+    { name: "PHP", logo: phpImage },
+    { name: "Oracle", logo: oracleImage },
+    { name: "Redis", logo: redisImage },
+];
+
+export const frontendTools = [
+    { name: "React", logo: reactImage },
+    { name: "Angular", logo: angularImage },
+    { name: "Vue JS", logo: vueImage },
+    { name: "Next js", logo: nextjsImage },
+    { name: "Javascript", logo: javascriptImage },
+    { name: "Tailwind", logo: tailwindImage },
+    { name: "Typescript", logo: typescriptImage },
+    { name: "Svelte", logo: svelteImage },
+    { name: "Nuxt", logo: nuxtImage },
+    { name: "Solidjs", logo: solidjsImage},
+    { name: "Gatsby", logo: gatsbyImage },
+    { name: "Remixjs", logo: remixjsImage },
+];
+
+export const mobileTools = [
+    { name: "Android", logo: androidImage },
+    { name: "IOS", logo: iosImage },
+    { name: "Flutter", logo: flutterImage },
+    { name: "React Native", logo: reactNativeImage },
+];
+
+export const devopsTools = [
+    { name: "AWS", logo: awsImage },
+    { name: "Azure", logo: azureImage },
+    { name: "GCP", logo: gcpImage },
+    { name: "Docker", logo: dockerImage },
+    { name: "kubernetes", logo: kubernetesImage },
+    { name: "Terraform", logo: terraformImage },
+    { name: "Firebase", logo: firebaseImage },
+    { name: "Serverless", logo: serverlessImage },
+    { name: "Apache Kafka", logo: apacheImage },
+    { name: "VMWare", logo: vmImage},
+    { name: "Jenkins", logo: jenkinsImage },
+];
+
+export const analyticsTools = [
+    { name: "GA 4", logo: ga4Image },
+    { name: "GTM", logo: gtmImage },
+];
 
 const TabComponent = () => {
     const [activeTab, setActiveTab] = useState("Backend");
 
     const tabs = ["Backend", "Frontend", "Mobile", "DevOps", "Analytics & Engagement"];
-    const backendTools = [
-        { name: "Node.js", logo: nodejsImage },
-        { name: "Express.js", logo: expressjsImage },
-        { name: "Python", logo: pythonImage },
-        { name: "GraphQL", logo: graphqlImage },
-        { name: "MongoDB", logo: mongodbImage },
-        { name: "MySQL", logo: mysqlImage },
-        { name: "Java", logo: javaImage },
-        { name: "Spring Boot", logo: springImage },
-        { name: "Nestjs", logo: nestImage },
-        { name: "GO", logo: goImage },
-        { name: "PHP", logo: phpImage },
-        { name: "Oracle", logo: oracleImage },
-        { name: "Redis", logo: redisImage },
-    ];
-
-    const frontendTools = [
-        { name: "React", logo: reactImage },
-        { name: "Angular", logo: angularImage },
-        { name: "Vue JS", logo: vueImage },
-        { name: "Next js", logo: nextjsImage },
-        { name: "Javascript", logo: javascriptImage },
-        { name: "Tailwind", logo: tailwindImage },
-        { name: "Typescript", logo: typescriptImage },
-        { name: "Svelte", logo: svelteImage },
-        { name: "Nuxt", logo: nuxtImage },
-        { name: "Solidjs", logo: solidjsImage},
-        { name: "Gatsby", logo: gatsbyImage },
-        { name: "Remixjs", logo: remixjsImage },
-    ];
-
-    const mobileTools = [
-        { name: "Android", logo: androidImage },
-        { name: "IOS", logo: iosImage },
-        { name: "Flutter", logo: flutterImage },
-        { name: "React Native", logo: reactNativeImage },
-    ];
-
-    const devopsTools = [
-        { name: "AWS", logo: awsImage },
-        { name: "Azure", logo: azureImage },
-        { name: "GCP", logo: gcpImage },
-        { name: "Docker", logo: dockerImage },
-        { name: "kubernetes", logo: kubernetesImage },
-        { name: "Terraform", logo: terraformImage },
-        { name: "Firebase", logo: firebaseImage },
-        { name: "Serverless", logo: serverlessImage },
-        { name: "Apache Kafka", logo: apacheImage },
-        { name: "VMWare", logo: vmImage},
-        { name: "Jenkins", logo: jenkinsImage },
-    ];
-
-    const analyticsTools = [
-        { name: "GA 4", logo: ga4Image },
-        { name: "GTM", logo: gtmImage },
-    ];
 
     return (
         <div className="flex flex-col items-center w-full h-[404px] bg-[#FAFAFA]">
