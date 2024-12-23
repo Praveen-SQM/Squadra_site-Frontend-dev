@@ -16,7 +16,7 @@ const TabComponent = () => {
     ];
 
     return (
-        <div className="flex flex-col items-center w-[1192px] h-[404px] bg-[#FAFAFA]">
+        <div className="flex flex-col items-center w-full h-[404px] bg-[#FAFAFA]">
             {/* Tabs */}
             <div className="flex  w-[1192px] space-x-20 border-b border-[#F3EBDC] mb-6 ">
                 {tabs.map((tab) => (
