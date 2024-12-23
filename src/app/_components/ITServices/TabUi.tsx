@@ -4,13 +4,22 @@ import { useState, useRef, useEffect } from 'react';
 import heroImage from '@/utilities/images/desktop-hero-image.svg'
 import "./styles/DesktopUI.css"
 import Image from 'next/image';
-import { customSoftwareDevData, data, ItServices, logos, saasData, webAndMobDev } from './MobileUi';
+import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, logos, saasData, webAndMobDev } from './MobileUi';
 import starSvg from '@/utilities/images/star.svg'
 import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import SaasMain from '@/utilities/images/Saas-main.svg'
 import Container from '@/utilities/images/Container.svg'
 import ITImage from '@/utilities/images/ITImage.svg'
 import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
+import aiMain from '@/utilities/images/aiMain.svg'
+import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
+import finTechMain from '@/utilities/images/fintechMain.svg';
+import cloudMain from '@/utilities/images/cloudmain.svg';
+import cloud from '@/utilities/images/cloud.svg';
+import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
+import TabComponent from './TabletTab';
+import ContactUsForm from './components/TabletContactUsForm';
+
 
 
 function TabUi() {
@@ -144,13 +153,13 @@ function TabUi() {
       </div>
 
       <div className='w-[321px] h-[600px] mt-[42px]'>
-        {/* <Image
+        <Image
           src={BenefitFrame}
           width={321}
           height={586}
           alt='BenefitFrame'
-        /> */}
-        <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/e+video.mp4" autoPlay loop width="640" height="600" controls className='rounded-md h-[1000px]'></video>
+        />
+        {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/e+video.mp4" autoPlay loop width="640" height="600" controls className='rounded-md h-[1000px]'></video> */}
       </div>
 
       {/* Feature Cards */}
@@ -497,12 +506,12 @@ Development */}
         /> */}
         <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360" controls className='rounded-md'></video>
       </div>
-      <div className='mt-[42px] mb-[32px]'>
+      <div className='mt-[42px] mb-[32px] grid grid-cols-2 gap-[20px]'>
         {
           webAndMobDev?.map((el) => (
 
             <div key={el.title}
-              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              className="w-[298px] mt-[16px] bg-[#19191C] h-[148px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
             >
               <div className='flex gap-[8px]'>
                 <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
@@ -512,7 +521,7 @@ Development */}
                     height={23}
                     alt='Network'
                   />
-                
+
                 </div>
                 <div className='w-[237px] h-[38px]  flex items-center justify-left'>
                   <p
@@ -523,7 +532,7 @@ Development */}
                   </p>
                 </div>
               </div>
-              <div className='w-[303px] h-[40px] mt-[12px]'>
+              <div className='w-[266px] h-[40px] mt-[12px]'>
                 <p
                   className="text-left text-[14px] font-medium leading-[20px] text-[#94969D]"
 
@@ -535,6 +544,425 @@ Development */}
             </div>
           ))}
       </div>
+
+      {/*  Health Care*/}
+      <div className='bg-white w-full flex flex-col items-center justify-center pt-[48px]'>
+        <div className='w-[714px] h-[58px] '>
+          <p
+            className="text-center text-[46px] text-[#222222] font-semibold leading-[57.6px]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            Healthcare{" "}
+            <span
+              className="text-[46px] text-[#94969D] font-semibold leading-[57.6px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+              }}
+            >
+              Applications
+            </span>
+          </p>
+
+        </div>
+        <div className='w-[342px] h-[427px] mt-[48px]'>
+          <Image
+            src={HealthCareMain}
+            width={342}
+            height={427}
+            alt='HealthCareMain'
+
+          />
+        </div>
+        {/* Ai */}
+        <div className='mt-[42px] mb-[48px] grid grid-cols-2 gap-[20px]'>
+          {
+            healthcare?.map((el) => (
+
+              <div key={el.title}
+                className="w-[335px] mt-[16px] bg-[#F2F2F2] h-[147px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              >
+                <div className='flex gap-[8px]'>
+                  <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                    <Image
+                      src={el?.icon}
+                      width={23}
+                      height={23}
+                      alt='Network'
+                    />
+                  </div>
+                  <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                    <p
+                      className="text-[#222222] text-start  text-[18px] font-medium leading-[30px]"
+
+                    >
+                      {el?.title}
+                    </p>
+                  </div>
+                </div>
+                <div className='w-[303px] h-[40px] mt-[12px]'>
+                  <p
+                    className="text-left text-[16px] font-medium leading-[19px] text-[#717171]"
+
+                  >
+                    {el?.description}
+                  </p>
+
+                </div>
+              </div>
+            ))}
+        </div>
+        <div className='w-[714px] h-[110px] mt-[72px]'>
+          <p
+            className="text-center text-[46px] font-semibold leading-[54.89px]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textDecorationSkipInk: 'none',
+              textUnderlinePosition: 'from-font',
+            }}
+          >
+            Automation & Digital {" "}
+            <span
+              className="text-[46px] font-medium leading-[54.89px]"
+              style={{
+                fontFamily: 'SF UI Display, sans-serif',
+                textDecorationSkipInk: 'none',
+                textUnderlinePosition: 'from-font',
+                background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+              }}
+            >
+              Transformation
+            </span>
+          </p>
+
+
+
+        </div>
+        <div className='w-[342px] h-[427px] mt-[44px]'>
+          {/* <Image
+            src={aiMain}
+            width={342}
+            height={427}
+            alt='SaaS'
+          /> */}
+          <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="640" height="360" controls className='rounded-[24px]'></video>
+        </div>
+        <div className='mt-[44px] mb-[48px] grid grid-cols-2 gap-[20px]'>
+          {
+            aiAndDigital?.map((el) => (
+
+              <div key={el.title}
+                className="w-[335px] mt-[16px] bg-[#F2F2F2] h-[147px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              >
+                <div className='flex gap-[8px]'>
+                  <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                    <Image
+                      src={el?.icon}
+                      width={23}
+                      height={23}
+                      alt='Network'
+                    />
+                  </div>
+                  <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                    <p
+                      className="text-[#222222] text-start  text-[18px] font-medium leading-[22px]"
+
+                    >
+                      {el?.title}
+                    </p>
+                  </div>
+                </div>
+                <div className='w-[303px] h-[40px] mt-[12px]'>
+                  <p
+                    className="text-left text-[14px] font-medium leading-[20px] text-[#717171]"
+
+                  >
+                    {el?.description}
+                  </p>
+
+                </div>
+              </div>
+            ))}
+        </div>
+
+
+      </div>
+
+      {/* End-to-End
+IT Services */}
+      <div className='w-[750px] h-[58px] mt-[72px] flex justify-center'>
+        <p
+          className="flex text-center text-[#FFFFFF] text-[46px] font-medium leading-[57px]"
+          style={{
+            fontFamily: 'SF UI Display, sans-serif',
+            textUnderlinePosition: 'from-font',
+            textDecorationSkipInk: 'none',
+          }}
+        >
+          FinTech&nbsp;
+          <span
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textUnderlinePosition: 'from-font',
+              textDecorationSkipInk: 'none',
+            }}
+          >
+            Applications
+          </span>
+        </p>
+
+      </div>
+      <div className='w-[342px] h-[427px] mt-[42px]'>
+        <Image
+          src={finTechMain}
+          width={342}
+          height={427}
+          alt='It SErvices'
+        />
+      </div>
+      <div className='mt-[42px] grid grid-cols-2 gap-[20px]'>
+        {
+          finTech?.map((el) => (
+
+            <div key={el.title}
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[147px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+            >
+              <div className='flex gap-[8px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                  <Image
+                    src={el?.icon}
+                    width={23}
+                    height={23}
+                    alt='Network'
+                  />
+                </div>
+                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <p
+                    className="text-white text-start  text-[18px] font-medium leading-[20px]"
+
+                  >
+                    {el?.title}
+                  </p>
+                </div>
+              </div>
+              <div className='w-[303px] h-[40px] mt-[12px]'>
+                <p
+                  className="text-left text-[16px] font-medium leading-[19px] text-[#94969D]"
+
+                >
+                  {el?.description}
+                </p>
+
+              </div>
+            </div>
+          ))}
+      </div>
+
+      {/* Cloud */}
+      <div className='w-[335px] h-[76px] mt-[72px] flex items-center justify-center'>
+        <p
+          className="flex  text-center text-[#FFFFFF] text-[46px] font-medium leading-[57.6px]"
+          style={{
+            fontFamily: 'SF UI Display, sans-serif',
+            textUnderlinePosition: 'from-font',
+            textDecorationSkipInk: 'none',
+          }}
+        >
+          Cloud&nbsp;
+          <span
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
+            style={{
+              fontFamily: 'SF UI Display, sans-serif',
+              textUnderlinePosition: 'from-font',
+              textDecorationSkipInk: 'none',
+            }}
+          >
+            Solutions
+          </span>
+        </p>
+
+      </div>
+      <div className='w-[342px] h-[600px] mt-[42px]'>
+        {/* <Image className='object-cover'
+          src={cloudMain} unoptimized={true}
+          width={342} quality={80}
+          height={427} priority
+          alt='webandMobileMain'
+        /> */}
+        <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360" controls className='rounded-[24px]'></video>
+      </div>
+      <div className='mt-[42px] mb-[32px] grid grid-cols-2 gap-[20px]'>
+        {
+          cloudData?.map((el) => (
+
+            <div key={el.title}
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[147px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+            >
+              <div className='flex gap-[8px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                  <Image
+                    src={el?.icon}
+                    width={23}
+                    height={23}
+                    alt='Network'
+                  />
+                </div>
+                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <p
+                    className="text-white text-start  text-[24px] font-medium leading-[20px]"
+
+                  >
+                    {el?.title}
+                  </p>
+                </div>
+              </div>
+              <div className='w-[303px] h-[40px] mt-[12px]'>
+                <p
+                  className="text-left text-[16px] font-medium leading-[20px] text-[#94969D]"
+
+                >
+                  {el?.description}
+                </p>
+
+              </div>
+            </div>
+          ))}
+      </div>
+
+      {/*    sQuadra tech Team */}
+      <div className='w-full py-[72px] px-[124px] flex flex-col gap-[62px] bg-[#FAFAFA] items-center'>
+        <div className='flex flex-col gap-[12px] items-center justify-center w-[668px] h-[132px]'>
+          <p className="font-semibold text-[40px] leading-[47px] text-center text-[#FBAE17]">
+            Squadra <span className="font-semibold text-[40px] leading-[47px] text-center text-[#131313]">Tech Team</span>
+          </p>
+          <p className="font-normal text-[18px] leading-[21.50px] text-center text-[#888888]">
+            A space to unlock your true potential, chase your dreams, and embrace your passion all while enjoying every moment with fun and laughter!
+          </p>
+        </div>
+        <div className='flex gap-[12px] items-center'>
+          <div className='flex flex-col gap-[12px]'>
+            <div className='w-[351px] h-[268.5px] bg-gray-200'>
+              <Image
+                src={cloud}
+                alt='Tech Team'
+              />
+            </div>
+            <div className='flex items-center gap-[12px]'>
+              <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+              <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className='flex flex-col gap-[12px]'>
+            <div className='flex items-center gap-[12px]'>
+              <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+              <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
+                <Image
+                  src={cloud}
+                  alt='Tech Team'
+                />
+              </div>
+            </div>
+            <div className='w-[351px] h-[268.5px] bg-gray-200'>
+              <Image
+                src={cloud}
+                alt='Tech Team'
+              />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Why Choose us */}
+      <div className='w-full flex items-center bg-white pt-[124px]'>
+
+
+        <div className='bg-white min-w-[714px] mx-auto h-[516px] flex items-center justify-center flex-col'>
+
+
+          <div className='flex flex-col gap-[12px] w-[662px] h-[128px] mb-[60px] '>
+            <p className="font-sans text-[40px] font-semibold leading-[47.73px] text-center text-[#000000]">
+              Why Choose <span className="font-sans text-[40px] font-semibold leading-[47.73px] text-center text-[#FBAE17]">Us</span>
+            </p>
+            <div className="flex items-center justify-center h-full">
+              <p className='font-normal text-[16px] leading-[20.8px] text-[#000000] text-center'>
+                We understand your needs and deliver impactful solutions with expertise, dedication, and a proven track record.
+              </p>
+            </div>
+          </div>
+
+          <div className='relative w-[714px] flex items-center justify-center' style={{ height: '280px' }}>
+            <Image
+              src={whyChooseImage}
+              width={0}
+              height={0}
+              className='absolute z-10 top-0'
+              alt='Network'
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* technologies we use */}
+      <div className='w-full'>
+        <div className='min-w-[714px] mx-auto h-fit bg-[#FAFAFA] pt-[100px]'>
+          <div className='w-full h-[120px] flex flex-col  items-center justify-center text-center mb-[70px]'>
+            <div className='w-[664px] h-[76px] '>
+              <p
+                className="text-[40px] text-[#222222] font-semibold leading-[57.6px]"
+                style={{
+                  fontFamily: 'SF UI Display, sans-serif',
+                  textDecorationSkipInk: 'none',
+                  textUnderlinePosition: 'from-font',
+                }}
+              >
+                Technologies {" "}
+                <span
+                  className="text-[40px] text-[#94969D] font-semibold leading-[57.6px]"
+                  style={{
+                    fontFamily: 'SF UI Display, sans-serif',
+                    textDecorationSkipInk: 'none',
+                    textUnderlinePosition: 'from-font',
+                  }}
+                >
+                  we use
+                </span>
+              </p>
+              <p className="text-[14px] mt-[24px] font-normal leading-[16.7px] text-center text-[#4E4D4D]">Discover the cutting-edge technologies we use to deliver innovative and impactful solutions, from modern frameworks to advanced cloud and machine learning tools</p>
+            </div>
+          </div>
+          <TabComponent />
+
+        </div> 
+      </div>
+
+      {/* Contact us */}
+            <ContactUsForm />
 
     </div>
   )
