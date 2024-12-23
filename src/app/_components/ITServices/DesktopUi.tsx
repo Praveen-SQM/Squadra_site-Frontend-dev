@@ -20,6 +20,7 @@ import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
 import aiMain from '@/utilities/images/aiMain.svg'
 import finTechMain from '@/utilities/images/fintechMain.svg';
 import cloudMain from '@/utilities/images/cloudmain.svg';
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 
 function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -41,6 +42,8 @@ function DesktopUi() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  
   return (
     <div className="h-fit pt-16 flex flex-col  w-full  items-center bg-black">
       {/* Intro Section */}
@@ -245,6 +248,7 @@ function DesktopUi() {
 
       </div>
       <div className='w-[727px] h-[153px] mt-[42px] mb-[72px] flex flex-col items-center justify-center'>
+       
         <p
           className="text-left text-[20px] font-normal leading-[24px] text-[#888888] uppercase"
 
@@ -253,32 +257,8 @@ function DesktopUi() {
         </p>
         <div className='w-[727px] h-[113px] mt-[8px]'>
 
-          <p
-            className="text-center text-[46px] font-medium leading-[54.64px] text-white"
-            style={{
-              fontFamily: 'SF UI Display, sans-serif',
-              textDecorationSkipInk: 'none',
-              textUnderlinePosition: 'from-font',
-            }}
-          >
-            Squadra delivers cutting-edge solutions for{" "}
-            <span
-              className="text-center font-medium"
-              style={{
-                fontFamily: 'SF UI Display, sans-serif',
-                textDecorationSkipInk: 'none',
-                textUnderlinePosition: 'from-font',
-                background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
-                WebkitBackgroundClip: 'text', // For Safari
-                backgroundClip: 'text',
-                color: 'transparent',
-              }}
-            >
-              Business Success
-            </span>
+          <TextGenerateEffect />
 
-
-          </p>
 
 
         </div>
