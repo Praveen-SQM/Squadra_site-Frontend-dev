@@ -16,7 +16,6 @@ import ITImage from '@/utilities/images/ITImage.svg'
 import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
 import finTechMain from '@/utilities/images/fintechMain.svg';
-import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 
 function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -243,7 +242,7 @@ function DesktopUi() {
         </div>
 
       </div>
-      <div className='w-[727px] h-[153px] mt-[42px] mb-[72px] flex flex-col items-center justify-center'>
+      {/* <div className='w-[727px] h-[153px] mt-[42px] mb-[72px] flex flex-col items-center justify-center'>
 
         <p
           className="text-left text-[20px] font-normal leading-[24px] text-[#888888] uppercase"
@@ -258,7 +257,7 @@ function DesktopUi() {
 
 
         </div>
-      </div>
+      </div> */}
 
       {/* Custom Software Devlopment */}
       <section className='bg-white w-full flex items-center'>
