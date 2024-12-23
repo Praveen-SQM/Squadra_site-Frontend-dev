@@ -50,6 +50,17 @@ const Navbar = () => {
 
   const services = [
     {
+      title: "Technology & Development",
+      items: [
+        // "Web & Mobile App Development",
+        // "E-commerce Solutions",
+        // "AI & Machine Learning",
+        // "Cloud Solutions",
+        // "DevOps & Cybersecurity",
+        // "Quality Assurance & Testing",
+      ],
+    },
+    {
       title: "Branding & Creative",
       items: [
         // "Brand Strategy & Consulting",
@@ -82,17 +93,7 @@ const Navbar = () => {
         // "Cinematic Visuals",
       ],
     },
-    {
-      title: "Technology & Development",
-      items: [
-        // "Web & Mobile App Development",
-        // "E-commerce Solutions",
-        // "AI & Machine Learning",
-        // "Cloud Solutions",
-        // "DevOps & Cybersecurity",
-        // "Quality Assurance & Testing",
-      ],
-    },
+
   ];
 
   const toggleServices = () => setIsServicesOpen(!isServicesOpen);
@@ -216,7 +217,9 @@ style={{ width: '90vw', maxWidth: '1600px' }}
                         </ul>
                       </div>
                         <div className="">
-                    <h3 className="font-bold mb-4">Technology & Development</h3>
+                    <h3 className="font-bold mb-4">
+                          <Link href="/it-services" className=" cursor-pointer">Technology & Development</Link>
+                       </h3>
                    <ul className="space-y-2 text-sm text-gray-600">
                       <li>Web & Mobile App Development</li>
                       <li>E-commerce Solutions</li>
@@ -346,7 +349,14 @@ style={{ width: '90vw', maxWidth: '1600px' }}
                         className="py-3 text-base transition-all duration-500 text-black flex justify-between items-center cursor-pointer"
                         onClick={() => toggleSubmenu(index)}
                       >
-                        <span>{service.title}</span>
+                        {service.title === "Technology & Development" ? (
+                          <a href="/it-services" className="">
+                            {service.title}
+                          </a>
+                        ) : (
+                          <span>{service.title}</span>
+                        )}
+
                         {/* {activeService === index ? (
                           <ChevronDown className="h-5 w-5" />
                         ) : (
