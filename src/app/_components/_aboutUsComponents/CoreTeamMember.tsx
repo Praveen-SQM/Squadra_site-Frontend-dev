@@ -21,7 +21,7 @@ const CoreTeamMember = () => {
     {
       name: "Shawn S",
       designation: "Campaign Strategist",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Shawn+S.jpg",
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Shawn%2BS+(1).webp",
     },
     {
       name: "Sujata Singh",
