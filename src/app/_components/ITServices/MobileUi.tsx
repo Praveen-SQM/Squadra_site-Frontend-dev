@@ -61,6 +61,7 @@ import dottedLine from '@/utilities/images/dotted-line.svg'
 import heroImage from '@/utilities/images/hero-image.svg'
 import ContactUsForm from './components/ContactUsForm';
 import { analyticsTools, backendTools, devopsTools, frontendTools, mobileTools } from './Tabs';
+import ApproachComponent from './components/ApproachComponent';
 
 export const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
@@ -1077,6 +1078,11 @@ IT Services */}
           ))}
       </div>
 
+      {/* solutions */}
+      <div className='w-full bg-white flex items-center'>
+      <ApproachComponent/>
+      </div>
+
       {/*    sQuadra tech Team */}
       <div className='pt-[44px] pb-[40px] px-[20px] flex flex-col gap-[24px] bg-[#F7F7F7]'>
         <div className='flex flex-col gap-[12px] items-center justify-center'>
@@ -1091,7 +1097,7 @@ IT Services */}
           <div className='flex flex-col gap-[12px]'>
             <div className='w-[335px] h-[194px] bg-gray-200'>
               <Image
-                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/2.1.png"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/7.jpg"}
                 alt='Tech Team'
                 width={335}
                 height={194}
@@ -1101,7 +1107,7 @@ IT Services */}
             <div className='flex items-center gap-[12px]'>
               <div className='w-[161.5px] h-[194px] bg-gray-200'>
                 <Image
-                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5555.png"}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                   alt='Tech Team'
                   width={161.5}
                   height={194}
@@ -1110,7 +1116,7 @@ IT Services */}
               </div>
               <div className='w-[161.5px] h-[194px] bg-gray-200'>
                 <Image
-                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8317+2.jpg"}
+                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
                   alt='Tech Team'
                   width={161.5}
                   height={194}
@@ -1122,7 +1128,7 @@ IT Services */}
           <div className='flex flex-col gap-[12px]'>
             <div className='w-[335px] h-[194px] bg-gray-200'>
               <Image
-                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/6.jpg"}
                 alt='Tech Team'
                 width={335}
                 height={194}

@@ -2,7 +2,6 @@ import React from 'react';
 import DesktopUi from '@/app/_components/ITServices/DesktopUi';
 import MobileUi from '@/app/_components/ITServices/MobileUi';
 import TabUi from '@/app/_components/ITServices/TabUi';
-
 function ITServices() {
   return (
     <div className='min-h-screen max-w-full bg-black mx-auto'>
@@ -13,10 +12,9 @@ function ITServices() {
         <TabUi />
       </div>
          <div className="block sm:hidden min-w-fit max-w-[410px] mx-auto">
-        <MobileUi /> 
+        <MobileUi />
       </div>
     </div>
   );
 }
-
 export default ITServices;

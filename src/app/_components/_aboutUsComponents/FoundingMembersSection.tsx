@@ -8,17 +8,17 @@ const FoundingMembersSection = () => {
     {
       name: "Anu Js",
       designation: "Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Anu+JS.jpg", 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp", 
     },
     {
       name: "Sandesh K",
       designation: "Co-Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Sandesh+K.jpg", 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp", 
     },
     {
       name: "Tarush Chandani",
       designation: "Co-Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Tarush+Chandnani.jpg", 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp", 
     },
   ];
   return (

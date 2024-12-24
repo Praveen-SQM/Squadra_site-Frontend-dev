@@ -9,26 +9,32 @@ import Facebook from "../../utilities/icons/facebook.svg"
 import Instagram from "../../utilities/icons/instagram.svg"
 import Linkedin from "../../utilities/icons/linkedin.svg"
 import Youtube from "../../utilities/icons/Youtube.svg"
+import itLogocolor from '@/utilities/images/footer-it-logo.svg'
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Footer = () => {
+
+  const pathname = usePathname();
+  console.log("pathname", pathname);
+
   return (
-    <footer className="bg-black text-white py-16 sm:px-6 md:px-8">
+    <footer
+    className="bg-black w-full text-white py-16 sm:px-6 md:px-8">
       <div className="max-w-screen-2xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 px-[12px] gap-8">
           <div>
             <Image
-              src={logoWhite}
+              src={!pathname.includes("/it-services") ? logoWhite:itLogocolor}
               alt="Logo"
               width={120}
               height={40}
               layout="intrinsic"
             />
-            <p className="text-[28px] mt-4 w-[100px] font-[300]">
-              Smart Solutions For Your{" "}
-              <strong className="font-[300] text-[#FBAE17]">Brand</strong>{" "}
-              
-            </p>
+             <p className="text-[28px] mt-4 w-[100px] font-[300]">
+                Smart Solutions For Your{" "}
+                <strong className="font-[300] text-[#FBAE17]">Brand</strong>{" "}
+              </p>
           </div>
 
           <div>
@@ -102,7 +108,7 @@ const Footer = () => {
           </div>
         </div>
 
-        
+
 
         <div className=" border-t flex flex-col lg:flex-row md:flex-col  items-center gap-4 justify-between border-gray-600 mt-8 pt-6 text-center md:text-left">
           <div className="flex flex-row gap-8  items-center">
@@ -110,7 +116,7 @@ const Footer = () => {
             <div className="flex flex-row items-center gap-8">
               <Link target="_blank"
                 href="https://www.instagram.com/_squadra_media_?igsh=MW1lZWJjMW51NXhweA=="
->
+              >
                 <Image src={Instagram}
                   height={24}
                   width={24}
@@ -129,7 +135,7 @@ const Footer = () => {
                   width={24}
                   className="text-gray-400 hover:text-white cursor-pointer" alt={"Linkedin"} />
               </Link>
-              <Link target="_blank" href='https://www.facebook.com/squadramediabangalore' 
+              <Link target="_blank" href='https://www.facebook.com/squadramediabangalore'
               >
                 <Image
                   alt={"facebook"}
@@ -146,7 +152,7 @@ const Footer = () => {
               &copy; Copyright Squadra Media Private Limited 2021. All rights
               reserved.
             </p>
-            
+
           </div>
           <div>
             <div className="space-x-6 mb-4  md:mb-0">
