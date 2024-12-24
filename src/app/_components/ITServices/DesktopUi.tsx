@@ -1182,7 +1182,7 @@ function DesktopUi() {
       <div className='w-full flex items-center'>
 
 
-        <div className='bg-white min-w-[1440px] mx-auto h-[762px] flex items-center justify-center flex-col'>
+        <div className='bg-white w-full mx-auto h-[762px] flex items-center justify-center flex-col'>
 
 
           <div className='flex flex-col gap-[12px] w-[662px] h-[128px] mb-[120px] '>
