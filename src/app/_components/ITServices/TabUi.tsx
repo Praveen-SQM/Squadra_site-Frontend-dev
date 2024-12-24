@@ -14,7 +14,6 @@ import finTechMain from '@/utilities/images/fintechMain.svg';
 import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
 import TabComponent from './TabletTab';
 import ContactUsForm from './components/TabletContactUsForm';
-import ApproachComponent from './components/ApproachComponent';
 import ApprochCompTab from './components/ApprochCompTab';
 
 
