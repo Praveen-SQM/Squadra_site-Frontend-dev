@@ -6,17 +6,17 @@ const CoreTeamMember = () => {
     {
       name: "Aby Abraham",
       designation: "Storyboard Lead",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Aby+Abraham.jpg",
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Aby+Abraham.webp",
     },
     {
       name: "Aslam KV",
       designation: "Illustration Lead",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Aslam+KV.jpg",
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Aslam+KV.webp",
     },
     {
       name: "Wilson George",
       designation: "Animation Lead",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Wilson+George.jpg",
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Wilson+George.webp",
     },
     {
       name: "Shawn S",
@@ -26,17 +26,17 @@ const CoreTeamMember = () => {
     {
       name: "Sujata Singh",
       designation: "Account Lead",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Sujata+Singh.jpg",
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sujata+Singh.webp",
     },
     {
       name: "Praveen Rao",
       designation: "Product Manager",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Praveen.jpg",
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Praveen+(2).webp",
     },
     {
       name: "Ashwinth Mohan",
       designation: "Photography Lead",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/Ashwinth+Mohan.jpg",
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Ashwinth+Mohan.webp",
     },
   ];
 
