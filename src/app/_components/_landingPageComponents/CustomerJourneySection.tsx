@@ -1,12 +1,12 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import image from '@/utilities/images/Sol-1.svg'
-import image2 from '@/utilities/images/Sol-2.svg'
-import image3 from '@/utilities/images/Sol-3.svg'
-import image4 from '@/utilities/images/Sol-4.svg'
-import image5 from '@/utilities/images/Sol-5.svg'
-import image6 from '@/utilities/images/Sol-6.svg'
+import image from '@/utilities/images/Sol-1.webp'
+import image2 from '@/utilities/images/Sol-2.webp'
+import image3 from '@/utilities/images/Sol-3.webp'
+import image4 from '@/utilities/images/Sol-4.webp'
+import image5 from '@/utilities/images/Sol-5.webp'
+import image6 from '@/utilities/images/Sol-6.webp'
 function CustomerJourneySection() {
   const services = [
     {

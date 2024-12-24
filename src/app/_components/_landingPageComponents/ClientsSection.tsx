@@ -4,20 +4,20 @@ import React from "react";
 import Image from "next/image";
 
 import clientTorque from "../../../utilities/icons/clent-torque.svg";
-import clientHMG from "../../../utilities/icons/client-HMGroup.svg";
-import clientBroncos from "../../../utilities/icons/client-broncos.svg";
-import clientDaddy from "../../../utilities/icons/client-daddy.svg";
-import clientDoubleTree from "../../../utilities/icons/client-doubleTree.svg";
-import clientFerns from "../../../utilities/icons/client-ferns.svg";
-import clientGRC from "../../../utilities/icons/client-grConst.svg";
-import clientGREE from "../../../utilities/icons/client-gree.svg";
-import clientHabitat from "../../../utilities/icons/client-habitat.svg";
-import clientOneSta from "../../../utilities/icons/client-onesta.svg";
-import clientPOI from "../../../utilities/icons/client-poi.svg";
-import clientS1522 from "../../../utilities/icons/client-street1522.svg";
-import clientVOIA from "../../../utilities/icons/client-voia.svg";
-import clientVIDA from "../../../utilities/icons/client-vida.svg";
-import clientNior from "../../../utilities/icons/client-cafeNior.svg";
+import clientHMG from "../../../utilities/icons/client-HMGroup.webp";
+import clientBroncos from "../../../utilities/icons/client-broncos.webp";
+import clientDaddy from "../../../utilities/icons/client-daddy.webp";
+import clientDoubleTree from "../../../utilities/icons/client-doubleTree.webp";
+import clientFerns from "../../../utilities/icons/client-ferns.webp";
+import clientGRC from "../../../utilities/icons/client-grConst.webp";
+import clientGREE from "../../../utilities/icons/client-gree.webp";
+import clientHabitat from "../../../utilities/icons/client-habitat.webp";
+import clientOneSta from "../../../utilities/icons/client-onesta.webp";
+import clientPOI from "../../../utilities/icons/client-poi.webp";
+import clientS1522 from "../../../utilities/icons/client-street1522.webp";
+import clientVOIA from "../../../utilities/icons/client-voia.webp";
+import clientVIDA from "../../../utilities/icons/client-vida.webp";
+import clientNior from "../../../utilities/icons/client-cafeNior.webp";
 
 
 

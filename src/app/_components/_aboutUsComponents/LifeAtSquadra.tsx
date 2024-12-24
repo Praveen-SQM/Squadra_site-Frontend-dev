@@ -26,7 +26,7 @@ const LifeAtSquadra = () => {
   <div className="col-span-6">
   <div className="relative w-full h-full">
     <Image width={860} height={480}
-      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/444.webp"}
       priority
       alt="Left Placeholder Image"
       className="w-full h-full object-cover"
@@ -37,7 +37,7 @@ const LifeAtSquadra = () => {
  <div className="col-span-4">
   <div className="relative w-full h-full">
     <Image width={860} height={480}
-      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5555.png"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/5555.webp"}
       priority
       alt="Left Placeholder Image"
       className="w-full h-full object-cover"
@@ -51,7 +51,7 @@ const LifeAtSquadra = () => {
 <div className="col-span-3">
   <div className="relative w-full h-full">
     <Image width={860} height={480}
-      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8285+2.jpg"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/DSC_8285+2.webp"}
       priority
       alt="Left Placeholder Image"
       className="w-full h-full object-cover"
@@ -63,7 +63,7 @@ const LifeAtSquadra = () => {
   <div className="col-span-7">
   <div className="aspect-w-7 aspect-h-3">
     <Image width={860} height={480}
-      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_2971+2.jpg"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/DSC_2971+2.webp"}
       alt="Right Placeholder Image"
       className="w-full h-full object-cover"
     />
@@ -79,7 +79,7 @@ const LifeAtSquadra = () => {
   <div className="col-span-10 md:col-span-10">
   <div className="relative w-full h-full">
     <Image width={860} height={480}
-      src={"https://squadra-media.s3.ap-south-1.amazonaws.com/2.1.png"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/2.1.webp"}
       priority
       alt="Left Placeholder Image"
       className="w-full h-full object-cover"
