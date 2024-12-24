@@ -33,20 +33,20 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
   const [loading, setLoading] = React.useState(false);
 
 
-const onSubmit: SubmitHandler<FormData> = async (data) => {
-  setLoading(true);
-  try {
-    const response = await fetch("/api/sendEmail", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-        cc: [""],
-        bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
-        message: {
-          subject: "Callback Request",
-          text: `Callback requested for phone number: ${data.phone}`,
-          html: `
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+          cc: [""],
+          bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+          message: {
+            subject: "Callback Request",
+            text: `Callback requested for phone number: ${data.phone}`,
+            html: `
           <html>
             <head></head>
             <body>
@@ -57,23 +57,23 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
               <p>Thank you & Regards,<br><b>Team</b></p>
             </body>
           </html>`
-        },
-      }),
-    });
+          },
+        }),
+      });
 
-    const result = await response.json();
-    if (response.ok) {
-      toast.success("Callback Requested successfully");
-    } else {
-      toast.error(result.message || 'Failed to send callback request');
+      const result = await response.json();
+      if (response.ok) {
+        toast.success("Callback Requested successfully");
+      } else {
+        toast.error(result.message || 'Failed to send callback request');
+      }
+    } catch (error) {
+      toast.error('An error occurred while sending the callback request');
+      console.error("Error sending callback request:", error);
+    } finally {
+      setLoading(false);
     }
-  } catch (error) {
-    toast.error('An error occurred while sending the callback request');
-    console.error("Error sending callback request:", error);
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
 
   return (
@@ -83,14 +83,23 @@ const onSubmit: SubmitHandler<FormData> = async (data) => {
         onMouseLeave={() => setOpen(false)}
         asChild
       >
-       
+        <div className="flex items-center gap-3">
           <Image className="cursor-pointer"
             src={pathname.includes("/contact-us") ? callIconBlack : isScrolled ? callIconBlack : callIcon}
             alt="Call Icon"
             width={24}
             height={24}
           />
-        
+          {pathname.includes('it-services') && (
+            <p
+              className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${isScrolled ? 'text-black' : 'text-white'
+                }`}
+            >
+              Schedule a Call
+            </p>
+          )}
+        </div>
+
       </PopoverTrigger>
       <PopoverContent
         className="w-[400px] p-1 bg-gray-200 m"

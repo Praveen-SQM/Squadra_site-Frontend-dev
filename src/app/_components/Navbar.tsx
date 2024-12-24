@@ -10,8 +10,7 @@ import Link from "next/link";
 import { Menu, X,  ChevronDown, ChevronRight } from 'lucide-react';
 import { ContactPopover } from "./_contactUsComponents/ContactPopover";
 import itLogo from '@/utilities/images/it-logo.svg'
-import itLogoColoured from '@/utilities/images/itLogoColoured.svg'
-
+import itLogocolor from '@/utilities/images/itLogoColoured.svg'
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -115,26 +114,28 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
-          <Link href={"/"}>
+        {!pathname.includes("/it-services") &&  <Link href={"/"}>
             <Image
-              src={
-                pathname.includes("/contact-us")
-                  ? logo
-                  : pathname.includes("/it-services")
-                    ? itLogo
-                    : isScrolled
-                      ? itLogoColoured
-                      : itLogoColoured
-              }
-
+              src={pathname.includes("/contact-us") ? logo : isScrolled ? logo : logoWhite}
               alt="Logo"
               width={120}
               height={40}
               layout="intrinsic"
             />
-          </Link>
+          </Link>}
+          {
+            pathname.includes("/it-services") && <Link href={"/"}>
+              <Image
+                src={isScrolled ? itLogocolor : itLogo}
+                alt="Logo"
+                width={120}
+                height={40}
+                layout="intrinsic"
+              />
+            </Link>
+          }
 
-          {!pathname.includes("/it-services") ? <ul className="md:flex hidden font-[500] space-x-8">
+         {!pathname.includes("/it-services") && <ul className="md:flex hidden font-[500] space-x-8">
             <Link
               className={`cursor-pointer ${
                 pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
@@ -258,18 +259,33 @@ style={{ width: '90vw', maxWidth: '1600px' }}
                 </div>
               </div>
             </li>
-          </ul>:null}
+          </ul>}
+
+          
 
           <ul className="flex font-[500] space-x-8 md:space-x-8">
+            {pathname.includes("/it-services") && <ContactPopover isScrolled={isScrolled} />}
+         {pathname.includes("/it-services") ?   <li
+              className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us")
+                  ? `text-[${primaryColor}]`
+                  : isScrolled
+                    ? "text-white"
+                    : ""
+                }`}
+
+              onClick={() => handleNavigation("/contact-us")}
+            >
+              Contact Us
+            </li>:
             <li
-              className={`hidden md:block cursor-pointer ${
+              className={`hidden md:block cursor-pointer  ${
                 pathname.includes("/contact-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
               }`}
               onClick={() => handleNavigation("/contact-us")}
             >
               Contact Us
-            </li>
-             <ContactPopover isScrolled={isScrolled}/>
+            </li>}
+            {!pathname.includes("/it-services") && <ContactPopover isScrolled={isScrolled}/>}
 
             
             {/* <li>
@@ -302,13 +318,19 @@ style={{ width: '90vw', maxWidth: '1600px' }}
     >
       <div className="relative h-full flex flex-col">
         <div className="p-6">
-           <Image
+         {pathname.includes("/it-services") ?  <Image
+              src={itLogocolor}
+              alt="Logo"
+              width={120}
+              height={40}
+              layout="intrinsic"
+            />: <Image
               src={logo}
               alt="Logo"
               width={120}
               height={40}
               layout="intrinsic"
-            />
+            />}
         </div>
         <button
           className="absolute top-4 right-4 p-2"
