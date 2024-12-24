@@ -9,6 +9,8 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Menu, X,  ChevronDown, ChevronRight } from 'lucide-react';
 import { ContactPopover } from "./_contactUsComponents/ContactPopover";
+import itLogo from '@/utilities/images/it-logo.svg'
+import itLogoColoured from '@/utilities/images/itLogoColoured.svg'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -115,7 +117,16 @@ const Navbar = () => {
         <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
           <Link href={"/"}>
             <Image
-              src={pathname.includes("/contact-us") ? logo : isScrolled ? logo : logoWhite}
+              src={
+                pathname.includes("/contact-us")
+                  ? logo
+                  : pathname.includes("/it-services")
+                    ? itLogo
+                    : isScrolled
+                      ? itLogoColoured
+                      : itLogoColoured
+              }
+
               alt="Logo"
               width={120}
               height={40}
@@ -123,7 +134,7 @@ const Navbar = () => {
             />
           </Link>
 
-          <ul className="md:flex hidden font-[500] space-x-8">
+          {!pathname.includes("/it-services") ? <ul className="md:flex hidden font-[500] space-x-8">
             <Link
               className={`cursor-pointer ${
                 pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
@@ -247,7 +258,7 @@ style={{ width: '90vw', maxWidth: '1600px' }}
                 </div>
               </div>
             </li>
-          </ul>
+          </ul>:null}
 
           <ul className="flex font-[500] space-x-8 md:space-x-8">
             <li
