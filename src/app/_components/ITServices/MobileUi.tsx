@@ -1097,7 +1097,7 @@ IT Services */}
           <div className='flex flex-col gap-[12px]'>
             <div className='w-[335px] h-[194px] bg-gray-200'>
               <Image
-                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/2.1.png"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/7.jpg"}
                 alt='Tech Team'
                 width={335}
                 height={194}
@@ -1107,7 +1107,7 @@ IT Services */}
             <div className='flex items-center gap-[12px]'>
               <div className='w-[161.5px] h-[194px] bg-gray-200'>
                 <Image
-                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5555.png"}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                   alt='Tech Team'
                   width={161.5}
                   height={194}
@@ -1116,7 +1116,7 @@ IT Services */}
               </div>
               <div className='w-[161.5px] h-[194px] bg-gray-200'>
                 <Image
-                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8317+2.jpg"}
+                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
                   alt='Tech Team'
                   width={161.5}
                   height={194}
@@ -1128,7 +1128,7 @@ IT Services */}
           <div className='flex flex-col gap-[12px]'>
             <div className='w-[335px] h-[194px] bg-gray-200'>
               <Image
-                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/6.jpg"}
                 alt='Tech Team'
                 width={335}
                 height={194}

@@ -1120,7 +1120,7 @@ function DesktopUi() {
           <div className='flex flex-col gap-[24px]'>
             <div className='w-[584px] h-[263px] bg-gray-200'>
               <Image
-                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/2.1.png"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/7.jpg"}
                 alt='Tech Team'
                 width={584}
                 height={263}
@@ -1130,7 +1130,7 @@ function DesktopUi() {
             <div className='flex items-center gap-[24px]'>
               <div className='w-[280px] h-[262px] bg-gray-200'>
                 <Image
-                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5555.png"}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                   alt='Tech Team'
                   width={280}
                 height={262}
@@ -1139,7 +1139,7 @@ function DesktopUi() {
               </div>
               <div className='w-[280px] h-[262px] bg-gray-200'>
                 <Image
-                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8317+2.jpg"}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
                   alt='Tech Team'
                   width={280}
                 height={262}
@@ -1153,7 +1153,7 @@ function DesktopUi() {
             <div className='flex items-center gap-[24px]'>
               <div className='w-[280px] h-[262px] bg-gray-200'>
                 <Image
-                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8330.jpg"}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/3+%281%29.jpg"}
                   alt='Tech Team'
                   width={280}
                   height={262}
@@ -1172,7 +1172,7 @@ function DesktopUi() {
             </div>
             <div className='w-[584px] h-[263px] bg-gray-200'>
               <Image
-                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
+                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/6.jpg"}
                 alt='Tech Team'
                 width={584}
                 height={263}
