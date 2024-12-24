@@ -16,6 +16,7 @@ import ITImage from '@/utilities/images/ITImage.svg'
 import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
 import finTechMain from '@/utilities/images/fintechMain.svg';
+import ApproachComponent from './components/ApproachComponent'
 
 function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -1099,6 +1100,11 @@ function DesktopUi() {
 
         </div>
       </section>
+
+      {/* solutions */}
+      <div className='w-full h-[860px] bg-white flex items-center'>
+      <ApproachComponent/>
+      </div>
 
       {/* Squadra Tech Team */}
       <div className='w-full py-[72px] px-[124px] flex flex-col gap-[62px] bg-[#FAFAFA] items-center'>

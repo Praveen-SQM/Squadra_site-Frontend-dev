@@ -14,6 +14,8 @@ import finTechMain from '@/utilities/images/fintechMain.svg';
 import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
 import TabComponent from './TabletTab';
 import ContactUsForm from './components/TabletContactUsForm';
+import ApproachComponent from './components/ApproachComponent';
+import ApprochCompTab from './components/ApprochCompTab';
 
 
 
@@ -154,7 +156,7 @@ function TabUi() {
           height={586}
           alt='BenefitFrame'
         />
-        {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/e+video.mp4" autoPlay loop width="640" height="600" controls className='rounded-md h-[1000px]'></video> */}
+        {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/e+video.mp4" autoPlay loop width="640" height="600" className='rounded-md h-[1000px]'></video> */}
       </div>
 
       {/* Feature Cards */}
@@ -355,7 +357,7 @@ function TabUi() {
             height={388}
             alt='SaaS'
           /> */}
-          <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" autoPlay loop width="640" height="360" controls className='rounded-md'></video>
+          <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" autoPlay loop width="640" height="360" className='rounded-md'></video>
         </div>
         <div className='mt-[44px] mb-[48px] grid grid-cols-2 gap-[20px]'>
           {
@@ -499,7 +501,7 @@ Development */}
           height={398}
           alt='webandMobileMain'
         /> */}
-        <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360" controls className='rounded-md'></video>
+        <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360" className='rounded-md'></video>
       </div>
       <div className='mt-[42px] mb-[32px] grid grid-cols-2 gap-[20px]'>
         {
@@ -648,7 +650,7 @@ Development */}
             height={427}
             alt='SaaS'
           /> */}
-          <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="640" height="360" controls className='rounded-[24px]'></video>
+          <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="640" height="360" className='rounded-[24px]'></video>
         </div>
         <div className='mt-[44px] mb-[48px] grid grid-cols-2 gap-[20px]'>
           {
@@ -793,7 +795,7 @@ IT Services */}
           height={427} priority
           alt='webandMobileMain'
         /> */}
-        <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360" controls className='rounded-[24px]'></video>
+        <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360"  className='rounded-[24px]'></video>
       </div>
       <div className='mt-[42px] mb-[32px] grid grid-cols-2 gap-[20px]'>
         {
@@ -831,6 +833,11 @@ IT Services */}
               </div>
             </div>
           ))}
+      </div>
+
+      {/* solutions */}
+      <div className='w-full h-[860px] bg-white flex items-center'>
+      <ApprochCompTab/>
       </div>
 
       {/*    sQuadra tech Team */}

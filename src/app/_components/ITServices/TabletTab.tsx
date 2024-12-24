@@ -2,11 +2,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import nodejsImage from "@/utilities/images/nodejs-image.svg"
-import expressjsImage from "@/utilities/images/express-image.svg"
-import pythonImage from "@/utilities/images/python-image.svg"
-import graphqlImage from "@/utilities/images/graphql-image.svg"
-import mongodbImage from "@/utilities/images/mongodb-image.svg"
-import mysqlImage from "@/utilities/images/mysql-image.svg"
+import expressjsImage from "@/utilities/images/express-image (2).svg"
+import pythonImage from "@/utilities/images/python-image (2).svg"
+import graphqlImage from "@/utilities/images/graphql-image (2).svg"
+import mongodbImage from "@/utilities/images/mongodb-image (2).svg"
+import mysqlImage from "@/utilities/images/mysql-image (2).svg"
 import javaImage from "@/utilities/images/java-image.svg"
 import springImage from "@/utilities/images/spring-image.svg"
 import nestImage from "@/utilities/images/nest-image.svg"
@@ -43,13 +43,14 @@ import vmImage from "@/utilities/images/vm-image.svg"
 import jenkinsImage from "@/utilities/images/jenkins-image.svg"
 import ga4Image from "@/utilities/images/ga4-image.svg"
 import gtmImage from "@/utilities/images/gtm-image.svg"
+import nodeImage from '@/utilities/images/node-image.svg'
 
 const TabComponent = () => {
     const [activeTab, setActiveTab] = useState("Backend");
 
     const tabs = ["Backend", "Frontend", "Mobile", "DevOps", "Analytics & Engagement"];
     const backendTools = [
-        { name: "Node.js", logo: nodejsImage },
+        { name: "Node.js", logo: nodeImage },
         { name: "Express.js", logo: expressjsImage },
         { name: "Python", logo: pythonImage },
         { name: "GraphQL", logo: graphqlImage },

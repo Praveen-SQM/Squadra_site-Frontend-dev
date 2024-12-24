@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
 
-    <html lang="en" suppressHydrationWarning >
+    <html 
+    style={{width:'100%'}}
+    lang="en" suppressHydrationWarning >
    
       <body
         className={`antialiased`}>

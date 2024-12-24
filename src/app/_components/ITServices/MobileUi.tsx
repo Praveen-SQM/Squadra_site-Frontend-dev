@@ -61,6 +61,7 @@ import dottedLine from '@/utilities/images/dotted-line.svg'
 import heroImage from '@/utilities/images/hero-image.svg'
 import ContactUsForm from './components/ContactUsForm';
 import { analyticsTools, backendTools, devopsTools, frontendTools, mobileTools } from './Tabs';
+import ApproachComponent from './components/ApproachComponent';
 
 export const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
@@ -1075,6 +1076,11 @@ IT Services */}
               </div>
             </div>
           ))}
+      </div>
+
+      {/* solutions */}
+      <div className='w-full bg-white flex items-center'>
+      <ApproachComponent/>
       </div>
 
       {/*    sQuadra tech Team */}
