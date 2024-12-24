@@ -265,7 +265,7 @@ style={{ width: '90vw', maxWidth: '1600px' }}
 
           <ul className="flex font-[500] space-x-8 md:space-x-8">
             {pathname.includes("/it-services") && <ContactPopover isScrolled={isScrolled} />}
-           <li
+         {pathname.includes("/it-services") ?   <li
               className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us")
                   ? `text-[${primaryColor}]`
                   : isScrolled
@@ -276,7 +276,7 @@ style={{ width: '90vw', maxWidth: '1600px' }}
               onClick={() => handleNavigation("/contact-us")}
             >
               Contact Us
-            </li>
+            </li>:
             <li
               className={`hidden md:block cursor-pointer  ${
                 pathname.includes("/contact-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
@@ -284,7 +284,7 @@ style={{ width: '90vw', maxWidth: '1600px' }}
               onClick={() => handleNavigation("/contact-us")}
             >
               Contact Us
-            </li>
+            </li>}
             {!pathname.includes("/it-services") && <ContactPopover isScrolled={isScrolled}/>}
 
             
