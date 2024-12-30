@@ -4,11 +4,11 @@ import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 
 const images = [
- "https://squadra-media.s3.ap-south-1.amazonaws.com/c1.jpg",
- "https://squadra-media.s3.ap-south-1.amazonaws.com/c2.jpg",
- "https://squadra-media.s3.ap-south-1.amazonaws.com/c3.jpg",
- "https://squadra-media.s3.ap-south-1.amazonaws.com/c4.jpg",
- "https://squadra-media.s3.ap-south-1.amazonaws.com/c5.jpg"
+"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/cimg.webp",
+"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/cimg2.webp",
+"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/cimg3.webp",
+"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/cimg4.webp",
+
 ]
 
 export default function Carousel() {

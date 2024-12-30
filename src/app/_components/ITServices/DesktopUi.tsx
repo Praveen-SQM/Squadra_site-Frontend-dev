@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import starSvg from '@/utilities/images/star.svg'
-import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, webAndMobDev } from './MobileUi'
+import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, saasData, webAndMobDev } from './MobileUi'
 import frame from '@/utilities/images/mobile-frame.svg'
 import Container from '@/utilities/images/Container.svg'
 import arrowRight from '@/utilities/images/arrow-right.svg'
@@ -17,6 +17,7 @@ import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
 import finTechMain from '@/utilities/images/fintechMain.svg';
 import ApproachComponent from './components/ApproachComponent'
+import righticon from '@/utilities/images/right-arrow.svg'
 import Link from 'next/link'
 
 function DesktopUi() {
@@ -67,15 +68,21 @@ function DesktopUi() {
             <p className='font-normal text-[18px] leading-[31px] text-white'>Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.</p>
           </div>
 
-          <Link href='#contact-section' className="w-[137px] h-[57px] rounded-[12px] border flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
-            <div className="w-[115px] h-[41px] py-[5px] px-[15px] gap-[8px] rounded-[8px] bg-[#FFFFFF] cursor-pointer">
-              {/* Content goes here */}
-              <p  className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
+          <Link
+            href="#contact-section"
+            className="w-[137px] h-[40px] rounded-[12px] flex justify-center items-center p-[2px]"
+            style={{
+              background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+            }}
+          >
+            <div className="w-full h-full rounded-[10px] flex items-center justify-center bg-[#FFFFFF]">
+              <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
                 Connect Us
               </p>
-
             </div>
           </Link>
+
+
         </div>
 
         <div className='mb-[43px]'>
@@ -340,19 +347,12 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
-              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
-                Get a Quote</p>
-              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
-                <Image
-                  src={arrowRight}
-                  width={36}
-                  height={36}
-                  alt='ArrowRight'
-                />
-              </div>
-
-            </Link>
+            <HoverButton
+              href="#contact-section"
+              buttonText="Get a Quote"
+              defaultIcon={arrowRight}
+              hoverIcon={righticon}
+            />
 
           </div>
         </div>
@@ -404,7 +404,7 @@ function DesktopUi() {
 
             <div className='mt-[42px] mb-[48px] grid grid-cols-2'>
               {
-                customSoftwareDevData?.map((el) => (
+                saasData?.map((el) => (
 
                   <div key={el.title}
                     className="w-[322px] mt-[16px] bg-[#F2F2F2] h-[148px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
@@ -439,19 +439,12 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
-              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
-                Get a Quote</p>
-              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
-                <Image
-                  src={arrowRight}
-                  width={36}
-                  height={36}
-                  alt='ArrowRight'
-                />
-              </div>
-
-            </Link>
+            <HoverButton
+              href="#contact-section"
+              buttonText="Get a Quote"
+              defaultIcon={arrowRight}
+              hoverIcon={righticon}
+            />
 
           </div>
 
@@ -560,19 +553,12 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#19191C]">
-              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
-                Get a Quote</p>
-              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
-                <Image
-                  src={arrowRight}
-                  width={36}
-                  height={36}
-                  alt='ArrowRight'
-                />
-              </div>
-
-            </Link>
+            <HoverButton
+              href="#contact-section"
+              buttonText="Get a Quote"
+              defaultIcon={arrowRight}
+              hoverIcon={righticon}
+            />
 
           </div>
         </div>
@@ -650,19 +636,12 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
-              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
-                Get a Quote</p>
-              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
-                <Image
-                  src={arrowRight}
-                  width={36}
-                  height={36}
-                  alt='ArrowRight'
-                />
-              </div>
-
-            </Link>
+            <HoverButton
+              href="#contact-section"
+              buttonText="Get a Quote"
+              defaultIcon={arrowRight}
+              hoverIcon={righticon}
+            />
 
           </div>
 
@@ -753,19 +732,12 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
-              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
-                Get a Quote</p>
-              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
-                <Image
-                  src={arrowRight}
-                  width={36}
-                  height={36}
-                  alt='ArrowRight'
-                />
-              </div>
-
-            </Link>
+            <HoverButton
+              href="#contact-section"
+              buttonText="Get a Quote"
+              defaultIcon={arrowRight}
+              hoverIcon={righticon}
+            />
 
           </div>
 
@@ -875,19 +847,12 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
-              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
-                Get a Quote</p>
-              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
-                <Image
-                  src={arrowRight}
-                  width={36}
-                  height={36}
-                  alt='ArrowRight'
-                />
-              </div>
-
-            </Link>
+            <HoverButton
+              href="#contact-section"
+              buttonText="Get a Quote"
+              defaultIcon={arrowRight}
+              hoverIcon={righticon}
+            />
 
           </div>
 
@@ -978,19 +943,12 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#19191C]">
-              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
-                Get a Quote</p>
-              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
-                <Image
-                  src={arrowRight}
-                  width={36}
-                  height={36}
-                  alt='ArrowRight'
-                />
-              </div>
-
-            </Link>
+            <HoverButton
+              href="#contact-section"
+              buttonText="Get a Quote"
+              defaultIcon={arrowRight}
+              hoverIcon={righticon}
+            />
 
           </div>
         </div>
@@ -1068,19 +1026,12 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <Link href='#contact-section'  className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
-              <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
-                Get a Quote</p>
-              <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
-                <Image
-                  src={arrowRight}
-                  width={36}
-                  height={36}
-                  alt='ArrowRight'
-                />
-              </div>
-
-            </Link>
+            <HoverButton
+              href="#contact-section"
+              buttonText="Get a Quote"
+              defaultIcon={arrowRight} 
+              hoverIcon={righticon}  
+            />
 
           </div>
 
@@ -1254,3 +1205,42 @@ function DesktopUi() {
 }
 
 export default DesktopUi
+
+
+
+const HoverButton = ({ href, buttonText, defaultIcon, hoverIcon }: {
+  href: string; 
+  buttonText: string; 
+  defaultIcon: string; 
+  hoverIcon: string;
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <Link
+      href={href}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313] transition-colors duration-300"
+    >
+      <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
+        {buttonText}
+      </p>
+      <div
+        className={`w-[36px] h-[36px] flex items-center justify-center rounded-[20px] transition-colors duration-300 ${isHovered ? "bg-[#FBAE17]" : "bg-[#FFFFFF]"
+          }`}
+      >
+        <Image
+          src={isHovered ? hoverIcon : defaultIcon}
+          width={isHovered ? 24 : 36}
+          height={isHovered ? 24 : 36}
+          alt="Arrow Icon"
+          className="transition-transform duration-300 ease-in-out transform"
+          style={{
+            scale: isHovered ? "0.9" : "1",
+          }}
+        />
+      </div>
+    </Link>
+  );
+};

@@ -90,14 +90,14 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
             width={24}
             height={24}
           />
-          {pathname.includes('it-services') && (
+          
             <p
               className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${isScrolled ? 'text-black' : 'text-white'
                 }`}
             >
               Schedule a Call
             </p>
-          )}
+        
         </div>
 
       </PopoverTrigger>

@@ -117,7 +117,7 @@ const ApproachComponent = () => {
         cancelAnimationFrame(animationFrame);
       }
     };
-  }, [isAnimating, progress, tabs.length]);
+  }, [isAnimating, progress]);
 
   const handleTabClick = (index:number) => {
     setIsAnimating(false);

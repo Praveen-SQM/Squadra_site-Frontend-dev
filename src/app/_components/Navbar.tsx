@@ -153,7 +153,7 @@ const Navbar = () => {
               
               {/* Services Mega Menu */}
               <div 
-            className={`absolute top-50 left-2/2 transform -translate-x-1/2 ${
+            className={`absolute top-[2.5rem] left-[85%] transform -translate-x-1/2 ${
   isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
 } transition-all duration-300 bg-white text-black shadow-xl`}
 style={{ width: '90vw', maxWidth: '1600px' }}
@@ -271,8 +271,8 @@ style={{ width: '90vw', maxWidth: '1600px' }}
           
 
           <ul className="flex font-[500] space-x-8 md:space-x-8">
-            {pathname.includes("/it-services") && <ContactPopover isScrolled={isScrolled} />}
-         {pathname.includes("/it-services") ?   <li
+            {true && <ContactPopover isScrolled={isScrolled} />}
+         {true ?   <li
               className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us")
                   ? `text-[${primaryColor}]`
                   : isScrolled
@@ -284,15 +284,8 @@ style={{ width: '90vw', maxWidth: '1600px' }}
             >
               Contact Us
             </li>:
-            <li
-              className={`hidden md:block cursor-pointer  ${
-                pathname.includes("/contact-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
-              }`}
-              onClick={() => handleNavigation("/contact-us")}
-            >
-              Contact Us
-            </li>}
-            {!pathname.includes("/it-services") && <ContactPopover isScrolled={isScrolled}/>}
+            null}
+            {/* {!pathname.includes("/it-services") && <ContactPopover isScrolled={isScrolled}/>} */}
 
             
             {/* <li>
