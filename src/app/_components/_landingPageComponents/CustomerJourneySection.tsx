@@ -69,7 +69,7 @@ function CustomerJourneySection() {
                 src={service.video}
               /> */}
               {/* Thumbnail Image */}
-              <Image
+              <Image quality={30}
                 src={service.image}
                 alt={service.title}
                 fill

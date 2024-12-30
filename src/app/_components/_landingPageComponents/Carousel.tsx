@@ -8,7 +8,6 @@ const images = [
 "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/cimg2.webp",
 "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/cimg3.webp",
 "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/cimg4.webp",
-
 ]
 
 export default function Carousel() {
