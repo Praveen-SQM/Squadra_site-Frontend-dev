@@ -87,7 +87,7 @@ function DesktopUi() {
 
         <div className='mb-[43px]'>
           <div className='w-full h-[815.25px]'>
-            <Image
+            <Image quality={40}
               src={heroImage}
               ref={imageRef}
               alt="Hero Image"
@@ -129,7 +129,7 @@ function DesktopUi() {
 
           <div className="w-[140.88px] h-[44px] flex justify-center items-center rounded-[100px] bg-[#131315]">
             <div className="flex items-center gap-[2px] h-full">
-              <Image
+              <Image quality={40}
                 className="flex-shrink-0"
                 src={starSvg}
                 width={20}
@@ -276,7 +276,7 @@ function DesktopUi() {
           {/* First Div */}
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
-              <Image
+              <Image quality={40}
                 src={Container}
                 width={438}
                 height={547}
@@ -319,7 +319,7 @@ function DesktopUi() {
                   >
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
-                        <Image
+                        <Image quality={40}
                           src={el?.icon}
                           width={23}
                           height={23}
@@ -411,8 +411,8 @@ function DesktopUi() {
                   >
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
-                        <Image
-                          src={el?.icon}
+                        <Image quality={40}
+                          src={el?.icon} 
                           width={23}
                           height={23}
                           alt='Network'
@@ -479,7 +479,7 @@ function DesktopUi() {
           {/* First Div */}
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
-              <Image
+              <Image quality={40}
                 src={ITImage}
                 width={438}
                 height={547}
@@ -525,7 +525,7 @@ function DesktopUi() {
                   >
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-600 rounded-[10.62px]'>
-                        <Image
+                        <Image quality={40}
                           src={el?.icon}
                           width={23}
                           height={23}
@@ -608,7 +608,7 @@ function DesktopUi() {
                   >
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-600 rounded-[10.62px]'>
-                        <Image
+                        <Image quality={40}
                           src={el?.icon}
                           width={23}
                           height={23}
@@ -651,7 +651,7 @@ function DesktopUi() {
           {/* Second Div */}
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
-              <Image
+              <Image quality={40}
                 src={webandMobileMain}
                 width={438}
                 height={547}
@@ -704,7 +704,7 @@ function DesktopUi() {
                   >
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
-                        <Image
+                        <Image quality={40}
                           src={el?.icon}
                           width={23}
                           height={23}
@@ -746,7 +746,7 @@ function DesktopUi() {
           {/* Second Div */}
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
-              <Image
+              <Image quality={40}
                 src={HealthCareMain}
                 width={438}
                 height={547}
@@ -819,7 +819,7 @@ function DesktopUi() {
                   >
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
-                        <Image
+                        <Image quality={40}
                           src={el?.icon}
                           width={23}
                           height={23}
@@ -869,7 +869,7 @@ function DesktopUi() {
           {/* First Div */}
           <div className="w-[438px] h-full">
             <div className='w-[438px] h-[547px] mt-[48px]'>
-              <Image
+              <Image quality={40}
                 src={finTechMain}
                 width={438}
                 height={547}
@@ -915,7 +915,7 @@ function DesktopUi() {
                   >
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-600 rounded-[10.62px]'>
-                        <Image
+                        <Image quality={40}
                           src={el?.icon}
                           width={23}
                           height={23}
@@ -998,8 +998,8 @@ function DesktopUi() {
                   >
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-600 rounded-[10.62px]'>
-                        <Image
-                          src={el?.icon}
+                        <Image quality={40}
+                          src={el?.icon} 
                           width={23}
                           height={23}
                           alt='Network'
@@ -1071,7 +1071,7 @@ function DesktopUi() {
         <div className='flex gap-[24px] items-center'>
           <div className='flex flex-col gap-[24px]'>
             <div className='w-[584px] h-[263px] bg-gray-200'>
-              <Image
+              <Image quality={40}
                 src={"https://squadra-media.s3.ap-south-1.amazonaws.com/7.jpg"}
                 alt='Tech Team'
                 width={584}
@@ -1081,7 +1081,7 @@ function DesktopUi() {
             </div>
             <div className='flex items-center gap-[24px]'>
               <div className='w-[280px] h-[262px] bg-gray-200'>
-                <Image
+                <Image quality={40}
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                   alt='Tech Team'
                   width={280}
@@ -1090,7 +1090,7 @@ function DesktopUi() {
                 />
               </div>
               <div className='w-[280px] h-[262px] bg-gray-200'>
-                <Image
+                <Image quality={40}
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
                   alt='Tech Team'
                   width={280}
@@ -1104,7 +1104,7 @@ function DesktopUi() {
           <div className='flex flex-col gap-[24px]'>
             <div className='flex items-center gap-[24px]'>
               <div className='w-[280px] h-[262px] bg-gray-200'>
-                <Image
+                <Image quality={40}
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/3+%281%29.jpg"}
                   alt='Tech Team'
                   width={280}
@@ -1113,7 +1113,7 @@ function DesktopUi() {
                 />
               </div>
               <div className='w-[280px] h-[262px] bg-gray-200'>
-                <Image
+                <Image quality={40}
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg"}
                   alt='Tech Team'
                   width={280}
@@ -1123,7 +1123,7 @@ function DesktopUi() {
               </div>
             </div>
             <div className='w-[584px] h-[263px] bg-gray-200'>
-              <Image
+              <Image quality={40}
                 src={"https://squadra-media.s3.ap-south-1.amazonaws.com/6.jpg"}
                 alt='Tech Team'
                 width={584}
@@ -1155,7 +1155,7 @@ function DesktopUi() {
           </div>
 
           <div className='relative w-full flex items-center justify-center' style={{ height: '280px' }}>
-            <Image
+            <Image quality={40}
               src={whyChooseImage}
               width={0}
               height={0}
@@ -1230,7 +1230,7 @@ const HoverButton = ({ href, buttonText, defaultIcon, hoverIcon }: {
         className={`w-[36px] h-[36px] flex items-center justify-center rounded-[20px] transition-colors duration-300 ${isHovered ? "bg-[#FBAE17]" : "bg-[#FFFFFF]"
           }`}
       >
-        <Image
+        <Image quality={40}
           src={isHovered ? hoverIcon : defaultIcon}
           width={isHovered ? 24 : 36}
           height={isHovered ? 24 : 36}
