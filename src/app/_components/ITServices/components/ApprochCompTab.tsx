@@ -7,11 +7,7 @@ import icon5 from "@/utilities/icons/approch_icon_5.svg";
 
 import Image from "next/image";
 
-// Dynamically import images based on the tab index
-import Approch_img_1 from "@/utilities/images/Approch_img_1.svg";
-import Approch_img_2 from "@/utilities/images/Approch_img_2.svg";
-import Approch_img_3 from "@/utilities/images/Approch_img_3.svg";
-import Approch_img_4 from "@/utilities/images/Approch_img_4.svg";
+
 import Approch_img_5 from "@/utilities/images/Approch_img_5.svg";
 
 const ApprochCompTab = () => {
@@ -26,12 +22,12 @@ const ApprochCompTab = () => {
       title: "Laying the Foundation",
       content:
         "We begin by understanding your unique challenges and requirements through in-depth consultation.",
-        description: "We help entrepreneurs craft their brand identity and build a solid digital foundation",
+      description: "We help entrepreneurs craft their brand identity and build a solid digital foundation",
       title1: "Branding",
       body1: "Names, logos, and visual identities that reflect their vision.  ",
       title2: "Website Design",
       body2: "Stunning, user-friendly websites created by our IT experts.",
-      image: Approch_img_1, // Image for the first tab
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/strategy.webp", // Image for the first tab
       icon: icon1,
     },
     {
@@ -45,7 +41,7 @@ const ApprochCompTab = () => {
       title2: "Animation",
       body2:
         "Through Squadraverse, we craft immersive animations, explainer videos, and AR/VR experiences.",
-      image: Approch_img_2, // Image for the second tab
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/brand.webp", // Image for the second tab
       icon: icon2,
     },
     {
@@ -57,7 +53,7 @@ const ApprochCompTab = () => {
       body1: "Hiring the right people and building a strong workforce.",
       title2: "Accounts Services",
       body2: " Managing finances, taxes, and compliance. ",
-      image: Approch_img_3, // Image for the third tab
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/relation.webp", // Image for the third tab
       icon: icon3,
     },
     {
@@ -68,14 +64,14 @@ const ApprochCompTab = () => {
       body1: "Strategies, tools, and processes to boost revenue.",
       title2: "Investment Support",
       body2: "Helping entrepreneurs connect with investors and scale globally.",
-      image: Approch_img_4, // Image for the fourth tab
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/marketing.webp", // Image for the fourth tab
       icon: icon4,
     },
     {
       title: "Enabling Excellence",
       content:
         "For sustained success, we provide training and technology solutions",
-        description:'For sustained success, we provide training and technology solutions.',
+      description: 'For sustained success, we provide training and technology solutions.',
       title1: "E-Learning Solutions ",
       body1: "Customized training modules for employee development.",
       title2: "ERP & CRM Systems",
@@ -162,7 +158,7 @@ const ApprochCompTab = () => {
                         : "bg-gray-100 opacity-40"
                     } flex items-center justify-center`}
                   >
-                    <Image
+                    <Image width={50} height={50}
                       src={tab.icon}
                       alt="tab icon"
                       className={` transition-all duration-300 ${
@@ -259,7 +255,7 @@ const ApprochCompTab = () => {
 
       {/* Right Section */}
       <div className="l md:flex flex-col gap-[12px] w-[321px] md:mt-0">
-        <Image
+        <Image width={513} height={384}
           src={tabs[activeTab].image} // Dynamically loaded image for each tab
           alt={`Approach Image`}
           className="w-[513px] h-[384px] object-cover my-[52px] rounded-[24px]"
