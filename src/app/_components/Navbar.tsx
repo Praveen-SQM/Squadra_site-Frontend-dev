@@ -177,6 +177,25 @@ style={{ width: '90vw', maxWidth: '1600px' }}
 
                     {/* Right Columns - Services */}
                     <div className="w-2/3 grid grid-cols-4 gap-8">
+                      {/* IT and services */}
+                      <div className="">
+                        <h3 className="font-bold mb-4">
+                          <Link onClick={() =>
+                            setTimeout(() => {
+                              setIsServicesHovered(false);
+                            }, 2000) 
+                          } href="/it-services" className=" cursor-pointer">Technology & Development</Link>
+                        </h3>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                          <li>Web & Mobile App Development</li>
+                          <li>E-commerce Solutions</li>
+                          <li>AI & Machine Learning</li>
+                          <li>Cloud Solutions</li>
+                          <li>DevOps & Cybersecurity</li>
+                          <li>Quality Assurance & Testing</li>
+                        </ul>
+                      </div>
+
                       {/* Branding & Creative */}
                       <div>
                         <h3 className="font-semibold mb-4">Branding & Creative</h3>
@@ -228,19 +247,7 @@ style={{ width: '90vw', maxWidth: '1600px' }}
                           <li>Interactive Learning Solutions</li>
                         </ul>
                       </div>
-                        <div className="">
-                    <h3 className="font-bold mb-4">
-                          <Link href="/it-services" className=" cursor-pointer">Technology & Development</Link>
-                       </h3>
-                   <ul className="space-y-2 text-sm text-gray-600">
-                      <li>Web & Mobile App Development</li>
-                      <li>E-commerce Solutions</li>
-                      <li>AI & Machine Learning</li>
-                      <li>Cloud Solutions</li>
-                      <li>DevOps & Cybersecurity</li>
-                      <li>Quality Assurance & Testing</li>
-                    </ul>
-                  </div>
+                  
                     </div>
                   </div>
 
