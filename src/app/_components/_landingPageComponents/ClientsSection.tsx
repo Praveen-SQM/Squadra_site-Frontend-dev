@@ -55,7 +55,7 @@ import clientNior from "../../../utilities/icons/client-cafeNior.webp";
                 alt={`${logo.name} logo`}
                 fill
                 sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                className="object-contain filter md:grayscale hover:grayscale-0 transition-all duration-300"
+                className="object-contain filter transition-all duration-300"
               />
             </div>
           </div>

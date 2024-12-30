@@ -62,6 +62,7 @@ import heroImage from '@/utilities/images/hero-image.svg'
 import ContactUsForm from './components/ContactUsForm';
 import { analyticsTools, backendTools, devopsTools, frontendTools, mobileTools } from './Tabs';
 import ApproachComponent from './components/ApproachComponent';
+import Link from 'next/link';
 
 export const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
@@ -314,7 +315,7 @@ function MobileUi() {
           </div>
         </div>
 
-        <div className="w-[135px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+        <Link href='#contact-section' className="w-[135px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
           <div className="w-[115px] h-[41px] p-[5px] px-[15px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
             {/* Content goes here */}
             <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
@@ -322,7 +323,7 @@ function MobileUi() {
             </p>
 
           </div>
-        </div>
+        </Link>
 
         <div className='mb-[43px]'>
           <div className='w-full h-[263px]'>

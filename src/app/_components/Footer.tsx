@@ -39,16 +39,16 @@ const Footer = () => {
 
           <div>
             <h3 className="text-xl font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-5 pt-4 text-[#888888]">
+            <ul className="flex flex-col space-y-5 pt-4 text-[#888888]">
               <li className="hover:text-white cursor-pointer">
                 Digital Marketing & PR
               </li>
               <li className="hover:text-white cursor-pointer">
                 Branding & Creative
               </li>
-              <li className="hover:text-white cursor-pointer">
+              <Link href='/it-services' className="hover:text-white cursor-pointer">
                 Technology & Development
-              </li>
+              </Link>
               <li className="hover:text-white cursor-pointer">Visual Impact</li>
               <li className="hover:text-white cursor-pointer">
                 Animation & E-learning

@@ -1,5 +1,4 @@
 "use client"
-import image from "../../../utilities/icons/contatc-us.svg";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -11,11 +10,11 @@ export default function ContactSection() {
       <div className="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto">
         <div className="rounded-2xl overflow-hidden">
           <Image
-            src={image}
+            src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/contact.webp"}
             alt="Person working on laptop"
             width={500}
             height={500}
-            className="object-cover"
+            className="object-cover rounded-xl"
           />
         </div>
 

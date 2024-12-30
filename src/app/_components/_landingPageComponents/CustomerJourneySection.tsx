@@ -1,18 +1,13 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import image from '@/utilities/images/Sol-1.webp'
 import image2 from '@/utilities/images/Sol-2.webp'
-import image3 from '@/utilities/images/Sol-3.webp'
-import image4 from '@/utilities/images/Sol-4.webp'
-import image5 from '@/utilities/images/Sol-5.webp'
-import image6 from '@/utilities/images/Sol-6.webp'
 function CustomerJourneySection() {
   const services = [
     {
       title: "Brand Identity &\nLogo Design",
       description: "Our team designs logos that capture your vision and values.",
-      image: image, 
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/brand.webp", 
       video: "https://squadra-media.s3.ap-south-1.amazonaws.com/1112893_Teamwork_Coworking_1920x1080_1_9d0e3b0d07+(1).mp4",
     },
     {
@@ -24,25 +19,25 @@ function CustomerJourneySection() {
     {
       title: "Website Development &\nE-commerce Setup",
       description: "We design websites that look great and drive seamless user experiences for conversions.",
-      image:image3, 
+      image:"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/website.webp", 
       video: "https://squadra-media.s3.ap-south-1.amazonaws.com/1112819_Concentration_Teamwork_3840x2160_4065f959c6.mp4",
     },
         {
       title: "Digital Marketing Strategy",
       description: "We craft digital strategies to boost your presence, engage customers, and grow your brand.",
-      image:image4, 
+          image:"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/strategy.webp", 
       video: "https://squadra-media.s3.ap-south-1.amazonaws.com/1473075_People_Business_1920x1080_6675f77d8b.mp4",
     },
         {
       title: "Public Relations for Brand Launch",
       description: "We craft your message and deliver it to the right audience with targeted PR.",
-      image:image5, 
+          image:"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/relation.webp", 
       video: "https://squadra-media.s3.ap-south-1.amazonaws.com/1471741_People_Business_1920x1080_712aeda6f4.mp4",
     },
         {
       title: "Ongoing Marketing, Analytics &\n Scaling Your Business",
       description: "We drive engagement and sales while refining performance with data analytics.",
-      image:image6, 
+          image:"https://squadra-media.s3.ap-south-1.amazonaws.com/marketing.webp", 
       video: "https://squadra-media.s3.ap-south-1.amazonaws.com/1114499_Plan_Architecture_1920x1080_42270b2ae3.mp4",
     },
   ];
@@ -65,20 +60,21 @@ function CustomerJourneySection() {
 
             <div className="relative aspect-[3/2] group">
               {/* Video */}
-              <video
+              {/* <video
                 className="w-full h-full object-cover opacity-0  group-hover:opacity-100 transition-opacity"
                 autoPlay
                 muted
                 loop
                 playsInline
                 src={service.video}
-              />
+              /> */}
               {/* Thumbnail Image */}
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
-                className="object-cover group-hover:opacity-0 transition-opacity"
+                className="object-cover  transition-opacity"
+                // group-hover:opacity-0
               />
             </div>
             <CardContent className="p-6">

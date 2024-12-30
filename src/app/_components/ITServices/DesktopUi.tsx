@@ -17,6 +17,7 @@ import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
 import finTechMain from '@/utilities/images/fintechMain.svg';
 import ApproachComponent from './components/ApproachComponent'
+import Link from 'next/link'
 
 function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -66,15 +67,15 @@ function DesktopUi() {
             <p className='font-normal text-[18px] leading-[31px] text-white'>Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.</p>
           </div>
 
-          <div className="w-[137px] h-[57px] rounded-[12px] border flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+          <Link href='#contact-section' className="w-[137px] h-[57px] rounded-[12px] border flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
             <div className="w-[115px] h-[41px] py-[5px] px-[15px] gap-[8px] rounded-[8px] bg-[#FFFFFF] cursor-pointer">
               {/* Content goes here */}
-              <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
+              <p  className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
                 Connect Us
               </p>
 
             </div>
-          </div>
+          </Link>
         </div>
 
         <div className='mb-[43px]'>
@@ -339,7 +340,7 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
               <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
@@ -351,7 +352,7 @@ function DesktopUi() {
                 />
               </div>
 
-            </div>
+            </Link>
 
           </div>
         </div>
@@ -438,7 +439,7 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
               <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
@@ -450,7 +451,7 @@ function DesktopUi() {
                 />
               </div>
 
-            </div>
+            </Link>
 
           </div>
 
@@ -559,7 +560,7 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#19191C]">
+            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#19191C]">
               <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
@@ -571,7 +572,7 @@ function DesktopUi() {
                 />
               </div>
 
-            </div>
+            </Link>
 
           </div>
         </div>
@@ -649,7 +650,7 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
               <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
@@ -661,7 +662,7 @@ function DesktopUi() {
                 />
               </div>
 
-            </div>
+            </Link>
 
           </div>
 
@@ -752,7 +753,7 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
               <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
@@ -764,7 +765,7 @@ function DesktopUi() {
                 />
               </div>
 
-            </div>
+            </Link>
 
           </div>
 
@@ -874,7 +875,7 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
               <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
@@ -886,7 +887,7 @@ function DesktopUi() {
                 />
               </div>
 
-            </div>
+            </Link>
 
           </div>
 
@@ -977,7 +978,7 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#19191C]">
+            <Link href='#contact-section' className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#19191C]">
               <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
@@ -989,7 +990,7 @@ function DesktopUi() {
                 />
               </div>
 
-            </div>
+            </Link>
 
           </div>
         </div>
@@ -1067,7 +1068,7 @@ function DesktopUi() {
                   </div>
                 ))}
             </div>
-            <div className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
+            <Link href='#contact-section'  className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313]">
               <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
                 Get a Quote</p>
               <div className='w-[36px] h-[36px] flex items-center justify-center rounded-[20px] bg-[#FFFFFF]'>
@@ -1079,7 +1080,7 @@ function DesktopUi() {
                 />
               </div>
 
-            </div>
+            </Link>
 
           </div>
 
