@@ -8,6 +8,12 @@ import rightArrowIcon from '@/utilities/icons/right-arrow.svg'
 import plusIcon from '@/utilities/icons/plus-icon.svg'
 import minusIcon from '@/utilities/icons/minus-icon.svg'
 import applyIcon from '@/utilities/icons/apply-icon.svg'
+import growthIcon from '@/utilities/icons/growth-icon.svg'
+import remunerationIcon from '@/utilities/icons/remuneration-icon.svg'
+import workplaceIcon from '@/utilities/icons/workplace-icon.svg'
+import workEnvironmentIcon from '@/utilities/icons/work-environment-icon.svg'
+import TalentIcon from '@/utilities/icons/talent-icon.svg'
+import WorkBalanceIcon from '@/utilities/icons/work-balance.svg'
 import { useRouter } from "next/navigation";
 
 
@@ -36,7 +42,41 @@ function DesktopUi() {
           title: "Writing (2)",
           content: "• Competitive salary\n• Health insurance\n• Flexible working hours\n• Professional development opportunities\n• Collaborative and innovative work environment"
         }
-      ]
+    ]
+
+    const employeeBenefits=[
+        {
+            icon:growthIcon,
+            title:"01. Growth Opportunities",
+            description:"At Squadra Media, we believe learning never stops. We’re dedicated to fostering growth and helping employees achieve their best."
+        },
+        {
+            icon:remunerationIcon,
+            title:"02. Competitive Remuneration",
+            description:"We value our employee's contributions and ensure they’re rewarded for their dedication and growth."
+        },
+        {
+            icon:workplaceIcon,
+            title:"03. Eco-friendly Workplace",
+            description:"Surrounded by nature, our workspace promotes mental well-being while reducing our carbon footprint."
+        },
+        {
+            icon:workEnvironmentIcon,
+            title:"04. An Instagram-worthy Fun Work Environment",
+            description:"Our beautifully designed office is a productivity booster and an Instagram-worthy spot every day."
+        },
+        {
+            icon:TalentIcon,
+            title:"05.Talent Nurturing Community",
+            description:"We help employees achieve career goals while encouraging them to explore hidden talents and make a difference."
+        },
+        {
+            icon:WorkBalanceIcon,
+            title:"06. Work-Life Balance",
+            description:"We promote a healthy balance between work and personal life to enhance happiness, well-being, and productivity."
+        }
+    ]
+
 
       const [openIndexes, setOpenIndexes] = useState<number[]>([])
       
@@ -86,7 +126,7 @@ function DesktopUi() {
             </div>
 
             {/* Current Opening */}
-            <div className='w-full flex flex-col justify-center items-center'>
+            <div className='w-full flex flex-col items-center'>
             <div className='flex flex-col py-[72px] px-[124px] gap-[42px] w-[1192px]'>
                 <div className='flex flex-col gap-[72px] justify-center'>
                     <p className='font-[300] text-[62px] leading-[50px] text-[#131313] text-center'>Current openings</p>
@@ -167,47 +207,57 @@ function DesktopUi() {
             </div>
             </div>
 
-            {/* Values Section */}
-            <div className="bg-[#FBAE17] flex flex-col justify-center py-[97.5px]">
-                <div className='flex gap-[167.5px] justify-center'>
-                    <div className='flex flex-col gap-[57px]'>
-                        <div className='flex flex-col gap-6'>
-                            <h1 className="font-normal text-[60px] leading-[81px] text-[#FFFFFF]">The Values<br />We Live By</h1>
-                            <p className="font-normal text-[18px] leading-7 text-[#FFFFFF]">
-                                We prioritize putting our values at the forefront, in<br />
-                                everything we do and everywhere we go.
-                            </p>
+            {/* Employee Benefits */}
+            <div className='w-full bg-[#FAFAFA] flex flex-col py-[72px] px-[124px] items-center'>
+                <div className='flex flex-col gap-[80px] w-[1192px]'>
+                   <p className='font-[300] text-[60px] leading-[71.6px] text-center text-[#131313]'>We prioritise our employee's <br/> <span className='text-[#FBAE17]'> well-being.</span></p>
+                   <div className='grid grid-cols-3'>
+                    {employeeBenefits?.map((benefit, index) => (
+                        <div key={index} className={`h-[460px] w-[397.33px] flex flex-col items-center pt-[72px] pb-[64px] px-[44px] gap-[40px] ${index%2===0?'bg-[#FFFFFF]':'bg-[#FAFAFA]'}`}>
+                            <Image src={benefit?.icon} alt={benefit.title} width={100} height={100}/>
+                            <div className='flex flex-col gap-5'>
+                                <p className='font-[600] text-[20px] leading-[23.87px] text-[#131313]'>{benefit?.title}</p>
+                                <p className='font-normal text-[18px] leading-7 text-[#6D6D6D]'>{benefit?.description}</p>
+                            </div>
                         </div>
-                        <Image src={squadraImage} alt='squadra Image' />
+                    ))}
+                   </div>
+                </div>
+            </div>
+
+            {/* Life at squadra */}
+            <div className='w-full bg-[#FFFFFF] py-[72px] px-[124px] flex flex-col gap-[44px] items-center'>
+                <div className='flex flex-col gap-[44px] w-[1192px]'>
+                    <div className='flex flex-col gap-[12px]'>
+                        <p className='font-[300] text-[62px] leading-[72px] text-center text-[#131313]'>Life at <span className='text-[#FBAE17]'>Squadra Media</span></p>
+                        <p className='font-normal text-[18px] leading-[24px] text-center text-[#6D6D6D]'>A space to unlock your true potential, chase your dreams, and embrace your <br/> passion all while enjoying every moment with fun and laughter!</p>
                     </div>
-
-                    <div className='flex flex-col gap-[60px]'>
-                        <div className='flex gap-[33px]'>
-                            <div className='w-[0.75px] h-[216.13px] bg-[#FFFFFF]'></div>
-                            <div className='flex flex-col'>
-                                <p className='font-normal text-[18px] leading-[21.6px] text-[#FFFFFF] mb-[32.09px]'>01</p>
-                                <p className='font-normal text-[60px] leading-[60px] text-[#FFFFFF] mb-[17.25px]'>Growth</p>
-                                <p className='font-normal text-[13.25px] leading-[21.6px] text-[#FFFFFF]'>Our vision is to grow together as an organisation <br/>while working towards achieving individual and <br/>professional goals.</p>
+                    <div className='flex flex-col gap-3'>
+                        <div className='flex flex-col gap-3'>
+                            <div className='flex items-center gap-3'>
+                                <div className='flex flex-col gap-3'>
+                                    <div className='rounded-[6px] w-[420px] h-[194px] bg-gray-400'>
+                                    <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/5555.webp" alt='Life at Squadra' width={420} height={194} className="w-full h-full object-cover"/>
+                                    </div>
+                                    <div className='rounded-[6px] w-[420px] h-[194px] bg-gray-400'></div>
+                                </div>
+                                <div className='rounded-[6px] w-[760px] h-[400px]'>
+                                    <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/444.webp" alt='Life at Squadra' width={760} height={400} className="w-full h-full object-cover"/>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-3'>
+                                <div className='rounded-[6px] w-[760px] h-[400px] bg-gray-400'>
+                                <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/2.1.webp" alt='Life at Squadra' width={760} height={400} className="w-full h-full object-cover"/>
+                                </div>
+                                <div className='flex flex-col gap-3'>
+                                    <div className='rounded-[6px] w-[420px] h-[194px] bg-gray-400'>
+                                    <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg" alt='Life at Squadra' width={420} height={194} className="w-full h-full object-cover"/>
+                                    </div>
+                                    <div className='rounded-[6px] w-[420px] h-[194px] bg-gray-400'></div>
+                                </div>
                             </div>
                         </div>
-
-                        <div className='flex gap-[33px]'>
-                            <div className='w-[0.75px] h-[216.13px] bg-[#FFFFFF]'></div>
-                            <div className='flex flex-col'>
-                                <p className='font-normal text-[18px] leading-[21.6px] text-[#FFFFFF] mb-[32.09px]'>02</p>
-                                <p className='font-normal text-[60px] leading-[60px] text-[#FFFFFF] mb-[17.25px]'>People</p>
-                                <p className='font-normal text-[13.25px] leading-[21.6px] text-[#FFFFFF]'>Our people are the driving force behind all our <br/>achievements, and we make it a point to give it  <br/>back to them.</p>
-                            </div>
-                        </div>
-
-                        <div className='flex gap-[33px]'>
-                            <div className='w-[0.75px] h-[216.13px] bg-[#FFFFFF]'></div>
-                            <div className='flex flex-col'>
-                                <p className='font-normal text-[18px] leading-[21.6px] text-[#FFFFFF] mb-[32.09px]'>03</p>
-                                <p className='font-normal text-[60px] leading-[60px] text-[#FFFFFF] mb-[17.25px]'>Balance</p>
-                                <p className='font-normal text-[13.25px] leading-[21.6px] text-[#FFFFFF]'>We value life and its intricate balance, hence <br/>ensuring all our people are well balanced in both <br/>their professional and personal roles.</p>
-                            </div>
-                        </div>
+                        <div className='rounded-[6px] w-[1192px] h-[440px] bg-gray-400'></div>
                     </div>
                 </div>
             </div>
