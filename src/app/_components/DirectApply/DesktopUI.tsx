@@ -19,7 +19,8 @@ function DesktopUi() {
     const {
         register,
         handleSubmit,
-
+        watch,
+        setValue,
         formState: { errors },
     } = useForm<FormData>({
         mode: "onChange",
@@ -29,9 +30,24 @@ function DesktopUi() {
         lastName: string;
         email: string;
         phone: string;
-        message: string;
-        subject: string;
+        location: string;
+        linkedProfile: string;
+        resume: File | any;
     };
+
+    const formData=watch();
+
+    useEffect(()=>{
+        console.log("formData--->", formData)
+    },[formData])
+
+    const resumeFile=watch('resume');
+
+    useEffect(()=>{
+        if(resumeFile){
+            console.log("resumeFile--->", resumeFile[0]?.name)
+        }
+    },[resumeFile])
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
         console.log("data--->", data);
@@ -48,10 +64,10 @@ function DesktopUi() {
 
     return (
         <div className='my-[80px] bg-[#FAFAFA] min-h-screen'>
-            <div className='flex items-center justify-between py-[100px] px-[124px]'>
+            <div className='flex items-center justify-between lg:py-[100px] lg:px-[124px] md:pt-[80px] md:pb-[100px] md:px-[60px] md:flex-col lg:flex-row md:gap-[48px]'>
                 <div className='flex flex-col gap-[12px]'>
-                    <p className='font-normal text-[52px] leading-[62.05px] text-[#131313]'>Step into your <br />future with us.</p>
-                    <p className='font-normal text-[16px] leading-[24px] text-[#6D6D6D]'>Send us your application <br />we might just have the perfect spot for you soon!</p>
+                    <p className='lg:font-normal lg:text-[52px] lg:leading-[62.05px] md:font-medium md:text-[28px] md:leading-[33.41px] lg:text-[#131313] md:text-[#3D3D3D] lg:w-[456px]'>Step into your future with us.</p>
+                    <p className='font-normal text-[16px] leading-[24px] text-[#6D6D6D] md:text-center lg:text-start'>Send us your application <br />we might just have the perfect spot for you soon!</p>
                 </div>
 
                 {/* Right Section */}
@@ -65,7 +81,7 @@ function DesktopUi() {
                                 <label htmlFor="first-name" className="block text-sm mb-2">
                                     Resume*
                                 </label>
-                                {fileContent === null ?
+                                {(resumeFile === null || resumeFile===undefined || resumeFile[0]?.name===undefined) ?
                                     (
                                         <div onClick={() => document.getElementById('fileInput')?.click()} className='w-full rounded-[8px] border border-[#4C6EFF] h-[52px] flex justify-center items-center gap-2 cursor-pointer'>
                                             <Image src={resumeUploadIcon} alt='resumeUploadIcon' width={24} height={24} />
@@ -77,9 +93,9 @@ function DesktopUi() {
                                         <div className='w-full rounded-[8px] px-4 border border-[#4C6EFF] bg-[#4C6EFF] h-[52px] flex justify-between items-center'>
                                             <div className='gap-2 flex items-center'>
                                                 <Image src={checkCircleIcon} alt='checkCircleIcon' width={24} height={24}/>
-                                                <p className='font-normal text-[16px] leading-[19.09px] text-[#FFFFFF]'>{fileContent?.name}</p>
+                                                <p className='font-normal text-[16px] leading-[19.09px] text-[#FFFFFF]'>{resumeFile[0]?.name}</p>
                                             </div>
-                                            <div className='cursor-pointer' onClick={() => setFileContent(null)}>
+                                            <div className='cursor-pointer' onClick={() => setValue('resume', null)}>
                                                 <Image src={closeIcon} alt='closeIcon' width={16} height={16}/>
                                             </div>
                                         </div>
@@ -88,10 +104,16 @@ function DesktopUi() {
                                 <input
                                     id="fileInput"
                                     type="file"
-                                    accept=".pdf,.ppt,.pptx,.mp4,/*"
+                                    // accept=".pdf,.ppt,.pptx,.mp4,/*"
                                     className="hidden"
-                                    onChange={handleFileChange}
+                                    {...register("resume", { 
+                                        required: "Resume is required" 
+                                    })}
+                                    // onChange={handleFileChange}
                                 />
+                                {errors.resume && (
+                                    <p className="text-red-500 text-sm mt-1">{errors?.resume?.message?.toString()}</p>
+                                )}
                             </div>
                         </div>
 
@@ -183,17 +205,13 @@ function DesktopUi() {
                                 <input
                                     id="location"
                                     placeholder="Enter your location"
-                                    {...register("email", {
-                                        required: "Email is required",
-                                        pattern: {
-                                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                                            message: "Enter a valid email address",
-                                        },
+                                    {...register("location", {
+                                        required: "Location is required",
                                     })}
                                     className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                                 />
-                                {errors.email && (
-                                    <p className="text-red-500 text-sm mt-1">{errors?.email?.message?.toString()}</p>
+                                {errors.location && (
+                                    <p className="text-red-500 text-sm mt-1">{errors?.location?.message?.toString()}</p>
                                 )}
                             </div>
 
@@ -202,18 +220,15 @@ function DesktopUi() {
                                     Linked Profile*
                                 </label>
                                 <input
-                                    id="phone"
-                                    type="number"
+                                    id="linkedProfile"
                                     placeholder="Enter Linked link"
-                                    {...register("phone", {
-                                        required: "Phone number is required",
-                                        minLength: { value: 10, message: "Phone number must be at least 10 characters" },
-                                        maxLength: { value: 10, message: "Phone number must be at most 10 characters" },
+                                    {...register("linkedProfile", {
+                                        required: "Linked profile is required"
                                     })}
                                     className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                                 />
-                                {errors.phone && (
-                                    <p className="text-red-500 text-sm mt-1">{errors?.phone?.message?.toString()}</p>
+                                {errors.linkedProfile && (
+                                    <p className="text-red-500 text-sm mt-1">{errors?.linkedProfile?.message?.toString()}</p>
                                 )}
                             </div>
                         </div>
@@ -235,7 +250,7 @@ function DesktopUi() {
 
 
                         {/* Submit Button */}
-                        <Button disabled={loading} type="submit" className="px-6 py-4 float-right bg-black text-white rounded-md">
+                        <Button disabled={loading} type="submit" className="px-6 py-4 float-right bg-black text-white rounded-md h-[48px] lg:w-[168px] md:w-full">
                             {loading && <Loader2 className="animate-spin" />}  {loading ? "Please wait..." : "Apply Now"}
                             {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
                         </Button>

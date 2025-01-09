@@ -10,7 +10,7 @@ function Careers() {
       </div>
       <div className="hidden sm:block lg:hidden">
         {/* <TabUi /> */}
-        <h1>Tablet careers view</h1>
+        <DesktopUi />
       </div>
          <div className="block sm:hidden min-w-fit max-w-[410px] mx-auto">
         {/* <MobileUi /> */}

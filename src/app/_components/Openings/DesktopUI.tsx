@@ -48,7 +48,7 @@ function DesktopUi() {
 
 
     return (
-        <div className='my-[80px] pt-[32px] pb-[72px] px-[124px] flex flex-col gap-[42px]'>
+        <div className='my-[80px] pt-[32px] pb-[72px] lg:px-[124px] md:px-[60px] flex flex-col gap-[42px]'>
            <div className='pb-[44px] flex items-center gap-[12px]'>
             <p onClick={()=>{router.push('/')}} className='font-medium text-[16px] leading-6 text-[#888888] cursor-pointer'>Home</p>
             <Image src={applyIcon} alt='apply' width={18} height={18}/>
@@ -56,7 +56,7 @@ function DesktopUi() {
             <Image src={applyIcon} alt='apply' width={18} height={18}/>
             <p className='font-medium text-[16px] leading-6 text-[#1E3A76] cursor-pointer'>All Openings</p>
            </div>
-           <div className='pb-[38px] flex flex-col gap-[72px] w-[1192px]'>
+           <div className='pb-[38px] flex flex-col gap-[72px] lg:w-[1192px] md:w-[714px]'>
             <p className='font-[300] text-[62px] leading-[50px] text-[#131313] flex justify-center'>All Openings</p>
 
             <div>
@@ -127,7 +127,7 @@ function DesktopUi() {
                     </div>
            </div>
 
-           <div className='py-[60px] px-[40px] bg-[#FAFAFA] flex items-center justify-between  w-[1192px]'>
+           <div className='py-[60px] px-[40px] bg-[#FAFAFA] flex items-center justify-between lg:w-[1192px] md:w-[714px]'>
             <div className='flex flex-col gap-[18px]'>
                 <p className='font-medium text-[40px] leading-[48px] text-[#131313]'>Didn't find the role <br/>you were looking for? </p>
                 <p className='font-normal text-[18px] leading-[26px] text-[#454545]'>No worries! <span className='font-medium'>Send us your application </span> <br/>we might just have the perfect spot for you soon!</p>

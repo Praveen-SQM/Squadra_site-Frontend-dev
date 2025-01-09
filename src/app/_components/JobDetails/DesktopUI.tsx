@@ -32,7 +32,7 @@ function DesktopUi({ sections }: JobListingProps) {
 
     return (
         <div className='my-[80px]'>
-            <div className='pt-[32px] pb-[44px] px-[124px] flex items-center gap-3'>
+            <div className='pt-[32px] pb-[44px] lg:px-[124px] md:px-[60px] flex items-center gap-3'>
                 <p onClick={() => { router.push('/') }} className='font-medium text-[16px] leading-6 text-[#888888] cursor-pointer'>Home</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
                 <p onClick={() => { router.push('/careers') }} className='font-medium text-[16px] leading-6 text-[#888888] cursor-pointer'>Careers</p>
@@ -41,7 +41,7 @@ function DesktopUi({ sections }: JobListingProps) {
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
                 <p className='font-medium text-[16px] leading-6 text-[#1E3A76] cursor-pointer'>Sr. UI/UX Designer</p>
             </div>
-            <div className='pt-[60px] pb-[40px] ml-[124px] w-[60%]'>
+            <div className='pt-[60px] pb-[40px] lg:ml-[124px] md:ml-[60px] lg:w-[60%] md:w-[714px]'>
                 <div className='flex flex-col gap-[40px]'>
                     <div className='flex flex-col gap-[12px]'>
                         <p className='font-medium text-[40px] leading-[47.73px] text-[#3D3D3D]'>Senior UI/UX designer</p>
@@ -66,7 +66,7 @@ function DesktopUi({ sections }: JobListingProps) {
                 </div>
             </div>
             <div className='flex gap-10'>
-                <div className="w-[60%] ml-[124px]">
+                <div className="lg:w-[60%] md:w-[714px] lg:ml-[124px] md:ml-[60px]">
                     {sections?.map((item, index) => (
                         <div key={index} className={`border-b border-[#E7E7E7] ${index === 0 ? "border-t" : ""}`}>
                             <button
