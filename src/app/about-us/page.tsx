@@ -7,7 +7,7 @@ import EnqieryAndQuoteComponent from "../_components/_landingPageComponents/Enqi
 
 const AboutUs = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen overflow-x-hidden">
       <AboutUsHeroSection />
       <div className="max-w-screen-3xl">
         {/* Content */}

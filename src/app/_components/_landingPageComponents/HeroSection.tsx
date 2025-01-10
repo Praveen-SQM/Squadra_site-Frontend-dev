@@ -1,29 +1,11 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import Image from 'next/image'
+import React from 'react'
 import VideoPlayer from './VideoPlayer'
 
-const carouselImages = [
-  // "https://squadra-media.s3.ap-south-1.amazonaws.com/c1.jpg",
-  "https://squadra-media.s3.ap-south-1.amazonaws.com/c3.jpg",
-  "https://squadra-media.s3.ap-south-1.amazonaws.com/c2.jpg",
-  "https://squadra-media.s3.ap-south-1.amazonaws.com/c4.jpg",
-  "https://squadra-media.s3.ap-south-1.amazonaws.com/c5.jpg"
-]
 
 export function HeroSection() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
-      )
-    }, 2500) // Change image every 5 seconds
-
-    return () => clearInterval(interval)
-  }, [])
 
 
 

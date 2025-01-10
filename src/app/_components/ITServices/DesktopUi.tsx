@@ -460,7 +460,7 @@ function DesktopUi() {
                 height={388}
                 alt='SaaS'
               /> */}
-              <video autoPlay loop width="400" height="250" className='rounded-[24px]'>
+              <video autoPlay loop muted width="400" height="250" className='rounded-[24px]'>
                 <source src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" type="video/mp4" />
               </video>
             </div>        </div>
@@ -775,7 +775,7 @@ function DesktopUi() {
                 height={547}
                 alt='SaaS'
               /> */}
-              <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="438" height="547" className='rounded-[24px]'></video>
+              <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} muted loop width="438" height="547" className='rounded-[24px]'></video>
             </div>
 
           </div>
@@ -1047,7 +1047,7 @@ function DesktopUi() {
                 height={547} priority
                 alt='webandMobileMain'
               /> */}
-               <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="438" height="300" className='rounded-[24px]'></video>
+               <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop muted width="438" height="300" className='rounded-[24px]'></video>
             </div>        </div>
 
         </div>

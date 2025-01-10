@@ -105,7 +105,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed z-50 w-full p-4 md:px-32 transition-all duration-300 ${pathname.includes("/contact-us")
+        className={`fixed z-50 w-full p-4 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us")
           ? "bg-white shadow-md text-black"
           : isScrolled
             ? "bg-white text-black"
@@ -145,7 +145,7 @@ const Navbar = () => {
           </div>
 
 
-          {!pathname.includes("/it-services") && <ul className="md:flex hidden font-[500] space-x-8">
+          {!pathname.includes("/it-services") && <ul className="lg:flex hidden font-[500] space-x-8">
             <Link
               className={`cursor-pointer ${pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
                 }`}
@@ -282,7 +282,7 @@ const Navbar = () => {
             {true && <ContactPopover isScrolled={isScrolled} />}
             {true ? <li
               className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us")
-                ? `text-[${primaryColor}]`
+                ? `text-white`
                 : isScrolled
                   ? "text-white"
                   : ""
@@ -308,7 +308,7 @@ const Navbar = () => {
             </li> */}
             {/* Hamburger menu icon for mobile and tablet */}
             <button
-              className="md:hidden"
+              className="lg:hidden"
               onClick={toggleSidebar}
               aria-label="Toggle menu"
             >
