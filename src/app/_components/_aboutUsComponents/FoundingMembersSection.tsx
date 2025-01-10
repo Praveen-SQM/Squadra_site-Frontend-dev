@@ -56,9 +56,9 @@ const FoundingMembersSection = () => {
     //     </div>
 
     <div className="flex items-center lg:gap-[68px] md:gap-[40px] sm:gap-[100px gap-[100px] justify-center lg:flex-row md:flex-row sm:flex-col flex-col">
-      <div className="lg:w-[332px] md:w-[197px] sm:w-[335px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
-        <div className="lg:h-[343px] md:h-[204px] sm:h-[378px] h-[378px]">
-          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp"} alt="Tarush" width={323} height={343} className="lg:h-[343px] md:h-[204px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
+      <div className="lg:w-[332px] md:w-[230px] sm:w-[335px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
+        <div className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px]">
+          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp"} alt="Tarush" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
           <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#292929]">Tarush</p>
@@ -66,9 +66,9 @@ const FoundingMembersSection = () => {
         </div>
       </div>
 
-      <div className="lg:w-[332px] md:w-[197px] sm:w-[335px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
-      <div className="lg:h-[343px] md:h-[204px] sm:h-[378px] h-[378px]">
-          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp"} alt="Anu" width={323} height={343} className="lg:h-[343px] md:h-[204px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
+      <div className="lg:w-[332px] md:w-[230px] sm:w-[335px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
+      <div className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px]">
+          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp"} alt="Anu" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center py-6 bg-[#06135B] border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
           <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#FFFFFF]">Anu Js</p>
@@ -76,9 +76,9 @@ const FoundingMembersSection = () => {
         </div>
       </div>
 
-      <div className="lg:w-[332px] md:w-[197px] sm:w-[335px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
-      <div className="lg:h-[343px] md:h-[204px] sm:h-[378px] h-[378px]">
-          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp"} alt="Sandesh" width={323} height={343} className="lg:h-[343px] md:h-[204px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
+      <div className="lg:w-[332px] md:w-[230px] sm:w-[335px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
+      <div className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px]">
+          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp"} alt="Sandesh" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
           <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#292929]">Sandesh</p>

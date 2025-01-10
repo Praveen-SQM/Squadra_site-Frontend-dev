@@ -49,7 +49,7 @@ const CoreTeamMember = () => {
 
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-x-8 max-w-4xl mx-auto mt-[72px] lg:mt-[72px] md:mt-[40px] sm:mt-[20px] px-4 sm:px-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-col-3 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-x-8 max-w-4xl mx-auto mt-[72px] lg:mt-[72px] md:mt-[40px] sm:mt-[20px] px-4 md:px-20 sm:px-6">
         {members.map((member, index) => (
           <div key={index} className="flex flex-col w-full">
             <div className="relative w-full">
@@ -58,9 +58,9 @@ const CoreTeamMember = () => {
                 alt={member.name}
                 width={384}
                 height={384}
-                className="rounded-lg w-full lg:h-[384px]  object-cover"
+                className="rounded-t-[24px] w-full lg:h-[384px]  object-cover"
               />
-              <div className="bg-white shadow-md rounded-lg rounded-t-none p-4 w-full -mt-4 relative z-10">
+              <div className="bg-white shadow-md rounded-b-[24px] rounded-t-none p-4 w-full -mt-4 relative z-10">
                 <h3 className="text-gray-900 text-base md:text-lg font-semibold text-center">{member.name}</h3>
                 <p className="text-gray-600 text-sm md:text-base font-normal text-center">{member.designation}</p>
               </div>
