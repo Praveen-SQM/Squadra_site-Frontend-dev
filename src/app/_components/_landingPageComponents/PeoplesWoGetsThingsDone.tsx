@@ -120,9 +120,11 @@ function PeoplesWoGetsThingsDone() {
         <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-[600] lg:max-w-[570px]">
           Empowering <strong className="text-[#FBAE17] font-[600]">Brands</strong> with Media, Tech, and Animation.
         </h1>
-        <div className="h-[56px] w-[173px] rounded-[42px] border py-4 px-5 gap-[4px] flex justify-center items-center bg-[#FFFFFF] border-[#E7E7E7] cursor-pointer">
-          <p className="font-semibold text-[16px] leading-[19.09px] text-[#131313]">Meet our team</p>
-          <Image src={teamMeetIcon} alt="arrow" width={12} height={10} />
+        <div className="hidden lg:block">
+          <div className="h-[56px] w-[173px] rounded-[42px] border py-4 px-5 gap-[4px] flex justify-center items-center bg-[#FFFFFF] border-[#E7E7E7] cursor-pointer">
+            <p className="font-semibold text-[16px] leading-[19.09px] text-[#131313]">Meet our team</p>
+            <Image src={teamMeetIcon} alt="arrow" width={12} height={10} />
+          </div>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
@@ -169,27 +171,48 @@ function PeoplesWoGetsThingsDone() {
           </div>
         </div> */}
 
-        <div className="flex items-center gap-7">
-          <div className="w-[452px] h-[518px]">
-          <Carousel />
+        <div className="flex items-center gap-7 lg:flex-row md:flex-col sm:flex-col flex-col">
+          <div className="lg:w-[452px] lg:h-[518px] md:w-[714px] md:h-[818px] sm:w-[335px] sm:h-[383.92px] w-[335px] h-[383.92px]">
+            <Carousel />
           </div>
 
-          <div className="w-fit flex flex-col gap-6">
-            <div className="w-full h-[363px] rounded-[24px]">
-              <Image src={teamImage} width={711} height={363} alt="team image"  className="w-full h-[363px] rounded-[24px]"/>
+          <div className="lg:w-fit md:w-[714px] sm:w-[335px] w-[335px] flex flex-col gap-6">
+            <div className="w-full lg:h-[363px] md:h-[363px] rounded-[24px]">
+              <Image src={teamImage} width={711} height={363} alt="team image" className="w-full h-[363px] rounded-[24px] object-cover" />
             </div>
-            <div className="flex items-center gap-6">
-              <div className="w-[221px] h-[130px] flex flex-col justify-center items-center rounded-[24px] border border-[#E7E7E7] bg-[#F8F8F8] p-6">
-                <p ref={ref} className="font-medium text-[52px] leading-[62.05px] text-[#FBAE17]">{inView ? <CountUp end={4} duration={3} /> : 40}+</p>
-                <p className="font-normal text-[18px] leading-[32px] text-[#6D6D6D]">Years of Experience</p>
+            <div className="hidden md:block">
+              <div className="flex items-center justify-center gap-6">
+                <div className="w-[221px] h-[130px] flex flex-col justify-center items-center rounded-[24px] border border-[#E7E7E7] bg-[#F8F8F8] p-6">
+                  <p ref={ref} className="font-medium text-[52px] leading-[62.05px] text-[#FBAE17]">{inView ? <CountUp end={4} duration={3} /> : 40}+</p>
+                  <p className="font-normal text-[18px] leading-[32px] text-[#6D6D6D]">Years of Experience</p>
+                </div>
+                <div className="w-[221px] h-[130px] flex flex-col justify-center items-center rounded-[24px] border border-[#E7E7E7] bg-[#F8F8F8] p-6">
+                  <p ref={ref} className="font-medium text-[52px] leading-[62.05px] text-[#FBAE17]">{inView ? <CountUp end={150} duration={3} /> : 150}+</p>
+                  <p className="font-normal text-[18px] leading-[32px] text-[#6D6D6D]">Campaigns</p>
+                </div>
+                <div className="w-[221px] h-[130px] flex flex-col justify-center items-center rounded-[24px] border border-[#E7E7E7] bg-[#F8F8F8] p-6">
+                  <p ref={ref} className="font-medium text-[52px] leading-[62.05px] text-[#FBAE17]">{inView ? <CountUp end={100} duration={3} /> : 100}+</p>
+                  <p className="font-normal text-[18px] leading-[32px] text-[#6D6D6D]">Experts</p>
+                </div>
               </div>
-              <div className="w-[221px] h-[130px] flex flex-col justify-center items-center rounded-[24px] border border-[#E7E7E7] bg-[#F8F8F8] p-6">
-                <p ref={ref} className="font-medium text-[52px] leading-[62.05px] text-[#FBAE17]">{inView ? <CountUp end={150} duration={3} /> : 150}+</p>
-                <p className="font-normal text-[18px] leading-[32px] text-[#6D6D6D]">Campaigns</p>
+            </div>
+
+            <div className="block md:hidden">
+              <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-center gap-3">
+                <div className="w-[162px] h-[64px] flex flex-col justify-center items-center rounded-[11px] border border-[#E7E7E7] bg-[#F8F8F8] p-[11.26px]">
+                  <p ref={ref} className="font-medium text-[24px] leading-[28.64px] text-[#FBAE17]">{inView ? <CountUp end={4} duration={3} /> : 40}+</p>
+                  <p className="font-normal text-[13px] leading-[15px] text-[#6D6D6D]">Years of Experience</p>
+                </div>
+                <div className="w-[162px] h-[64px] flex flex-col justify-center items-center rounded-[11px] border border-[#E7E7E7] bg-[#F8F8F8] p-[11.26px]">
+                  <p ref={ref} className="font-medium text-[24px] leading-[28.64px] text-[#FBAE17]">{inView ? <CountUp end={150} duration={3} /> : 150}+</p>
+                  <p className="font-normal text-[13px] leading-[15px] text-[#6D6D6D]">Campaigns</p>
+                </div>
               </div>
-              <div className="w-[221px] h-[130px] flex flex-col justify-center items-center rounded-[24px] border border-[#E7E7E7] bg-[#F8F8F8] p-6">
-                <p ref={ref} className="font-medium text-[52px] leading-[62.05px] text-[#FBAE17]">{inView ? <CountUp end={100} duration={3} /> : 100}+</p>
-                <p className="font-normal text-[18px] leading-[32px] text-[#6D6D6D]">Experts</p>
+              <div className="w-[162px] h-[64px] flex flex-col justify-center items-center rounded-[11px] border border-[#E7E7E7] bg-[#F8F8F8] p-[11.26px]">
+                <p ref={ref} className="font-medium text-[24px] leading-[28.64px] text-[#FBAE17]">{inView ? <CountUp end={100} duration={3} /> : 100}+</p>
+                <p className="font-normal text-[13px] leading-[15px] text-[#6D6D6D]">Experts</p>
+              </div>
               </div>
             </div>
           </div>
