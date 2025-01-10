@@ -3,10 +3,9 @@
 import * as React from "react";
 import { useEffect } from "react";
 import { Phone } from "lucide-react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import {
   Popover,
   PopoverContent,
@@ -31,9 +30,8 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
   const [errorMessage,setErrorMessage]=React.useState('')
   const pathname = usePathname();
   const {
-    register,
-    handleSubmit,
-    formState: { errors },
+    
+    
   } = useForm<FormData>();
 
   const [loading, setLoading] = React.useState(false);
@@ -42,7 +40,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
     if((errorMessage==="Please enter phone number"||errorMessage==="Please enter valid phone number")&&phone.length===12){
       setErrorMessage('') 
     }
-  },[phone])
+  },[errorMessage, phone])
 
 
   // const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -159,7 +157,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               }`}
           >
             Schedule a Call
-          </p>
+          </p>``
 
         </div>
 

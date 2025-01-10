@@ -9,11 +9,6 @@ const CoreTeamMember = () => {
       imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Aby+Abraham.webp",
     },
     {
-      name: "Aslam KV",
-      designation: "Illustration Lead",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Aslam+KV.webp",
-    },
-    {
       name: "Wilson George",
       designation: "Animation Lead",
       imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Wilson+George.webp",
@@ -41,32 +36,33 @@ const CoreTeamMember = () => {
   ];
 
   return (
-    <div className="py-8 px-6 lg:px-16 xl:px-12">
-      <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
-        Core Team Members
-      </h2>
+    <div className="py-[40px] sm:py-[83px]">
+      <div className="flex flex-col items-center justify-center">
 
-      <div className="flex flex-wrap justify-center gap-8">
+        <p className="font-sans text-[20px] text-[#6D6D6D] font-light leading-[23.87px] text-left">
+          At the heart of <span>Squadra Media</span> are the <br />
+          people who make it all happen—
+        </p>
+        <h2 className="font-sans mt-[24px] text-[40px] font-light leading-[23.87px] text-left text-[#131313] mb-8">
+          Core Members
+        </h2>
+
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-x-8 max-w-4xl mx-auto mt-[72px] lg:mt-[72px] md:mt-[40px] sm:mt-[20px] px-4 sm:px-6">
         {members.map((member, index) => (
-          <div
-            key={index}
-            className={`relative flex flex-col items-center max-w-[300px] ${
-              members.length % 2 !== 0 && index >= Math.floor(members.length / 2)
-                ? "md:justify-center"
-                : ""
-            }`}
-          >
-            <div className="relative">
+          <div key={index} className="flex flex-col w-full">
+            <div className="relative w-full">
               <Image
                 src={member.imageUrl}
                 alt={member.name}
-                className="rounded-md w-64 h-fit md:w-52 md:h-70 object-cover max-h-320"
                 width={384}
                 height={384}
+                className="rounded-lg w-full lg:h-[384px]  object-cover"
               />
-              <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white py-1 px-2 rounded-md">
-                <p className="font-semibold text-sm">{member.name}</p>
-                <p className="text-xs">{member.designation}</p>
+              <div className="bg-white shadow-md rounded-lg rounded-t-none p-4 w-full -mt-4 relative z-10">
+                <h3 className="text-gray-900 text-base md:text-lg font-semibold text-center">{member.name}</h3>
+                <p className="text-gray-600 text-sm md:text-base font-normal text-center">{member.designation}</p>
               </div>
             </div>
           </div>
