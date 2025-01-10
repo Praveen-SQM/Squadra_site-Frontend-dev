@@ -1,8 +1,7 @@
 import Image from "next/image"
 
 import location from '@/utilities/images/image 58.svg'
-import location2 from '@/utilities/images/location-2.svg'
-import location3 from '@/utilities/images/location-3.svg'
+
 import phoneRingIcon from '@/utilities/icons/phone-ring.svg'
 export default function Locations() {
   return (
