@@ -49,7 +49,7 @@ const CoreTeamMember = () => {
 
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-col-3 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-x-8 max-w-4xl mx-auto mt-[72px] lg:mt-[72px] md:mt-[40px] sm:mt-[20px] px-4 md:px-20 sm:px-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-col-3 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-x-8 max-w-4xl mx-auto mt-[72px] lg:mt-[72px] md:mt-[40px] sm:mt-[20px] px-4 lg:px-0 md:px-20 sm:px-6">
         {members.map((member, index) => (
           <div key={index} className="flex flex-col w-full">
             <div className="relative w-full">
