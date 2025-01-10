@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
+import VideoPlayer from './VideoPlayer'
 
 const carouselImages = [
   // "https://squadra-media.s3.ap-south-1.amazonaws.com/c1.jpg",
@@ -24,12 +25,12 @@ export function HeroSection() {
     return () => clearInterval(interval)
   }, [])
 
- 
+
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
       {/* Carousel Background */}
-      {carouselImages.map((src, index) => (
+      {/* {carouselImages.map((src, index) => (
         <div
           key={src}
           className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
@@ -43,8 +44,8 @@ export function HeroSection() {
             priority={index === 0}
           />
         </div>
-      ))}
-
+      ))} */}
+      <VideoPlayer/>
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50" />
 

@@ -3,20 +3,20 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../../utilities/icons/Logo-1.svg";
-import logoWhite from "../../utilities/icons/Logo-White.svg";
 import callIcon from "../../utilities/icons/Call.svg";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Menu, X,  ChevronDown, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { ContactPopover } from "./_contactUsComponents/ContactPopover";
 import itLogo from '@/utilities/images/it-logo.svg'
 import itLogocolor from '@/utilities/images/itLogoColoured.svg'
+import TextSlideUp from "./SlideAnimate";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isServicesHovered, setIsServicesHovered] = useState(false);
   const pathname = usePathname();
-  const router=useRouter()
+  const router = useRouter()
 
   useEffect(() => {
     if (pathname.includes("/contact-us")) return;
@@ -46,8 +46,8 @@ const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [activeService, setActiveService] = useState<number| null>(null);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [activeService, setActiveService] = useState<number | null>(null);
 
   const services = [
     {
@@ -105,58 +105,66 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed z-50 w-full p-4 md:px-32 transition-all duration-300 ${
-          pathname.includes("/contact-us")
-            ? "bg-white shadow-md text-black"
-            : isScrolled
+        className={`fixed z-50 w-full p-4 md:px-32 transition-all duration-300 ${pathname.includes("/contact-us")
+          ? "bg-white shadow-md text-black"
+          : isScrolled
             ? "bg-white text-black"
             : "bg-transparent text-white"
-        }`}
+          }`}
       >
         <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
-        {!pathname.includes("/it-services") &&  <Link href={"/"}>
-            <Image
-              src={pathname.includes("/contact-us") ? logo : isScrolled ? logo : logoWhite}
-              alt="Logo"
-              width={120}
-              height={40}
-              layout="intrinsic"
-            />
-          </Link>}
-          {
-            pathname.includes("/it-services") && <Link href={"/"}>
+          {!pathname.includes("/it-services") && <Link href={"/"}>
+
+            <div className="w-[260px] flex items-center">
+
+
               <Image
-                src={isScrolled ? itLogocolor : itLogo}
+                src={pathname.includes("/contact-us") ? logo : isScrolled ? itLogocolor : itLogo}
                 alt="Logo"
                 width={120}
                 height={40}
                 layout="intrinsic"
               />
-            </Link>
-          }
+              <TextSlideUp isScroll={isScrolled} />
+            </div>
+          </Link>}
+          <div className=" flex items-center justify-center">
 
-         {!pathname.includes("/it-services") && <ul className="md:flex hidden font-[500] space-x-8">
+
+            {
+              pathname.includes("/it-services") && <Link href={"/"}>
+                <Image
+                  src={isScrolled ? itLogocolor : itLogo}
+                  alt="Logo"
+                  width={120}
+                  height={40}
+                  layout="intrinsic"
+                />
+              </Link>
+            }
+          </div>
+
+
+          {!pathname.includes("/it-services") && <ul className="md:flex hidden font-[500] space-x-8">
             <Link
-              className={`cursor-pointer ${
-                pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
-              }`}
+              className={`cursor-pointer ${pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
+                }`}
               href={"/about-us"}
             >
               About Us
             </Link>
             <li
               className="relative hover:text-[#FBAE17] cursor-pointer"
-              onMouseEnter={() => setIsServicesHovered(true)}
-              onMouseLeave={() => setIsServicesHovered(false)}
+              onMouseEnter={() => { setIsServicesHovered(true); setIsScrolled(true) }}
+              onMouseLeave={() => { setIsServicesHovered(false); setIsScrolled(false) }}
             >
               Services
-              
+
               {/* Services Mega Menu */}
-              <div 
-            className={`absolute top-[2.5rem] left-[85%] transform -translate-x-1/2 ${
-  isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
-} transition-all duration-300 bg-white text-black shadow-xl`}
-style={{ width: '90vw', maxWidth: '1600px' }}
+              <div
+                className={`absolute top-[2.5rem] ${isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
+                  } transition-all w-screen duration-300 translate-x-[-56%] bg-white text-black shadow-xl`}
+
 
 
               >
@@ -183,7 +191,7 @@ style={{ width: '90vw', maxWidth: '1600px' }}
                           <Link onClick={() =>
                             setTimeout(() => {
                               setIsServicesHovered(false);
-                            }, 2000) 
+                            }, 2000)
                           } href="/it-services" className=" cursor-pointer">Technology & Development</Link>
                         </h3>
                         <ul className="space-y-2 text-sm text-gray-600">
@@ -247,12 +255,12 @@ style={{ width: '90vw', maxWidth: '1600px' }}
                           <li>Interactive Learning Solutions</li>
                         </ul>
                       </div>
-                  
+
                     </div>
                   </div>
 
                   {/* Technology & Development Section */}
-                
+
 
                   {/* Go to overview link */}
                   {/* <div className="text-start">
@@ -268,26 +276,26 @@ style={{ width: '90vw', maxWidth: '1600px' }}
             </li>
           </ul>}
 
-          
+
 
           <ul className="flex font-[500] space-x-8 md:space-x-8">
             {true && <ContactPopover isScrolled={isScrolled} />}
-         {true ?   <li
+            {true ? <li
               className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us")
-                  ? `text-[${primaryColor}]`
-                  : isScrolled
-                    ? "text-white"
-                    : ""
+                ? `text-[${primaryColor}]`
+                : isScrolled
+                  ? "text-white"
+                  : ""
                 }`}
 
               onClick={() => handleNavigation("/contact-us")}
             >
               Contact Us
-            </li>:
-            null}
+            </li> :
+              null}
             {/* {!pathname.includes("/it-services") && <ContactPopover isScrolled={isScrolled}/>} */}
 
-            
+
             {/* <li>
               <Link href='/contact-us'>
               <Image
@@ -311,113 +319,115 @@ style={{ width: '90vw', maxWidth: '1600px' }}
       </nav>
 
       {/* Mobile Sidebar */}
-    <div
-      className={`fixed top-0 right-0 h-full w-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
-        isSidebarOpen ? "translate-x-0" : "translate-x-full"
-      }`}
-    >
-      <div className="relative h-full flex flex-col">
-        <div className="p-6">
-         {pathname.includes("/it-services") ?  <Image
+      <div
+        className={`fixed top-0 right-0 h-full w-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+      >
+        <div className="relative h-full flex flex-col">
+          <div className="p-6">
+            {pathname.includes("/it-services") ? <Image
               src={itLogocolor}
               alt="Logo"
               width={120}
               height={40}
               layout="intrinsic"
-            />: <Image
-              src={logo}
-              alt="Logo"
-              width={120}
-              height={40}
-              layout="intrinsic"
-            />}
-        </div>
-        <button
-          className="absolute top-4 right-4 p-2"
-          onClick={toggleSidebar}
-          aria-label="Close menu"
-        >
-          <X className="h-6 w-6" />
-        </button>
+            /> :
+              <div>
+                <TextSlideUp isScroll={isScrolled} />
 
-        <div className="pt-4 px-6 flex-grow overflow-y-auto">
-          <ul className="space-y-0">
-            <li>
-              <Link
-                href="/about-us"
-                className={`block py-4 text-base ${
-                  pathname.includes("/about-us")
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  width={120}
+                  height={40}
+                  layout="intrinsic"
+                />
+              </div>
+            }
+          </div>
+          <button
+            className="absolute top-4 right-4 p-2"
+            onClick={toggleSidebar}
+            aria-label="Close menu"
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          <div className="pt-4 px-6 flex-grow overflow-y-auto">
+            <ul className="space-y-0">
+              <li>
+                <Link
+                  href="/about-us"
+                  className={`block py-4 text-base ${pathname.includes("/about-us")
                     ? `text-[${primaryColor}]`
                     : "text-black"
-                } border-b border-gray-200`}
-                onClick={toggleSidebar}
-              >
-                About Us
-              </Link>
-            </li>
-            <li>
-              {/* Services Menu */}
-              <div
-                className="py-4 text-base text-black border-b border-gray-200 flex justify-between items-center cursor-pointer"
-                onClick={toggleServices}
-              >
-                <span>Services</span>
-                {isServicesOpen ? (
-                  <ChevronDown className="h-5 w-5" />
-                ) : (
-                  <ChevronRight className="h-5 w-5" />
-                )}
-              </div>
-              <div
-               className={`transition-transform duration-500 ${
-                 isServicesOpen
-                   ? "max-h-[1000px] opacity-100 scale-100"
-                   : "max-h-0 opacity-0 scale-95"
-               } overflow-hidden`}
-              >
-                <ul className="pl-4 space-y-0">
-                  {services.map((service, index) => (
-                    <li key={index}>
-                      <div
-                        className="py-3 text-base transition-all duration-500 text-black flex justify-between items-center cursor-pointer"
-                        onClick={() => toggleSubmenu(index)}
-                      >
-                        {service.title === "Technology & Development" ? (
-                          <a href="/it-services" className="">
-                            {service.title}
-                          </a>
-                        ) : (
-                          <span>{service.title}</span>
-                        )}
+                    } border-b border-gray-200`}
+                  onClick={toggleSidebar}
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                {/* Services Menu */}
+                <div
+                  className="py-4 text-base text-black border-b border-gray-200 flex justify-between items-center cursor-pointer"
+                  onClick={toggleServices}
+                >
+                  <span>Services</span>
+                  {isServicesOpen ? (
+                    <ChevronDown className="h-5 w-5" />
+                  ) : (
+                    <ChevronRight className="h-5 w-5" />
+                  )}
+                </div>
+                <div
+                  className={`transition-transform duration-500 ${isServicesOpen
+                    ? "max-h-[1000px] opacity-100 scale-100"
+                    : "max-h-0 opacity-0 scale-95"
+                    } overflow-hidden`}
+                >
+                  <ul className="pl-4 space-y-0">
+                    {services.map((service, index) => (
+                      <li key={index}>
+                        <div
+                          className="py-3 text-base transition-all duration-500 text-black flex justify-between items-center cursor-pointer"
+                          onClick={() => toggleSubmenu(index)}
+                        >
+                          {service.title === "Technology & Development" ? (
+                            <a href="/it-services" className="">
+                              {service.title}
+                            </a>
+                          ) : (
+                            <span>{service.title}</span>
+                          )}
 
-                        {/* {activeService === index ? (
+                          {/* {activeService === index ? (
                           <ChevronDown className="h-5 w-5" />
                         ) : (
                           <ChevronRight className="h-5 w-5" />
                         )} */}
-                      </div>
-                      <div
-                        className={`overflow-hidden transition-max-height duration-500 ${
-                          activeService === index ? "max-h-[1000px]" : "max-h-0"
-                        }`}
-                      >
-                        <ul className="pl-4 text-sm text-gray-600">
-                          {service.items.map((item, i) => (
-                            <li
-                              key={i}
-                              className="py-2 border-b border-gray-200"
-                            >
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-            {/* <li>
+                        </div>
+                        <div
+                          className={`overflow-hidden transition-max-height duration-500 ${activeService === index ? "max-h-[1000px]" : "max-h-0"
+                            }`}
+                        >
+                          <ul className="pl-4 text-sm text-gray-600">
+                            {service.items.map((item, i) => (
+                              <li
+                                key={i}
+                                className="py-2 border-b border-gray-200"
+                              >
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+              {/* <li>
               <Link
                 href="/contact-us"
                 className={`block py-4 text-base ${
@@ -430,28 +440,28 @@ style={{ width: '90vw', maxWidth: '1600px' }}
                 Contact Us
               </Link>
             </li> */}
-          </ul>
-        </div>
-        
-        {/* Contact Us Button */}
-        <div className="p-6">
-          <Link
-            href="/contact-us"
-            className="flex items-center justify-center w-full py-3 px-4 text-white bg-black hover:bg-gray-800 transition-colors duration-300"
-            onClick={toggleSidebar}
-          >
-            <Image
-              src={callIcon}
-              alt="Call Icon"
-              width={24}
-              height={24}
-              className="mr-2"
-            />
-            <span>Contact Us</span>
-          </Link>
+            </ul>
+          </div>
+
+          {/* Contact Us Button */}
+          <div className="p-6">
+            <Link
+              href="/contact-us"
+              className="flex items-center justify-center w-full py-3 px-4 text-white bg-black hover:bg-gray-800 transition-colors duration-300"
+              onClick={toggleSidebar}
+            >
+              <Image
+                src={callIcon}
+                alt="Call Icon"
+                width={24}
+                height={24}
+                className="mr-2"
+              />
+              <span>Contact Us</span>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
 
       {/* Overlay */}
       {isSidebarOpen && (
