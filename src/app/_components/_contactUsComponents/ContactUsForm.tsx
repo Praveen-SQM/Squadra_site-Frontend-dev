@@ -7,7 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 export default function ContactUsForm() {
-  const [activeTab, setActiveTab] = useState("quote");
+  const [activeTab] = useState("quote");
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -75,10 +75,7 @@ export default function ContactUsForm() {
 
 
 
-  const handleTabClick = (tab: React.SetStateAction<string>) => {
-    console.log(tab, "tab")
-    setActiveTab(tab);
-  };
+  
 
   return (
     <div className="flex flex-col pt-24 sm:pt-15 lg:flex-col  md:mt-0 justify-between p-10 px-[20px] md:p-10 lg:pt-[144px] lg:pb-[72px] md:pt-[144px] md:pb-[72px] sm:px-[20px] space-y-10 bg-[#FAFAFA] items-center">
