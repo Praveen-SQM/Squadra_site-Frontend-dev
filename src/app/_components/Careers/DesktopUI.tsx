@@ -2,8 +2,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import careerImage from '@/utilities/images/career-image.png'
-import searchIcon from '@/utilities/icons/search-icon.svg'
-import squadraImage from '@/utilities/images/squadra-image.png'
+
 import rightArrowIcon from '@/utilities/icons/right-arrow.svg'
 import plusIcon from '@/utilities/icons/plus-icon.svg'
 import minusIcon from '@/utilities/icons/minus-icon.svg'
@@ -213,7 +212,7 @@ function DesktopUi() {
             {/* Employee Benefits */}
             <div className='w-full bg-[#FAFAFA] flex flex-col lg:py-[72px] md:py-[72px] sm:py-[50px] py-[50px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] items-center'>
                 <div className='flex flex-col lg:gap-[80px] md:gap-[60px] sm:gap-[32px] gap-[32px] lg:w-[1192px] md:w-[714px] sm:w-full w-full items-center'>
-                    <p className='font-[300] lg:text-[60px] lg:leading-[71.6px] md:text-[48px] md:leading-[57.28px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-center text-[#131313] lg:max-w-[943px] md:max-w-[943px]'>We prioritise our employee's <span className='text-[#FBAE17]'> well-being.</span></p>
+                    <p className='font-[300] lg:text-[60px] lg:leading-[71.6px] md:text-[48px] md:leading-[57.28px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-center text-[#131313] lg:max-w-[943px] md:max-w-[943px]'>We prioritise our employee&apos;s <span className='text-[#FBAE17]'> well-being.</span></p>
                     <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 lg:gap-[0px] md:gap-[0px] sm:gap-[6px] gap-[6px]'>
                         {employeeBenefits?.map((benefit, index) => (
                             <div key={index} className={`lg:h-[460px] lg:w-[397.33px] md:h-[309px] md:w-[357px] sm:w-[335px] w-[335px] flex flex-col items-center lg:pt-[72px] lg:pb-[64px] lg:px-[44px] lg:gap-[40px] md:pt-[40px] md:pb-[40px] md:px-[32px] md:gap-[32px]  sm:pt-[32px] sm:pb-[32px] sm:px-[32px] sm:gap-[32px] pt-[32px] pb-[32px] px-[32px] gap-[32px] ${index % 2 === 0 ? 'bg-[#FFFFFF]' : 'bg-[#FAFAFA]'}`}>

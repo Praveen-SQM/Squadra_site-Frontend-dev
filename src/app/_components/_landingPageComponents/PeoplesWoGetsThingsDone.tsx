@@ -1,11 +1,9 @@
 'use client'
 import React from "react";
 
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import Link from "next/link";
 import Carousel from "./Carousel";
 import teamMeetIcon from "@/utilities/icons/team-meet.svg";
 import teamImage from "@/utilities/images/team-image.png"

@@ -1,10 +1,9 @@
 'use client'
-import { connect } from 'http2';
 import Image from 'next/image'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Loader2, Turtle, } from "lucide-react";
+import { ArrowRight, Loader2, } from "lucide-react";
 import resumeUploadIcon from '@/utilities/icons/resume-upload.svg'
 import checkCircleIcon from '@/utilities/icons/check-circle.svg'
 import closeIcon from '@/utilities/icons/close.svg'
@@ -12,9 +11,9 @@ import closeIcon from '@/utilities/icons/close.svg'
 
 function DesktopUi() {
 
-    const [loading, setLoading] = useState(false);
+    const [loading] = useState(false);
     const [terms, setTerms] = useState(false);
-    const [fileContent, setFileContent] = useState<File | null>(null);
+   
 
     const {
         register,
@@ -32,6 +31,7 @@ function DesktopUi() {
         phone: string;
         location: string;
         linkedProfile: string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         resume: File | any;
     };
 
@@ -53,14 +53,7 @@ function DesktopUi() {
         console.log("data--->", data);
     };
 
-    const handleFileChange = (e: any) => {
-        const selectedFile = e.target.files[0];
-        if (selectedFile) {
-            setFileContent(selectedFile);
-        }
-
-        e.target.value = null;
-    };
+ 
 
     return (
         <div className='my-[80px] bg-[#FAFAFA] min-h-screen'>

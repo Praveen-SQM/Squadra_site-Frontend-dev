@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, {  useState, useEffect, useRef } from 'react'
+import React, {  useState } from 'react'
 import plusIcon from '@/utilities/icons/plus-icon.svg'
 import minusIcon from '@/utilities/icons/minus-icon.svg'
 import applyIcon from '@/utilities/icons/apply-icon.svg'
@@ -129,7 +129,7 @@ function DesktopUi() {
 
            <div className='py-[60px] px-[40px] bg-[#FAFAFA] flex items-center justify-between lg:w-[1192px] md:w-[714px]'>
             <div className='flex flex-col gap-[18px]'>
-                <p className='font-medium text-[40px] leading-[48px] text-[#131313]'>Didn't find the role <br/>you were looking for? </p>
+                    <p className='font-medium text-[40px] leading-[48px] text-[#131313]'>Didn&apos;t find the role <br/>you were looking for? </p>
                 <p className='font-normal text-[18px] leading-[26px] text-[#454545]'>No worries! <span className='font-medium'>Send us your application </span> <br/>we might just have the perfect spot for you soon!</p>
             </div>
             <div onClick={() => router.push('/direct-apply')} className='w-[139px] h-[58px] rounded-[4px] flex items-center justify-center gap-2 bg-[#131313] cursor-pointer'>

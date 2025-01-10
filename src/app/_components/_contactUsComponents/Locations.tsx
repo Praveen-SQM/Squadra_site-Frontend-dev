@@ -1,8 +1,5 @@
 import Image from "next/image"
-import mail from "@/utilities/icons/mail-03.svg";
-import enquiry from "@/utilities/icons/enquiry.svg";
-import user from "@/utilities/icons/user.svg";
-import message from "@/utilities/icons/message.svg";
+
 import location from '@/utilities/images/image 58.svg'
 import location2 from '@/utilities/images/location-2.svg'
 import location3 from '@/utilities/images/location-3.svg'
