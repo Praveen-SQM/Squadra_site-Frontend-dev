@@ -157,7 +157,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               }`}
           >
             Schedule a Call
-          </p>``
+          </p>
 
         </div>
 

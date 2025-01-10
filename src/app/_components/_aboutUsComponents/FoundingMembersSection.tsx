@@ -4,23 +4,23 @@ import Image from "next/image";
 // Example data for the founding members
 
 const FoundingMembersSection = () => {
-  const members = [
-    {
-      name: "Anu Js",
-      designation: "Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp",
-    },
-    {
-      name: "Sandesh K",
-      designation: "Co-Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp",
-    },
-    {
-      name: "Tarush Chandani",
-      designation: "Co-Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp",
-    },
-  ];
+  // const members = [
+  //   {
+  //     name: "Anu Js",
+  //     designation: "Founder",
+  //     imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp",
+  //   },
+  //   {
+  //     name: "Sandesh K",
+  //     designation: "Co-Founder",
+  //     imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp",
+  //   },
+  //   {
+  //     name: "Tarush Chandani",
+  //     designation: "Co-Founder",
+  //     imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp",
+  //   },
+  // ];
   return (
     //     <div className="py-8 px-6 lg:px-16 xl:px-24">
     //       <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
