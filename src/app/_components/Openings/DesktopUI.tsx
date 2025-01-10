@@ -48,7 +48,7 @@ function DesktopUi() {
 
 
     return (
-        <div className='my-[80px] pt-[32px] pb-[72px] lg:px-[124px] md:px-[60px] flex flex-col gap-[42px]'>
+        <div className='my-[80px] pt-[32px] pb-[72px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] flex flex-col lg:gap-[42px] md:gap-[42px] sm:gap-[32px] gap-[32px]'>
            <div className='pb-[44px] flex items-center gap-[12px]'>
             <p onClick={()=>{router.push('/')}} className='font-medium text-[16px] leading-6 text-[#888888] cursor-pointer'>Home</p>
             <Image src={applyIcon} alt='apply' width={18} height={18}/>

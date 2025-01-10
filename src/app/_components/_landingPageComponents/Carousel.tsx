@@ -61,8 +61,8 @@ export default function Carousel() {
 //   }
 
   return (
-    <div className="bg-gray-200 rounded-md relative w-full  max-w-3xl mx-auto">
-      <div className="relative h-[300px] md:h-[460px] w-full overflow-hidden rounded-lg">
+    <div className="bg-gray-200 rounded-[24px] relative w-full  max-w-3xl mx-auto">
+      <div className="relative lg:h-[518px] md:h-[460px] w-full overflow-hidden rounded-[24px]">
         {images.map((src, index) => (
           <div
             key={index}

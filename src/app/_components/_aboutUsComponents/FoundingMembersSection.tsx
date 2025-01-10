@@ -8,51 +8,81 @@ const FoundingMembersSection = () => {
     {
       name: "Anu Js",
       designation: "Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp", 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp",
     },
     {
       name: "Sandesh K",
       designation: "Co-Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp", 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp",
     },
     {
       name: "Tarush Chandani",
       designation: "Co-Founder",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp", 
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp",
     },
   ];
   return (
-    <div className="py-8 px-6 lg:px-16 xl:px-24">
-      <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
-        Founding Members
-      </h2>
+    //     <div className="py-8 px-6 lg:px-16 xl:px-24">
+    //       <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
+    //         Founding Members
+    //       </h2>
 
-<div className="md:flex justify-evenly">
-  {members.map((member, index) => (
-    <div key={index} className="relative flex flex-col items-center">
-      <div className="relative">
-        <Image
-          src={member.imageUrl}
-          alt={member.name}
-          className={`md:w-72 md:h-96 object-cover rounded-md mb-8 md:mb-0 max-h-320 ${
-            index % 2 != 0 ? "md:mt-8 md:mb-0" : ""
-          }`}
-          width={384}
-          height={384}
-        />
-        {/* Name and Designation Overlay */}
-        <div className="absolute bottom-10 md:bottom-2 right-2 bg-black bg-opacity-50 text-white py-1 px-2 rounded-md">
-          <p className="font-semibold text-sm text-center">{member.name}</p>
-          <p className="text-xs text-center">{member.designation}</p>
+    // <div className="md:flex justify-evenly">
+    //   {members.map((member, index) => (
+    //     <div key={index} className="relative flex flex-col items-center">
+    //       <div className="relative">
+    //         <Image
+    //           src={member.imageUrl}
+    //           alt={member.name}
+    //           className={`md:w-72 md:h-96 object-cover rounded-md mb-8 md:mb-0 max-h-320 ${
+    //             index % 2 != 0 ? "md:mt-8 md:mb-0" : ""
+    //           }`}
+    //           width={384}
+    //           height={384}
+    //         />
+    //         {/* Name and Designation Overlay */}
+    //         <div className="absolute bottom-10 md:bottom-2 right-2 bg-black bg-opacity-50 text-white py-1 px-2 rounded-md">
+    //           <p className="font-semibold text-sm text-center">{member.name}</p>
+    //           <p className="text-xs text-center">{member.designation}</p>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   ))}
+    // </div>
+
+
+
+
+    //     </div>
+
+    <div className="flex items-center gap-[68px] justify-center">
+      <div className="w-[332px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
+        <div className="h-[343px]">
+          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp"} alt="Tarush" width={323} height={343} className="h-[343px] w-full object-cover rounded-t-[24px]"/>
+        </div>
+        <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
+          <p className="font-semibold text-[24px] leading-[28.64px] text-[#292929]">Tarush</p>
+          <p className="font-normal text-[18px] leading-[21.48px] text-[#292929]">Co-Founder</p>
         </div>
       </div>
-    </div>
-  ))}
-</div>
-
-
-
-
+      <div className="w-[332px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
+      <div className="h-[343px]">
+          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp"} alt="Anu" width={323} height={343} className="h-[343px] w-full object-cover rounded-t-[24px]"/>
+        </div>
+        <div className="flex flex-col gap-2 items-center justify-center py-6 bg-[#06135B] border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
+          <p className="font-semibold text-[24px] leading-[28.64px] text-[#FFFFFF]">Anu Js</p>
+          <p className="font-normal text-[18px] leading-[21.48px] text-[#FFFFFF]">Founder</p>
+        </div>
+      </div>
+      <div className="w-[332px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
+      <div className="h-[343px]">
+          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp"} alt="Sandesh" width={323} height={343} className="h-[343px] w-full object-cover rounded-t-[24px]"/>
+        </div>
+        <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
+          <p className="font-semibold text-[24px] leading-[28.64px] text-[#292929]">Sandesh</p>
+          <p className="font-normal text-[18px] leading-[21.48px] text-[#292929]">Co-Founder</p>
+        </div>
+      </div>
     </div>
   );
 };
