@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useEffect } from "react";
 import { Phone } from "lucide-react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -17,12 +18,17 @@ import callIcon from "@/utilities/icons/Call.svg";
 import callIconBlack from "@/utilities/icons/call-icon-black.svg";
 import toast from "react-hot-toast";
 
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
 interface FormData {
   phone: string;
 }
 
 export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
   const [open, setOpen] = React.useState(false);
+  const[phone,setPhoneInput]=React.useState('')
+  const [errorMessage,setErrorMessage]=React.useState('')
   const pathname = usePathname();
   const {
     register,
@@ -32,8 +38,65 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
 
   const [loading, setLoading] = React.useState(false);
 
+  useEffect(()=>{
+    if((errorMessage==="Please enter phone number"||errorMessage==="Please enter valid phone number")&&phone.length===12){
+      setErrorMessage('') 
+    }
+  },[phone])
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
+
+  // const onSubmit: SubmitHandler<FormData> = async (data) => {
+  //   console.log("phone--->",phone)
+  //   setLoading(true);
+  //   try {
+  //     const response = await fetch("/api/sendEmail", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({
+  //         to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+  //         cc: [""],
+  //         bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+  //         message: {
+  //           subject: "Callback Request",
+  //           text: `Callback requested for phone number: ${data.phone}`,
+  //           html: `
+  //         <html>
+  //           <head></head>
+  //           <body>
+  //             <p>Hello Team,</p>
+  //             <p>A user has requested a callback.</p>
+  //             <p><b>Phone Number:</b> ${data.phone}</p>
+  //             <br>
+  //             <p>Thank you & Regards,<br><b>Team</b></p>
+  //           </body>
+  //         </html>`
+  //         },
+  //       }),
+  //     });
+
+  //     const result = await response.json();
+  //     if (response.ok) {
+  //       toast.success("Callback Requested successfully");
+  //     } else {
+  //       toast.error(result.message || 'Failed to send callback request');
+  //     }
+  //   } catch (error) {
+  //     toast.error('An error occurred while sending the callback request');
+  //     console.error("Error sending callback request:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const sendRequest = async () => {
+    if(phone.length===0){
+      setErrorMessage('Please enter phone number')
+      return
+    }
+    if(phone.length<12){
+      setErrorMessage('Please enter valid phone number')
+      return
+    }
     setLoading(true);
     try {
       const response = await fetch("/api/sendEmail", {
@@ -45,14 +108,14 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
           bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
           message: {
             subject: "Callback Request",
-            text: `Callback requested for phone number: ${data.phone}`,
+            text: `Callback requested for phone number: ${phone}`,
             html: `
           <html>
             <head></head>
             <body>
               <p>Hello Team,</p>
               <p>A user has requested a callback.</p>
-              <p><b>Phone Number:</b> ${data.phone}</p>
+              <p><b>Phone Number:</b> ${phone}</p>
               <br>
               <p>Thank you & Regards,<br><b>Team</b></p>
             </body>
@@ -90,14 +153,14 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
             width={24}
             height={24}
           />
-          
-            <p
-              className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${isScrolled ? 'text-black' : 'text-white'
-                }`}
-            >
-              Schedule a Call
-            </p>
-        
+
+          <p
+            className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${isScrolled ? 'text-black' : 'text-white'
+              }`}
+          >
+            Schedule a Call
+          </p>
+
         </div>
 
       </PopoverTrigger>
@@ -130,12 +193,12 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
           <CardContent className="grid gap-6">
             <div className="grid gap-4">
               <h3 className="text-lg font-semibold">Request a call back</h3>
-              <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4">
+              <form onSubmit={sendRequest} className="grid gap-4">
                 <div className="grid gap-2">
                   <label htmlFor="phone" className="text-sm font-medium">
                     Phone Number*
                   </label>
-                  <Input
+                  {/* <Input
                     id="phone"
                     type="number"
                     className="flex-1"
@@ -146,14 +209,26 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
                         message: "Enter a valid 10-digit phone number",
                       },
                     })}
+                  /> */}
+                  <PhoneInput
+                  inputStyle={{
+                    width: "100%",
+                    height: "40px"
+                  }}
+                    country={'in'}
+                    value={phone}
+                    containerClass="flex-1 w-full text-[15px] relative"
+                    inputClass="flex-1 w-full relative text-[14px] pl-[48px] ml-0 bg-[#FFFFFF] border border-[#CACACA]"
+                    onChange={(value) => setPhoneInput(value)}
                   />
-                  {errors.phone && (
-                    <p className="text-red-500 text-sm">{errors.phone.message}</p>
+                  {(errorMessage==="Please enter phone number" || errorMessage==="Please enter valid phone number") && (
+                    <p className="text-red-500 text-sm">{errorMessage}</p>
                   )}
                 </div>
                 <Button
-                  type="submit"
+                  type="button"
                   className="w-full bg-gray-500 hover:bg-gray-600"
+                  onClick={sendRequest}
                   disabled={loading}
                 >
                   {loading ? "Sending..." : "Send Request"}

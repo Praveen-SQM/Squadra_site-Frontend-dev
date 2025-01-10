@@ -10,7 +10,9 @@ body {
   padding: 0;
 }
 
-
+.react-tel-input .flag-dropdown{
+  background-color: white !important;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
