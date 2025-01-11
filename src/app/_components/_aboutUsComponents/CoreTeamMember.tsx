@@ -4,6 +4,11 @@ import Image from "next/image";
 const CoreTeamMember = () => {
   const members = [
     {
+      name: "Praveen Rao",
+      designation: "Product Manager",
+      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Praveen+(2).webp",
+    },
+    {
       name: "Aby Abraham",
       designation: "Storyboard Lead",
       imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Aby+Abraham.webp",
@@ -22,11 +27,6 @@ const CoreTeamMember = () => {
       name: "Sujata Singh",
       designation: "Account Lead",
       imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sujata+Singh.webp",
-    },
-    {
-      name: "Praveen Rao",
-      designation: "Product Manager",
-      imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Praveen+(2).webp",
     },
     {
       name: "Ashwinth Mohan",
