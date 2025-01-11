@@ -3,7 +3,7 @@ import { NextRequest } from "next/server";
 import path from "path";
 
 export async function GET(req:NextRequest) {
-  const videoPath = path.resolve("public/video.webm"); 
+  const videoPath = path.resolve("public/v2.mp4"); 
   const stat = await fs.promises.stat(videoPath);
   const videoSize = stat.size;
 
@@ -23,8 +23,8 @@ export async function GET(req:NextRequest) {
   const headers = {
     "Content-Range": `bytes ${start}-${end}/${videoSize}`,
     "Accept-Ranges": "bytes",
-    "Content-Length": contentLength.toString(), // Convert Content-Length to a string
-    "Content-Type": "video/webm",
+    "Content-Length": `${contentLength}`,
+    "Content-Type": "video/mp4", // ✅ Changed to MP4 for iOS compatibility
   };
 
   // Create a Node.js ReadStream for the video file

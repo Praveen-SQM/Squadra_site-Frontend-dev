@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import { Toaster } from "react-hot-toast";
+import TopLoader from "./_components/Toploader";
 
 
 
@@ -25,6 +26,7 @@ export default function RootLayout({
    
       <body
         className={`antialiased`}>
+          <TopLoader/>
         <Toaster />
         <div className="flex flex-col min-h-screen">
           <Navbar />
