@@ -15,7 +15,7 @@ function JobDetails() {
       </div>
          <div className="block sm:hidden min-w-fit max-w-[410px] mx-auto">
         {/* <MobileUi /> */}
-        <h1>Mobile careers view</h1>
+        <DesktopUi/>
       </div>
     </div>
   );

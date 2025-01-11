@@ -43,12 +43,6 @@ function DesktopUi() {
 
     const resumeFile=watch('resume');
 
-    useEffect(()=>{
-        if(resumeFile){
-            console.log("resumeFile--->", resumeFile[0]?.name)
-        }
-    },[resumeFile])
-
     const onSubmit: SubmitHandler<FormData> = async (data) => {
         console.log("data--->", data);
     };
@@ -57,10 +51,10 @@ function DesktopUi() {
 
     return (
         <div className='my-[80px] bg-[#FAFAFA] min-h-screen'>
-            <div className='flex items-center justify-between lg:py-[100px] lg:px-[124px] md:pt-[80px] md:pb-[100px] md:px-[60px] md:flex-col lg:flex-row md:gap-[48px]'>
-                <div className='flex flex-col gap-[12px]'>
-                    <p className='lg:font-normal lg:text-[52px] lg:leading-[62.05px] md:font-medium md:text-[28px] md:leading-[33.41px] lg:text-[#131313] md:text-[#3D3D3D] lg:w-[456px]'>Step into your future with us.</p>
-                    <p className='font-normal text-[16px] leading-[24px] text-[#6D6D6D] md:text-center lg:text-start'>Send us your application <br />we might just have the perfect spot for you soon!</p>
+            <div className='flex items-center justify-between lg:py-[100px] lg:px-[124px] md:pt-[80px] md:pb-[100px] md:px-[60px] sm:py-[10px] sm:px-[20px] py-[10px] px-[20px] sm:flex-col flex-col md:flex-col lg:flex-row md:gap-[48px] sm:gap-6 gap-6'>
+                <div className='flex flex-col gap-[12px] lg:py-0 md:py-0 sm:py-[20px] py-[20px]'>
+                    <p className='lg:font-normal lg:text-[52px] lg:leading-[62.05px] md:font-medium md:text-[28px] md:leading-[33.41px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] lg:text-[#131313] md:text-[#3D3D3D] lg:w-[456px] lg:text-start md:text-center sm:text-center text-center'>Step into your future with us.</p>
+                    <p className='font-normal lg:text-[16px] lg:leading-[24px] md:text-[16px] md:leading-[24px] sm:text-[14px] sm:leading-[16.71px] text-[14px] leading-[16.71px] text-[#6D6D6D] md:text-center lg:text-start sm:text-center text-center'>Send us your application <br />we might just have the perfect spot for you soon!</p>
                 </div>
 
                 {/* Right Section */}
@@ -210,13 +204,13 @@ function DesktopUi() {
 
                             <div>
                                 <label htmlFor="phone" className="block text-sm mb-2">
-                                    Linked Profile*
+                                    LinkedIn Profile*
                                 </label>
                                 <input
                                     id="linkedProfile"
-                                    placeholder="Enter Linked link"
+                                    placeholder="Enter LinkedIn link"
                                     {...register("linkedProfile", {
-                                        required: "Linked profile is required"
+                                        required: "LinkedIn profile is required"
                                     })}
                                     className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                                 />
@@ -237,13 +231,13 @@ function DesktopUi() {
                                 }}
                                 checked={terms}
                             />
-                            <p className='font-normal text-[14px] leading-[16.94px] text-[#11192B]'>By clicking this box, you will declare that you will read and <br />
+                            <p className='font-normal text-[14px] leading-[16.94px] text-[#11192B]'>By clicking this box, you will declare that you will read and <span className="hidden sm:inline"> <br /> </span> 
                                 agree to the <span className='text-[#4C6EFF]'>Privacy policy</span> of Squadramedia</p>
                         </div>
 
 
                         {/* Submit Button */}
-                        <Button disabled={loading} type="submit" className="px-6 py-4 float-right bg-black text-white rounded-md h-[48px] lg:w-[168px] md:w-full">
+                        <Button disabled={loading} type="submit" className="px-6 py-4 float-right bg-black text-white rounded-md h-[48px] lg:w-[168px] md:w-full sm:w-full w-full">
                             {loading && <Loader2 className="animate-spin" />}  {loading ? "Please wait..." : "Apply Now"}
                             {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
                         </Button>
