@@ -125,7 +125,7 @@ const Navbar = () => {
                 height={40}
                 layout="intrinsic"
               />
-              <TextSlideUp isScroll={isScrolled} />
+              <TextSlideUp isScroll={isScrolled} isSidebarOpen={isSidebarOpen} />
             </div>
           </Link>}
           <div className=" flex items-center justify-center">
@@ -333,7 +333,7 @@ const Navbar = () => {
               layout="intrinsic"
             /> :
               <div>
-                <TextSlideUp isScroll={isScrolled} />
+                <TextSlideUp isScroll={isScrolled} isSidebarOpen={isSidebarOpen} />
 
                 <Image
                   src={logo}

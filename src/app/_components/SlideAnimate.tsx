@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const messages = [
-    "Media", 
+    "Media",
     "Tech",
     "Digital marketing",
     "Animation",
@@ -18,7 +18,7 @@ const textVariants = {
     exit: { y: -50, opacity: 0 }
 }
 
-export default function TextSlideUp({ isScroll }: { isScroll: boolean } ) {
+export default function TextSlideUp({ isScroll, isSidebarOpen }: { isScroll: boolean; isSidebarOpen: boolean }) {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     useEffect(() => {
@@ -28,14 +28,16 @@ export default function TextSlideUp({ isScroll }: { isScroll: boolean } ) {
 
         return () => clearInterval(interval)
     }, [])
+    if (isSidebarOpen) {
+        return null
+    }
 
     return (
         <div className="pl-2 pt-2 rounded-lg flex items-center justify-center h-12  overflow-hidden">
-            <p className={`text-${isScroll ? 'black' : 'white'} font-semibold text-lg`} >.</p>
             <AnimatePresence mode="wait">
                 <motion.div style={{
                     fontFamily: 'Sofia Pro, sans-serif',
-                    fontWeight:700,
+                    fontWeight: 700,
                     color: isScroll ? '#08115b' : 'white'
                 }}
                     key={currentIndex}
