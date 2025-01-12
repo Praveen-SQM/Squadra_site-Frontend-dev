@@ -14,7 +14,6 @@ import closeIcon from '@/utilities/icons/close.svg'
 function DesktopUi() {
 
     const [loading] = useState(false);
-    const [terms, setTerms] = useState(false);
 
 
     const {
