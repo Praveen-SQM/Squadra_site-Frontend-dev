@@ -119,7 +119,7 @@ const Navbar = () => {
 
 
               <Image
-                src={pathname.includes("/contact-us") ? logo : isScrolled ? itLogocolor : itLogo}
+                src={pathname.includes("/contact-us") ? itLogocolor : isScrolled ? itLogocolor : itLogo}
                 alt="Logo"
                 width={120}
                 height={40}

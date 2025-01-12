@@ -6,7 +6,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import Carousel from "./Carousel";
 import teamMeetIcon from "@/utilities/icons/team-meet.svg";
-import teamImage from "@/utilities/images/team-image.png"
+import Link from "next/link";
 
 //    const PeoplesWhoGetThingsDone = () => {
 //      return (
@@ -119,10 +119,10 @@ function PeoplesWoGetsThingsDone() {
           Empowering <strong className="text-[#FBAE17] font-[600]">Brands</strong> with Media Tech and Animation.
         </h1>
         <div className="hidden lg:block">
-          <div className="h-[56px] w-[173px] rounded-[42px] border py-4 px-5 gap-[4px] flex justify-center items-center bg-[#FFFFFF] border-[#E7E7E7] cursor-pointer">
+          <Link href="/about-us" className="h-[56px] w-[173px] rounded-[42px] border py-4 px-5 gap-[4px] flex justify-center items-center bg-[#FFFFFF] border-[#E7E7E7] cursor-pointer">
             <p className="font-semibold text-[16px] leading-[19.09px] text-[#131313]">Meet our team</p>
             <Image src={teamMeetIcon} alt="arrow" width={12} height={10} />
-          </div>
+          </Link>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
@@ -176,7 +176,8 @@ function PeoplesWoGetsThingsDone() {
 
           <div className="lg:w-fit md:w-[714px] sm:w-[335px] w-[335px] flex flex-col gap-6">
             <div className="w-full lg:h-[363px] md:h-[363px] rounded-[24px]">
-              <Image src={teamImage} width={711} height={363} alt="team image" className="w-full h-[363px] rounded-[24px] object-cover" />
+              <Image 
+                objectFit="cover" unoptimized blurDataURL="data:image/webp;base64,UklGRjIAAABXRUJQVlA4WAoAAAAQAAAABwAIAQUxQSAwAWAAQUAA0JaQAA3AA/v+/gAA=" quality={100} src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_3720+2+(1).webp"} width={711} height={363} alt="team image" className="w-full h-[363px] aspect-square rounded-[24px] object-cover" />
             </div>
             <div className="hidden md:block">
               <div className="flex items-center justify-center gap-6">
