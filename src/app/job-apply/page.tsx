@@ -11,11 +11,11 @@ function JobDetails() {
                 {/* <h1>Desktop careers view</h1> */}
             </div>
             <div className="hidden sm:block lg:hidden">
-                <h1>Tablet careers view</h1>
+            <DesktopUi/>
                 {/* <DesktopUi sections={jobSections}/> */}
             </div>
             <div className="block sm:hidden min-w-fit max-w-[410px] mx-auto">
-                <h1>Mobile careers view</h1>
+            <DesktopUi/>
                 {/* <DesktopUi sections={jobSections}/> */}
             </div>
         </div>
