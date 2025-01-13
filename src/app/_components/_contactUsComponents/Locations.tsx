@@ -62,7 +62,7 @@ export default function Locations() {
         </div>
 
         <div className="flex lg:gap-[4px] sm:gap-[4px] gap-[2px] items-center lg:mt-[50px] md:mt-[40px] mt-[32px]">
-          <div className="py-4 lg:w-[594px] sm:w-[355px] w-[166.5px] bg-[#FAFAFA] flex items-center justify-center">
+          <div className="py-4 lg:w-[594px] sm:w-[355px] w-[170px] bg-[#FAFAFA] flex items-center justify-center">
             <div className="flex flex-col gap-3 items-center justify-center">
               <div className="flex items-center gap-3">
                 <Image
@@ -73,11 +73,11 @@ export default function Locations() {
                 />
                 <p className="font-normal lg:text-[20px] lg:leading-[26px] sm:text-[20px] sm:leading-[26px] text-[14px] leading-[16.94px] text-[#6D6D6D]">General Enquiry</p>
               </div>
-              <p className="font-semibold lg:text-[32px] lg:leading-[38.73px] md:text-[28px] md:leading-[33.89px] text-[16px] leading-[19.36px] text-[#3D3D3D]">+91 96068 27067</p>
+              <p className="font-semibold lg:text-[32px] lg:leading-[38.73px] md:text-[28px] md:leading-[33.89px] text-[14px] leading-[17px] text-[#3D3D3D]">+91 96068 27067</p>
             </div>
           </div>
 
-          <div className="py-4 lg:w-[594px] sm:w-[355px] w-[166.5px] bg-[#FAFAFA] flex items-center justify-center">
+          <div className="py-4 lg:w-[594px] sm:w-[355px] w-[170px] bg-[#FAFAFA] flex items-center justify-center">
             <div className="flex flex-col gap-3 items-center justify-center">
               <div className="flex items-center gap-3">
                 <Image
@@ -88,7 +88,7 @@ export default function Locations() {
                 />
                 <p className="font-normal lg:text-[20px] lg:leading-[26px] sm:text-[20px] sm:leading-[26px] text-[14px] leading-[16.94px] text-[#6D6D6D]">HR Enquiry</p>
               </div>
-              <p className="font-semibold lg:text-[32px] lg:leading-[38.73px] md:text-[28px] md:leading-[33.89px] text-[16px] leading-[19.36px] text-[#3D3D3D]">hr@squadramedia.com</p>
+              <p className="font-semibold lg:text-[32px] lg:leading-[38.73px] md:text-[28px] md:leading-[33.89px] text-[14px] leading-[17px] text-[#3D3D3D]">hr@squadramedia.com</p>
             </div>
           </div>
         </div>
