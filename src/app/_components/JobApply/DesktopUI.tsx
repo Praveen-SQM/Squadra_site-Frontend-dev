@@ -9,12 +9,36 @@ import { ArrowRight, Loader2, } from "lucide-react";
 import resumeUploadIcon from '@/utilities/icons/resume-upload.svg'
 import checkCircleIcon from '@/utilities/icons/check-circle.svg'
 import closeIcon from '@/utilities/icons/close.svg'
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
+function DesktopUi({jobId}: {jobId: string | string[]}) {
 
-function DesktopUi() {
+    const [jobDetails, setJobDetails] = useState(null);
 
-    const [loading] = useState(false);
+    useEffect(() => {
+        const fetchJobDetails = async () => {
+            try {
+                const response = await axios.get(`/api/jobs/${jobId}`);
+                console.log('Job Details:', response.data);
+                setJobDetails(response.data.data);
+                // You can set the job details to state here if needed
+            } catch (error) {
+                console.error('Error fetching job details:', error);
+            }
+        };
 
+        if (jobId) {
+            fetchJobDetails();
+        }
+    }, [jobId]);
+
+    useEffect(()=>{
+        console.log("jobdetails----------->",jobDetails)
+    },[jobDetails])
+
+    // const [loading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const {
         register,
@@ -51,8 +75,36 @@ function DesktopUi() {
 
     const resumeFile = watch('resume');
 
+    const createApplication = async (data: FormData) => {
+        setLoading(true);
+        try {
+            const formData = new FormData();
+            formData.append('firstName', data.firstName);
+            formData.append('lastName', data.lastName);
+            formData.append('email', data.email);
+            formData.append('phone',data.phone)
+            formData.append('location',`${data.state}, ${data.city}`)
+            formData.append('experience',data.experience)
+            formData.append('joiningDays',data.joiningDays)
+            formData.append('webLink',data.webLink)
+            formData.append('linkedProfile',data.linkedProfile)
+            formData.append('file',resumeFile[0])
+            formData.append('additionalInfo',data.message)
+            // formData.append('privacyPolicy',data.privacyPolicy)
+            const response = await axios.post('/api/applications', formData);
+            toast.success('Application submitted successfully. We will review your resume and get back to you shortly.');
+            setLoading(false);
+
+        } catch (error) {
+            console.log(error);
+            toast.error('Something went wrong. Please try again later.');
+            setLoading(false);
+        }
+    }
+
     const onSubmit: SubmitHandler<FormData> = async (data) => {
         console.log("on submit data--->", data);
+        createApplication(data);
     };
 
     const router = useRouter()

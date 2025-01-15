@@ -8,12 +8,13 @@ import resumeUploadIcon from '@/utilities/icons/resume-upload.svg'
 import checkCircleIcon from '@/utilities/icons/check-circle.svg'
 import closeIcon from '@/utilities/icons/close.svg'
 import axios from 'axios'
+import toast from 'react-hot-toast';
 
 function DesktopUi() {
 
-    const [loading] = useState(false);
     const [terms, setTerms] = useState(false);
-   
+    const [loading, setLoading] = useState(false);
+
 
     const {
         register,
@@ -37,30 +38,30 @@ function DesktopUi() {
 
     const formData=watch();
 
-    useEffect(()=>{
-        console.log("formData--->", formData)
-    },[formData])
+
 
     const resumeFile=watch('resume');
 
+
     const createApplication = async (data: FormData) => {
+        setLoading(true);
         try {
             const formData = new FormData();
-            Object.keys(data).forEach(key => {
-                if(key === 'resume'){
-                    formData.append(key, data[key][0]);
-                }else{
-                    formData.append(key, data[key]);
-                }
-            });
-            const response = await axios.post('/api/applications', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-            console.log(response);
+            formData.append('firstName', data.firstName);
+            formData.append('lastName', data.lastName);
+            formData.append('email', data.email);
+            formData.append('phone',data.phone)
+            formData.append('location',data.location)
+            formData.append('linkedProfile',data.linkedProfile)
+            formData.append('file',resumeFile[0])
+            const response = await axios.post('/api/applications', formData);
+            toast.success('Application submitted successfully. We will review your resume and get back to you shortly.');
+            setLoading(false);
+
         } catch (error) {
             console.log(error);
+            toast.error('Something went wrong. Please try again later.');
+            setLoading(false);
         }
     }
 
@@ -113,7 +114,7 @@ function DesktopUi() {
                                 <input
                                     id="fileInput"
                                     type="file"
-                                    // accept=".pdf,.ppt,.pptx,.mp4,/*"
+                                    accept=".pdf,.docx"
                                     className="hidden"
                                     {...register("resume", { 
                                         required: "Resume is required" 
@@ -232,8 +233,13 @@ function DesktopUi() {
                                     id="linkedProfile"
                                     placeholder="Enter LinkedIn link"
                                     {...register("linkedProfile", {
-                                        required: "LinkedIn profile is required"
+                                        required: "LinkedIn profile is required",
+                                        pattern: {
+                                            value: /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/,
+                                            message: "Please enter a valid URL"
+                                        }
                                     })}
+
                                     className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                                 />
                                 {errors.linkedProfile && (

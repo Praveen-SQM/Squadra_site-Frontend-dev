@@ -147,14 +147,14 @@ const Navbar = () => {
 
           {!pathname.includes("/it-services") && <ul className="lg:flex hidden font-[500] space-x-8">
             <Link
-              className={`cursor-pointer ${pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
+              className={`cursor-pointer py-5 ${pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
                 }`}
               href={"/about-us"}
             >
               About Us
             </Link>
             <li
-              className="relative hover:text-[#FBAE17] cursor-pointer"
+              className="relative py-5 hover:text-[#FBAE17] cursor-pointer"
               onMouseEnter={() => { setIsServicesHovered(true); setIsScrolled(true) }}
               onMouseLeave={() => { setIsServicesHovered(false); setIsScrolled(false) }}
             >
@@ -162,7 +162,7 @@ const Navbar = () => {
 
               {/* Services Mega Menu */}
               <div
-                className={`absolute top-[2.5rem] ${isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
+                className={`absolute top-[4.5rem] ${isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
                   } transition-all w-screen duration-300 translate-x-[-56%] bg-white text-black shadow-xl`}
 
 
@@ -191,7 +191,8 @@ const Navbar = () => {
                           <Link onClick={() =>
                             setTimeout(() => {
                               setIsServicesHovered(false);
-                            }, 2000)
+                              setIsScrolled(false);
+                            }, 500)
                           } href="/it-services" className=" cursor-pointer">Technology & Development</Link>
                         </h3>
                         <ul className="space-y-2 text-sm text-gray-600">

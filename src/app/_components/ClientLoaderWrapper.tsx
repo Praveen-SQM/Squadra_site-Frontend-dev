@@ -22,7 +22,7 @@ export default function ClientLoaderWrapper({
 
     return (
         <AnimatePresence>
-            {isLoading ? (
+            {false ? (
                 <motion.div
                     key="loader"
                     initial={{ opacity: 1 }}
@@ -30,21 +30,21 @@ export default function ClientLoaderWrapper({
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }} 
                 >
-                    <InitialVideoLoader />
+                    {/* <InitialVideoLoader /> */}
                 </motion.div>
             ) : (
-                <motion.div
-                    key="content"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }} 
+                <div
+                    // key="content"
+                    // initial={{ opacity: 0 }}
+                    // animate={{ opacity: 1 }}
+                    // exit={{ opacity: 0 }}
+                    // transition={{ duration: 0.1, ease: "easeInOut" }} 
                     className="flex flex-col min-h-screen"
                 >
                     <Navbar />
                     <main className="bg-white text-gray-800 flex-grow">{children}</main>
                     <Footer />
-                </motion.div>
+                </div>
             )}
         </AnimatePresence>
     );
