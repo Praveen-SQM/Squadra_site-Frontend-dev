@@ -7,7 +7,7 @@ import { ArrowRight, Loader2, } from "lucide-react";
 import resumeUploadIcon from '@/utilities/icons/resume-upload.svg'
 import checkCircleIcon from '@/utilities/icons/check-circle.svg'
 import closeIcon from '@/utilities/icons/close.svg'
-
+import axios from 'axios'
 
 function DesktopUi() {
 
@@ -43,8 +43,30 @@ function DesktopUi() {
 
     const resumeFile=watch('resume');
 
+    const createApplication = async (data: FormData) => {
+        try {
+            const formData = new FormData();
+            Object.keys(data).forEach(key => {
+                if(key === 'resume'){
+                    formData.append(key, data[key][0]);
+                }else{
+                    formData.append(key, data[key]);
+                }
+            });
+            const response = await axios.post('/api/applications', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const onSubmit: SubmitHandler<FormData> = async (data) => {
         console.log("data--->", data);
+        createApplication(data);
     };
 
  

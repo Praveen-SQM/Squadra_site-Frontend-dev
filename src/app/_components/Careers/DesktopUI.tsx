@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import careerImage from '@/utilities/images/career-image.png'
 
 import rightArrowIcon from '@/utilities/icons/right-arrow.svg'
@@ -17,6 +17,23 @@ import { useRouter } from "next/navigation";
 
 
 function DesktopUi() {
+    
+    const [jobs, setJobs] = useState([])
+
+    useEffect(() => {
+        const getJobs = async () => {
+            try {
+                const response = await fetch('/api/jobs')
+                const data = await response.json()
+                setJobs(data)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        getJobs()
+    }, [])
+
+    console.log(jobs,"jobs")
 
     const router = useRouter()
 
@@ -122,92 +139,87 @@ function DesktopUi() {
             </div>
 
             {/* Current Opening */}
-            <div className='w-full flex flex-col items-center'>
-                <div className='flex flex-col py-[72px] lg:px-[124px] md:px-[0px] gap-[42px] lg:w-[1192px] md:w-[714px] sm:w-[335px] w-[335px]'>
-                    <div className='flex flex-col gap-[72px] justify-center'>
-                        <p className='font-[300] lg:text-[62px] md:text-[48px] lg:leading-[50px] md:leading-[50px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-[#131313] text-center'>Current openings</p>
+            <div className="w-full flex flex-col items-center">
+                <div className="flex flex-col py-[72px] lg:px-[124px] md:px-[0px] gap-[42px] lg:w-[1192px] md:w-[714px] sm:w-[335px] w-[335px]">
+                    <div className="flex flex-col gap-[72px] justify-center">
+                        <p className="font-[300] lg:text-[62px] md:text-[48px] lg:leading-[50px] md:leading-[50px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-[#131313] text-center">
+                            Current openings
+                        </p>
                         <div>
-                            {jobSections?.map((item, index) => (
-                                <div key={index} className={`border-b ${index === 0 ? "border-t" : ""} ${openIndexes.includes(index) ? "border-t border-[#06135B]" : "border-[#E7E7E7]"}`}>
-                                    <button
-                                        className="flex justify-between items-center w-full lg:py-7 md:py-7 sm:py-4 py-4 text-left"
-                                        onClick={() => toggleAccordion(index)}
+                            {jobs?.data?.slice(0, 3)?.map((category, index) => (
+                                <div key={index}>
+                                    <div
+                                        className={`border-b ${openIndexes.includes(index) ? "border-t border-[#06135B]" : "border-[#E7E7E7]"}`}
                                     >
-                                        <span className="lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px]  sm:text-[16px] sm:leading-[19.09px] text-[#3D3D3D] font-medium">{item.title}</span>
-                                        {openIndexes.includes(index) ? (
-                                            <Image src={minusIcon} alt='close' />
-                                        ) : (
-                                            <Image src={plusIcon} alt='open' />
+                                        <button
+                                            className="flex justify-between items-center w-full lg:py-7 md:py-7 sm:py-4 py-4 text-left"
+                                            onClick={() => toggleAccordion(index)}
+                                        >
+                                            <span className="lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[16px] sm:leading-[19.09px] text-[#3D3D3D] font-medium">
+                                                {category._id} ({category.jobsCount})
+                                            </span>
+                                            {openIndexes.includes(index) ? (
+                                                <Image src={minusIcon} alt="close" />
+                                            ) : (
+                                                <Image src={plusIcon} alt="open" />
+                                            )}
+                                        </button>
+                                        {openIndexes.includes(index) && (
+                                            <div>
+                                                <ul className="lg:pl-[100px] md:pl-[100px] sm:pl-[6px] pl-[6px] border-t border-[#B0B0B0]">
+                                                    {category.jobs.map((job, jobIndex) => (
+                                                        <li
+                                                            key={job._id}
+                                                            className="border-b border-[#B0B0B0] flex justify-between lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]"
+                                                        >
+                                                            <div className="flex flex-col justify-between gap-[2px]">
+                                                                <p className="font-normal lg:text-[20px] lg:leading-[23.87px] md:text-[18px] md:leading-[21.48px] sm:text-[14px] sm:leading-[16.71px] text-[14px] leading-[16.71px] text-[#3D3D3D]">
+                                                                    {job.jobTitle}
+                                                                </p>
+                                                                <div className="flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1">
+                                                                    <p className="py-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
+                                                                        {job.location}
+                                                                    </p>
+                                                                    <div className="border-l border-[#D1D1D1] py-1 lg:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
+                                                                        {job.employmentType}
+                                                                    </div>
+                                                                    <div className="border-l border-[#D1D1D1] py-1 lg:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
+                                                                        {job.yearsOfExperience}+ Years of Experience
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer">
+                                                                <div className="lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[20px] w-[20px] h-[20px]">
+                                                                    <Image src={applyIcon} alt="apply" width={24} height={24} className="w-[24px] h-[24px]" />
+                                                                </div>
+                                                                <p className="font-normal lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888]">
+                                                                    Apply
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         )}
-                                    </button>
-                                    {openIndexes.includes(index) && (
-                                        <div className="">
-                                            {/* {item.content} */}
-                                            <ul className='lg:pl-[100px] md:pl-[100px] sm:pl-[6px] pl-[6px] border-t border-[#B0B0B0]'>
-                                                <li className='border-b border-[#B0B0B0] flex justify-between lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]'>
-                                                    <div className='flex flex-col justify-between gap-[2px]'>
-                                                        <p className='font-normal lg:text-[20px] lg:leading-[23.87px] md:text-[18px] md:leading-[21.48px] sm:text-[14px] sm:leading-[16.71px] text-[14px] leading-[16.71px] text-[#3D3D3D]'>StoryBoard Lead</p>
-                                                        <div className='flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1'>
-                                                            <p className='py-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>Bengaluru</p>
-                                                            <div className='border-l border-[#D1D1D1] py-1 lg:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>Full-time</div>
-                                                            <div className='border-l border-[#D1D1D1] py-1 lg:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>5+ Years of Experience</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer'>
-                                                        <div className='lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[20px] w-[20px] h-[20px]'>
-                                                            <Image src={applyIcon} alt='apply' width={24} height={24} className='w-[24px] h-[24px]' />
-                                                        </div>
-                                                        <p className='font-normal lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888]'>Apply</p>
-                                                    </div>
-                                                </li>
-                                                <li className='border-b border-[#B0B0B0] flex justify-between lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]'>
-                                                    <div className='flex flex-col justify-between gap-[2px]'>
-                                                        <p className='font-normal lg:text-[20px] lg:leading-[23.87px] md:text-[18px] md:leading-[21.48px] sm:text-[14px] sm:leading-[16.71px] text-[14px] leading-[16.71px] text-[#3D3D3D]'>StoryBoard Lead</p>
-                                                        <div className='flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1'>
-                                                            <p className='py-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>Bengaluru</p>
-                                                            <div className='border-l border-[#D1D1D1] py-1 lg:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>Full-time</div>
-                                                            <div className='border-l border-[#D1D1D1] py-1 lg:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>5+ Years of Experience</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer'>
-                                                        <div className='lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[20px] w-[20px] h-[20px]'>
-                                                            <Image src={applyIcon} alt='apply' width={24} height={24} className='w-[24px] h-[24px]' />
-                                                        </div>
-                                                        <p className='font-normal lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888]'>Apply</p>
-                                                    </div>
-                                                </li>
-                                                <li className='border-b border-[#B0B0B0] flex justify-between lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]'>
-                                                    <div className='flex flex-col justify-between gap-[2px]'>
-                                                        <p className='font-normal lg:text-[20px] lg:leading-[23.87px] md:text-[18px] md:leading-[21.48px] sm:text-[14px] sm:leading-[16.71px] text-[14px] leading-[16.71px] text-[#3D3D3D]'>StoryBoard Lead</p>
-                                                        <div className='flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1'>
-                                                            <p className='py-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>Bengaluru</p>
-                                                            <div className='border-l border-[#D1D1D1] py-1 lg:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>Full-time</div>
-                                                            <div className='border-l border-[#D1D1D1] py-1 lg:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>5+ Years of Experience</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer'>
-                                                        <div className='lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[20px] w-[20px] h-[20px]'>
-                                                            <Image src={applyIcon} alt='apply' width={24} height={24} className='w-[24px] h-[24px]' />
-                                                        </div>
-                                                        <p className='font-normal lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888]'>Apply</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    )}
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className='w-full flex justify-end'>
-                        <div onClick={() => router.push('/openings')} className='lg:w-[194px] md:w-[194px] sm:w-full w-full h-[58px] flex justify-center items-center rounded-[4px] gap-2 bg-[#131313] cursor-pointer'>
-                            <p className='font-normal text-[16px] leading-[18px] text-[#FFFFFF]'>See all openings</p>
-                            <Image src={rightArrowIcon} alt='Openings' width={24} height={24} />
+                    <div className="w-full flex justify-end">
+                        <div
+                            onClick={() => router.push("/openings")}
+                            className="lg:w-[194px] md:w-[194px] sm:w-full w-full h-[58px] flex justify-center items-center rounded-[4px] gap-2 bg-[#131313] cursor-pointer"
+                        >
+                            <p className="font-normal text-[16px] leading-[18px] text-[#FFFFFF]">See all openings</p>
+                            <Image src={rightArrowIcon} alt="Openings" width={24} height={24} />
                         </div>
                     </div>
                 </div>
             </div>
+
+
 
             {/* Employee Benefits */}
             <div className='w-full bg-[#FAFAFA] flex flex-col lg:py-[72px] md:py-[72px] sm:py-[50px] py-[50px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] items-center'>
