@@ -381,6 +381,18 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
+                <Link
+                  href="/careers"
+                  className={`block py-4 text-base ${pathname.includes("/careers")
+                    ? `text-[${primaryColor}]`
+                    : "text-black"
+                    } border-b border-gray-200`}
+                  onClick={toggleSidebar}
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
                 {/* Services Menu */}
                 <div
                   className="py-4 text-base text-black border-b border-gray-200 flex justify-between items-center cursor-pointer"
