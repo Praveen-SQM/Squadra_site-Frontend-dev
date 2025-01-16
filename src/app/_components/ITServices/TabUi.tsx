@@ -148,11 +148,12 @@ function TabUi() {
 
       </div>
 
-      <div className='w-[321px] h-[600px] mt-[42px]'>
+      <div className='w-[321px] h-[670px] mt-[42px]'>
         <Image
-          src={BenefitFrame}
+          src="https://squadra-media.s3.ap-south-1.amazonaws.com/mockup+.png"
           width={321}
-          height={586}
+          height={670}
+          className='w-[321px] h-[670px] object-cover'
           alt='BenefitFrame'
         />
         {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/e+video.mp4" autoPlay loop width="640" height="600" className='rounded-md h-[1000px]'></video> */}

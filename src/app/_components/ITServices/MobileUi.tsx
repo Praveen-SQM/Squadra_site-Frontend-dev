@@ -394,11 +394,11 @@ function MobileUi() {
 
       </div>
 
-      <div className='w-[321px] h-[600px] mt-[42px]'>
+      <div className='w-[321px] h-[670px] mt-[42px]'>
         <Image
-          src={BenefitFrame}
+          src="https://squadra-media.s3.ap-south-1.amazonaws.com/mockup+.png"
           width={321}
-          height={586}
+          height={600}
           alt='BenefitFrame'
         />
       </div>
