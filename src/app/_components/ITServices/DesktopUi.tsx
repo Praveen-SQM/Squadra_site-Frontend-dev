@@ -3,7 +3,6 @@ import Image from 'next/image'
 import React from 'react'
 import starSvg from '@/utilities/images/star.svg'
 import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, saasData, webAndMobDev } from './MobileUi'
-import frame from '@/utilities/images/mobile-frame.svg'
 import Container from '@/utilities/images/Container.svg'
 import arrowRight from '@/utilities/images/arrow-right.svg'
 import "./styles/DesktopUI.css"
@@ -40,6 +39,20 @@ function DesktopUi() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const checkBodyBackground = () => {
+        const bodyBgColor = getComputedStyle(document.body).backgroundColor;
+        console.log("bodyBgColor-------->",bodyBgColor)
+        // setIsDarkBackground(bodyBgColor === "rgb(255, 255, 255)"); 
+        // White background
+    };
+
+    window.addEventListener("scroll", checkBodyBackground);
+    checkBodyBackground(); // Run once on load
+
+    return () => window.removeEventListener("scroll", checkBodyBackground);
+}, []);
 
 
   return (
@@ -202,11 +215,12 @@ function DesktopUi() {
           <div className='flex flex-col items-center w-full h-fit'>
 
             <div className="w-[277px] h-[586px] flex flex-col items-center ">
-              <Image
-                width={0}
-                height={0}
-                src={frame}
+              <Image 
+              width={277}
+              height={586}
+                src="https://squadra-media.s3.ap-south-1.amazonaws.com/mockup+.png"
                 alt="Placeholder Image"
+                className='w-[277px] h-[586px] object-cover'
               />
             </div>
           </div>

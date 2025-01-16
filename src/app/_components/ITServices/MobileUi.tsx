@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/accordion"
 import sliderIcon from "@/utilities/icons/slider-icon.svg"
 import Image from 'next/image';
-import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Network from '@/utilities/images/Network.svg'
 import Saas from '@/utilities/images/Saas.svg'
 import Solution from '@/utilities/images/Solution.svg'
@@ -394,11 +393,11 @@ function MobileUi() {
 
       </div>
 
-      <div className='w-[321px] h-[600px] mt-[42px]'>
+      <div className='w-[321px] h-[670px] mt-[42px]'>
         <Image
-          src={BenefitFrame}
+          src="https://squadra-media.s3.ap-south-1.amazonaws.com/mockup+.png"
           width={321}
-          height={586}
+          height={600}
           alt='BenefitFrame'
         />
       </div>
