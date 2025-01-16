@@ -66,7 +66,7 @@ const FoundingMembersSection = () => {
         </div>
       </div>
 
-      <div className="lg:w-[332px] md:w-[230px] sm:w-[335px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col shadow-[0px_4px_60px_0px_rgba(0,0,0,0.12)]" style={{ boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset" }}>
+      <div className="lg:w-[332px] md:w-[230px] sm:w-[335px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col shadow-[0px_4px_60px_0px_rgba(0,0,0,0.12)]" style={{ boxShadow: "0px 10px 15px -3px rgba(0, 0, 0, 0.1)" }}>
       <div className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px]">
           <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp"} alt="Anu" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
         </div>
