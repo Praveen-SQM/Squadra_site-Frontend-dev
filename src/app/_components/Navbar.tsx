@@ -156,6 +156,7 @@ const Navbar = () => {
             >
               About Us
             </Link>
+
             <li
               className="relative py-5 hover:text-[#FBAE17] cursor-pointer"
               onMouseEnter={() => { setIsServicesHovered(true); setIsScrolled(true) }}
@@ -166,15 +167,15 @@ const Navbar = () => {
               {/* Services Mega Menu */}
               <div
                 className={`absolute top-[4.5rem] ${isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
-                  } transition-all w-screen duration-300 translate-x-[-56%] bg-white text-black shadow-xl`}
+                  } transition-all w-screen duration-300 translate-x-[-52%] bg-white text-black shadow-xl`}
 
 
 
               >
                 <div className="p-8 flex flex-col">
-                  <div className="flex mb-4">
+                  <div className="flex justify-center mb-4">
                     {/* Left Column - Heading */}
-                    <div className="w-[25%] pr-0">
+                    <div className="w-[20%] pr-0">
                       <h2 className="text-3xl lg:text-4xl font-light leading-tight">
                         Developing<br />
                         Robust<br />
