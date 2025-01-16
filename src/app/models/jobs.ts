@@ -9,6 +9,7 @@ import { model, models, Schema } from "mongoose";
 export interface IJobs {
   jobTitle: string;
   jobCategory: string;
+  jobDescription: string;
   location: string;
   employmentType: string;
   yearsOfExperience: string;
@@ -23,6 +24,7 @@ const JobSchema = new Schema<IJobs>({
     enum: ["Engineering", "Marketing", "Sales", "Design", "Operations"],
     required: true,
   },
+  jobDescription: { type: String, required: true },
   location: { type: String, required: true },
   employmentType: {
     type: String,

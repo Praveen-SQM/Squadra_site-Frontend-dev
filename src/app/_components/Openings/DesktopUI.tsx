@@ -99,7 +99,7 @@ function DesktopUi() {
                                 <div>
                                     <ul className="xl:pl-[100px] lg:pl-[100px] md:pl-[100px] sm:pl-[6px] pl-[6px] border-t border-[#B0B0B0]">
                                         {category.jobs?.map((job, jobIndex) => (
-                                            <li
+                                            <li onClick={() => router.push(`/job-details/${job._id}`)}
                                                 key={jobIndex}
                                                 className="border-[#B0B0B0] flex justify-between xl:py-[16px] lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] xl:pl-[40px] xl:pr-[32px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]"
                                             >
@@ -129,7 +129,7 @@ function DesktopUi() {
                                                             className="w-[24px] h-[24px]"
                                                         />
                                                     </div>
-                                                    <p className="font-normal xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888]">
+                                                    <p onClick={() => router.push(`/job-apply/${job._id}`)} className="font-normal xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888]">
                                                         Apply
                                                     </p>
                                                 </div>

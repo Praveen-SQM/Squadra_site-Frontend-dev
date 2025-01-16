@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 'use client'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
@@ -14,8 +16,8 @@ import axios from 'axios';
 
 function DesktopUi({jobId}: {jobId: string | string[]}) {
 
-    const [jobDetails, setJobDetails] = useState(null);
-
+    const [jobDetails, setJobDetails] = useState<any>(null);
+    console.log(jobDetails, "jobDetails")
     useEffect(() => {
         const fetchJobDetails = async () => {
             try {
@@ -33,10 +35,7 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
         }
     }, [jobId]);
 
-    useEffect(()=>{
-        console.log("jobdetails----------->",jobDetails)
-    },[jobDetails])
-
+ 
     // const [loading] = useState(false);
     const [loading, setLoading] = useState(false);
 
@@ -90,8 +89,11 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
             formData.append('linkedProfile',data.linkedProfile)
             formData.append('file',resumeFile[0])
             formData.append('additionalInfo',data.message)
+            if (jobId) {
+                formData.append('jobId', jobId.toString());
+            }
             // formData.append('privacyPolicy',data.privacyPolicy)
-            const response = await axios.post('/api/applications', formData);
+             await axios.post('/api/applications', formData);
             toast.success('Application submitted successfully. We will review your resume and get back to you shortly.');
             setLoading(false);
 
@@ -103,7 +105,6 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
     }
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
-        console.log("on submit data--->", data);
         createApplication(data);
     };
 
@@ -117,21 +118,21 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
                     <Image src={applyIcon} alt='apply' width={18} height={18} />
                     <p onClick={() => { router.push('/careers') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Careers</p>
                     <Image src={applyIcon} alt='apply' width={18} height={18} />
-                    <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Design</p>
+                    <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{jobDetails?.jobCategory}</p>
                     <Image src={applyIcon} alt='apply' width={18} height={18} />
-                    <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Sr. UI/UX Designer</p>
+                    <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{jobDetails?.jobTitle}</p>
                     <Image src={applyIcon} alt='apply' width={18} height={18} />
                     <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#1E3A76] cursor-pointer'>Application Form</p>
                 </div>
             </div>
             <div className='py-[40px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] bg-[#FAFAFA] flex flex-col lg:gap-2 md:gap-2 sm:gap-1 gap-1'>
-                <p className='font-medium lg:text-[28px] lg:leading-[33.41px] md:text-[28px] md:leading-[33.41px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#3D3D3D]'>Senior UI/UX designer</p>
+                <p className='font-medium lg:text-[28px] lg:leading-[33.41px] md:text-[28px] md:leading-[33.41px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#3D3D3D]'>{jobDetails?.jobTitle}</p>
                 <div className='flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1'>
-                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>Bengaluru</p>
+                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>{jobDetails?.location}</p>
                     <div className='w-[1px] h-[21px] bg-[#B0B0B0]'></div>
-                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>Full-Time</p>
+                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>{jobDetails?.employmentType}</p>
                     <div className='w-[1px] h-[21px] bg-[#B0B0B0]'></div>
-                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>3+ Years Of Experience</p>
+                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>{jobDetails?.yearsOfExperience}+ Years Of Experience</p>
                 </div>
             </div>
             <div className='pt-[40px] pb-[100px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px]'>
@@ -331,7 +332,11 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
                                     id="linkedProfile"
                                     placeholder="Enter LinkedIn link"
                                     {...register("linkedProfile", {
-                                        required: "LinkedIn profile is required"
+                                        required: "LinkedIn profile is required",
+                                        pattern: {
+                                            value: /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/i,
+                                            message: "Invalid LinkedIn profile URL"
+                                        }
                                     })}
                                     className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                                 />
@@ -384,6 +389,10 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
                                     placeholder="Enter Github/Portfolio/etc..."
                                     {...register("webLink", {
                                         required: "Website Link is required",
+                                        pattern: {
+                                            value: /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})$/i,
+                                            message: "Invalid Website URL"
+                                        }
                                     })}
                                     className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                                 />
@@ -438,7 +447,7 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
                                 <input
                                     id="fileInput"
                                     type="file"
-                                    // accept=".pdf,.ppt,.pptx,.mp4,/*"
+                                    accept=".pdf,.docx,/*"
                                     className="hidden"
                                     {...register("resume", {
                                         required: "Resume is required"

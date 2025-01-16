@@ -26,21 +26,21 @@ interface FormData {
 
 export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
   const [open, setOpen] = React.useState(false);
-  const[phone,setPhoneInput]=React.useState('')
-  const [errorMessage,setErrorMessage]=React.useState('')
+  const [phone, setPhoneInput] = React.useState('')
+  const [errorMessage, setErrorMessage] = React.useState('')
   const pathname = usePathname();
   const {
-    
-    
+
+
   } = useForm<FormData>();
 
   const [loading, setLoading] = React.useState(false);
 
-  useEffect(()=>{
-    if((errorMessage==="Please enter phone number"||errorMessage==="Please enter valid phone number")&&phone.length===12){
-      setErrorMessage('') 
+  useEffect(() => {
+    if ((errorMessage === "Please enter phone number" || errorMessage === "Please enter valid phone number") && phone.length === 12) {
+      setErrorMessage('')
     }
-  },[errorMessage, phone])
+  }, [errorMessage, phone])
 
 
   // const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -87,11 +87,11 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
   // };
 
   const sendRequest = async () => {
-    if(phone.length===0){
+    if (phone.length === 0) {
       setErrorMessage('Please enter phone number')
       return
     }
-    if(phone.length<12){
+    if (phone.length < 12) {
       setErrorMessage('Please enter valid phone number')
       return
     }
@@ -146,14 +146,16 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       >
         <div className="flex items-center gap-3">
           <Image className="cursor-pointer"
-            src={pathname.includes("/contact-us") ? callIconBlack : isScrolled ? callIconBlack : callIcon}
+            src={pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply")
+              ? callIconBlack : isScrolled ? callIconBlack : callIcon}
             alt="Call Icon"
             width={24}
             height={24}
           />
 
           <p
-            className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${ pathname.includes("/contact-us") ? 'text-black' : isScrolled ? 'text-black' : 'text-white'
+            className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply")
+              ? 'text-black' : isScrolled ? 'text-black' : 'text-white'
               }`}
           >
             Schedule a Call
@@ -209,17 +211,17 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
                     })}
                   /> */}
                   <PhoneInput
-                  inputStyle={{
-                    width: "100%",
-                    height: "40px"
-                  }}
+                    inputStyle={{
+                      width: "100%",
+                      height: "40px"
+                    }}
                     country={'in'}
                     value={phone}
                     containerClass="flex-1 w-full text-[15px] relative"
                     inputClass="flex-1 w-full relative text-[14px] pl-[48px] ml-0 bg-[#FFFFFF] border border-[#CACACA]"
                     onChange={(value) => setPhoneInput(value)}
                   />
-                  {(errorMessage==="Please enter phone number" || errorMessage==="Please enter valid phone number") && (
+                  {(errorMessage === "Please enter phone number" || errorMessage === "Please enter valid phone number") && (
                     <p className="text-red-500 text-sm">{errorMessage}</p>
                   )}
                 </div>

@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Loader2, } from "lucide-react";
@@ -36,6 +36,7 @@ function DesktopUi() {
         resume: File | any;
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const formData=watch();
 
 
@@ -54,7 +55,7 @@ function DesktopUi() {
             formData.append('location',data.location)
             formData.append('linkedProfile',data.linkedProfile)
             formData.append('file',resumeFile[0])
-            const response = await axios.post('/api/applications', formData);
+            await axios.post('/api/applications', formData);
             toast.success('Application submitted successfully. We will review your resume and get back to you shortly.');
             setLoading(false);
 
