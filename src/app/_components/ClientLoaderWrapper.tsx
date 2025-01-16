@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import InitialVideoLoader from "./Loader";
+// import InitialVideoLoader from "./Loader";
 
 export default function ClientLoaderWrapper({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {

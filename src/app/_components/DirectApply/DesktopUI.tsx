@@ -12,7 +12,6 @@ import toast from 'react-hot-toast';
 
 function DesktopUi() {
 
-    const [terms, setTerms] = useState(false);
     const [loading, setLoading] = useState(false);
 
 
