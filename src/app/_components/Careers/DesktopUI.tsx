@@ -301,7 +301,9 @@ function DesktopUi() {
                                     <div className='rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[163.5px] w-[163.5px] bg-gray-400'>
                                         <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/5555.webp" alt='Life at Squadra' width={420} height={194} className="xl:w-[420px] xl:h-[194px] lg:w-[282px] lg:h-[194px] md:w-[282px] md:h-[194px] sm:w-[163.5px] w-[163.5px] h-[194px] object-cover" />
                                     </div>
-                                    <div className='rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[163.5px] w-[163.5px] bg-gray-400'></div>
+                                    <div className='rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[163.5px] w-[163.5px] bg-gray-400'>
+                                    <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/7.jpg" alt='Life at Squadra' width={420} height={194} className="xl:w-[420px] xl:h-[194px] lg:w-[282px] lg:h-[194px] md:w-[282px] md:h-[194px] sm:w-[163.5px] w-[163.5px] h-[194px] object-cover" />
+                                    </div>
                                 </div>
                                 <div className='rounded-[6px] xl:w-[760px] lg:w-[420px] md:w-[420px] sm:w-[335px] w-[335px] xl:h-[400px] lg:h-[400px] md:h-[400px] sm:h-[200px] h-[200px]'>
                                     <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/444.webp" alt='Life at Squadra' width={760} height={400} className="xl:w-[760px] lg:w-[420px] md:w-[420px] sm:w-[335px] w-[335px] xl:h-[400px] lg:h-[400px] md:h-[400px] sm:h-[200px] h-[200px] object-cover" />
@@ -315,7 +317,9 @@ function DesktopUi() {
                                     <div className='rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[163.5px] w-[163.5px] bg-gray-400'>
                                         <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg" alt='Life at Squadra' width={420} height={194} className="xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[163.5px] w-[163.5px] object-cover" />
                                     </div>
-                                    <div className='rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[163.5px] w-[163.5px] bg-gray-400'></div>
+                                    <div className='rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[163.5px] w-[163.5px] bg-gray-400'>
+                                    <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg" alt='Life at Squadra' width={420} height={194} className="xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[163.5px] w-[163.5px] object-cover" />
+                                    </div>
                                 </div>
                                 <div className='rounded-[6px] xl:w-[760px] lg:w-[420px] md:w-[420px] sm:w-[335px] w-[335px] xl:h-[400px] lg:h-[400px] md:h-[400px] sm:h-[200px] h-[200px] bg-gray-400 block sm:hidden'>
                                     <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/2.1.webp" alt='Life at Squadra' width={760} height={400} className="xl:w-[760px] lg:w-[420px] md:w-[420px] sm:w-[335px] w-[335px] xl:h-[400px] lg:h-[400px] md:h-[400px] sm:h-[200px] h-[200px] object-cover" />
@@ -324,7 +328,9 @@ function DesktopUi() {
                         </div>
 
 
-                        <div className='rounded-[6px] xl:w-[1192px] xl:h-[440px] lg:w-[714px] lg:h-[400px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] bg-gray-400'></div>
+                        <div className='rounded-[6px] xl:w-[1192px] xl:h-[440px] lg:w-[714px] lg:h-[400px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] bg-gray-400'>
+                        <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_3720+2+(1).webp" alt='Life at Squadra' width={760} height={400} className="xl:w-[1192px] xl:h-[440px] lg:w-[714px] lg:h-[400px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] object-cover" />
+                        </div>
                     </div>
                 </div>
             </div>

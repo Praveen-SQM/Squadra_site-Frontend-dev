@@ -35,6 +35,7 @@ function DesktopUi() {
         linkedProfile: string;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         resume: File | any;
+        privacyPolicy: boolean;
     };
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -251,20 +252,23 @@ function DesktopUi() {
                         </div>
 
                         {/* Terms and conditions */}
-                        <div className="mb-6 flex py-[16px] gap-[10px]">
+                        <div className='mb-6'>
+                        <div className="flex py-[16px] gap-[10px]">
                             <input
                                 type="checkbox"
                                 className="form-checkbox h-[20px] cursor-pointer w-[20px] transition duration-150 ease-in-out"
                                 style={{ accentColor: "#1E3A76" }}
-                                onChange={() => {
-                                    setTerms(!terms)
-                                }}
-                                checked={terms}
+                                {...register("privacyPolicy", {
+                                    required: "Privacy Policy is required",
+                                })}
                             />
                             <p className='font-normal text-[14px] leading-[16.94px] text-[#11192B]'>By clicking this box, you will declare that you will read and <span className="hidden sm:inline"> <br /> </span> 
                                 agree to the <span className='text-[#4C6EFF]'>Privacy policy</span> of Squadramedia</p>
                         </div>
-
+                        {errors.privacyPolicy && (
+                                <p className="text-red-500 text-sm mt-1">{errors.privacyPolicy?.message?.toString()}</p>
+                            )}
+                            </div>
 
                         {/* Submit Button */}
                         <Button disabled={loading} type="submit" className="px-6 py-4 float-right bg-black text-white rounded-md h-[48px] lg:w-[168px] md:w-full sm:w-full w-full">
