@@ -105,7 +105,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed z-50 w-full p-4 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us")
+        className={`fixed z-50 w-full p-4 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us") || pathname.includes("/openings")
+        || pathname.includes("/direct-apply") || pathname.includes("/job-details")
+
           ? "bg-white shadow-md text-black"
           : isScrolled
             ? "bg-white text-black"
@@ -119,7 +121,8 @@ const Navbar = () => {
 
 
               <Image
-                src={pathname.includes("/contact-us") ? itLogocolor : isScrolled ? itLogocolor : itLogo}
+                src={pathname.includes("/contact-us") || pathname.includes("/openings")
+                  || pathname.includes("/direct-apply") || pathname.includes("/job-details") ? itLogocolor : isScrolled ? itLogocolor : itLogo}
                 alt="Logo"
                 width={120}
                 height={40}
@@ -275,6 +278,13 @@ const Navbar = () => {
                 </div>
               </div>
             </li>
+            <Link
+              className={`cursor-pointer py-5 ${pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
+                }`}
+              href={"/careers"}
+            >
+              Careers
+            </Link>
           </ul>}
 
 
@@ -282,7 +292,8 @@ const Navbar = () => {
           <ul className="flex font-[500] space-x-8 md:space-x-8">
             {true && <ContactPopover isScrolled={isScrolled} />}
             {true ? <li
-              className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us")
+              className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us") || pathname.includes("/openings")
+                || pathname.includes("/direct-apply") || pathname.includes("/job-details")
                 ? `text-white`
                 : isScrolled
                   ? "text-white"

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import connectMongo from "@/app/lib/mongodb";
 import Application from "@/app/models/applications";
 import { NextRequest, NextResponse } from "next/server";

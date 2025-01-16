@@ -99,9 +99,9 @@ function DesktopUi() {
                                 <div>
                                     <ul className="lg:pl-[100px] md:pl-[100px] sm:pl-[6px] pl-[6px] border-t border-[#B0B0B0]">
                                         {category.jobs?.map((job, jobIndex) => (
-                                            <li
+                                            <li onClick={() => router.push(`/job-details/${job._id}`)}
                                                 key={jobIndex}
-                                                className="border-b border-[#B0B0B0] flex justify-between lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]"
+                                                className="border-b cursor-pointer border-[#B0B0B0] flex justify-between lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]"
                                             >
                                                 <div className="flex flex-col justify-between gap-[2px]">
                                                     <p className="font-normal lg:text-[20px] lg:leading-[23.87px] md:text-[18px] md:leading-[21.48px] sm:text-[14px] sm:leading-[16.71px] text-[14px] leading-[16.71px] text-[#3D3D3D]">
@@ -129,7 +129,7 @@ function DesktopUi() {
                                                             className="w-[24px] h-[24px]"
                                                         />
                                                     </div>
-                                                    <p className="font-normal lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888]">
+                                                    <p onClick={() => router.push(`/job-apply/${job._id}`)} className="font-normal lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888]">
                                                         Apply
                                                     </p>
                                                 </div>

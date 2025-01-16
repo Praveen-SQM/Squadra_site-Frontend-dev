@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 'use client'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
@@ -33,32 +36,31 @@ function DesktopUi() {
         getJobs()
     }, [])
 
-    console.log(jobs,"jobs")
 
     const router = useRouter()
 
-    const jobSections = [
-        {
-            title: "StoryBoard (3)",
-            content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
-        },
-        {
-            title: "Illustration (4)",
-            content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
-        },
-        {
-            title: "Animation (3)",
-            content: "• 5+ years of experience in UI/UX design\n• Strong portfolio demonstrating user-centered design solutions\n• Proficiency in design tools such as Figma, Sketch, or Adobe XD\n• Experience with design systems and component libraries\n• Excellent communication and collaboration skills"
-        },
-        {
-            title: "Design (1)",
-            content: "Bengaluru, India (On-site)"
-        },
-        {
-            title: "Writing (2)",
-            content: "• Competitive salary\n• Health insurance\n• Flexible working hours\n• Professional development opportunities\n• Collaborative and innovative work environment"
-        }
-    ]
+    // const jobSections = [
+    //     {
+    //         title: "StoryBoard (3)",
+    //         content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
+    //     },
+    //     {
+    //         title: "Illustration (4)",
+    //         content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
+    //     },
+    //     {
+    //         title: "Animation (3)",
+    //         content: "• 5+ years of experience in UI/UX design\n• Strong portfolio demonstrating user-centered design solutions\n• Proficiency in design tools such as Figma, Sketch, or Adobe XD\n• Experience with design systems and component libraries\n• Excellent communication and collaboration skills"
+    //     },
+    //     {
+    //         title: "Design (1)",
+    //         content: "Bengaluru, India (On-site)"
+    //     },
+    //     {
+    //         title: "Writing (2)",
+    //         content: "• Competitive salary\n• Health insurance\n• Flexible working hours\n• Professional development opportunities\n• Collaborative and innovative work environment"
+    //     }
+    // ]
 
     const employeeBenefits = [
         {
@@ -146,7 +148,7 @@ function DesktopUi() {
                             Current openings
                         </p>
                         <div>
-                            {jobs?.data?.slice(0, 3)?.map((category, index) => (
+                            {jobs?.data?.slice(0, 3)?.map((category: { _id: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; jobsCount: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; jobs: any[] }, index: React.Key | null | undefined) => (
                                 <div key={index}>
                                     <div
                                         className={`border-b ${openIndexes.includes(index) ? "border-t border-[#06135B]" : "border-[#E7E7E7]"}`}
@@ -167,10 +169,13 @@ function DesktopUi() {
                                         {openIndexes.includes(index) && (
                                             <div>
                                                 <ul className="lg:pl-[100px] md:pl-[100px] sm:pl-[6px] pl-[6px] border-t border-[#B0B0B0]">
-                                                    {category.jobs.map((job, jobIndex) => (
-                                                        <li
+                                                    {category.jobs.map((job: { _id: React.Key | null | undefined; jobTitle: string 
+                                                        jobDescription: string; companyDescription: string; location: string; jobType: string; jobLevel: string; salary: string; experience: string; benefits: string; applyLink: string; employmentType:string
+
+                                                     },) => (
+                                                        <li  onClick={() => router.push(`/job-details/${job._id}`)}
                                                             key={job._id}
-                                                            className="border-b border-[#B0B0B0] flex justify-between lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]"
+                                                            className="border-b cursor-pointer border-[#B0B0B0] flex justify-between lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]"
                                                         >
                                                             <div className="flex flex-col justify-between gap-[2px]">
                                                                 <p className="font-normal lg:text-[20px] lg:leading-[23.87px] md:text-[18px] md:leading-[21.48px] sm:text-[14px] sm:leading-[16.71px] text-[14px] leading-[16.71px] text-[#3D3D3D]">
@@ -188,7 +193,7 @@ function DesktopUi() {
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div className="flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer">
+                                                            <div onClick={() => router.push(`/job-apply/${job._id}`)} className="flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer">
                                                                 <div className="lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[20px] w-[20px] h-[20px]">
                                                                     <Image src={applyIcon} alt="apply" width={24} height={24} className="w-[24px] h-[24px]" />
                                                                 </div>
