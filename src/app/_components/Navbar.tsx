@@ -279,7 +279,7 @@ const Navbar = () => {
               </div>
             </li>
             <Link
-              className={`cursor-pointer py-5 ${pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
+              className={`cursor-pointer py-5 ${pathname.includes("/careers") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
                 }`}
               href={"/careers"}
             >
