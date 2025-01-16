@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/accordion"
 import sliderIcon from "@/utilities/icons/slider-icon.svg"
 import Image from 'next/image';
-import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Network from '@/utilities/images/Network.svg'
 import Saas from '@/utilities/images/Saas.svg'
 import Solution from '@/utilities/images/Solution.svg'

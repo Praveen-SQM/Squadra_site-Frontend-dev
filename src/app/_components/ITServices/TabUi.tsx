@@ -6,7 +6,6 @@ import "./styles/TabletUI.css"
 import Image from 'next/image';
 import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, saasData, webAndMobDev } from './MobileUi';
 import starSvg from '@/utilities/images/star.svg' 
-import BenefitFrame from '@/utilities/images/benefitFrame.svg'
 import Container from '@/utilities/images/Container.svg'
 import ITImage from '@/utilities/images/ITImage.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'

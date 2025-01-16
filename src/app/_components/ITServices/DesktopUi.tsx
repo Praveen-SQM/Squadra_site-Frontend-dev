@@ -3,7 +3,6 @@ import Image from 'next/image'
 import React from 'react'
 import starSvg from '@/utilities/images/star.svg'
 import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, saasData, webAndMobDev } from './MobileUi'
-import frame from '@/utilities/images/mobile-frame.svg'
 import Container from '@/utilities/images/Container.svg'
 import arrowRight from '@/utilities/images/arrow-right.svg'
 import "./styles/DesktopUI.css"
