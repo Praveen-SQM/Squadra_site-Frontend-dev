@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 'use client'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
@@ -12,28 +14,28 @@ function DesktopUi() {
 
     const router = useRouter()
 
-    const jobSections = [
-        {
-            title: "StoryBoard (3)",
-            content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
-        },
-        {
-            title: "Illustration (4)",
-            content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
-        },
-        {
-            title: "Animation (3)",
-            content: "• 5+ years of experience in UI/UX design\n• Strong portfolio demonstrating user-centered design solutions\n• Proficiency in design tools such as Figma, Sketch, or Adobe XD\n• Experience with design systems and component libraries\n• Excellent communication and collaboration skills"
-        },
-        {
-            title: "Design (1)",
-            content: "Bengaluru, India (On-site)"
-        },
-        {
-            title: "Writing (2)",
-            content: "• Competitive salary\n• Health insurance\n• Flexible working hours\n• Professional development opportunities\n• Collaborative and innovative work environment"
-        }
-    ]
+    // const jobSections = [
+    //     {
+    //         title: "StoryBoard (3)",
+    //         content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
+    //     },
+    //     {
+    //         title: "Illustration (4)",
+    //         content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
+    //     },
+    //     {
+    //         title: "Animation (3)",
+    //         content: "• 5+ years of experience in UI/UX design\n• Strong portfolio demonstrating user-centered design solutions\n• Proficiency in design tools such as Figma, Sketch, or Adobe XD\n• Experience with design systems and component libraries\n• Excellent communication and collaboration skills"
+    //     },
+    //     {
+    //         title: "Design (1)",
+    //         content: "Bengaluru, India (On-site)"
+    //     },
+    //     {
+    //         title: "Writing (2)",
+    //         content: "• Competitive salary\n• Health insurance\n• Flexible working hours\n• Professional development opportunities\n• Collaborative and innovative work environment"
+    //     }
+    // ]
 
     const [openIndexes, setOpenIndexes] = useState<number[]>([])
 
@@ -75,6 +77,7 @@ function DesktopUi() {
                 <p className='font-[300] xl:text-[62px] xl:leading-[50px] lg:text-[62px] lg:leading-[50px] md:text-[62px] md:leading-[50px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-[#131313] flex justify-center'>All Openings</p>
 
                 <div>
+                    {/* @ts-ignore */}
                     {jobs.data?.map((category, index) => (
                         <div
                             key={index}
@@ -98,6 +101,7 @@ function DesktopUi() {
                             {openIndexes.includes(index) && (
                                 <div>
                                     <ul className="xl:pl-[100px] lg:pl-[100px] md:pl-[100px] sm:pl-[6px] pl-[6px] border-t border-[#B0B0B0]">
+                                       {/* @ts-ignore */}
                                         {category.jobs?.map((job, jobIndex) => (
                                             <li onClick={() => router.push(`/job-details/${job._id}`)}
                                                 key={jobIndex}
