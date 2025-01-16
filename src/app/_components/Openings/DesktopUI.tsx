@@ -103,7 +103,7 @@ function DesktopUi() {
                                                 key={jobIndex}
                                                 className="border-[#B0B0B0] flex justify-between xl:py-[16px] lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] xl:pl-[40px] xl:pr-[32px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]"
                                             >
-                                                <div className="flex flex-col justify-between gap-[2px]">
+                                                <div className="flex flex-col justify-between gap-[2px] cursor-pointer">
                                                     <p className="font-normal xl:text-[20px] xl:leading-[23.87px] lg:text-[18px] lg:leading-[21.48px] md:text-[18px] md:leading-[21.48px] sm:text-[14px] sm:leading-[16.71px] text-[14px] leading-[16.71px] text-[#3D3D3D]">
                                                         {job.jobTitle}
                                                     </p>

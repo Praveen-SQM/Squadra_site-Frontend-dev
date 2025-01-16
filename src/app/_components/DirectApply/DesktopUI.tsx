@@ -21,6 +21,7 @@ function DesktopUi() {
         handleSubmit,
         watch,
         setValue,
+        reset,
         formState: { errors },
     } = useForm<FormData>({
         mode: "onChange",
@@ -58,7 +59,7 @@ function DesktopUi() {
             await axios.post('/api/applications', formData);
             toast.success('Application submitted successfully. We will review your resume and get back to you shortly.');
             setLoading(false);
-
+            reset();
         } catch (error) {
             console.log(error);
             toast.error('Something went wrong. Please try again later.');

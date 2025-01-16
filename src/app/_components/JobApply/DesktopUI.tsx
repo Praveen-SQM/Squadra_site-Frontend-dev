@@ -43,6 +43,7 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
         register,
         handleSubmit,
         watch,
+        reset,
         setValue,
         formState: { errors },
     } = useForm<FormData>({
@@ -68,10 +69,6 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
 
     const formData = watch();
 
-    useEffect(() => {
-        console.log("formData--->", formData)
-    }, [formData])
-
     const resumeFile = watch('resume');
 
     const createApplication = async (data: FormData) => {
@@ -96,7 +93,7 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
              await axios.post('/api/applications', formData);
             toast.success('Application submitted successfully. We will review your resume and get back to you shortly.');
             setLoading(false);
-
+            reset();
         } catch (error) {
             console.log(error);
             toast.error('Something went wrong. Please try again later.');
