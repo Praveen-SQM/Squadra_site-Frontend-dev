@@ -5,7 +5,7 @@ import plusIcon from '@/utilities/icons/plus-icon.svg'
 import minusIcon from '@/utilities/icons/minus-icon.svg'
 import applyIcon from '@/utilities/icons/apply-icon.svg'
 import shareFileIcon from '@/utilities/icons/share-file-icon.svg'
-import linkedInIcon from '@/utilities/icons/linkedin-icon.svg'
+// import linkedInIcon from '@/utilities/icons/linkedin-icon.svg'
 import { useRouter } from "next/navigation";
 import toast from 'react-hot-toast'
 
@@ -94,7 +94,7 @@ function DesktopUi({ sections,jobDetails }: JobListingProps) {
                             </div>
                             <div>
 
-                            <Image src={linkedInIcon} alt='share' width={24} height={24} />
+                            {/* <Image src={linkedInIcon} alt='share' width={24} height={24} /> */}
                             </div>
                         </div>
                     </div>
