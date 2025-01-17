@@ -17,6 +17,8 @@ import workEnvironmentIcon from '@/utilities/icons/work-environment-icon.svg'
 import TalentIcon from '@/utilities/icons/talent-icon.svg'
 import WorkBalanceIcon from '@/utilities/icons/work-balance.svg'
 import { useRouter } from "next/navigation";
+import { Skeleton } from '@/components/ui/skeleton'
+
 
 
 function DesktopUi() {
@@ -155,14 +157,20 @@ function DesktopUi() {
             </div>
 
             {/* Current Opening */}
-            <div id='job-openings' className="w-full flex flex-col items-center pt-[15px]">
+            <div id='job-openings' className="w-full flex flex-col items-center md:pt-[15px]">
                 <div className="flex flex-col py-[72px] xl:px-[124px] lg:px-[0px] md:px-[0px] gap-[42px] xl:w-[1192px] lg:w-[714px] md:w-[714px] sm:w-[335px] w-[335px]">
                     <div className="flex flex-col gap-[72px] justify-center">
                         <p className="font-[300] xl:text-[62px] lg:text-[48px] md:text-[48px] xl:leading-[50px] lg:leading-[50px] md:leading-[50px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-[#131313] text-center">
                             Current openings
                         </p>
                         <div>
-                            {loading ? <div className="flex items-center justify-center">Loading.....</div> :
+                            {loading ? <div className="flex flex-col gap-4 items-center justify-center">
+                                <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[300px] w-[300px] h-[40px] rounded-lg" />
+                                <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[300px] w-[300px] h-[40px] rounded-lg" />
+                                <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[300px] w-[300px] h-[40px] rounded-lg" />
+                                <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[300px] w-[300px] h-[40px] rounded-lg" />
+                                <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[300px] w-[300px] h-[40px] rounded-lg" />
+                            </div> :
                                 jobs?.data?.slice(0, 3)?.map((category: { _id: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; jobsCount: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; jobs: any[] }, index: React.Key | null | undefined) => (
                                     <div key={index}>
                                         <div
