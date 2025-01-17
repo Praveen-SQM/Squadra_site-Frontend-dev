@@ -21,7 +21,7 @@ const JobSchema = new Schema<IJobs>({
   jobTitle: { type: String, required: true },
   jobCategory: {
     type: String,
-    enum: ["Engineering", "Marketing", "Sales", "Design", "Operations"],
+    enum: ["Development & Technology", "Marketing", "Quality Assurance", "Design & Creative", "Operations","Content & Strategy"],
     required: true,
   },
   jobDescription: { type: String, required: true },
