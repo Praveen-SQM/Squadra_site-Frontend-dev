@@ -105,7 +105,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed z-50 w-full p-4 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us")
+        className={`fixed z-50 w-full p-4 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us") || pathname.includes("/openings")
+          || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply")
+
           ? "bg-white shadow-md text-black"
           : isScrolled
             ? "bg-white text-black"
@@ -119,7 +121,8 @@ const Navbar = () => {
 
 
               <Image
-                src={pathname.includes("/contact-us") ? itLogocolor : isScrolled ? itLogocolor : itLogo}
+                src={pathname.includes("/contact-us") || pathname.includes("/openings")
+                  || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply") ? itLogocolor : isScrolled ? itLogocolor : itLogo}
                 alt="Logo"
                 width={120}
                 height={40}
@@ -147,14 +150,15 @@ const Navbar = () => {
 
           {!pathname.includes("/it-services") && <ul className="lg:flex hidden font-[500] space-x-8">
             <Link
-              className={`cursor-pointer ${pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
+              className={`cursor-pointer py-5 ${pathname.includes("/about-us") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
                 }`}
               href={"/about-us"}
             >
               About Us
             </Link>
+
             <li
-              className="relative hover:text-[#FBAE17] cursor-pointer"
+              className="relative py-5 hover:text-[#FBAE17] cursor-pointer"
               onMouseEnter={() => { setIsServicesHovered(true); setIsScrolled(true) }}
               onMouseLeave={() => { setIsServicesHovered(false); setIsScrolled(false) }}
             >
@@ -162,16 +166,16 @@ const Navbar = () => {
 
               {/* Services Mega Menu */}
               <div
-                className={`absolute top-[2.5rem] ${isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
-                  } transition-all w-screen duration-300 translate-x-[-56%] bg-white text-black shadow-xl`}
+                className={`absolute top-[4.5rem] ${isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
+                  } transition-all w-screen duration-300 translate-x-[-57%] bg-white text-black shadow-xl`}
 
 
 
               >
                 <div className="p-8 flex flex-col">
-                  <div className="flex mb-4">
+                  <div className="flex justify-center mb-4">
                     {/* Left Column - Heading */}
-                    <div className="w-[25%] pr-0">
+                    <div className="w-[20%] pr-0">
                       <h2 className="text-3xl lg:text-4xl font-light leading-tight">
                         Developing<br />
                         Robust<br />
@@ -191,7 +195,8 @@ const Navbar = () => {
                           <Link onClick={() =>
                             setTimeout(() => {
                               setIsServicesHovered(false);
-                            }, 2000)
+                              setIsScrolled(false);
+                            }, 500)
                           } href="/it-services" className=" cursor-pointer">Technology & Development</Link>
                         </h3>
                         <ul className="space-y-2 text-sm text-gray-600">
@@ -274,6 +279,13 @@ const Navbar = () => {
                 </div>
               </div>
             </li>
+            {/* <Link
+              className={`cursor-pointer py-5 ${pathname.includes("/careers") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
+                }`}
+              href={"/careers"}
+            >
+              Careers
+            </Link> */}
           </ul>}
 
 
@@ -281,7 +293,8 @@ const Navbar = () => {
           <ul className="flex font-[500] space-x-8 md:space-x-8">
             {true && <ContactPopover isScrolled={isScrolled} />}
             {true ? <li
-              className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us")
+              className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us") || pathname.includes("/openings")
+                || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply")
                 ? `text-white`
                 : isScrolled
                   ? "text-white"
@@ -367,6 +380,18 @@ const Navbar = () => {
                   About Us
                 </Link>
               </li>
+              {/* <li>
+                <Link
+                  href="/careers"
+                  className={`block py-4 text-base ${pathname.includes("/careers")
+                    ? `text-[${primaryColor}]`
+                    : "text-black"
+                    } border-b border-gray-200`}
+                  onClick={toggleSidebar}
+                >
+                  Careers
+                </Link>
+              </li> */}
               <li>
                 {/* Services Menu */}
                 <div

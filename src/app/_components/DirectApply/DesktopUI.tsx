@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Loader2, } from "lucide-react";
@@ -8,18 +8,19 @@ import resumeUploadIcon from '@/utilities/icons/resume-upload.svg'
 import checkCircleIcon from '@/utilities/icons/check-circle.svg'
 import closeIcon from '@/utilities/icons/close.svg'
 import axios from 'axios'
+import toast from 'react-hot-toast';
 
 function DesktopUi() {
 
-    const [loading] = useState(false);
-    const [terms, setTerms] = useState(false);
-   
+    const [loading, setLoading] = useState(false);
+
 
     const {
         register,
         handleSubmit,
         watch,
         setValue,
+        reset,
         formState: { errors },
     } = useForm<FormData>({
         mode: "onChange",
@@ -33,34 +34,36 @@ function DesktopUi() {
         linkedProfile: string;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         resume: File | any;
+        privacyPolicy: boolean;
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const formData=watch();
 
-    useEffect(()=>{
-        console.log("formData--->", formData)
-    },[formData])
+
 
     const resumeFile=watch('resume');
 
+
     const createApplication = async (data: FormData) => {
+        setLoading(true);
         try {
             const formData = new FormData();
-            Object.keys(data).forEach(key => {
-                if(key === 'resume'){
-                    formData.append(key, data[key][0]);
-                }else{
-                    formData.append(key, data[key]);
-                }
-            });
-            const response = await axios.post('/api/applications', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-            console.log(response);
+            formData.append('firstName', data.firstName);
+            formData.append('lastName', data.lastName);
+            formData.append('email', data.email);
+            formData.append('phone',data.phone)
+            formData.append('location',data.location)
+            formData.append('linkedProfile',data.linkedProfile)
+            formData.append('file',resumeFile[0])
+            await axios.post('/api/applications', formData);
+            toast.success('Application submitted successfully. We will review your resume and get back to you shortly.');
+            setLoading(false);
+            reset();
         } catch (error) {
             console.log(error);
+            toast.error('Something went wrong. Please try again later.');
+            setLoading(false);
         }
     }
 
@@ -113,7 +116,7 @@ function DesktopUi() {
                                 <input
                                     id="fileInput"
                                     type="file"
-                                    // accept=".pdf,.ppt,.pptx,.mp4,/*"
+                                    accept=".pdf,.docx"
                                     className="hidden"
                                     {...register("resume", { 
                                         required: "Resume is required" 
@@ -232,8 +235,13 @@ function DesktopUi() {
                                     id="linkedProfile"
                                     placeholder="Enter LinkedIn link"
                                     {...register("linkedProfile", {
-                                        required: "LinkedIn profile is required"
+                                        required: "LinkedIn profile is required",
+                                        pattern: {
+                                            value: /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/,
+                                            message: "Please enter a valid URL"
+                                        }
                                     })}
+
                                     className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                                 />
                                 {errors.linkedProfile && (
@@ -243,20 +251,23 @@ function DesktopUi() {
                         </div>
 
                         {/* Terms and conditions */}
-                        <div className="mb-6 flex py-[16px] gap-[10px]">
+                        <div className='mb-6'>
+                        <div className="flex py-[16px] gap-[10px]">
                             <input
                                 type="checkbox"
                                 className="form-checkbox h-[20px] cursor-pointer w-[20px] transition duration-150 ease-in-out"
                                 style={{ accentColor: "#1E3A76" }}
-                                onChange={() => {
-                                    setTerms(!terms)
-                                }}
-                                checked={terms}
+                                {...register("privacyPolicy", {
+                                    required: "Privacy Policy is required",
+                                })}
                             />
                             <p className='font-normal text-[14px] leading-[16.94px] text-[#11192B]'>By clicking this box, you will declare that you will read and <span className="hidden sm:inline"> <br /> </span> 
                                 agree to the <span className='text-[#4C6EFF]'>Privacy policy</span> of Squadramedia</p>
                         </div>
-
+                        {errors.privacyPolicy && (
+                                <p className="text-red-500 text-sm mt-1">{errors.privacyPolicy?.message?.toString()}</p>
+                            )}
+                            </div>
 
                         {/* Submit Button */}
                         <Button disabled={loading} type="submit" className="px-6 py-4 float-right bg-black text-white rounded-md h-[48px] lg:w-[168px] md:w-full sm:w-full w-full">

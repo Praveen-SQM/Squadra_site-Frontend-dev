@@ -11,7 +11,7 @@ const AboutUs = () => {
       <AboutUsHeroSection />
       <div className="max-w-screen-3xl">
         {/* Content */}
-        <div className="w-screen bg-[#F5F6FB] pt-[72px] lg:pb-[120px] md:pb-[120px] sm:pb-[32px] pb-[32px]">
+        <div className="w-screen bg-[#F5F6F8] pt-[72px] lg:pb-[120px] md:pb-[120px] sm:pb-[32px] pb-[32px]">
         {/* <div className="px-8 sm:px-8 md:px-12 lg:px-32 py-8 text-start">
           <h2 className="font-weight-[400] text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-medium mb-4">
             About the company
