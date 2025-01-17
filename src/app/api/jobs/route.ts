@@ -15,14 +15,29 @@ export async function GET() {
       },
       {
         $addFields: {
-          jobsCount: "$count"
+          jobsCount: "$count",
+          sortPriority: {
+            $cond: {
+              if: { $eq: ["$_id", "Development & Technology"] },
+              then: 0, // Highest priority for Development & Technology
+              else: 1  // Lower priority for all others
+            }
+          }
+
         }
       },
       {
         $project: {
           count: 0
         }
-      }]
+      },
+      {
+        $sort: {
+          sortPriority: 1, // "Development & Technology" first
+          _id: 1          // Then alphabetical order for the rest
+        }
+      }
+    ]
     );
 
     return NextResponse.json({ data: jobsList });

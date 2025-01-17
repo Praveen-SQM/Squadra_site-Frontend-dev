@@ -167,7 +167,7 @@ const Navbar = () => {
               {/* Services Mega Menu */}
               <div
                 className={`absolute top-[4.5rem] ${isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
-                  } transition-all w-screen duration-300 translate-x-[-57%] bg-white text-black shadow-xl`}
+                  } transition-all w-screen duration-300 translate-x-[-54%] bg-white text-black shadow-xl`}
 
 
 
@@ -279,13 +279,13 @@ const Navbar = () => {
                 </div>
               </div>
             </li>
-            {/* <Link
+            <Link
               className={`cursor-pointer py-5 ${pathname.includes("/careers") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
                 }`}
               href={"/careers"}
             >
               Careers
-            </Link> */}
+            </Link>
           </ul>}
 
 
@@ -380,7 +380,7 @@ const Navbar = () => {
                   About Us
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link
                   href="/careers"
                   className={`block py-4 text-base ${pathname.includes("/careers")
@@ -391,7 +391,7 @@ const Navbar = () => {
                 >
                   Careers
                 </Link>
-              </li> */}
+              </li>
               <li>
                 {/* Services Menu */}
                 <div

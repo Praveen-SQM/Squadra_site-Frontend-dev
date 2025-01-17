@@ -66,10 +66,10 @@ function DesktopUi() {
 
     return (
         <div className='my-[80px] pt-[32px] xl:pb-[72px] lg:pb-[72px] md:pb-[72px] sm:pb-[40px] pb-[40px] xl:px-[124px] lg:px-[60px] md:px-[60px] sm:px-[20px] px-[20px] flex flex-col xl:gap-[42px] lg:gap-[42px] md:gap-[42px] sm:gap-[32px] gap-[32px]'>
-            <div className='pb-[44px] flex items-center gap-[12px]'>
+            <div className='pt-[40px] pb-[44px] flex items-center gap-[12px] hidden md:flex'>
                 <p onClick={() => { router.push('/') }} className='font-medium text-[16px] leading-6 text-[#888888] cursor-pointer'>Home</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
-                <p onClick={() => { router.push('/careers') }} className='font-medium text-[16px] leading-6 text-[#888888] cursor-pointer'>Careers</p>
+                <p onClick={() => { router.push('/careers?openings=true') }} className='font-medium text-[16px] leading-6 text-[#888888] cursor-pointer'>Careers</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
                 <p className='font-medium text-[16px] leading-6 text-[#1E3A76] cursor-pointer'>All Openings</p>
             </div>
@@ -123,17 +123,32 @@ function DesktopUi() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center xl:gap-3 lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer">
+                                                <div className="group flex items-center xl:gap-3 lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer">
                                                     <div className="xl:w-[24px] xl:h-[24px] lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[20px] w-[20px] h-[20px]">
-                                                        <Image
+                                                        {/* <Image
                                                             src={applyIcon}
                                                             alt="apply"
                                                             width={24}
                                                             height={24}
                                                             className="w-[24px] h-[24px]"
-                                                        />
+                                                        /> */}
+                                                        <svg
+                                                                            width="24"
+                                                                            height="24"
+                                                                            viewBox="0 0 24 24"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            className="w-6 h-6 text-gray-500 group-hover:text-[#1E3A76] transition-all duration-300"
+                                                                        >
+                                                                            <path
+                                                                                d="M4 12.8789H20M20 12.8789L14 6.87891M20 12.8789L14 18.8789"
+                                                                                stroke="currentColor"
+                                                                                strokeLinecap="round"
+                                                                                strokeLinejoin="round"
+                                                                            />
+                                                                        </svg>
                                                     </div>
-                                                    <p onClick={() => router.push(`/job-apply/${job._id}`)} className="font-normal xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888]">
+                                                    <p onClick={() => router.push(`/job-apply/${job._id}`)} className="font-normal xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[14px] text-[14px] leading-[24px] text-[#888888] group-hover:text-[#1E3A76]">
                                                         Apply
                                                     </p>
                                                 </div>

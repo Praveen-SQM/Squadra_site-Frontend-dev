@@ -1,5 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import initialLoader from '@/utilities/images/squadra-loader.gif';
+import Image from 'next/image';
 
 const InitialVideoLoader: React.FC = () => {
   const [isVideoPlayed, setIsVideoPlayed] = useState(false);
@@ -20,8 +22,8 @@ const InitialVideoLoader: React.FC = () => {
   }
 
   return (
-    <div className="initial-video-loader min-h-screen flex items-center justify-center">
-      <video
+    <div className="initial-video-loader min-h-screen flex items-center justify-center bg-[#FDFDFD]">
+      {/* <video
         autoPlay
         muted
         playsInline
@@ -34,7 +36,12 @@ const InitialVideoLoader: React.FC = () => {
           type="video/mp4"
         />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
+      <Image
+        src={initialLoader}
+        alt="Initial Video Loader"
+        className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3"
+      />
     </div>
   );
 };

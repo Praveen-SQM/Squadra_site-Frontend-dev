@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import AnuImage from "@/utilities/images/Anu JS-about.jpg";
+import SandeshImage from "@/utilities/images/Sandesh K-about.jpg";
+import TarushImage from "@/utilities/images/Tarush Chandnani-about.jpg";
 
 // Example data for the founding members
 
@@ -58,7 +61,7 @@ const FoundingMembersSection = () => {
     <div className="flex items-center lg:gap-[68px] md:gap-[40px] sm:gap-[100px gap-[100px] justify-center lg:flex-row md:flex-row sm:flex-col flex-col">
       <div className="lg:w-[290px] md:w-[200px] sm:w-[278px] w-[278px] rounded-[24px] bg-[#FFFFFF] flex flex-col hidden md:block">
         <div className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px]">
-          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp"} alt="Tarush" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
+          <Image src={TarushImage} alt="Tarush" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
           <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#292929]">Tarush</p>
@@ -68,7 +71,7 @@ const FoundingMembersSection = () => {
 
       <div className="lg:w-[332px] md:w-[230px] sm:w-[335px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col shadow-[0px_4px_60px_0px_rgba(0,0,0,0.12)]" style={{ boxShadow: "0px 10px 15px -3px rgba(0, 0, 0, 0.1)" }}>
       <div className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px]">
-          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp"} alt="Anu" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
+          <Image src={AnuImage} alt="Anu" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center py-6 bg-[#06135B] border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
           <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#FFFFFF]">Anu Js</p>
@@ -78,7 +81,7 @@ const FoundingMembersSection = () => {
 
       <div className="lg:w-[290px] md:w-[200px] sm:w-[278px] w-[278px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
       <div className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px]">
-          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp"} alt="Sandesh" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
+          <Image src={SandeshImage} alt="Sandesh" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
           <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#292929]">Sandesh</p>
@@ -88,7 +91,7 @@ const FoundingMembersSection = () => {
 
       <div className="lg:w-[290px] md:w-[200px] sm:w-[278px] w-[278px] rounded-[24px] bg-[#FFFFFF] flex flex-col block md:hidden">
         <div className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px]">
-          <Image src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp"} alt="Tarush" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
+          <Image src={TarushImage} alt="Tarush" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[378px] h-[378px] w-full object-cover rounded-t-[24px]"/>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
           <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#292929]">Tarush</p>

@@ -60,12 +60,12 @@ function DesktopUi({ sections,jobDetails }: JobListingProps) {
 
     return (
         <div className='my-[80px]'>
-            <div className='pt-[32px] pb-[44px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] flex items-center lg:gap-3 md:gap-3 sm:gap-2 gap-2'>
+            <div className='pt-[40px] pb-[44px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] flex items-center lg:gap-3 md:gap-3 sm:gap-2 gap-2 hidden md:flex'>
                 <p onClick={() => { router.push('/') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Home</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
-                <p onClick={() => { router.push('/careers') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Careers</p>
+                <p onClick={() => { router.push('/careers?openings=true') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Careers</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
-                <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{jobDetails?.jobCategory}</p>
+                <p onClick={() => { router.push('/careers?openings=true') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{jobDetails?.jobCategory}</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
                 <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#1E3A76] cursor-pointer'>{jobDetails?.jobTitle}</p>
             </div>

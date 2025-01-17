@@ -34,15 +34,15 @@ function DesktopUi() {
         linkedProfile: string;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         resume: File | any;
-        privacyPolicy: boolean;
+        // privacyPolicy: boolean;
     };
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const formData=watch();
+    const formData = watch();
 
 
 
-    const resumeFile=watch('resume');
+    const resumeFile = watch('resume');
 
 
     const createApplication = async (data: FormData) => {
@@ -52,10 +52,10 @@ function DesktopUi() {
             formData.append('firstName', data.firstName);
             formData.append('lastName', data.lastName);
             formData.append('email', data.email);
-            formData.append('phone',data.phone)
-            formData.append('location',data.location)
-            formData.append('linkedProfile',data.linkedProfile)
-            formData.append('file',resumeFile[0])
+            formData.append('phone', data.phone)
+            formData.append('location', data.location)
+            formData.append('linkedProfile', data.linkedProfile)
+            formData.append('file', resumeFile[0])
             await axios.post('/api/applications', formData);
             toast.success('Application submitted successfully. We will review your resume and get back to you shortly.');
             setLoading(false);
@@ -72,7 +72,7 @@ function DesktopUi() {
         createApplication(data);
     };
 
- 
+
 
     return (
         <div className='my-[80px] bg-[#FAFAFA] min-h-screen'>
@@ -93,7 +93,7 @@ function DesktopUi() {
                                 <label htmlFor="first-name" className="block text-sm mb-2">
                                     Resume*
                                 </label>
-                                {(resumeFile === null || resumeFile===undefined || resumeFile[0]?.name===undefined) ?
+                                {(resumeFile === null || resumeFile === undefined || resumeFile[0]?.name === undefined) ?
                                     (
                                         <div onClick={() => document.getElementById('fileInput')?.click()} className='w-full rounded-[8px] border border-[#4C6EFF] h-[52px] flex justify-center items-center gap-2 cursor-pointer'>
                                             <Image src={resumeUploadIcon} alt='resumeUploadIcon' width={24} height={24} />
@@ -104,11 +104,11 @@ function DesktopUi() {
                                     (
                                         <div className='w-full rounded-[8px] px-4 border border-[#4C6EFF] bg-[#4C6EFF] h-[52px] flex justify-between items-center'>
                                             <div className='gap-2 flex items-center'>
-                                                <Image src={checkCircleIcon} alt='checkCircleIcon' width={24} height={24}/>
+                                                <Image src={checkCircleIcon} alt='checkCircleIcon' width={24} height={24} />
                                                 <p className='font-normal text-[16px] leading-[19.09px] text-[#FFFFFF]'>{resumeFile[0]?.name}</p>
                                             </div>
                                             <div className='cursor-pointer' onClick={() => setValue('resume', null)}>
-                                                <Image src={closeIcon} alt='closeIcon' width={16} height={16}/>
+                                                <Image src={closeIcon} alt='closeIcon' width={16} height={16} />
                                             </div>
                                         </div>
                                     )
@@ -118,10 +118,10 @@ function DesktopUi() {
                                     type="file"
                                     accept=".pdf,.docx"
                                     className="hidden"
-                                    {...register("resume", { 
-                                        required: "Resume is required" 
+                                    {...register("resume", {
+                                        required: "Resume is required"
                                     })}
-                                    // onChange={handleFileChange}
+                                // onChange={handleFileChange}
                                 />
                                 {errors.resume && (
                                     <p className="text-red-500 text-sm mt-1">{errors?.resume?.message?.toString()}</p>
@@ -251,23 +251,23 @@ function DesktopUi() {
                         </div>
 
                         {/* Terms and conditions */}
-                        <div className='mb-6'>
-                        <div className="flex py-[16px] gap-[10px]">
-                            <input
-                                type="checkbox"
-                                className="form-checkbox h-[20px] cursor-pointer w-[20px] transition duration-150 ease-in-out"
-                                style={{ accentColor: "#1E3A76" }}
-                                {...register("privacyPolicy", {
-                                    required: "Privacy Policy is required",
-                                })}
-                            />
-                            <p className='font-normal text-[14px] leading-[16.94px] text-[#11192B]'>By clicking this box, you will declare that you will read and <span className="hidden sm:inline"> <br /> </span> 
-                                agree to the <span className='text-[#4C6EFF]'>Privacy policy</span> of Squadramedia</p>
-                        </div>
-                        {errors.privacyPolicy && (
+                        {/* <div className='mb-6'>
+                            <div className="flex py-[16px] gap-[10px]">
+                                <input
+                                    type="checkbox"
+                                    className="form-checkbox h-[20px] cursor-pointer w-[20px] transition duration-150 ease-in-out"
+                                    style={{ accentColor: "#1E3A76" }}
+                                    {...register("privacyPolicy", {
+                                        required: "Privacy Policy is required",
+                                    })}
+                                />
+                                <p className='font-normal text-[14px] leading-[16.94px] text-[#11192B]'>By clicking this box, you will declare that you will read and <span className="hidden sm:inline"> <br /> </span>
+                                    agree to the <span className='text-[#4C6EFF]'>Privacy policy</span> of Squadramedia</p>
+                            </div>
+                            {errors.privacyPolicy && (
                                 <p className="text-red-500 text-sm mt-1">{errors.privacyPolicy?.message?.toString()}</p>
                             )}
-                            </div>
+                        </div> */}
 
                         {/* Submit Button */}
                         <Button disabled={loading} type="submit" className="px-6 py-4 float-right bg-black text-white rounded-md h-[48px] lg:w-[168px] md:w-full sm:w-full w-full">
