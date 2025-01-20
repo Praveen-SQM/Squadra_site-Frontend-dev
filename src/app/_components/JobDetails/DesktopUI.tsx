@@ -127,7 +127,7 @@ function DesktopUi({ sections,jobDetails,loading }: JobListingProps) {
             </div>
 
             <div className='px-[20px] w-full mt-[48px] block md:hidden'>
-            <div className='flex items-center justify-center w-full h-[44px] rounded-[4px] px-[24px] bg-[#06135B] font-medium text-[16px] leading-[19.09px] text-[#FFFFFF] cursor-pointer'>Apply for this job</div>
+            <div onClick={() => { router.push(`/job-apply/${jobDetails?._id}`) }} className='flex items-center justify-center w-full h-[44px] rounded-[4px] px-[24px] bg-[#06135B] font-medium text-[16px] leading-[19.09px] text-[#FFFFFF] cursor-pointer'>Apply for this job</div>
             </div>
         </div>
     )
