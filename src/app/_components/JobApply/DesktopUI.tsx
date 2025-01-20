@@ -14,7 +14,6 @@ import closeIcon from '@/utilities/icons/close.svg'
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import { Skeleton } from '@/components/ui/skeleton';
-import { set } from 'lodash';
 
 function DesktopUi({jobId}: {jobId: string | string[]}) {
 

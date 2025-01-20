@@ -9,7 +9,6 @@ import careerImage from '@/utilities/images/career-image.png'
 import rightArrowIcon from '@/utilities/icons/right-arrow.svg'
 import plusIcon from '@/utilities/icons/plus-icon.svg'
 import minusIcon from '@/utilities/icons/minus-icon.svg'
-import applyIcon from '@/utilities/icons/apply-icon.svg'
 import growthIcon from '@/utilities/icons/growth-icon.svg'
 import remunerationIcon from '@/utilities/icons/remuneration-icon.svg'
 import workplaceIcon from '@/utilities/icons/workplace-icon.svg'
@@ -219,7 +218,6 @@ function DesktopUi() {
                                                                 </div>
                                                                 <div onClick={() => router.push(`/job-apply/${job._id}`)} className="group flex items-center xl:gap-3 lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer">
                                                                     <div className="xl:w-[24px] xl:h-[24px] lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[20px] w-[20px] h-[20px]">
-                                                                        {/* <Image src={applyIcon} alt="apply" width={24} height={24} className="w-[24px] h-[24px]" /> */}
                                                                         <svg
                                                                             width="24"
                                                                             height="24"

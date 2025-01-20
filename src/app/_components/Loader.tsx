@@ -13,10 +13,6 @@ const InitialVideoLoader: React.FC = () => {
 
   }, []);
 
-  const handleVideoEnd = () => {
-    setIsVideoPlayed(false);
-  };
-
   if (!isVideoPlayed) {
     return null;
   }
