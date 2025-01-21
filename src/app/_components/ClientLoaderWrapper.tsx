@@ -16,7 +16,9 @@ export default function ClientLoaderWrapper({
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
+            if(typeof window !== "undefined"){
                 window.sessionStorage.setItem("isLoaded", "true");
+            }
         }, 4000); 
 
         return () => clearTimeout(timer);
@@ -24,7 +26,7 @@ export default function ClientLoaderWrapper({
 
     return (
         <AnimatePresence>
-            {isLoading && !window.sessionStorage.getItem("isLoaded") ? (
+            {isLoading && typeof window !== "undefined" && !window.sessionStorage.getItem("isLoaded") ? (
                 <motion.div
                     key="loader"
                     initial={{ opacity: 1 }}
