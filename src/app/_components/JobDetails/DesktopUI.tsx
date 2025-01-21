@@ -74,20 +74,20 @@ function DesktopUi({ sections,jobDetails,loading }: JobListingProps) {
             <div className='lg:pt-[60px] md:pt-[60px] sm:pt-[40px] pt-[40px] pb-[40px] lg:ml-[124px] md:ml-[60px] sm:ml-[20px] ml-[20px] lg:w-[60%] md:w-[714px]'>
                 <div className='flex flex-col lg:gap-[40px] md:gap-[40px] sm:gap-[16px] gap-[16px]'>
                     <div className='flex flex-col lg:gap-[12px] md:gap-[12px] sm:gap-[4px] gap-[4px]'>
-                        <p className='font-medium lg:text-[40px] lg:leading-[47.73px] md:text-[40px] md:leading-[47.73px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#3D3D3D]'>{loading ?  <Skeleton className="lg:w-[600px] md:w-[600px] sm:w-[300px] w-[300px] h-[30px] rounded-lg" /> : jobDetails?.jobTitle}</p>
-                        <div className='flex items-center lg:gap-6 md:gap-6 sm:gap-1 gap-1'>
-                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx] text-[#4F4F4F]'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : jobDetails?.jobCategory}</p>
-                            <div className='w-[1px] h-[21px] bg-[#B0B0B0]'></div>
+                        <p className='font-medium lg:text-[40px] lg:leading-[47.73px] md:text-[40px] md:leading-[47.73px] sm:text-[20px] sm:leading-[23.87px] text-[25px] leading-[23.87px] text-[#3D3D3D]'>{loading ?  <Skeleton className="lg:w-[600px] md:w-[600px] sm:w-[300px] w-[300px] h-[30px] rounded-lg" /> : jobDetails?.jobTitle}</p>
+                        <div className='flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col xl:items-center lg:items-center md:items-center sm:items-start items-start lg:gap-6 md:gap-6 sm:gap-1 gap-1'>
+                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx]  text-[#4F4F4F]'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : jobDetails?.jobCategory}</p>
+                            <div className='w-[1px] h-[21px] bg-[#B0B0B0] hidden md:flex'></div>
                             <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx] text-[#4F4F4F]'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : jobDetails?.employmentType}</p>
-                            <div className='w-[1px] h-[21px] bg-[#B0B0B0]'></div>
-                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx] text-[#4F4F4F]'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : `${jobDetails?.yearsOfExperience} + Years Of Experience`}</p>
+                            <div className='w-[1px] h-[21px] bg-[#B0B0B0] hidden md:flex'></div>
+                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx] text-[#4F4F4F]'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : `${jobDetails?.yearsOfExperience}+ Years Of Experience`}</p>
                         </div>
                     </div>
                     <div className='flex items-center justify-between'>
                         <div className='hidden sm:block'>
                         <div onClick={() => { router.push(`/job-apply/${jobDetails?._id}`) }} className='flex items-center w-fit h-[44px] rounded-[4px] px-[24px] bg-[#06135B] font-medium text-[16px] leading-[19.09px] text-[#FFFFFF] cursor-pointer'>Apply for this job</div>
                         </div>
-                    <div className='flex items-center gap-3 p-3'>
+                    <div className='flex items-center gap-3 py-3'>
                         <p onClick={handleShare} className='font-medium text-[16px] leading-[19.09px] text-[#3D3D3D] cursor-pointer'>Share</p>
                         <div className='flex items-center gap-4'>
                             <div className='cursor-pointer' onClick={handleCopyLink}>

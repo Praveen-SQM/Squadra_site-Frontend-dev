@@ -125,26 +125,28 @@ function DesktopUi() {
                                         <li
                                             key={jobIndex}
                                             onClick={() => router.push(`/job-details/${job._id}`)}
-                                            className="border-[#B0B0B0] flex justify-between xl:py-[16px] lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] xl:pl-[40px] xl:pr-[32px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px]"
+                                            className={`border-[#B0B0B0] flex justify-between xl:py-[16px] lg:py-[16px] md:py-[16px] sm:py-[8px] py-[8px] xl:pl-[40px] xl:pr-[32px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px] ${jobIndex!==category.jobs.length-1 && 'border-b border-[#B0B0B0]'}`}
                                         >
-                                            <div className="flex flex-col justify-between gap-[2px] cursor-pointer">
-                                                <p className="font-normal xl:text-[20px] xl:leading-[23.87px] lg:text-[18px] lg:leading-[21.48px] md:text-[18px] md:leading-[21.48px] sm:text-[14px] sm:leading-[16.71px] text-[14px] leading-[16.71px] text-[#3D3D3D]">
+                                            <div className={`flex flex-col justify-between gap-[2px] cursor-pointer`}>
+                                                <p className="font-normal xl:text-[20px] xl:leading-[23.87px] lg:text-[18px] lg:leading-[21.48px] md:text-[18px] md:leading-[21.48px] sm:text-[16px] sm:leading-[16.71px] text-[16px] leading-[16.71px] text-[#3D3D3D]">
                                                     {job.jobTitle}
                                                 </p>
-                                                <div className="flex items-center xl:gap-3 lg:gap-3 md:gap-3 sm:gap-1 gap-1">
+                                                <div className={`flex xl:items-center lg:items-center sm:items-start items-start xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col xl:gap-3 lg:gap-3 md:gap-3 sm:gap-[0px] gap-[0px]`}>
                                                     <p className="py-1 font-[300] xl:text-[14px] xl:leading-[16.71px] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
                                                         {job.location}
                                                     </p>
-                                                    <div className="border-l border-[#D1D1D1] py-1 xl:pl-4 lg:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] xl:text-[14px] xl:leading-[16.71px] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
+                                                    <div className='w-[1px] h-[21px] bg-[#B0B0B0] hidden md:flex'></div>
+                                                    <div className="py-1 font-[300] xl:text-[14px] xl:leading-[16.71px] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
                                                         {job.employmentType}
                                                     </div>
-                                                    <div className="border-l border-[#D1D1D1] py-1 xl:pl-4 md:pl-4 sm:pl-1 pl-1 font-[300] xl:text-[14px] xl:leading-[16.71px] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
+                                                    <div className='w-[1px] h-[21px] bg-[#B0B0B0] hidden md:flex'></div>
+                                                    <div className="py-1 font-[300] xl:text-[14px] xl:leading-[16.71px] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
                                                         {job.yearsOfExperience}+ Years of Experience
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="group flex items-center xl:gap-3 lg:gap-3 md:gap-3 sm:gap-1 gap-1 cursor-pointer">
-                                                <div className="xl:w-[24px] xl:h-[24px] lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[20px] w-[20px] h-[20px]">
+                                                <div className="xl:w-[24px] xl:h-[24px] lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[20px] sm:h-[24px] w-[20px] h-[24px]">
                                                     <svg
                                                         width="24"
                                                         height="24"
