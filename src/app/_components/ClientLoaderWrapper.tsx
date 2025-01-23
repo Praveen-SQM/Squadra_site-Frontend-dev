@@ -10,6 +10,7 @@ export default function ClientLoaderWrapper({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [isLoading, setIsLoading] = useState(
         typeof window !== "undefined" &&
             !window.sessionStorage.getItem("isLoaded")
