@@ -13,10 +13,13 @@ import checkCircleIcon from '@/utilities/icons/check-circle.svg'
 import closeIcon from '@/utilities/icons/close.svg'
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { Skeleton } from '@/components/ui/skeleton';
 
 function DesktopUi({jobId}: {jobId: string | string[]}) {
 
     const [jobDetails, setJobDetails] = useState<any>(null);
+    const [detailsLoading, setDetailsLoading] = useState(true);
+
     console.log(jobDetails, "jobDetails")
     useEffect(() => {
         const fetchJobDetails = async () => {
@@ -24,8 +27,10 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
                 const response = await axios.get(`/api/jobs/${jobId}`);
                 console.log('Job Details:', response.data);
                 setJobDetails(response.data.data);
+                setDetailsLoading(false);
                 // You can set the job details to state here if needed
             } catch (error) {
+                setDetailsLoading(false);
                 console.error('Error fetching job details:', error);
             }
         };
@@ -64,7 +69,7 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         resume: File | any;
         message: string;
-        privacyPolicy: boolean;
+        // privacyPolicy: boolean;
     };
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -111,26 +116,24 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
     return (
         <div className='flex flex-col mt-[80px]'>
             <div className='hidden sm:inline'>
-                <div className='pt-[32px] pb-[44px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] bg-[#FAFAFA] flex items-center gap-3'>
-                    <p onClick={() => { router.push('/') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Home</p>
+                <div className='pt-[45px] pb-[44px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] bg-[#FAFAFA] flex items-center gap-3 hidden md:flex '>
+                    <p onClick={() => { router.push('/') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{detailsLoading ?  <Skeleton className="lg:w-[150px] md:w-[100px] h-[20px] rounded-lg" /> : "Home"}</p>
                     <Image src={applyIcon} alt='apply' width={18} height={18} />
-                    <p onClick={() => { router.push('/careers') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Careers</p>
+                    <p onClick={() => { router.push('/careers?openings=true') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{detailsLoading ?  <Skeleton className="lg:w-[150px] md:w-[100px] h-[20px] rounded-lg" /> : "Careers"}</p>
                     <Image src={applyIcon} alt='apply' width={18} height={18} />
-                    <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{jobDetails?.jobCategory}</p>
+                    <p onClick={() => { router.push(`/job-details/${jobId}`) }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{detailsLoading ?  <Skeleton className="lg:w-[150px] md:w-[100px] h-[20px] rounded-lg" /> : jobDetails?.jobTitle}</p>
                     <Image src={applyIcon} alt='apply' width={18} height={18} />
-                    <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{jobDetails?.jobTitle}</p>
-                    <Image src={applyIcon} alt='apply' width={18} height={18} />
-                    <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#1E3A76] cursor-pointer'>Application Form</p>
+                    <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#1E3A76] cursor-pointer'>{detailsLoading ?  <Skeleton className="w-[150px] h-[20px] rounded-lg" /> : "Application Form"}</p>
                 </div>
             </div>
             <div className='py-[40px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] bg-[#FAFAFA] flex flex-col lg:gap-2 md:gap-2 sm:gap-1 gap-1'>
-                <p className='font-medium lg:text-[28px] lg:leading-[33.41px] md:text-[28px] md:leading-[33.41px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#3D3D3D]'>{jobDetails?.jobTitle}</p>
+                <p className='font-medium lg:text-[28px] lg:leading-[33.41px] md:text-[28px] md:leading-[33.41px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#3D3D3D]'>{detailsLoading ?  <Skeleton className="lg:w-[600px] md:w-[600px] sm:w-[300px] w-[300px] h-[30px] rounded-lg" /> : jobDetails?.jobTitle}</p>
                 <div className='flex items-center lg:gap-3 md:gap-3 sm:gap-1 gap-1'>
-                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>{jobDetails?.location}</p>
+                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>{detailsLoading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : jobDetails?.location}</p>
                     <div className='w-[1px] h-[21px] bg-[#B0B0B0]'></div>
-                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>{jobDetails?.employmentType}</p>
+                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>{detailsLoading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : jobDetails?.employmentType}</p>
                     <div className='w-[1px] h-[21px] bg-[#B0B0B0]'></div>
-                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>{jobDetails?.yearsOfExperience}+ Years Of Experience</p>
+                    <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32px] text-[12px] leading-[14.32px] text-[#4F4F4F]'>{detailsLoading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : `${jobDetails?.yearsOfExperience} + Years Of Experience`}</p>
                 </div>
             </div>
             <div className='pt-[40px] pb-[100px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px]'>
@@ -459,7 +462,7 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
                         </div>
 
                         {/* Terms and conditions */}
-                        <div className='flex flex-col mb-6 '>
+                        {/* <div className='flex flex-col mb-6 '>
                             <div className="flex py-[16px] gap-[10px]">
                                 <input
                                     type="checkbox"
@@ -468,17 +471,13 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
                                     {...register("privacyPolicy", {
                                         required: "Privacy Policy is required",
                                     })}
-                                // onChange={() => {
-                                //     setTerms(!terms)
-                                // }}
-                                // checked={terms}
                                 />
                                 <p className='font-normal text-[14px] leading-[16.94px] text-[#11192B]'>By clicking this box, you will declare that you will read and <span className="hidden sm:inline"> <br /> </span> agree to the <span className='text-[#4C6EFF]'>Privacy policy</span> of Squadramedia</p>
                             </div>
                             {errors.privacyPolicy && (
                                 <p className="text-red-500 text-sm mt-1">{errors.privacyPolicy?.message?.toString()}</p>
                             )}
-                        </div>
+                        </div> */}
 
 
                         {/* Submit Button */}

@@ -40,7 +40,7 @@ const CoreTeamMember = () => {
       <div className="flex flex-col items-center justify-center">
 
         <p className="font-sans text-[20px] text-[#6D6D6D] font-light leading-[23.87px] text-left">
-          At the heart of <span>Squadra Media</span> are the <br />
+          At the heart of <span className="text-[#FBAE17]">Squadra Media</span> are the <br />
           people who make it all happen—
         </p>
         <h2 className="font-sans mt-[24px] text-[40px] font-light leading-[23.87px] text-left text-[#131313] mb-8">

@@ -8,20 +8,23 @@ import shareFileIcon from '@/utilities/icons/share-file-icon.svg'
 // import linkedInIcon from '@/utilities/icons/linkedin-icon.svg'
 import { useRouter } from "next/navigation";
 import toast from 'react-hot-toast'
+import { Skeleton } from '@/components/ui/skeleton'
 
 
 interface JobListingProps {
     sections: { title: string; content: string }[]
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     jobDetails: any
+    loading: boolean
 }
 
-function DesktopUi({ sections,jobDetails }: JobListingProps) {
+function DesktopUi({ sections,jobDetails,loading }: JobListingProps) {
 
     const router = useRouter()
   
 
     const [openIndexes, setOpenIndexes] = useState<number[]>([])
+    
 
     const toggleAccordion = (index: number) => {
         setOpenIndexes(prevIndexes =>
@@ -60,32 +63,31 @@ function DesktopUi({ sections,jobDetails }: JobListingProps) {
 
     return (
         <div className='my-[80px]'>
-            <div className='pt-[32px] pb-[44px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] flex items-center lg:gap-3 md:gap-3 sm:gap-2 gap-2'>
-                <p onClick={() => { router.push('/') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Home</p>
+            <div className='pt-[45px] pb-[44px] lg:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] flex items-center lg:gap-3 md:gap-3 sm:gap-2 gap-2 hidden md:flex'>
+                <p onClick={() => { router.push('/') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[50px] w-[50px] h-[20px] rounded-lg" /> : "Home"}</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
-                <p onClick={() => { router.push('/careers') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>Careers</p>
+                <p onClick={() => { router.push('/careers?openings=true') }} className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[50px] w-[50px] h-[20px] rounded-lg" /> : "Careers"}</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
-                <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#888888] cursor-pointer'>{jobDetails?.jobCategory}</p>
-                <Image src={applyIcon} alt='apply' width={18} height={18} />
-                <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#1E3A76] cursor-pointer'>{jobDetails?.jobTitle}</p>
+                <p className='font-medium lg:text-[16px] lg:leading-6 md:text-[16px] md:leading-6 sm:text-md text-md sm:leading-6 text-[#1E3A76] cursor-pointer'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[50px] w-[50px] h-[20px] rounded-lg" /> : jobDetails?.jobTitle}</p>
             </div>
+
             <div className='lg:pt-[60px] md:pt-[60px] sm:pt-[40px] pt-[40px] pb-[40px] lg:ml-[124px] md:ml-[60px] sm:ml-[20px] ml-[20px] lg:w-[60%] md:w-[714px]'>
                 <div className='flex flex-col lg:gap-[40px] md:gap-[40px] sm:gap-[16px] gap-[16px]'>
                     <div className='flex flex-col lg:gap-[12px] md:gap-[12px] sm:gap-[4px] gap-[4px]'>
-                        <p className='font-medium lg:text-[40px] lg:leading-[47.73px] md:text-[40px] md:leading-[47.73px] sm:text-[20px] sm:leading-[23.87px] text-[20px] leading-[23.87px] text-[#3D3D3D]'>{jobDetails?.jobTitle}</p>
-                        <div className='flex items-center lg:gap-6 md:gap-6 sm:gap-1 gap-1'>
-                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx] text-[#4F4F4F]'>{jobDetails?.jobCategory}</p>
-                            <div className='w-[1px] h-[21px] bg-[#B0B0B0]'></div>
-                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx] text-[#4F4F4F]'>{jobDetails?.employmentType}</p>
-                            <div className='w-[1px] h-[21px] bg-[#B0B0B0]'></div>
-                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx] text-[#4F4F4F]'>{jobDetails?.yearsOfExperience}+ Years Of Experience</p>
+                        <p className='font-medium lg:text-[40px] lg:leading-[47.73px] md:text-[40px] md:leading-[47.73px] sm:text-[20px] sm:leading-[23.87px] text-[25px] leading-[23.87px] text-[#3D3D3D]'>{loading ?  <Skeleton className="lg:w-[600px] md:w-[600px] sm:w-[300px] w-[300px] h-[30px] rounded-lg" /> : jobDetails?.jobTitle}</p>
+                        <div className='flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col xl:items-center lg:items-center md:items-center sm:items-start items-start lg:gap-6 md:gap-6 sm:gap-1 gap-1'>
+                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx]  text-[#4F4F4F]'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : jobDetails?.jobCategory}</p>
+                            <div className='w-[1px] h-[21px] bg-[#B0B0B0] hidden md:flex'></div>
+                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx] text-[#4F4F4F]'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : jobDetails?.employmentType}</p>
+                            <div className='w-[1px] h-[21px] bg-[#B0B0B0] hidden md:flex'></div>
+                            <p className='font-normal lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px] sm:text-[12px] sm:leading-[14.32pxpx] text-[#4F4F4F]'>{loading ?  <Skeleton className="lg:w-[150px] md:w-[150px] sm:w-[90px] w-[90px] h-[30px] rounded-lg" /> : `${jobDetails?.yearsOfExperience}+ Years Of Experience`}</p>
                         </div>
                     </div>
                     <div className='flex items-center justify-between'>
                         <div className='hidden sm:block'>
                         <div onClick={() => { router.push(`/job-apply/${jobDetails?._id}`) }} className='flex items-center w-fit h-[44px] rounded-[4px] px-[24px] bg-[#06135B] font-medium text-[16px] leading-[19.09px] text-[#FFFFFF] cursor-pointer'>Apply for this job</div>
                         </div>
-                    <div className='flex items-center gap-3 p-3'>
+                    <div className='flex items-center gap-3 py-3'>
                         <p onClick={handleShare} className='font-medium text-[16px] leading-[19.09px] text-[#3D3D3D] cursor-pointer'>Share</p>
                         <div className='flex items-center gap-4'>
                             <div className='cursor-pointer' onClick={handleCopyLink}>
@@ -93,8 +95,6 @@ function DesktopUi({ sections,jobDetails }: JobListingProps) {
 
                             </div>
                             <div>
-
-                            {/* <Image src={linkedInIcon} alt='share' width={24} height={24} /> */}
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@ function DesktopUi({ sections,jobDetails }: JobListingProps) {
             </div>
 
             <div className='px-[20px] w-full mt-[48px] block md:hidden'>
-            <div className='flex items-center justify-center w-full h-[44px] rounded-[4px] px-[24px] bg-[#06135B] font-medium text-[16px] leading-[19.09px] text-[#FFFFFF] cursor-pointer'>Apply for this job</div>
+            <div onClick={() => { router.push(`/job-apply/${jobDetails?._id}`) }} className='flex items-center justify-center w-full h-[44px] rounded-[4px] px-[24px] bg-[#06135B] font-medium text-[16px] leading-[19.09px] text-[#FFFFFF] cursor-pointer'>Apply for this job</div>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-// import InitialVideoLoader from "./Loader";
+import InitialVideoLoader from "./Loader";
 
 export default function ClientLoaderWrapper({
     children,
@@ -16,14 +16,17 @@ export default function ClientLoaderWrapper({
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 2000); 
+            if(typeof window !== "undefined"){
+                window.sessionStorage.setItem("isLoaded", "true");
+            }
+        }, 4000); 
 
         return () => clearTimeout(timer);
     }, []);
 
     return (
         <AnimatePresence>
-            {false ? (
+            {isLoading && typeof window !== "undefined" && !window.sessionStorage.getItem("isLoaded") ? (
                 <motion.div
                     key="loader"
                     initial={{ opacity: 1 }}
@@ -31,7 +34,7 @@ export default function ClientLoaderWrapper({
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }} 
                 >
-                    {/* <InitialVideoLoader /> */}
+                    <InitialVideoLoader />
                 </motion.div>
             ) : (
                 <div
