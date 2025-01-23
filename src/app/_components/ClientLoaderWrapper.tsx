@@ -28,7 +28,7 @@ export default function ClientLoaderWrapper({
 
     return (
         <AnimatePresence>
-            {isLoading ? (
+            {false ? (
                 <motion.div
                     key="loader"
                     initial={{ opacity: 0 }}
