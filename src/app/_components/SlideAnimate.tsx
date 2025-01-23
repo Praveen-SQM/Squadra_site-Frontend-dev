@@ -8,7 +8,6 @@ const messages = [
     "Media",
     "Tech",
     "Digital marketing",
-    "Animation",
     "Branding",
     "Animations"
 ]
