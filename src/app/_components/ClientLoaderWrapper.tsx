@@ -10,46 +10,50 @@ export default function ClientLoaderWrapper({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(
+        typeof window !== "undefined" &&
+            !window.sessionStorage.getItem("isLoaded")
+    );
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-            if(typeof window !== "undefined"){
+            if (typeof window !== "undefined") {
                 window.sessionStorage.setItem("isLoaded", "true");
             }
-        }, 4000); 
+        }, 4000);
 
         return () => clearTimeout(timer);
     }, []);
 
     return (
         <AnimatePresence>
-            {isLoading && typeof window !== "undefined" && !window.sessionStorage.getItem("isLoaded") ? (
+            {isLoading ? (
                 <motion.div
                     key="loader"
-                    initial={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }} 
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
                     <InitialVideoLoader />
                 </motion.div>
             ) : (
-                <div
-                    // key="content"
-                    // initial={{ opacity: 0 }}
-                    // animate={{ opacity: 1 }}
-                    // exit={{ opacity: 0 }}
-                    // transition={{ duration: 0.1, ease: "easeInOut" }} 
+                <motion.div
+                    key="content"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
                     className="flex flex-col min-h-screen"
                 >
                     <Navbar />
                     <main className="bg-white text-gray-800 flex-grow">{children}</main>
                     <Footer />
-                </div>
+                </motion.div>
             )}
         </AnimatePresence>
     );
 }
+
+

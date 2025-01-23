@@ -22,7 +22,7 @@ function PeoplesWoGetsThingsDone() {
         <div className="hidden xl:block">
           <Link href="/about-us" className="h-[56px] w-[173px] rounded-[42px] border py-4 px-5 gap-[4px] flex justify-center items-center bg-[#FFFFFF] border-[#E7E7E7] cursor-pointer">
             <p className="font-semibold text-[16px] leading-[19.09px] text-[#131313]">Meet our team</p>
-            <Image src={teamMeetIcon} alt="arrow" width={12} height={10} />
+            <Image priority src={teamMeetIcon} alt="arrow" width={12} height={10} />
           </Link>
         </div>
       </div>
@@ -34,7 +34,7 @@ function PeoplesWoGetsThingsDone() {
 
           <div className="xl:w-fit lg:w-[714px] md:w-[714px] sm:w-[335px] w-[335px] flex flex-col gap-6">
             <div className="w-full xl:h-[363px] lg:h-[363px] md:h-[363px] rounded-[24px]">
-              <Image 
+              <Image priority
                 objectFit="cover" unoptimized blurDataURL="data:image/webp;base64,UklGRjIAAABXRUJQVlA4WAoAAAAQAAAABwAIAQUxQSAwAWAAQUAA0JaQAA3AA/v+/gAA=" quality={100} src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_3720+2+(1).webp"} width={711} height={363} alt="team image" className="w-full h-[363px] aspect-square rounded-[24px] object-cover" />
             </div>
             <div className="flex items-center justify-center xl:gap-6 lg:gap-6 md:gap-6 sm:gap-3 gap-3 xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col">
