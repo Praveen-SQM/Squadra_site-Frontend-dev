@@ -88,7 +88,7 @@ export default function ContactUsForm() {
                     <div className="w-[30px] h-[4px] bg-[#FFFFFF]"></div>
                 </div>
                 <div className="flex flex-col gap-[24px] mt-[281.32px]">
-                    <h2 className="text-[56px] leading-[70px] text-[#FFFFFF] font-[700] w-[434px]">
+                    <h2 className="text-[56px] leading-[70px] text-[#FFFFFF] font-[700]">
                         Let’s talk about your <span className="text-[#FBAE17]">project</span>.
                     </h2>
                     <p className="text-[#FFFFFF] font-normal text-[16px] leading-[32px] w-[443px]">

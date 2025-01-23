@@ -159,15 +159,17 @@ const Navbar = () => {
 
             <li
               className="relative py-5 hover:text-[#FBAE17] cursor-pointer"
+              onClick={() => { setIsServicesHovered(!isServicesHovered); setIsScrolled(!isScrolled) }}
               onMouseEnter={() => { setIsServicesHovered(true); setIsScrolled(true) }}
               onMouseLeave={() => { setIsServicesHovered(false); setIsScrolled(false) }}
             >
+            
               Services
 
               {/* Services Mega Menu */}
               <div
                 className={`absolute top-[4.5rem] ${isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
-                  } transition-all w-screen duration-300 translate-x-[-57%] bg-white text-black shadow-xl`}
+                  } transition-all w-screen duration-300 lg:translate-x-[-53%] xl:translate-x-[-56%]  bg-white text-black shadow-xl`}
 
 
 

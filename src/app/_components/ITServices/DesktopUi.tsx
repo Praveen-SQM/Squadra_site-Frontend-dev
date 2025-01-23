@@ -18,6 +18,7 @@ import finTechMain from '@/utilities/images/fintechMain.svg';
 import ApproachComponent from './components/ApproachComponent'
 import righticon from '@/utilities/images/right-arrow.svg'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -58,60 +59,95 @@ function DesktopUi() {
   return (
     <div className="h-fit pt-16 flex flex-col  w-full  items-center bg-black">
       {/* Intro Section */}
-      <div className='w-[1200px] h-[1165px] mt-[145px] flex flex-col items-center mb-[88px]'>
-        <div className='w-[976px] h-[322px] flex flex-col gap-[16px] items-center mt-[80px]'>
-          <p className="font-medium text-[72px] leading-[84px] text-center text-[#FFFFFF]">
-            Your Trusted Partner <br />
-            <span
-              className=""
-              style={{
-                fontFamily: 'SF UI Display, sans-serif',
-                textDecorationSkipInk: 'none',
-                textUnderlinePosition: 'from-font',
-                background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                color: 'transparent',
-              }}
-            >
-              in IT Innovation
-            </span>
-          </p>
-          <div className='w-[544px] h-[62px] flex items-center justify-center text-center'>
-            <p className='font-normal text-[18px] leading-[31px] text-white'>Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.</p>
-          </div>
-
-          <Link
-            href="#contact-section"
+      <div className="w-[1200px] h-[1165px] mt-[145px] flex flex-col items-center mb-[88px]">
+        <div className="w-[976px] h-[322px] flex flex-col gap-[16px] items-center mt-[80px]">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="font-medium text-[72px] leading-[84px] text-center text-[#FFFFFF]"
+          >
+            {["Your", "Trusted", "Partner"].map((word, index) => (
+              <motion.span
+                key={word}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.3 }}
+                className="inline-block"
+                style={{
+                  marginRight: index < 2 ? "0.2em" : 0,
+                }}
+              >
+                {word}{" "}
+              </motion.span>
+            ))}
+            <br />
+            {["in", "IT", "Innovation"].map((word, index) => (
+              <motion.span
+                key={word}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.3 + 1.2 }}
+                style={{
+                  fontFamily: "SF UI Display, sans-serif",
+                  textDecorationSkipInk: "none",
+                  textUnderlinePosition: "from-font",
+                  background:
+                    "linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                  marginRight: index < 2 ? "0.2em" : 0,
+                }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </motion.p>
+          {/* Empowering text with animation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
+            className="w-[544px] h-[62px] flex items-center justify-center text-center"
+          >
+            <p className="font-normal text-[18px] leading-[31px] text-white">
+              Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.
+            </p>
+          </motion.div>
+          {/* Connect Us button with animation */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 2 }}
             className="w-[137px] h-[40px] rounded-[12px] flex justify-center items-center p-[2px]"
             style={{
-              background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
+              background:
+                "linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)",
             }}
           >
-            <div className="w-full h-full rounded-[10px] flex items-center justify-center bg-[#FFFFFF]">
+            <Link href="#contact-section" className="w-full h-full rounded-[10px] flex items-center justify-center bg-[#FFFFFF]">
               <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
                 Connect Us
               </p>
-            </div>
-          </Link>
-
-
+            </Link>
+          </motion.div>
         </div>
-
-        <div className='mb-[43px]'>
-          <div className='w-full h-[815.25px]'>
-            <Image quality={40}
+        <div className="mb-[43px]">
+          <div className="w-full h-[815.25px]">
+            <Image
+              quality={40}
               src={heroImage}
               ref={imageRef}
               alt="Hero Image"
               width={0}
               height={0}
-              className={`image ${isInView ? 'expand' : ''}`}
+              className={`image ${isInView ? "expand" : ""}`}
             />
           </div>
         </div>
-
       </div>
+
 
       {/* Carousel */}
       {/*  add code here*/}
@@ -1085,7 +1121,7 @@ function DesktopUi() {
         <div className='flex gap-[24px] items-center'>
           <div className='flex flex-col gap-[24px]'>
             <div className='w-[584px] h-[263px] bg-gray-200'>
-              <Image quality={40}
+              <Image unoptimized
                 src={"https://squadra-media.s3.ap-south-1.amazonaws.com/7.jpg"}
                 alt='Tech Team'
                 width={584}
@@ -1095,7 +1131,7 @@ function DesktopUi() {
             </div>
             <div className='flex items-center gap-[24px]'>
               <div className='w-[280px] h-[262px] bg-gray-200'>
-                <Image quality={40}
+                <Image unoptimized
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                   alt='Tech Team'
                   width={280}
@@ -1104,7 +1140,7 @@ function DesktopUi() {
                 />
               </div>
               <div className='w-[280px] h-[262px] bg-gray-200'>
-                <Image quality={40}
+                <Image unoptimized
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
                   alt='Tech Team'
                   width={280}
@@ -1180,10 +1216,10 @@ function DesktopUi() {
         </div> </div>
 
       {/* technologies we use */}
-      <div className='w-full'>
+      <div className='w-full bg-[#FAFAFA]'>
 
 
-        <div className='min-w-[1440px] mx-auto h-[860px] bg-[#FAFAFA] pt-[100px]'>
+        <div className='w-[1192px] mx-auto h-[860px] bg-[#FAFAFA] pt-[100px]'>
           <div className='w-full h-[120px] flex flex-col  items-center justify-center text-center mb-[70px]'>
             <div className='w-[664px] h-[76px] '>
               <p

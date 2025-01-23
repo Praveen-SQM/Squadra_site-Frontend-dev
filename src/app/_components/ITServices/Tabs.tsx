@@ -109,7 +109,7 @@ const TabComponent = () => {
     return (
         <div className="flex flex-col items-center w-full h-[404px] bg-[#FAFAFA]">
             {/* Tabs */}
-            <div className="flex  w-[1192px] space-x-20 border-b border-[#F3EBDC] mb-6 ">
+            <div className="flex   w-[1150px] space-x-20 border-b border-[#F3EBDC] mb-6 ">
                 {tabs.map((tab) => (
                     <button
                         key={tab}
@@ -126,7 +126,7 @@ const TabComponent = () => {
 
             {/* Cards for Backend */}
             {activeTab === "Backend" && (
-                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[50px] mb-[50px]">
+                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[60px] mb-[50px]">
                     {backendTools.map((tool) => (
                         <div
                             key={tool.name}
@@ -135,7 +135,7 @@ const TabComponent = () => {
                             <Image
                                 src={tool.logo}
                                 alt={tool.name}
-                                width={150} 
+                                width={150}
                                 height={150}
                                 className="object-contain"
                             />
@@ -147,7 +147,7 @@ const TabComponent = () => {
 
             {/* Cards for Frontend */}
             {activeTab === "Frontend" && (
-                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[50px] mb-[50px]">
+                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[60px] mb-[50px]">
                     {frontendTools.map((tool) => (
                         <div
                             key={tool.name}
@@ -168,7 +168,7 @@ const TabComponent = () => {
 
             {/* Cards for Mobile */}
             {activeTab === "Mobile" && (
-                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[50px] mb-[50px]">
+                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[60px] mb-[50px]">
                     {mobileTools?.map((tool) => (
                         <div
                             key={tool.name}
@@ -189,7 +189,7 @@ const TabComponent = () => {
 
             {/* Cards for DevOps */}
             {activeTab === "DevOps" && (
-                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[50px] mb-[50px]">
+                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[60px] mb-[50px]">
                     {devopsTools?.map((tool) => (
                         <div
                             key={tool.name}
@@ -210,7 +210,7 @@ const TabComponent = () => {
 
             {/* Cards for Analytics & Engagement */}
             {activeTab === "Analytics & Engagement" && (
-                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[50px] mb-[50px]">
+                <div className="w-[1192px] flex flex-wrap justify-center mt-[50px] gap-[60px] mb-[50px]">
                     {analyticsTools?.map((tool) => (
                         <div
                             key={tool.name}
