@@ -169,7 +169,7 @@ const Navbar = () => {
               {/* Services Mega Menu */}
               <div
                 className={`absolute top-[4.5rem] ${isServicesHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
-                  } transition-all w-screen duration-300 lg:translate-x-[-53%] xl:translate-x-[-56%]  bg-white text-black shadow-xl`}
+                  } transition-all w-screen duration-300 lg:translate-x-[-48%] xl:translate-x-[-52%]  bg-white text-black shadow-xl`}
 
 
 

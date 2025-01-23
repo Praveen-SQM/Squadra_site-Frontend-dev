@@ -33,7 +33,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="absolute inset-0 flex items-center">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24">
+        <div className="container mx-auto px-6 sm:px-12  lg:px-12 xl:px-14 2xl:px-32">
           <div className="max-w-3xl pt-60 md:pt-60 lg:pt-72">
             <h1 className="text-left text-4xl font-extralight tracking-tight text-white sm:text-5xl sm:leading-tight md:text-6xl lg:text-7xl lg:leading-tight md:leading-relaxed">
               Smart Solutions For <br className="md:inline" /> Your{" "}
