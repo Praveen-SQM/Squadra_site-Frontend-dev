@@ -42,7 +42,7 @@ function ClientsSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setScrollIndex((prevIndex) => (prevIndex + 1) % logos.length);
-    }, 500); // Change logo every 3 seconds
+    }, 1500);
 
     return () => clearInterval(interval);
   }, [logos.length]);
@@ -89,9 +89,24 @@ function ClientsSection() {
               </div>
             </div>
           ))}
+          {logos.map((logo, index) => (
+            <div
+              key={index + logos.length}
+              className="flex-shrink-0 w-[40%] p-2 bg-white rounded-sm  gap-4 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 ease-in-out hover:-translate-y-1"
+            >
+              <div className="relative w-full h-28">
+                <Image priority
+                  src={logo.url}
+                  alt={`${logo.name} logo`}
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                  className="object-contain filter transition-all duration-300"
+                />
+              </div>
+            </div>
+          ))}
         </div>
 
-     
       </div>
     </div>
   );
