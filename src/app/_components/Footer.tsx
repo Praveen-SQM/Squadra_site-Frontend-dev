@@ -7,6 +7,10 @@ import itLogocolor from '@/utilities/images/footer-it-logo.svg'
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react"
+import facebookIcon from '@/utilities/icons/facebook-icon.svg'
+import instagramIcon from '@/utilities/icons/instagram-icon.svg'
+import linkedinIcon from '@/utilities/icons/linkedin-latest.svg'
+import youtubeIcon from '@/utilities/icons/youtube-icon.svg'
 // const Footer = () => {
 
 //   const pathname = usePathname();
@@ -183,7 +187,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo and Tagline */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             <Link href="/" className="inline-block">
               <Image
                 src={!pathname.includes("/it-services") ? logoWhite : itLogocolor
@@ -193,15 +197,13 @@ export default function Footer() {
               />
             </Link>
             <h2 className="text-white text-[1.7rem] font-light leading-tight">
-              Build an 
+            Start
+            <br />
+            Building
               <br />
-              amazing
+              a Solid
               <br/>
-              website.
-              <br />
-              Impress your
-              <br />
-              customers.
+              Brand Today!
             </h2>
           </div>
 
@@ -319,16 +321,20 @@ export default function Footer() {
                 <span className="text-sm text-gray-400 whitespace-nowrap">Follow Us</span>
                 <div className="flex items-center space-x-4">
                   <Link target="_blank" href="https://www.instagram.com/_squadra_media_?igsh=MW1lZWJjMW51NXhweA==" className="hover:text-gray-400 transition-colors">
-                    <Instagram className="h-5 w-5" />
+                    {/* <Instagram className="h-5 w-5" /> */}
+                    <Image src={instagramIcon} height={24} width={24} className="transition duration-300 hover:filter hover:invert" alt={"Instagram"} />
                   </Link>
                   <Link target="_blank" href="https://youtube.com/@squadramedia5111?si=11QTz6g7FJE8yBBh" className="hover:text-gray-400 transition-colors">
-                    <Youtube className="h-5 w-5" />
+                    {/* <Youtube className="h-5 w-5" /> */}
+                    <Image src={youtubeIcon} height={24} width={24} className="transition duration-300 hover:filter hover:invert" alt={"Youtube"} />
                   </Link>
                   <Link target="_blank" href="https://www.linkedin.com/company/squadra-media-bangalore" className="hover:text-gray-400 transition-colors">
-                    <Linkedin className="h-5 w-5" />
+                    {/* <Linkedin className="h-5 w-5" /> */}
+                    <Image src={linkedinIcon} height={24} width={24} className="transition duration-300 hover:filter hover:invert" alt={"LinkedIn"} />
                   </Link>
                   <Link target="_blank" href="https://www.facebook.com/squadramediabangalore" className="hover:text-gray-400 transition-colors">
-                    <Facebook className="h-5 w-5" />
+                    {/* <Facebook className="h-5 w-5" /> */}
+                    <Image src={facebookIcon} height={24} width={24} className="transition duration-300 hover:filter hover:invert" alt={"Facebook"} />
                   </Link>
                 </div>
               </div>

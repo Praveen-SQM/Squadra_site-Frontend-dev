@@ -105,7 +105,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed z-50 w-full p-4 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us") || pathname.includes("/openings")
+        className={`fixed z-50 w-full p-2 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us") || pathname.includes("/openings")
           || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply")
 
           ? "bg-white shadow-md text-black"

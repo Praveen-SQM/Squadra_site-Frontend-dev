@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
@@ -43,10 +44,10 @@ function CustomerJourneySection() {
   ];
 
   return (
-    <section className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-20 py-8 sm:py-10 md:py-12 lg:py-16">
-      <div className="space-y-2 mb-12">
-        <p className="text-sm text-gray-600 uppercase tracking-wider">CUSTOMER JOURNEY</p>
-        <h2 className="text-3xl md:text-4xl font-semibold">
+    <section className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-20 py-8 sm:py-10 md:py-12 lg:py-16 mt-8">
+      <div className="space-y-2 mb-8">
+        <p className="sm:text-sm text-[11px] font-medium text-gray-600 uppercase tracking-wider">CUSTOMER JOURNEY</p>
+        <h2 className="sm:text-3xl text-[24px] leading-8 md:text-4xl font-semibold">
           How <span className="text-[#FBAE17]">Squadra Media</span> Drives Your Growth.
         </h2>
       </div>
@@ -54,9 +55,12 @@ function CustomerJourneySection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, index) => (
         <Card
-  key={index}
-  className="border-none shadow-none bg-gray-50 overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl transition-shadow duration-300"
->
+        key={index}
+        className="border-none shadow-none bg-gray-50 overflow-hidden transform transition-transform duration-500 ease-in-out hover:shadow-1.5xl"
+        style={{ transform: "scale(1)", transition: "transform 0.5s ease-in-out" }}
+        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
+        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+      >
 
             <div className="relative aspect-[3/2] group">
               {/* Video */}
@@ -78,10 +82,10 @@ function CustomerJourneySection() {
               />
             </div>
             <CardContent className="p-6">
-              <h3 className="text-lg font-bold whitespace-pre-line mb-2">
+              <h3 className="text-[16px] font-semibold leading-[19px] whitespace-pre-line mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-[15px] leading-[19px]">
                 {service.description}
               </p>
             </CardContent>

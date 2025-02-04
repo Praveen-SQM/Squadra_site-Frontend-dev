@@ -158,14 +158,13 @@ export default function ContactUsForm() {
               </label>
               <input
                 id="phone"
-                type="number"
+                type="tel"
                 placeholder="Phone Number"
                 {...register("phone", {
                   required: "Phone number is required",
-                  minLength: { value: 10, message: "Phone number must be at least 10 characters" },
-                  maxLength: { value: 10, message: "Phone number must be at most 10 characters" },
+                  pattern: { value: /^[0-9]{10}$/, message: "Enter a valid 10-digit phone number" },
                 })}
-                className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
+                className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm appearance-none"
               />
               {errors.phone && (
                 <p className="text-red-500 text-sm mt-1">{errors?.phone?.message?.toString()}</p>
