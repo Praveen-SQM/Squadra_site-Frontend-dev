@@ -2,8 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 'use client'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import { useRouter } from "next/navigation";
+import React from 'react'
 import { HoverButton } from '../ITServices/DesktopUi';
 import arrowRight from '@/utilities/images/arrow-right.svg'
 import righticon from '@/utilities/images/right-arrow.svg'
@@ -97,7 +96,7 @@ function VisualImpactUi() {
             <div className='py-[120px] xl:px-[124px] lg:px-[40px] md:px-[40px] flex items-center xl:gap-[45.5px] lg:gap-[30px] md:gap-[30px]'>
                 {records?.map((record, index) => {
                     return (
-                        <div className='py-10 px-5 flex flex-col xl:gap-6 lg:gap-5 md:gap-5'>
+                        <div key={index} className='py-10 px-5 flex flex-col xl:gap-6 lg:gap-5 md:gap-5'>
                             <p className='font-[300] xl:text-[80px] lg:text-[60px] md:text-[60px] xl:leading-[95.47px] lg:leading-[71.6px] md:leading-[71.6px] text-center text-[#FFFFFF]'>{record?.recordNumber}</p>
                             <div className='flex flex-col gap-2 justify-center'>
                                 <p className='font-normal xl:text-[20px] xl:leading-[23.87px] lg:text-[16px] lg:leading-[19.09px] md:text-[16px] md:leading-[19.09px] text-center text-[#FFFFFF]'>{record?.title}</p>
@@ -112,7 +111,7 @@ function VisualImpactUi() {
             <div className='flex flex-col xl:gap-[0px] lg:gap-[49px] md:gap-[49px]'>
                 {services.map((service, index) => {
                     return (
-                        <div className='xl:py-[120px] py-[0px] flex items-center xl:gap-[64px] lg:gap-[60px] md:gap-[60px]'>
+                        <div key={index} className='xl:py-[120px] py-[0px] flex items-center xl:gap-[64px] lg:gap-[60px] md:gap-[60px]'>
                             <div className='flex flex-col gap-[60px] items-end'>
                                 <div className='border-t-[0.75px] border-b-[0.75px] py-[9.39px] px-[11.52px] border-[#D1D1D1] font-normal text-[13px] leading-[15.51px] text-[#D1D1D1] w-fit'>{service.category}</div>
                                 <div className='flex flex-col xl:gap-[80px] lg:gap-[30px] md:gap-[30px] items-end'>

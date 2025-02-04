@@ -1,5 +1,5 @@
 import React from 'react';
-import itLogocolor from '@/utilities/images/itLogoColoured.svg'
+
 
 function PrivacyPolicy() {
     return (
@@ -9,7 +9,6 @@ function PrivacyPolicy() {
                 //   onClick={() => navigate(path)}
                 className="z-10 top-4 left-4 w-10 h-10 bg-[#E2E2E2] flex justify-center items-center rounded opacity-50 cursor-pointer hover:opacity-100 my-[20px] mx-[20px]"
             >
-                <img src={itLogocolor} alt="" className="cursor-pointer w-8" />
             </button>
 
             <div className='flex-1 overflow-y-auto py-[40px] lg:px-[120px] md:px-[120px] px-[24px]'>
@@ -19,7 +18,7 @@ function PrivacyPolicy() {
                         <div className='flex flex-col gap-7'>
                             <div className='gap-2 flex flex-col'>
                                 <p className='font-semibold text-[16px] leading-[19.36px] text-[#2B2829]'>1.Introduction</p>
-                                <p className='font-normal text-[14px] leading-[19px] text-[#737373]'>Welcome to Squadra. These terms and conditions (the "Terms") govern your use of our services, available through our website. By accessing or using Squadra, you agree to comply with and be bound by these Terms. If you do not agree with these Terms, do not use the Platform.</p>
+                                <p className='font-normal text-[14px] leading-[19px] text-[#737373]'>Welcome to Squadra. These terms and conditions (the &quot;Terms&#34;) govern your use of our services, available through our website. By accessing or using Squadra, you agree to comply with and be bound by these Terms. If you do not agree with these Terms, do not use the Platform.</p>
                             </div>
                             <div className='gap-2 flex flex-col'>
                                 <p className='font-semibold text-[16px] leading-[19.36px] text-[#2B2829]'>2.User Registration and Account Security</p>
@@ -58,7 +57,7 @@ function PrivacyPolicy() {
                             </div>
                             <div className='gap-2 flex flex-col'>
                                 <p className='font-semibold text-[16px] leading-[19.36px] text-[#2B2829]'>9. Limitations of Liability</p>
-                                <p className='font-normal text-[14px] leading-[19px] text-[#737373]'>Squadra provides the Platform "as-is" and disclaims all warranties, express or implied, to the fullest extent permitted by law. We do not guarantee that the Platform will be available at all times, free of errors, or without interruption. Squadra shall not be liable for any indirect, incidental, special, or consequential damages resulting from your use of the Platform.</p>
+                                <p className='font-normal text-[14px] leading-[19px] text-[#737373]'>Squadra provides the Platform &quot;as-is&ldquo; and disclaims all warranties, express or implied, to the fullest extent permitted by law. We do not guarantee that the Platform will be available at all times, free of errors, or without interruption. Squadra shall not be liable for any indirect, incidental, special, or consequential damages resulting from your use of the Platform.</p>
                             </div>
                             <div className='gap-2 flex flex-col'>
                                 <p className='font-semibold text-[16px] leading-[19.36px] text-[#2B2829]'>10. Indemnification</p>

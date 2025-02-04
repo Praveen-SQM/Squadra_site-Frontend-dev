@@ -6,7 +6,7 @@ import logoWhite from "../../utilities/icons/Logo-footer.svg";
 import itLogocolor from '@/utilities/images/footer-it-logo.svg'
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react"
+import { Mail, MapPin, Phone } from "lucide-react"
 import facebookIcon from '@/utilities/icons/facebook-icon.svg'
 import instagramIcon from '@/utilities/icons/instagram-icon.svg'
 import linkedinIcon from '@/utilities/icons/linkedin-latest.svg'
