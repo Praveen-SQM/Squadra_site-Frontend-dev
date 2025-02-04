@@ -49,7 +49,7 @@ function PrivacyPolicy() {
                             </div>
                             <div className='gap-2 flex flex-col'>
                                 <p className='font-semibold text-[16px] leading-[19.36px] text-[#2B2829]'>7. Payment and Billing</p>
-                                <p className='font-normal text-[14px] leading-[19px] text-[#737373]'>Squadra may offer paid services or subscriptions. All transactions are processed in compliance with applicable payment terms. Billing policies, cancellations, and refund terms are outlined in our Refund Policy. In-app purchases made through Seaverse’s mobile apps are subject to Apple’s or Google’s payment terms, as applicable.</p>
+                                <p className='font-normal text-[14px] leading-[19px] text-[#737373]'>Squadra may offer paid services or subscriptions. All transactions are processed in compliance with applicable payment terms. Billing policies, cancellations, and refund terms are outlined in our Refund Policy. In-app purchases made through Squadra&apos;s mobile apps are subject to Apple’s or Google’s payment terms, as applicable.</p>
                             </div>
                             <div className='gap-2 flex flex-col'>
                                 <p className='font-semibold text-[16px] leading-[19.36px] text-[#2B2829]'>8. Third-Party Services and Link</p>
