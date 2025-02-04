@@ -311,7 +311,7 @@ export default function Footer() {
                 <Link href="#" className="text-sm hover:text-white transition-colors whitespace-nowrap">
                   Terms of services
                 </Link>
-                <Link href="#" className="text-sm hover:text-white transition-colors whitespace-nowrap">
+                <Link href="/privacy-policy" className="text-sm hover:text-white transition-colors whitespace-nowrap">
                   Privacy policy
                 </Link>
               </div>

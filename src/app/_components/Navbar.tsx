@@ -19,7 +19,7 @@ const Navbar = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (pathname.includes("/contact-us")) return;
+    if (pathname.includes("/contact-us")|| pathname.includes('/privacy-policy')) return;
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setIsScrolled(true);
@@ -106,7 +106,7 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed z-50 w-full p-2 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us") || pathname.includes("/openings")
-          || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply")
+          || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy')
 
           ? "bg-white shadow-md text-black"
           : isScrolled
@@ -122,7 +122,7 @@ const Navbar = () => {
 
               <Image
                 src={pathname.includes("/contact-us") || pathname.includes("/openings")
-                  || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply") ? itLogocolor : isScrolled ? itLogocolor : itLogo}
+                  || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy') ? itLogocolor : isScrolled ? itLogocolor : itLogo}
                 alt="Logo"
                 width={120}
                 height={40}
@@ -296,7 +296,7 @@ const Navbar = () => {
             {true && <ContactPopover isScrolled={isScrolled} />}
             {true ? <li
               className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us") || pathname.includes("/openings")
-                || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply")
+                || pathname.includes("/direct-apply") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy')
                 ? `text-white`
                 : isScrolled
                   ? "text-white"

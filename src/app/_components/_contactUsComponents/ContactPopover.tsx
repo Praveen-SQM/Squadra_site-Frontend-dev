@@ -146,7 +146,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       >
         <div className="flex items-center gap-3">
           <Image className="cursor-pointer"
-            src={pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply")
+            src={pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy')
               ? callIconBlack : isScrolled ? callIconBlack : callIcon}
             alt="Call Icon"
             width={24}
@@ -154,7 +154,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
           />
 
           <p
-            className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply")
+            className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy')
               ? 'text-black' : isScrolled ? 'text-black' : 'text-white'
               }`}
           >
