@@ -139,13 +139,13 @@ function DesktopUi() {
                 <div className='flex flex-col gap-[150px] absolute inset-0 xl:mt-[390px] lg:mt-[390px] md:mt-[504px] sm:mt-[360px] mt-[360px]'>
                     <div className="flex flex-col justify-center items-center xl:gap-[56px] lg:gap-[42px] md:gap-[42px] sm:gap-[44px] gap-[44px]">
                         <div className='flex flex-col xl:gap-1 lg:gap-1 md:gap-2 items-center'>
-                            <p className='font-[265] xl:text-[80px] xl:leading-[95.47px] lg:text-[56px] lg:leading-[66.83px] md:text-[56px] md:leading-[66.83px] sm:text-[32px] sm:leading-[38.19px] text-[32px] leading-[38.19px] text-[#FFFFFF] text-center xl:w-full md:w-full sm:w-[308px] w-[308px]'>Step into your future with us.</p>
+                            <p className='sm:font-[265] font-[265] xl:text-[80px] xl:leading-[95.47px] lg:text-[56px] lg:leading-[66.83px] md:text-[56px] md:leading-[66.83px] sm:text-[32px] sm:leading-[38.19px] text-[40px] leading-[38.19px] text-[#FFFFFF] text-center xl:w-full md:w-full sm:w-[308px] w-[308px]'>Step into your future with us.</p>
                             <div className='py-[10px]'>
-                                <p className='font-normal text-[20px] leading-7 text-[#FFFFFF] text-center xl:max-w-[700px] lg:max-w-[469px] md:max-w-[469px] sm:max-w-[370px] max-w-[370px]'>We aim to bring positivity to every step we take. If you share that vision, Squadra Media is the place for you</p>
+                                <p className='font-normal text-[16px] leading-6 text-[#FFFFFF] text-center xl:max-w-[700px] lg:max-w-[469px] md:max-w-[469px] sm:max-w-[370px] max-w-[370px]'>We aim to bring positivity to every step we take. If you share that vision, Squadra Media is the place for you</p>
                             </div>
                         </div>
 
-                        <div onClick={() => router.push('/openings')} className='w-[200px] h-[62px] rounded-[4px] border-[0.5px] border-[#FFFFFF] bg-[#FBAE17] flex items-center justify-center gap-2 cursor-pointer'>
+                        <div onClick={() => router.push('/openings')} className='w-[200px] h-[48px] rounded-[4px] border-[.5px] border-l-[.7px] px-2 border-[#FFFFFF]  flex items-center justify-center gap-2 cursor-pointer'>
                             <p className='font-medium text-[18px] leading-[18px] text-[#FFFFFF]'>All openings</p>
                             <Image src={rightArrowIcon} alt='Openings' />
                         </div>
@@ -157,8 +157,8 @@ function DesktopUi() {
 
             {/* Current Opening */}
             <div id='job-openings' className="w-full flex flex-col items-center md:pt-[15px]">
-                <div className="flex flex-col py-[72px] xl:px-[124px] lg:px-[0px] md:px-[0px] gap-[42px] xl:w-[1192px] lg:w-[714px] md:w-[714px] sm:w-[335px] w-[335px]">
-                    <div className="flex flex-col gap-[72px] justify-center">
+                <div className="flex flex-col sm:pt-[72px] pt-[40px] pb-[72px]  lg:px-[0px] md:px-[0px] gap-[42px] xl:w-[1180px] lg:w-[714px] md:w-[714px] sm:w-[335px] w-[335px]">
+                    <div className="flex flex-col sm:gap-[72px] gap-[32px] justify-center">
                         <p className="font-[300] xl:text-[62px] lg:text-[48px] md:text-[48px] xl:leading-[50px] lg:leading-[50px] md:leading-[50px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-[#131313] text-center">
                             Current openings
                         </p>
@@ -268,11 +268,11 @@ function DesktopUi() {
 
             {/* Employee Benefits */}
             <div className='w-full bg-[#FAFAFA] flex flex-col xl:py-[72px] lg:py-[72px] md:py-[72px] sm:py-[50px] py-[50px] xl:px-[124px] lg:px-[60px] md:px-[60px] sm:px-[20px] px-[20px] items-center'>
-                <div className='flex flex-col xl:gap-[80px] lg:gap-[60px] md:gap-[60px] sm:gap-[32px] gap-[32px] xl:w-[1192px] md:w-[714px] sm:w-full w-full items-center'>
+                <div className='flex flex-col xl:gap-[80px] lg:gap-[60px] md:gap-[60px] sm:gap-[32px] gap-[32px] xl:w-[1180px] md:w-[714px] sm:w-full w-full items-center'>
                     <p className='font-[300] xl:text-[60px] xl:leading-[71.6px] lg:text-[48px] lg:leading-[57.28px] md:text-[48px] md:leading-[57.28px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-center text-[#131313] xl:max-w-[943px] md:max-w-[943px]'>We prioritise our employee&apos;s <span className='text-[#FBAE17]'> well-being.</span></p>
                     <div className='grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 xl:gap-[0px] lg:gap-[0px] md:gap-[0px] sm:gap-[6px] gap-[6px]'>
                         {employeeBenefits?.map((benefit, index) => (
-                            <div key={index} className={`xl:h-[460px] xl:w-[397.33px] lg:h-[309px] lg:w-[357px] md:h-[309px] md:w-[357px] sm:w-[335px] w-[335px] flex flex-col items-center xl:pt-[72px] xl:pb-[64px] xl:px-[44px] xl:gap-[40px] lg:pt-[40px] lg:pb-[40px] lg:px-[32px] lg:gap-[32px] md:pt-[40px] md:pb-[40px] md:px-[32px] md:gap-[32px]  sm:pt-[32px] sm:pb-[32px] sm:px-[32px] sm:gap-[32px] pt-[32px] pb-[32px] px-[32px] gap-[32px] ${index % 2 === 0 ? 'bg-[#FFFFFF]' : 'bg-[#FAFAFA]'}`}>
+                            <div key={index} className={`xl:h-[460px] xl:w-[397.5px] lg:h-[309px] lg:w-[357px] md:h-[309px] md:w-[357px] sm:w-[335px] w-[335px] flex flex-col items-center xl:pt-[72px] xl:pb-[64px] xl:px-[44px] xl:gap-[40px] lg:pt-[40px] lg:pb-[40px] lg:px-[32px] lg:gap-[32px] md:pt-[40px] md:pb-[40px] md:px-[32px] md:gap-[32px]  sm:pt-[32px] sm:pb-[32px] sm:px-[32px] sm:gap-[32px] pt-[32px] pb-[32px] px-[32px] gap-[32px] ${index % 2 === 0 ? 'bg-[#FFFFFF]' : 'bg-[#FAFAFA]'}`}>
                                 <Image src={benefit?.icon} alt={benefit.title} className='xl:w-[100px] xl:h-[100px] lg:w-[64px] lg:h-[64px] md:w-[64px] md:h-[64px] sm:w-[52px] sm:h-[52px] w-[52px] h-[52px]' />
                                 <div className='flex flex-col xl:gap-5 lg:gap-5 md:gap-5 sm:gap-3 gap-3'>
                                     <p className='font-[600] xl:text-[20px] xl:leading-[23.87px] lg:text-[18px] lg:leading-[21.48px] md:text-[18px] md:leading-[21.48px] sm:text-[16px] sm:leading-[19.09px] text-[16px] leading-[19.09px] text-[#131313]'>{benefit?.title}</p>
@@ -286,7 +286,7 @@ function DesktopUi() {
 
             {/* Life at squadra */}
             {/* <div className='w-full bg-[#FFFFFF] xl:py-[72px] md:py-[72px] sm:py-[40px] py-[40px] xl:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] flex flex-col gap-[44px] items-center'>
-                <div className='flex flex-col xl:gap-[44px] md:gap-[44px] sm:gap-[32px] gap-[32px] xl:w-[1192px] md:w-[714px]'>
+                <div className='flex flex-col xl:gap-[44px] md:gap-[44px] sm:gap-[32px] gap-[32px] xl:w-[1180px] md:w-[714px]'>
                     <div className='flex flex-col gap-[12px]'>
                         <p className='font-[300] xl:text-[62px] xl:leading-[72px] md:text-[48px] md:leading-[57.28px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-center text-[#131313]'>Life at <span className='text-[#FBAE17]'>Squadra Media</span></p>
                         <p className='font-normal xl:text-[18px] xl:leading-[24px] md:text-[16px] md:leading-[21px] sm:text-[14px] sm:leading-[19px] text-center text-[#6D6D6D]'>A space to unlock your true potential, chase your dreams, and embrace your <br /> passion all while enjoying every moment with fun and laughter!</p>
@@ -316,13 +316,13 @@ function DesktopUi() {
                                 </div>
                             </div>
                         </div>
-                        <div className='rounded-[6px] xl:w-[1192px] xl:h-[440px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] bg-gray-400'></div>
+                        <div className='rounded-[6px] xl:w-[1180px] xl:h-[440px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] bg-gray-400'></div>
                     </div>
                 </div>
             </div> */}
 
             <div className='w-full bg-[#FFFFFF] xl:py-[72px] lg:py-[72px] md:py-[72px] sm:py-[40px] py-[40px] xl:px-[124px] lg:px-[60px] md:px-[60px] sm:px-[20px] px-[20px] flex flex-col gap-[44px] items-center'>
-                <div className='flex flex-col xl:gap-[44px] lg:gap-[44px] md:gap-[44px] sm:gap-[32px] gap-[32px] xl:w-[1192px] lg:w-[714px] md:w-[714px]'>
+                <div className='flex flex-col xl:gap-[44px] lg:gap-[44px] md:gap-[44px] sm:gap-[32px] gap-[32px] xl:w-[1180px] lg:w-[714px] md:w-[714px]'>
                     <div className='flex flex-col gap-[12px]'>
                         <p className='font-[300] xl:text-[62px] xl:leading-[72px] lg:text-[48px] lg:leading-[57.28px] md:text-[48px] md:leading-[57.28px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-center text-[#131313]'>Life at <span className='text-[#FBAE17]'>Squadra Media</span></p>
                         <p className='font-normal xl:text-[18px] xl:leading-[24px] lg:text-[16px] lg:leading-[21px] md:text-[16px] md:leading-[21px] sm:text-[14px] sm:leading-[19px] text-center text-[#6D6D6D]'>A space to unlock your true potential, chase your dreams, and embrace your <br /> passion all while enjoying every moment with fun and laughter!</p>
@@ -363,8 +363,8 @@ function DesktopUi() {
                         </div>
 
 
-                        <div className='rounded-[6px] xl:w-[1192px] xl:h-[440px] lg:w-[714px] lg:h-[400px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] bg-gray-400'>
-                            <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_3720+2+(1).webp" alt='Life at Squadra' width={760} height={400} className="xl:w-[1192px] xl:h-[440px] lg:w-[714px] lg:h-[400px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] object-cover" />
+                        <div className='rounded-[6px] xl:w-[1180px] xl:h-[440px] lg:w-[714px] lg:h-[400px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] bg-gray-400'>
+                            <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_3720+2+(1).webp" alt='Life at Squadra' width={760} height={400} className="xl:w-[1180px] xl:h-[440px] lg:w-[714px] lg:h-[400px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] object-cover" />
                         </div>
                     </div>
                 </div>

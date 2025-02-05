@@ -21,6 +21,7 @@ const Navbar = () => {
   useEffect(() => {
     if (
       pathname.includes("/contact-us") ||
+      pathname.includes("/privacy-policy") ||
       pathname.includes("/branding-and-creative")
     )
       return;
@@ -107,13 +108,14 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed z-50 w-full p-4 lg:px-32 transition-all duration-300 ${
+        className={`fixed z-50 w-full p-2 lg:px-32 transition-all duration-300 ${
           pathname.includes("/contact-us") ||
           pathname.includes("/branding-and-creative") ||
           pathname.includes("/openings") ||
           pathname.includes("/direct-apply") ||
           pathname.includes("/job-details") ||
-          pathname.includes("/job-apply")
+          pathname.includes("/job-apply") ||
+          pathname.includes("/privacy-policy")
             ? "bg-white shadow-md text-black"
             : isScrolled
             ? "bg-white text-black"
@@ -131,7 +133,8 @@ const Navbar = () => {
                     pathname.includes("/openings") ||
                     pathname.includes("/direct-apply") ||
                     pathname.includes("/job-details") ||
-                    pathname.includes("/job-apply")
+                    pathname.includes("/job-apply") ||
+                    pathname.includes("/privacy-policy")
                       ? itLogocolor
                       : isScrolled
                       ? itLogocolor
@@ -369,7 +372,8 @@ const Navbar = () => {
                   pathname.includes("/openings") ||
                   pathname.includes("/direct-apply") ||
                   pathname.includes("/job-details") ||
-                  pathname.includes("/job-apply")
+                  pathname.includes("/job-apply") ||
+                  pathname.includes("/privacy-policy")
                     ? `text-white`
                     : isScrolled
                     ? "text-white"

@@ -70,15 +70,15 @@ function DesktopUi() {
 
 
     return (
-        <div className='my-[80px] pt-[32px] xl:pb-[72px] lg:pb-[72px] md:pb-[72px] sm:pb-[40px] pb-[40px] xl:px-[124px] lg:px-[60px] md:px-[60px] sm:px-[20px] px-[20px] flex flex-col xl:gap-[42px] lg:gap-[42px] md:gap-[42px] sm:gap-[32px] gap-[32px]'>
-            <div className='pt-[40px] pb-[44px] flex items-center gap-[12px] hidden md:flex'>
+        <div className='my-[80px] pt-[32px] xl:pb-[72px] lg:pb-[72px] md:pb-[72px] sm:pb-[40px] pb-[40px] xl:px-[124px] lg:px-[60px] md:px-[60px] sm:px-[20px] px-[20px] flex flex-col xl:gap-[42px] lg:gap-[42px] md:gap-[42px] sm:gap-[32px] gap-[32px] lg:items-center'>
+            <div className='pt-[40px] pb-[44px] xl:w-[1180px] lg:w-[714px] md:w-[714px] flex items-center gap-[12px] hidden md:flex'>
                 <p onClick={() => { router.push('/') }} className='font-medium text-[16px] leading-6 text-[#888888] cursor-pointer'>Home</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
                 <p onClick={() => { router.push('/careers?openings=true') }} className='font-medium text-[16px] leading-6 text-[#888888] cursor-pointer'>Careers</p>
                 <Image src={applyIcon} alt='apply' width={18} height={18} />
                 <p className='font-medium text-[16px] leading-6 text-[#1E3A76] cursor-pointer'>All Openings</p>
             </div>
-            <div className='pb-[38px] flex flex-col xl:gap-[72px] lg:gap-[72px] md:gap-[72px] sm:gap-[32px] gap-[32px] xl:w-[1192px] lg:w-[714px] md:w-[714px]'>
+            <div className='pb-[38px] flex flex-col xl:gap-[72px] lg:gap-[72px] md:gap-[72px] sm:gap-[32px] gap-[32px] xl:w-[1180px] lg:w-[714px] md:w-[714px]'>
                 <p className='font-[300] xl:text-[62px] xl:leading-[50px] lg:text-[62px] lg:leading-[50px] md:text-[62px] md:leading-[50px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-[#131313] flex justify-center'>All Openings</p>
 
                 <div>
@@ -181,7 +181,7 @@ function DesktopUi() {
         </div>
             </div>
 
-            <div className='xl:py-[60px] xl:px-[40px] lg:py-[60px] lg:px-[40px] md:py-[60px] md:px-[40px] sm:py-[40px] sm:px-[20px] py-[40px] px-[20px] bg-[#FAFAFA] flex items-center xl:justify-between lg:justify-between md:justify-between sm:gap-[40px] gap-[40px] xl:w-[1192px] lg:w-[714px] md:w-[714px] xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col'>
+            <div className='xl:py-[60px] xl:px-[40px] lg:py-[60px] lg:px-[40px] md:py-[60px] md:px-[40px] sm:py-[40px] sm:px-[20px] py-[40px] px-[20px] bg-[#FAFAFA] flex items-center xl:justify-between lg:justify-between md:justify-between sm:gap-[40px] gap-[40px] xl:w-[1180px] lg:w-[714px] md:w-[714px] xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col'>
                 <div className='flex flex-col xl:gap-[18px] lg:gap-[18px] md:gap-[18px] sm:gap-[12px] gap-[12px]'>
                     <p className='font-medium xl:text-[40px] xl:leading-[48px] lg:text-[40px] lg:leading-[48px] md:text-[40px] md:leading-[48px] sm:text-[20px] sm:leading-[24px] text-[20px] leading-[24px] text-[#131313]'>Didn&apos;t find the role <br />you were looking for? </p>
                     <p className='font-normal xl:text-[18px] xl:leading-[26px] lg:text-[18px] lg:leading-[26px] md:text-[18px] md:leading-[26px] sm:text-[14px] sm:leading-[19px] text-[14px] leading-[19px] text-[#454545]'>No worries! <span className='font-medium'>Send us your application </span> <br />we might just have the perfect spot for you soon!</p>

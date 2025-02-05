@@ -16,8 +16,8 @@ function PeoplesWoGetsThingsDone() {
   return (
     <div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 py-0 flex items-center xl:justify-between lg:justify-center mb-8 mt-4 md:mt-0 md:mb-12">
-        <h1 className="text-3xl sm:text-4xl md:text-4xl xl:text-4xl font-[600] xl:max-w-[570px] lg:max-w-[570px]">
-          Empowering <strong className="text-[#FBAE17] font-[600]">Brands</strong> with Media Tech and Animation.
+        <h1 className="text-[24px] font-medium px-4 sm:px-0 sm:text-4xl md:text-4xl md:text-[40px] md:text-center md:max-w-full xl:text-4xl xl:max-w-[570px] lg:max-w-[570px]">
+          Empowering <strong className="text-[#FBAE17] font-[600]">Brands</strong> with Media, Tech and Animation.
         </h1>
         <div className="hidden xl:block">
           <Link href="/about-us" className="h-[56px] w-[173px] rounded-[42px] border py-4 px-5 gap-[4px] flex justify-center items-center bg-[#FFFFFF] border-[#E7E7E7] cursor-pointer">
@@ -27,7 +27,7 @@ function PeoplesWoGetsThingsDone() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 py-0">
-        <div className="flex items-center gap-7 xl:flex-row lg:flex-col md:flex-col sm:flex-col flex-col">
+        <div className="flex items-center sm:gap-7 gap-4 xl:flex-row lg:flex-col md:flex-col sm:flex-col flex-col">
           <div className="xl:w-[452px] xl:h-[518px] lg:w-[714px] lg:h-[818px] md:w-[714px] md:h-[818px] sm:w-[335px] sm:h-[383.92px] w-[335px] h-[383.92px]">
             <Carousel />
           </div>

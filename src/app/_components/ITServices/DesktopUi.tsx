@@ -1258,7 +1258,7 @@ export default DesktopUi
 
 
 
-const HoverButton = ({ href, buttonText, defaultIcon, hoverIcon }: {
+export const HoverButton = ({ href, buttonText, defaultIcon, hoverIcon }: {
   href: string; 
   buttonText: string; 
   defaultIcon: string; 
@@ -1273,7 +1273,7 @@ const HoverButton = ({ href, buttonText, defaultIcon, hoverIcon }: {
       onMouseLeave={() => setIsHovered(false)}
       className="cursor-pointer w-[184px] h-[52px] gap-[16px] rounded-[30px] flex items-center justify-center bg-[#131313] transition-colors duration-300"
     >
-      <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5]">
+      <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5] text-nowrap">
         {buttonText}
       </p>
       <div
