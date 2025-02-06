@@ -154,7 +154,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
           />
 
           <p
-            className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy') || pathname.includes("/branding-and-creative")
+            className={`hidden lg:block cursor-pointer text-[16px] leading-[19px] ${pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy') || pathname.includes("/branding-and-creative")
               ? 'text-black' : isScrolled ? 'text-black' : 'text-white'
               }`}
           >

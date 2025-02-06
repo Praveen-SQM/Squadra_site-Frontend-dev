@@ -11,24 +11,51 @@ const Card = ({ alt }) => (
       alt={alt}
       width={435}
       height={262}
-      className="w-full h-full object-cover rounded-[22.94px] sm:w-[330px] sm:h-[200px] md:w-[435.11px] md:h-[262px] lg:w-[435.11px] lg:h-[262px]"
+      className="w-full h-full object-cover rounded-[22.94px] w-[230px] h-[130px] md:w-[435.11px] md:h-[262px] lg:w-[435.11px] lg:h-[262px]"
     />
   </div>
 );
 
 const BrandingCarousel = () => {
   const cardWidth = 435.11; // The width of the card
-  const cardHeight = 262; // The height of the card
+  const cardCount = 4; // Number of unique cards
 
-  // Carousel animation settings
-  const carouselVariants = {
+  // Create an endless array of cards
+  const generateEndlessCards = () => {
+    const cards = [];
+    // Generate a large number of cards to ensure continuous scrolling
+    for (let i = 0; i < 100; i++) {
+      cards.push(
+        <Card key={i} alt={`card ${(i % cardCount) + 1}`} />
+      );
+    }
+    return cards;
+  };
+
+  // Carousel animation settings for top carousel
+  const topCarouselVariants = {
     animate: {
-      x: [-cardWidth, 0], // Move left by card width and reset to the start position
+      x: [0, -cardWidth * cardCount], // Move left by card width
       transition: {
         x: {
-          repeat: Infinity, // Infinite loop
+          repeat: Infinity,
           repeatType: "loop",
-          duration: 10, // 10 seconds for one full scroll
+          duration: 10,
+          ease: "linear",
+        },
+      },
+    },
+  };
+
+  // Carousel animation settings for bottom carousel (reverse direction)
+  const bottomCarouselVariants = {
+    animate: {
+      x: [0, cardWidth * cardCount], // Move right by card width
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 10,
           ease: "linear",
         },
       },
@@ -36,59 +63,27 @@ const BrandingCarousel = () => {
   };
 
   return (
-    <>
-      {/* Top Carousel Section */}
-      <div className="flex flex-col gap-6 w-full items-center bg-black">
-        <div className="w-[1200px] flex flex-col items-center">
-          <motion.div
-            className="flex gap-3"
-            variants={carouselVariants}
-            animate="animate"
-            style={{ display: "flex" }}
-          >
-            {/* Duplicate the cards for infinite scrolling */}
-            <Card alt="card 1" />
-            <Card alt="card 2" />
-            <Card alt="card 3" />
-            <Card alt="card 4" />
-            <Card alt="card 1" />
-            <Card alt="card 2" />
-            <Card alt="card 3" />
-            <Card alt="card 4" />
-          </motion.div>
-        </div>
-
-        {/* Bottom Carousel Section */}
+    <div className="flex flex-col gap-6 w-full items-center bg-black overflow-hidden">
+      <div className="w-[1200px] flex flex-col items-center">
+        {/* Top Carousel */}
         <motion.div
-          className="flex gap-3"
-          variants={{
-            animate: {
-              x: [cardWidth, 0], // Opposite direction for the bottom carousel
-              transition: {
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 10,
-                  ease: "linear",
-                },
-              },
-            },
-          }}
+          className="flex gap-3 w-full"
+          variants={topCarouselVariants}
           animate="animate"
-          style={{ display: "flex" }}
         >
-          {/* Duplicate the cards for infinite scrolling */}
-          <Card alt="card 1" />
-          <Card alt="card 2" />
-          <Card alt="card 3" />
-          <Card alt="card 4" />
-          <Card alt="card 1" />
-          <Card alt="card 2" />
-          <Card alt="card 3" />
-          <Card alt="card 4" />
+          {generateEndlessCards()}
+        </motion.div>
+
+        {/* Bottom Carousel */}
+        <motion.div
+          className="flex gap-3 w-full"
+          variants={bottomCarouselVariants}
+          animate="animate"
+        >
+          {generateEndlessCards()}
         </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -6,7 +6,7 @@ const ourWorkImages = [
     alt: "Image 1",
   },
   {
-    src: "/https://s3-alpha-sig.figma.com/img/c9e4/3e95/cf5df9dcc84a7d79a2904bf51db88fef?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=WHffkIbUWVYL2egUhsIVpLSL4RsjIN3lzCK4OGv8j2~yXonhhDMPfGk7~u20vif0YpHMa4awUWFgW84T7QPu09tAYn--V0DvWcmVZgMi-k~r6Nq2VA5NvPCEX8LB9K-w2iNVshbZfN2NWHQchtKb4ZbMijf-P9lHlbgAqhP8jDYWyNO7WA8phGboEIVRvcaacPjwIqv48xLzfX3aNbdabHFS7WUEwLqCNOpswaxkHwDKjAoi7kWizsr3WBbG0qo7GearEqFTQjthZYZR-of03JGTzSzWeFbF7~9TKU2VQpTdoc6GvaWKLq14NvIpVRQBYGuUe0kchfkyBulFJdBn8Q__",
+    src: "https://s3-alpha-sig.figma.com/img/c9e4/3e95/cf5df9dcc84a7d79a2904bf51db88fef?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=WHffkIbUWVYL2egUhsIVpLSL4RsjIN3lzCK4OGv8j2~yXonhhDMPfGk7~u20vif0YpHMa4awUWFgW84T7QPu09tAYn--V0DvWcmVZgMi-k~r6Nq2VA5NvPCEX8LB9K-w2iNVshbZfN2NWHQchtKb4ZbMijf-P9lHlbgAqhP8jDYWyNO7WA8phGboEIVRvcaacPjwIqv48xLzfX3aNbdabHFS7WUEwLqCNOpswaxkHwDKjAoi7kWizsr3WBbG0qo7GearEqFTQjthZYZR-of03JGTzSzWeFbF7~9TKU2VQpTdoc6GvaWKLq14NvIpVRQBYGuUe0kchfkyBulFJdBn8Q__",
     alt: "Image 2",
   },
   {
@@ -22,20 +22,23 @@ const ourWorkImages = [
 const OurLatestWork = () => {
   return (
     <div className="h-fit flex flex-col w-full items-center bg-black">
-      <div className="w-full max-w-7xl flex flex-col gap-6 items-center py-40 bg-black">
-        <p className="text-6xl text-white">Our Latest works</p>
+      <div className="w-full max-w-7xl flex flex-col gap-6 items-center py-[72px] lg:py-40 bg-black">
+        <div className="bg-white px-4 py-1 md:px-6 md:py-2 rounded-lg text-[12px] md:text-[14px] lg:text-[16px] font-semibold">
+          TOP RATED
+        </div>
+        <p className="text-6xl text-white text-center">Our Latest works</p>
         <p className="text-gray-500 max-w-96 text-center">
           Expand and win in every market with optimised checkout and payments.
         </p>
       </div>
 
       {/* Images Section */}
-      <div className="w-full px-6 py-12 flex flex-col gap-6">
+      <div className="w-full px-6 py-12 flex flex-col">
         {[0, 2].map((rowIndex) => (
-          <div key={rowIndex} className="flex gap-6">
+          <div key={rowIndex} className="flex flex-wrap ">
             <div
-              className={`h-[468px] w-full bg-gray-700 rounded-xl overflow-hidden ${
-                rowIndex === 0 ? "w-1/3" : "w-2/3"
+              className={`h-[363px] md:h-[721px] lg:h-[468px] py-4 lg:py-2 lg:pr-2 w-full rounded-xl overflow-hidden ${
+                rowIndex === 0 ? "lg:w-1/3" : "lg:w-2/3"
               }`}
             >
               <img
@@ -45,8 +48,8 @@ const OurLatestWork = () => {
               />
             </div>
             <div
-              className={`h-[468px] bg-gray-700 rounded-xl overflow-hidden ${
-                rowIndex === 0 ? "w-2/3" : "w-1/3"
+              className={`h-[157px] md:h-[400px] lg:h-[468px] w-full py-4 lg:py-2 lg:pl-2 rounded-xl overflow-hidden ${
+                rowIndex === 0 ? "lg:w-2/3" : "lg:w-1/3"
               }`}
             >
               <img
