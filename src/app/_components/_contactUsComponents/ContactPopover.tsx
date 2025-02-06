@@ -164,7 +164,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       >
         <div className="flex items-center gap-3">
           <Image className="cursor-pointer"
-            src={pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy')
+            src={pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy') || pathname.includes("/branding-and-creative")
               ? callIconBlack : isScrolled ? callIconBlack : callIcon}
             alt="Call Icon"
             width={24}
@@ -172,7 +172,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
           />
 
           <p
-            className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy')
+            className={`hidden md:block cursor-pointer text-[16px] leading-[19px] ${pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy') || pathname.includes("/branding-and-creative")
               ? 'text-black' : isScrolled ? 'text-black' : 'text-white'
               }`}
           >
