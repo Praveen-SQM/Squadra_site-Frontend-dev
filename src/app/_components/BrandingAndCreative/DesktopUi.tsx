@@ -35,7 +35,7 @@ const DesktopUi = () => {
         </div>
         <BrandingCarousel />
         <OurServices />
-        <div className="hidden md:flex md:flex-col">
+        <div className="hidden lg:flex lg:flex-col">
           <ScrollQuoteSelector />
           <OurLatestWork />
         </div>

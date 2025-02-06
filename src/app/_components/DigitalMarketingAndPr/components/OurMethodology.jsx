@@ -73,7 +73,7 @@ const OurMethodology = () => {
             section.bgColor === "black" ? "bg-black" : "bg-[#06135B]"
           }`}
         >
-          <div className="flex items-center justify-between w-full md:max-w-[800px] lg:max-w-[1400px] flex-wrap py-10 pb-4 md:py-[150px]">
+          <div className="flex items-center justify-between w-full md:max-w-[800px] lg:max-w-[1400px] flex-wrap py-10 pb-4 md:py-[55px] lg:py-[150px]">
             <div
               className={`text-[130px] md:text-[220px] lg:text-[240px] pl-6 font-[400] ${
                 section.bgColor === "black" ? "text-white" : "text-yellow-300"
@@ -82,7 +82,7 @@ const OurMethodology = () => {
               {section.number}
             </div>
 
-            <div className="max-w-[300px] lg:max-w-[500px] w-full px-4 text-white">
+            <div className="max-w-[300px] lg:max-w-[490px] w-full px-4 text-white">
               <h2 className="text-[20px] md:text-[32px] lg:text-[48px] font-bold uppercase">
                 {section.heading}
               </h2>
