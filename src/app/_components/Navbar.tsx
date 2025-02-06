@@ -57,6 +57,7 @@ const Navbar = () => {
   const services = [
     {
       title: "Technology & Development",
+      link: "/it-services",
       items: [
         // "Web & Mobile App Development",
         // "E-commerce Solutions",
@@ -68,6 +69,7 @@ const Navbar = () => {
     },
     {
       title: "Branding & Creative",
+      link: "/branding-and-creative",
       items: [
         // "Brand Strategy & Consulting",
         // "Logo Design & Brand Identity",
@@ -79,6 +81,7 @@ const Navbar = () => {
     },
     {
       title: "Digital Marketing & PR",
+      link: "/digital-marketing-and-pr",
       items: [
         // "Social Media Management",
         // "SEO & SEM",
@@ -91,6 +94,7 @@ const Navbar = () => {
     },
     {
       title: "Visual Impact",
+      link: "/visual-impact",
       items: [
         // "Commercial Photography",
         // "Corporate Films",
@@ -502,15 +506,18 @@ const Navbar = () => {
                       <li key={index}>
                         <div
                           className="py-3 text-base transition-all duration-500 text-black flex justify-between items-center cursor-pointer"
-                          onClick={() => toggleSubmenu(index)}
+                          onClick={() => {
+                            toggleSubmenu(index);
+                            setIsSidebarOpen(false);
+                          }}
                         >
-                          {service.title === "Technology & Development" ? (
-                            <a href="/it-services" className="">
-                              {service.title}
-                            </a>
-                          ) : (
+                          {/* {service.title === "Technology & Development" ? ( */}
+                          <Link href={service.link} className="">
+                            {service.title}
+                          </Link>
+                          {/* ) : (
                             <span>{service.title}</span>
-                          )}
+                          )} */}
 
                           {/* {activeService === index ? (
                           <ChevronDown className="h-5 w-5" />
