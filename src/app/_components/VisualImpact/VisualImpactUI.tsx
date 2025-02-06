@@ -23,7 +23,7 @@ import visualImageEight from '@/utilities/images/visual-8.png'
 import visualImageNine from '@/utilities/images/visual-9.png'
 import visualImageTen from '@/utilities/images/visual-10.png'
 import visualImageEleven from '@/utilities/images/visual-11.png'
-
+import { InfiniteSliderVertical } from './InfiniteSliderVertical';
 function VisualImpactUi() {
 
     const services = [
@@ -156,6 +156,56 @@ function VisualImpactUi() {
                     )
                 })}
             </div>
+
+            {/*Values section*/}
+            <div className='py-[100px]'>
+                {/* 1st */}
+                <div className="xl:w-[765px] lg:w-[617px] md:w-[617px] mt-[100px] xl:ml-[124px] flex gap-[74px] py-10 pr-10 border-b border-gray-700">
+                    <div className='flex gap-[12px]'>
+                        <p className='text-[40px] font-semibold text-white'>VISION</p>
+                    </div>
+                    <div className='h-[80px]'>
+                        <h1 className='uppercase text-[20px] font-normal text-white'>CRAFTING Stories</h1>
+                        <p className='text-[14px] font-light text-white'>We focus on creating visuals that go beyond aesthetics, delivering meaningful stories through every frame.</p>
+                    </div>
+                </div>
+                {/* 2nd */}
+                <div className="xl:w-[873px] lg:w-[632px] md:w-[632px] xl:ml-[371px] md:ml-[67px] flex gap-[74px] py-10 pr-10 border-b border-gray-700">
+                    <div className='flex gap-[12px]'>
+                        <p className='text-[40px] font-semibold text-white'>INNOVATION</p>
+                    </div>
+                    <div className='h-[80px]'>
+                        <h1 className='uppercase text-[20px] font-normal text-white'>Pushing Boundaries</h1>
+                        <p className='text-[14px] font-light text-[#E7E7E7]'>Harnessing cutting-edge technology, we redefine visual content through drone videography, cinematic visuals, and promotional films.</p>
+                    </div>
+                </div>
+                {/* 3th */}
+
+                <div className="xl:w-[882px] lg:w-[617px] md:w-[617px] xl:ml-[174px] flex gap-[74px] py-10 pr-10 border-b border-gray-700">
+                    <div className='flex gap-[12px]'>
+                        <p className='text-[40px] font-semibold text-white'>EXCELLENCE</p>
+                    </div>
+                    <div className='h-[80px]'>
+                        <h1 className='uppercase text-[20px] font-normal text-white'>Precision in Every Shot</h1>
+                        <p className='text-[14px] font-light text-[#E7E7E7]'>Every detail matters. From corporate films to product photography, we ensure each project reflects your brand&apos;s essence.</p>
+                    </div>
+                </div>
+                {/* 4th */}
+                <div className="xl:w-[924px] lg:w-[632px] md:w-[632px] xl:ml-[392px] md:ml-[67px] flex gap-[74px] py-10 border-b border-gray-700">
+                    <div className='flex gap-[12px]'>
+                        <p className='text-[40px] font-semibold text-white'>COLLABORATION</p>
+                    </div>
+                    <div className='h-[80px] w-full'>
+                        <h1 className='uppercase text-[20px] font-normal text-white'>Your Vision, Our Expertise</h1>
+                        <p className='text-[14px] font-light text-[#E7E7E7]'>Working closely with clients, we translate ideas into visuals that captivate and inspire audiences.</p>
+                    </div>
+                </div>
+            </div>
+
+            {/*Infinite slider*/}
+            {/* <section  className='ovrerflow-x-hidden'>
+            <InfiniteSliderVertical/>
+            </section> */}
 
             {/*Visual journeys section*/}
             <div className='flex flex-col xl:pt-[120px] xl:pb-[80px] lg:pt-[0px] lg:pb-[0px] md:pt-[0px] md:pb-[0px] xl:mt-0 lg:mt-[49px] md:mt-[49px] mt-[61px] xl:gap-[138px] lg:gap-[49px] md:gap-[49px] gap-[61px]'>
