@@ -85,23 +85,24 @@ export function InfiniteSlider({
       }
     : {};
 
-  return (
-    <div className={cn('overflow-hidden', className)}>
-      <motion.div
-        className='flex w-max'
-        style={{
-          ...(direction === 'horizontal'
-            ? { x: translation }
-            : { y: translation }),
-          gap: `${gap}px`,
-          flexDirection: direction === 'horizontal' ? 'row' : 'column',
-        }}
-        ref={ref}
-        {...hoverProps}
-      >
-        {children}
-        {children}
-      </motion.div>
-    </div>
-  );
+    return (
+        <div className={cn("overflow-hidden w-full", className)}> {/* Ensure it doesn't overflow */}
+          <motion.div
+            className="flex w-fit" // Change from `w-max` to `w-fit`
+            style={{
+              ...(direction === "horizontal"
+                ? { x: translation }
+                : { y: translation }),
+              gap: `${gap}px`,
+              flexDirection: direction === "horizontal" ? "row" : "column",
+            }}
+            ref={ref}
+            {...hoverProps}
+          >
+            {children}
+            {children}
+          </motion.div>
+        </div>
+      );
+      
 }

@@ -11,10 +11,10 @@ const images = [
 ]
 
 const texts = [
-  "Our team is the core of Squadra Media.",
-  "Creativity fuels our innovation.",
-  "Collaboration drives our success.",
-  "Together, we create excellence."
+  " Our team is the foundation of innovation.",
+  "Creativity fuels our vision and growth.",
+  "Collaboration turns ideas into reality.",
+  "Excellence drives everything we create."
 ]
 
 export default function Carousel() {
@@ -64,7 +64,7 @@ export default function Carousel() {
       </div>
 
       {/* Indicators with Progress Bar */}
-      <div className="absolute bottom-4 left-[24%] transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-4 lg:left-[24%] md:left-[15%] left-[33%] transform -translate-x-1/2 flex space-x-2 z-10">
         {images.map((_, index) => (
           <div
             key={index}

@@ -19,6 +19,7 @@ import toast from "react-hot-toast";
 
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import { Input } from "@/components/ui/input";
 
 interface FormData {
   phone: string;
@@ -28,6 +29,8 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
   const [open, setOpen] = React.useState(false);
   const [phone, setPhoneInput] = React.useState('')
   const [errorMessage, setErrorMessage] = React.useState('')
+  const [fullName,setFullName] = React.useState('')
+  const [fullNameErrorMessage, setFullNameErrorMessage] = React.useState('')
   const pathname = usePathname();
   const {
 
@@ -41,6 +44,12 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       setErrorMessage('')
     }
   }, [errorMessage, phone])
+
+  useEffect(() => {
+    if ((fullNameErrorMessage === "Please enter full name") && fullName.length >0) {
+      setFullNameErrorMessage('')
+    }
+  }, [fullNameErrorMessage, fullName])
 
 
   // const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -89,10 +98,17 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
   const sendRequest = async () => {
     if (phone.length === 0) {
       setErrorMessage('Please enter phone number')
+      if(fullName?.length === 0){
+        setFullNameErrorMessage('Please enter full name')
+      }
       return
     }
     if (phone.length < 12) {
       setErrorMessage('Please enter valid phone number')
+      return
+    }
+    if(fullName?.length === 0){
+      setFullNameErrorMessage('Please enter full name')
       return
     }
     setLoading(true);
@@ -133,6 +149,8 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       console.error("Error sending callback request:", error);
     } finally {
       setLoading(false);
+      setPhoneInput('')
+      setFullName('')
     }
   };
 
@@ -194,6 +212,22 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
             <div className="grid gap-4">
               <h3 className="text-lg font-semibold">Request a call back</h3>
               <form onSubmit={sendRequest} className="grid gap-4">
+              <div className="grid gap-2">
+                  <label htmlFor="fullName" className="text-sm font-medium">
+                    Full Name*
+                  </label>
+                  <Input
+                    id="fullName"
+                    type="text"
+                    className="flex-1"
+                    placeholder="Enter your name"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                  />
+                  {(fullNameErrorMessage === "Please enter full name") && (
+                    <p className="text-red-500 text-sm">{fullNameErrorMessage}</p>
+                  )}
+                </div>
                 <div className="grid gap-2">
                   <label htmlFor="phone" className="text-sm font-medium">
                     Phone Number*
