@@ -2,6 +2,8 @@ import React from "react";
 import OurMethodology from "./components/OurMethodology";
 import UnleashPotential from "./components/UnleashPotential";
 import WhatWeDo from "./components/WhatWeDo";
+import { InfiniteSliderBasic } from "./components/TrustedBy";
+import { ArrowBigDown, ArrowDown } from "lucide-react";
 // import OurLatestWork from "./components/OurLatestWork"
 // import TrustedBy from "./components/TrustedBy"
 const DesktopUi = () => {
@@ -21,22 +23,30 @@ const DesktopUi = () => {
           />
         </video>
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-          <h1 className="text-7xl font-bold text-white mb-4">
-            We connect your brand with your audience.
-          </h1>
-          <p className="text-xl text-white max-w-[600px]">
-            We don't just run campaigns; we build connections between your brand
-            and your audience.
-          </p>
+        <div className="absolute inset-0 flex flex-col items-center justify-between text-center">
+          <p className="transparent">.</p>
+          <div className="s">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white w-[300px] md:w-full mb-4">
+              We connect your brand with your audience.
+            </h1>
+            <p className="sm:text-[13px] md:text-[16px] lg:text-xl text-white w-[300px] md:w-full">
+              We don't just run campaigns; we build connections between your
+              brand and your audience.
+            </p>
+          </div>
+          <p className="text-white flex gap-2 mb-4 text-[13px] justify-center w-[300px] md:w-full md:text-[16px]">
+          <ArrowDown size={20}/> Scroll to explore
+        </p>
         </div>
+     
       </div>
       <div className="h-fit flex flex-col  w-full  items-center bg-black">
-        <div
-          className="w-[1300px] flex flex-col items-center py-[161px] bg-black"
-          style={{ height: "655px" }}
-        >
-          <p className="text-white text-[62px] leading-[66px] font-bold text-center uppercase">
+        <div className="max-w-[1300px] flex flex-col items-center py-20 md:py-[161px] bg-black">
+          <p className="text-white text-sm md:text-[16px] mb-2">
+            SQUADRA MEDIA
+          </p>
+
+          <p className="text-white text-[24px] md:text-[55px] lg:text-[62px] px-16 lg:px-0 leading-[30px] md:leading-[66px] font-bold text-center uppercase">
             <strong className="font-semibold text-gray-500">
               We're all about{" "}
             </strong>
@@ -48,13 +58,9 @@ const DesktopUi = () => {
           </p>
         </div>
         <OurMethodology />
-        <UnleashPotential />
+        {/* <UnleashPotential /> */}
         <WhatWeDo />
-        {/* <BrandingCarousel/>
-        <OurServices/>
-        <ScrollableNavigation/>
-        <OurLatestWork/>
-        <TrustedBy/> */}
+        <InfiniteSliderBasic />
       </div>
     </>
   );

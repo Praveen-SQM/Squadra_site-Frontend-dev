@@ -53,13 +53,13 @@ const OurMethodology = () => {
   return (
     <div className="w-full">
       {/* Top Section */}
-      <div className="h-[600px] bg-[#06135B] w-full flex flex-col justify-center items-center text-center text-white gap-4">
-        <div className="uppercase">Our Services</div>
-        <div className="text-7xl font-bold uppercase">
+      <div className="py-24 md:py-36 bg-[#06135B] w-full flex flex-col justify-center items-center text-center text-white gap-4">
+        <div className="uppercase text-[14px] md:text-[16px]">Our Services</div>
+        <div className="text-4xl md:text-7xl lg:font-bold uppercase">
           <span className="opacity-50">OUR Winning</span> <br />
           <span>Methodology</span>
         </div>
-        <div className="text-[18px] w-[550px] font-[400]">
+        <div className="text-[14px] md:text-[16px] lg:text-[18px] w-[295px] md:w-[550px] font-[400]">
           We don’t just run campaigns; we build connections between your brand
           and your audience.
         </div>
@@ -73,20 +73,20 @@ const OurMethodology = () => {
             section.bgColor === "black" ? "bg-black" : "bg-[#06135B]"
           }`}
         >
-          <div className="flex items-center justify-between w-full md:max-w-[800px] lg:max-w-[1400px] flex-wrap py-[150px]">
+          <div className="flex items-center justify-between w-full md:max-w-[800px] lg:max-w-[1400px] flex-wrap py-10 pb-4 md:py-[150px]">
             <div
-              className={`text-[240px] font-[400] ${
+              className={`text-[130px] md:text-[220px] lg:text-[240px] pl-6 font-[400] ${
                 section.bgColor === "black" ? "text-white" : "text-yellow-300"
               }`}
             >
               {section.number}
             </div>
 
-            <div className="max-w-[300px] lg:max-w-[500px] w-full text-white">
-              <h2 className="text-[37px] lg:text-[48px] font-bold uppercase">
+            <div className="max-w-[300px] lg:max-w-[500px] w-full px-4 text-white">
+              <h2 className="text-[20px] md:text-[32px] lg:text-[48px] font-bold uppercase">
                 {section.heading}
               </h2>
-              <p className="text-[18px] font-[300] mt-4">
+              <p className="text-[14px] md:text-[16px] lg:text-[18px] font-[300] mt-4">
                 {section.description}
               </p>
             </div>
@@ -95,7 +95,7 @@ const OurMethodology = () => {
               <img
                 src={section.imageUrl}
                 alt="Section"
-                className="w-[274px] lg:w-[474px] bg-gray-700 rounded-lg object-cover"
+                className="w-full md:w-[274px] lg:w-[474px] bg-gray-700 rounded-lg object-cover"
               />
             </div>
           </div>

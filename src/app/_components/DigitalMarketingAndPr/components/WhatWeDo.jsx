@@ -15,14 +15,14 @@ const WhatWeDo = () => {
   return (
     <div className="w-full max-w-[1400px] bg-black py-20">
       {/* Centered "WHAT WE DO" Heading */}
-      <div className="text-center text-white uppercase text-4xl font-bold mb-20">
+      <div className="text-center text-white uppercase text-xl font-bold mb-10">
         WHAT WE DO
       </div>
 
       {/* Grid of Images with Text Overlays */}
-      <div className="grid grid-cols-1 gap-8 px-4">
+      <div className="grid grid-cols-1 gap-4 md:gap-6 lg:gap-8 px-4">
         {images.map((image, index) => (
-          <div key={index} className="relative h-[681px]">
+          <div key={index} className="relative h-[310px] md:h-[560px] lg:h-[681px]">
             {/* Image */}
             <img
               src={image}
@@ -32,7 +32,7 @@ const WhatWeDo = () => {
 
             {/* Text Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-white text-7xl md:text-8xl lg:text-9xl font-bold uppercase text-center">
+              <div className="text-white text-5xl md:text-8xl lg:text-9xl font-bold uppercase text-center">
                 {textOverlays[index]}
               </div>
             </div>
