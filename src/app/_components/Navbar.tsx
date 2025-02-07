@@ -386,7 +386,7 @@ const Navbar = () => {
                     {/* Go to overview link */}
                     <div className="ml-20">
                     <Link 
-                      href="#" 
+                      href="/our-services" 
                       className="inline-flex items-center text-gray-900 hover:underline"
                     >
                       Go to overview <ArrowRight className="ml-2 h-4 w-4" />
