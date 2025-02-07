@@ -17,8 +17,8 @@ import callIcon from "@/utilities/icons/Call.svg";
 import callIconBlack from "@/utilities/icons/call-icon-black.svg";
 import toast from "react-hot-toast";
 
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { Input } from "@/components/ui/input";
 
 interface FormData {
@@ -27,30 +27,33 @@ interface FormData {
 
 export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
   const [open, setOpen] = React.useState(false);
-  const [phone, setPhoneInput] = React.useState('')
-  const [errorMessage, setErrorMessage] = React.useState('')
-  const [fullName,setFullName] = React.useState('')
-  const [fullNameErrorMessage, setFullNameErrorMessage] = React.useState('')
+  const [phone, setPhoneInput] = React.useState("");
+  const [errorMessage, setErrorMessage] = React.useState("");
+  const [fullName, setFullName] = React.useState("");
+  const [fullNameErrorMessage, setFullNameErrorMessage] = React.useState("");
   const pathname = usePathname();
-  const {
-
-
-  } = useForm<FormData>();
+  const {} = useForm<FormData>();
 
   const [loading, setLoading] = React.useState(false);
 
   useEffect(() => {
-    if ((errorMessage === "Please enter phone number" || errorMessage === "Please enter valid phone number") && phone.length === 12) {
-      setErrorMessage('')
+    if (
+      (errorMessage === "Please enter phone number" ||
+        errorMessage === "Please enter valid phone number") &&
+      phone.length === 12
+    ) {
+      setErrorMessage("");
     }
-  }, [errorMessage, phone])
+  }, [errorMessage, phone]);
 
   useEffect(() => {
-    if ((fullNameErrorMessage === "Please enter full name") && fullName.length >0) {
-      setFullNameErrorMessage('')
+    if (
+      fullNameErrorMessage === "Please enter full name" &&
+      fullName.length > 0
+    ) {
+      setFullNameErrorMessage("");
     }
-  }, [fullNameErrorMessage, fullName])
-
+  }, [fullNameErrorMessage, fullName]);
 
   // const onSubmit: SubmitHandler<FormData> = async (data) => {
   //   console.log("phone--->",phone)
@@ -97,19 +100,19 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
 
   const sendRequest = async () => {
     if (phone.length === 0) {
-      setErrorMessage('Please enter phone number')
-      if(fullName?.length === 0){
-        setFullNameErrorMessage('Please enter full name')
+      setErrorMessage("Please enter phone number");
+      if (fullName?.length === 0) {
+        setFullNameErrorMessage("Please enter full name");
       }
-      return
+      return;
     }
     if (phone.length < 12) {
-      setErrorMessage('Please enter valid phone number')
-      return
+      setErrorMessage("Please enter valid phone number");
+      return;
     }
-    if(fullName?.length === 0){
-      setFullNameErrorMessage('Please enter full name')
-      return
+    if (fullName?.length === 0) {
+      setFullNameErrorMessage("Please enter full name");
+      return;
     }
     setLoading(true);
     try {
@@ -133,7 +136,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               <br>
               <p>Thank you & Regards,<br><b>Team</b></p>
             </body>
-          </html>`
+          </html>`,
           },
         }),
       });
@@ -142,18 +145,17 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       if (response.ok) {
         toast.success("Callback Requested successfully");
       } else {
-        toast.error(result.message || 'Failed to send callback request');
+        toast.error(result.message || "Failed to send callback request");
       }
     } catch (error) {
-      toast.error('An error occurred while sending the callback request');
+      toast.error("An error occurred while sending the callback request");
       console.error("Error sending callback request:", error);
     } finally {
       setLoading(false);
-      setPhoneInput('')
-      setFullName('')
+      setPhoneInput("");
+      setFullName("");
     }
   };
-
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -163,24 +165,45 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
         asChild
       >
         <div className="flex items-center gap-3">
-          <Image className="cursor-pointer"
-            src={pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy') || pathname.includes("/branding-and-creative")
-              ? callIconBlack : isScrolled ? callIconBlack : callIcon}
+          <Image
+            className="cursor-pointer"
+            src={
+              pathname.includes("/contact-us") ||
+              pathname.includes("/openings") ||
+              pathname.includes("/job-details") ||
+              pathname.includes("/job-apply") ||
+              pathname.includes("/privacy-policy") ||
+              pathname.includes("/our-services") ||
+              pathname.includes("/branding-and-creative")
+
+                ? callIconBlack
+                : isScrolled
+                ? callIconBlack
+                : callIcon
+            }
             alt="Call Icon"
             width={24}
             height={24}
           />
 
           <p
-            className={`hidden lg:block cursor-pointer text-[16px] leading-[19px] ${pathname.includes("/contact-us") || pathname.includes("/openings") || pathname.includes("/job-details") || pathname.includes("/job-apply") || pathname.includes('/privacy-policy') || pathname.includes("/branding-and-creative")
-              ? 'text-black' : isScrolled ? 'text-black' : 'text-white'
-              }`}
+            className={`hidden lg:block cursor-pointer text-[16px] leading-[19px] ${
+              pathname.includes("/contact-us") ||
+              pathname.includes("/our-services") ||
+              pathname.includes("/openings") ||
+              pathname.includes("/job-details") ||
+              pathname.includes("/job-apply") ||
+              pathname.includes("/privacy-policy") ||
+              pathname.includes("/branding-and-creative")
+                ? "text-black"
+                : isScrolled
+                ? "text-black"
+                : "text-white"
+            }`}
           >
             Schedule a Call
           </p>
-
         </div>
-
       </PopoverTrigger>
       <PopoverContent
         className="w-[400px] p-1 bg-gray-200 m"
@@ -189,9 +212,12 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       >
         <Card className="border-0 shadow-none">
           <CardHeader className="pb-4">
-            <CardTitle className="text-xl">Connect with a Sales Specialist</CardTitle>
+            <CardTitle className="text-xl">
+              Connect with a Sales Specialist
+            </CardTitle>
             <p className="text-sm text-muted-foreground">
-              Our team of experts is available around the clock to guide you toward the perfect solution for your business.
+              Our team of experts is available around the clock to guide you
+              toward the perfect solution for your business.
             </p>
           </CardHeader>
           <CardContent className="grid gap-6">
@@ -199,9 +225,9 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               <Phone className="h-4 w-4" />
               <a
                 href="tel:+917204701593"
-                className="text-lg font-semibold hover:underline"
+                className="tex    t-lg font-semibold hover:underline"
               >
-                +91  96068 27607
+                +91 96068 27607
               </a>
             </div>
           </CardContent>
@@ -212,7 +238,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
             <div className="grid gap-4">
               <h3 className="text-lg font-semibold">Request a call back</h3>
               <form onSubmit={sendRequest} className="grid gap-4">
-              <div className="grid gap-2">
+                <div className="grid gap-2">
                   <label htmlFor="fullName" className="text-sm font-medium">
                     Full Name*
                   </label>
@@ -224,8 +250,10 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                   />
-                  {(fullNameErrorMessage === "Please enter full name") && (
-                    <p className="text-red-500 text-sm">{fullNameErrorMessage}</p>
+                  {fullNameErrorMessage === "Please enter full name" && (
+                    <p className="text-red-500 text-sm">
+                      {fullNameErrorMessage}
+                    </p>
                   )}
                 </div>
                 <div className="grid gap-2">
@@ -247,15 +275,16 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
                   <PhoneInput
                     inputStyle={{
                       width: "100%",
-                      height: "40px"
+                      height: "40px",
                     }}
-                    country={'in'}
+                    country={"in"}
                     value={phone}
                     containerClass="flex-1 w-full text-[15px] relative"
                     inputClass="flex-1 w-full relative text-[14px] pl-[48px] ml-0 bg-[#FFFFFF] border border-[#CACACA]"
                     onChange={(value) => setPhoneInput(value)}
                   />
-                  {(errorMessage === "Please enter phone number" || errorMessage === "Please enter valid phone number") && (
+                  {(errorMessage === "Please enter phone number" ||
+                    errorMessage === "Please enter valid phone number") && (
                     <p className="text-red-500 text-sm">{errorMessage}</p>
                   )}
                 </div>

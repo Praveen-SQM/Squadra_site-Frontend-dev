@@ -6,7 +6,7 @@ import logo from "../../utilities/icons/Logo-1.svg";
 import callIcon from "../../utilities/icons/Call.svg";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import { ContactPopover } from "./_contactUsComponents/ContactPopover";
 import itLogo from "@/utilities/images/it-logo.svg";
 import itLogocolor from "@/utilities/images/itLogoColoured.svg";
@@ -114,6 +114,7 @@ const Navbar = () => {
       <nav
         className={`fixed z-50 w-full p-2 lg:px-32 transition-all duration-300 ${
           pathname.includes("/contact-us") ||
+          pathname.includes("/our-services") ||
           pathname.includes("/branding-and-creative") ||
           pathname.includes("/openings") ||
           pathname.includes("/direct-apply") ||
@@ -133,6 +134,7 @@ const Navbar = () => {
                 <Image
                   src={
                     pathname.includes("/contact-us") ||
+                    pathname.includes("/our-services") ||
                     pathname.includes("/branding-and-creative") ||
                     pathname.includes("/openings") ||
                     pathname.includes("/direct-apply") ||
@@ -226,6 +228,8 @@ const Navbar = () => {
                           <br />
                           Impact.
                         </h2>
+
+                        <Link href='/our-services' className="py-4 text-sm flex gap-2 hover:gap-4 transition-all">Go to overview <ArrowRight/></Link>
                       </div>
 
                       {/* Right Columns - Services */}
@@ -372,6 +376,7 @@ const Navbar = () => {
               <li
                 className={`hidden lg:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${
                   pathname.includes("/contact-us") ||
+                  pathname.includes("/our-services") ||
                   pathname.includes("/branding-and-creative") ||
                   pathname.includes("/openings") ||
                   pathname.includes("/direct-apply") ||
