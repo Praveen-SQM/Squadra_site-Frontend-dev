@@ -230,18 +230,18 @@ function VisualImpactUi() {
                 <div className='flex sm:flex-row flex-col items-center xl:gap-5 lg:gap-[10px] md:gap-[10px] sm:gap-[10px] gap-4'>
                     <div className='flex items-center xl:gap-5 lg:gap-[10px] md:gap-[10px] sm:gap-[10px] gap-4'>
                         <div className='flex flex-col xl:gap-5 lg:gap-[10px] md:gap-[10px] sm:gap-[10px] gap-4'>
-                            {firstVisualImagesSet?.map((item) => {
+                            {firstVisualImagesSet?.map((item,index) => {
                                 return (
-                                    <div className='xl:w-[200px] xl:h-[261px] lg:w-[117px] lg:h-[187px] md:w-[110px] md:h-[187px] sm:w-[110px] sm:h-[187px] w-[144px] h-[232.67px]'>
+                                    <div key={index} className='xl:w-[200px] xl:h-[261px] lg:w-[117px] lg:h-[187px] md:w-[110px] md:h-[187px] sm:w-[110px] sm:h-[187px] w-[144px] h-[232.67px]'>
                                         <Image src={item?.image} alt='Visual one' className='xl:w-[200px] xl:h-[261px] lg:w-[117px] lg:h-[187px] md:w-[117px] md:h-[187px] sm:w-[117px] sm:h-[187px] w-[144px] h-[232.67px] object-cover' />
                                     </div>
                                 )
                             })}
                         </div>
                         <div className='flex flex-col xl:gap-5 lg:gap-[10px] md:gap-[10px] sm:gap-[10px] gap-4'>
-                            {secondVisualImagesSet?.map((item) => {
+                            {secondVisualImagesSet?.map((item,index) => {
                                 return (
-                                    <div className='xl:w-[270px] xl:h-[402px] lg:w-[157px] lg:h-[286px] md:w-[150px] md:h-[286px] sm:w-[150px] sm:h-[286px] w-[217px] h-[357px]'>
+                                    <div key={index} className='xl:w-[270px] xl:h-[402px] lg:w-[157px] lg:h-[286px] md:w-[150px] md:h-[286px] sm:w-[150px] sm:h-[286px] w-[217px] h-[357px]'>
                                         <Image src={item?.image} alt='Visual one' className='xl:w-[270px] xl:h-[402px] lg:w-[157px] lg:h-[286px] md:w-[157px] md:h-[286px] sm:w-[157px] sm:h-[286px] w-[217px] h-[357px] object-cover' />
                                     </div>
                                 )
@@ -253,18 +253,18 @@ function VisualImpactUi() {
                     </div>
                     <div className='flex items-center xl:gap-5 lg:gap-[10px] md:gap-[10px] sm:gap-[10px] gap-4'>
                         <div className='flex flex-col xl:gap-5 lg:gap-[10px] md:gap-[10px] sm:gap-[10px] gap-4'>
-                            {ThirdVisualImagesSet?.map((item) => {
+                            {ThirdVisualImagesSet?.map((item,index) => {
                                 return (
-                                    <div className='xl:w-[270px] xl:h-[402px] lg:w-[157px] lg:h-[286px] md:w-[150px] md:h-[286px] sm:w-[150px] sm:h-[286px] w-[217px] h-[357px]'>
+                                    <div key={index} className='xl:w-[270px] xl:h-[402px] lg:w-[157px] lg:h-[286px] md:w-[150px] md:h-[286px] sm:w-[150px] sm:h-[286px] w-[217px] h-[357px]'>
                                         <Image src={item?.image} alt='Visual one' className='xl:w-[270px] xl:h-[402px] lg:w-[157px] lg:h-[286px] md:w-[157px] md:h-[286px] sm:w-[157px] sm:h-[286px] w-[217px] h-[357px] object-cover' />
                                     </div>
                                 )
                             })}
                         </div>
                         <div className='flex flex-col xl:gap-5 lg:gap-[10px] md:gap-[10px] sm:gap-[10px] gap-4'>
-                            {FourVisualImagesSet?.map((item) => {
+                            {FourVisualImagesSet?.map((item,index) => {
                                 return (
-                                    <div className='xl:w-[200px] xl:h-[261px] lg:w-[117px] lg:h-[187px] md:w-[110px] md:h-[187px] sm:w-[110px] sm:h-[187px] w-[144px] h-[232.67px]'>
+                                    <div key={index} className='xl:w-[200px] xl:h-[261px] lg:w-[117px] lg:h-[187px] md:w-[110px] md:h-[187px] sm:w-[110px] sm:h-[187px] w-[144px] h-[232.67px]'>
                                         <Image src={item?.image} alt='Visual one' className='xl:w-[200px] xl:h-[261px] lg:w-[117px] lg:h-[187px] md:w-[117px] md:h-[187px] sm:w-[117px] sm:w-[117px] sm:h-[187px] w-[144px] h-[232.67px] object-cover' />
                                     </div>
                                 )

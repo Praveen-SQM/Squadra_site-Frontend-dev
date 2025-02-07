@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ServicesContainer({ service, index }: any) {
   const isEven = index % 2 === 0;
 
@@ -46,7 +46,7 @@ export default function ServicesContainer({ service, index }: any) {
 
           {/* Service List */}
           <div className="w-full md:max-w-[254px] order-3">
-            {service?.list?.map((item: String, index: number) => (
+            {service?.list?.map((item: string, index: number) => (
               <div
                 key={index}
                 className={`cursor-pointer py-[12px] transition-colors border-b ${

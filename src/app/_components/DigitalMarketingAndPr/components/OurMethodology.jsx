@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const OurMethodology = () => {
@@ -92,7 +93,7 @@ const OurMethodology = () => {
             </div>
 
             <div className="m-4">
-              <img
+              <Image fill
                 src={section.imageUrl}
                 alt="Section"
                 className="w-full md:w-[274px] lg:w-[474px] bg-gray-700 rounded-lg object-cover"

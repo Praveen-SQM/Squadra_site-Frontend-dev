@@ -1,4 +1,5 @@
 import { Lightbulb } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 const UnleashPotential = () => {
@@ -22,7 +23,7 @@ const UnleashPotential = () => {
         <div className="lg:flex justify-between w-full">
           {/* Image 1 */}
           <div className="relative lg:w-1/2 h-[420px] md:h-[800px] bg-gray-700 m-4 rounded-lg">
-            <img
+            <Image fill
               src="your-image-url-2.jpg"
               alt="Image 2"
               className="w-full h-full"
@@ -39,7 +40,7 @@ const UnleashPotential = () => {
 
           {/* Image 2 */}
           <div className="relative lg:w-1/2 h-[420px] md:h-[800px] bg-gray-700 m-4 rounded-lg">
-            <img
+            <Image fill
               src="your-image-url-2.jpg"
               alt="Image 2"
               className="w-full h-full"
@@ -57,7 +58,7 @@ const UnleashPotential = () => {
 
         {/* Image 3 (Bottom Image) */}
         <div className="relative h-[420px] md:h-[800px] bg-gray-700 m-4 rounded-lg">
-          <img
+          <Image fill
             src="your-image-url-3.jpg"
             alt="Image 3"
             className="w-full h-auto"

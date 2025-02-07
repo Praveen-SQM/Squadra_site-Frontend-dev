@@ -1,9 +1,8 @@
 import React from "react";
 import OurMethodology from "./components/OurMethodology";
-import UnleashPotential from "./components/UnleashPotential";
 import WhatWeDo from "./components/WhatWeDo";
 import { InfiniteSliderBasic } from "./components/TrustedBy";
-import { ArrowBigDown, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 // import OurLatestWork from "./components/OurLatestWork"
 // import TrustedBy from "./components/TrustedBy"
 import WorkTogether from "./components/WorkTogether";
@@ -31,7 +30,7 @@ const DesktopUi = () => {
               We connect your brand with your audience.
             </h1>
             <p className="sm:text-[13px] md:text-[16px] lg:text-xl text-white w-[300px] md:w-full">
-              We don't just run campaigns; we build connections between your
+              We don&apos;t just run campaigns; we build connections between your
               brand and your audience.
             </p>
           </div>
@@ -49,7 +48,7 @@ const DesktopUi = () => {
 
           <p className="text-white text-[24px] md:text-[55px] lg:text-[62px] px-16 lg:px-0 leading-[30px] md:leading-[66px] font-bold text-center uppercase">
             <strong className="font-semibold text-gray-500">
-              We're all about{" "}
+              We&apos;re all about{" "}
             </strong>
             bringing your brand{" "}
             <strong className="font-semibold text-gray-500">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const WhatWeDo = () => {
@@ -24,7 +25,7 @@ const WhatWeDo = () => {
         {images.map((image, index) => (
           <div key={index} className="relative h-[310px] md:h-[560px] lg:h-[681px]">
             {/* Image */}
-            <img
+            <Image fill
               src={image}
               alt={`What We Do ${index + 1}`}
               className="w-full h-full object-cover"

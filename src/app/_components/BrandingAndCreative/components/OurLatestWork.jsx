@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const ourWorkImages = [
@@ -41,7 +42,7 @@ const OurLatestWork = () => {
                 rowIndex === 0 ? "lg:w-1/3" : "lg:w-2/3"
               }`}
             >
-              <img
+              <Image fill
                 src={ourWorkImages[rowIndex].src}
                 alt={ourWorkImages[rowIndex].alt}
                 className="w-full h-full object-cover rounded-xl"
@@ -52,7 +53,7 @@ const OurLatestWork = () => {
                 rowIndex === 0 ? "lg:w-2/3" : "lg:w-1/3"
               }`}
             >
-              <img
+              <Image fill
                 src={ourWorkImages[rowIndex + 1].src}
                 alt={ourWorkImages[rowIndex + 1].alt}
                 className="w-full h-full object-cover rounded-xl"

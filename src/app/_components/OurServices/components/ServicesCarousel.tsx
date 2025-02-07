@@ -29,7 +29,7 @@ const cardStyles = [
   },
 ];
 
-const Card = ({ index }) => {
+const Card = ({ index }:{index:number}) => {
   const style = cardStyles[index % 4];
 
   return (
