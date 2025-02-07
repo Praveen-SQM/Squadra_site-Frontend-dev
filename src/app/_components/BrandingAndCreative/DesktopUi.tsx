@@ -39,7 +39,10 @@ const DesktopUi = () => {
           <ScrollQuoteSelector />
         </div>
         <OurLatestWork />
-        <InfiniteSliderBasic />
+        <div className="flex flex-col pt-10">
+          <p className="w-full text-center text-white text-[12px]">Trusted by</p>
+          <InfiniteSliderBasic />
+        </div>
       </div>
     </>
   );
