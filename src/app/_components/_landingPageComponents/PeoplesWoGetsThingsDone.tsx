@@ -48,7 +48,7 @@ function PeoplesWoGetsThingsDone() {
                   <p className="font-normal xl:text-[18px] xl:leading-[32px] lg:text-[18px] lg:leading-[32px] md:text-[18px] md:leading-[32px] sm:text-[13px] sm:leading-[15px] text-[13px] leading-[15px] text-[#6D6D6D]">Campaigns</p>
                 </div>
               </div>
-              <div className="xl:w-[221px] xl:h-[130px] lg:w-[221px] lg:h-[130px] md:w-[221px] md:h-[130px] sm:w-[162px] sm:h-[64px] w-[162px] h-[64px] flex flex-col justify-center items-center xl:rounded-[24px] lg:rounded-[24px] md:rounded-[24px] sm:rounded-[11px] rounded-[11px] border border-[#E7E7E7] bg-[#F8F8F8] xl:p-6 lg:p-6 md:p-6 sm:p-[11.26px] p-[11.26px]">
+              <div className="xl:w-[221px] xl:h-[130px] lg:w-[221px] lg:h-[130px] md:w-[221px] md:h-[130px] sm:w-[162px] sm:h-[64px] w-full h-[64px] flex flex-col justify-center items-center xl:rounded-[24px] lg:rounded-[24px] md:rounded-[24px] sm:rounded-[11px] rounded-[11px] border border-[#E7E7E7] bg-[#F8F8F8] xl:p-6 lg:p-6 md:p-6 sm:p-[11.26px] p-[11.26px]">
                   <p ref={ref} className="font-medium xl:text-[52px] xl:leading-[62.05px] lg:text-[52px] lg:leading-[62.05px] md:text-[52px] md:leading-[62.05px] sm:text-[24px] sm:leading-[28.64px] text-[24px] leading-[28.64px] text-[#FBAE17]">{inView ? <CountUp end={100} duration={3} /> : 100}+</p>
                   <p className="font-normal xl:text-[18px] xl:leading-[32px] lg:text-[18px] lg:leading-[32px] md:text-[18px] md:leading-[32px] sm:text-[13px] sm:leading-[15px] text-[13px] leading-[15px] text-[#6D6D6D]">Experts</p>
                 </div>
