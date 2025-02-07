@@ -22,7 +22,8 @@ const Navbar = () => {
     if (
       pathname.includes("/contact-us") ||
       pathname.includes("/privacy-policy") ||
-      pathname.includes("/branding-and-creative")
+      pathname.includes("/branding-and-creative") ||
+      pathname.includes("/visual-impact")
     )
       return;
     const handleScroll = () => {
@@ -112,20 +113,20 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed z-50 w-full p-2 lg:px-32 transition-all duration-300 ${
-          pathname.includes("/contact-us") ||
+        className={`fixed z-50 w-full p-2 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us") ||
           pathname.includes("/our-services") ||
-          pathname.includes("/branding-and-creative") ||
-          pathname.includes("/openings") ||
-          pathname.includes("/direct-apply") ||
-          pathname.includes("/job-details") ||
-          pathname.includes("/job-apply") ||
-          pathname.includes("/privacy-policy")
+            pathname.includes("/branding-and-creative") ||
+            pathname.includes("/openings") ||
+            pathname.includes("/direct-apply") ||
+            pathname.includes("/job-details") ||
+            pathname.includes("/job-apply") ||
+            pathname.includes("/privacy-policy") ||
+            pathname.includes("/visual-impact")
             ? "bg-white shadow-md text-black"
             : isScrolled
-            ? "bg-white text-black"
-            : "bg-transparent text-white"
-        }`}
+              ? "bg-white text-black"
+              : "bg-transparent text-white"
+          }`}
       >
         <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
           {!pathname.includes("/it-services") && (
@@ -135,16 +136,17 @@ const Navbar = () => {
                   src={
                     pathname.includes("/contact-us") ||
                     pathname.includes("/our-services") ||
-                    pathname.includes("/branding-and-creative") ||
-                    pathname.includes("/openings") ||
-                    pathname.includes("/direct-apply") ||
-                    pathname.includes("/job-details") ||
-                    pathname.includes("/job-apply") ||
-                    pathname.includes("/privacy-policy")
+                      pathname.includes("/branding-and-creative") ||
+                      pathname.includes("/openings") ||
+                      pathname.includes("/direct-apply") ||
+                      pathname.includes("/job-details") ||
+                      pathname.includes("/job-apply") ||
+                      pathname.includes("/privacy-policy") ||
+                      pathname.includes("/visual-impact")
                       ? itLogocolor
                       : isScrolled
-                      ? itLogocolor
-                      : itLogo
+                        ? itLogocolor
+                        : itLogo
                   }
                   alt="Logo"
                   width={120}
@@ -175,11 +177,10 @@ const Navbar = () => {
           {!pathname.includes("/it-services") && (
             <ul className="lg:flex hidden font-[500] space-x-8">
               <Link
-                className={`cursor-pointer py-5 ${
-                  pathname.includes("/about-us")
+                className={`cursor-pointer py-5 ${pathname.includes("/about-us")
                     ? `text-[${primaryColor}]`
                     : "hover:text-[#FBAE17]"
-                }`}
+                  }`}
                 href={"/about-us"}
               >
                 About Us
@@ -203,11 +204,10 @@ const Navbar = () => {
                 Services
                 {/* Services Mega Menu */}
                 <div
-                  className={`absolute top-[4.5rem] ${
-                    isServicesHovered
+                  className={`absolute top-[4.5rem] ${isServicesHovered
                       ? "opacity-100 visible"
                       : "opacity-0 invisible"
-                  } transition-all w-screen duration-300 lg:translate-x-[-48%] xl:translate-x-[-52%]  bg-white text-black shadow-xl`}
+                    } transition-all w-screen duration-300 lg:translate-x-[-48%] xl:translate-x-[-52%]  bg-white text-black shadow-xl`}
                 >
                   <div className="p-8 flex flex-col">
                     <div className="flex justify-center mb-4">
@@ -316,7 +316,18 @@ const Navbar = () => {
 
                         {/* Visual Impact */}
                         <div>
-                          <h3 className="font-semibold mb-4">Visual Impact</h3>
+                          <h3 className="font-semibold mb-4">
+                            <Link
+                              onClick={() =>
+                                setTimeout(() => {
+                                  setIsServicesHovered(false);
+                                  setIsScrolled(false);
+                                }, 500)
+                              }
+                              href="/visual-impact"
+                              className=" cursor-pointer"
+                            >Visual Impact</Link>
+                          </h3>
                           <ul className="space-y-2 text-sm text-gray-600">
                             <li>Commercial Photography</li>
                             <li>Corporate Films</li>
@@ -358,11 +369,10 @@ const Navbar = () => {
                 </div>
               </li>
               <Link
-                className={`cursor-pointer py-5 ${
-                  pathname.includes("/careers")
+                className={`cursor-pointer py-5 ${pathname.includes("/careers")
                     ? `text-[${primaryColor}]`
                     : "hover:text-[#FBAE17]"
-                }`}
+                  }`}
                 href={"/careers"}
               >
                 Careers
@@ -374,20 +384,20 @@ const Navbar = () => {
             {true && <ContactPopover isScrolled={isScrolled} />}
             {true ? (
               <li
-                className={`hidden lg:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${
-                  pathname.includes("/contact-us") ||
+                className={`hidden lg:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us") ||
                   pathname.includes("/our-services") ||
-                  pathname.includes("/branding-and-creative") ||
-                  pathname.includes("/openings") ||
-                  pathname.includes("/direct-apply") ||
-                  pathname.includes("/job-details") ||
-                  pathname.includes("/job-apply") ||
-                  pathname.includes("/privacy-policy")
+                    pathname.includes("/branding-and-creative") ||
+                    pathname.includes("/openings") ||
+                    pathname.includes("/direct-apply") ||
+                    pathname.includes("/job-details") ||
+                    pathname.includes("/job-apply") ||
+                    pathname.includes("/privacy-policy") ||
+                    pathname.includes("/visual-impact")
                     ? `text-white`
                     : isScrolled
-                    ? "text-white"
-                    : ""
-                }`}
+                      ? "text-white"
+                      : ""
+                  }`}
                 onClick={() => handleNavigation("/contact-us")}
               >
                 Contact Us
@@ -419,9 +429,8 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
-          isSidebarOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="relative h-full flex flex-col">
           <div className="p-6">
@@ -463,11 +472,10 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/about-us"
-                  className={`block py-4 text-base ${
-                    pathname.includes("/about-us")
+                  className={`block py-4 text-base ${pathname.includes("/about-us")
                       ? `text-[${primaryColor}]`
                       : "text-black"
-                  } border-b border-gray-200`}
+                    } border-b border-gray-200`}
                   onClick={toggleSidebar}
                 >
                   About Us
@@ -476,11 +484,10 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/careers"
-                  className={`block py-4 text-base ${
-                    pathname.includes("/careers")
+                  className={`block py-4 text-base ${pathname.includes("/careers")
                       ? `text-[${primaryColor}]`
                       : "text-black"
-                  } border-b border-gray-200`}
+                    } border-b border-gray-200`}
                   onClick={toggleSidebar}
                 >
                   Careers
@@ -500,11 +507,10 @@ const Navbar = () => {
                   )}
                 </div>
                 <div
-                  className={`transition-transform duration-500 ${
-                    isServicesOpen
+                  className={`transition-transform duration-500 ${isServicesOpen
                       ? "max-h-[1000px] opacity-100 scale-100"
                       : "max-h-0 opacity-0 scale-95"
-                  } overflow-hidden`}
+                    } overflow-hidden`}
                 >
                   <ul className="pl-4 space-y-0">
                     {services.map((service, index) => (
@@ -531,11 +537,10 @@ const Navbar = () => {
                         )} */}
                         </div>
                         <div
-                          className={`overflow-hidden transition-max-height duration-500 ${
-                            activeService === index
+                          className={`overflow-hidden transition-max-height duration-500 ${activeService === index
                               ? "max-h-[1000px]"
                               : "max-h-0"
-                          }`}
+                            }`}
                         >
                           <ul className="pl-4 text-sm text-gray-600">
                             {service.items.map((item, i) => (

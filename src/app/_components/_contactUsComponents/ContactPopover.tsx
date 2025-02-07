@@ -174,7 +174,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/job-apply") ||
               pathname.includes("/privacy-policy") ||
               pathname.includes("/our-services") ||
-              pathname.includes("/branding-and-creative")
+              pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
 
                 ? callIconBlack
                 : isScrolled
@@ -194,7 +194,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/job-details") ||
               pathname.includes("/job-apply") ||
               pathname.includes("/privacy-policy") ||
-              pathname.includes("/branding-and-creative")
+              pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
                 ? "text-black"
                 : isScrolled
                 ? "text-black"

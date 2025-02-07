@@ -43,7 +43,7 @@ export default function Carousel() {
 
   return (
     <div className="bg-gray-200 rounded-[24px] relative w-full max-w-3xl mx-auto">
-      <div className="relative xl:w-[452px] xl:h-[518px] lg:w-full lg:h-[818px] md:w-full md:h-[818px] sm:w-[335px] sm:h-[383.92px] w-[335px] h-[383.92px] overflow-hidden rounded-[24px]">
+      <div className="relative xl:w-[452px] xl:h-[518px] lg:w-full lg:h-[818px] md:w-full md:h-[818px] sm:w-full sm:h-[818px] w-[335px] h-[383.92px] overflow-hidden rounded-[24px]">
         {images.map((src, index) => (
           <div
             key={index}
@@ -64,7 +64,7 @@ export default function Carousel() {
       </div>
 
       {/* Indicators with Progress Bar */}
-      <div className="absolute bottom-4 lg:left-[24%] md:left-[15%] left-[33%] transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-4 lg:left-[24%] md:left-[15%] sm:left-[15%] left-[33%] transform -translate-x-1/2 flex space-x-2 z-10">
         {images.map((_, index) => (
           <div
             key={index}
