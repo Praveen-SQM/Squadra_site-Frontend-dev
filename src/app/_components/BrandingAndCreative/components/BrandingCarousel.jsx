@@ -61,7 +61,7 @@ const CardSet = () => {
 
 const BrandingCarousel = () => {
   return (
-    <div className="flex flex-col gap-6 w-full bg-black p-8">
+    <div className="flex flex-col gap-6 w-full bg-black py-8">
       <div className="w-full space-y-6">
         <InfiniteSlider
           duration={25}
