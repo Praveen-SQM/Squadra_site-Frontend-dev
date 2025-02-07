@@ -380,7 +380,7 @@ const Navbar = () => {
             {true && <ContactPopover isScrolled={isScrolled} />}
             {true ? (
               <li
-                className={`hidden md:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us") ||
+                className={`hidden lg:block cursor-pointer py-[7px] px-[12px] rounded-[4px] bg-[#06135B] ${pathname.includes("/contact-us") ||
                     pathname.includes("/branding-and-creative") ||
                     pathname.includes("/openings") ||
                     pathname.includes("/direct-apply") ||

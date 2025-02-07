@@ -8,7 +8,7 @@ const DesktopUi = () => {
   return (
     <>
       <div className="relative w-full h-screen bg-white">
-      <video
+        <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           loop
@@ -26,7 +26,7 @@ const DesktopUi = () => {
           className="max-w-[1200px] flex flex-col items-center py-[57px] lg:py-[161px] bg-black"
           // style={{ height: "655px" }}
         >
-          <p className="text-white text-[32px] md:text-[42px] lg:text-[62px] px-10 text-center md:text-start font-semibold">
+          <p className="text-white text-[32px] md:text-[42px] lg:text-[62px] px-[20px] md:px-10 text-center md:text-start font-semibold">
             Crafting visually stunning, strategically sound solutions{" "}
             <strong className="font-semibold text-gray-500">
               that elevate your brand to the next level.
@@ -35,11 +35,14 @@ const DesktopUi = () => {
         </div>
         <BrandingCarousel />
         <OurServices />
-        <div className="hidden lg:flex lg:flex-col ">
+        <div className="hidden md:flex md:flex-col w-full">
           <ScrollQuoteSelector />
-          <OurLatestWork />
         </div>
-        <InfiniteSliderBasic />
+        <OurLatestWork />
+        <div className="flex flex-col pt-10">
+          <p className="w-full text-center text-white text-[12px]">Trusted by</p>
+          <InfiniteSliderBasic />
+        </div>
       </div>
     </>
   );

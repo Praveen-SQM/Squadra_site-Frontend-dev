@@ -52,10 +52,10 @@ const ScrollQuoteSelector = () => {
       <div className="w-full flex items-center justify-center">
         <div
           className="w-full max-w-[1400px] flex items-center justify-between"
-          style={{ fontSize: "calc(4vw - 20px)" }}
+          style={{ fontSize: "calc(3vw + 15px)" }}
         >
           {/* Fixed "I NEED" text */}
-          <div className="text-white font-bold pl-4">I NEED</div>
+          <div className="text-white font-bold pl-4 min-w-48">I NEED</div>
 
           {/* Scrolling services container */}
           <div
@@ -109,7 +109,7 @@ const ScrollQuoteSelector = () => {
                         left: 0,
                         right: 0,
                         textAlign: "left",
-                        top: "50%",
+                        top: "53%",
                         marginTop: "-36px",
                         willChange: "transform, opacity",
                         transformOrigin: "left center",
