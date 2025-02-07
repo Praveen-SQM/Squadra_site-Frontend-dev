@@ -6,6 +6,7 @@ import { InfiniteSliderBasic } from "./components/TrustedBy";
 import { ArrowBigDown, ArrowDown } from "lucide-react";
 // import OurLatestWork from "./components/OurLatestWork"
 // import TrustedBy from "./components/TrustedBy"
+import WorkTogether from "./components/WorkTogether";
 const DesktopUi = () => {
   return (
     <>
@@ -61,6 +62,7 @@ const DesktopUi = () => {
         {/* <UnleashPotential /> */}
         <WhatWeDo />
         <InfiniteSliderBasic />
+        <WorkTogether/>
       </div>
     </>
   );
