@@ -1267,7 +1267,7 @@ export const HoverButton = ({ href, buttonText, defaultIcon, hoverIcon }: {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link
+    <Link 
       href={href}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

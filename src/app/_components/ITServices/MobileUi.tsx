@@ -1,6 +1,6 @@
 "use client";
-import React from 'react'; 
-import { useState,useRef,useEffect } from 'react';
+import React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import starSvg from '@/utilities/images/star.svg'
 import "./styles/MobileUI.css"
 import {
@@ -14,7 +14,7 @@ import Image from 'next/image';
 import Network from '@/utilities/images/Network.svg'
 import Saas from '@/utilities/images/Saas.svg'
 import Solution from '@/utilities/images/Solution.svg'
-import Connection from '@/utilities/images/Connection.svg' 
+import Connection from '@/utilities/images/Connection.svg'
 import UserWorkFlow from '@/utilities/images/User workflow.svg'
 import codeSquare from '@/utilities/images/Code Square.svg'
 import Container from '@/utilities/images/Container.svg'
@@ -266,7 +266,7 @@ export const logos = [
 function MobileUi() {
 
   const imageRef = useRef<HTMLImageElement | null>(null);
-    const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
   console.log(imageRef)
 
@@ -275,7 +275,7 @@ function MobileUi() {
       if (!imageRef.current) return;
 
       const rect = imageRef.current?.getBoundingClientRect();
-            const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+      const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
 
       setIsInView(inView);
     };
@@ -286,6 +286,8 @@ function MobileUi() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+
 
   return (
     <div className="h-fit pt-32 flex flex-col  w-full  items-center bg-black">
@@ -314,7 +316,7 @@ function MobileUi() {
           </div>
         </div>
 
-        <Link href='#contact-section' className="w-[135px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+        <Link href='#contact-section' scroll={false} className="w-[135px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
           <div className="w-[115px] h-[41px] p-[5px] px-[15px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
             {/* Content goes here */}
             <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
@@ -600,9 +602,8 @@ function MobileUi() {
             height={275}
             alt='SaaS'
           /> */}
-           <video autoPlay playsInline loop width="342" height="275" className='rounded-md'>
-           <source src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" type="video/mp4"/>
-           </video>
+          <ControlledVideoPlayer src='https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4' />
+       
         </div>
         <div className='mt-[44px] mb-[48px]'>
           {
@@ -894,7 +895,9 @@ Development */}
             height={427}
             alt='SaaS'
           /> */}
-           <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay playsInline loop width="342" height="400" className='rounded-[24px]'></video>
+          <ControlledVideoPlayer src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4"
+          />
+        
         </div>
         <div className='mt-[44px] mb-[48px]'>
           {
@@ -1038,7 +1041,8 @@ IT Services */}
           height={427} priority
           alt='webandMobileMain'
         /> */}
-         <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay playsInline loop width="342" height="427" className='rounded-[24px]'></video>
+        <ControlledVideoPlayer src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4"
+        />
       </div>
       <div className='mt-[42px] mb-[32px]'>
         {
@@ -1080,7 +1084,7 @@ IT Services */}
 
       {/* solutions */}
       <div className='w-full bg-white flex items-center'>
-      <ApproachComponent/>
+        <ApproachComponent />
       </div>
 
       {/*    sQuadra tech Team */}
@@ -1116,7 +1120,7 @@ IT Services */}
               </div>
               <div className='w-[161.5px] h-[194px] bg-gray-200'>
                 <Image
-                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
+                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
                   alt='Tech Team'
                   width={161.5}
                   height={194}
@@ -1230,17 +1234,17 @@ IT Services */}
                 <div className="grid grid-cols-2 gap-2 mt-2">
                   {
                     backendTools.map((item) => (
-                    <div key={item.name} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
-                      <AccordionContent className="px-4 flex flex-col items-center justify-center">
-                        <Image
-                          src={item?.logo}
-                          width={171}
-                          height={120}
-                          alt={item?.name.toLowerCase()}
-                        />
-                      </AccordionContent>
-                    </div>
-                  ))}
+                      <div key={item.name} className="w-[171px] h-[120px] flex items-center justify-center bg-white">
+                        <AccordionContent className="px-4 flex flex-col items-center justify-center">
+                          <Image
+                            src={item?.logo}
+                            width={171}
+                            height={120}
+                            alt={item?.name.toLowerCase()}
+                          />
+                        </AccordionContent>
+                      </div>
+                    ))}
                 </div>
               </AccordionContent>
 
@@ -1336,10 +1340,68 @@ IT Services */}
           </Accordion>
         </div>
       </div>
+      <div id='contact-section'>
 
-      <ContactUsForm />
+        <ContactUsForm />
+      </div>
     </div>
   );
 }
 
 export default MobileUi;
+
+
+
+interface VideoPlayerProps {
+  src: string;
+  width?: number;
+  height?: number;
+  className?: string;
+}
+
+const ControlledVideoPlayer: React.FC<VideoPlayerProps> = ({
+  src,
+  width = 342,
+  height = 275,
+  className = ''
+}) => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const startPlayback = async () => {
+      try {
+        if (videoRef.current) {
+          await videoRef.current.play();
+        }
+      } catch (error) {
+        console.error('Autoplay prevented:', error);
+      }
+    };
+
+    startPlayback();
+  }, []);
+
+  return (
+    <div
+      className={`relative ${className}`}
+      style={{ width: `${width}px`, height: `${height}px` }}
+    >
+      <video
+        ref={videoRef}
+        className="w-full h-full object-cover rounded-md"
+        muted
+        loop
+        autoPlay
+        playsInline
+        webkit-playsinline="true"
+        preload="auto"
+      >
+        <source
+          src={src}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  );
+};
