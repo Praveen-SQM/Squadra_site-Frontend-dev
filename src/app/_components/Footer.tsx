@@ -268,6 +268,11 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link href="/how-it-works" className="hover:text-white transition-colors">
+                  How It Works
+                </Link>
+              </li>
             </ul>
           </div>
 
