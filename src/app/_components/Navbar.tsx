@@ -113,7 +113,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed z-50 w-full p-2 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us") ||
+        className={`fixed z-50 w-full p-0 lg:px-32 transition-all duration-300 ${pathname.includes("/contact-us") ||
             pathname.includes("/our-services") ||
             pathname.includes("/branding-and-creative") ||
             pathname.includes("/openings") ||
@@ -122,7 +122,8 @@ const Navbar = () => {
             pathname.includes("/job-apply") ||
             pathname.includes("/privacy-policy") ||
             pathname.includes("/visual-impact")
-            ? "bg-white shadow-md text-black"
+            || pathname.includes('/clients')
+            ? "bg-white shadow-sm text-black"
             : isScrolled
               ? "bg-white text-black"
               : "bg-transparent text-white"
@@ -143,6 +144,8 @@ const Navbar = () => {
                       pathname.includes("/job-apply") ||
                       pathname.includes("/privacy-policy") ||
                       pathname.includes("/visual-impact")
+                      || pathname.includes('/clients')
+
                       ? itLogocolor
                       : isScrolled
                         ? itLogocolor
@@ -188,6 +191,8 @@ const Navbar = () => {
                   }, 100)
                 }}
                 onMouseLeave={() => {
+                  setIsServicesHovered(false)
+                  setIsScrolled(false)
                   setTimeout(() => {
                     setIsServicesHovered(false)
                     setIsScrolled(false)
@@ -223,7 +228,7 @@ const Navbar = () => {
       }}
         style={{
         position: 'fixed',
-        top: '4.5rem',
+        top: '4rem',
         left: '50%',
         width: '100vw',
         maxWidth: '100vw',
@@ -410,6 +415,13 @@ const Navbar = () => {
               >
                 Careers
               </Link>
+              <Link
+                className={`cursor-pointer py-5 ${pathname.includes("/clients") ? `text-[${primaryColor}]` : "hover:text-[#FBAE17]"
+                  }`}
+                href={"/clients"}
+              >
+                Clients
+              </Link>
             </ul>
           )}
 
@@ -426,6 +438,8 @@ const Navbar = () => {
                     pathname.includes("/job-apply") ||
                     pathname.includes("/privacy-policy") ||
                     pathname.includes("/visual-impact")
+                    || pathname.includes('/clients')
+
                     ? `text-white`
                     : isScrolled
                       ? "text-white"
@@ -553,19 +567,19 @@ const Navbar = () => {
                   </ul>
                 </div>
               </li>
-              {/* <li>
+              <li>
               <Link
-                href="/contact-us"
+                href="/clients"
                 className={`block py-4 text-base ${
-                  pathname.includes("/contact-us")
+                  pathname.includes("/clients")
                     ? `text-[${primaryColor}]`
                     : "text-black"
                 } border-b border-gray-200`}
                 onClick={toggleSidebar}
               >
-                Contact Us
+                 Clients
               </Link>
-            </li> */}
+            </li>
             </ul>
           </div>
 
