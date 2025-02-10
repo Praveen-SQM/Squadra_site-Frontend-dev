@@ -175,6 +175,8 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/privacy-policy") ||
               pathname.includes("/our-services") ||
               pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
+              || pathname.includes('/clients')
+
 
                 ? callIconBlack
                 : isScrolled
@@ -195,6 +197,8 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/job-apply") ||
               pathname.includes("/privacy-policy") ||
               pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
+              || pathname.includes('/clients')
+
                 ? "text-black"
                 : isScrolled
                 ? "text-black"
@@ -225,7 +229,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               <Phone className="h-4 w-4" />
               <a
                 href="tel:+917204701593"
-                className="tex    t-lg font-semibold hover:underline"
+                className="text-lg font-semibold hover:underline"
               >
                 +91 96068 27607
               </a>

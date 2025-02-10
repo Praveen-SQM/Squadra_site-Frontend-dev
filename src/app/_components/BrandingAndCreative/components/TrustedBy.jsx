@@ -1,15 +1,108 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import Image from "next/image";
+import clientTorque from "@/utilities/icons/clent-torque.svg";
+import clientHMG from "@/utilities/icons/client-HMGroup.webp";
+import clientBroncos from "@/utilities/icons/client-broncos.webp";
+import clientDaddy from "@/utilities/icons/client-daddy.webp";
+import clientDoubleTree from "@/utilities/icons/client-doubleTree.webp";
+import clientFerns from "@/utilities/icons/client-ferns.webp";
+import clientGRC from "@/utilities/icons/client-grConst.webp";
+import clientGREE from "@/utilities/icons/client-gree.webp";
+import clientHabitat from "@/utilities/icons/client-habitat.webp";
+import clientOneSta from "@/utilities/icons/client-onesta.webp";
+import clientPOI from "@/utilities/icons/client-poi.webp";
+import clientS1522 from "@/utilities/icons/client-street1522.webp";
+import clientVOIA from "@/utilities/icons/client-voia.webp";
+import clientVIDA from "@/utilities/icons/client-vida.webp";
+import clientNior from "@/utilities/icons/client-cafeNior.webp";
 
 export function InfiniteSliderBasic() {
+
+  const clients = [
+    {
+      src: clientVIDA,
+      alt: "Client Vida"
+    },
+    {
+      src: clientNior,
+      alt: "Client Nior"
+    },
+    {
+      src: clientVOIA,
+      alt: "Client VOIA"
+    },
+    {
+      src: clientS1522,
+      alt: "Client Street"
+    },
+    {
+      src: clientPOI,
+      alt: "Client POI"
+    },
+    {
+      src: clientOneSta,
+      alt: "Client One Sta"
+    },
+    {
+      src: clientHabitat,
+      alt: "Client Habitat"
+    },
+    {
+      src: clientGREE,
+      alt: "Client Gree"
+    },
+    {
+      src: clientGRC,
+      alt: "Client Grc"
+    },
+    {
+      src: clientFerns,
+      alt: "Client Ferns"
+    },
+    {
+      src: clientDoubleTree,
+      alt: "Client Double Tree"
+    },
+    {
+      src: clientDaddy,
+      alt: "Client Daddy"
+    },
+    {
+      src: clientBroncos,
+      alt: "Client Broncos"
+    },
+    {
+      src: clientHMG,
+      alt: "Client HMG"
+    },
+    {
+      src: clientTorque,
+      alt: "Client Torque"
+    }
+  ]
+
   return (
-    <InfiniteSlider className="pt-4" gap={24} reverse> 
-      <Image
+    <InfiniteSlider className="pt-4" gap={24} reverse>
+      {clients.map((client, index) => {
+        return (
+         <>
+            <Image
+            key={index}
+              width={250}
+              height={120}
+              src={client?.src}
+              alt={client?.alt}
+              className={`h-[50px] md:h-[120px] w-auto ${index !==3 ? "filter invert brightness-0" : ""}`}
+            />
+            </>
+        )
+      })}
+      {/* <Image
         width={250}
         height={120}
-        src="https://s3-alpha-sig.figma.com/img/b9a1/5d0f/4e7a5f85db9373383b713ae078938e2a?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=N2zBZL3oVxAc5KcJTh7KDMJZzRLkp4IdsB9jcptRkp3oUK4We1U8qJeu8CBHP4Z-Ve6Y5ti5z6SgctVsfSINidB1jF~Kjosd0OPfNvZ0x-Da5l~1q5pvsASHOtAFBWvaG1XXm0uEQ8ZDO64w11gKunfM5yjgjMueri1AEXano5UNwTgU71i61vVxaut1Lio1ytv10af1Gk16Ne-mcmWnYbfs08yHy9~qa5ExuXN2RnzLolPcLCrWVYST7k1t-iMTeKixmsNabKVMS-XIBocOj2ZN61UgkztaPTXLnOEZBiM~gn8U0uZxbhb1PimlFj4Q8Ck3usFSkp7QCuYzqDt1fw__"
-        alt="Apple Music logo"
-        className="h-[50px] md:h-[120px] w-auto"
+        src={clientVIDA}
+        alt="Client Vida"
+        className="h-[50px] md:h-[120px] w-auto filter invert brightness-0"
       />
       <Image
         width={250}
@@ -45,7 +138,7 @@ export function InfiniteSliderBasic() {
         src="https://s3-alpha-sig.figma.com/img/5953/36f0/f3b8e8f69a0d8851a5ae3a6a44191111?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=MrEtDfz4rHxEqvZLwoZMHLwrhS~599zJhEeKQkQfLzShXLUvE2igMQhCovkibZH0B-LpkQTnO1weSDdJ9SEXCSyeWMyWUK6Z1nmBEdwiTjPwtTMDAuq4ntY8KYFfxXrqIGEeMuCNkqEkIuCMC1nvJ20P2AVTYTPF9pDIHuPuT6zGX4iZXV0LfeJIzhlAxOOYSL4UjKvQSf9sH05A5t84GX9rly5uAmsUXpO5TxC6IP-rTqMo~ukqg3EGVIAAT6e9Oitzs6HE65yH2nyKXwVj04l~hxwcjdtT4O8o1TepzsP3vonV6DKC7R53m0xyO1aW8ew0HZ0o1Ic5uWPsXFrGXQ__"
         alt="Prada logo"
         className="h-[50px] md:h-[120px] w-auto"
-      />
+      /> */}
     </InfiniteSlider>
   );
 }
