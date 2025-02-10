@@ -391,6 +391,12 @@ const Navbar = () => {
                     >
                       Go to overview <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
+                    <Link 
+                      href="/how-it-works" 
+                      className="inline-flex items-center text-gray-900 hover:underline"
+                    >
+                      How it works <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </div>
                   </div>
                       </div></motion.div>
