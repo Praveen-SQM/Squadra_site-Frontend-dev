@@ -80,7 +80,7 @@ export default function ContactUsForm() {
     };
 
     return (
-        <div className="max-w-screen-2xl flex flex-col py-[42px] px-[20px] lg:flex-row  md:mt-0 justify-between gap-[20px] bg-[#FAFAFA]">
+        <div id='contact-section' className="max-w-screen-2xl flex flex-col py-[42px] px-[20px] lg:flex-row  md:mt-0 justify-between gap-[20px] bg-[#FAFAFA]">
             {/* Left Section */}
             <div className="w-full lg:w-1/2 flex flex-col gap-[12px]">
                 <h2 className="text-[32px] sm:text-[32px] md:text-[48px] lg:text-[54px] leading-[38.19px] text-[#131313] font-[300] w-[235px]">
