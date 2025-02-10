@@ -147,7 +147,7 @@ function VisualImpactUi() {
                                         <p className='max-w-[506px] font-[300] xl:text-[80px] xl:leading-[95.47px] lg:text-[60px] lg:leading-[71.6px] md:text-[60px] md:leading-[71.6px] sm:text-[60px] sm:leading-[71.6px] text-[24px] leading-[28.64px] sm:text-right text-center text-[#FFFFFF]'>{service.title}</p>
                                         <p className={`py-1 font-[300] xl:text-[16px] xl:leading-7 lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] text-[14px] leading-[16.71px] text-[#E7E7E7] sm:text-right text-center ${service.maxParagraphWidth}`}>{service.description}</p>
                                     </div>
-                                    <HoverButton
+                                    <HoverButton 
                                         href="/it-services#contact-section"
                                         buttonText="Get a Quote"
                                         defaultIcon={arrowRight}
