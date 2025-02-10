@@ -290,7 +290,7 @@ const Navbar = () => {
                                       }, 500)
                                     }
                                     href="/it-services"
-                                    className=" cursor-pointer"
+                                    className=" cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-[#FBAE17] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
                                   >
                                     Technology & Development
                                   </Link>
@@ -316,7 +316,7 @@ const Navbar = () => {
                                       }, 500)
                                     }
                                     href="/branding-and-creative"
-                                    className=" cursor-pointer"
+                                    className=" cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-[#FBAE17] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
                                   >
                                     Branding & Creative
                                   </Link>
@@ -342,7 +342,7 @@ const Navbar = () => {
                                       }, 500)
                                     }
                                     href="/digital-marketing-and-pr"
-                                    className=" cursor-pointer"
+                                    className=" cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-[#FBAE17] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
                                   >
                                     Digital Marketing & PR
                                   </Link>
@@ -361,7 +361,7 @@ const Navbar = () => {
 
                               {/* Visual Impact */}
                               <div>
-                                <h3 className="font-semibold mb-4">
+                                <h3 className="font-bold mb-4">
                                   <Link
                                     onClick={() =>
                                       setTimeout(() => {
@@ -370,7 +370,7 @@ const Navbar = () => {
                                       }, 500)
                                     }
                                     href="/visual-impact"
-                                    className=" cursor-pointer"
+                                    className=" cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-[#FBAE17] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
                                   >
                                     Visual Impact
                                   </Link>
@@ -404,10 +404,10 @@ const Navbar = () => {
                           {/* Technology & Development Section */}
 
                           {/* Go to overview link */}
-                          <div className="ml-20">
+                          <div className="ml-20 cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-[#FBAE17] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">
                             <Link
                               href="/our-services"
-                              className="inline-flex items-center text-gray-900 hover:underline"
+                              className="inline-flex items-center text-gray-900"
                             >
                               Go to overview{" "}
                               <ArrowRight className="ml-2 h-4 w-4" />
