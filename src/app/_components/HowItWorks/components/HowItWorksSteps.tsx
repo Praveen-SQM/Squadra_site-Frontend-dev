@@ -79,7 +79,7 @@ const HowItWorksSteps = () => {
         className="hidden md:flex absolute right-[45%] top-16"
       />
       {sections?.map((step, index) => (
-        <HowItWorksContainer step={step} index={index} />
+        <HowItWorksContainer step={step} key={index} index={index} />
       ))}
     </div>
   );

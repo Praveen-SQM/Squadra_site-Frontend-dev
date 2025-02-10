@@ -1,8 +1,6 @@
 'use client'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import plusIcon from '@/utilities/icons/plus-icon.svg'
-import minusIcon from '@/utilities/icons/minus-icon.svg'
 import applyIcon from '@/utilities/icons/apply-icon.svg'
 import shareFileIcon from '@/utilities/icons/share-file-icon.svg'
 // import linkedInIcon from '@/utilities/icons/linkedin-icon.svg'
@@ -23,16 +21,7 @@ function DesktopUi({ sections,jobDetails,loading }: JobListingProps) {
     const router = useRouter()
   
 
-    const [openIndexes, setOpenIndexes] = useState<number[]>([0,1,2,3,4])
-    
-
-    const toggleAccordion = (index: number) => {
-        setOpenIndexes(prevIndexes =>
-            prevIndexes.includes(index)
-                ? prevIndexes.filter(i => i !== index)
-                : [...prevIndexes, index]
-        )
-    }
+    const [openIndexes] = useState<number[]>([0,1,2,3,4])
 
     const handleShare = async () => {
         if (navigator.share) {

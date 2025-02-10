@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
 interface StepItem {
   title: string;
   description: string;
   services: string[];
-  Image?: any;
+  Image?: string | StaticImport;
   video?: string;
   text?: string;
   bg?: string;
