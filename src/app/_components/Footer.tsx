@@ -212,22 +212,22 @@ export default function Footer() {
             <h3 className="text-white text-lg font-medium">Our Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/digital-marketing-and-pr" className="hover:text-white transition-colors">
                   Digital Marketing & PR
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/branding-and-creative" className="hover:text-white transition-colors">
                   Branding & Creative
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/it-serivces" className="hover:text-white transition-colors">
                   Technology & Development
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/visual-impact" className="hover:text-white transition-colors">
                   Visual Impact
                 </Link>
               </li>
