@@ -600,7 +600,7 @@ function MobileUi() {
             height={275}
             alt='SaaS'
           /> */}
-           <video autoPlay playsInline loop width="342" height="275" className='rounded-md'>
+          <video preload="none" autoPlay playsInline muted loop width="342" height="275" className='rounded-md'>
            <source src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" type="video/mp4"/>
            </video>
         </div>
@@ -894,7 +894,7 @@ Development */}
             height={427}
             alt='SaaS'
           /> */}
-           <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay playsInline loop width="342" height="400" className='rounded-[24px]'></video>
+          <video preload="none" src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay playsInline muted loop width="342" height="400" className='rounded-[24px]'></video>
         </div>
         <div className='mt-[44px] mb-[48px]'>
           {
@@ -1038,7 +1038,7 @@ IT Services */}
           height={427} priority
           alt='webandMobileMain'
         /> */}
-         <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay playsInline loop width="342" height="427" className='rounded-[24px]'></video>
+        <video preload="none" muted src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay playsInline loop width="342" height="427" className='rounded-[24px]'></video>
       </div>
       <div className='mt-[42px] mb-[32px]'>
         {
