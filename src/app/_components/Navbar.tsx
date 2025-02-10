@@ -639,9 +639,9 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="/work-it-works"
+                  href="/how-it-works"
                   className={`block py-4 text-base ${
-                    pathname.includes("/work-it-works")
+                    pathname.includes("/how-it-works")
                       ? `text-[${primaryColor}]`
                       : "text-black"
                   } border-b border-gray-200`}
