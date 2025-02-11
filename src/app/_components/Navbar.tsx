@@ -477,19 +477,7 @@ const Navbar = () => {
                 Contact Us
               </li>
             ) : null}
-            {/* {!pathname.includes("/it-services") && <ContactPopover isScrolled={isScrolled}/>} */}
 
-            {/* <li>
-              <Link href='/contact-us'>
-              <Image
-                src={pathname.includes("/contact-us") ? callIconBlack : isScrolled ? callIconBlack : callIcon}
-                alt="Call Icon"
-                width={24}
-                height={24}
-                />
-                </Link>
-            </li> */}
-            {/* Hamburger menu icon for mobile and tablet */}
             <button
               className="lg:hidden"
               onClick={toggleSidebar}
