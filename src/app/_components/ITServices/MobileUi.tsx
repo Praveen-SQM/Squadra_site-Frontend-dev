@@ -62,6 +62,9 @@ import ContactUsForm from './components/ContactUsForm';
 import { analyticsTools, backendTools, devopsTools, frontendTools, mobileTools } from './Tabs';
 import ApproachComponent from './components/ApproachComponent';
 import Link from 'next/link';
+import imageOne from '@/utilities/images/image-1.png'
+import imageTwo from '@/utilities/images/image-2.png'
+import imageThree from '@/utilities/images/image-3.png'
 
 export const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
@@ -596,20 +599,21 @@ function MobileUi() {
 
         </div>
         <div className='w-[342px] h-[330px] mt-[44px]'>
-          {/* <Image
-            src={SaasMain}
+          <Image
+            src={imageOne}
             width={342}
             height={275}
             alt='SaaS'
-          /> */}
-             <video 
+            className='h-full w-full object-cover'
+          />
+             {/* <video 
         autoPlay 
         muted 
         loop 
         playsInline
         className=" h-full w-full object-cover"
         src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard%2Bvideo.mp4"
-      />
+      /> */}
        
         </div>
         <div className='mt-[44px] mb-[48px]'>
@@ -896,20 +900,21 @@ Development */}
 
         </div>
         <div className='w-[342px] h-[400px] mt-[44px]'>
-          {/* <Image
-            src={aiMain}
+          <Image
+            src={imageTwo}
             width={342}
             height={427}
             alt='SaaS'
-          /> */}
-             <video 
+            className='h-full w-full object-cover'
+          />
+             {/* <video 
         autoPlay 
         muted 
         loop 
         playsInline
         className=" h-full w-full object-cover"
         src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d+%281%29.webm"
-      />
+      /> */}
         
         </div>
         <div className='mt-[44px] mb-[48px]'>
@@ -1048,20 +1053,21 @@ IT Services */}
 
       </div>
       <div className='w-[342px] h-[600px] mt-[42px]'>
-        {/* <Image className='object-cover'
-          src={"https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4"} unoptimized={true}
-          width={342} quality={80}
-          height={427} priority
+        <Image
+          src={imageThree} unoptimized={true}
+          width={342}
+          height={600} priority
           alt='webandMobileMain'
-        /> */}
-         <video 
+          className="h-full w-full object-cover"
+        />
+         {/* <video 
         autoPlay 
         muted 
         loop 
         playsInline
         className=" h-full w-full object-cover"
         src="https://squadra-media.s3.ap-south-1.amazonaws.com/video%2Bsample.webm"
-      />
+      /> */}
       </div>
       <div className='mt-[42px] mb-[32px]'>
         {
