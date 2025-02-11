@@ -153,7 +153,13 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
                                     id="first-name"
                                     type="text"
                                     placeholder="First Name"
-                                    {...register("firstName", { required: "First name is required" })}
+                                    {...register("firstName", { 
+                                        required: "First name is required",
+                                        pattern: {
+                                            value: /^[A-Za-z\s]+$/, // Allows only letters and spaces
+                                            message: "First name must contain only letters",
+                                          },
+                                     })}
                                     className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                                 />
                                 {errors.firstName && (
@@ -169,7 +175,12 @@ function DesktopUi({jobId}: {jobId: string | string[]}) {
                                     id="last-name"
                                     type="text"
                                     placeholder="Last Name"
-                                    {...register("lastName")}
+                                    {...register("lastName",{
+                                        pattern: {
+                                            value: /^[A-Za-z\s]+$/, // Allows only letters and spaces
+                                            message: "Last name must contain only letters",
+                                          },
+                                    })}
                                     className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                                 />
                                 {errors.lastName && (

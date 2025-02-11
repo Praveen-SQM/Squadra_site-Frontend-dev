@@ -253,6 +253,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
                     placeholder="Enter your name"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
+                    onInput={(e:any) => (e.target.value = e.target.value.replace(/[^A-Za-z\s]/g, ""))}
                   />
                   {fullNameErrorMessage === "Please enter full name" && (
                     <p className="text-red-500 text-sm">
