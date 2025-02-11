@@ -12,7 +12,9 @@ const DesktopUi = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      targetScrollRef.current = window.scrollY;
+      if (typeof window !== "undefined") {
+        targetScrollRef.current = window.scrollY;
+      }
     };
 
     const animate = () => {
