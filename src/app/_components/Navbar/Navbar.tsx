@@ -2,12 +2,10 @@
 
 import Link from "next/link";
 import { useState, useEffect, useMemo, useCallback } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import NavigationLinks from "./NavigationLinks";
-import ServicesMegaMenu from "./ServicesMegaMenu";
 import MobileSidebar from "./MobileSidebar";
-import { PRIMARY_COLOR } from "./constants";
 import { Menu } from "lucide-react";
 import { ContactPopover } from "../_contactUsComponents/ContactPopover";
 
@@ -16,7 +14,6 @@ const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isServicesHovered, setIsServicesHovered] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
 
   const shouldShowWhiteBg = useMemo(
     () =>

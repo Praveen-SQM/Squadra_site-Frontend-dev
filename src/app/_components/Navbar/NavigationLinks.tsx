@@ -7,6 +7,7 @@ const NavigationLinks = ({
   setIsServicesHovered,
   setIsScrolled,
   pathname,
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any) => {
   return (
     <ul className="lg:flex hidden font-[500] space-x-8">
