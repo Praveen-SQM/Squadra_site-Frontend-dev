@@ -602,7 +602,14 @@ function MobileUi() {
             height={275}
             alt='SaaS'
           /> */}
-          <ControlledVideoPlayer src='https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4' />
+             <video 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className=" h-full w-full object-cover"
+        src="https://squadra-media.s3.ap-south-1.amazonaws.com/4914730_Colleagues_Job_1920x1080_b0ce926804.mp4"
+      />
        
         </div>
         <div className='mt-[44px] mb-[48px]'>
@@ -895,8 +902,14 @@ Development */}
             height={427}
             alt='SaaS'
           /> */}
-          <ControlledVideoPlayer src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4"
-          />
+             <video 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className=" h-full w-full object-cover"
+        src="https://squadra-media.s3.ap-south-1.amazonaws.com/4914730_Colleagues_Job_1920x1080_b0ce926804.mp4"
+      />
         
         </div>
         <div className='mt-[44px] mb-[48px]'>
@@ -1041,8 +1054,14 @@ IT Services */}
           height={427} priority
           alt='webandMobileMain'
         /> */}
-        <ControlledVideoPlayer src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4"
-        />
+         <video 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className=" h-full w-full object-cover"
+        src="https://squadra-media.s3.ap-south-1.amazonaws.com/4914730_Colleagues_Job_1920x1080_b0ce926804.mp4"
+      />
       </div>
       <div className='mt-[42px] mb-[32px]'>
         {
@@ -1393,8 +1412,7 @@ const ControlledVideoPlayer: React.FC<VideoPlayerProps> = ({
         loop
         autoPlay
         playsInline
-        webkit-playsinline="true"
-        preload="auto"
+        
       >
         <source
           src={src}
