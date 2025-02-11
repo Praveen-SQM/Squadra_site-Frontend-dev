@@ -1368,12 +1368,3 @@ IT Services */}
 }
 
 export default MobileUi;
-
-
-
-interface VideoPlayerProps {
-  src: string;
-  width?: number;
-  height?: number;
-  className?: string;
-}
