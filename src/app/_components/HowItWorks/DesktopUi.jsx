@@ -12,7 +12,9 @@ const DesktopUi = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      targetScrollRef.current = window.scrollY;
+      if (typeof window !== "undefined") {
+        targetScrollRef.current = window.scrollY;
+      }
     };
 
     const animate = () => {
@@ -25,11 +27,15 @@ const DesktopUi = () => {
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+    }
     animationRef.current = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", handleScroll);
+      }
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
@@ -37,15 +43,20 @@ const DesktopUi = () => {
   }, []);
 
   const handleScrollDown = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth",
-    });
+    if (typeof window !== "undefined" && typeof window.scrollTo === "function") {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth",
+      });
+    }
   };
 
   const calculateBlur = () => {
     const maxBlur = 10;
-    const blurValue = (scrollPosition / window.innerHeight) * maxBlur;
+    const blurValue =
+      typeof window !== "undefined" && window.innerHeight
+        ? (scrollPosition / window.innerHeight) * maxBlur
+        : 0;
     return Math.min(blurValue, maxBlur);
   };
 

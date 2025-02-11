@@ -11,6 +11,7 @@ const Logo = ({
   isSidebarOpen,
   shouldShowWhiteBg,
   pathname,
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any) => {
   return (
     <div className="w-[260px] flex items-center">
