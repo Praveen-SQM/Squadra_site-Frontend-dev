@@ -62,6 +62,9 @@ import ContactUsForm from './components/ContactUsForm';
 import { analyticsTools, backendTools, devopsTools, frontendTools, mobileTools } from './Tabs';
 import ApproachComponent from './components/ApproachComponent';
 import Link from 'next/link';
+import imageOne from '@/utilities/images/image-1.png'
+import imageTwo from '@/utilities/images/image-2.png'
+import imageThree from '@/utilities/images/image-3.png'
 
 export const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
@@ -292,7 +295,7 @@ function MobileUi() {
   return (
     <div className="h-fit pt-32 flex flex-col  w-full  items-center bg-black">
       {/* Intro Section */}
-      <div className='w-[375px] h-[830px] flex flex-col items-center'>
+      <div className='w-[360px] h-[830px] flex flex-col items-center'>
         <div className='mt-[145px] w-[327px] h-[174px] border-1 flex flex-col'>
           <p className="font-medium text-[31px] leading-[42.96px] text-center text-[#FFFFFF]">
             Your Trusted Partner <br />
@@ -318,7 +321,6 @@ function MobileUi() {
 
         <Link href='#contact-section' scroll={false} className="w-[135px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
           <div className="w-[115px] h-[41px] p-[5px] px-[15px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
-            {/* Content goes here */}
             <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
               Connect Us
             </p>
@@ -595,14 +597,22 @@ function MobileUi() {
 
 
         </div>
-        <div className='w-[342px] h-[330px] mt-[44px]'>
-          {/* <Image
-            src={SaasMain}
-            width={342}
+        <div className='w-[335px] h-[330px] mt-[44px]'>
+          <Image
+            src={imageOne}
+            width={335}
             height={275}
             alt='SaaS'
-          /> */}
-          <ControlledVideoPlayer src='https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4' />
+            className='h-full w-full object-cover'
+          />
+           {/* <video 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className=" h-full w-full object-cover"
+        src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard%2Bvideo.mp4"
+      /> */}
        
         </div>
         <div className='mt-[44px] mb-[48px]'>
@@ -821,6 +831,7 @@ Development */}
 
           />
         </div>
+
         {/* Ai */}
         <div className='mt-[42px] mb-[48px]'>
           {
@@ -889,14 +900,21 @@ Development */}
 
         </div>
         <div className='w-[342px] h-[400px] mt-[44px]'>
-          {/* <Image
-            src={aiMain}
+          <Image
+            src={imageTwo}
             width={342}
             height={427}
             alt='SaaS'
-          /> */}
-          <ControlledVideoPlayer src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4"
+            className='h-full w-full object-cover'
           />
+             {/* <video 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className=" h-full w-full object-cover"
+        src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d+%281%29.webm"
+      /> */}
         
         </div>
         <div className='mt-[44px] mb-[48px]'>
@@ -1034,15 +1052,22 @@ IT Services */}
         </p>
 
       </div>
-      <div className='w-[342px] h-[600px] mt-[42px]'>
-        {/* <Image className='object-cover'
-          src={"https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4"} unoptimized={true}
-          width={342} quality={80}
-          height={427} priority
+      <div className='w-[335px] h-[600px] mt-[42px]'>
+        <Image
+          src={imageThree} unoptimized={true}
+          width={335}
+          height={600} priority
           alt='webandMobileMain'
-        /> */}
-        <ControlledVideoPlayer src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4"
+          className="h-full w-full object-cover"
         />
+        {/* <video 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className=" h-full w-full object-cover"
+        src="https://squadra-media.s3.ap-south-1.amazonaws.com/video%2Bsample.webm"
+      /> */}
       </div>
       <div className='mt-[42px] mb-[32px]'>
         {
@@ -1088,7 +1113,7 @@ IT Services */}
       </div>
 
       {/*    sQuadra tech Team */}
-      <div className='pt-[44px] pb-[40px] px-[20px] flex flex-col gap-[24px] bg-[#F7F7F7]'>
+      <div className='pt-[44px] pb-[40px] px-[18px] flex flex-col gap-[24px] bg-[#F7F7F7]'>
         <div className='flex flex-col gap-[12px] items-center justify-center'>
           <p className="font-semibold text-[32px] leading-[38.19px] text-center text-[#FBAE17]">
             Squadra <span className="font-semibold text-[32px] leading-[38.19px] text-center text-[#131313]">Tech Team</span>
@@ -1099,63 +1124,63 @@ IT Services */}
         </div>
         <div className='flex flex-col gap-[12px] items-center'>
           <div className='flex flex-col gap-[12px]'>
-            <div className='w-[335px] h-[194px] bg-gray-200'>
+            <div className='w-[320px] h-[194px] bg-gray-200'>
               <Image
                 src={"https://squadra-media.s3.ap-south-1.amazonaws.com/7.jpg"}
                 alt='Tech Team'
-                width={335}
+                width={320}
                 height={194}
-                className='object-cover h-[194px] w-[335px]'
+                className='object-cover h-[194px] w-[320px]'
               />
             </div>
             <div className='flex items-center gap-[12px]'>
-              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+              <div className='w-[155px] h-[194px] bg-gray-200'>
                 <Image
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                   alt='Tech Team'
-                  width={161.5}
+                  width={155}
                   height={194}
-                  className='object-cover h-[194px] w-[161.5px]'
+                  className='object-cover h-[194px] w-[155px]'
                 />
               </div>
-              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+              <div className='w-[155px] h-[194px] bg-gray-200'>
                 <Image
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
                   alt='Tech Team'
-                  width={161.5}
+                  width={155}
                   height={194}
-                  className='object-cover h-[194px] w-[161.5px]'
+                  className='object-cover h-[194px] w-[155px]'
                 />
               </div>
             </div>
           </div>
           <div className='flex flex-col gap-[12px]'>
-            <div className='w-[335px] h-[194px] bg-gray-200'>
+            <div className='w-[320px] h-[194px] bg-gray-200'>
               <Image
                 src={"https://squadra-media.s3.ap-south-1.amazonaws.com/6.jpg"}
                 alt='Tech Team'
-                width={335}
+                width={320}
                 height={194}
-                className='object-cover h-[194px] w-[335px]'
+                className='object-cover h-[194px] w-[320px]'
               />
             </div>
             <div className='flex items-center gap-[12px]'>
-              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+              <div className='w-[155px] h-[194px] bg-gray-200'>
                 <Image
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8330.jpg"}
                   alt='Tech Team'
-                  width={161.5}
+                  width={155}
                   height={194}
-                  className='object-cover h-[194px] w-[161.5px]'
+                  className='object-cover h-[194px] w-[155px]'
                 />
               </div>
-              <div className='w-[161.5px] h-[194px] bg-gray-200'>
+              <div className='w-[155px] h-[194px] bg-gray-200'>
                 <Image
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg"}
                   alt='Tech Team'
-                  width={161.5}
+                  width={155}
                   height={194}
-                  className='object-cover h-[194px] w-[161.5px]'
+                  className='object-cover h-[194px] w-[155px]'
                 />
               </div>
             </div>
@@ -1197,7 +1222,7 @@ IT Services */}
 
 
       {/* technologies we use  */}
-      <div className='bg-[#FAFAFA] min-w-[375px] w-full flex flex-col items-center justify-center'>
+      <div className='bg-[#FAFAFA] min-w-[360px] w-full flex flex-col items-center justify-center'>
         <div className='w-[335px] h-[118px] mt-[42px]'>
           <p
             className="text-center text-[32px] text-[#222222] font-semibold leading-[38.19px]"
@@ -1340,6 +1365,7 @@ IT Services */}
           </Accordion>
         </div>
       </div>
+
       <div id='contact-section'>
 
         <ContactUsForm />
@@ -1349,59 +1375,3 @@ IT Services */}
 }
 
 export default MobileUi;
-
-
-
-interface VideoPlayerProps {
-  src: string;
-  width?: number;
-  height?: number;
-  className?: string;
-}
-
-const ControlledVideoPlayer: React.FC<VideoPlayerProps> = ({
-  src,
-  width = 342,
-  height = 275,
-  className = ''
-}) => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    const startPlayback = async () => {
-      try {
-        if (videoRef.current) {
-          await videoRef.current.play();
-        }
-      } catch (error) {
-        console.error('Autoplay prevented:', error);
-      }
-    };
-
-    startPlayback();
-  }, []);
-
-  return (
-    <div
-      className={`relative ${className}`}
-      style={{ width: `${width}px`, height: `${height}px` }}
-    >
-      <video
-        ref={videoRef}
-        className="w-full h-full object-cover rounded-md"
-        muted
-        loop
-        autoPlay
-        playsInline
-        webkit-playsinline="true"
-        preload="auto"
-      >
-        <source
-          src={src}
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  );
-};

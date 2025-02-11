@@ -248,6 +248,9 @@ const ClientPage = () => {
           {clients.map((client,index) => (
             <div key={index} className="rounded-lg  duration-300 flex items-center justify-center">
               <Image
+              unoptimized
+              priority
+              quality={100}
                 src={client?.src || "/placeholder.svg"}
                 alt={client?.alt}
                 width={300} 
