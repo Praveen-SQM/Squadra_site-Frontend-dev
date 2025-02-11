@@ -249,6 +249,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
                   <Input
                     id="fullName"
                     type="text"
+                    autoComplete="off"
                     className="flex-1"
                     placeholder="Enter your name"
                     value={fullName}
