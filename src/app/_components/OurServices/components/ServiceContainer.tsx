@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ServicesContainer({ service, index }: any) {
@@ -8,9 +9,9 @@ export default function ServicesContainer({ service, index }: any) {
   return (
     <div className="w-full min-h-screen flex items-center">
       <div className="container mx-auto grid md:grid-cols-2 gap-8">
-        <div 
+        <div
           className={`flex flex-col items-start gap-[42px] ${
-            isEven ? 'lg:order-1' : 'lg:order-2'
+            isEven ? "lg:order-1" : "lg:order-2"
           }`}
         >
           {/* Title and Description */}
@@ -57,21 +58,21 @@ export default function ServicesContainer({ service, index }: any) {
               </div>
             ))}
           </div>
-
-          <Button
-            onClick={service?.onclick}
-            variant="outline"
-            className="bg-white shadow-none min-w-[240px] min-h-[52px] font-[400] flex items-center justify-center hover:bg-blue-950 hover:text-white order-4"
-          >
-            VIEW ALL
-            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <Link className='order-4' href={`/${service?.link}`}>
+            <Button
+              variant="outline"
+              className="bg-white shadow-none min-w-[240px] min-h-[52px] font-[400] flex items-center justify-center hover:bg-blue-950 hover:text-white"
+            >
+              VIEW ALL
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
 
         {/* Video for desktop view */}
-        <div 
+        <div
           className={`hidden md:flex w-full justify-center ${
-            isEven ? 'lg:order-2' : 'lg:order-1'
+            isEven ? "lg:order-2" : "lg:order-1"
           }`}
         >
           <video
