@@ -608,7 +608,7 @@ function MobileUi() {
         loop 
         playsInline
         className=" h-full w-full object-cover"
-        src="https://squadra-media.s3.ap-south-1.amazonaws.com/4914730_Colleagues_Job_1920x1080_b0ce926804.mp4"
+        src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard%2Bvideo.mp4"
       />
        
         </div>
@@ -908,7 +908,7 @@ Development */}
         loop 
         playsInline
         className=" h-full w-full object-cover"
-        src="https://squadra-media.s3.ap-south-1.amazonaws.com/4914730_Colleagues_Job_1920x1080_b0ce926804.mp4"
+        src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d+%281%29.webm"
       />
         
         </div>
@@ -1060,7 +1060,7 @@ IT Services */}
         loop 
         playsInline
         className=" h-full w-full object-cover"
-        src="https://squadra-media.s3.ap-south-1.amazonaws.com/4914730_Colleagues_Job_1920x1080_b0ce926804.mp4"
+        src="https://squadra-media.s3.ap-south-1.amazonaws.com/video%2Bsample.webm"
       />
       </div>
       <div className='mt-[42px] mb-[32px]'>
