@@ -254,6 +254,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
                     placeholder="Enter your name"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     onInput={(e:any) => (e.target.value = e.target.value.replace(/[^A-Za-z\s]/g, ""))}
                   />
                   {fullNameErrorMessage === "Please enter full name" && (
