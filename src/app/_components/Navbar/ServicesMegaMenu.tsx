@@ -9,6 +9,7 @@ const ServicesMegaMenu = ({
   isServicesHovered,
   setIsServicesHovered,
   setIsScrolled,
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any) => {
   return (
     <AnimatePresence>

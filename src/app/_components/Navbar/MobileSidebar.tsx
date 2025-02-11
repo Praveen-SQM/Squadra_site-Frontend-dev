@@ -8,6 +8,7 @@ import Image from "next/image";
 import logo from "@/utilities/images/itLogoColoured.svg";
 import itLogocolor from "@/utilities/images/itLogoColoured.svg";
 import {PRIMARY_COLOR} from "./constants";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const MobileSidebar = ({ isOpen, onClose, pathname }: any) => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
