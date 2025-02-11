@@ -80,7 +80,7 @@ export default function ContactUsForm() {
     };
 
     return (
-        <div className="max-w-screen-2xl flex flex-col py-[42px] px-[20px] lg:flex-row  md:mt-0 justify-between gap-[20px] bg-[#FAFAFA]">
+        <div id='contact-section' className="max-w-screen-2xl flex flex-col py-[42px] px-[20px] lg:flex-row  md:mt-0 justify-between gap-[20px] bg-[#FAFAFA]">
             {/* Left Section */}
             <div className="w-full lg:w-1/2 flex flex-col gap-[12px]">
                 <h2 className="text-[32px] sm:text-[32px] md:text-[48px] lg:text-[54px] leading-[38.19px] text-[#131313] font-[300] w-[235px]">
@@ -124,7 +124,13 @@ export default function ContactUsForm() {
                                 id="first-name"
                                 type="text"
                                 placeholder="First Name"
-                                {...register("firstName", { required: "First name is required" })}
+                                {...register("firstName", { 
+                                    required: "First name is required",
+                                    pattern: {
+                                        value: /^[A-Za-z\s]+$/, // Allows only letters and spaces
+                                        message: "First name must contain only letters",
+                                      },
+                                })}
                                 className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                             />
                             {errors.firstName && (
@@ -140,7 +146,12 @@ export default function ContactUsForm() {
                                 id="last-name"
                                 type="text"
                                 placeholder="Last Name"
-                                {...register("lastName")}
+                                {...register("lastName",{
+                                    pattern: {
+                                        value: /^[A-Za-z\s]+$/, // Allows only letters and spaces
+                                        message: "Last name must contain only letters",
+                                      },
+                                })}
                                 className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
                             />
                             {errors.lastName && (

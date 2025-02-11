@@ -148,7 +148,7 @@ function VisualImpactUi() {
                                         <p className={`py-1 font-[300] xl:text-[16px] xl:leading-7 lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] text-[14px] leading-[16.71px] text-[#E7E7E7] sm:text-right text-center ${service.maxParagraphWidth}`}>{service.description}</p>
                                     </div>
                                     <HoverButton
-                                        href="/it-services#contact-section"
+                                        href="/contact-us"
                                         buttonText="Get a Quote"
                                         defaultIcon={arrowRight}
                                         hoverIcon={righticon}

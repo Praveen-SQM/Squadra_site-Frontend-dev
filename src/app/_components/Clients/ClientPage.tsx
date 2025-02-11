@@ -247,13 +247,18 @@ const ClientPage = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 lg:gap-3">
           {clients.map((client,index) => (
             <div key={index} className="rounded-lg  duration-300 flex items-center justify-center">
-                <Image unoptimized
-                  src={client?.src || "/placeholder.svg"}
-                  alt={client?.alt}
-                  width={150}
-                  height={80}
-                  className="sm:h-[130px] sm:w-[250px] h-[100px] w-[150px] object-fit shadow-none rounded-lg"
-                />
+              <Image
+              unoptimized
+              priority
+              quality={100}
+                src={client?.src || "/placeholder.svg"}
+                alt={client?.alt}
+                width={300} 
+                height={160}
+                sizes="(max-width: 768px) 100vw, 250px"
+                className="sm:h-[130px] sm:w-[250px] h-[100px] w-[150px] object-contain shadow-none rounded-lg"
+              />
+
               </div>
           ))}
         </div>
