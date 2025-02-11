@@ -222,7 +222,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/it-serivces" className="hover:text-white transition-colors">
+                <Link href="/it-services" className="hover:text-white transition-colors">
                   Technology & Development
                 </Link>
               </li>
@@ -231,11 +231,11 @@ export default function Footer() {
                   Visual Impact
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="#" className="hover:text-white transition-colors">
                   Animation & E-learning
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
