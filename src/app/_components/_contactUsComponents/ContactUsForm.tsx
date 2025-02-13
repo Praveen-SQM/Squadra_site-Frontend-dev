@@ -12,7 +12,7 @@ export default function ContactUsForm() {
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     mode: "onChange",
@@ -36,7 +36,7 @@ export default function ContactUsForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-          cc: [''],
+          cc: [process.env.NEXT_PUBLIC_EMAIL_CC,process.env.NEXT_PUBLIC_EMAIL_CC_2],
           bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
           message: {
             subject: activeTab === "inquiry" ? `GENERAL INQUIRY` : `QUOTE ENQUIRY`,
@@ -70,6 +70,7 @@ export default function ContactUsForm() {
       console.error('Error sending email:', error);
     } finally {
       setLoading(false);
+      reset();
     }
   };
 
