@@ -183,7 +183,7 @@ import youtubeIcon from '@/utilities/icons/youtube-icon.svg'
 export default function Footer() {
   const pathname =usePathname()
   return (
-    <footer className="bg-black text-gray-400 py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-24">
+    <footer className="bg-black text-gray-400 py-8 px-4 sm:py-12 sm:px-6 lg:py-16 xl:px-24">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo and Tagline */}
@@ -195,6 +195,7 @@ export default function Footer() {
                 alt="Squadra"
                 className="h-12"
               />
+              {/* user groups autoscreen respinsve custom group responsvie */}
             </Link>
             <h2 className="text-white text-[1.7rem] font-light leading-tight">
             Start
@@ -203,7 +204,10 @@ export default function Footer() {
               <br />
               a Solid
               <br/>
-              Brand Today!
+              <span className="text-[#FBAE17] mr-1">
+               Brand 
+              </span>
+               Today!
             </h2>
           </div>
 

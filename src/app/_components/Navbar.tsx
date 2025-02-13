@@ -114,7 +114,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed z-50 w-full px-1 py-1 lg:px-32 transition-all duration-300 ${
+        className={`fixed z-50 w-full px-1 py-1 transition-all duration-300 ${
           pathname.includes("/contact-us") ||
           pathname.includes("/our-services") ||
           pathname.includes("/branding-and-creative") ||

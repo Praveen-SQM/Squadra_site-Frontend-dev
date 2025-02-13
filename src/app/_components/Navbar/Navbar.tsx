@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed z-50 w-full p-0 lg:px-32 transition-all duration-300 ${navBackground}`}
+      className={`fixed z-50 w-full p-2 sm:px-2 lg:px-12 xl:px-32  transition-all duration-300 ${navBackground}`}
     >
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
         <Logo
@@ -71,10 +71,10 @@ const Navbar = () => {
             onClose={() => setIsSidebarOpen(false)}
           />
         </div>
-        <div className="lg:flex hidden font-[500] space-x-8">
+        <div className="xl:flex hidden font-[500] space-x-8">
           <ContactPopover isScrolled={isScrolled} />
           <Link
-            className={`hidden lg:block cursor-pointer py-2 px-[12px] my-3 rounded-[4px] bg-[#06135B] text-white ${
+            className={` cursor-pointer py-2 px-[12px] my-3 rounded-[4px] bg-[#06135B] text-white ${
               pathname.includes("/clients") ? `` : ""
             }`}
             href="/contact-us"
@@ -82,7 +82,7 @@ const Navbar = () => {
             Contact Us
           </Link>
         </div>
-        <div className="lg:hidden flex items-center">
+        <div className="xl:hidden flex items-center">
           <button
             onClick={() => setIsSidebarOpen((prev) => !prev)}
             aria-label="Open mobile menu"

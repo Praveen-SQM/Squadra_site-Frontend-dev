@@ -10,7 +10,7 @@ const NavigationLinks = ({
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any) => {
   return (
-    <ul className="lg:flex hidden font-[500] space-x-8">
+    <ul className="xl:flex hidden font-[500] space-x-8">
       <Link
         className={`cursor-pointer py-5 ${
           pathname.includes("/about-us")
