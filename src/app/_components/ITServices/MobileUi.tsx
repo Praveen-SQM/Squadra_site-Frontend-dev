@@ -319,7 +319,7 @@ function MobileUi() {
           </div>
         </div>
 
-        <Link href='#contact-section' scroll={false} className="w-[135px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+        <Link href='/contact-us'  className="w-[135px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
           <div className="w-[115px] h-[41px] p-[5px] px-[15px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
             <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
               Connect Us

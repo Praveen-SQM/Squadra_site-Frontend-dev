@@ -79,18 +79,18 @@ const MobileSidebar = ({ isOpen, onClose, pathname }: any) => {
                         className="py-3 text-base transition-all duration-500 text-black flex justify-between items-center cursor-pointer"
                         onClick={() => toggleSubmenu(index)}
                       >
-                        <Link href={service.link}>{service.title}</Link>
+                        <Link onClick={onClose} href={service.link}>{service.title}</Link>
                       </div>
                       <div
                         className={`overflow-hidden transition-max-height duration-500 ${activeService === index ? "max-h-[1000px]" : "max-h-0"}`}
                       >
-                        <ul className="pl-4 text-sm text-gray-600">
+                        {/* <ul className="pl-4 text-sm text-gray-600">
                           {service.items.map((item, i) => (
                             <li key={i} className="py-2 border-b border-gray-200">
                               {item}
                             </li>
                           ))}
-                        </ul>
+                        </ul> */}
                       </div>
                     </li>
                   ))}

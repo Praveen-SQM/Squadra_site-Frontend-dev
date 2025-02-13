@@ -17,6 +17,9 @@ import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
 import finTechMain from '@/utilities/images/fintechMain.svg';
 import ApproachComponent from './components/ApproachComponent'
 import righticon from '@/utilities/images/right-arrow.svg'
+import imageOne from '@/utilities/images/image-1.png'
+import imageTwo from '@/utilities/images/image-2.png'
+import imageThree from '@/utilities/images/image-3.png'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
@@ -43,17 +46,17 @@ function DesktopUi() {
 
   useEffect(() => {
     const checkBodyBackground = () => {
-        const bodyBgColor = getComputedStyle(document.body).backgroundColor;
-        console.log("bodyBgColor-------->",bodyBgColor)
-        // setIsDarkBackground(bodyBgColor === "rgb(255, 255, 255)"); 
-        // White background
+      const bodyBgColor = getComputedStyle(document.body).backgroundColor;
+      console.log("bodyBgColor-------->", bodyBgColor)
+      // setIsDarkBackground(bodyBgColor === "rgb(255, 255, 255)"); 
+      // White background
     };
 
     window.addEventListener("scroll", checkBodyBackground);
     checkBodyBackground(); // Run once on load
 
     return () => window.removeEventListener("scroll", checkBodyBackground);
-}, []);
+  }, []);
 
 
   return (
@@ -126,7 +129,7 @@ function DesktopUi() {
                 "linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)",
             }}
           >
-            <Link href="#contact-section" className="w-full h-full rounded-[10px] flex items-center justify-center bg-[#FFFFFF]">
+            <Link href="/contact-us" className="w-full h-full rounded-[10px] flex items-center justify-center bg-[#FFFFFF]">
               <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
                 Connect Us
               </p>
@@ -251,9 +254,9 @@ function DesktopUi() {
           <div className='flex flex-col items-center w-full h-fit'>
 
             <div className="w-[277px] h-[586px] flex flex-col items-center ">
-              <Image 
-              width={277}
-              height={586}
+              <Image
+                width={277}
+                height={586}
                 src="https://squadra-media.s3.ap-south-1.amazonaws.com/mockup+.png"
                 alt="Placeholder Image"
                 className='w-[277px] h-[586px] object-cover'
@@ -462,7 +465,7 @@ function DesktopUi() {
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
                         <Image quality={40}
-                          src={el?.icon} 
+                          src={el?.icon}
                           width={23}
                           height={23}
                           alt='Network'
@@ -510,9 +513,16 @@ function DesktopUi() {
                 height={388}
                 alt='SaaS'
               /> */}
-              <video autoPlay loop muted width="400" height="250" className='rounded-[24px]'>
+              {/* <video autoPlay loop muted width="400" height="250" className='rounded-[24px]'>
                 <source src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" type="video/mp4" />
-              </video>
+              </video> */}
+              <Image
+                src={imageOne}
+                width={540}
+                height={388}
+                alt='SaaS'
+                className='h-full w-full object-cover'
+              />
             </div>        </div>
 
 
@@ -825,7 +835,14 @@ function DesktopUi() {
                 height={547}
                 alt='SaaS'
               /> */}
-              <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} muted loop width="438" height="547" className='rounded-[24px]'></video>
+              {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} muted loop width="438" height="547" className='rounded-[24px]'></video> */}
+              <Image
+                src={imageTwo}
+                width={438}
+                height={547}
+                alt='SaaS'
+                className='h-full w-full object-cover'
+              />
             </div>
 
           </div>
@@ -1049,7 +1066,7 @@ function DesktopUi() {
                     <div className='flex gap-[8px]'>
                       <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-600 rounded-[10.62px]'>
                         <Image quality={40}
-                          src={el?.icon} 
+                          src={el?.icon}
                           width={23}
                           height={23}
                           alt='Network'
@@ -1079,8 +1096,8 @@ function DesktopUi() {
             <HoverButton
               href="#contact-section"
               buttonText="Get a Quote"
-              defaultIcon={arrowRight} 
-              hoverIcon={righticon}  
+              defaultIcon={arrowRight}
+              hoverIcon={righticon}
             />
 
           </div>
@@ -1097,7 +1114,14 @@ function DesktopUi() {
                 height={547} priority
                 alt='webandMobileMain'
               /> */}
-               <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop muted width="438" height="300" className='rounded-[24px]'></video>
+              {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop muted width="438" height="300" className='rounded-[24px]'></video> */}
+              <Image
+                src={imageThree} unoptimized={true}
+                width={438}
+                height={547} priority
+                alt='webandMobileMain'
+                className="h-full w-full object-cover"
+              />
             </div>        </div>
 
         </div>
@@ -1105,7 +1129,7 @@ function DesktopUi() {
 
       {/* solutions */}
       <div className='w-full h-[860px] bg-white flex items-center'>
-      <ApproachComponent/>
+        <ApproachComponent />
       </div>
 
       {/* Squadra Tech Team */}
@@ -1135,8 +1159,8 @@ function DesktopUi() {
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                   alt='Tech Team'
                   width={280}
-                height={262}
-                className='object-cover h-[262px] w-[280px]'
+                  height={262}
+                  className='object-cover h-[262px] w-[280px]'
                 />
               </div>
               <div className='w-[280px] h-[262px] bg-gray-200'>
@@ -1144,8 +1168,8 @@ function DesktopUi() {
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
                   alt='Tech Team'
                   width={280}
-                height={262}
-                className='object-cover h-[262px] w-[280px]'
+                  height={262}
+                  className='object-cover h-[262px] w-[280px]'
                 />
               </div>
             </div>
@@ -1259,15 +1283,15 @@ export default DesktopUi
 
 
 export const HoverButton = ({ href, buttonText, defaultIcon, hoverIcon }: {
-  href: string; 
-  buttonText: string; 
-  defaultIcon: string; 
+  href: string;
+  buttonText: string;
+  defaultIcon: string;
   hoverIcon: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link 
+    <Link
       href={href}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

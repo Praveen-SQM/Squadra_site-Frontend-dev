@@ -5,7 +5,7 @@ import heroImage from '@/utilities/images/desktop-hero-image.svg'
 import "./styles/TabletUI.css"
 import Image from 'next/image';
 import { aiAndDigital, cloudData, customSoftwareDevData, data, finTech, healthcare, ItServices, saasData, webAndMobDev } from './MobileUi';
-import starSvg from '@/utilities/images/star.svg' 
+import starSvg from '@/utilities/images/star.svg'
 import Container from '@/utilities/images/Container.svg'
 import ITImage from '@/utilities/images/ITImage.svg'
 import HealthCareMain from '@/utilities/images/healthCareMAin.svg'
@@ -14,8 +14,11 @@ import whyChooseImage from '@/utilities/images/whyChooseUsImageDesktop.svg'
 import TabComponent from './TabletTab';
 import ContactUsForm from './components/TabletContactUsForm';
 import ApprochCompTab from './components/ApprochCompTab';
-
-
+import imageOne from '@/utilities/images/image-1.png'
+import imageTwo from '@/utilities/images/image-2.png'
+import imageThree from '@/utilities/images/image-3.png'
+import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
+import Link from 'next/link';
 
 function TabUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -66,7 +69,7 @@ function TabUi() {
             <p className='font-normal text-[18px] leading-[31px] text-white'>Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.</p>
           </div>
 
-          <div className="w-[137px] h-[57px] rounded-[12px] border flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+          <Link href={'/contact-us'} className="w-[137px] h-[57px] rounded-[12px] border flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
             <div className="w-[115px] h-[41px] py-[5px] px-[15px] gap-[8px] rounded-[8px] bg-[#FFFFFF] cursor-pointer">
               {/* Content goes here */}
               <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
@@ -74,7 +77,7 @@ function TabUi() {
               </p>
 
             </div>
-          </div>
+          </Link>
         </div>
 
         <div className='mb-[43px]'>
@@ -356,7 +359,14 @@ function TabUi() {
             height={388}
             alt='SaaS'
           /> */}
-          <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" autoPlay loop width="640" height="360" className='rounded-md'></video>
+          {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard+video.mp4" autoPlay loop width="640" height="360" className='rounded-md'></video> */}
+          <Image
+            src={imageOne}
+            width={540}
+            height={388}
+            alt='SaaS'
+            className='h-full w-full object-cover'
+          />
         </div>
         <div className='mt-[44px] mb-[48px] grid grid-cols-2 gap-[20px]'>
           {
@@ -493,14 +503,14 @@ Development */}
         </p>
 
       </div>
-      <div className='w-[342px] h-[600px] mt-[42px]'>
-        {/* <Image
+      <div className='w-[342px] h-[400px] mt-[42px]'>
+        <Image
           src={webandMobileMain}
-          width={342}
-          height={398}
+          width={400}
+          height={378}
           alt='webandMobileMain'
-        /> */}
-        <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360" className='rounded-md'></video>
+        />
+        {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360" className='rounded-md'></video> */}
       </div>
       <div className='mt-[42px] mb-[32px] grid grid-cols-2 gap-[20px]'>
         {
@@ -649,7 +659,14 @@ Development */}
             height={427}
             alt='SaaS'
           /> */}
-          <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="640" height="360" className='rounded-[24px]'></video>
+          {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} loop width="640" height="360" className='rounded-[24px]'></video> */}
+          <Image
+            src={imageTwo}
+            width={342}
+            height={427}
+            alt='SaaS'
+            className='h-full w-full object-cover'
+          />
         </div>
         <div className='mt-[44px] mb-[48px] grid grid-cols-2 gap-[20px]'>
           {
@@ -794,7 +811,14 @@ IT Services */}
           height={427} priority
           alt='webandMobileMain'
         /> */}
-        <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360"  className='rounded-[24px]'></video>
+        {/* <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4" autoPlay loop width="640" height="360"  className='rounded-[24px]'></video> */}
+        <Image
+          src={imageThree} unoptimized={true}
+          width={342}
+          height={427} priority
+          alt='webandMobileMain'
+          className="h-full w-full object-cover"
+        />
       </div>
       <div className='mt-[42px] mb-[32px] grid grid-cols-2 gap-[20px]'>
         {
@@ -836,7 +860,7 @@ IT Services */}
 
       {/* solutions */}
       <div className='w-full h-[860px] bg-white flex items-center'>
-      <ApprochCompTab/>
+        <ApprochCompTab />
       </div>
 
       {/*    sQuadra tech Team */}
@@ -866,8 +890,8 @@ IT Services */}
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
                   alt='Tech Team'
                   width={169.5}
-                height={268.5}
-                className='object-cover h-[268.5px] w-[169.5px]'
+                  height={268.5}
+                  className='object-cover h-[268.5px] w-[169.5px]'
                 />
               </div>
               <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
@@ -875,8 +899,8 @@ IT Services */}
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
                   alt='Tech Team'
                   width={169.5}
-                height={268.5}
-                className='object-cover h-[268.5px] w-[169.5px]'
+                  height={268.5}
+                  className='object-cover h-[268.5px] w-[169.5px]'
                 />
               </div>
             </div>
@@ -889,8 +913,8 @@ IT Services */}
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8330.jpg"}
                   alt='Tech Team'
                   width={169.5}
-                height={268.5}
-                className='object-cover h-[268.5px] w-[169.5px]'
+                  height={268.5}
+                  className='object-cover h-[268.5px] w-[169.5px]'
                 />
               </div>
               <div className='w-[169.5px] h-[268.5px] bg-gray-200'>
@@ -898,8 +922,8 @@ IT Services */}
                   src={"https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg"}
                   alt='Tech Team'
                   width={169.5}
-                height={268.5}
-                className='object-cover h-[268.5px] w-[169.5px]'
+                  height={268.5}
+                  className='object-cover h-[268.5px] w-[169.5px]'
                 />
               </div>
             </div>
@@ -977,11 +1001,11 @@ IT Services */}
           </div>
           <TabComponent />
 
-        </div> 
+        </div>
       </div>
 
       {/* Contact us */}
-            <ContactUsForm />
+      <ContactUsForm />
 
     </div>
   )
