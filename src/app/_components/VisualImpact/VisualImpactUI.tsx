@@ -219,12 +219,14 @@ function VisualImpactUi() {
                     <div className='border-t-[0.75px] border-b-[0.75px] py-[9.39px] px-[11.52px] border-[#D1D1D1] font-normal text-[12px] leading-[14.4px] text-[#D1D1D1]'>Beyond Ordinary</div>
                     <p className='font-medium xl:text-[100px] xl:leading-[120px] lg:text-[55px] lg:leading-[65.63px] md:text-[55px] md:leading-[65.63px] text-[55px] leading-[65.63px] text-[#FFFFFF] text-center'>Visual Journeys</p>
                     <p className='font-[300] sm:text-[24px] sm:leading-[28.64px] text-[13px] leading-[15.51px] text-center text-[#B0B0B0] sm:max-w-[596px] max-w-[335px]'>Explore projects where imagination meets execution, turning visions into stunning realities.</p>
+                    <div className='sm:flex hidden'>
                     <HoverButton
                         href="#portfolio"
                         buttonText="View Portfolio"
                         defaultIcon={arrowRight}
                         hoverIcon={righticon}
                     />
+                    </div>
                 </div>
 
                 <div id='portfolio' className='flex sm:flex-row flex-col items-center xl:gap-5 lg:gap-[10px] md:gap-[10px] sm:gap-[10px] gap-4'>
