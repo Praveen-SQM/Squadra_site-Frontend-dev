@@ -118,7 +118,7 @@ const OurLatestWork = () => {
         ))}
       </div>
 
-      <button className="px-[20px] py-[16px] rounded-xl bg-white">
+      <button className="px-[20px] py-[16px] rounded-xl bg-white hidden">
         View all works ⟶
       </button>
     </div>
