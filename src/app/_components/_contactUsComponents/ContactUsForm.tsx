@@ -62,6 +62,8 @@ export default function ContactUsForm() {
       const result = await response.json();
       if (response.ok) {
         toast.success(result.message, { duration: 3000 });
+        reset();
+
       } else {
         toast.error(result.message || 'Failed to send email', { duration: 3000 });
       }
@@ -70,7 +72,6 @@ export default function ContactUsForm() {
       console.error('Error sending email:', error);
     } finally {
       setLoading(false);
-      reset();
     }
   };
 

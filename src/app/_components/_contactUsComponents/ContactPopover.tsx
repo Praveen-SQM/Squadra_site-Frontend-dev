@@ -121,7 +121,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-          cc: [""],
+          cc: [ process.env.NEXT_PUBLIC_EMAIL_CC_2],
           bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
           message: {
             subject: "Callback Request",
@@ -132,6 +132,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
             <body>
               <p>Hello Team,</p>
               <p>A user has requested a callback.</p>
+              <p><b>Full Name:</b> ${fullName}</p>
               <p><b>Phone Number:</b> ${phone}</p>
               <br>
               <p>Thank you & Regards,<br><b>Team</b></p>
@@ -144,6 +145,8 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       const result = await response.json();
       if (response.ok) {
         toast.success("Callback Requested successfully");
+        setPhoneInput("");
+        setFullName("");
       } else {
         toast.error(result.message || "Failed to send callback request");
       }
@@ -152,8 +155,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       console.error("Error sending callback request:", error);
     } finally {
       setLoading(false);
-      setPhoneInput("");
-      setFullName("");
+     
     }
   };
 
@@ -175,7 +177,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/privacy-policy") ||
               pathname.includes("/our-services") ||
               pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
-              || pathname.includes('/clients')
+              || pathname.includes('/clients') || pathname.includes('/direct-apply')
 
 
                 ? callIconBlack
@@ -197,7 +199,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/job-apply") ||
               pathname.includes("/privacy-policy") ||
               pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
-              || pathname.includes('/clients')
+              || pathname.includes('/clients') || pathname.includes('/direct-apply')
 
                 ? "text-black"
                 : isScrolled

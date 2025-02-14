@@ -16,7 +16,7 @@ export default function ContactUsForm() {
   const {
     register,
     handleSubmit,
-  
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     mode: "onChange",});
@@ -37,7 +37,7 @@ export default function ContactUsForm() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-        cc: [''], 
+        cc: [process.env.NEXT_PUBLIC_EMAIL_CC_2], 
         bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
         message: {
           subject: activeTab === "inquiry" ? `GENERAL INQUIRY` : `QUOTE ENQUIRY`,
@@ -63,6 +63,7 @@ export default function ContactUsForm() {
     const result = await response.json();
     if (response.ok) {
       toast.success(result.message,{duration:3000});
+      reset();
     } else {
       toast.error(result.message || 'Failed to send email',{duration:3000});
     }

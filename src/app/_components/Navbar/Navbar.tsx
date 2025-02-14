@@ -17,19 +17,16 @@ const Navbar = () => {
 
   const shouldShowWhiteBg = useMemo(
     () =>
-      [
-        "",
-        "/contact-us",
-        "/our-services",
-        "/branding-and-creative",
-        "/openings",
-        "/direct-apply",
-        "/job-details",
-        "/job-apply",
-        "/privacy-policy",
-        "/visual-impact",
-        "/clients",
-      ].includes(pathname),
+      pathname === "" ||
+      pathname === "/contact-us" ||
+      pathname === "/our-services" ||
+      pathname === "/branding-and-creative" ||
+      pathname === "/openings" ||
+      pathname === "/direct-apply" ||
+      pathname === "/privacy-policy" ||
+      pathname === "/visual-impact" ||
+      pathname === "/clients" ||
+      pathname.startsWith("/job-details/"),
     [pathname]
   );
 
