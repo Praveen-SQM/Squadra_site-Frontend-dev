@@ -291,6 +291,14 @@ function MobileUi() {
   }, []);
 
 
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const scrollToContact = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
 
   return (
     <div className="h-fit pt-32 flex flex-col  w-full  items-center bg-black">
@@ -319,14 +327,13 @@ function MobileUi() {
           </div>
         </div>
 
-        <Link href='/contact-us'  className="w-[135px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
-          <div className="w-[115px] h-[41px] p-[5px] px-[15px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
-            <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
-              Connect Us
-            </p>
+        <div onClick={scrollToContact}
+          className="w-[115px] h-[41px] p-[5px] px-[15px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
+          <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
+            Connect with us
+          </p>
 
-          </div>
-        </Link>
+        </div>
 
         <div className='mb-[43px]'>
           <div className='w-full h-[263px]'>
@@ -605,7 +612,7 @@ function MobileUi() {
             alt='SaaS'
             className='h-full w-full object-cover'
           />
-           {/* <video 
+          {/* <video 
         autoPlay 
         muted 
         loop 
@@ -613,7 +620,7 @@ function MobileUi() {
         className=" h-full w-full object-cover"
         src="https://squadra-media.s3.ap-south-1.amazonaws.com/Dashboard%2Bvideo.mp4"
       /> */}
-       
+
         </div>
         <div className='mt-[44px] mb-[48px]'>
           {
@@ -907,7 +914,7 @@ Development */}
             alt='SaaS'
             className='h-full w-full object-cover'
           />
-             {/* <video 
+          {/* <video 
         autoPlay 
         muted 
         loop 
@@ -915,7 +922,7 @@ Development */}
         className=" h-full w-full object-cover"
         src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d+%281%29.webm"
       /> */}
-        
+
         </div>
         <div className='mt-[44px] mb-[48px]'>
           {
@@ -1366,7 +1373,7 @@ IT Services */}
         </div>
       </div>
 
-      <div id='contact-section'>
+      <div ref={contactRef} id="contact-section">
 
         <ContactUsForm />
       </div>
