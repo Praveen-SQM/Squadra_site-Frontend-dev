@@ -18,7 +18,6 @@ import imageOne from '@/utilities/images/image-1.png'
 import imageTwo from '@/utilities/images/image-2.png'
 import imageThree from '@/utilities/images/image-3.png'
 import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
-import Link from 'next/link';
 
 function TabUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -40,6 +39,17 @@ function TabUi() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+   const contactRef = useRef<HTMLDivElement>(null);
+  
+    const scrollToContact = () => {
+      if (contactRef.current) {
+        contactRef.current.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    };
+  
 
   return (
     <div className="h-fit pt-16 flex flex-col mx-auto  w-full  items-center bg-black">
@@ -69,15 +79,15 @@ function TabUi() {
             <p className='font-normal text-[18px] leading-[31px] text-white'>Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.</p>
           </div>
 
-          <Link href={'/contact-us'} className="w-[137px] h-[57px] rounded-[12px] border flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
-            <div className="w-[115px] h-[41px] py-[5px] px-[15px] gap-[8px] rounded-[8px] bg-[#FFFFFF] cursor-pointer">
+          <div onClick={scrollToContact} className="w-[167px] cursor-pointer h-[57px] rounded-[12px] border flex justify-center items-center" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+            <div className="w-[157px] h-[41px] py-[5px] px-[15px] gap-[8px] rounded-[8px] bg-[#FFFFFF] cursor-pointer">
               {/* Content goes here */}
               <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
-                Connect Us
+                Connect With Us
               </p>
 
             </div>
-          </Link>
+          </div>
         </div>
 
         <div className='mb-[43px]'>
@@ -1003,9 +1013,10 @@ IT Services */}
 
         </div>
       </div>
-
+     <div  ref={contactRef} id='contact-section'>
       {/* Contact us */}
       <ContactUsForm />
+     </div>
 
     </div>
   )

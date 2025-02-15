@@ -110,13 +110,13 @@ export default function ContactUsForm() {
                         >
                             Get a Quote
                         </button>
-                        <button
+                        {/* <button
                             className={`py-2 text-lg border-b-2 ${activeTab === "inquiry" ? "border-b-yellow-500" : "border-b-transparent"
                                 }`}
                             onClick={() => handleTabClick("inquiry")}
                         >
                             General Inquiry
-                        </button>
+                        </button> */}
                     </div>
                 </div>
 

@@ -59,6 +59,15 @@ function DesktopUi() {
   }, []);
 
 
+  const contactRef=useRef<HTMLDivElement>(null);
+
+  const scrollToContact = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
   return (
     <div className="h-fit pt-16 flex flex-col  w-full  items-center bg-black">
       {/* Intro Section */}
@@ -123,17 +132,17 @@ function DesktopUi() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 2 }}
-            className="w-[137px] h-[40px] rounded-[12px] flex justify-center items-center p-[2px]"
+            className="w-[147px] h-[40px] rounded-[12px] flex justify-center items-center p-[2px]"
             style={{
               background:
                 "linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)",
             }}
           >
-            <Link href="/contact-us" className="w-full h-full rounded-[10px] flex items-center justify-center bg-[#FFFFFF]">
+            <div onClick={scrollToContact} className="w-full cursor-pointer h-full rounded-[10px] flex items-center justify-center bg-[#FFFFFF]">
               <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
-                Connect Us
+                Connect With Us
               </p>
-            </Link>
+            </div>
           </motion.div>
         </div>
         <div className="mb-[43px]">
@@ -1272,8 +1281,10 @@ function DesktopUi() {
           <TabComponent />
 
         </div> </div>
-      {/* Contact us */}
-      <ContactUsForm />
+      <div ref={contactRef} id='contact-section'>
+        {/* Contact us */}
+        <ContactUsForm />
+      </div>
     </div>
   )
 }

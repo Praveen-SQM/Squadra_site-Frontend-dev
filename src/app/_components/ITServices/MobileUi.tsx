@@ -61,7 +61,6 @@ import heroImage from '@/utilities/images/hero-image.svg'
 import ContactUsForm from './components/ContactUsForm';
 import { analyticsTools, backendTools, devopsTools, frontendTools, mobileTools } from './Tabs';
 import ApproachComponent from './components/ApproachComponent';
-import Link from 'next/link';
 import imageOne from '@/utilities/images/image-1.png'
 import imageTwo from '@/utilities/images/image-2.png'
 import imageThree from '@/utilities/images/image-3.png'
@@ -295,7 +294,9 @@ function MobileUi() {
 
   const scrollToContact = () => {
     if (contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" });
+      contactRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
 
@@ -326,14 +327,16 @@ function MobileUi() {
             <p className='font-[16px] text-white'>Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.</p>
           </div>
         </div>
+        <div style={{ borderColor: ' rgba(255, 255, 255, 0.1)' }} className="w-[157px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center">
 
+          
         <div onClick={scrollToContact}
-          className="w-[115px] h-[41px] p-[5px] px-[15px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
+          className="w-[147px] h-[41px] p-[5px] px-[5px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
           <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
-            Connect with us
+              Connect With Us
           </p>
 
-        </div>
+          </div> </div>
 
         <div className='mb-[43px]'>
           <div className='w-full h-[263px]'>
