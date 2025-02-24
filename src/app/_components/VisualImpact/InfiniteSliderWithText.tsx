@@ -1,58 +1,71 @@
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import Image from 'next/image';
+import serviceImageOne from "@/utilities/images/service-image-one.svg";
+import serviceImageTwo from "@/utilities/images/service-image-two.svg";
+import serviceImageThree from "@/utilities/images/service-image-three.svg";
+import serviceImageFour from "@/utilities/images/service-image-four.svg";
+import serviceImageFive from "@/utilities/images/service-image-five.svg";
+import serviceImageSix from "@/utilities/images/service-image-six.svg";
+import serviceImageSeven from "@/utilities/images/service-image-seven.svg";
+import serviceImageEight from "@/utilities/images/service-image-eight.svg";
+import serviceImageNine from "@/utilities/images/service-image-nine.svg";
+import serviceImageTen from "@/utilities/images/service-image-ten.svg";
+import serviceImageEleven from "@/utilities/images/service-image-eleven.svg";
+import serviceImageTwelve from "@/utilities/images/service-image-twelve.svg";
+import serviceImageThirteen from "@/utilities/images/service-image-thirteen.svg";
 
 export function InfiniteSliderWithText() {
 
     const firstImagesSet = [
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02ad24c5e36ddcd1957ad35677',
+            src: serviceImageTwo,
             alt: 'Dean blunt - Black Metal 2'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02af73f776b92d4614152fb141',
+            src: serviceImageNine,
             alt: 'Jungle Jack - JUNGLE DES ILLUSIONS VOL 2'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02ecdb8f824367a53468100faf',
+            src: serviceImageTen,
             alt: 'Yung Lean - Stardust'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e021624590458126fc8b8c64c2f',
+            src: serviceImageOne,
             alt: 'Lana Del Rey - Ultraviolence'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e020dcf0f3680cff56fe5ff2288',
+            src: serviceImageEleven,
             alt: 'A$AP Rocky - Tailor Swif'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02bc1028b7e9cd2b17c770a520',
+            src: serviceImageFive,
             alt: 'Midnight Miami (feat Konvy) - Nino Paid, Konvy'
         }
     ]
 
     const secondImagesSet = [
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e020fc93fe41791c5aa51ae9645',
+            src: serviceImageTwelve,
             alt: 'DAYS BEFORE RODEO - Travis Scott'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02d3e668d0c74720c8c23978e3',
+            src: serviceImageFour,
             alt: "You're in My System - TORYONTHEBEAT"
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e0234537499b159b0e6d18e5655',
+            src: serviceImageThirteen,
             alt: "You can't tell me - People Make the World Go Round"
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e020cd942c1a864afa4e92d04f2',
+            src: serviceImageThree,
             alt: 'ye - Kanye West'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02a875c3ec944b4f164ab5c350',
+            src: serviceImageEight,
             alt: 'Slime Season 3 - Young Thug'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e026376f0d88bbbc8cd051e3401',
+            src: serviceImageSix,
             alt: 'SWAG - 8ruki'
         }
     ]

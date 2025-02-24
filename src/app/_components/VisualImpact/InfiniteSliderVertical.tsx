@@ -1,58 +1,80 @@
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import Image from 'next/image';
+import SliderImageOne from "@/utilities/images/slider-image-1.svg"
+import SliderImageTwo from "@/utilities/images/slider-image-2.svg"
+import SliderImageThree from "@/utilities/images/slider-image-3.svg"
+import SliderImageFour from "@/utilities/images/slider-image-4.svg"
+import SliderImageFive from "@/utilities/images/slider-image-5.svg"
+import SliderImageSix from "@/utilities/images/slider-image-6.svg"
+import SliderImageSeven from "@/utilities/images/slider-image-7.svg"
+import SliderImageEight from "@/utilities/images/slider-image-8.svg"
+import SliderImageNine from "@/utilities/images/slider-image-9.svg"
+import SliderImageTen from "@/utilities/images/slider-image-10.svg"
+import SliderImageEleven from "@/utilities/images/slider-image-11.svg"
+import SliderImageTwelve from "@/utilities/images/slider-image-12.svg"
+import SliderImageThirteen from "@/utilities/images/slider-image-13.svg"
+import SliderImageFourteen from "@/utilities/images/slider-image-14.svg"
 
 export function InfiniteSliderVertical() {
 
     const firstImagesSet = [
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02ad24c5e36ddcd1957ad35677',
+            src: SliderImageOne,
             alt: 'Dean blunt - Black Metal 2'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02af73f776b92d4614152fb141',
+            src: SliderImageTwo,
             alt: 'Jungle Jack - JUNGLE DES ILLUSIONS VOL 2'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02ecdb8f824367a53468100faf',
+            src: SliderImageThree,
             alt: 'Yung Lean - Stardust'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e021624590458126fc8b8c64c2f',
+            src: SliderImageFour,
             alt: 'Lana Del Rey - Ultraviolence'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e020dcf0f3680cff56fe5ff2288',
+            src: SliderImageFive,
             alt: 'A$AP Rocky - Tailor Swif'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02bc1028b7e9cd2b17c770a520',
+            src: SliderImageSix,
+            alt: 'Midnight Miami (feat Konvy) - Nino Paid, Konvy'
+        },
+        {
+            src: SliderImageSeven,
             alt: 'Midnight Miami (feat Konvy) - Nino Paid, Konvy'
         }
     ]
 
     const secondImagesSet = [
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e020fc93fe41791c5aa51ae9645',
+            src: SliderImageEight,
             alt: 'DAYS BEFORE RODEO - Travis Scott'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02d3e668d0c74720c8c23978e3',
+            src: SliderImageNine,
             alt: "You're in My System - TORYONTHEBEAT"
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e0234537499b159b0e6d18e5655',
+            src: SliderImageTen,
             alt: "You can't tell me - People Make the World Go Round"
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e020cd942c1a864afa4e92d04f2',
+            src: SliderImageEleven,
             alt: 'ye - Kanye West'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e02a875c3ec944b4f164ab5c350',
+            src: SliderImageTwelve,
             alt: 'Slime Season 3 - Young Thug'
         },
         {
-            src: 'https://i.scdn.co/image/ab67616d00001e026376f0d88bbbc8cd051e3401',
+            src: SliderImageThirteen,
+            alt: 'SWAG - 8ruki'
+        },
+        {
+            src: SliderImageFourteen,
             alt: 'SWAG - 8ruki'
         }
     ]

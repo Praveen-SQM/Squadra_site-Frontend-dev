@@ -2,7 +2,8 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import image2 from '@/utilities/images/Sol-2.webp'
+import photographyImage from "@/utilities/images/photography-image.svg"
+import digitalMarketingImage from "@/utilities/images/digital-marketing.svg"
 function CustomerJourneySection() {
   const services = [
     {
@@ -14,7 +15,7 @@ function CustomerJourneySection() {
     {
       title: "Product Photography &\nMedia Production",
       description: "We create pro visuals to showcase your brand online and on social media.",
-      image: image2, 
+      image: photographyImage, 
       video: "https://squadra-media.s3.ap-south-1.amazonaws.com/7011693_Filmmaker_Cameraman_1920x1080_ee89e46b34.mp4",
     },
     {
@@ -26,7 +27,7 @@ function CustomerJourneySection() {
         {
       title: "Digital Marketing Strategy",
       description: "We craft digital strategies to boost your presence, engage customers, and grow your brand.",
-          image:"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/strategy.webp", 
+      image:digitalMarketingImage, 
       video: "https://squadra-media.s3.ap-south-1.amazonaws.com/1473075_People_Business_1920x1080_6675f77d8b.mp4",
     },
         {
