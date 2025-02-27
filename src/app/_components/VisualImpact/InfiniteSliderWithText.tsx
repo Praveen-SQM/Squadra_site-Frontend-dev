@@ -6,7 +6,6 @@ import serviceImageThree from "@/utilities/images/service-image-three.svg";
 import serviceImageFour from "@/utilities/images/service-image-four.svg";
 import serviceImageFive from "@/utilities/images/service-image-five.svg";
 import serviceImageSix from "@/utilities/images/service-image-six.svg";
-import serviceImageSeven from "@/utilities/images/service-image-seven.svg";
 import serviceImageEight from "@/utilities/images/service-image-eight.svg";
 import serviceImageNine from "@/utilities/images/service-image-nine.svg";
 import serviceImageTen from "@/utilities/images/service-image-ten.svg";

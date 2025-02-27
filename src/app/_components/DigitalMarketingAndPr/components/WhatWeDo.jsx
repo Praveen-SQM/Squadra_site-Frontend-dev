@@ -15,7 +15,7 @@ const WhatWeDo = () => {
   ];
 
   // Text to display over each image
-  const textOverlays = ["STRATEGY", "CREATIVITY", "ANALYTICS", "OPTIMIZATION"];
+  // const textOverlays = ["STRATEGY", "CREATIVITY", "ANALYTICS", "OPTIMIZATION"];
 
   return (
     <div className="w-full max-w-[1400px] bg-black py-20">
