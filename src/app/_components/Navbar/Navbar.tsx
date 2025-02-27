@@ -26,6 +26,7 @@ const Navbar = () => {
       pathname === "/privacy-policy" ||
       pathname === "/visual-impact" ||
       pathname === "/clients" ||
+      pathname === "/digital-marketing-and-pr" ||
       pathname.startsWith("/job-details/"),
     [pathname]
   );

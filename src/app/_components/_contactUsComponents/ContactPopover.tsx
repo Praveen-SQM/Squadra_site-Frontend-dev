@@ -178,6 +178,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/our-services") ||
               pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
               || pathname.includes('/clients') || pathname.includes('/direct-apply')
+              || pathname.includes('/digital-marketing-and-pr')
 
 
                 ? callIconBlack
@@ -200,6 +201,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/privacy-policy") ||
               pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
               || pathname.includes('/clients') || pathname.includes('/direct-apply')
+            || pathname.includes('/digital-marketing-and-pr')
 
                 ? "text-black"
                 : isScrolled
