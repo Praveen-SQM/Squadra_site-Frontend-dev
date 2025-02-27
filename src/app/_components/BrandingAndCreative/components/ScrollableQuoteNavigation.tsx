@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 const ScrollQuoteSelector = () => {
   const [activeIndex, setActiveIndex] = useState(3);
   const [isHovering, setIsHovering] = useState(false);
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isScrollingRef = useRef(false);
 
   const services = [
@@ -25,7 +25,11 @@ const ScrollQuoteSelector = () => {
     setIsHovering(false);
   };
 
-  const handleWheel = (e) => {
+  interface WheelEventHandler {
+    (e: React.WheelEvent<HTMLDivElement>): void;
+  }
+
+  const handleWheel: WheelEventHandler = (e) => {
     if (!isHovering) return;
 
     if (isScrollingRef.current) return;

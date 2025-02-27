@@ -4,7 +4,7 @@ import dataAnalyticsImage from "@/utilities/images/data-analytics.svg";
 import publicRelationsImage from "@/utilities/images/public-relations.svg";
 import socialMediaImage from "@/utilities/images/social-media-management.svg";
 import contentMarketingImage from "@/utilities/images/content-marketing.svg";
-import SEOImage from "@/utilities/images/seo.svg";
+import SEOImage from "@/utilities/images/SEO.svg";
 
 
 const OurMethodology = () => {
