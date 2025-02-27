@@ -6,6 +6,7 @@ import { ArrowDown } from "lucide-react";
 // import OurLatestWork from "./components/OurLatestWork"
 // import TrustedBy from "./components/TrustedBy"
 import WorkTogether from "./components/WorkTogether";
+import UnleashPotential from "./components/UnleashPotential";   
 import Link from "next/link";
 const DesktopUi = () => {
   return (
@@ -62,7 +63,7 @@ const DesktopUi = () => {
         <div id="explore">
         <OurMethodology />
         </div>
-        {/* <UnleashPotential /> */}
+        <UnleashPotential />
         <WhatWeDo />
         <InfiniteSliderBasic />
         <WorkTogether/>

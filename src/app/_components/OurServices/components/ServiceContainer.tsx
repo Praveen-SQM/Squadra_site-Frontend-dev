@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ServicesContainer({ service, index }: any) {
@@ -34,7 +35,7 @@ export default function ServicesContainer({ service, index }: any) {
 
           {/* Video for mobile view */}
           <div className="md:hidden order-2 w-full flex justify-center">
-            <video
+            {/* <video
               className="w-full h-[335px] object-cover"
               autoPlay
               loop
@@ -42,7 +43,14 @@ export default function ServicesContainer({ service, index }: any) {
               playsInline
             >
               <source src={service?.video} type="video/mp4" />
-            </video>
+            </video> */}
+            <Image
+              src={service?.image}
+              alt={service?.title}
+              width={570}
+              height={335}
+              className="w-full h-[335px] object-cover"
+            />
           </div>
 
           {/* Service List */}
@@ -75,7 +83,7 @@ export default function ServicesContainer({ service, index }: any) {
             isEven ? "lg:order-2" : "lg:order-1"
           }`}
         >
-          <video
+          {/* <video
             className="w-full lg:w-[570px] h-[530px] object-cover"
             autoPlay
             loop
@@ -83,7 +91,14 @@ export default function ServicesContainer({ service, index }: any) {
             playsInline
           >
             <source src={service?.video} type="video/mp4" />
-          </video>
+          </video> */}
+          <Image
+            src={service?.image}
+            alt={service?.title}
+            width={570}
+            height={530}
+            className="w-full lg:w-[570px] h-[530px] object-cover"
+          />
         </div>
       </div>
     </div>

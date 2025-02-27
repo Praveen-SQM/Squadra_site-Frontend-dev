@@ -1,6 +1,36 @@
 
 import Image from "next/image";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
+// import brandSliderOne from "@/utilities/images/brandSlider-1.svg";
+// import brandSliderTwo from "@/utilities/images/brandSlider-2.svg";
+// import brandSliderThree from "@/utilities/images/brandSlider-3.svg";
+// import brandSliderFour from "@/utilities/images/brandSlider-4.svg";
+// import brandSliderFive from "@/utilities/images/brandSlider-5.svg";
+// import brandSliderSix from "@/utilities/images/brandSlider-6.svg";
+// import brandSliderSeven from "@/utilities/images/brandSlider-7.svg";
+// import brandSliderEight from "@/utilities/images/brandSlider-8.svg";
+// import brandSliderNine from "@/utilities/images/brandSlider-9.svg";
+// import brandSliderTen from "@/utilities/images/brandSlider-10.svg";
+// import brandSliderEleven from "@/utilities/images/brandSlider-11.svg";
+// import brandSliderTwelve from "@/utilities/images/brandSlider-12.svg";
+// import brandSliderThirteen from "@/utilities/images/brandSlider-13.svg";
+// import brandSliderFourteen from "@/utilities/images/brandSlider-14.svg";
+// import brandSliderFifteen from "@/utilities/images/brandSlider-15.svg";
+// import brandSliderSixteen from "@/utilities/images/brandSlider-16.svg";
+// import brandSliderSeventeen from "@/utilities/images/brandSlider-17.svg";
+// import brandSliderEighteen from "@/utilities/images/brandSlider-18.svg";
+// import brandSliderNineteen from "@/utilities/images/brandSlider-19.svg";
+// import brandSliderTwenty from "@/utilities/images/brandSlider-20.svg";
+// import brandSliderTwentyOne from "@/utilities/images/brandSlider-21.svg";
+// import brandSliderTwentyTwo from "@/utilities/images/brandSlider-22.svg";
+// import brandSliderTwentyThree from "@/utilities/images/brandSlider-23.svg";
+// import brandSliderTwentyFour from "@/utilities/images/brandSlider-24.svg";
+// import brandSliderTwentyFive from "@/utilities/images/brandSlider-25.svg";
+// import brandSliderTwentySix from "@/utilities/images/brandSlider-26.svg";
+// import brandSliderTwentySeven from "@/utilities/images/brandSlider-27.svg";
+// import brandSliderTwentyEight from "@/utilities/images/brandSlider-28.svg";
+// import brandSliderTwentyNine from "@/utilities/images/brandSlider-29.svg";
+// import brandSliderThirty from "@/utilities/images/brandSlider-30.svg";
 
 const cardStyles = [
   {
