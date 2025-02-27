@@ -97,7 +97,7 @@ const services = [
 ];
 const Services = () => {
   const [activeTab, setActiveTab] = useState("Digital Marketing & PR");
-  const serviceRefs = useRef({});
+  const serviceRefs = useRef<{ [key: string]: React.RefObject<HTMLDivElement> }>({});
   const tabs = [
     "Digital Marketing & PR",
     "Branding & Creative",
@@ -112,12 +112,12 @@ const Services = () => {
     });
   }, []);
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: React.SetStateAction<string>) => {
     setActiveTab(tab);
     // Find the corresponding service
     const service = services.find((s) => s.title === tab);
     if (service && serviceRefs.current[service.title]?.current) {
-      serviceRefs.current[service.title].current.scrollIntoView({
+      serviceRefs.current[service.title]?.current?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
