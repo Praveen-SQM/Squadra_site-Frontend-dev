@@ -2,7 +2,8 @@ import Image from "next/image";
 import React from "react";
 import BrandPotentialFirstImage from "@/utilities/images/Brand-potential-1.svg"
 import BrandPotentialSecondImage from "@/utilities/images/Brand-potential-2.svg"
-import BrandPotentialThirdImage from "@/utilities/images/Brand-potential-3.svg"
+import BrandPotentialThirdImage from "@/utilities/images/Brand-Potential-3.png"
+import BrandPotentialMobileThirdImage from "@/utilities/images/Brand-Potential-Mobile-3.png"
 
 const UnleashPotential = () => {
   return (
@@ -24,8 +25,9 @@ const UnleashPotential = () => {
       <div className="py-6 md:py-20 w-full max-w-[1400px]">
         <div className="lg:flex justify-between w-full">
           {/* Image 1 */}
-          <div className="relative lg:w-1/2 h-[420px] md:h-[800px] bg-gray-700 m-4 rounded-lg">
-            <Image fill
+          <div className="relative lg:w-1/2 h-[540px] xl:h-[800px] sm:h-[888px] bg-gray-700 m-4 rounded-lg">
+            <Image 
+            unoptimized
               src={BrandPotentialFirstImage}
               alt="Image 2"
               className="w-full h-full object-cover rounded-lg"
@@ -41,8 +43,9 @@ const UnleashPotential = () => {
           </div>
 
           {/* Image 2 */}
-          <div className="relative lg:w-1/2 h-[420px] md:h-[800px] bg-gray-700 m-4 rounded-lg">
-            <Image fill
+          <div className="relative lg:w-1/2 h-[540px] xl:h-[800px] sm:h-[888px] bg-gray-700 m-4 rounded-lg">
+            <Image 
+            unoptimized
               src={BrandPotentialSecondImage}
               alt="Image 2"
               className="w-full h-full object-cover rounded-lg"
@@ -59,11 +62,18 @@ const UnleashPotential = () => {
         </div>
 
         {/* Image 3 (Bottom Image) */}
-        <div className="relative h-[420px] md:h-[800px] m-4 rounded-lg">
-          <Image fill
+        <div className="relative h-[540px] xl:h-[800px] sm:h-[393px] m-4 rounded-lg">
+          <Image 
+          unoptimized
             src={BrandPotentialThirdImage}
             alt="Image 3"
-            className="w-full h-auto object-contain rounded-lg"
+            className="w-full h-auto object-contain rounded-lg sm:block hidden"
+          />
+          <Image 
+          unoptimized
+            src={BrandPotentialMobileThirdImage}
+            alt="Image 3"
+            className="w-full h-auto object-contain rounded-lg sm:hidden block"
           />
           {/* <div className="absolute p-8 pt-[44px] md:pt-24 top-0 left-0 w-full h-full md:flex flex-col justify-between">
             <div className="transparent">.</div>

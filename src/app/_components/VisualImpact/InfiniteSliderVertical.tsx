@@ -1,19 +1,19 @@
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import Image from 'next/image';
-import SliderImageOne from "@/utilities/images/slider-image-1.svg"
-import SliderImageTwo from "@/utilities/images/slider-image-2.svg"
-import SliderImageThree from "@/utilities/images/slider-image-3.svg"
-import SliderImageFour from "@/utilities/images/slider-image-4.svg"
-import SliderImageFive from "@/utilities/images/slider-image-5.svg"
-import SliderImageSix from "@/utilities/images/slider-image-6.svg"
-import SliderImageSeven from "@/utilities/images/slider-image-7.svg"
-import SliderImageEight from "@/utilities/images/slider-image-8.svg"
-import SliderImageNine from "@/utilities/images/slider-image-9.svg"
-import SliderImageTen from "@/utilities/images/slider-image-10.svg"
-import SliderImageEleven from "@/utilities/images/slider-image-11.svg"
-import SliderImageTwelve from "@/utilities/images/slider-image-12.svg"
-import SliderImageThirteen from "@/utilities/images/slider-image-13.svg"
-import SliderImageFourteen from "@/utilities/images/slider-image-14.svg"
+import SliderImageOne from "@/utilities/images/slider-image-1.png"
+import SliderImageTwo from "@/utilities/images/slider-image-2.png"
+import SliderImageThree from "@/utilities/images/slider-image-3.png"
+import SliderImageFour from "@/utilities/images/slider-image-4.png"
+import SliderImageFive from "@/utilities/images/slider-image-5.png"
+import SliderImageSix from "@/utilities/images/slider-image-6.png"
+import SliderImageSeven from "@/utilities/images/slider-image-7.png"
+import SliderImageEight from "@/utilities/images/slider-image-8.png"
+import SliderImageNine from "@/utilities/images/slider-image-9.png"
+import SliderImageTen from "@/utilities/images/slider-image-10.png"
+import SliderImageEleven from "@/utilities/images/slider-image-11.png"
+import SliderImageTwelve from "@/utilities/images/slider-image-12.png"
+import SliderImageThirteen from "@/utilities/images/slider-image-13.png"
+import SliderImageFourteen from "@/utilities/images/slider-image-14.png"
 
 export function InfiniteSliderVertical() {
 

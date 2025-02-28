@@ -11,7 +11,7 @@ import Link from "next/link";
 const DesktopUi = () => {
   return (
     <>
-      <div className="relative w-full h-screen bg-white">
+      <div className="relative w-full h-screen bg-white mt-[64px]">
       <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
@@ -20,7 +20,7 @@ const DesktopUi = () => {
           playsInline
         >
           <source
-            src="https://s3-figma-videos-production-sig.figma.com/video/1312412244029964973/TEAM/8271/6d7d/-eb08-4935-b7d4-dd665d12b6f2?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=aY~Qazg9sYIo8nTOpOGQD6UK2CYUQioisToISiPbW~kLmr--BHWfZnT9Et9SdcG4kS~-iwy70d6uv1aCdfhfxRfcMcNZjW1f9jsOyCGQNoH-o7YyjxUm9imtCOlfXKRQxRQK6mrsSQ~Uc5gqyP-SDTr5xfLMat45oBkg81A0frGxS6k1rX2CB5xFJbcV3Yy8VnMfoE1yFsZrPwRhDuQBMOcxdrjQl5W8Zu~Q6iJfKjZwpk0B7-g3YXrH07BRp7WrK4K~Bk4HvbRvdUeUPH5Vw7xbTnP~8lPvNurH57tGSSNWDDu7cjS8PyGzsnwNY7uoyCIqYxDTHxLvhh5q3T5BcQ__"
+            src="https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/sq+2.mov"
             type="video/mp4"
           />
         </video>
