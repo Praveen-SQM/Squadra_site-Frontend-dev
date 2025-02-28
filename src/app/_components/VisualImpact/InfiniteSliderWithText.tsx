@@ -73,7 +73,7 @@ export function InfiniteSliderWithText() {
         <div className="relative w-full flex flex-col items-center justify-center gap-[77px]">
             {/* Text on Top */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full">
-                <h1 className="font-semibold xl:text-[100px] xl:leading-[119.34px] lg:text-[62px] lg:leading-[74px] md:text-[62px] md:leading-[74px] sm:text-[62px] sm:leading-[74px] text-[28px] leading-[33.41px] text-[#FFFFFF]">Capturing Your Vision,<br/> Perfecting Every Frame</h1>
+                <h1 className="font-semibold xl:text-[100px] xl:leading-[119.34px] lg:text-[62px] lg:leading-[74px] md:text-[62px] md:leading-[74px] sm:text-[62px] sm:leading-[74px] text-[28px] leading-[33.41px] text-[#FFFFFF]">Capturing Your Vision,<br /> Perfecting Every Frame</h1>
             </div>
 
             {/* First Infinite Slider with Reduced Opacity */}

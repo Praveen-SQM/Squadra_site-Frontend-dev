@@ -1,11 +1,40 @@
 import Image from "next/image";
 import React from "react";
-import brandStrategyImage from "@/utilities/images/brand-strategy.jpg";
-import logoDesignImage from "@/utilities/images/logo-design.jpg";
-import graphicDesignImage from "@/utilities/images/graphic-design.jpg";
-import visualisationImage from "@/utilities/images/visualization.jpg";
-import brandCollateralImage from "@/utilities/images/Brand-collateral.jpg";
-import industrialDesignImage from "@/utilities/images/industrial-design.jpg";
+// import brandStrategyImage from "@/utilities/images/brand-strategy.jpg";
+// import visualisationImage from "@/utilities/images/visualization.jpg";
+// import brandCollateralImage from "@/utilities/images/Brand-collateral.jpg";
+// import industrialDesignImage from "@/utilities/images/industrial-design.jpg";
+import clientTorque from "@/utilities/icons/clent-torque.svg";
+import clientHMG from "@/utilities/icons/client-HMGroup.webp";
+import clientBroncos from "@/utilities/icons/client-broncos.webp";
+import clientDaddy from "@/utilities/icons/client-daddy.webp";
+import clientDoubleTree from "@/utilities/icons/client-doubleTree.webp";
+import clientGREE from "@/utilities/icons/client-gree.webp";
+import clientHabitat from "@/utilities/icons/client-habitat.webp";
+import clientS1522 from "@/utilities/icons/client-street1522.webp";
+import clientVOIA from "@/utilities/icons/client-voia.webp";
+import clientVIDA from "@/utilities/icons/client-vida.webp";
+import clientNior from "@/utilities/icons/client-cafeNior.webp";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+
+const Card = ({ index, card,clientStyle }: { index: number, card: any,clientStyle:boolean }) => {
+
+  return (
+    <div
+      className={`flex-shrink-0 rounded-xl ${clientStyle?"bg-white":""} overflow-hidden transition-transform duration-300 hover:scale-95`}
+    >
+      <div className={`relative ${clientStyle?"md:w-[153px] w-[85px]":"md:w-[256px] w-[153px]"} md:h-[120px] h-[69px]`}>
+        <Image
+          src={card?.image}
+          alt={`Card ${index + 1}`}
+          fill
+          className="object-cover w-full h-full"
+          priority
+        />
+      </div>
+    </div>
+  );
+};
 
 const OurServices = () => {
   const services = [
@@ -13,37 +42,68 @@ const OurServices = () => {
       title: "Brand Strategy & Consulting",
       description:
         "Coating matagin 30 define and elevate your brand identity to a competitive market.",
-        image: brandStrategyImage
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/brand_strategy.webp",
+      slider: false
     },
     {
       title: "Logo Design & Brand Identity",
       description:
         "Delivering striking visuals that communicate your brand's story with clarity and creativity.",
-        image: logoDesignImage
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/brand_strategy.webp",
+      slider: true,
+      clientStyle: true,  
+      sliderImagesOne: [
+        clientVIDA,
+        clientTorque,
+        clientVOIA,
+        clientGREE,
+        clientHabitat,
+      ],
+      sliderImagesTwo: [
+        clientDoubleTree,
+        clientNior,
+        clientBroncos,
+        clientS1522,
+        clientDaddy
+      ]
     },
     {
       title: "Graphic Design",
       description:
         "Delivering striking visuals that communicate your brand's story with clarity and creativity.",
-        image: graphicDesignImage
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/brand_strategy.webp",
+      slider: true,
+      sliderImagesOne: [
+        "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/graphicSlider-1.webp",
+        "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/graphicSlider-2.webp",
+        "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/graphicSlider-3.webp",
+      ],
+      sliderImagesTwo: [
+        "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/graphicSlider-4.webp",
+        "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/graphicSlider-5.webp",
+        "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/graphicSlider-6.webp",
+      ]
     },
     {
       title: "2D/3D Visualisation",
       description:
         "Bringing concepts to life with realistic and engaging visual renderings.",
-        image: visualisationImage
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/2D-3D-visualization.webp",
+      slider: false
     },
     {
       title: "Brand Collateral",
       description:
         "Designing innovative, user-friendly websites that deliver exceptional digital experiences.",
-        image: brandCollateralImage
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/brand-collateral.webp",
+      slider: false
     },
     {
       title: "Industrial Product Design",
       description:
         "Transforming ideas into tangible designs that captivate and convert.",
-        image: industrialDesignImage
+      image: "https://squadra-media.s3.ap-south-1.amazonaws.com/services-images/industrial-design.webp",
+      slider: false
     },
   ];
 
@@ -70,14 +130,55 @@ const OurServices = () => {
               {service.title}
             </h3>
             <p className="text-gray-500 text-[12px] md:text-[22px] lg:text-[16px] md:max-w-[520px] lg:max-w-96">{service.description}</p>
-            <div className="h-[154px] md:h-[262px] rounded-t-xl bg-gray-700 flex-shrink-0">
-              <Image  
-                src={service?.image}
-                alt={''}
-                width={435}
-                height={262}
-                className="w-full h-full object-cover rounded-xl w-full h-full"
-              />
+            <div className="h-[154px] md:h-[262px] rounded-t-xl flex-shrink-0">
+              {service.slider ? (
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-3">
+                    <InfiniteSlider
+                      duration={25}
+                      durationOnHover={50}
+                      gap={12}
+                      direction="horizontal"
+                    >
+                      {service?.sliderImagesOne?.map((image, index) => {
+                        return (
+                          <Card key={index} index={index} card={{ image }} clientStyle={!!service?.clientStyle}/>
+                        )
+                      })}
+                    </InfiniteSlider>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <InfiniteSlider
+                      duration={25}
+                      durationOnHover={50}
+                      gap={12}
+                      direction="horizontal"
+                      reverse
+                    >
+                      {service?.sliderImagesTwo?.map((image, index) => {
+                        return (
+                          <Card key={index} index={index} card={{ image }} clientStyle={!!service?.clientStyle}/>
+                        )
+                      })}
+                    </InfiniteSlider>
+                  </div>
+                  {/* <Image
+                    src={service?.image}
+                    alt={''}
+                    width={435}
+                    height={262}
+                    className="w-full h-full object-cover rounded-xl w-full h-full"
+                  /> */}
+                </div>
+              ) : (
+                <Image
+                  src={service?.image}
+                  alt={''}
+                  width={435}
+                  height={262}
+                  className="w-full h-full object-cover rounded-xl w-full h-full"
+                />
+              )}
             </div>
           </div>
         ))}
