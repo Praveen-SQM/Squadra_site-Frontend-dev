@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 // import brandStrategyImage from "@/utilities/images/brand-strategy.jpg";
 // import visualisationImage from "@/utilities/images/visualization.jpg";
 // import brandCollateralImage from "@/utilities/images/Brand-collateral.jpg";
 // import industrialDesignImage from "@/utilities/images/industrial-design.jpg";
 import clientTorque from "@/utilities/icons/clent-torque.svg";
-import clientHMG from "@/utilities/icons/client-HMGroup.webp";
+// import clientHMG from "@/utilities/icons/client-HMGroup.webp";
 import clientBroncos from "@/utilities/icons/client-broncos.webp";
 import clientDaddy from "@/utilities/icons/client-daddy.webp";
 import clientDoubleTree from "@/utilities/icons/client-doubleTree.webp";
@@ -17,7 +17,11 @@ import clientVIDA from "@/utilities/icons/client-vida.webp";
 import clientNior from "@/utilities/icons/client-cafeNior.webp";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 
-const Card = ({ index, card,clientStyle }: { index: number, card: any,clientStyle:boolean }) => {
+interface CardProps {
+  image: string | StaticImageData;
+}
+
+const Card = ({ index, card,clientStyle }: { index: number, card: CardProps,clientStyle:boolean }) => {
 
   return (
     <div

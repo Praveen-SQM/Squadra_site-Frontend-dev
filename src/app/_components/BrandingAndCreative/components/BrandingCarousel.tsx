@@ -1,5 +1,5 @@
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import brandSliderOne from "@/utilities/images/brandSlider-1.svg";
 import brandSliderTwo from "@/utilities/images/brandSlider-2.svg";
@@ -188,8 +188,13 @@ const cardStyles2 = [
   }
 ];
 
-const Card = ({ index,card }: { index: number,card:any }) => {
-  const style = cardStyles[index % 4];
+interface CardProps {
+  bg: string;
+  text: string;
+  image: StaticImageData;
+}
+
+const Card = ({ index, card }: { index: number; card: CardProps }) => {
 
   return (
     <div
