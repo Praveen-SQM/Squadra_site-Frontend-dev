@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import clientTorque from "@/utilities/icons/top-zone.svg"
@@ -42,6 +43,7 @@ import Terrace from "@/utilities/icons/terrace.svg"
 import Thrilled from "@/utilities/icons/thrilled.svg"
 import Tipsy from "@/utilities/icons/tipsy.svg"
 import Watsons from "@/utilities/icons/watsons.svg"
+import { ArrowRight } from "lucide-react";
 
 const ClientPage = () => {
 
@@ -222,16 +224,17 @@ const ClientPage = () => {
             alt: "Watsons"
         }
       ]
+
+
     
 
   return (
     <>
-    <div className="py-[42px] flex flex-col gap-[72px]">
+    <div className="xl:py-[117px] sm:py-[109px] md:py-[104px] flex flex-col gap-[72px]">
      <div className="flex flex-col sm:gap-4 gap-2 items-start">
         <p className="font-normal sm:text-[20px] text-[12px] leading-6 text-[#6D6D6D]">Case Study. Clients</p>
         <p className="font-medium xl:text-[62px] xl:leading-[72px] sm:text-[52px] sm:leading-[62.05px] text-[40px] leading-[47.73px] text-[#131313] xl:max-w-[1192px] sm:max-w-[714px] max-w-[335px]">Proud to partner with clients for exceptional results.<span className="text-[#B0B0B0]">Explore our Client Stories to see the impact.</span></p>
      </div>
-     <div className=""></div>
     </div>
 
     <section className="py-16 px-4 w-full bg-gray-50">

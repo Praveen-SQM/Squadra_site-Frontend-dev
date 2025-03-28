@@ -73,7 +73,7 @@ export default function HowItWorksContainer({
             <p
               className={`text-[14px] lg:text-[16px] ${
                 step.text ? step.text : "text-gray-600"
-              } font-normal max-w-md`}
+              } font-normal max-w-lg`}
             >
               {step.description}
             </p>
@@ -90,7 +90,7 @@ export default function HowItWorksContainer({
               >
                 <div className="flex gap-2">
                   <Check color="green" />{" "}
-                  <span className="text-[14px] lg:text-[16px] font-thin text-gray-600">
+                  <span className="text-[14px] lg:text-[16px] font-thin text-gray-600 max-w-lg">
                     {renderBoldBeforeColon(item)}
                   </span>
                 </div>

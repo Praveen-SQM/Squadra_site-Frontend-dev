@@ -63,7 +63,7 @@ const services = [
   {
     title: "Photography & Videography",
     description:
-      "DSLR Solutions for Photos & Videos to match your requirements.",
+      "We bring your brand to life through powerful visuals, crafting content that resonates and inspires.",
     list: [
       "Product Photography",
       "Corporate Photography",
@@ -81,13 +81,13 @@ const services = [
   {
     title: "E-learning",
     description:
-      "Transform training with custom LMS solutions, interactive content, and engaging assessment tools.",
+      "Transform learning with tailored LMS solutions, corporate training tools, and scalable platforms for seamless growth.",
     list: [
       "Learning Management System (LMS)",
       "Corporate Training Solutions",
       "Content Management System (CMS)",
-      "Virtual Lab Apps",
-      "Student Learning Platform",
+      "Custom LMS Apps",
+      "Scalable Learning Platforms",
     ],
     link: "#",
     image: eLearningImage,
