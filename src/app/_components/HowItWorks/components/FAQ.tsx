@@ -42,7 +42,7 @@ import {
   
     return (
       <div className="w-full max-w-[1200px] px-[20px] md:px-[60px] lg:px-[170px] mx-auto py-[40px] lg:py-[100px]">
-        <h1 className="text-[24px] md:text-[32px] lg:text-[48px] font-bold text-center mb-[40px] lg:mb-[100px]">
+        <h1 className="text-[24px] md:text-[32px] lg:text-[42px] font-bold text-center mb-[40px] lg:mb-[100px]">
           Frequently Asked Questions (FAQs)
         </h1>
   
@@ -51,7 +51,7 @@ import {
             {faqItems.map((item, index) => (
               <div key={index}>
                 <AccordionItem value={`item-${index + 1}`} className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline text-gray-950 text-[14px] md:text-[20px] lg:text-[25px]">
+                  <AccordionTrigger className="text-left hover:no-underline text-gray-950 text-[14px] md:text-[20px] lg:text-[24px]">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-500 text-[13px] md:text-[16px] lg:text-lg mr-4">

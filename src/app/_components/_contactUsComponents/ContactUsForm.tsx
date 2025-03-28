@@ -13,6 +13,7 @@ export default function ContactUsForm() {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm<FormData>({
     mode: "onChange",
@@ -36,7 +37,7 @@ export default function ContactUsForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-          cc: [process.env.NEXT_PUBLIC_EMAIL_CC,process.env.NEXT_PUBLIC_EMAIL_CC_2],
+          cc: [process.env.NEXT_PUBLIC_EMAIL_CC, process.env.NEXT_PUBLIC_EMAIL_CC_2],
           bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
           message: {
             subject: activeTab === "inquiry" ? `GENERAL INQUIRY` : `QUOTE ENQUIRY`,
@@ -76,8 +77,11 @@ export default function ContactUsForm() {
   };
 
 
+  const maxChars = 1000;
+  const charCount = watch("message")?.length || 0;
 
-  
+
+
 
   return (
     <div className="flex flex-col pt-24 sm:pt-15 lg:flex-col  md:mt-0 justify-between p-10 px-[20px] md:p-10 lg:pt-[144px] lg:pb-[72px] md:pt-[144px] md:pb-[72px] sm:px-[20px] space-y-10 bg-[#FAFAFA] items-center">
@@ -105,15 +109,15 @@ export default function ContactUsForm() {
               <input
                 id="first-name"
                 type="text"
-                placeholder="First Name"
-                {...register("firstName", 
-                  { 
+                placeholder="Enter first name"
+                {...register("firstName",
+                  {
                     required: "First name is required",
                     pattern: {
                       value: /^[A-Za-z\s]+$/, // Allows only letters and spaces
                       message: "First name must contain only letters",
                     },
-                   }
+                  }
                 )}
                 className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
               />
@@ -129,7 +133,7 @@ export default function ContactUsForm() {
               <input
                 id="last-name"
                 type="text"
-                placeholder="Last Name"
+                placeholder="Enter last name"
                 {...register("lastName",
                   {
                     pattern: {
@@ -154,7 +158,7 @@ export default function ContactUsForm() {
               </label>
               <input
                 id="email"
-                placeholder="Email"
+                placeholder="Enter email"
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -196,7 +200,7 @@ export default function ContactUsForm() {
             <input
               id="subject"
               type="text"
-              placeholder="Subject"
+              placeholder="Enter Your subject"
               {...register("subject")}
               className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
             />
@@ -204,13 +208,23 @@ export default function ContactUsForm() {
           </div>
           {/* Tell Us More */}
           <div className="mb-4">
-            <label htmlFor="message" className="block text-sm mb-2">
+            <label htmlFor="message" className="block text-sm mb-2 flex justify-between">
               Tell us more
+              <p >
+              {charCount} / {maxChars}
+            </p>
             </label>
+            
+
             <textarea
               id="message"
-              placeholder="Tell us more"
-              {...register("message")}
+              placeholder="Brief about your project"
+              {...register("message", {
+                maxLength: {
+                  value: maxChars,
+                  message: "Message cannot exceed 1000 characters",
+                },
+              })}
               className="w-full h-[152px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
             ></textarea>
             {errors.message && (

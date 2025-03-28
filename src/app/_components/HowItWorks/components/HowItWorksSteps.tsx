@@ -13,30 +13,30 @@ const HowItWorksSteps = () => {
     {
       title: "LAYING THE FOUNDATION",
       description:
-        "We help entrepreneurs craft their brand identity and build a solid future foundation",
+        "We help entrepreneurs craft their brand identity and build a solid future foundation.",
       services: [
-        "Branding: Names, logos, and visual identities that reflect their business",
-        "Website Design: Business-user friendly websites created by our IT experts",
+        "Branding: Names, logos, and visual identities that reflect their vision.",
+        "Website Design: Stunning, user-friendly websites created by our IT experts.",
       ],
-      Image: EnablingExcellence,
+      Image: LayingTheFoundation,
     },
     {
       title: "CREATIVE VISIBILITY",
       description:
         "Managed by Square6 Media, we handle social media marketing, SEO, and ads to drive awareness and engagement",
       services: [
-        "Production: Our creative team at Sky 6 Right produces high-quality videos, advertisements, and content campaigns",
-        "Animation: Through StudioSeven, we craft inventive animations, branded videos, and AR/VR experiences",
+        "Production: Our creative team at Slay It Right produces high-quality videos, advertisements, and cinematic campaigns.",
+        "Animation: Through Squadraverse, we craft immersive animations, explainer videos, and AR/VR experiences.",
       ],
-      Image: LayingTheFoundation,
+      Image: EnablingExcellence,
     },
     {
       title: "SCALING OPERATIONS",
       description:
         "As businesses grow, we help entrepreneurs manage their expanding needs",
       services: [
-        "HR Services: Hiring the right people and building a strong workforce",
-        "Accounts Services: Managing finances, taxes, and compliance",
+        "HR Services: Hiring the right people and building a strong workforce.",
+        "Accounts Services: Managing finances, taxes, and compliance.",
       ],
       Image: CreativeVisiblity,
     },
@@ -47,17 +47,17 @@ const HowItWorksSteps = () => {
         "Sales Enablement: Strategies, tools, and processes to boost revenue",
         "Investment Support: Helping entrepreneurs connect with interested angel groups",
       ],
-      Image: ScalingOprations,
+      Image: DrivingSalesExpansion,
     },
     {
       title: "ENABLING EXCELLENCE",
       description:
-        "For sustained success, we provide training and technology solutions",
+        "For sustained success, we provide training and technology solutions:",
       services: [
-        "E-Learning Solutions: Customized training modules for employee development",
-        "ERP & CRM Systems: Technology solutions to optimize workflows and automate operations",
+        "E-Learning Solutions: Customized training modules for employee development.",
+        "ERP & CRM Systems: Technology solutions to optimize workflows and automate operations.",
       ],
-      Image: DrivingSalesExpansion,
+      Image: ScalingOprations,
     },
     {
       title: "EXPANDING BEYOND BUSINESS",
@@ -66,7 +66,7 @@ const HowItWorksSteps = () => {
       services: [
         "Space9space: Interior design and construction services for office and hospitality expansion",
       ],
-      Image: EnablingExcellence,
+      Image: LayingTheFoundation,
     },
   ];
   return (

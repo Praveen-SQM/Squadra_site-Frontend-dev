@@ -58,9 +58,9 @@ export default function ServicesContainer({ service, index }: any) {
             {service?.list?.map((item: string, index: number) => (
               <div
                 key={index}
-                className={`cursor-pointer py-[12px] transition-colors border-b ${
+                className={`cursor-pointer py-[12px] transition-colors border-b mb-[12px] text-nowrap ${
                   service.text ? service.text : ""
-                } border-gray-200`}
+                } border-[#A892C5]`}
               >
                 {item}
               </div>
@@ -69,7 +69,7 @@ export default function ServicesContainer({ service, index }: any) {
           <Link className='order-4' href={`/${service?.link}`}>
             <Button
               variant="outline"
-              className="bg-white shadow-none min-w-[240px] min-h-[52px] font-[400] flex items-center justify-center hover:bg-blue-950 hover:text-white"
+              className="bg-white shadow-none min-w-[240px] min-h-[52px] font-[400] flex items-center justify-center hover:bg-blue-950 hover:text-white mt-[12px]"
             >
               VIEW ALL
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />

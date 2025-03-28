@@ -298,8 +298,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start leading-relaxed">
                 <MapPin className="mr-2 h-6 w-12" />
-
-                560038, 1134, 5th Floor, Shreeram Niwas, Opposite Vapour Brewery, 100 Ft Road, Indiranagar, Bengaluru
+                1134, 5th Floor, Shreeram Niwas, Opposite Vapour Brewery, 100 Ft Road, Indiranagar, Bengaluru, 560038
               </li>
             </ul>
           </div>
