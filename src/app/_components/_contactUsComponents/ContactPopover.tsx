@@ -20,6 +20,7 @@ import toast from "react-hot-toast";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { Input } from "@/components/ui/input";
+import axios from "axios";
 
 interface FormData {
   phone: string;
@@ -121,7 +122,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           to: [process.env.NEXT_PUBLIC_EMAIL_TO],
-          cc: [ process.env.NEXT_PUBLIC_EMAIL_CC_2],
+          cc: [process.env.NEXT_PUBLIC_EMAIL_CC_2],
           bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
           message: {
             subject: "Callback Request",
@@ -145,6 +146,15 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       const result = await response.json();
       if (response.ok) {
         toast.success("Callback Requested successfully");
+        const nameParts = fullName.trim().split(" ");
+        await axios.post("/api/zoho", {
+          firstName: nameParts.slice(0, -1).join(" "),
+          lastName: nameParts.slice(-1).join(""),
+          // email: "Not Provided",
+          phoneNumber:phone,
+          message:`Callback requested for phone number from squadra website: ${phone}`,
+          "leadSource":"Squadra Website"
+        });
         setPhoneInput("");
         setFullName("");
       } else {
@@ -155,7 +165,6 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
       console.error("Error sending callback request:", error);
     } finally {
       setLoading(false);
-     
     }
   };
 
@@ -176,11 +185,11 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/job-apply") ||
               pathname.includes("/privacy-policy") ||
               pathname.includes("/our-services") ||
-              pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
-              || pathname.includes('/clients') || pathname.includes('/direct-apply')
-              || pathname.includes('/digital-marketing-and-pr')
-
-
+              pathname.includes("/branding-and-creative") ||
+              pathname.includes("/visual-impact") ||
+              pathname.includes("/clients") ||
+              pathname.includes("/direct-apply") ||
+              pathname.includes("/digital-marketing-and-pr")
                 ? callIconBlack
                 : isScrolled
                 ? callIconBlack
@@ -199,10 +208,11 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
               pathname.includes("/job-details") ||
               pathname.includes("/job-apply") ||
               pathname.includes("/privacy-policy") ||
-              pathname.includes("/branding-and-creative") || pathname.includes("/visual-impact")
-              || pathname.includes('/clients') || pathname.includes('/direct-apply')
-            || pathname.includes('/digital-marketing-and-pr')
-
+              pathname.includes("/branding-and-creative") ||
+              pathname.includes("/visual-impact") ||
+              pathname.includes("/clients") ||
+              pathname.includes("/direct-apply") ||
+              pathname.includes("/digital-marketing-and-pr")
                 ? "text-black"
                 : isScrolled
                 ? "text-black"
@@ -259,7 +269,12 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    onInput={(e:any) => (e.target.value = e.target.value.replace(/[^A-Za-z\s]/g, ""))}
+                    onInput={(e: any) =>
+                      (e.target.value = e.target.value.replace(
+                        /[^A-Za-z\s]/g,
+                        ""
+                      ))
+                    }
                   />
                   {fullNameErrorMessage === "Please enter full name" && (
                     <p className="text-red-500 text-sm">

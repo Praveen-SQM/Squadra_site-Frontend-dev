@@ -44,7 +44,6 @@ import Thrilled from "@/utilities/icons/thrilled.svg"
 import Tipsy from "@/utilities/icons/tipsy.svg"
 import Watsons from "@/utilities/icons/watsons.svg"
 
-
 const ClientPage = () => {
 
     // const clients = Array.from({ length: 30 }, (_, i) => ({
