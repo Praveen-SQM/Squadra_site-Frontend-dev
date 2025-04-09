@@ -24,7 +24,8 @@ const Navbar = () => {
       pathname.includes("/contact-us") ||
       pathname.includes("/privacy-policy") ||
       pathname.includes("/branding-and-creative") ||
-      pathname.includes("/visual-impact")
+      pathname.includes("/visual-impact") ||
+      pathname.includes("/animation-and-e-learning")
     )
       return;
     const handleScroll = () => {
@@ -124,6 +125,7 @@ const Navbar = () => {
           pathname.includes("/job-apply") ||
           pathname.includes("/privacy-policy") ||
           pathname.includes("/visual-impact") ||
+          pathname.includes("/animation-and-e-learning") ||
           pathname.includes("/clients")
             ? "bg-white shadow-sm text-black"
             : isScrolled
@@ -146,6 +148,7 @@ const Navbar = () => {
                     pathname.includes("/job-apply") ||
                     pathname.includes("/privacy-policy") ||
                     pathname.includes("/visual-impact") ||
+                    pathname.includes("/animation-and-e-learning") ||
                     pathname.includes("/clients")
                       ? itLogocolor
                       : isScrolled
@@ -388,7 +391,18 @@ const Navbar = () => {
                               {/* Animation & E-learning */}
                               <div>
                                 <h3 className="font-semibold mb-4">
+                                <Link
+                                    onClick={() =>
+                                      setTimeout(() => {
+                                        setIsServicesHovered(false);
+                                        setIsScrolled(false);
+                                      }, 500)
+                                    }
+                                    href="/animation-and-e-learning"
+                                    className=" cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-[#FBAE17] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+                                  >
                                   Animation & E-learning
+                                  </Link>
                                 </h3>
                                 <ul className="space-y-2 text-sm text-gray-600">
                                   <li>2D/3D Animation</li>
@@ -466,6 +480,7 @@ const Navbar = () => {
                   pathname.includes("/job-apply") ||
                   pathname.includes("/privacy-policy") ||
                   pathname.includes("/visual-impact") ||
+                  pathname.includes("/animation-and-e-learning") ||
                   pathname.includes("/clients")
                     ? `text-white`
                     : isScrolled

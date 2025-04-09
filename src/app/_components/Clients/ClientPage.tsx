@@ -43,7 +43,7 @@ import Terrace from "@/utilities/icons/terrace.svg"
 import Thrilled from "@/utilities/icons/thrilled.svg"
 import Tipsy from "@/utilities/icons/tipsy.svg"
 import Watsons from "@/utilities/icons/watsons.svg"
-import { ArrowRight } from "lucide-react";
+
 
 const ClientPage = () => {
 
