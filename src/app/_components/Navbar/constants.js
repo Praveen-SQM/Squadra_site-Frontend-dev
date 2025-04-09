@@ -65,7 +65,7 @@ export const SERVICES = [
   },
   {
     title: "Animation & E-learning",
-    link: "#",
+    link: "/animation-and-e-learning",
     items: [
       "2D/3D Animation",
       "Explainer Videos",
