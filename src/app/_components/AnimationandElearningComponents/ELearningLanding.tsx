@@ -8,7 +8,7 @@ import Link from "next/link";
 import GradientBorder from "../../../components/ui/gradient-border";
 const ELearningLanding = () => {
   return (
-    <div className="relative min-h-[100vh] 3xl:min-h-[100vh] lg:min-h-[110vh] 2xl-min-h-[600px] max-h-[600px] flex items-center justify-center bg-[#433BDB] bg-gradient-to-br from-[#433BDB] to-[#635BFF] overflow-hidden w-full">
+    <div className="relative min-h-[100vh] 3xl:min-h-[100vh] lg:min-h-[110vh] 2xl-min-h-[600px] max-h-[600px] flex items-center justify-center bg-neutral-900  overflow-hidden w-full">
       <FloatingBackground />
       <div className="w-full h-full absolute flex flex-col justify-between max-w-6xl 3xl:min-w-[1590px] text-white px-4 ">
         <div className="h-[400px] w-2 "></div>
@@ -18,14 +18,7 @@ const ELearningLanding = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.p
-            className="text-[#A5F83B] font-medium mb-4 3xl:text-[22px]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            #1 LMS FOR TRAINING SUCCESS
-          </motion.p>
+          
 
           <motion.h1
             className="text-4xl 3xl:text-[72px] 3xl:min-w-[1200px] 3xl:leading-[96px] md:text-5xl lg:text-5xl font-[600] mb-6"

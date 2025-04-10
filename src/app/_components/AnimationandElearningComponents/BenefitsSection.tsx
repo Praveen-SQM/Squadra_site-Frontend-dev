@@ -1,5 +1,5 @@
 import React from "react";
-import rightIcon from "../../../utilities/icons/Checkmark.svg"
+import rightIcon from "@/utilities/icons/Checkmark.svg"
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,7 +30,7 @@ const BenefitsSection = () => {
     ]
 
     return (
-        <div className="w-full flex flex-col justify-center bg-[#534BEF] 3xl:py-[96px] xl:py-[72px] py-[42px]">
+        <div className="w-full flex flex-col justify-center bg-neutral-900 3xl:py-[96px] xl:py-[72px] py-[42px]">
             <div className="flex items-center sm:flex-row flex-col justify-between w-full max-w-6xl xl:px-0 px-4 mx-auto 3xl:min-w-[1580px]">
                 <div className="flex flex-col sm:items-start items-center 3xl:gap-[56px] xl:gap-[42px] sm:gap-[57px] gap-8 sm:mb-0 mb-[32px]">
                     <div className="flex flex-col items-start 3xl:gap-[42px] xl:gap-[32px] sm:gap-[18px] gap-3">
