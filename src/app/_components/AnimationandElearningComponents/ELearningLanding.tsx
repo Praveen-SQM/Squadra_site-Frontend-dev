@@ -18,14 +18,7 @@ const ELearningLanding = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.p
-            className="text-[#A5F83B] font-medium mb-4 3xl:text-[22px]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            #1 LMS FOR TRAINING SUCCESS
-          </motion.p>
+          
 
           <motion.h1
             className="text-4xl 3xl:text-[72px] 3xl:min-w-[1200px] 3xl:leading-[96px] md:text-5xl lg:text-5xl font-[600] mb-6"
