@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion"; // Import motion from framer-motion
 import ContactModal from "./contactModal";
@@ -98,12 +99,12 @@ const FAQSection = () => {
               </p>
             </div>
           </div>
-          <button
-            onClick={() => setContactModal(true)}
-            className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors font-[500] 3xl:text-[20px] 3xl:py-[18px]"
-          >
-            Get in touch
-          </button>
+          <Link    
+          href={'/contact-us'}
+          className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors"
+        >
+          Contact Us
+        </Link>
         </motion.div>
       </motion.div>
 
@@ -166,12 +167,12 @@ const FAQSection = () => {
             </p>
           </div>
         </div>
-        <button
-          onClick={() => setContactModal(true)}
+        <Link    
+          href={'/contact-us'}
           className="bg-[#635bff] w-full text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors"
         >
-          Get in touch
-        </button>
+          Contact Us
+        </Link>
       </motion.div>
       <ContactModal
         isOpen={contactModal}

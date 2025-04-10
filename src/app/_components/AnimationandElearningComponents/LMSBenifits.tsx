@@ -50,13 +50,13 @@ const LMSBenefits = () => {
         {/* Center Icon with Concentric Circles */}
         <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 3xl:w-[300px] 3xl:h-[300px] ">
           {/* Outer circle */}
-          <div className="absolute inset-0 rounded-full bg-indigo-50 animate-expand-outer"></div>
+          <div className="absolute inset-0 rounded-full bg-neutral-100 animate-expand-outer"></div>
 
           {/* Middle circle */}
-          <div className="absolute inset-12 rounded-full bg-indigo-100 animate-expand-middle"></div>
+          <div className="absolute inset-12 rounded-full bg-neutral-100 animate-expand-middle"></div>
 
           {/* Inner circle with icon */}
-          <div className="absolute inset-12 3xl:inset-24 rounded-full bg-indigo-500 flex items-center justify-center animate-expand-inner">
+          <div className="absolute inset-12 3xl:inset-24 rounded-full bg-neutral-900 flex items-center justify-center animate-expand-inner">
             <Image src={logoWhite} alt="Icon" width={60} height={60} />
           </div>
         </div>

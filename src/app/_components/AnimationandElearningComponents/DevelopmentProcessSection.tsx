@@ -2,9 +2,9 @@
 import React from "react";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import developementFirstImage from "../../../utilities/images/development-first.webp"
-import developmentSecondImage from "../../../utilities/images/development-second.webp"
-import { CardStack } from "../../../components/ui/card-stack";
+import developementFirstImage from "@/utilities/images/development-first.webp"
+import developmentSecondImage from "@/utilities/images/development-second.webp"
+import { CardStack } from "@/components/ui/card-stack";
 
 const DevelopmentProcessSection = () => {
 
