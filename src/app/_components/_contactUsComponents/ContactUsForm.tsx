@@ -141,13 +141,14 @@ export default function ContactUsForm() {
 
             <div>
               <label htmlFor="last-name" className="block text-sm mb-2">
-                Last Name
+                Last Name*
               </label>
               <input
                 id="last-name"
                 type="text"
                 placeholder="Enter last name"
                 {...register("lastName", {
+                  required: "Last name is required",
                   pattern: {
                     value: /^[A-Za-z\s]+$/, // Allows only letters and spaces
                     message: "Last name must contain only letters",
