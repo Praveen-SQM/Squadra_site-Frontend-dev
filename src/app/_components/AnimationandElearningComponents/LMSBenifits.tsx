@@ -1,7 +1,6 @@
 import React from "react";
 import { Star, Building2, CircleDollarSign } from "lucide-react";
 import Image from "next/image";
-import logoWhite from "../../../utilities/images/logo_white.svg";
 import unifiedSolution from "../../../utilities/icons/group-blue.svg";
 
 const benefitsData = [
@@ -56,8 +55,8 @@ const LMSBenefits = () => {
           <div className="absolute inset-12 rounded-full bg-neutral-100 animate-expand-middle"></div>
 
           {/* Inner circle with icon */}
-          <div className="absolute inset-12 3xl:inset-24 rounded-full bg-neutral-900 flex items-center justify-center animate-expand-inner">
-            <Image src={logoWhite} alt="Icon" width={60} height={60} />
+          <div className="absolute inset-12 3xl:inset-24 rounded-full bg-[#534bef] flex items-center justify-center animate-expand-inner">
+            {/* <Image src={logoWhite} alt="Icon" width={60} height={60} /> */}
           </div>
         </div>
 

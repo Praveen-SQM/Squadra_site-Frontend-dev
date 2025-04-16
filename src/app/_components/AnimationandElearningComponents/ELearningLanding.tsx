@@ -8,10 +8,10 @@ import Link from "next/link";
 import GradientBorder from "../../../components/ui/gradient-border";
 const ELearningLanding = () => {
   return (
-    <div className="relative min-h-[100vh] 3xl:min-h-[100vh] lg:min-h-[110vh] 2xl-min-h-[600px] max-h-[600px] flex items-center justify-center bg-neutral-900  overflow-hidden w-full">
+    <div className="relative min-h-[100vh] 3xl:min-h-[100vh] lg:min-h-[120vh] 2xl-min-h-[600px] max-h-[600px] flex items-center justify-center bg-neutral-900  overflow-hidden w-full">
       <FloatingBackground />
       <div className="w-full h-full absolute flex flex-col justify-between max-w-6xl 3xl:min-w-[1590px] text-white px-4 ">
-        <div className="h-[400px] w-2 "></div>
+        <div className="h-[400px] w-2 lg:h-[600px] "></div>
         <motion.div
           className="max-w-4xl mx-auto flex flex-col items-center text-center 3xl:max-w-[1200px] 3xl:mt-[10rem]   "
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ const ELearningLanding = () => {
             width={200}
             src={LMS_img}
             alt="LMS Dashboard"
-            className="w-full h-full min-w-[678px]"
+            className="w-full h-full min-w-[678px] "
           />
         </div>
       </div>
