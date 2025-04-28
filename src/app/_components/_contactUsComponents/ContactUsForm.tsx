@@ -26,11 +26,33 @@ export default function ContactUsForm() {
     phone: string;
     message: string;
     subject: string;
+    services: string;
     terms: boolean;
   };
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
+    console.log("Form data:", data);
     setLoading(true);
+
+    // Determine dynamic service-based CC
+  let serviceCcEmail = "";
+  switch (data.services) {
+    case "IT":
+      serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_1 || "";
+      break;
+    case "digital-marketing":
+      serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_2 || "";
+      break;
+    case "branding-creative":
+      serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_3 || "";
+      break;
+    case "E-Learning":
+      serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_4 || "";
+      break;
+    default:
+      serviceCcEmail = ""; // fallback if no match
+      break;
+  }
     try {
       const response = await fetch("/api/sendEmail", {
         method: "POST",
@@ -38,7 +60,8 @@ export default function ContactUsForm() {
         body: JSON.stringify({
           to: [process.env.NEXT_PUBLIC_EMAIL_TO],
           cc: [
-            process.env.NEXT_PUBLIC_EMAIL_CC,
+            // process.env.NEXT_PUBLIC_EMAIL_CC,
+            ...(serviceCcEmail ? [serviceCcEmail] : []),
             process.env.NEXT_PUBLIC_EMAIL_CC_2,
           ],
           bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
@@ -76,8 +99,8 @@ export default function ContactUsForm() {
           lastName: data?.lastName,
           email: data?.email,
           phoneNumber: data?.phone,
-          message:data?.message,
-          "leadSource":"Squadra Website"
+          message: data?.message,
+          leadSource: "Squadra Website",
         });
         reset();
       } else {
@@ -252,6 +275,28 @@ export default function ContactUsForm() {
             {errors.message && (
               <p className="text-red-500 text-sm mt-1">
                 {errors.message?.message?.toString()}
+              </p>
+            )}
+          </div>
+
+          <div className="mb-4 w-full">
+            <label htmlFor="services" className="block text-sm mb-2">
+              Services and BD&apos;s Names*
+            </label>
+            <select
+              id="services"
+              {...register("services", { required: "Please select a service" })}
+              className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
+            >
+              <option value="">Select a service</option>
+              <option value="IT">IT - Pratik</option>
+              <option value="digital-marketing">Digital Marketing - Sandeep</option>
+              <option value="branding-creative">Branding and Creative- Nithin</option>
+              <option value="E-Learning">E-Learning - Karthik</option>
+            </select>
+            {errors.services && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors?.services?.message?.toString()}
               </p>
             )}
           </div>
