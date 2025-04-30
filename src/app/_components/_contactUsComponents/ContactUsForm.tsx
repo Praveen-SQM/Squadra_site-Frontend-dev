@@ -101,6 +101,7 @@ export default function ContactUsForm() {
           phoneNumber: data?.phone,
           message: data?.message,
           leadSource: "Squadra Website",
+          service: data.services|| "",
         });
         reset();
       } else {
