@@ -202,7 +202,7 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
           />
 
           <p
-            className={`hidden lg:block cursor-pointer text-[16px] leading-[19px] ${
+            className={`hidden 2xl:block cursor-pointer text-[16px] leading-[19px] ${
               pathname.includes("/contact-us") ||
               pathname.includes("/our-services") ||
               pathname.includes("/openings") ||
