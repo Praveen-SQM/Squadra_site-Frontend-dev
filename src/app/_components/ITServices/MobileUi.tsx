@@ -17,7 +17,7 @@ import Solution from '@/utilities/images/Solution.svg'
 import Connection from '@/utilities/images/Connection.svg'
 import UserWorkFlow from '@/utilities/images/User workflow.svg'
 import codeSquare from '@/utilities/images/Code Square.svg'
-import Container from '@/utilities/images/Container.svg'
+import Container from "@/utilities/images/Container.jpg";
 import netWorkBlack from '@/utilities/images/NetworkBlack.svg'
 import HandShake from '@/utilities/images/Handshake.svg'
 import Archive from '@/utilities/images/Archive.svg'
@@ -26,7 +26,7 @@ import DB from '@/utilities/images/db.svg'
 import CloudConnection from '@/utilities/images/cloud connection.svg'
 import Graphs from '@/utilities/images/Graphs.svg'
 import CustomServices from '@/utilities/images/CustomSerivces.svg'
-import ITImage from '@/utilities/images/ITImage.svg'
+import ITImage from '@/utilities/images/ITImage.png'
 import uiux from '@/utilities/images/uiux.svg'
 import devops from '@/utilities/images/devops.svg'
 import cybersecurity from '@/utilities/images/cybersecurity.svg'
@@ -35,7 +35,7 @@ import progressiveWebapp from '@/utilities/images/progressivewebapp.svg'
 import customwebSites from '@/utilities/images/websites.svg'
 import crossPlatforms from '@/utilities/images/crossplatforms.svg';
 import apiDevelopment from '@/utilities/images/apiDevelopment.svg';
-import webandMobileMain from '@/utilities/images/webandMobileMain.svg'
+import webandMobileMain from '@/utilities/images/webandMobileMain.jpg'
 import teleMedicine from '@/utilities/images/telemedicine.svg';
 import wellness from '@/utilities/images/wellness.svg';
 import patientManagement from '@/utilities/images/patientmanagement.svg';
@@ -49,7 +49,7 @@ import secure from '@/utilities/images/secure.svg';
 import financial from '@/utilities/images/financial.svg';
 import wallet from '@/utilities/images/wallet.svg';
 import invoice from '@/utilities/images/invoice.svg';
-import finTechMain from '@/utilities/images/fintechMain.svg';
+import finTechMain from '@/utilities/images/fintechMain.png';
 import cloudsolution from '@/utilities/images/cloudsolution.svg';
 import architecturedesign from '@/utilities/images/architecturedesign.svg';
 import clouddev from '@/utilities/images/clouddev.svg';
@@ -61,9 +61,27 @@ import heroImage from '@/utilities/images/hero-image.svg'
 import ContactUsForm from './components/ContactUsForm';
 import { analyticsTools, backendTools, devopsTools, frontendTools, mobileTools } from './Tabs';
 import ApproachComponent from './components/ApproachComponent';
-import imageOne from '@/utilities/images/image-1.png'
+import imageOne from "@/utilities/images/image-1.jpg";
 import imageTwo from '@/utilities/images/image-2.png'
 import imageThree from '@/utilities/images/image-3.png'
+
+import HeroImage from "@/utilities/images/IT_services_Hero.jpg";
+import lumina from "@/utilities/icons/lumina.png";
+import vortex from "@/utilities/icons/vortex.png";
+import velocity from "@/utilities/icons/velocity.png";
+import synergy from "@/utilities/icons/synergy.png";
+import enigma from "@/utilities/icons/enigma.png";
+import spectrum from "@/utilities/icons/spectrum.png";
+import Hemingway from "@/utilities/images/Hemingway_gif.gif";
+
+
+import SquadraTechTeamImage_1 from "@/utilities/images/Squadra_Tech_Team-image-1.png";
+import SquadraTechTeamImage_2 from "@/utilities/images/Squadra_Tech_Team-image-2.png";
+import SquadraTechTeamImage_3 from "@/utilities/images/Squadra_Tech_Team-image-3.jpg";
+import SquadraTechTeamImage_4 from "@/utilities/images/Squadra_Tech_Team-image-4.png";
+import SquadraTechTeamImage_5 from "@/utilities/images/Squadra_Tech_Team-image-5.jpg";
+import SquadraTechTeamImage_6 from "@/utilities/images/Squadra_Tech_Team-image-6.png";
+import Link from 'next/link';
 
 export const data = [
   { icon: Network, title: "Custom Software Development", description: "Bespoke software solutions tailored to your business needs." },
@@ -134,15 +152,16 @@ export const webAndMobDev = [
     "description": "Delivering speed and reliability for seamless user experiences."
   },
   {
-    "icon": customwebSites,
-    "title": "Custom Websites",
-    "description": "Tailored designs that reflect your brand's identity."
-  },
-  {
     "icon": crossPlatforms,
     "title": "Cross-Platform Mobile Apps",
     "description": "Expanding your reach to more users across devices."
   },
+  {
+    "icon": customwebSites,
+    "title": "Custom Websites",
+    "description": "Tailored designs that reflect your brand's identity."
+  },
+  
   {
     "icon": apiDevelopment,
     "title": "API Development",
@@ -200,23 +219,23 @@ export const aiAndDigital = [
 export const finTech = [
   {
     "icon": secure,
-    "title": "AI-Driven Process Automation",
-    "description": "Automate tasks with AI to boost efficiency and reduce human error."
-  },
-  {
-    "icon": financial,
-    "title": "Workflow Optimization Tools",
-    "description": "Streamline processes and improve team collaboration for higher productivity."
+    "title": "Secure Payments",
+    "description": "Secure transactions with reliable payment gateway solutions."
   },
   {
     "icon": wallet,
-    "title": "Complete Digital Transformation Strategies",
-    "description": "Implement digital solutions to drive growth and innovation across your business."
+    "title": "Digital Wallets",
+    "description": "Experience effortless, contactless payments with digital wallets."
+  },
+  {
+    "icon": financial,
+    "title": "Financial Analytics",
+    "description": "Gain insights with real-time analytics for smarter decisions."
   },
   {
     "icon": invoice,
-    "title": "Cloud Integration Solutions",
-    "description": "Integrate cloud technologies for enhanced scalability and operational flexibility."
+    "title": "Automated Invoicing",
+    "description": "Streamline billing with efficient, accurate invoicing tools."
   }
 ]
 
@@ -263,6 +282,15 @@ export const logos = [
   { name: "Brand 15", url: sliderIcon },
 ];
 
+     const Logos = [
+        { name: "Lumina", url: { src: lumina } },
+        { name: "Vortex", url: { src: vortex } },
+        { name: "Velocity", url: { src: velocity } },
+        { name: "Synergy", url: { src: synergy } },
+        { name: "Enigma", url: { src: enigma } },
+        { name: "Spectrum", url: { src: spectrum } },
+      ];
+
 
 
 function MobileUi() {
@@ -302,56 +330,95 @@ function MobileUi() {
 
 
   return (
-    <div className="h-fit pt-32 flex flex-col  w-full  items-center bg-black">
-      {/* Intro Section */}
-      <div className='w-[360px] h-[830px] flex flex-col items-center'>
-        <div className='mt-[145px] w-[327px] h-[174px] border-1 flex flex-col'>
-          <p className="font-medium text-[31px] leading-[42.96px] text-center text-[#FFFFFF]">
-            Your Trusted Partner <br />
-            <span
-              className=""
-              style={{
-                fontFamily: 'SF UI Display, sans-serif',
-                textDecorationSkipInk: 'none',
-                textUnderlinePosition: 'from-font',
-                background: 'linear-gradient(96.49deg, #EE5EFF 24%, #635BFF 53.5%, #38CBFF 85.5%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                color: 'transparent',
-              }}
-            >
-              in IT Innovation
-            </span>
+    <div className="h-fit  flex flex-col  w-full  items-center bg-[#040206]">
+      {/* Hero Section */}
+<div className="relative h-screen  w-full overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute flex items-start justify-start inset-0 transition-opacity duration-1000 opacity-100 overflow-hidden">
+    <Image
+      src={HeroImage}
+      alt="Carousel image"
+      layout="fill"
+      objectFit="cover"
+      objectPosition="top"
+      className="translate-y-[-50px] h-[calc(100%+50px)]"
+    />
+  </div>
+
+  {/* Gradient Overlay */}
+  <div className="absolute bottom-0 left-0 w-full h-[clamp(60%,65%,70%)] pointer-events-none bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(102,102,102,0)]" />
+
+  {/* Content */}
+  <div className="flex flex-col pt-[clamp(180px,15vw,100px)] absolute inset-0 mt-[clamp(80px,20vw,200px)] gap-[clamp(28px,6vw,60px)] px-[clamp(12px,5vw,24px)]">
+    <div className="flex flex-col justify-center items-center gap-[clamp(24px,5vw,42px)] text-center">
+      <div className="flex flex-col gap-[clamp(2px,0.7vw,6px)] max-w-[90%] items-center">
+        <p
+          className="font-[Inter] font-medium text-white tracking-[-0.0506em]
+          text-[clamp(28px,8vw,48px)] leading-[clamp(32px,8.5vw,52px)]"
+        >
+          Your Trusted Partner in IT{" "}
+          <span className="text-transparent bg-gradient-to-b from-white via-white/60 to-[#B372CF] bg-clip-text">
+            Innovation
+          </span>
+        </p>
+
+        <div className="pt-[clamp(4px,1.2vw,8px)]">
+          <p
+            className="font-[Inter] font-normal text-white
+            text-[clamp(14px,4vw,18px)] leading-[clamp(20px,4.8vw,26px)]
+            max-w-[clamp(280px,80vw,360px)] tracking-[0.02em]"
+          >
+            Empowering businesses with cutting-edge technology, scalable
+            solutions, and transformative digital strategies.
           </p>
-          <div className='w-[311px] h=[72px] flex items-center justify-center text-center mt-[16px]'>
-            <p className='font-[16px] text-white'>Empowering businesses with cutting-edge technology, scalable solutions, and transformative digital strategies.</p>
-          </div>
-        </div>
-        <div style={{ borderColor: ' rgba(255, 255, 255, 0.1)' }} className="w-[157px] h-[61px] rounded-[12px] border p-[10px] mt-[34px] flex justify-center items-center">
-
-          
-        <div onClick={scrollToContact}
-          className="w-[147px] h-[41px] p-[5px] px-[5px] gap-[8px] rounded-[8px] border bg-[#FFFFFF]">
-          <p className="text-[15px] font-medium leading-[31px] text-center text-[#000000] text-nowrap">
-              Connect With Us
-          </p>
-
-          </div> </div>
-
-        <div className='mb-[43px]'>
-          <div className='w-full h-[263px]'>
-            <Image
-              src={heroImage}
-              ref={imageRef}
-              alt="Hero Image"
-              width={0}
-              height={0}
-              className={`image ${isInView ? 'expand' : ''}`}
-            />
-          </div>
         </div>
 
+        <div className="mt-[clamp(16px,4vw,24px)]">
+          <Link href="/contact-us">
+            <div className="px-[clamp(6px,2vw,10px)] py-[clamp(4px,1.5vw,6px)] rounded-[clamp(6px,1.5vw,10px)] border border-[#FFFFFF1A]">
+              <button
+                className="flex items-center justify-center 
+                bg-white text-black font-bold 
+                rounded-[clamp(5px,1.5vw,8px)] 
+                px-[clamp(16px,5vw,24px)] 
+                h-[clamp(34px,4vw,42px)] 
+                text-[clamp(13px,4vw,16px)] 
+                leading-[clamp(18px,4vw,24px)] 
+                shadow-[6px_10px_28px_0px_#A89D9826] 
+                hover:bg-[#f9cd5e] transition-colors"
+              >
+                Contact Us
+              </button>
+            </div>
+          </Link>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+{/* Logo Section */}
+<div className="w-full pb-16 px-[clamp(12px,5vw,32px)] py-[clamp(24px,6vw,44px)]">
+  <div className="flex flex-wrap items-center justify-center gap-[clamp(12px,4vw,24px)]">
+    {Logos.map((logo, index) => (
+      <div
+        key={index}
+        className="w-[clamp(120px,40vw,170px)] h-[clamp(40px,12vw,56px)] flex items-center justify-center rounded-md"
+      >
+        <Image
+          src={logo.url.src}
+          alt={logo.name}
+          width={170}
+          height={56}
+          className="w-full h-full object-contain"
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
+
 
 
       {/* Carousel */}
@@ -407,14 +474,14 @@ function MobileUi() {
 
       </div>
 
-      <div className='w-[321px] h-[670px] mt-[42px]'>
+      {/* <div className='w-[321px] h-[670px] mt-[42px]'>
         <Image
           src="https://squadra-media.s3.ap-south-1.amazonaws.com/mockup+.png"
           width={321}
           height={600}
           alt='BenefitFrame'
         />
-      </div>
+      </div> */}
 
       {/* Feature Cards */}
 
@@ -521,12 +588,13 @@ function MobileUi() {
           </p>
 
         </div>
-        <div className='w-[340px] h-[425px] mt-[48px]'>
+        <div className='w-[340px] h-[425px] rounded-[16px] mt-[48px]'>
           <Image
             src={Container}
             width={340}
             height={425}
             alt='Container'
+            className='rounded-[16px]'
 
           />
         </div>
@@ -539,11 +607,11 @@ function MobileUi() {
                 className="w-[335px] mt-[16px] bg-[#F2F2F2] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
               >
                 <div className='flex gap-[8px]'>
-                  <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                  <div className='w-[44px] h-[44px] flex items-center justify-center rounded-[10.62px]'>
                     <Image
                       src={el?.icon}
-                      width={23}
-                      height={23}
+                      width={30}
+                      height={30}
                       alt='Network'
                     />
                   </div>
@@ -607,13 +675,13 @@ function MobileUi() {
 
 
         </div>
-        <div className='w-[335px] h-[330px] mt-[44px]'>
+        <div className='w-[335px] h-[330px] rounded-[16px] mt-[44px]'>
           <Image
             src={imageOne}
             width={335}
             height={275}
             alt='SaaS'
-            className='h-full w-full object-cover'
+            className='h-full w-full rounded-[16px] object-cover'
           />
           {/* <video 
         autoPlay 
@@ -636,12 +704,12 @@ function MobileUi() {
                   <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
                     <Image
                       src={el?.icon}
-                      width={23}
-                      height={23}
+                      width={30}
+                      height={30}
                       alt='Network'
                     />
                   </div>
-                  <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <div className='w-[237px] h-[38px] pt-1  flex items-center justify-left'>
                     <p
                       className="text-[#222222] text-start  text-[16px] font-medium leading-[19.09px]"
 
@@ -689,7 +757,7 @@ IT Services */}
         </p>
 
       </div>
-      <div className='w-[342px] h-[427px] mt-[42px]'>
+      <div className='w-[342px] h-[427px] rounded-[16px] overflow-hidden mt-[42px]'>
         <Image
           src={ITImage}
           width={342}
@@ -702,18 +770,18 @@ IT Services */}
           ItServices?.map((el) => (
 
             <div key={el.title}
-              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-[1px] border-[#1D1D20]"
             >
               <div className='flex gap-[8px]'>
-                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A]  rounded-[10.62px]'>
                   <Image
                     src={el?.icon}
-                    width={23}
-                    height={23}
+                    width={30}
+                    height={30}
                     alt='Network'
                   />
                 </div>
-                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                <div className='w-[237px] h-[38px] pt-1  flex items-center justify-left'>
                   <p
                     className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
 
@@ -760,12 +828,13 @@ Development */}
         </p>
 
       </div>
-      <div className='w-[342px] h-[398px] mt-[42px]'>
+      <div className='w-[342px] h-[398px] bg-black rounded-[16px] overflow-hidden mt-[42px]'>
         <Image
           src={webandMobileMain}
           width={342}
           height={398}
           alt='webandMobileMain'
+          className='rounded-[16px]'
         />
       </div>
       <div className='mt-[42px] mb-[32px]'>
@@ -773,14 +842,14 @@ Development */}
           webAndMobDev?.map((el) => (
 
             <div key={el.title}
-              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-[1px] border-[#1D1D20]"
             >
               <div className='flex gap-[8px]'>
-                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] rounded-[10.62px]'>
                   <Image
                     src={el?.icon}
-                    width={23}
-                    height={23}
+                    width={30}
+                    height={30}
                     alt='Network'
                   />
                 </div>
@@ -851,18 +920,17 @@ Development */}
                 className="w-[335px] mt-[16px] bg-[#F2F2F2] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
               >
                 <div className='flex gap-[8px]'>
-                  <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                  <div className='w-[44px] h-[44px] flex items-center justify-center rounded-[10.62px]'>
                     <Image
                       src={el?.icon}
-                      width={23}
-                      height={23}
+                      width={30}
+                      height={30}
                       alt='Network'
                     />
                   </div>
-                  <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <div className='w-[237px] h-[38px] pt-1 flex items-center justify-left'>
                     <p
                       className="text-[#222222] text-start  text-[16px] font-medium leading-[19.09px]"
-
                     >
                       {el?.title}
                     </p>
@@ -880,6 +948,8 @@ Development */}
               </div>
             ))}
         </div>
+
+        {/* automation & digital transformation */}
         <div className='w-[335px] h-[63px] mt-[72px]'>
           <p
             className="text-center text-[32px] font-semibold leading-[38.19px]"
@@ -910,21 +980,21 @@ Development */}
 
         </div>
         <div className='w-[342px] h-[400px] mt-[44px]'>
-          <Image
+          {/* <Image
             src={imageTwo}
             width={342}
             height={427}
             alt='SaaS'
             className='h-full w-full object-cover'
-          />
-          {/* <video 
+          /> */}
+          <video 
         autoPlay 
         muted 
         loop 
         playsInline
-        className=" h-full w-full object-cover"
+        className=" h-full w-full rounded-[16px] object-cover"
         src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d+%281%29.webm"
-      /> */}
+      />
 
         </div>
         <div className='mt-[44px] mb-[48px]'>
@@ -935,15 +1005,15 @@ Development */}
                 className="w-[335px] mt-[16px] bg-[#F2F2F2] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
               >
                 <div className='flex gap-[8px]'>
-                  <div className='w-[44px] h-[44px] flex items-center justify-center border-[1px] border-gray-300 rounded-[10.62px]'>
+                  <div className='w-[44px] h-[44px] flex items-center justify-center rounded-[10.62px]'>
                     <Image
                       src={el?.icon}
-                      width={23}
-                      height={23}
+                      width={30}
+                      height={30}
                       alt='Network'
                     />
                   </div>
-                  <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                  <div className='w-[237px] h-[38px] pt-1 flex items-center justify-left'>
                     <p
                       className="text-[#222222] text-start  text-[16px] font-medium leading-[19.09px]"
 
@@ -1005,18 +1075,18 @@ IT Services */}
           finTech?.map((el) => (
 
             <div key={el.title}
-              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-[1px] border-[#1D1D20]"
             >
               <div className='flex gap-[8px]'>
-                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] rounded-[10.62px]'>
                   <Image
                     src={el?.icon}
-                    width={23}
-                    height={23}
+                    width={30}
+                    height={30}
                     alt='Network'
                   />
                 </div>
-                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                <div className='w-[237px] h-[38px] pt-1 flex items-center justify-left'>
                   <p
                     className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
 
@@ -1060,42 +1130,42 @@ IT Services */}
             Solutions
           </span>
         </p>
-
       </div>
+
       <div className='w-[335px] h-[600px] mt-[42px]'>
-        <Image
+        {/* <Image
           src={imageThree} unoptimized={true}
           width={335}
           height={600} priority
           alt='webandMobileMain'
           className="h-full w-full object-cover"
-        />
-        {/* <video 
+        /> */}
+        <video 
         autoPlay 
         muted 
         loop 
         playsInline
-        className=" h-full w-full object-cover"
+        className=" h-full w-full rounded-[16px] object-cover"
         src="https://squadra-media.s3.ap-south-1.amazonaws.com/video%2Bsample.webm"
-      /> */}
+      />
       </div>
       <div className='mt-[42px] mb-[32px]'>
         {
           cloudData?.map((el) => (
 
             <div key={el.title}
-              className="w-[335px] mt-[16px] bg-[#19191C] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-t-[1px] border-transparent"
+              className="w-[335px] mt-[16px] bg-[#040206] h-[128px] p-[16px] gap-[8px] rounded-[16px]   border-[1px] border-[#1D1D20]"
             >
               <div className='flex gap-[8px]'>
-                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] border-[2px] border-[#28282C] rounded-[10.62px]'>
+                <div className='w-[44px] h-[44px] flex items-center justify-center bg-[#18181A] rounded-[10.62px]'>
                   <Image
                     src={el?.icon}
-                    width={23}
-                    height={23}
+                    width={30}
+                    height={30}
                     alt='Network'
                   />
                 </div>
-                <div className='w-[237px] h-[38px]  flex items-center justify-left'>
+                <div className='w-[237px] h-[38px] pt-1 flex items-center justify-left'>
                   <p
                     className="text-white text-start  text-[16px] font-medium leading-[19.09px]"
 
@@ -1136,7 +1206,7 @@ IT Services */}
           <div className='flex flex-col gap-[12px]'>
             <div className='w-[320px] h-[194px] bg-gray-200'>
               <Image
-                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/7.jpg"}
+                src={SquadraTechTeamImage_1}
                 alt='Tech Team'
                 width={320}
                 height={194}
@@ -1146,7 +1216,7 @@ IT Services */}
             <div className='flex items-center gap-[12px]'>
               <div className='w-[155px] h-[194px] bg-gray-200'>
                 <Image
-                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/444.png"}
+                  src={SquadraTechTeamImage_4}
                   alt='Tech Team'
                   width={155}
                   height={194}
@@ -1155,7 +1225,7 @@ IT Services */}
               </div>
               <div className='w-[155px] h-[194px] bg-gray-200'>
                 <Image
-                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"}
+                  src={SquadraTechTeamImage_5}
                   alt='Tech Team'
                   width={155}
                   height={194}
@@ -1167,7 +1237,7 @@ IT Services */}
           <div className='flex flex-col gap-[12px]'>
             <div className='w-[320px] h-[194px] bg-gray-200'>
               <Image
-                src={"https://squadra-media.s3.ap-south-1.amazonaws.com/6.jpg"}
+                src={SquadraTechTeamImage_6}
                 alt='Tech Team'
                 width={320}
                 height={194}
@@ -1177,7 +1247,7 @@ IT Services */}
             <div className='flex items-center gap-[12px]'>
               <div className='w-[155px] h-[194px] bg-gray-200'>
                 <Image
-                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_8330.jpg"}
+                  src={SquadraTechTeamImage_2}
                   alt='Tech Team'
                   width={155}
                   height={194}
@@ -1186,7 +1256,7 @@ IT Services */}
               </div>
               <div className='w-[155px] h-[194px] bg-gray-200'>
                 <Image
-                  src={"https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg"}
+                  src={SquadraTechTeamImage_3}
                   alt='Tech Team'
                   width={155}
                   height={194}

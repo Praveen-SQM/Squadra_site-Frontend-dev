@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
-// import { ArrowUpRight } from "lucide-react";
+import ArrowImage from '@/utilities/images/AboutUs_Vector.png'
+import { ArrowUpRight } from "lucide-react";
 
 const LifeAtSquadra = () => {
   return (
-    <section className="life-at-squadra py-12 px-0 mb-6 bg-gray-100 max-w-fit mx-auto h-full">
+    <section className="relative life-at-squadra py-12 px-0 mb-6 bg-gray-100 max-w-fit mx-auto h-full overflow-hidden">
       {/* Heading and Subheading */}
     <div className="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-8 text-center">
   <h1 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-800 mb-4">
@@ -74,9 +75,10 @@ const LifeAtSquadra = () => {
   
  
 </div>
-     <div className="grid grid-cols-10 gap-10 my-5">
 {/* change this line after adding join us section md:col-span-10 to col-span-10 */}
-  <div className="col-span-10 md:col-span-10">
+{/* Image Block 1 */}
+ <div className="grid grid-cols-10 gap-4 mb-5 ">
+  <div className="col-span-10 md:col-span-6  lg:col-span-6">
   <div className="relative w-full h-full">
     <Image width={860} height={480}
                 src={"https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/2.1.webp"}
@@ -85,6 +87,19 @@ const LifeAtSquadra = () => {
       className="w-full h-full object-cover"
     />
   </div>
+</div>
+
+ <div className="col-span-10 md:col-span-4 lg:col-span-4">
+  <div className="relative w-full h-full pt-8 pl-20 md:pl-8 lg:pl-20 flex items-center">
+    <div >
+      <h2 className="font-light text-[44px] md:text-[34px] lg:text-[54px] leading-[100%] tracking-[0px] align-middle text-[#131313]">Join Us</h2>
+      <p className="font-sfpro font-light mt-[22px] lg:mt-[22px] text-[20px] md:text-[16px] lg:text-[20px] leading-[120%] tracking-[0px] align-middle text-[#6D6D6D]">View open positions 
+<br />if you want to join the team.</p>
+<button className="flex gap-3  font-sfpro bg-[#131313] p-2 mt-12 md:mt-[50px] lg:mt-[88px] rounded-[30px] font-semibold text-[16px] leading-[100%] tracking-[0px] text-right align-middle uppercase pl-4 text-[#F6F6F6]"><span className="mt-[10px]">View Jobs</span>
+  <div className="w-[36px] h-[36px] rounded-[50%] bg-white pt-[6px] pl-[6px]"><ArrowUpRight color="black" /></div></button>    
+</div>
+  </div>
+</div>
 </div>
 
  {/* <div className="col-span-10  md:col-span-3 space-y-20 flex flex-col justify-center items-start  text-start">
@@ -106,8 +121,6 @@ const LifeAtSquadra = () => {
 
  </div> */}
   
- 
-</div>
 </div>
       {/* Join Us Section */}
       {/* <div className="image-block-2 md:flex justify-between gap-4 mb-8 md:h-70  h-36 md:h-[480px]">
@@ -132,6 +145,7 @@ const LifeAtSquadra = () => {
           </div>
         </div>
       </div> */}
+      {/* <div className="absolute bottom-0 right-0  w-[525.7377px] h-[68.4395px]  bg-[#FDDF8A] rotate-[144.38deg]"></div> */}
     </section>
   );
 };

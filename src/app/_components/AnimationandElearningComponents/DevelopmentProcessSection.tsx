@@ -2,8 +2,10 @@
 import React from "react";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import developementFirstImage from "@/utilities/images/development-first.webp"
-import developmentSecondImage from "@/utilities/images/development-second.webp"
+import developementFirstImage from "@/utilities/images/development-first.jpg"
+import developmentSecondImage from "@/utilities/images/development-second.jpg"
+import developmentThirdImage from "@/utilities/images/development-third.jpg"
+
 import { CardStack } from "@/components/ui/card-stack";
 
 const DevelopmentProcessSection = () => {
@@ -42,7 +44,7 @@ const DevelopmentProcessSection = () => {
             id: 2,
             name: "Tyler Durden",
             designation: "Manager Project Mayhem",
-            image: developementFirstImage,
+            image: developmentThirdImage,
             content: (
                 <p>
                     The first rule of
@@ -164,9 +166,11 @@ const DevelopmentProcessSection = () => {
                                     })}
                                 </div>
                             </div>
-                            <div className={`xl:h-[26rem] sm:h-[20rem]  h-[15rem] flex items-center 3xl:items-start  w-full sm:mt-0 mt-6 ${sectionIndex === 0 ? "3xl:justify-center xl:justify-end md:justify-center" : "justify-start"}`}>
-                                <CardStack items={CARDS} />
-                            </div>
+                            <div className={`xl:h-[26rem] sm:h-[20rem] h-[15rem] flex items-center 3xl:items-start  sm:mt-0 mt-6 ${sectionIndex === 0 ? "3xl:justify-center xl:justify-end md:justify-center" : "justify-start"}`}>
+  <div className="w-[304px] h-[320px] sm:w-[304px] sm:h-[320px] md:w-[330px] md:h-[340px] lg:w-[330px] lg:h-[340px] xl:w-[420px] xl:h-[420px] bg-[#F4F5FF] rounded-[30px] flex items-end justify-end overflow-hidden">
+    <CardStack items={CARDS} />
+  </div>
+</div>
                         </div>
                     )
                 })}

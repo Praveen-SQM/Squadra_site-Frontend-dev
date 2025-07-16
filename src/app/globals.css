@@ -8,6 +8,7 @@
 body {
   /* font-family: Arial, Helvetica, sans-serif; */
   padding: 0;
+  overflow-x: hidden;
 }
 
 .react-tel-input .flag-dropdown{
@@ -124,3 +125,5 @@ body {
   border-radius: 15px;
   /* height: 10%; */
 }
+
+

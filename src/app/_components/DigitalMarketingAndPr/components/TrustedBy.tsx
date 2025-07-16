@@ -16,6 +16,19 @@ import clientVOIA from "@/utilities/icons/client-voia.webp";
 import clientVIDA from "@/utilities/icons/client-vida.webp";
 import clientNior from "@/utilities/icons/client-cafeNior.webp";
 
+import clientHarrisPoll from '@/utilities/icons/Harris Poll.png'
+import clientEndust from '@/utilities/icons/Endust.png'
+import clientHertz from '@/utilities/icons/Hertz.png'
+import clientNetrix from '@/utilities/icons/Netrix.png'
+import clientNorwegian from '@/utilities/icons/Norwegian.png'
+import clientPaylocity from '@/utilities/icons/Paylocity.png'
+import clientRebuildingExchange from '@/utilities/icons/RebuildingExchange.png'
+import clientTeachForAmerica from '@/utilities/icons/TeachForAmerica.png'
+import clientUnited from '@/utilities/icons/United.png'
+import clientTheUniversityOfChicago from '@/utilities/icons/TheUniversityOfChicago.png'
+
+
+
 export function InfiniteSliderBasic() {
 
   const clients = [
@@ -81,6 +94,49 @@ export function InfiniteSliderBasic() {
     }
   ]
 
+  const clients2 = [
+    {
+      src: clientHarrisPoll,
+      alt: "Harris Poll"
+    },
+    {
+      src: clientEndust,
+      alt: "Endust"
+    },
+    {
+      src: clientHertz,
+      alt: "Hertz"
+    },
+    {
+      src: clientNetrix,
+      alt: "Netrix"
+    },
+    {
+      src: clientNorwegian,
+      alt: "Norwegian"
+    },
+    {
+      src: clientPaylocity,
+      alt: "Paylocity"
+    },
+    {
+      src: clientTheUniversityOfChicago,
+      alt: "TheUniversityOfChicago"
+    },
+    {
+      src: clientRebuildingExchange,
+      alt: "RebuildingExchange"
+    },
+    {
+      src: clientTeachForAmerica,
+      alt: "TeachForAmerica"
+    },
+    {
+      src: clientUnited,
+      alt: "United"
+    }
+  ]
+
   return (
     <>
       <InfiniteSlider gap={24} reverse>
@@ -89,11 +145,27 @@ export function InfiniteSliderBasic() {
             <>
               <Image
                 key={index}
-                width={250}
-                height={120}
+                width={400}
+                height={250}
                 src={client?.src}
                 alt={client?.alt}
-                className={`h-[50px] md:h-[150px] w-auto mb-4 ${index !==3 ? "filter invert brightness-0" : ""}`}
+                className={`h-[50px] md:h-[150px] w-auto mb-12 ${index !==3 ? "filter invert brightness-0" : ""}`}
+              />
+            </>
+          )
+        })}
+      </InfiniteSlider>
+      <InfiniteSlider gap={24} >
+        {clients2?.map((client, index) => {
+          return (
+            <>
+              <Image
+                key={index}
+                width={400}
+                height={250}
+                src={client?.src}
+                alt={client?.alt}
+                className={`h-[50px] md:h-[150px] w-auto mb-12 ${index !==3 ? "filter invert brightness-0" : ""}`}
               />
             </>
           )

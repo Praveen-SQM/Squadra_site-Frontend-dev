@@ -10,7 +10,7 @@ import ExpertsSection from "./ExpertsSection";
 
 const ELearning = () => {
   return (
-    <div>
+    <div >
       {" "}
       <ELearningLanding />
       <TrainingContent />

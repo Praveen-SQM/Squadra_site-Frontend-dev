@@ -1,8 +1,11 @@
-"use client";import React, { useState, useEffect, useRef } from "react";
+"use client";
+import Image from "next/image";
+import React, { useState, useEffect, useRef } from "react";
 import HowItWorksSteps from "./components/HowItWorksSteps";
 import FAQ from "./components/FAQ";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { ArrowDown } from "lucide-react";
+import HeroImage from "@/utilities/images/HowItWorks_hero.jpg";
 
 const DesktopUi = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -20,10 +23,10 @@ const DesktopUi = () => {
     const animate = () => {
       const difference = targetScrollRef.current - currentScrollRef.current;
       const speed = 0.1; // Adjust this value to control smoothness (0.1 = smooth, 1 = instant)
-      
+
       currentScrollRef.current += difference * speed;
       setScrollPosition(currentScrollRef.current);
-      
+
       animationRef.current = requestAnimationFrame(animate);
     };
 
@@ -43,7 +46,10 @@ const DesktopUi = () => {
   }, []);
 
   const handleScrollDown = () => {
-    if (typeof window !== "undefined" && typeof window.scrollTo === "function") {
+    if (
+      typeof window !== "undefined" &&
+      typeof window.scrollTo === "function"
+    ) {
       window.scrollTo({
         top: window.innerHeight,
         behavior: "smooth",
@@ -67,7 +73,7 @@ const DesktopUi = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="pt-[95px] bg-neutral-900">
+      {/* <div className="pt-[95px] bg-neutral-900">
         <BackgroundBeamsWithCollision>
           <div className="relative flex flex-col h-screen justify-center p-4 overflow-hidden">
             <div
@@ -103,11 +109,66 @@ const DesktopUi = () => {
             </div>
           </div>
         </BackgroundBeamsWithCollision>
+      </div> */}
+
+      {/* Hero Section */}
+      <div className="relative h-screen w-full overflow-hidden">
+        {/* Video Background */}
+        <Image
+          src={HeroImage}
+          alt="Background"
+          fill
+          className="object-cover"
+          priority // optional: loads image eagerly
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+
+        {/* Content */}
+        <div className="relative flex h-full items-center">
+          <div className="container mx-auto px-6 sm:px-12 lg:px-32">
+            <div className="max-w-8xl pt-[70px] flex flex-col gap-4 ">
+              {" "}
+              {/* Added padding-top here */}
+              <h1
+                className="text-sm pl-2
+sm:text-base sm:leading-[20px] 
+md:text-lg md:leading-[22px] 
+lg:text-[20px] lg:leading-[19.2px] 
+font-normal tracking-[0.02em] 
+uppercase text-[#D1D1D1]
+"
+              >
+                HOW IT WORKS
+              </h1>
+              <h2
+                className="text-4xl 
+sm:text-5xl sm:leading-tight 
+md:text-6xl md:leading-[72px] 
+lg:text-[82px] lg:leading-[100%] 
+font-bold capitalize text-whitetext-4xl 
+sm:text-5xl sm:leading-tight 
+md:text-6xl md:leading-snug md:font-semibold 
+lg:text-[clamp(2.5rem,4vw+1rem,5.125rem)] 
+lg:leading-[clamp(3rem,4.2vw+1rem,6rem)] 
+lg:font-bold 
+text-white 
+capitalize
+"
+              >
+                Crafting Digital
+                <br className="hidden sm:inline" /> Narratives
+              </h2>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div className="h-fit flex flex-col w-full justify-center items-center">
         <HowItWorksSteps />
       </div>
-      <div className="w-full bg-slate-100">
+      <div className="w-full bg-[#F7F7F7]">
         <FAQ />
       </div>
     </div>
