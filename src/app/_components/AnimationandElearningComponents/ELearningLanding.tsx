@@ -80,7 +80,7 @@ const ELearningLanding = () => {
       <div className="absolute bottom-0 left-0 w-full h-[70%] sm:h-[60%] pointer-events-none bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(102,102,102,0)]" />
 
       {/* Content */}
-      <div className="flex flex-col gap-[150px] absolute inset-0 pt-0 sm:pt-[100px] md:pt-[80px] lg:pt-[60px] xl:pt-[40px] 2xl:pt-[20px]  xl:mt-[420px] lg:mt-[30%] md:mt-[304px] sm:mt-[104px] mt-[230px]">
+      <div className="flex flex-col gap-[150px] absolute inset-0 pt-16 sm:pt-[100px] md:pt-[80px] lg:pt-[60px] xl:pt-[40px] 2xl:pt-[20px]  xl:mt-[420px] lg:mt-[30%] md:mt-[304px] sm:mt-[104px] mt-[230px]">
         <div className="flex flex-col justify-center items-center  xl:gap-[56px] lg:gap-[42px] md:gap-[42px] sm:gap-[42px] gap-[44px]">
           <div className="flex flex-col xl:gap-1 lg:gap-1 md:gap-2  items-center">
             <p className="font-manrope font-bold text-[clamp(32px,4vw,40px)] leading-[clamp(48px,5vw,72px)] text-center text-[#FFFFFF] max-w-[990px] w-full px-4 lg:px-2 align-middle">

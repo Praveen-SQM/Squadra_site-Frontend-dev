@@ -29,11 +29,11 @@ const DesktopUi = () => {
   {/* Content over video and overlay */}
   <div className="absolute inset-0 flex flex-col pt-[64px] items-center justify-around text-center z-10">
     <p className="transparent">.</p>
-    <div className="s md:p-8 lg:p-12 flex flex-col items-center lg:gap-4">
+    <div className="sm:p-4 md:p-8 lg:p-12 flex flex-col items-center lg:gap-4">
       <h1 className="text-[clamp(2rem,5vw,4.5rem)] font-extrabold leading-[100%] tracking-[-0.02em] text-white w-[300px] md:w-full mb-4 uppercase text-center align-middle font-[SF UI Display]">
         We connect your brand with your audience.
       </h1>
-      <div className="lg:max-w-[600px] md:p-x-8">
+      <div className="lg:max-w-[600px] md:px-16 ">
         <p className="text-[clamp(13px,3.5vw,20px)] font-normal font-sf leading-[100%] tracking-normal w-[300px] md:w-full text-center align-middle  text-[#EFEFEF]">
           We don&apos;t just run campaigns; we build connections between your
           brand and your audience.

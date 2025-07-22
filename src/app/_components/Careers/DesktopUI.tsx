@@ -213,14 +213,14 @@ function DesktopUi() {
         <div className="absolute bottom-0 left-0 w-full h-[70%] sm:h-[60%] pointer-events-none bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(102,102,102,0)]" />
 
         {/* Content */}
-        <div className="flex flex-col gap-[150px] absolute inset-0 xl:mt-[400px] lg:mt-[30%] md:mt-[304px] sm:mt-[104px] mt-[220px]">
+        <div className="flex flex-col justify-center items-center gap-[150px] absolute inset-0 xl:mt-[400px] lg:mt-[30%] md:mt-[304px] sm:mt-[144px] mt-[250px]">
           <div className="flex flex-col justify-center items-center xl:gap-[34px] lg:gap-[34px] md:gap-[42px] sm:gap-[42px] gap-[44px]">
             <div className="flex flex-col xl:gap-1 lg:gap-1 md:gap-2 max-w-[740px] items-center">
               <p
                 className="sm:font-[SF UI Display] font-[SF UI Display] font-bold 
 lg:text-[46px] lg:leading-[66.83px] 
 md:text-[46px] md:leading-[66.83px] 
-sm:text-[56px] sm:leading-[66.83px] 
+sm:text-[46px] sm:leading-[66.83px] 
 text-[48px] leading-[100%] 
 text-[#FFFFFF] text-center 
 xl:w-full md:w-full sm:w-full w-[308px] lg:px-8"

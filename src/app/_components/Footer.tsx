@@ -194,7 +194,7 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 lg:space-x-10">
           {/* Company */}
-          <div className="space-y-4 col-span-10 md:col-span-4 lg:col-span-1">
+          <div className="space-y-4 col-span-4 md:col-span-4 lg:col-span-1">
             <h3 className="text-white text-lg font-medium">Company</h3>
             <ul className="space-y-3">
               <li>
@@ -246,7 +246,7 @@ export default function Footer() {
           </div>
 
           {/* Our Services */}
-          <div className="space-y-4 col-span-10 md:col-span-4 lg:col-span-3">
+          <div className="space-y-4 col-span-6 md:col-span-4 lg:col-span-3">
             <h3 className="text-white text-lg font-medium">Our Services</h3>
             <ul className="space-y-3">
               <li>

@@ -33,8 +33,8 @@ const UnleashPotential = () => {
               alt="Image 1"
               className="w-full h-full object-contain rounded-lg"
             />
-            <div className="absolute   pb-16 pt-28 md:pb-6 md:pt-24 xl:pb-12 xl:pt-36 top-0 left-0 w-full h-full flex flex-col justify-between items-center">
-              <h2 className="text-white font-bold text-[clamp(16px,3vw,36px)] leading-[clamp(20px,5vw,48px)] uppercase max-w-[386px] text-center">
+            <div className="absolute   pb-8 pt-28 md:pb-6 md:pt-24 lg:pt-28 xl:pb-12 xl:pt-36 top-0 left-0 w-full h-full flex flex-col justify-between items-center">
+              <h2 className="text-white font-bold text-[clamp(18px,3vw,36px)] leading-[clamp(30px,4vw,48px)] uppercase max-w-[386px] text-center">
                 Your Brand in the <br />
                 Spotlight
               </h2>
@@ -56,13 +56,13 @@ const UnleashPotential = () => {
               alt="Image 2"
               className="w-full h-full object-contain rounded-lg"
             />
-            <div className="absolute pb-[70px] pt-24 md:pb-6 md:pt-12 xl:pb-12 xl:pt-24 top-0 left-0 w-full h-full flex flex-col justify-between items-center">
+            <div className="absolute pb-10 pt-20 md:pb-6 md:pt-12 xl:pb-12 xl:pt-24 top-0 left-0 w-full h-full flex flex-col justify-between items-center">
               <div>
-                <h2 className="text-[#BEBEBE] font-bold uppercase text-center max-w-[376px] pt-2 text-[clamp(14px,4vw,36px)] leading-[clamp(20px,5vw,48px)] tracking-[0%]">
+                <h2 className="text-[#BEBEBE] font-bold uppercase text-center max-w-[376px] pt-2 text-[clamp(16px,3vw,36px)] leading-[clamp(20px,5vw,48px)] tracking-[0%]">
                   Where PR Meets <br />
                   Digital Power.
                 </h2>
-                <p className="text-center mt-1 font-medium text-[clamp(12px,3.5vw,16px)] leading-[clamp(18px,4vw,22px)] tracking-[0%]">
+                <p className="text-center mt-1 font-medium text-[clamp(14px,3.5vw,16px)] leading-[clamp(18px,4vw,22px)] tracking-[0%]">
                   Digital PR Power
                 </p>
               </div>

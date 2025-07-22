@@ -59,7 +59,7 @@ const FAQSection = () => {
 
   return (
     <div className="w-full bg-[#FAFAFA]">
-      <div className="max-w-6xl  3xl:max-w-[1590px]  mx-auto p-8 py-24 gap-6 lg:gap-28 sm:flex">
+      <div className="max-w-6xl  3xl:max-w-[1590px]  mx-auto p-10 py-24 gap-6 lg:gap-24 sm:flex">
       <motion.div
         className="flex flex-col gap-[24px] lg:gap-[28px] mb-6 sm:mb-0 3xl:min-w-[569.3333129882812px]"
         initial={{ opacity: 0, x: -50 }}

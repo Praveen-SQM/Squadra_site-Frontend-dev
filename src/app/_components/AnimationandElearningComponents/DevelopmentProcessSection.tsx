@@ -130,10 +130,10 @@ const DevelopmentProcessSection = () => {
                 <p className="font-normal 3xl:text-[22px] 3xl:leading-[32px] xl:text-[16px] xl:leading-6 text-[14px] leading-[19px] text-[#4A4852] text-center text-[#999DA6] 3xl:text-[22px]">Involves creating and refining materials to meet learning goals.</p>
             </div>
 
-            <div className="flex flex-col 3xl:gap-[187px] xl:gap-[140px] sm:gap-[81px] gap-[62px]">
+            <div className="flex flex-col 3xl:gap-[187px] px-4 xl:gap-[140px] sm:gap-[81px] gap-[62px]">
                 {ProcessPoints?.map((point, sectionIndex) => {
                     return (
-                        <div key={sectionIndex} className={`w-full max-w-6xl 3xl:max-w-[1590px] xl:max-w-[1200px] lg:max-w-[900px] xl:px-0 px-4 flex items-center 3xl:gap-[145px] xl:gap-[108px] sm:gap-[100px] sm:px-4 gap-6 ${sectionIndex === 0 ? "sm:flex-row flex-col" : "sm:flex-row-reverse flex-col"}`}>
+                        <div key={sectionIndex} className={`w-full max-w-6xl 3xl:max-w-[1590px] xl:max-w-[1200px] lg:max-w-[900px] xl:px-0 px-4 flex items-center 3xl:gap-[145px] xl:gap-[108px] lg:gap-[100px] sm:gap-[50px] sm:px-4 gap-6 ${sectionIndex === 0 ? "sm:flex-row flex-col" : "sm:flex-row-reverse flex-col"}`}>
                             <div className="flex flex-col 3xl:gap-[26px] xl:gap-[42px] gap-6 ">
                                 <div className="flex flex-col 3xl:gap-4 gap-3">
                                     <p className="font-medium 3xl:text-[42px] 3xl:leading-[57.4px] xl:text-[32px] xl:leading-[43.7px] text-[18px] leading-[24px] text-[#1D1A27]">{point?.text}</p>

@@ -60,7 +60,7 @@ const CoreTeamMember = () => {
                 height={384}
                 className="rounded-t-[24px] w-full lg:h-[384px]  object-cover"
               />
-              <div className="bg-white shadow-md rounded-b-[24px] rounded-t-none p-4 w-full -mt-4 relative z-10">
+              <div className="bg-white shadow-md rounded-b-[24px] rounded-t-none p-3 w-full -mt-4 relative z-10">
                 <h3 className="text-gray-900 text-base md:text-lg font-semibold text-center">{member.name}</h3>
                 <p className="text-gray-600 text-sm md:text-base font-normal text-center">{member.designation}</p>
               </div>

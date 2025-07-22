@@ -102,9 +102,9 @@ export default function ContactUsForm() {
   ];
   return (
     // Main container
-    <div className="flex flex-col lg:flex-row gap-5 mx-auto max-w-[1192px] p-4 md:p-6 lg:p-0 my-20">
+    <div className="flex flex-col lg:flex-row  gap-5 mx-auto max-w-[1192px] p-4 md:p-6 lg:p-0 pl-0 lg:pl-6 xl:pl-0 my-20">
       {/* Left Section */}
-      <div className="lg:w-[526px] h-full lg:h-[790px] bg-[conic-gradient(from_228.11deg_at_76.14%_55.06%,#06135B_0deg,#010101_360deg)] p-8 rounded-3xl text-white flex flex-col">
+      <div className="lg:w-[476px] ml-4 sm:ml-3 md:ml-0 xl:w-[526px] h-full lg:h-[790px] bg-[conic-gradient(from_228.11deg_at_76.14%_55.06%,#06135B_0deg,#010101_360deg)] p-8 rounded-3xl text-white flex flex-col">
         <h2 className="text-4xl font-semibold leading-tight mb-5">
           <span className="text-[#FCC94D]">Discover</span> Digital Transformation
         </h2>

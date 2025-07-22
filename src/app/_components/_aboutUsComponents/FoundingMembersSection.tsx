@@ -58,7 +58,7 @@ const FoundingMembersSection = () => {
 
     //     </div>
 
-    <div className="flex items-center lg:gap-[68px] md:gap-[40px] sm:gap-[40px] gap-[100px] justify-center lg:flex-row md:flex-row sm:flex-row flex-col">
+    <div className="flex items-center xl:gap-[68px] lg:gap-[35px] md:gap-[40px] sm:gap-[40px] gap-[100px] justify-center lg:flex-row md:flex-row sm:flex-row flex-col">
       <div className="lg:w-[290px] md:w-[200px] sm:w-[200px] w-[278px] rounded-[24px] bg-[#FFFFFF] flex flex-col hidden sm:block">
         <div className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px]">
           <Image src={TarushImage} alt="Tarush" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px] w-full object-cover rounded-t-[24px]"/>

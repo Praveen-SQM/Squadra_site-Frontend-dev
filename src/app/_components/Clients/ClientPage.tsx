@@ -342,9 +342,9 @@ const renderClientGrid = () => {
                   </span>
                 </h1>
               </div>
-              <div className="pt-4 lg:pt-6">
+              <div className="pt-4 lg:pt-6 pb-0 md:pb-6">
                 <button className="inline-flex items-center px-6 py-3 lg:px-8 lg:py-4 text-white font-normal rounded-lg hover:opacity-80 transition-colors duration-300 group bg-black">
-                  <span className="text-sm lg:text-base">Case Studies</span>
+                  <span className="text-md lg:text-base">Case Studies</span>
                   <ArrowRight className="ml-3 w-4 h-4 lg:w-5 lg:h-5 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>
@@ -368,9 +368,9 @@ const renderClientGrid = () => {
         </div>
       </section>
 
-      <section className="py-16 px-4 pb-40 w-full bg-[#F6F6F6]">
+      <section className="py-16 px-4 pb-24 w-full bg-[#F6F6F6]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-0 md:mb-28">
+          <div className="text-center mb-0 md:mb-16">
             <h2 className="font-sf font-[300] text-center text-[#131313] mb-4 text-[clamp(24px,5vw,62px)] leading-[clamp(28.64px,6vw,72px)]">
               Our Clients
             </h2>
@@ -380,7 +380,7 @@ const renderClientGrid = () => {
             </p>
           </div>
 
-          <div className="space-y-4 relative">{renderClientGrid()}</div>
+          <div className="space-y-4 mt-8 sm:mt-8 md:mt-0 lg:mt-0 relative">{renderClientGrid()}</div>
         </div>
       </section>
     </>

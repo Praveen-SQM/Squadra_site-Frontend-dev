@@ -127,7 +127,7 @@ const DesktopUi = () => {
 
         {/* Content */}
         <div className="relative flex h-full items-center">
-          <div className="container mx-auto px-6 sm:px-12 lg:px-32">
+          <div className="container mx-auto px-6 sm:px-12 lg:px-16">
             <div className="max-w-8xl pt-[70px] flex flex-col gap-4 ">
               {" "}
               {/* Added padding-top here */}
@@ -145,7 +145,7 @@ uppercase text-[#D1D1D1]
               <h2
                 className="text-4xl 
 sm:text-5xl sm:leading-tight 
-md:text-6xl md:leading-[72px] 
+md:text-5xl md:leading-[100%] 
 lg:text-[82px] lg:leading-[100%] 
 font-bold capitalize text-whitetext-4xl 
 sm:text-5xl sm:leading-tight 

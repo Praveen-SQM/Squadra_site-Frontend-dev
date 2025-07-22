@@ -182,7 +182,7 @@ function VisualImpactUi() {
  {services.map((service, index) => (
   <div
     key={index}
-    className="relative w-full sm:my-16 md:my-28 lg:my-32 min-h-screen bg-black overflow-hidden"
+    className="relative w-full sm:my-16 md:my-28 lg:my-20 xl:my-32 min-h-screen bg-black overflow-hidden"
   >
     {/* Background Image */}
     <div className="absolute inset-0 w-full h-full">
@@ -195,16 +195,17 @@ function VisualImpactUi() {
     </div>
 
     {/* Content Wrapper */}
-    <div className="relative z-10 flex items-end sm:justify-center  md:justify-start lg:justify-start min-h-screen md:h-[700px] lg:h-[700px] w-full px-4 sm:px-6 md:px-0 lg:px-0">
+    <div className="relative z-10 flex items-end sm:justify-center   md:justify-start lg:justify-start min-h-screen md:h-[700px] lg:h-[700px]   w-full px-4 sm:px-6 md:px-0 lg:px-0">
       <div
         className="
-          bg-black/65 backdrop-blur-3xl text-white
+          bg-black/65 backdrop-blur-xl text-white
           flex flex-col justify-center
           items-center sm:items-end text-center sm:text-right
           w-full max-w-full
           sm:w-[300px] sm:px-4 sm:py-6 sm:h-auto
           md:w-[600px] md:px-16 md:py-10 md:h-[500px]
-          lg:w-[744px] lg:px-[120px] lg:py-[60px] lg:h-[600px]
+          lg:w-[600px] lg:px-16 lg:py-10 lg:h-[550px]
+          xl:w-[744px] xl:px-[120px] xl:py-[60px] xl:h-[600px]
         "
       >
         {/* Category */}

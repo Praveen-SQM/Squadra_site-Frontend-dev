@@ -175,7 +175,7 @@ const OurMethodology = () => {
         <div className="uppercase text-[14px]  md:text-[16px] font-normal leading-[16.64px] tracking-normal align-middle font-[SF UI Display]">
           Our Services
         </div>
-        <div className="text-4xl md:text-[clamp(48px,6vw,72px)] leading-[76.32px] font-bold uppercase text-center align-middle font-[SF UI Display]">
+        <div className="text-4xl md:text-[clamp(48px,6vw,72px)] leading-[46.32px] md:leading-[76.32px] font-bold uppercase text-center align-middle font-[SF UI Display]">
           <span className="text-[#AEC5FF] ">OUR Winning</span> <br />
           <span>Methodology</span>
         </div>
@@ -189,27 +189,38 @@ const OurMethodology = () => {
       {sections.map((section, index) => (
         <section
           key={index}
+          style={{
+            position: "sticky",
+            top: "0px",
+            zIndex: 1,
+          }}
           className={`flex flex-col items-center ${
             section.bgColor === "black" ? "bg-black" : "bg-[#06135B]"
           }`}
         >
-          <div className="flex items-center justify-around w-full md:max-w-[800px] lg:max-w-[1400px] flex-wrap py-10 pb-4 sm:py-[55px] md:py-[55px] lg:py-[50px]">
+          <div className="flex items-center justify-around w-full sm:gap-0 md:gap-6 lg:gap-0 md:max-w-[800px] lg:max-w-[1400px] flex-wrap py-10 pb-4 sm:py-[55px] md:py-[55px] lg:py-[50px] xl:py-[80px]">
             {/* Sticky Number (Optional effect) */}
             <div
               className={`text-[130px] md:text-[220px] lg:text-[240px] pl-6 font-[400] ${
                 section.bgColor === "black" ? "text-white" : "text-yellow-300"
-              }`}
-              style={{ position: "sticky", top: "100px" }}
+              } sm:sticky`} // sticky only on sm and below
+              style={{
+                top: "100px",
+                position:
+                  typeof window !== "undefined" && window.innerWidth < 768
+                    ? "sticky"
+                    : "static",
+              }}
             >
               {section.number}
             </div>
 
             {/* Text Content */}
             <div className="max-w-[300px] lg:max-w-[490px] w-full px-4 text-white">
-              <h2 className="text-[20px] md:text-[clamp(22px,4vw,30px)] leading-[120%] lg:text-[clamp(32px,4vw,48px)] font-bold uppercase">
+              <h2 className="text-[20px] md:text-[clamp(26px,4vw,30px)] leading-[120%] lg:text-[clamp(32px,4vw,48px)] font-bold uppercase">
                 {section.heading}
               </h2>
-              <p className="text-[14px] md:text-[clamp(12px,2vw,14px)] lg:text-[clamp(16px,2vw,18px)] font-light mt-4">
+              <p className="text-[14px] md:text-[clamp(16px,2vw,14px)] lg:text-[clamp(16px,2vw,18px)] font-light mt-4">
                 {section.description}
               </p>
             </div>
