@@ -52,7 +52,7 @@ import { motion } from "framer-motion";
 function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const [isInView, setIsInView] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -102,11 +102,10 @@ function DesktopUi() {
     { name: "Spectrum", url: { src: spectrum } },
   ];
 
-  const renderCard = (el, index, globalIndex) => {
+  const renderCard = (el: any, index: number, globalIndex: number) => {
     const isHovered = hoveredIndex === globalIndex;
-    const shouldShowImage = hoveredIndex === null
-      ? globalIndex === 0
-      : isHovered;
+    const shouldShowImage =
+      hoveredIndex === null ? globalIndex === 0 : isHovered;
 
     const cardBg =
       hoveredIndex === null
@@ -156,7 +155,6 @@ function DesktopUi() {
       </div>
     );
   };
-  
 
   return (
     <div className="h-fit  flex flex-col  w-full  items-center bg-[#040206]">
@@ -177,26 +175,21 @@ function DesktopUi() {
         <div className="absolute bottom-0 left-0 w-full h-[clamp(60%,65%,70%)] pointer-events-none bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(102,102,102,0)]" />
 
         {/* Content */}
-        <div className="flex flex-col pt-[clamp(101px,7vw,101px)] absolute inset-0 mt-[clamp(104px,15vw,304px)] gap-[clamp(44px,8vw,150px)]">
+        <div className="flex flex-col lg:pt-[175px] xl:pt-[100px] absolute inset-0 mt-[clamp(104px,15vw,304px)] gap-[clamp(44px,8vw,150px)]">
           <div className="flex flex-col justify-center items-center gap-[clamp(42px,3.5vw,56px)]">
             <div className="flex flex-col gap-[clamp(4px,0.7vw,8px)] max-w-[75%] items-center text-center">
               <h1
-              style={{
-    background: "linear-gradient(180deg, #FFF 54.17%, #B372CF 100%)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-  }}
+                style={{
+                  background:
+                    "linear-gradient(180deg, #FFF 54.17%, #B372CF 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
                 className="font-inter font-[450]  text-center tracking-[-5.06%] px-[clamp(0px,2vw,32px)]
           text-[clamp(68px,5.7vw,84px)] leading-[clamp(48px,5.9vw,84px)]"
               >
-                Your Trusted Partner in IT{" "}
-                <br className="hidden md:block" />
-               <span 
-  
->
-  Innovation
-</span>
-
+                Your Trusted Partner in IT <br className="hidden md:block" />
+                <span>Innovation</span>
               </h1>
 
               <div className="pt-[clamp(6px,1vw,10px)]">
@@ -396,31 +389,32 @@ function DesktopUi() {
               efficiency and success
             </p>
           </div>
+        </div>
+        <div
+          className="w-full h-[1px] mt-[12px]"
+          style={{
+            background:
+              "radial-gradient(40% 50% at 50% 50%, #28282C 0%, #000000 100%)",
+          }}
+        ></div>
 
+        <div className="w-full mt-[100px] flex justify-around">
+          <div className="w-[1030px] grid grid-cols-2 gap-[0px] items-center">
+            {/* First Div */}
+            <div className="h-[760px] flex flex-col gap-[20px] items-center">
+              {data?.slice(0, 3)?.map(
+                (el, index) => renderCard(el, index, index) // globalIndex is 0, 1, 2
+              )}
+            </div>
+
+            {/* Third Div */}
+            <div className="h-[760px] flex flex-col gap-[20px] items-center">
+              {data?.slice(3, 6)?.map(
+                (el, index) => renderCard(el, index, index + 3) // globalIndex is 3, 4, 5
+              )}
+            </div>
           </div>
-          <div className="w-full h-[1px] mt-[12px]" style={{
-    background: "radial-gradient(40% 50% at 50% 50%, #28282C 0%, #000000 100%)"
-  }}>
         </div>
-
-        
-    <div className="w-full mt-[100px] flex justify-around">
-      <div className="w-[1030px] grid grid-cols-2 gap-[0px] items-center">
-        {/* First Div */}
-        <div className="h-[760px] flex flex-col gap-[20px] items-center">
-          {data?.slice(0, 3)?.map((el, index) =>
-            renderCard(el, index, index) // globalIndex is 0, 1, 2
-          )}
-        </div>
-
-        {/* Third Div */}
-        <div className="h-[760px] flex flex-col gap-[20px] items-center">
-          {data?.slice(3, 6)?.map((el, index) =>
-            renderCard(el, index, index + 3) // globalIndex is 3, 4, 5
-          )}
-        </div>
-      </div>
-    </div>
 
         <div className="w-full flex justify-center">
           <div className="w-[727px] h-[153px] mt-32  flex flex-col items-center justify-center">
@@ -797,18 +791,17 @@ function DesktopUi() {
 
           {/* Second Div */}
           <div className="w-[438px] h-[548px] bg-black rounded-[22px]">
-  <div className="w-[438px] h-[462px] flex items-start">
-    <Image
-      quality={40}
-      src={webandMobileMain}
-      width={438}
-      height={462}
-      alt="webandMobileMain"
-      className="w-full h-full rounded-[22px] object-cover"
-    />
-  </div>
-</div>
-
+            <div className="w-[438px] h-[462px] flex items-start">
+              <Image
+                quality={40}
+                src={webandMobileMain}
+                width={438}
+                height={462}
+                alt="webandMobileMain"
+                className="w-full h-full rounded-[22px] object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -906,7 +899,15 @@ function DesktopUi() {
                 height={547}
                 alt='SaaS'
               /> */}
-              <video src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4" autoPlay={true} muted loop width="438" height="547" className='rounded-[24px]'></video>
+              <video
+                src="https://squadra-media.s3.ap-south-1.amazonaws.com/video3d.mp4"
+                autoPlay={true}
+                muted
+                loop
+                width="438"
+                height="547"
+                className="rounded-[24px]"
+              ></video>
               {/* <Image
                 src={imageTwo}
                 width={438}
@@ -1013,7 +1014,7 @@ function DesktopUi() {
                   textUnderlinePosition: "from-font",
                 }}
               >
-                FinTech {" "}
+                FinTech{" "}
                 <span
                   className="text-[46px] text-[#94969D] font-semibold leading-[54.89px]"
                   style={{
@@ -1145,26 +1146,27 @@ function DesktopUi() {
 
           {/* Second Div */}
           <div className="w-[438px] h-[538px]  relative">
-  <div className="w-[438px] h-[548px] rounded-[22px] overflow-hidden relative">
-    <video
-      src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4"
-      autoPlay
-      loop
-      muted
-      width="438"
-      height="548"
-      className="w-full h-full object-cover rounded-[24px]"
-    ></video>
+            <div className="w-[438px] h-[548px] rounded-[22px] overflow-hidden relative">
+              <video
+                src="https://squadra-media.s3.ap-south-1.amazonaws.com/video+sample.mp4"
+                autoPlay
+                loop
+                muted
+                width="438"
+                height="548"
+                className="w-full h-full object-cover rounded-[24px]"
+              ></video>
 
-    {/* Gradient Overlay */}
-    <div className="absolute bottom-0 w-full h-[30%] pointer-events-none"
-      style={{
-        background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)",
-      }}
-    />
-  </div>
-</div>
-
+              {/* Gradient Overlay */}
+              <div
+                className="absolute bottom-0 w-full h-[30%] pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)",
+                }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1349,14 +1351,13 @@ export const HoverButton = ({
 }: {
   href: string;
   buttonText: string;
-  defaultIcon: string;
-  hoverIcon: string;
+  defaultIcon: any;
+  hoverIcon: any;
   bgColor?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const baseBg = bgColor ? bgColor : '#131313';
-
+  const baseBg = bgColor ? bgColor : "#131313";
 
   return (
     <Link
@@ -1366,13 +1367,13 @@ export const HoverButton = ({
       className="cursor-pointer w-fit h-[52px] px-4 gap-4 rounded-[30px] flex items-center justify-center transition-colors duration-300"
       style={{ backgroundColor: baseBg }}
     >
-      <p  className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5] whitespace-nowrap">
+      <p className="uppercase font-sans text-[16px] font-normal leading-[19.09px] text-[#F5F5F5] whitespace-nowrap">
         {buttonText}
       </p>
 
       <div
         className={`w-[32px] h-[32px] flex items-center justify-center rounded-[20px] transition-colors duration-300 ${
-          isHovered ? 'bg-[#FBAE17]' : 'bg-[#FFFFFF]'
+          isHovered ? "bg-[#FBAE17]" : "bg-[#FFFFFF]"
         }`}
       >
         <Image
@@ -1383,7 +1384,7 @@ export const HoverButton = ({
           alt="Arrow Icon"
           className="transition-transform duration-300 ease-in-out transform"
           style={{
-            scale: isHovered ? '0.9' : '1',
+            scale: isHovered ? "0.9" : "1",
           }}
         />
       </div>

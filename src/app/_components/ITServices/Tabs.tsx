@@ -240,7 +240,7 @@ import { useState } from "react";
 
 // Tool data (make sure to import all images correctly above this file)
 import expressjsImage from "@/utilities/images/express-image (2).svg";
-import pythonImage from "@/utilities/images/python-image (2).svg";
+import pythonImage from "@/utilities/images/pythonframe.png";
 import graphqlImage from "@/utilities/images/graphql-image (2).svg";
 import mongodbImage from "@/utilities/images/mongodb-image (2).svg";
 import mysqlImage from "@/utilities/images/mysql-image (2).svg";

@@ -20,7 +20,7 @@ const Navbar = () => {
       pathname === "" ||
       pathname === "/contact-us" ||
       pathname === "/our-services" ||
-      pathname === "/branding-and-creative" ||
+      // pathname === "/branding-and-creative" ||
       pathname === "/openings" ||
       pathname === "/direct-apply" ||
       pathname === "/privacy-policy" ||
