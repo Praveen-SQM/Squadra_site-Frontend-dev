@@ -5,12 +5,12 @@ import ContactUs from "./_components/_landingPageComponents/ContactUs";
 import HeroSection from "./_components/_landingPageComponents/HeroSection";
 export default function Home() {
   return (
-    <div>
+    <>
       <HeroSection />
       <ClientsSection />
       <PeoplesWhoGetThingsDone />
       <CustomerJourneySection />
       <ContactUs />
-    </div>
+    </>
   );
 }

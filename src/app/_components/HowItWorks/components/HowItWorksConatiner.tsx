@@ -22,8 +22,8 @@ export default function HowItWorksContainer({
   index,
 }: HowItWorksContainerProps) {
   const isEven = !(index % 2 === 0);
+  const isScaled = index === 1 || index === 2 || index === 4;
 
-  // Helper function to render bold text before the first colon
   const renderBoldBeforeColon = (text: string) => {
     const parts = text.split(":");
     if (parts.length > 1) {
@@ -39,7 +39,7 @@ export default function HowItWorksContainer({
 
   return (
     <div
-      className={`w-full border md:border-none max-w-[1300px] my-4 md:my-none rounded-lg shadow md:shadow-none p-4 md:p-12 font-bold text-gray-700 flex items-center ${
+      className={`w-full border md:border-none max-w-[1300px] my-4 md:my-none rounded-lg shadow md:shadow-none p-4 sm:p-8 md:p-12 font-bold text-gray-700 flex items-center ${
         isEven ? "md:pr-[5%]" : "md:pl-[5%]"
       }`}
     >
@@ -50,17 +50,20 @@ export default function HowItWorksContainer({
           }`}
         >
           {/* Mobile Image */}
-          <div className="md:hidden flex items-center justify-center w-full h-[200px]">
+          <div className="md:hidden flex items-center justify-center pt-4  w-full h-[200px]">
             <Image
               src={step.Image || "/api/placeholder/570/530"}
               alt={step.title}
               width={150}
               height={150}
-              className="w-auto lg:w-[100px] h-[200px] object-cover rounded-lg"
+              className={`w-auto lg:w-[100px] h-[200px] object-cover rounded-lg ${
+                isScaled ? "scale-[1.7]" : ""
+              }`}
             />
           </div>
 
           <h1 className="text-gray-500 font-bold">{"0" + (index + 1)}</h1>
+
           {/* Title and Description */}
           <div className="flex flex-col gap-[20px] lg:gap-[28px]">
             <h1
@@ -80,7 +83,7 @@ export default function HowItWorksContainer({
           </div>
 
           {/* Services List */}
-          <div className={``}>
+          <div>
             {step?.services?.map((item, idx) => (
               <div
                 key={idx}
@@ -89,7 +92,7 @@ export default function HowItWorksContainer({
                 } border-gray-200 rounded-md`}
               >
                 <div className="flex gap-2">
-                  <Check color="green" />{" "}
+                  <Check color="green" />
                   <span className="text-[14px] lg:text-[16px] font-thin text-gray-600 max-w-lg">
                     {renderBoldBeforeColon(item)}
                   </span>
@@ -110,7 +113,9 @@ export default function HowItWorksContainer({
             alt={step.title}
             width={570}
             height={530}
-            className="w-full md:w-[150px] lg:w-[200px] lg:h-[200px] object-cover rounded-lg"
+            className={`w-full md:w-[150px] lg:w-[200px] lg:h-[200px] object-cover rounded-lg ${
+              isScaled ? "scale-[1.7]" : ""
+            }`}
           />
         </div>
       </div>

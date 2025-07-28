@@ -124,10 +124,10 @@ const ApproachComponent = () => {
   };
 
   return (
-    <div className="flex bg-white flex-col md:flex-row mx-auto p-6 py-[62px] gap-8 lg:gap-16">
+    <div className="flex bg-white flex-col md:flex-row mx-auto p-6 py-[62px] gap-8 lg:gap-24">
       {/* Left Section */}
-      <div className="w-full  max-w-[480px]">
-        <h2 className="text-[32px] md:text-[40px] font-bold mb-8 text-gray-800">
+      <div className="w-full  max-w-[700px]">
+        <h2 className="text-[32px] md:text-[62px] font-bold mb-8 text-gray-800">
           <strong className="text-[#FBAE17] font-[700] ">Our Approach:</strong>{" "}
           Effortless, efficient solutions.
         </h2>
@@ -148,15 +148,15 @@ const ApproachComponent = () => {
                 <div
                   className={`relative transition-all flex-shrink-0 ${
                     activeTab === index
-                      ? "w-[50px] h-[50px] ml-[30px]"
-                      : "w-[50px] h-[50px] ml-[30px]"
+                      ? "w-[50px] h-[50px] ml-[30px]  "
+                      : "w-[50px] h-[50px] ml-[30px] "
                   }`}
                 >
                   <div
                     className={`absolute inset-0 rounded-full ${
                       activeTab === index
-                        ? "bg-white"
-                        : "bg-gray-100 opacity-40"
+                        ? "bg-white border-2 border-[#06135B] rounded-full"
+                        : "bg-gray-100 opacity-40 "
                     } flex items-center justify-center`}
                   >
                     <Image width={0} height={0}
@@ -255,25 +255,25 @@ const ApproachComponent = () => {
       </div>
 
       {/* Right Section */}
-      <div className="w-full hidden md:flex flex-col gap-[12px] md:mt-24 lg:max-w-[480px]  md:max-w-[361px] md:mt-0">
+      <div className="w-full hidden md:flex flex-col gap-[12px] md:mt-24 lg:max-w-[600px]  md:max-w-[361px] md:mt-0">
         <Image width={513} height={384}
           src={tabs[activeTab].image} // Dynamically loaded image for each tab
           alt={`Approach Image`}
           className="w-[513px] h-[384px] object-cover my-[52px] rounded-[24px]"
         />
-        <div className="">
+        <div className="max-w-[513px]">
           <h3 className="text-[18px] leading-[20px] font-semibold">
             {tabs[activeTab].title1}:
           </h3>
-          <p className="text-gray-500 font-[300] text-[16px] leading-[20px]">
+          <p className="text-gray-500 font-[300] text-[16px] leading-[20px] mt-1">
             {tabs[activeTab].body1}
           </p>
         </div>
-        <div className="w-full">
+        <div className="max-w-[513px] mt-1">
           <h3 className="text-[18px] font-semibold leading-[20px]">
             {tabs[activeTab].title2}:
           </h3>
-          <p className="text-gray-500 font-[300] text-[16px] leading-[20px]">
+          <p className="text-gray-500 font-[300] text-[16px] leading-[20px]  mt-1">
             {tabs[activeTab].body2}
           </p>
         </div>

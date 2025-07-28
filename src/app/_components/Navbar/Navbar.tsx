@@ -20,14 +20,12 @@ const Navbar = () => {
       pathname === "" ||
       pathname === "/contact-us" ||
       pathname === "/our-services" ||
-      pathname === "/branding-and-creative" ||
+      // pathname === "/branding-and-creative" ||
       pathname === "/openings" ||
       pathname === "/direct-apply" ||
       pathname === "/privacy-policy" ||
       pathname === "/visual-impact" ||
-      pathname === "/animation-and-e-learning" ||
       pathname === "/clients" ||
-      pathname === "/digital-marketing-and-pr" ||
       pathname.startsWith("/job-details/"),
     [pathname]
   );

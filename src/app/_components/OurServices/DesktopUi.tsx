@@ -7,7 +7,7 @@ import ServicesCarousel from "./components/ServicesCarousel";
 const DesktopUi = () => {
   return (
     <>
-      <div className="relative w-full h-screen bg-white">
+      <div className="relative w-full h-[504px] bg-white">
         {/* Grid Pattern */}
         <div
           className="absolute inset-0 top-16"

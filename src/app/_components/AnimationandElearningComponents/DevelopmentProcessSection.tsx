@@ -2,8 +2,10 @@
 import React from "react";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import developementFirstImage from "@/utilities/images/development-first.webp"
-import developmentSecondImage from "@/utilities/images/development-second.webp"
+import developementFirstImage from "@/utilities/images/development-first.jpg"
+import developmentSecondImage from "@/utilities/images/development-second.jpg"
+import developmentThirdImage from "@/utilities/images/development-third.jpg"
+
 import { CardStack } from "@/components/ui/card-stack";
 
 const DevelopmentProcessSection = () => {
@@ -42,7 +44,7 @@ const DevelopmentProcessSection = () => {
             id: 2,
             name: "Tyler Durden",
             designation: "Manager Project Mayhem",
-            image: developementFirstImage,
+            image: developmentThirdImage,
             content: (
                 <p>
                     The first rule of
@@ -128,10 +130,10 @@ const DevelopmentProcessSection = () => {
                 <p className="font-normal 3xl:text-[22px] 3xl:leading-[32px] xl:text-[16px] xl:leading-6 text-[14px] leading-[19px] text-[#4A4852] text-center text-[#999DA6] 3xl:text-[22px]">Involves creating and refining materials to meet learning goals.</p>
             </div>
 
-            <div className="flex flex-col 3xl:gap-[187px] xl:gap-[140px] sm:gap-[81px] gap-[62px]">
+            <div className="flex flex-col 3xl:gap-[187px] px-4 xl:gap-[140px] sm:gap-[81px] gap-[62px]">
                 {ProcessPoints?.map((point, sectionIndex) => {
                     return (
-                        <div key={sectionIndex} className={`w-full max-w-6xl 3xl:max-w-[1590px] xl:max-w-[1200px] lg:max-w-[900px] xl:px-0 px-4 flex items-center 3xl:gap-[145px] xl:gap-[108px] sm:gap-[100px] sm:px-4 gap-6 ${sectionIndex === 0 ? "sm:flex-row flex-col" : "sm:flex-row-reverse flex-col"}`}>
+                        <div key={sectionIndex} className={`w-full max-w-6xl 3xl:max-w-[1590px] xl:max-w-[1200px] lg:max-w-[900px] xl:px-0 px-4 flex items-center 3xl:gap-[145px] xl:gap-[108px] lg:gap-[100px] sm:gap-[50px] sm:px-4 gap-6 ${sectionIndex === 0 ? "sm:flex-row flex-col" : "sm:flex-row-reverse flex-col"}`}>
                             <div className="flex flex-col 3xl:gap-[26px] xl:gap-[42px] gap-6 ">
                                 <div className="flex flex-col 3xl:gap-4 gap-3">
                                     <p className="font-medium 3xl:text-[42px] 3xl:leading-[57.4px] xl:text-[32px] xl:leading-[43.7px] text-[18px] leading-[24px] text-[#1D1A27]">{point?.text}</p>
@@ -164,9 +166,11 @@ const DevelopmentProcessSection = () => {
                                     })}
                                 </div>
                             </div>
-                            <div className={`xl:h-[26rem] sm:h-[20rem]  h-[15rem] flex items-center 3xl:items-start  w-full sm:mt-0 mt-6 ${sectionIndex === 0 ? "3xl:justify-center xl:justify-end md:justify-center" : "justify-start"}`}>
-                                <CardStack items={CARDS} />
-                            </div>
+                            <div className={`xl:h-[26rem] sm:h-[20rem] h-[15rem] flex items-center 3xl:items-start  sm:mt-0 mt-6 ${sectionIndex === 0 ? "3xl:justify-center xl:justify-end md:justify-center" : "justify-start"}`}>
+  <div className="w-[304px] h-[320px] sm:w-[304px] sm:h-[320px] md:w-[330px] md:h-[340px] lg:w-[330px] lg:h-[340px] xl:w-[420px] xl:h-[420px] bg-[#F4F5FF] rounded-[30px] flex items-end justify-end overflow-hidden">
+    <CardStack items={CARDS} />
+  </div>
+</div>
                         </div>
                     )
                 })}

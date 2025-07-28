@@ -41,28 +41,34 @@ import {
     ];
   
     return (
-      <div className="w-full max-w-[1200px] px-[20px] md:px-[60px] lg:px-[170px] mx-auto py-[40px] lg:py-[100px]">
-        <h1 className="text-[24px] md:text-[32px] lg:text-[42px] font-bold text-center mb-[40px] lg:mb-[100px]">
+      <div className="w-full max-w-[1200px] px-[20px] md:px-[60px] lg:px-[50px] mx-auto py-[40px] lg:py-[100px]">
+        <h1 className="text-[24px] md:text-[32px] lg:text-[42px] font-bold text-center mb-[40px] lg:mb-[80px]">
           Frequently Asked Questions (FAQs)
         </h1>
   
         <div className="rounded-xl px-[16px] md:p-[20px] lg:p-[86px] bg-white shadow-[0px_5px_20px_0px_#080F3414]">
+          {/* <Accordion type="single" collapsible defaultValue="item-1" className="w-full"> */}
           <Accordion type="single" collapsible className="w-full">
             {faqItems.map((item, index) => (
               <div key={index}>
                 <AccordionItem value={`item-${index + 1}`} className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline text-gray-950 text-[14px] md:text-[20px] lg:text-[24px]">
+                  <AccordionTrigger className="text-left hover:no-underline sm:pl-0 md:pl-6 text-gray-950 text-[14px] md:text-[20px] lg:text-[24px]">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-500 text-[13px] md:text-[16px] lg:text-lg mr-4">
+                  <AccordionContent className="text-gray-500 text-[13px] px-4 pt-2 md:text-[16px] lg:text-[22px] leading-[34px] mr-4">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
-                {index < faqItems.length - 1 && (
-                  <Separator className="lg:my-4 bg-gray-300" />
+                {index < faqItems.length  && (
+                  <div className="mt-8">
+
+                    <Separator className="lg:my-4" />
+                  </div>
                 )}
               </div>
+              
             ))}
+            
           </Accordion>
         </div>
       </div>

@@ -158,7 +158,7 @@ const ApprochCompTab = () => {
                         : "bg-gray-100 opacity-40"
                     } flex items-center justify-center`}
                   >
-                    <Image width={50} height={50}
+                    <Image width={20} height={20}
                       src={tab.icon}
                       alt="tab icon"
                       className={` transition-all duration-300 ${

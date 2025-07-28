@@ -25,7 +25,9 @@ const Navbar = () => {
       pathname.includes("/privacy-policy") ||
       pathname.includes("/branding-and-creative") ||
       pathname.includes("/visual-impact") ||
-      pathname.includes("/animation-and-e-learning")
+      pathname.includes("/animation-and-e-learning") ||
+      pathname.includes("/it-services") 
+      
     )
       return;
     const handleScroll = () => {

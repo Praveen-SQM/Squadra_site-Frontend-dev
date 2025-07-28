@@ -69,6 +69,7 @@ const HowItWorksSteps = () => {
       Image: LayingTheFoundation,
     },
   ];
+
   return (
     <div className="relative py-4 md:py-16 px-4">
       <Image
