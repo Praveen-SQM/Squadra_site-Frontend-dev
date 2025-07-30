@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { HoverButton } from "../ITServices/DesktopUi";
 import arrowRight from "@/utilities/images/arrow-right.svg";
 import righticon from "@/utilities/images/right-arrow.svg";
@@ -25,7 +25,7 @@ import visualImageTen from "@/utilities/images/VisualImpact_VJ-10.jpg";
 import visualImageEleven from "@/utilities/images/VisualImpact_VJ-11.jpg";
 import { InfiniteSliderVertical } from "./InfiniteSliderVertical";
 import { InfiniteSliderWithText } from "./InfiniteSliderWithText";
-import { Link } from "lucide-react";
+
 function VisualImpactUi() {
   const services = [
     {

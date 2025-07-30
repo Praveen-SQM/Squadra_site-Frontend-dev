@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import starSvg from "@/utilities/images/star.svg";
 import {
@@ -28,8 +28,7 @@ import HealthCareMain from "@/utilities/images/healthCareMAin.svg";
 import finTechMain from "@/utilities/images/fintechMain.png";
 import ApproachComponent from "./components/ApproachComponent";
 import imageOne from "@/utilities/images/image-1.jpg";
-import imageTwo from "@/utilities/images/image-2.png";
-import imageThree from "@/utilities/images/image-3.png";
+
 import HeroImage from "@/utilities/images/IT_services_Hero.jpg";
 import Link from "next/link";
 import lumina from "@/utilities/icons/lumina.png";
@@ -47,21 +46,26 @@ import SquadraTechTeamImage_4 from "@/utilities/images/Squadra_Tech_Team-image-4
 import SquadraTechTeamImage_5 from "@/utilities/images/Squadra_Tech_Team-image-5.jpg";
 import SquadraTechTeamImage_6 from "@/utilities/images/Squadra_Tech_Team-image-6.png";
 
-import { motion } from "framer-motion";
+// Define an interface for the card data
+interface CardData {
+  title: string;
+  icon: StaticImageData | string;
+  description: string;
+}
 
 function DesktopUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
-  const [isInView, setIsInView] = useState(false);
+  // const [isInView, setIsInView] = useState(false); // Removed as it's not used
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       if (!imageRef.current) return;
 
-      const rect = imageRef.current?.getBoundingClientRect();
-      const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+      // const rect = imageRef.current?.getBoundingClientRect();
+      // const inView = rect.top >= 0 && rect.bottom <= window.innerHeight; // Logic is kept in case it's needed later
 
-      setIsInView(inView);
+      // setIsInView(inView); // Removed as isInView is not used
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -87,11 +91,12 @@ function DesktopUi() {
 
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const scrollToContact = () => {
-    if (contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // This function is removed as it's not being called
+  // const scrollToContact = () => {
+  //   if (contactRef.current) {
+  //     contactRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   const logos = [
     { name: "Lumina", url: { src: lumina } },
@@ -102,7 +107,7 @@ function DesktopUi() {
     { name: "Spectrum", url: { src: spectrum } },
   ];
 
-  const renderCard = (el: any, index: number, globalIndex: number) => {
+  const renderCard = (el: CardData, index: number, globalIndex: number) => {
     const isHovered = hoveredIndex === globalIndex;
     const shouldShowImage =
       hoveredIndex === null ? globalIndex === 0 : isHovered;
@@ -1351,8 +1356,8 @@ export const HoverButton = ({
 }: {
   href: string;
   buttonText: string;
-  defaultIcon: any;
-  hoverIcon: any;
+  defaultIcon: StaticImageData | string; // Correct type for image src
+  hoverIcon: StaticImageData | string; // Correct type for image src
   bgColor?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);

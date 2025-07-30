@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import starSvg from "@/utilities/images/star.svg";
 import "./styles/MobileUI.css";
 import {
@@ -57,7 +57,7 @@ import cloudsecurity from "@/utilities/images/cloudsecurity.svg";
 
 import whyChooseUsImage from "@/utilities/images/why-choose-us.svg";
 import dottedLine from "@/utilities/images/dotted-line.svg";
-import heroImage from "@/utilities/images/hero-image.svg";
+// import heroImage from "@/utilities/images/hero-image.svg"; // Removed unused import
 import ContactUsForm from "./components/ContactUsForm";
 import {
   analyticsTools,
@@ -68,8 +68,8 @@ import {
 } from "./Tabs";
 import ApproachComponent from "./components/ApproachComponent";
 import imageOne from "@/utilities/images/image-1.jpg";
-import imageTwo from "@/utilities/images/image-2.png";
-import imageThree from "@/utilities/images/image-3.png";
+// import imageTwo from "@/utilities/images/image-2.png"; // Removed unused import
+// import imageThree from "@/utilities/images/image-3.png"; // Removed unused import
 
 import HeroImage from "@/utilities/images/IT_services_Hero.jpg";
 import lumina from "@/utilities/icons/lumina.png";
@@ -354,7 +354,7 @@ const Logos = [
 
 function MobileUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
-  const [isInView, setIsInView] = useState(false);
+  // const [isInView, setIsInView] = useState(false); // Removed unused state
 
   console.log(imageRef);
 
@@ -362,10 +362,10 @@ function MobileUi() {
     const handleScroll = () => {
       if (!imageRef.current) return;
 
-      const rect = imageRef.current?.getBoundingClientRect();
-      const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+      // const rect = imageRef.current?.getBoundingClientRect();
+      // const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
 
-      setIsInView(inView);
+      // setIsInView(inView); // Removed setter for unused state
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -377,13 +377,14 @@ function MobileUi() {
 
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const scrollToContact = () => {
-    if (contactRef.current) {
-      contactRef.current.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
+  // Removed unused function
+  // const scrollToContact = () => {
+  //   if (contactRef.current) {
+  //     contactRef.current.scrollIntoView({
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
   return (
     <div className="h-fit  flex flex-col  w-full  items-center bg-[#040206]">
@@ -1042,7 +1043,7 @@ IT Services */}
             textDecorationSkipInk: "none",
           }}
         >
-          Cloud&nbsp;
+          Cloud 
           <span
             className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
             style={{
@@ -1228,7 +1229,7 @@ IT Services */}
               textUnderlinePosition: "from-font",
             }}
           >
-            Technologies&nbsp;
+            Technologies 
             <span
               className="text-[32px] text-[#94969D] font-semibold leading-[38.19px]"
               style={{

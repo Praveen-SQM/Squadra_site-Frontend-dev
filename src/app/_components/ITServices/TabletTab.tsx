@@ -1,5 +1,5 @@
 'use client';
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import { useState } from "react";
 
 // Import all images
@@ -112,7 +112,7 @@ const TabComponent = () => {
     { name: "GTM", logo: gtmImage },
   ];
 
-  const toolsMap: { [key: string]: { name: string; logo: any }[] } = {
+  const toolsMap: { [key: string]: { name: string; logo: ImageProps["src"] }[] } = {
     Backend: backendTools,
     Frontend: frontendTools,
     Mobile: mobileTools,
