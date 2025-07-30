@@ -17,7 +17,7 @@ import TalentIcon from "@/utilities/icons/talent-icon.svg";
 import WorkBalanceIcon from "@/utilities/icons/work-balance.svg";
 import { useRouter } from "next/navigation";
 import { Skeleton } from "@/components/ui/skeleton";
-import CareerVideo from "@/utilities/videos/Careers_video.mp4";
+// import CareerVideo from "@/utilities/videos/Careers_video.mp4";
 
 function DesktopUi() {
   const [jobs, setJobs] = useState([]);

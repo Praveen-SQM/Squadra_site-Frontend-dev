@@ -305,7 +305,7 @@ export default function ContactUsForm() {
             )}
           </div>
 
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label htmlFor="services" className="block text-sm mb-2">
               Services and BD&apos;s Names*
             </label>
@@ -325,7 +325,7 @@ export default function ContactUsForm() {
                 {errors?.services?.message?.toString()}
               </p>
             )}
-          </div>
+          </div> */}
 
           <div className="flex justify-end">
             <Button

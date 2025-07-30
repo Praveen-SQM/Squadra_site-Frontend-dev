@@ -1,11 +1,7 @@
 "use client";
 import React from "react";
-import { FloatingBackground } from "./FloatingTriangles";
-import { motion } from "framer-motion";
-import LMS_img from "../../../utilities/images/LMS_Landing_Dashboard.svg";
 import Image from "next/image";
 import Link from "next/link";
-import GradientBorder from "../../../components/ui/gradient-border";
 import HeroImage from "@/utilities/images/ContentCraetionPage_Hero.jpg";
 const ELearningLanding = () => {
   return (

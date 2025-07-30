@@ -1,14 +1,11 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import HowItWorksSteps from "./components/HowItWorksSteps";
 import FAQ from "./components/FAQ";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
-import { ArrowDown } from "lucide-react";
 import HeroImage from "@/utilities/images/HowItWorks_hero.jpg";
 
 const DesktopUi = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
   const animationRef = useRef(null);
   const targetScrollRef = useRef(0);
   const currentScrollRef = useRef(0);
@@ -25,7 +22,7 @@ const DesktopUi = () => {
       const speed = 0.1; // Adjust this value to control smoothness (0.1 = smooth, 1 = instant)
 
       currentScrollRef.current += difference * speed;
-      setScrollPosition(currentScrollRef.current);
+      // setScrollPosition(currentScrollRef.current); // This line was removed
 
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -45,31 +42,31 @@ const DesktopUi = () => {
     };
   }, []);
 
-  const handleScrollDown = () => {
-    if (
-      typeof window !== "undefined" &&
-      typeof window.scrollTo === "function"
-    ) {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const handleScrollDown = () => {
+  //   if (
+  //     typeof window !== "undefined" &&
+  //     typeof window.scrollTo === "function"
+  //   ) {
+  //     window.scrollTo({
+  //       top: window.innerHeight,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
-  const calculateBlur = () => {
-    const maxBlur = 10;
-    const blurValue =
-      typeof window !== "undefined" && window.innerHeight
-        ? (scrollPosition / window.innerHeight) * maxBlur
-        : 0;
-    return Math.min(blurValue, maxBlur);
-  };
+  // const calculateBlur = () => {
+  //   const maxBlur = 10;
+  //   const blurValue =
+  //     typeof window !== "undefined" && window.innerHeight
+  //       ? (scrollPosition / window.innerHeight) * maxBlur
+  //       : 0;
+  //   return Math.min(blurValue, maxBlur);
+  // };
 
-  const calculateTransform = () => {
-    const translateY = scrollPosition;
-    return translateY;
-  };
+  // const calculateTransform = () => {
+  //   const translateY = scrollPosition;
+  //   return translateY;
+  // };
 
   return (
     <div className="w-full bg-white">

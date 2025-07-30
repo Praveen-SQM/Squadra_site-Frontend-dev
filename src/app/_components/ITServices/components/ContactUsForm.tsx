@@ -296,7 +296,7 @@ export default function ContactUsForm() {
             )}
           </div>
 
-          <div className="mb-4 w-full">
+          {/* <div className="mb-4 w-full">
             <label htmlFor="services" className="block text-sm mb-2">
               Services and BD&apos;s Names*
             </label>
@@ -316,7 +316,7 @@ export default function ContactUsForm() {
                 {errors?.services?.message?.toString()}
               </p>
             )}
-          </div>
+          </div> */}
 
           <Button
             disabled={loading}

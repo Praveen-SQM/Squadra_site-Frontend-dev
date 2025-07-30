@@ -6,11 +6,11 @@ import logoWhite from "../../utilities/icons/Logo-footer.svg";
 import itLogocolor from "@/utilities/images/footer-it-logo.svg";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Mail, MapPin, Phone, LocateFixed, Locate, Facebook  } from "lucide-react";
-import facebookIcon from "@/utilities/icons/facebook-icon.svg";
-import instagramIcon from "@/utilities/icons/instagram-icon.svg";
-import linkedinIcon from "@/utilities/icons/linkedin-latest.svg";
-import youtubeIcon from "@/utilities/icons/youtube-icon.svg";
+import { Mail,  Phone, LocateFixed } from "lucide-react";
+// import facebookIcon from "@/utilities/icons/facebook-icon.svg";
+// import instagramIcon from "@/utilities/icons/instagram-icon.svg";
+// import linkedinIcon from "@/utilities/icons/linkedin-latest.svg";
+// import youtubeIcon from "@/utilities/icons/youtube-icon.svg";
 
 // const Footer = () => {
 

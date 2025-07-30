@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ArrowImage from '@/utilities/images/AboutUs_Vector.png'
+
 import { ArrowUpRight } from "lucide-react";
 
 const LifeAtSquadra = () => {
@@ -18,9 +18,7 @@ const LifeAtSquadra = () => {
 </div>
 
 <div className="px-0 sm:px-8 md:px-16 lg:px-20 xl:px-40">
- 
-
-
+  
 
       {/* Image Block 1 */}
  <div className="grid grid-cols-10 gap-4 mb-5">

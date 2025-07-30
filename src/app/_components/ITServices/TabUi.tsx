@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { useState, useRef, useEffect } from "react";
-import heroImage from "@/utilities/images/desktop-hero-image.svg";
+import { useRef, useEffect } from "react";
+// import heroImage from "@/utilities/images/desktop-hero-image.svg"; // Removed unused import
 import "./styles/TabletUI.css";
 import Image from "next/image";
 import {
@@ -25,8 +25,8 @@ import TabComponent from "./TabletTab";
 import ContactUsForm from "./components/TabletContactUsForm";
 import ApprochCompTab from "./components/ApprochCompTab";
 import imageOne from "@/utilities/images/image-1.jpg";
-import imageTwo from "@/utilities/images/image-2.png";
-import imageThree from "@/utilities/images/image-3.png";
+// import imageTwo from "@/utilities/images/image-2.png"; // Removed unused import
+// import imageThree from "@/utilities/images/image-3.png"; // Removed unused import
 import webandMobileMain from "@/utilities/images/webandMobileMain.jpg";
 
 import HeroImage from "@/utilities/images/IT_services_Hero.jpg";
@@ -48,16 +48,16 @@ import Link from "next/link";
 
 function TabUi() {
   const imageRef = useRef<HTMLImageElement | null>(null);
-  const [isInView, setIsInView] = useState(false);
+  // const [isInView, setIsInView] = useState(false); // Removed unused state
 
   useEffect(() => {
     const handleScroll = () => {
       if (!imageRef.current) return;
 
-      const rect = imageRef.current?.getBoundingClientRect();
-      const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+      // const rect = imageRef.current?.getBoundingClientRect();
+      // const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
 
-      setIsInView(inView);
+      // setIsInView(inView); // This was setting an unused state
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -69,13 +69,14 @@ function TabUi() {
 
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const scrollToContact = () => {
-    if (contactRef.current) {
-      contactRef.current.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
+  // This function was defined but never called
+  // const scrollToContact = () => {
+  //   if (contactRef.current) {
+  //     contactRef.current.scrollIntoView({
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
   const logos = [
     { name: "Lumina", url: { src: lumina } },
@@ -459,7 +460,7 @@ IT Services */}
             textDecorationSkipInk: "none",
           }}
         >
-          End-to-End &nbsp;
+          End-to-End  
           <span
             className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
             style={{
@@ -703,7 +704,7 @@ IT Services */}
             textDecorationSkipInk: "none",
           }}
         >
-          FinTech&nbsp;
+          FinTech 
           <span
             className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
             style={{
@@ -754,7 +755,7 @@ IT Services */}
             textDecorationSkipInk: "none",
           }}
         >
-          Cloud&nbsp;
+          Cloud 
           <span
             className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE5EFF] via-[#635BFF] to-[#38CBFF]"
             style={{

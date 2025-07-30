@@ -121,7 +121,7 @@ import publicRelationsImage from "@/utilities/images/DM&PR_PR.png";
 import socialMediaImage from "@/utilities/images/DM&PR_SocialMediaManangement.png";
 import contentMarketingImage from "@/utilities/images/DM&PR_Performance&CM.png";
 import SEOImage from "@/utilities/images/DM&PR_SEO&SEM.png";
-import { motion } from "framer-motion";
+
 
 const OurMethodology = () => {
   // Data for the alternating sections

@@ -1,5 +1,4 @@
 import React from "react";
-import { Star, Building2, CircleDollarSign } from "lucide-react";
 import Image from "next/image";
 import unifiedSolution from "../../../utilities/icons/group-blue.svg";
 import startIcon from '@/utilities/icons/starIcon.png'
