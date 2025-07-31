@@ -7,7 +7,7 @@ function JobDetails() {
     
 
     const params = useParams();
-    const jobId = params.id; // Extracting the dynamic id
+    const jobId = typeof params.id === 'string' || Array.isArray(params.id) ? params.id : ''; // Ensure jobId is string or string[]
     console.log(jobId, "id")
 
     return (
