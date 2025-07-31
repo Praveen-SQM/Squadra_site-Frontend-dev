@@ -1,27 +1,25 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-
 import connectMongo from "@/app/lib/mongodb";
 import Job from "@/app/models/jobs";
 import { NextRequest, NextResponse } from "next/server";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-
 export async function GET(
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectMongo();
 
-    const jobList = await Job.findById(params.id);
+    // Await the params since they're now a Promise
+    const { id } = await params;
+
+    const jobList = await Job.findById(id);
 
     if (jobList) {
       return NextResponse.json({ data: jobList });
     }
 
     return NextResponse.json(
-      { message: `Jobs in category ${params.id} not found` },
+      { message: `Jobs in category ${id} not found` },
       { status: 404 }
     );
   } catch (error) {
@@ -32,14 +30,17 @@ export async function GET(
   }
 }
 
-
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectMongo();
-    const job = await Job.findById(params.id);
+
+    // Await the params since they're now a Promise
+    const { id } = await params;
+
+    const job = await Job.findById(id);
     if (job) {
       const body = await req.json();
       const updateData = {
@@ -58,12 +59,12 @@ export async function PUT(
     }
 
     return NextResponse.json(
-      { message: `Product ${params.id} not found` },
+      { message: `Product ${id} not found` },
       { status: 404 }
     );
   } catch (error) {
     return NextResponse.json(
-      { message: error },
+      { message: error instanceof Error ? error.message : "An error occurred" },
       { status: 400 }
     );
   }
@@ -71,24 +72,28 @@ export async function PUT(
 
 export async function DELETE(
   _: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectMongo();
-    const job = await Job.findById(params.id);
+
+    // Await the params since they're now a Promise
+    const { id } = await params;
+
+    const job = await Job.findById(id);
     if (job) {
       await Job.findByIdAndDelete(job._id);
       return NextResponse.json({
-        message: `Job ${params.id} has been deleted`,
+        message: `Job ${id} has been deleted`,
       });
     }
     return NextResponse.json(
-      { message: `Job ${params.id} not found` },
+      { message: `Job ${id} not found` },
       { status: 404 }
     );
   } catch (error) {
     return NextResponse.json(
-      { message: error },
+      { message: error instanceof Error ? error.message : "An error occurred" },
       { status: 400 }
     );
   }
