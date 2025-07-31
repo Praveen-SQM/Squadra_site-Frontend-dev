@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import BrandPotentialFirstImage from "@/utilities/images/Brand-potential_1.png";
 import BrandPotentialSecondImage from "@/utilities/images/Brand-potential_2.png";
-import BrandPotentialThirdImage from "@/utilities/images/Brand-Potential_3.png";
+import BrandPotentialThirdImage from "@/utilities/images/Brand-potential_3.png";
 import Link from "next/link";
 
 const UnleashPotential = () => {
