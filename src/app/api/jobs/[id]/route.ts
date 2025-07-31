@@ -1,9 +1,17 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 import connectMongo from "@/app/lib/mongodb";
 import Job from "@/app/models/jobs";
 import { NextRequest, NextResponse } from "next/server";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 export async function GET(
-  _: NextRequest,
+/*************  ✨ Windsurf Command 🌟  *************/
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
+  request: NextRequest,
+/*******  0301c0ea-075e-469d-9ce8-143d63c2212d  *******/
   { params }: { params: { id: string } }
 ) {
   try {
