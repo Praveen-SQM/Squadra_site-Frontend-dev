@@ -55,7 +55,7 @@ import clientColdStone from "@/utilities/icons/client-coldStone.png";
 import clientFreshHome from "@/utilities/icons/client-freshHome.png";
 import clientIBC from "@/utilities/icons/client-ICB.png";
 import clientMisoSexy from "@/utilities/icons/client-MisoSexy.png";
-import clientPrimeGold from "@/utilities/icons/client-PrimeGold.png";
+import clientPrimeGold from "@/utilities/icons/client-primeGold.png";
 import clientSynergy from "@/utilities/icons/client-synergy.png";
 
 const ClientPage = () => {
