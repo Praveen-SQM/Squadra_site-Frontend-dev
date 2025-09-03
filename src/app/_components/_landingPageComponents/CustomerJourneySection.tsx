@@ -45,7 +45,7 @@ function CustomerJourneySection() {
   ];
 
   return (
-    <section className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-20 py-8 sm:py-10 md:py-12 lg:py-16 mt-8">
+    <section className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-20 2xl:px-32 py-8 sm:py-10 md:py-12 lg:py-16 mt-8">
       <div className="space-y-2 mb-8">
         <p className="sm:text-sm text-[11px] font-medium text-gray-600 uppercase tracking-wider">CUSTOMER JOURNEY</p>
         <h2 className="sm:text-3xl text-[24px] leading-8 md:text-4xl font-semibold">

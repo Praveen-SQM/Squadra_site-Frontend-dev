@@ -86,17 +86,17 @@ export default function ContactUsForm() {
   const enquiryOptions = [
     {
       title: "General Enquiry",
-      phoneNumber: "+91 96068 27067",
+      phoneNumber: "+91 78984 87331",
       icon: <Phone size={32} />,
     },
     {
       title: "Sales Enquiry",
-      phoneNumber: "+91 96068 27067",
+      phoneNumber: "+91 63667 26944",
       icon: <User size={32} />,
     },
     {
       title: "HR Enquiry",
-      phoneNumber: "+91 96068 27067",
+      phoneNumber: "+91 73377 80837",
       icon: <Send size={32} />,
     },
   ];

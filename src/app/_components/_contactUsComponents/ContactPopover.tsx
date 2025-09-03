@@ -243,10 +243,10 @@ export function ContactPopover({ isScrolled }: { isScrolled: boolean }) {
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
               <a
-                href="tel:+917204701593"
+                href="tel:+917898487331"
                 className="text-lg font-semibold hover:underline"
               >
-                +91 96068 27607
+                +91 78984 87331
               </a>
             </div>
           </CardContent>

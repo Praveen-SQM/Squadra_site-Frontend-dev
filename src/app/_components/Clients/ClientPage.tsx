@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import ClientsHeroImage from "@/utilities/images/mm.png";
 
-// Import client logos (already in your code)
+// Import client logos
 import clientTorque from "@/utilities/icons/top-zone.svg";
 import clientHMG from "@/utilities/icons/hm-group.svg";
 import clientBroncos from "@/utilities/icons/bronco.svg";
@@ -49,8 +49,14 @@ import Tipsy from "@/utilities/icons/tipsy.svg";
 import Watsons from "@/utilities/icons/watsons.svg";
 import Bbath from "@/utilities/icons/clientBbath.png";
 import Caic from "@/utilities/icons/clientCaic.png";
-import Braugalie from "@/utilities/icons/clientBraugalie.png";  
+import Braugalie from "@/utilities/icons/clientBraugalie.png";
 import Novella from "@/utilities/icons/clientNovella.png";
+import clientColdStone from "@/utilities/icons/client-coldStone.png";
+import clientFreshHome from "@/utilities/icons/client-freshHome.png";
+import clientIBC from "@/utilities/icons/client-ICB.png";
+import clientMisoSexy from "@/utilities/icons/client-MisoSexy.png";
+import clientPrimeGold from "@/utilities/icons/client-PrimeGold.png";
+import clientSynergy from "@/utilities/icons/client-synergy.png";
 
 const ClientPage = () => {
   const [visibleCount, setVisibleCount] = useState(40);
@@ -58,7 +64,7 @@ const ClientPage = () => {
 
   // Calculate columns based on screen size
   const getColumnsPerRow = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const width = window.innerWidth;
       if (width < 640) return 1; // mobile
       if (width < 768) return 2; // small tablet
@@ -69,23 +75,28 @@ const ClientPage = () => {
     return 5; // default for SSR
   };
 
-  const [columnsPerRow, setColumnsPerRow] = useState(5); // Start with default
+  const [columnsPerRow, setColumnsPerRow] = useState(5);
 
   // Update columns on resize
   useEffect(() => {
-    // Set initial value after component mounts
     setColumnsPerRow(getColumnsPerRow());
 
     const handleResize = () => {
       setColumnsPerRow(getColumnsPerRow());
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const clients = [
-    { src: clientVIDA, alt: "Client Vida" },
+    { src: clientColdStone, alt: "Client ColdStone", isLarge: true },
+    { src: clientFreshHome, alt: "Client FreshHome", isLarge: true },
+    { src: clientIBC, alt: "Client ICB", isLarge: true },
+    { src: clientMisoSexy, alt: "Client MisoSexy", isLarge: true },
+    { src: clientPrimeGold, alt: "Client PrimeGold", isLarge: true },
+    { src: clientSynergy, alt: "Client Synergy", isLarge: true },
+      { src: clientVIDA, alt: "Client Vida" },
     { src: clientNior, alt: "Client Nior" },
     { src: clientVOIA, alt: "Client VOIA" },
     { src: clientS1522, alt: "Client Street" },
@@ -140,230 +151,174 @@ const ClientPage = () => {
     setVisibleCount((prev) => Math.min(prev + clientsPerPage, clients.length));
   };
 
-  // const renderClientGrid = () => {
-  //   const rows = [];
+  const renderClientGrid = () => {
+    const rows = [];
+    const totalRows = Math.ceil(displayedClients.length / columnsPerRow);
+    const showMoreButtonRow = totalRows > 1 ? totalRows - 2 : -1;
+    const showMoreButtonCol = columnsPerRow - 1;
 
-  //   for (let i = 0; i < Math.ceil(displayedClients.length / 5); i++) {
-  //     const isEighthRow = i === 7;
-  //     const clientsInThisRow = isEighthRow && remainingClients > 0 ? 4 : 5;
-  //     const rowClients = displayedClients.slice(i * 5, i * 5 + clientsInThisRow);
+    for (let i = 0; i < totalRows; i++) {
+      const isShowMoreRow = i === showMoreButtonRow;
+      const clientsInThisRow = columnsPerRow;
+      const rowClients = displayedClients.slice(
+        i * columnsPerRow,
+        i * columnsPerRow + clientsInThisRow
+      );
+      const isLastRow = i === totalRows - 1;
+      const shouldHideRow =
+        isLastRow && remainingClients > 0 && showMoreButtonRow >= 0;
 
-  //     rows.push(
-  //       <div
-  //         key={i}
-  //         className="grid grid-cols-5 gap-x-[10px] gap-y-[10px] relative"
-  //       >
-  //         {rowClients.map((client, index) => {
-  //           const isLastInRow = index === clientsInThisRow - 1;
-  //           return (
-  //             <div
-  //               key={i * 5 + index}
-  //               className={`flex flex-wrap items-center justify-center bg-white ${
-  //                 isLastInRow ? "border-r border-[#E7E7E7] w-[228px] h-[182px]" : " border-r border-[#E7E7E7] w-[228px] h-[182px]"
-  //               }`}
-  //             >
-  //               <div
-  //                 style={{
-  //                   width: "203px",
-  //                   height: "108px",
-  //                   overflow: "hidden",
-  //                 }}
-  //               >
-  //                 <div
-  //                   style={{
-  //                     width: "223px", // 200px + 10px on both sides
-  //                     height: "128px", // 200px + 10px on both sides
-  //                     margin: "-10px",
-  //                   }}
-  //                 >
-  //                   {/* Inner content */}
-  //                   <Image
-  //                     unoptimized
-  //                     priority
-  //                     quality={100}
-  //                     src={client.src}
-  //                     alt={client.alt}
-  //                     width={223}
-  //                     height={128}
-  //                     className="object-contain rounded-lg"
-  //                     // style={{
-  //                     //   width: "228.8px",
-  //                     //   height: "182px",
-  //                     //   opacity: 1,
-  //                     // }}
-  //                   />
-  //                 </div>
-  //               </div>
-  //             </div>
-  //           );
-  //         })}
+      rows.push(
+        <div
+          key={i}
+          className={`grid gap-x-[10px] gap-y-[10px] relative ${
+            shouldHideRow ? "hidden" : ""
+          } ${i !== totalRows - 1 ? "mb-[30px]" : ""}`}
+          style={{
+            gridTemplateColumns: `repeat(${columnsPerRow}, minmax(0, 1fr))`,
+            justifyItems: "center",
+          }}
+        >
+          {rowClients.map((client, index) => {
+            const globalIndex = i * columnsPerRow + index;
+            const shouldShowMoreButton =
+              isShowMoreRow &&
+              index === showMoreButtonCol &&
+              remainingClients > 0;
 
-  //         {/* +X more button in 8th row 5th position */}
-  //         {isEighthRow && remainingClients > 0 && (
-  //           <div className="col-span-1 flex justify-center">
-  //             <button
-  //               onClick={handleLoadMore}
-  //               className="w-[228.8px] h-[182px] flex items-center justify-center bg-[#FFFFFF] hover:bg-gray-100 transition-colors duration-300"
-  //             >
-  //               <div className="text-center flex items-center rounded-[50%] justify-center w-[116px] h-[116px] bg-[#E7EEFF42] border border-[#D2E1FF] backdrop-blur-[3px]">
-  //                 <span className="text-[22px] leading-[100%] font-medium text-center text-[#1227C5] font-[SF Pro Text]">
-  //                   {remainingClients}+more
-  //                 </span>
-  //               </div>
-  //             </button>
-  //           </div>
-  //         )}
-  //       </div>
-  //     );
-  //   }
-
-  //   return rows;
-  // };
-
-const renderClientGrid = () => {
-  const rows = [];
-
-  // Calculate total rows needed
-  const totalRows = Math.ceil(displayedClients.length / columnsPerRow);
-
-  // Show "+X more" button in the last column of the second-to-last row
-  const showMoreButtonRow = totalRows > 1 ? totalRows - 2 : -1;
-  const showMoreButtonCol = columnsPerRow - 1;
-
-  for (let i = 0; i < totalRows; i++) {
-    const isShowMoreRow = i === showMoreButtonRow;
-    const clientsInThisRow = columnsPerRow;
-    const rowClients = displayedClients.slice(i * columnsPerRow, i * columnsPerRow + clientsInThisRow);
-
-    const isLastRow = i === totalRows - 1;
-    const shouldHideRow = isLastRow && remainingClients > 0 && showMoreButtonRow >= 0;
-
-    rows.push(
-      <div
-        key={i}
-        className={`grid gap-y-[10px] relative ${shouldHideRow ? 'hidden' : ''} ${i !== totalRows - 1 ? 'mb-[30px]' : ''}`}
-        style={{
-          gridTemplateColumns: `repeat(${columnsPerRow}, minmax(0, 1fr))`,
-          justifyItems: 'center',
-        }}
-      >
-        {rowClients.map((client, index) => {
-          const globalIndex = i * columnsPerRow + index;
-          const shouldShowMoreButton = isShowMoreRow && index === showMoreButtonCol && remainingClients > 0;
-
-          if (shouldShowMoreButton) {
-            return (
-              <div key={`more-${globalIndex}`} className="relative">
-                {/* Client card */}
-                <div className="flex flex-wrap items-center justify-center bg-white w-[228px] h-[182px]">
-                  <div style={{ width: "203px", height: "108px", overflow: "hidden" }}>
-                    <div style={{ width: "223px", height: "128px", margin: "-10px" }}>
-                      <Image
-                        unoptimized
-                        priority
-                        quality={100}
-                        src={client.src}
-                        alt={client.alt}
-                        width={223}
-                        height={128}
-                        className="object-contain rounded-lg"
-                      />
+            if (shouldShowMoreButton) {
+              return (
+                <div key={`more-${globalIndex}`} className="relative">
+                  {/* Client card */}
+                  <div className="flex flex-wrap items-center justify-center bg-white border-r border-[#E7E7E7] w-[228px] h-[182px]">
+                    <div
+                      style={{
+                        width: "203px",
+                        height: "108px",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "223px",
+                          height: "128px",
+                          margin: "-10px",
+                        }}
+                      >
+                        <Image
+                          unoptimized
+                          priority
+                          quality={100}
+                          src={client.src}
+                          alt={client.alt}
+                          width={223}
+                          height={128}
+                          className="object-contain rounded-lg"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* "+X more" overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button
-                    onClick={handleLoadMore}
-                    className="w-[228px] h-[182px] flex items-center justify-center bg-[#FFFFFF] hover:bg-gray-100 transition-colors duration-300"
+                  {/* "+X more" overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      onClick={handleLoadMore}
+                      className="w-[228px] h-[182px] flex items-center justify-center bg-[#FFFFFF] hover:bg-gray-100 transition-colors duration-300"
+                    >
+                      <div className="text-center flex items-center rounded-[50%] justify-center w-[116px] h-[116px] bg-[#E7EEFF42] border border-[#D2E1FF] backdrop-blur-[3px]">
+                        <span className="text-[22px] leading-[100%] font-medium text-center text-[#1227C5] font-[SF Pro Text]">
+                          {remainingClients}+more
+                        </span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <div
+                key={globalIndex}
+                className="flex flex-wrap items-center justify-center bg-white border-r border-[#E7E7E7] w-[228px] h-[182px] transform transition-transform duration-300 hover:scale-[1.03]"
+              >
+                <div
+                  style={{
+                    width: "203px",
+                    height: "108px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{ width: "223px", height: "128px", margin: "-10px" }}
                   >
-                    <div className="text-center flex items-center rounded-[50%] justify-center w-[116px] h-[116px] bg-[#E7EEFF42] border border-[#D2E1FF] backdrop-blur-[3px]">
-                      <span className="text-[22px] leading-[100%] font-medium text-center text-[#1227C5] font-[SF Pro Text]">
-                        {remainingClients}+more
-                      </span>
-                    </div>
-                  </button>
+                    <Image
+                      unoptimized
+                      priority
+                      quality={100}
+                      src={client.src}
+                      alt={client.alt}
+                      width={223}
+                      height={168}
+                      className={`object-contain shadow-none rounded-lg ${client.isLarge ? "pb-16 px-16 pt-5" : ""}`}
+                    />
+                  </div>
                 </div>
               </div>
             );
-          }
+          })}
+        </div>
+      );
+    }
 
-          return (
-            <div
-              key={globalIndex}
-              className="flex flex-wrap items-center justify-center bg-white w-[228px] h-[182px] transform transition-transform duration-300 hover:scale-[1.03]"
-            >
-              <div style={{ width: "203px", height: "108px", overflow: "hidden" }}>
-                <div style={{ width: "223px", height: "128px", margin: "-10px" }}>
-                  <Image
-                    unoptimized
-                    priority
-                    quality={100}
-                    src={client.src}
-                    alt={client.alt}
-                    width={223}
-                    height={128}
-                    className="object-contain rounded-lg"
-                  />
-                </div>
-              </div>
-            </div>
-          );
-        })}
+    return (
+      <div className="w-full overflow-x-auto">
+        <div className="min-w-fit">{rows}</div>
       </div>
     );
-  }
-
-  return (
-    <div className="w-full overflow-x-auto">
-      <div className="min-w-fit">{rows}</div>
-    </div>
-  );
-};
-
+  };
 
   return (
     <>
-      <section className="min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1 lg:col-span-6 space-y-4 lg:space-y-6">
+      <section className="min-h-screen flex items-center relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end">
+            <div className="order-1 lg:order-1 lg:col-span-6 space-y-4 lg:space-y-6">
               <div className="inline-block">
-                <span className="text-[16px] sm:text-[18px] md:text-[20px] font-medium text-[#1122A1] uppercase">
+                <span className="text-[16px] sm:text-[16px] md:text-[18px] font-medium text-[#1122A1] uppercase">
                   CASE STUDY. CLIENTS
                 </span>
               </div>
               <div className="space-y-2">
-                <h1 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-medium leading-snug text-[#D96B06]">
+                <h1 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] font-medium leading-snug text-[#D96B06]">
                   Proud to partner with clients for exceptional results.{" "}
                   <span className="text-[#888888]">
                     Explore our Client Stories to see the impact.
                   </span>
                 </h1>
               </div>
-              <div className="pt-4 lg:pt-6 pb-0 md:pb-6">
+              <div className="pt-4 lg:pt-6">
                 <button className="inline-flex items-center px-6 py-3 lg:px-8 lg:py-4 text-white font-normal rounded-lg hover:opacity-80 transition-colors duration-300 group bg-black">
                   <span className="text-md lg:text-base">Case Studies</span>
                   <ArrowRight className="ml-3 w-4 h-4 lg:w-5 lg:h-5 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div className="order-1 lg:order-2 lg:col-span-6 relative lg:pl-12 transform lg:translate-x-6">
-              <div className="relative w-full h-64 sm:h-80 md:h-[600px] lg:h-[500px] xl:h-[600px] rounded-2xl overflow-hidden">
-                <Image
-                  src={ClientsHeroImage}
-                  alt="Team Collaboration"
-                  fill
-                  className="object-cover rounded-2xl"
-                  priority
-                />
-                <div className="absolute top-4 right-4 w-3 h-3 rounded-full opacity-60 bg-white" />
-                <div className="absolute bottom-6 left-6 w-2 h-2 rounded-full opacity-80 bg-white" />
-                <div className="absolute top-1/3 left-4 w-1 h-1 rounded-full bg-white" />
-              </div>
-            </div>
+        {/* Absolutely positioned image at bottom */}
+        <div className="absolute bottom-0 right-0 lg:right-8 w-full lg:w-1/2 h-64 sm:h-80 md:h-[400px] lg:h-[450px] xl:h-[500px]">
+          <div className="relative w-full h-full rounded-t-2xl lg:rounded-2xl overflow-hidden">
+            <Image
+              src={ClientsHeroImage}
+              alt="Team Collaboration"
+              fill
+              className="object-cover rounded-t-2xl lg:rounded-2xl"
+              priority
+            />
+            <div className="absolute top-4 right-4 w-3 h-3 rounded-full opacity-60 bg-white" />
+            <div className="absolute bottom-6 left-6 w-2 h-2 rounded-full opacity-80 bg-white" />
+            <div className="absolute top-1/3 left-4 w-1 h-1 rounded-full bg-white" />
           </div>
         </div>
       </section>
@@ -380,7 +335,9 @@ const renderClientGrid = () => {
             </p>
           </div>
 
-          <div className="space-y-4 mt-8 sm:mt-8 md:mt-0 lg:mt-0 relative">{renderClientGrid()}</div>
+          <div className="space-y-4 mt-8 sm:mt-8 md:mt-0 lg:mt-0 relative">
+            {renderClientGrid()}
+          </div>
         </div>
       </section>
     </>

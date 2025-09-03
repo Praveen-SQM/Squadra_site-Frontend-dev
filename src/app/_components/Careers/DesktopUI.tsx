@@ -5,7 +5,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import careerImage from "@/utilities/images/Careers_Hero.png";
-
 import rightArrowIcon from "@/utilities/icons/right-arrow.svg";
 import plusIcon from "@/utilities/icons/plus-icon.svg";
 import minusIcon from "@/utilities/icons/minus-icon.svg";
@@ -17,11 +16,13 @@ import TalentIcon from "@/utilities/icons/talent-icon.svg";
 import WorkBalanceIcon from "@/utilities/icons/work-balance.svg";
 import { useRouter } from "next/navigation";
 import { Skeleton } from "@/components/ui/skeleton";
-// import CareerVideo from "@/utilities/videos/Careers_video.mp4";
 
 function DesktopUi() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [openIndexes, setOpenIndexes] = useState<number[]>([]);
+
+  const router = useRouter();
 
   useEffect(() => {
     const getJobs = async () => {
@@ -38,54 +39,36 @@ function DesktopUi() {
     getJobs();
   }, []);
 
-  const router = useRouter();
-
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const openingsParam = searchParams.get("openings");
     if (openingsParam === "true") {
-      // Scroll to the specific section if coming from job-details
       document
         .getElementById("job-openings")
         ?.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
 
-  // const jobSections = [
-  //     {
-  //         title: "StoryBoard (3)",
-  //         content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
-  //     },
-  //     {
-  //         title: "Illustration (4)",
-  //         content: "As a Senior UI/UX Designer, you will be responsible for creating user-centered designs for our clients' digital products. You will work closely with our development team to ensure that designs are implemented accurately and efficiently."
-  //     },
-  //     {
-  //         title: "Animation (3)",
-  //         content: "• 5+ years of experience in UI/UX design\n• Strong portfolio demonstrating user-centered design solutions\n• Proficiency in design tools such as Figma, Sketch, or Adobe XD\n• Experience with design systems and component libraries\n• Excellent communication and collaboration skills"
-  //     },
-  //     {
-  //         title: "Design (1)",
-  //         content: "Bengaluru, India (On-site)"
-  //     },
-  //     {
-  //         title: "Writing (2)",
-  //         content: "• Competitive salary\n• Health insurance\n• Flexible working hours\n• Professional development opportunities\n• Collaborative and innovative work environment"
-  //     }
-  // ]
+  const toggleAccordion = (index: number) => {
+    setOpenIndexes((prevIndexes) =>
+      prevIndexes.includes(index)
+        ? prevIndexes.filter((i) => i !== index)
+        : [...prevIndexes, index]
+    );
+  };
 
   const employeeBenefits = [
     {
       icon: growthIcon,
       title: "01. Growth Opportunities",
       description:
-        "At Squadra Media, we believe learning never stops. We’re dedicated to fostering growth and helping employees achieve their best.",
+        "At Squadra Media, we believe learning never stops. We're dedicated to fostering growth and helping employees achieve their best.",
     },
     {
       icon: remunerationIcon,
       title: "02. Competitive Remuneration",
       description:
-        "We value our employee's contributions and ensure they’re rewarded for their dedication and growth.",
+        "We value our employee's contributions and ensure they're rewarded for their dedication and growth.",
     },
     {
       icon: workplaceIcon,
@@ -113,17 +96,6 @@ function DesktopUi() {
     },
   ];
 
-  const [openIndexes, setOpenIndexes] = useState<number[]>([]);
-
-  const toggleAccordion = (index: number) => {
-    setOpenIndexes((prevIndexes) =>
-      prevIndexes.includes(index)
-        ? prevIndexes.filter((i) => i !== index)
-        : [...prevIndexes, index]
-    );
-  };
-
-  // {Dummy data}
   const dummyJobs = [
     {
       _id: "Storyboard",
@@ -197,63 +169,47 @@ function DesktopUi() {
 
   return (
     <div className="flex flex-col justify-center">
-      {/* Hero Section */}
+      {/* Hero Section - Enhanced Responsive */}
       <div className="relative h-screen w-full overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 transition-opacity duration-1000 opacity-100">
+        <div className="absolute inset-0">
           <Image
             src={careerImage}
-            alt="Carousel image"
-            layout="fill"
-            objectFit="cover"
+            alt="Career opportunities at Squadra Media"
+            fill
+            className="object-cover"
+            priority
           />
         </div>
 
-        {/* Gradient Overlay: 60% height from bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-[70%] sm:h-[60%] pointer-events-none bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(102,102,102,0)]" />
+        <div className="absolute bottom-0 left-0 w-full h-3/5 sm:h-3/5 lg:h-2/3 pointer-events-none bg-gradient-to-t from-black/90 to-transparent" />
 
-        {/* Content */}
-        <div className="flex flex-col justify-center items-center gap-[150px] absolute inset-0 xl:mt-[400px] lg:mt-[30%] md:mt-[304px] sm:mt-[144px] mt-[250px]">
-          <div className="flex flex-col justify-center items-center xl:gap-[34px] lg:gap-[34px] md:gap-[42px] sm:gap-[42px] gap-[44px]">
-            <div className="flex flex-col xl:gap-1 lg:gap-1 md:gap-2 max-w-[740px] items-center">
-              <p
-                className="sm:font-[SF UI Display] font-[SF UI Display] font-bold 
-lg:text-[46px] lg:leading-[66.83px] 
-md:text-[46px] md:leading-[66.83px] 
-sm:text-[46px] sm:leading-[66.83px] 
-text-[48px] leading-[100%] 
-text-[#FFFFFF] text-center 
-xl:w-full md:w-full sm:w-full w-[308px] lg:px-8"
-              >
+        <div className="absolute inset-0 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center text-center space-y-6 sm:space-y-8 max-w-4xl mx-auto mt-16 sm:mt-24 lg:mt-32">
+            <div className="space-y-2 sm:space-y-4">
+              <h1 className="font-bold text-white text-3xl leading-tight sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight xl:text-7xl xl:leading-tight">
                 Step into your future with us.
+              </h1>
+              <p className="font-normal text-white text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto px-4">
+                We aim to bring positivity to every step we take. If you share
+                that vision, Squadra Media is the place for you
               </p>
-              <div className="py-[10px]">
-                <p
-                  className="font-[SF Pro Text] px-12 font-normal text-[20px] leading-[28px] 
-text-[#FFFFFF] text-center 
-xl:max-w-[700px] lg:max-w-[469px] md:max-w-[469px] sm:max-w-[469px] max-w-[370px]"
-                >
-                  We aim to bring positivity to every step we take. If you share
-                  that vision, Squadra Media is the place for you
-                </p>
-              </div>
             </div>
 
-            <div
+            <button
               onClick={() => router.push("/openings")}
-              className="w-[333px] h-[62px]  py-[12px] 
-rounded-[44px] border-[0.5px] border-[#FFFFFF] 
-bg-[#FBAE17] flex items-center justify-center 
-gap-[8px] cursor-pointer"
+              className="w-full max-w-sm h-14 sm:h-16 flex items-center justify-center gap-2 
+                       bg-[#FBAE17] hover:bg-[#e09b14] transition-colors duration-200 
+                       rounded-full border border-white/20 cursor-pointer"
+              aria-label="View all job openings"
             >
-              <p className="font-semibold text-[20px] leading-[18px] text-[#000000]">
+              <span className="font-semibold text-black text-lg sm:text-xl">
                 All openings
-              </p>
+              </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
-                className="w-6 h-6 text-black"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-black"
               >
                 <path
                   d="M4 12.8789H20M20 12.8789L14 6.87891M20 12.8789L14 18.8789"
@@ -262,404 +218,276 @@ gap-[8px] cursor-pointer"
                   strokeLinejoin="round"
                 />
               </svg>
-            </div>
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Current Opening */}
-      <div
-        id="job-openings"
-        className="w-full flex flex-col items-center md:pt-[15px]"
-      >
-        <div className="flex flex-col sm:pt-[72px] pt-[40px] pb-[72px]  lg:px-[0px] md:px-[0px] gap-[42px] xl:w-[1180px] lg:w-[714px] md:w-[714px] sm:w-[714px] w-[335px]">
-          <div className="flex flex-col sm:gap-[72px] gap-[32px] justify-center">
-            <p className="font-[300] xl:text-[62px] lg:text-[48px] md:text-[48px] xl:leading-[50px] lg:leading-[50px] md:leading-[50px] sm:text-[48px] sm:leading-[50px] text-[28px] leading-[33.41px] text-[#131313] text-center">
+      {/* Current Openings - Optimized Responsive */}
+      <section id="job-openings" className="w-full bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="space-y-8 sm:space-y-12 lg:space-y-16">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-center text-neutral-900">
               Current openings
-            </p>
-            <div>
-              {loading ? (
-                <div className="flex flex-col gap-4 items-center justify-center">
-                  <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[600px] w-[300px] h-[40px] rounded-lg" />
-                  <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[600px] w-[300px] h-[40px] rounded-lg" />
-                  <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[600px] w-[300px] h-[40px] rounded-lg" />
-                  <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[600px] w-[300px] h-[40px] rounded-lg" />
-                  <Skeleton className="xl:w-[900px] md:w-[600px] sm:w-[600px] w-[300px] h-[40px] rounded-lg" />
-                </div>
-              ) : (
-                categories.slice(0, 5)?.map(
-                  (
-                    category: {
-                      _id:
-                        | string
-                        | number
-                        | bigint
-                        | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
-                        | Iterable<React.ReactNode>
-                        | React.ReactPortal
-                        | Promise<React.AwaitedReactNode>
-                        | null
-                        | undefined;
-                      jobsCount:
-                        | string
-                        | number
-                        | bigint
-                        | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
-                        | Iterable<React.ReactNode>
-                        | React.ReactPortal
-                        | Promise<React.AwaitedReactNode>
-                        | null
-                        | undefined;
-                      jobs: any[];
-                    },
-                    index: React.Key | null | undefined
-                  ) => (
-                    <div key={index}>
-                      <div
-                        className={`border-b border-t ${
-                          openIndexes.includes(index)
-                            ? "border-t border-[#06135B]"
-                            : "border-[#E7E7E7]"
-                        }`}
-                      >
-                        <button
-                          className="flex justify-between items-center w-full xl:py-7 lg:py-7 md:py-7 sm:py-7 py-4 text-left"
-                          onClick={() => toggleAccordion(index)}
-                        >
-                          <span className="xl:text-[24px] xl:leading-[28.64px] lg:text-[24px] lg:leading-[28.64px] md:text-[24px] md:leading-[28.64px]  sm:text-[24px] sm:leading-[28.64px] text-[#3D3D3D] font-medium">
-                            {category._id} ({category.jobsCount})
-                          </span>
-                          {openIndexes.includes(index) ? (
-                            <Image src={minusIcon} alt="close" />
-                          ) : (
-                            <Image src={plusIcon} alt="open" />
-                          )}
-                        </button>
-                        {openIndexes.includes(index) && (
-                          <div>
-                            <ul className="xl:pl-[0px] lg:pl-[0px] md:pl-[0px] sm:pl-[0px] pl-[0px] border-t border-[#B0B0B0]">
-                              {category.jobs.map(
-                                (
-                                  job: {
-                                    _id: React.Key | null | undefined;
-                                    jobTitle: string;
-                                    jobDescription: string;
-                                    companyDescription: string;
-                                    location: string;
-                                    jobType: string;
-                                    jobLevel: string;
-                                    salary: string;
-                                    experience: string;
-                                    benefits: string;
-                                    applyLink: string;
-                                    employmentType: string;
-                                  },
-                                  jobIndex: number
-                                ) => (
-                                  <li
-                                    onClick={() =>
-                                      router.push(`/job-details/${job._id}`)
-                                    }
-                                    key={job._id}
-                                    className={`border-[#B0B0B0] flex justify-between xl:py-[16px] lg:py-[16px] md:py-[16px] sm:py-[16px] py-[8px] xl:pl-[40px] xl:pr-[32px] lg:pl-[40px] lg:pr-[32px] md:pl-[40px] md:pr-[32px] ${
-                                      jobIndex !== category.jobs.length - 1 &&
-                                      "border-b border-[#B0B0B0]"
-                                    }`}
-                                  >
-                                    <div className="flex flex-col justify-between gap-[2px] cursor-pointer">
-                                      <p className="font-normal xl:text-[20px] xl:leading-[23.87px] lg:text-[18px] lg:leading-[21.48px] md:text-[18px] md:leading-[21.48px] sm:text-[18px] sm:leading-[21.48px] text-[16px] leading-[16.71px] text-[#3D3D3D]">
-                                        {job.jobTitle}
-                                      </p>
-                                      <div className="flex xl:items-center lg:items-center sm:items-start items-start xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col xl:gap-3 lg:gap-3 md:gap-3 sm:gap-3 gap-0">
-                                        <p className="py-1 font-[300] xl:text-[14px] xl:leading-[16.71px] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[14px] sm:leading-[16.71px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
-                                          {job.location}
-                                        </p>
-                                        <div className="w-[1px] h-[21px] bg-[#B0B0B0] hidden sm:flex"></div>
-                                        <div className="py-1 font-[300] xl:text-[14px] xl:leading-[16.71px] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[14px] sm:leading-[16.71px] text-[12px] leading-[14.32px] text-[#4F4F4F]">
-                                          {job.employmentType}
-                                        </div>
-                                        <div className="w-[1px] h-[21px] bg-[#B0B0B0] hidden sm:flex"></div>
-                                        <div className="py-1 font-[300] xl:text-[14px] xl:leading-[16.71px] lg:text-[14px] lg:leading-[16.71px] md:text-[14px] md:leading-[16.71px] sm:text-[14px] sm:leading-[16.71p] text-[12px] leading-[14.32px] text-[#4F4F4F]">
-                                          {job.yearsOfExperience}+ Years of
-                                          Experience
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      onClick={() =>
-                                        router.push(`/job-apply/${job._id}`)
-                                      }
-                                      className="group flex items-center xl:gap-3 lg:gap-3 md:gap-3 sm:gap-3 gap-1 cursor-pointer"
-                                    >
-                                      <div className="xl:w-[24px] xl:h-[24px] lg:w-[24px] lg:h-[24px] md:w-[24px] md:h-[24px] sm:w-[24px] sm:h-[24px] w-[20px] h-[24px]">
-                                        <svg
-                                          width="24"
-                                          height="24"
-                                          viewBox="0 0 24 24"
-                                          fill="none"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          className="w-6 h-6 text-gray-500 group-hover:text-[#1E3A76] transition-all duration-300"
-                                        >
-                                          <path
-                                            d="M4 12.8789H20M20 12.8789L14 6.87891M20 12.8789L14 18.8789"
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                          />
-                                        </svg>
-                                      </div>
-                                      <p className="font-normal xl:text-[18px] lg:text-[18px] md:text-[18px] sm:text-[18px] text-[14px] leading-[24px] text-[#888888] group-hover:text-[#1E3A76]">
-                                        Apply
-                                      </p>
-                                    </div>
-                                  </li>
-                                )
-                              )}
-                            </ul>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )
-                )
-              )}
-            </div>
-          </div>
+            </h2>
 
-          <div className="w-full flex justify-end">
-            <div
-              onClick={() => router.push("/openings")}
-              className="xl:w-[194px] lg:w-[194px] md:w-[194px] sm:w-[194px] w-full h-[58px] flex justify-center items-center rounded-[4px] gap-2 bg-[#131313] cursor-pointer"
-            >
-              <p className="font-normal text-[16px] leading-[18px] text-[#FFFFFF]">
-                See all openings
-              </p>
-              <Image
-                src={rightArrowIcon}
-                alt="Openings"
-                width={24}
-                height={24}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Employee Benefits */}
-      <div className="w-full bg-[#FAFAFA] flex flex-col xl:py-[72px] lg:py-[72px] md:py-[72px] sm:py-[72px] py-[50px] xl:px-[124px] lg:px-[60px] md:px-[60px] sm:px-[60px] px-[20px] items-center">
-        <div className="flex flex-col xl:gap-[80px] lg:gap-[60px] md:gap-[60px] sm:gap-[60px] gap-[32px] xl:w-[1180px] md:w-[714px] sm:w-[714px] w-full items-center">
-          <p className="font-[300] xl:text-[60px] xl:leading-[71.6px] lg:text-[48px] lg:leading-[57.28px] md:text-[48px] md:leading-[57.28px] sm:text-[48px] sm:leading-[57.28px] text-[28px] leading-[33.41px] text-center text-[#131313] xl:max-w-[943px] md:max-w-[943px]">
-            We Prioritise Our Employee&apos;s{" "}
-            <span className="text-[#FBAE17]"> Well-Being.</span>
-          </p>
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 xl:gap-[0px] lg:gap-[0px] md:gap-[0px] sm:gap-[0px] gap-[6px]">
-            {employeeBenefits?.map((benefit, index) => (
-              <div
-                key={index}
-                className={`xl:h-[460px] xl:w-[397.5px] lg:h-[309px] lg:w-[357px] md:h-[309px] md:w-[357px] sm:w-[357px] w-[335px] flex flex-col items-center xl:pt-[72px] xl:pb-[64px] xl:px-[44px] xl:gap-[40px] lg:pt-[40px] lg:pb-[40px] lg:px-[32px] lg:gap-[32px] md:pt-[40px] md:pb-[40px] md:px-[32px] md:gap-[32px]  sm:pt-[40px] sm:pb-[40px] sm:px-[32px] sm:gap-[32px] pt-[32px] pb-[32px] px-[32px] gap-[32px] ${
-                  index % 2 === 0 ? "bg-[#FFFFFF]" : "bg-[#D2E1FF33]"
-                }`}
-              >
-                <Image
-                  src={benefit?.icon}
-                  alt={benefit.title}
-                  className="xl:w-[100px] xl:h-[100px] lg:w-[64px] lg:h-[64px] md:w-[64px] md:h-[64px] sm:w-[64px] sm:h-[64px] w-[52px] h-[52px]"
-                />
-                <div className="flex flex-col xl:gap-5 lg:gap-5 md:gap-5 sm:gap-5 gap-3">
-                  <p className="font-[600] xl:text-[20px] xl:leading-[23.87px] lg:text-[18px] lg:leading-[21.48px] md:text-[18px] md:leading-[21.48px] sm:text-[18px] sm:leading-[21.48px] text-[16px] leading-[19.09px] text-[#131313]">
-                    {benefit?.title}
-                  </p>
-                  <p className="font-normal xl:text-[18px] xl:leading-7 lg:text-[16px] lg:leading-[23px] md:text-[16px] md:leading-[23px] sm:text-[16px] sm:leading-[23px] text-[14px] leading-[19px] text-[#6D6D6D]">
-                    {benefit?.description}
-                  </p>
-                </div>
+            {loading ? (
+              <div className="space-y-4">
+                {[...Array(5)].map((_, index) => (
+                  <Skeleton key={index} className="w-full h-12 rounded-lg" />
+                ))}
               </div>
-            ))}
+            ) : (
+              <div className="space-y-px border border-gray-200 rounded-lg overflow-hidden">
+                {categories.slice(0, 5)?.map((category, index) => (
+                  <div key={index} className="bg-white">
+                    <button
+                      className={`w-full flex justify-between items-center p-4 sm:p-6 lg:p-8 text-left transition-colors duration-200 hover:bg-gray-50
+                                ${openIndexes.includes(index) ? "bg-blue-50" : ""}`}
+                      onClick={() => toggleAccordion(index)}
+                      aria-expanded={openIndexes.includes(index)}
+                      aria-controls={`category-${index}`}
+                    >
+                      <span className="text-lg sm:text-xl lg:text-2xl font-medium text-gray-700">
+                        {category._id} ({category.jobsCount})
+                      </span>
+                      <div className="flex-shrink-0 ml-4">
+                        <Image
+                          src={openIndexes.includes(index) ? minusIcon : plusIcon}
+                          alt={openIndexes.includes(index) ? "Collapse" : "Expand"}
+                          className="w-5 h-5 sm:w-6 sm:h-6"
+                        />
+                      </div>
+                    </button>
+
+                    {openIndexes.includes(index) && (
+                      <div id={`category-${index}`} className="border-t border-gray-200">
+                        <div className="divide-y divide-gray-100">
+                          {category.jobs.map((job) => (
+                            <div
+                              key={job._id}
+                              onClick={() => router.push(`/job-details/${job._id}`)}
+                              className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4 
+                                       p-4 sm:px-8 sm:py-6 cursor-pointer transition-colors duration-200 hover:bg-gray-50"
+                            >
+                              <div className="flex-grow min-w-0">
+                                <h3 className="font-medium text-base sm:text-lg lg:text-xl text-gray-800 mb-2">
+                                  {job.jobTitle}
+                                </h3>
+                                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-xs sm:text-sm text-gray-500">
+                                  <span>{job.location}</span>
+                                  <span className="hidden sm:inline">•</span>
+                                  <span>{job.employmentType}</span>
+                                  <span className="hidden sm:inline">•</span>
+                                  <span>{job.yearsOfExperience}+ Years Experience</span>
+                                </div>
+                              </div>
+
+                              <div
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  router.push(`/job-apply/${job._id}`);
+                                }}
+                                className="group flex items-center gap-2 sm:gap-3 self-start sm:self-center"
+                                role="button"
+                                aria-label={`Apply for ${job.jobTitle}`}
+                              >
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  className="text-gray-500 group-hover:text-blue-600 transition-colors duration-200"
+                                >
+                                  <path
+                                    d="M4 12.8789H20M20 12.8789L14 6.87891M20 12.8789L14 18.8789"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                  />
+                                </svg>
+                                <span className="text-sm sm:text-base text-gray-500 group-hover:text-blue-600 transition-colors duration-200">
+                                  Apply
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="flex justify-center sm:justify-end">
+              <button
+                onClick={() => router.push("/openings")}
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 
+                         bg-neutral-900 hover:bg-neutral-800 text-white rounded-md 
+                         transition-colors duration-200 min-w-48"
+                aria-label="View all job openings"
+              >
+                <span className="font-medium">See all openings</span>
+                <Image src={rightArrowIcon} alt="" width={20} height={20} />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Life at squadra */}
-      {/* <div className='w-full bg-[#FFFFFF] xl:py-[72px] md:py-[72px] sm:py-[40px] py-[40px] xl:px-[124px] md:px-[60px] sm:px-[20px] px-[20px] flex flex-col gap-[44px] items-center'>
-                <div className='flex flex-col xl:gap-[44px] md:gap-[44px] sm:gap-[32px] gap-[32px] xl:w-[1180px] md:w-[714px]'>
-                    <div className='flex flex-col gap-[12px]'>
-                        <p className='font-[300] xl:text-[62px] xl:leading-[72px] md:text-[48px] md:leading-[57.28px] sm:text-[28px] sm:leading-[33.41px] text-[28px] leading-[33.41px] text-center text-[#131313]'>Life at <span className='text-[#FBAE17]'>Squadra Media</span></p>
-                        <p className='font-normal xl:text-[18px] xl:leading-[24px] md:text-[16px] md:leading-[21px] sm:text-[14px] sm:leading-[19px] text-center text-[#6D6D6D]'>A space to unlock your true potential, chase your dreams, and embrace your <br /> passion all while enjoying every moment with fun and laughter!</p>
-                    </div>
-                    <div className='flex flex-col xl:gap-3 md:gap-3 sm:gap-[40px] gap-[40px]'>
-                        <div className='flex flex-col gap-3'>
-                            <div className='flex items-center gap-3'>
-                                <div className='flex flex-col gap-3'>
-                                    <div className='rounded-[6px] xl:w-[420px] h-[194px] md:w-[282px] bg-gray-400'>
-                                        <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/5555.webp" alt='Life at Squadra' width={420} height={194} className="xl:w-[420px] xl:h-[194px] md:w-[282px] md:h-[194px] object-cover" />
-                                    </div>
-                                    <div className='rounded-[6px] xl:w-[420px] h-[194px] md:w-[282px] bg-gray-400'></div>
-                                </div>
-                                <div className='rounded-[6px] xl:w-[760px] md:w-[420px] h-[400px]'>
-                                    <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/444.webp" alt='Life at Squadra' width={760} height={400} className="xl:w-[760px] md:w-[420px] h-[400px] object-cover" />
-                                </div>
-                            </div>
-                            <div className='flex items-center gap-3'>
-                                <div className='rounded-[6px] xl:w-[760px] md:w-[420px] h-[400px] bg-gray-400'>
-                                    <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/2.1.webp" alt='Life at Squadra' width={760} height={400} className="xl:w-[760px] md:w-[420px] h-[400px] object-cover" />
-                                </div>
-                                <div className='flex flex-col gap-3'>
-                                    <div className='rounded-[6px] xl:w-[420px] h-[194px] md:w-[282px] bg-gray-400'>
-                                        <Image src="https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg" alt='Life at Squadra' width={420} height={194} className="xl:w-[420px] h-[194px] md:w-[282px] object-cover" />
-                                    </div>
-                                    <div className='rounded-[6px] xl:w-[420px] h-[194px] md:w-[282px] bg-gray-400'></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='rounded-[6px] xl:w-[1180px] xl:h-[440px] md:w-[714px] md:h-[400px] sm:w-full sm:h-[260px] w-full h-[260px] bg-gray-400'></div>
-                    </div>
+      {/* Employee Benefits - Enhanced Grid System */}
+      <section className="w-full bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="space-y-8 sm:space-y-12 lg:space-y-16">
+            <div className="text-center space-y-4">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-neutral-900 max-w-4xl mx-auto">
+                We Priorities Our Employee&apos;s{" "}
+                <span className="text-[#FBAE17]">Well-Being.</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200">
+              {employeeBenefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className={`p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col items-center text-center space-y-6 sm:space-y-8
+                            ${index % 2 === 0 ? "bg-white" : "bg-blue-50/30"}`}
+                >
+                  <div className="flex-shrink-0">
+                    <Image
+                      src={benefit.icon}
+                      alt=""
+                      className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24"
+                    />
+                  </div>
+                  <div className="space-y-3 sm:space-y-4">
+                    <h3 className="font-semibold text-base sm:text-lg lg:text-xl text-neutral-900">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
                 </div>
-            </div> */}
-
-      <div className="w-full bg-[#FFFFFF] xl:py-[72px] lg:py-[72px] md:py-[72px] sm:py-[72px] py-[40px] xl:px-[124px] lg:px-[60px] md:px-[60px] sm:px-[60px] px-[20px] flex flex-col gap-[44px] items-center">
-        <div className="flex flex-col xl:gap-[44px] lg:gap-[44px] md:gap-[44px] sm:gap-[44px] gap-[32px] xl:w-[1180px] lg:w-[714px] md:w-[714px]">
-          <div className="flex flex-col gap-[12px]">
-            <p className="font-[300] xl:text-[62px] xl:leading-[72px] lg:text-[48px] lg:leading-[57.28px] md:text-[48px] md:leading-[57.28px] sm:text-[48px] sm:leading-[57.28px] text-[28px] leading-[33.41px] text-center text-[#131313]">
-              Life at <span className="text-[#FBAE17]">Squadra Media</span>
-            </p>
-            <p className="font-normal xl:text-[18px] xl:leading-[24px] lg:text-[16px] lg:leading-[21px] md:text-[16px] md:leading-[21px] sm:text-[16px] sm:leading-[21px] text-center text-[#6D6D6D]">
-              A space to unlock your true potential, chase your dreams, and
-              embrace your <br /> passion all while enjoying every moment with
-              fun and laughter!
-            </p>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-col xl:gap-3 lg:gap-3 md:gap-3 sm:gap-3 gap-[40px]">
-            <div className="flex flex-col gap-3">
-              <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col items-center gap-3">
-                <div className="flex xl:flex-col lg:flex-col md:flex-col sm:flex-col flex-row gap-3">
-                  <div className="rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[282px] w-[163.5px] bg-gray-400">
+        </div>
+      </section>
+
+      {/* Life at Squadra - Improved Mobile Layout */}
+      <section className="w-full bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="space-y-8 sm:space-y-12">
+            <div className="text-center space-y-3 sm:space-y-4">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-neutral-900">
+                Life at <span className="text-[#FBAE17]">Squadra Media</span>
+              </h2>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto">
+                A space to unlock your true potential, chase your dreams, and embrace your passion all while enjoying every moment with fun and laughter!
+              </p>
+            </div>
+
+            <div className="space-y-3 sm:space-y-4">
+              {/* First Row */}
+              <div className="flex flex-col lg:flex-row gap-3 sm:gap-4">
+                <div className="flex gap-3 sm:gap-4 lg:flex-col">
+                  <div className="flex-1 lg:flex-none">
                     <Image
                       src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/5555.webp"
-                      alt="Life at Squadra"
+                      alt="Team collaboration at Squadra Media"
                       width={420}
                       height={194}
-                      className="xl:w-[420px] xl:h-[194px] lg:w-[282px] rounded-[6px] lg:h-[194px] md:w-[282px] md:h-[194px] sm:w-[282px] w-[163.5px] h-[194px] object-cover"
+                      className="w-full h-40 sm:h-48 lg:h-48 xl:h-52 object-cover rounded-lg"
                     />
                   </div>
-                  <div className="rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[282px] w-[163.5px] bg-gray-400">
+                  <div className="flex-1 lg:flex-none">
                     <Image
                       src="https://squadra-media.s3.ap-south-1.amazonaws.com/7.jpg"
-                      alt="Life at Squadra"
+                      alt="Creative workspace at Squadra Media"
                       width={420}
                       height={194}
-                      className="xl:w-[420px] xl:h-[194px] lg:w-[282px] rounded-[6px] lg:h-[194px] md:w-[282px] md:h-[194px] sm:w-[282px] w-[163.5px] h-[194px] object-cover"
+                      className="w-full h-40 sm:h-48 lg:h-48 xl:h-52 object-cover rounded-lg"
                     />
                   </div>
                 </div>
-                <div className="rounded-[6px] xl:w-[760px] lg:w-[420px] md:w-[420px] sm:w-[420px] w-[335px] xl:h-[400px] lg:h-[400px] md:h-[400px] sm:h-[400px] h-[200px]">
+                <div className="flex-1">
                   <Image
                     src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/444.webp"
-                    alt="Life at Squadra"
+                    alt="Office environment at Squadra Media"
                     width={760}
-                    height={400}
-                    className="xl:w-[760px] lg:w-[420px] md:w-[420px] sm:w-[420px] rounded-[6px] w-[335px] xl:h-[400px] lg:h-[400px] md:h-[400px] sm:h-[400px] h-[200px] object-cover"
+                    height={410}
+                    className="w-full h-48 sm:h-64 lg:h-96 xl:h-[430px] object-cover rounded-lg"
                   />
                 </div>
               </div>
-              <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col items-center gap-3">
-                <div className="rounded-[6px] xl:w-[760px] lg:w-[420px] md:w-[420px] xl:h-[400px] lg:h-[400px] md:h-[400px] sm:h-[400px] h-[200px] bg-gray-400 hidden sm:block">
+
+              {/* Second Row */}
+              <div className="flex flex-col lg:flex-row gap-3 sm:gap-4">
+                <div className="flex-1 order-2 lg:order-1">
                   <Image
                     src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/2.1.webp"
-                    alt="Life at Squadra"
+                    alt="Team building activities"
                     width={760}
                     height={400}
-                    className="xl:w-[760px] lg:w-[420px] md:w-[420px] xl:h-[400px] rounded-[6px] lg:h-[400px] md:h-[400px] sm:h-[400px] h-[200px] object-cover"
+                    className="w-full h-48 sm:h-64 lg:h-96 xl:h-[430px] object-cover rounded-lg"
                   />
                 </div>
-                <div className="flex xl:flex-col lg:flex-col md:flex-col sm:flex-col flex-row gap-3">
-                  <div className="rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[282px] w-[163.5px] bg-gray-400">
+                <div className="flex gap-3 sm:gap-4 lg:flex-col order-1 lg:order-2">
+                  <div className="flex-1 lg:flex-none">
                     <Image
                       src="https://squadra-media.s3.ap-south-1.amazonaws.com/333.jpg"
-                      alt="Life at Squadra"
+                      alt="Innovation at work"
                       width={420}
                       height={194}
-                      className="xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] rounded-[6px] sm:w-[282px] w-[163.5px] object-cover"
+                      className="w-full h-40 sm:h-48 lg:h-48 xl:h-52 object-cover rounded-lg"
                     />
                   </div>
-                  <div className="rounded-[6px] xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] sm:w-[282px] w-[163.5px] bg-gray-400">
+                  <div className="flex-1 lg:flex-none">
                     <Image
                       src="https://squadra-media.s3.ap-south-1.amazonaws.com/5.jpg"
-                      alt="Life at Squadra"
+                      alt="Company culture"
                       width={420}
                       height={194}
-                      className="xl:w-[420px] h-[194px] lg:w-[282px] md:w-[282px] rounded-[6px] sm:w-[282px] w-[163.5px] object-cover"
+                      className="w-full h-40 sm:h-48 lg:h-48 xl:h-52 object-cover rounded-lg"
                     />
                   </div>
                 </div>
-                <div className="rounded-[6px] xl:w-[760px] lg:w-[420px] md:w-[420px] sm:w-[420px] w-[335px] xl:h-[400px] lg:h-[400px] md:h-[400px] sm:h-[400px] h-[200px] bg-gray-400 block sm:hidden">
-                  <Image
-                    src="https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/2.1.webp"
-                    alt="Life at Squadra"
-                    width={760}
-                    height={400}
-                    className="xl:w-[760px] lg:w-[420px] md:w-[420px] sm:w-[420px] rounded-[6px] w-[335px] xl:h-[400px] lg:h-[400px] md:h-[400px] sm:h-[400px] h-[200px] object-cover"
-                  />
-                </div>
               </div>
-            </div>
 
-            {/* <div className="rounded-[6px] xl:w-[1180px] xl:h-[440px] lg:w-[714px] lg:h-[400px] md:w-[714px] md:h-[400px] sm:w-[714px] sm:h-[400px] w-full h-[260px] bg-gray-400">
-              <Image
-                src="https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_3720+2+(1).webp"
-                alt="Life at Squadra"
-                width={760}
-                height={400}
-                className="xl:w-[1180px] xl:h-[440px] lg:w-[714px] lg:h-[400px] md:w-[714px] md:h-[400px] sm:w-[714px] sm:h-[400px] w-full h-[260px] object-cover"
-              />
-            </div> */}
-            <div
-              className="relative w-full overflow-hidden rounded-[6px] rounded-lg bg-gray-400 
-xl:w-[1180px] xl:h-[440px] 
-lg:w-[714px] lg:h-[440px] 
-md:w-[714px] md:h-[400px] 
-sm:w-[714px] sm:h-[400px] 
-h-[260px]
-"
-            >
-              {/* Video Background */}
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="/Careers_video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {/* Video Section */}
+              <div className="relative w-full h-64 sm:h-80 lg:h-96 xl:h-[440px] rounded-lg overflow-hidden">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/Careers_video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center lg:pt-[100px] items-start px-4 sm:px-12 lg:px-16 py-8 sm:py-12 text-white">
-                <h2 className="text-lg sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4">
-                  Together, We Shape the Future
-                </h2>
-                <p className="text-sm sm:text-lg max-w-xl leading-relaxed">
-                  At Squadra Media, it’s our people who turn ideas into reality.
-                  We’re constantly seeking passionate individuals who can take
-                  us closer to our vision and make a lasting impact.
-                  <br />
-                  <br />
-                  If you know someone at Squadra, reach out and let us know why
-                  you’re the perfect fit!
-                </p>
+                <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-6 sm:p-8 lg:p-12 xl:p-16 text-white">
+                  <h3 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-3 sm:mb-4">
+                    Together, We Shape the Future
+                  </h3>
+                  <p className="text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed">
+                    At Squadra Media, it&apos;s our people who turn ideas into reality.
+                    We&apos;re constantly seeking passionate individuals who can take
+                    us closer to our vision and make a lasting impact.
+                    <br />
+                    <br />
+                    If you know someone at Squadra, reach out and let us know why
+                    you&apos;re the perfect fit!
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

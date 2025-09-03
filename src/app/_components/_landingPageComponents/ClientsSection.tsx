@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -17,9 +17,23 @@ import clientS1522 from "../../../utilities/icons/client-street1522.webp";
 import clientVOIA from "../../../utilities/icons/client-voia.webp";
 import clientVIDA from "../../../utilities/icons/client-vida.webp";
 import clientNior from "../../../utilities/icons/client-cafeNior.webp";
+import bbath from "../../../utilities/icons/client-bbath-logo.png";
+import clientColdStone from "../../../utilities/icons/client-coldStone.png";
+import clientFreshHome from "../../../utilities/icons/client-freshHome.png";
+import clientIBC from "../../../utilities/icons/client-ICB.png";
+import clientMisoSexy from "../../../utilities/icons/client-MisoSexy.png";
+import clientPrimeGold from "../../../utilities/icons/client-PrimeGold.png";
+import clientSynergy from "../../../utilities/icons/client-synergy.png";
 
 function ClientsSection() {
   const logos = [
+    { name: "Brand 16", url: bbath },
+    { name: "Brand 17", url: clientColdStone, noPadding: true },
+    { name: "Brand 18", url: clientFreshHome, noPadding: true },
+    { name: "Brand 19", url: clientIBC },
+    { name: "Brand 20", url: clientMisoSexy },
+    { name: "Brand 21", url: clientPrimeGold },
+    { name: "Brand 22", url: clientSynergy, noPadding: true },
     { name: "VIDA", url: clientVIDA },
     { name: "Brand 8", url: clientTorque },
     { name: "E-ZONE", url: clientVOIA },
@@ -41,72 +55,65 @@ function ClientsSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setScrollIndex((prevIndex) => (prevIndex + 1) % logos.length);
-    }, 1500);
-
+      setScrollIndex((prev) => (prev + 1) % logos.length);
+    }, 2000);
     return () => clearInterval(interval);
   }, [logos.length]);
 
- 
   return (
-    <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-24 py-6 sm:py-8 md:py-12 lg:py-24">
-      {/* Grid Layout for larger screens */}
-      <div className="hidden md:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0 max-w-7xl py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+      {/* ✅ Grid for larger screens */}
+      <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
         {logos.map((logo, index) => (
           <div
             key={index}
-            className="flex items-center justify-center p-0 bg-white rounded-sm shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 ease-in-out hover:-translate-y-1"
+            className="flex items-center justify-center bg-white rounded-sm shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1"
           >
-            <div className="relative w-full h-28">
+            <div
+              className={`relative w-full h-28 ${
+                logo.noPadding ? "mx-20" : ""
+              }`}
+            >
               <Image
                 src={logo.url}
                 alt={`${logo.name} logo`}
                 fill
                 sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                className="object-contain filter transition-all duration-300"
+                className="object-contain"
               />
             </div>
           </div>
         ))}
       </div>
 
-      {/* Carousel for mobile screens */}
-      <div className="md:hidden overflow-x-hidden">
-        <div className="flex transition-all duration-300" style={{ transform: `translateX(-${scrollIndex * 50}%)` }}>
+      {/* ✅ Carousel for mobile screens */}
+      <div className="md:hidden overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${scrollIndex * 100}%)`,
+            width: `${logos.length * 100}%`,
+          }}
+        >
           {logos.map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[40%] p-2 bg-white rounded-sm  gap-4 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 ease-in-out hover:-translate-y-1"
+              className="w-full flex-shrink-0 px-4"
+              style={{ flex: "0 0 100%" }} // Each slide takes full width
             >
-              <div className="relative w-full h-28">
-                <Image priority
-                  src={logo.url}
-                  alt={`${logo.name} logo`}
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                  className="object-contain filter transition-all duration-300"
-                />
-              </div>
-            </div>
-          ))}
-          {logos.map((logo, index) => (
-            <div
-              key={index + logos.length}
-              className="flex-shrink-0 w-[40%] p-2 bg-white rounded-sm  gap-4 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 ease-in-out hover:-translate-y-1"
-            >
-              <div className="relative w-full h-28">
-                <Image priority
-                  src={logo.url}
-                  alt={`${logo.name} logo`}
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                  className="object-contain filter transition-all duration-300"
-                />
+              <div className="flex items-center justify-center bg-white rounded-sm shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
+                <div className="relative w-full h-28">
+                  <Image
+                    src={logo.url}
+                    alt={`${logo.name} logo`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

@@ -41,19 +41,20 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll, shouldShowWhiteBg]);
 
+  // Modified navBackground logic to include isServicesHovered
   const navBackground = useMemo(() => {
-    return shouldShowWhiteBg || isScrolled
+    return shouldShowWhiteBg || isScrolled || isServicesHovered
       ? "bg-white text-black"
       : "bg-transparent text-white";
-  }, [shouldShowWhiteBg, isScrolled]);
+  }, [shouldShowWhiteBg, isScrolled, isServicesHovered]);
 
   return (
     <nav
-      className={`fixed z-50 w-full p-2 sm:px-2 lg:px-12 xl:px-32  transition-all duration-300 ${navBackground}`}
+      className={`fixed z-50 w-full p-2 sm:px-2 lg:px-12 xl:px-32 transition-all duration-300 ${navBackground}`}
     >
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
         <Logo
-          shouldShowWhiteBg={shouldShowWhiteBg}
+          shouldShowWhiteBg={shouldShowWhiteBg || isServicesHovered}
           isScrolled={isScrolled}
           isSidebarOpen={isSidebarOpen}
           pathname={pathname}
@@ -69,9 +70,9 @@ const Navbar = () => {
           />
         </div>
         <div className="xl:flex hidden font-[500] space-x-8">
-          <ContactPopover isScrolled={isScrolled} />
+          <ContactPopover isScrolled={isScrolled || isServicesHovered} />
           <Link
-            className={` cursor-pointer py-2 px-[12px] my-3 rounded-[4px] bg-[#06135B] text-white ${
+            className={`cursor-pointer py-2 px-[12px] my-3 rounded-[4px] bg-[#06135B] text-white ${
               pathname.includes("/clients") ? `` : ""
             }`}
             href="/contact-us"

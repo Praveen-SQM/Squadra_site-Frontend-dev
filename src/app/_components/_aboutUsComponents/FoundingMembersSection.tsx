@@ -1,104 +1,134 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import AnuImage from "@/utilities/images/Anu JS-about.jpg";
 import SandeshImage from "@/utilities/images/Sandesh K-about.jpg";
 import TarushImage from "@/utilities/images/Tarush Chandnani-about.jpg";
 
-// Example data for the founding members
+interface Member {
+  id: number;
+  name: string;
+  role: string;
+  image: StaticImageData;
+  isFounder: boolean;
+}
 
-const FoundingMembersSection = () => {
-  // const members = [
-  //   {
-  //     name: "Anu Js",
-  //     designation: "Founder",
-  //     imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Anu+JS.webp",
-  //   },
-  //   {
-  //     name: "Sandesh K",
-  //     designation: "Co-Founder",
-  //     imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Sandesh+K.webp",
-  //   },
-  //   {
-  //     name: "Tarush Chandani",
-  //     designation: "Co-Founder",
-  //     imageUrl: "https://squadra-media.s3.ap-south-1.amazonaws.com/tinified+(1)/Tarush+Chandnani.webp",
-  //   },
-  // ];
+const foundingMembers: Member[] = [
+  {
+    id: 1,
+    name: "Tarush",
+    role: "Co-Founder",
+    image: TarushImage,
+    isFounder: false,
+  },
+  {
+    id: 2,
+    name: "Anu Js",
+    role: "Founder",
+    image: AnuImage,
+    isFounder: true,
+  },
+  {
+    id: 3,
+    name: "Sandesh",
+    role: "Co-Founder",
+    image: SandeshImage,
+    isFounder: false,
+  },
+];
+
+const MemberCard = ({ member, className = "", imageHeight = "h-92" }: { member: Member; className?: string; imageHeight?: string }) => {
+  const { name, role, image, isFounder } = member;
+
   return (
-    //     <div className="py-8 px-6 lg:px-16 xl:px-24">
-    //       <h2 className="text-2xl md:text-3xl font-[500] text-start mb-8 text-[#6D6D6D]">
-    //         Founding Members
-    //       </h2>
+    <div
+      className={`group relative overflow-hidden rounded-3xl bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${className}`}
+    >
+      {/* Image Container with dynamic height */}
+      <div className={`relative overflow-hidden ${imageHeight}`}>
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          priority={isFounder}
+        />
 
-    // <div className="md:flex justify-evenly">
-    //   {members.map((member, index) => (
-    //     <div key={index} className="relative flex flex-col items-center">
-    //       <div className="relative">
-    //         <Image
-    //           src={member.imageUrl}
-    //           alt={member.name}
-    //           className={`md:w-72 md:h-96 object-cover rounded-md mb-8 md:mb-0 max-h-320 ${
-    //             index % 2 != 0 ? "md:mt-8 md:mb-0" : ""
-    //           }`}
-    //           width={384}
-    //           height={384}
-    //         />
-    //         {/* Name and Designation Overlay */}
-    //         <div className="absolute bottom-10 md:bottom-2 right-2 bg-black bg-opacity-50 text-white py-1 px-2 rounded-md">
-    //           <p className="font-semibold text-sm text-center">{member.name}</p>
-    //           <p className="text-xs text-center">{member.designation}</p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   ))}
-    // </div>
-
-
-
-
-    //     </div>
-
-    <div className="flex items-center xl:gap-[68px] lg:gap-[35px] md:gap-[40px] sm:gap-[40px] gap-[100px] justify-center lg:flex-row md:flex-row sm:flex-row flex-col">
-      <div className="lg:w-[290px] md:w-[200px] sm:w-[200px] w-[278px] rounded-[24px] bg-[#FFFFFF] flex flex-col hidden sm:block">
-        <div className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px]">
-          <Image src={TarushImage} alt="Tarush" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px] w-full object-cover rounded-t-[24px]"/>
-        </div>
-        <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
-          <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[16px] sm:leading-[19px] text-[20px] leading-[23.87px] text-[#292929]">Tarush</p>
-          <p className="font-normal lg:text-[18px] lg:leading-[21.48px] md:text-[12px] md:leading-[14.32px] sm:text-[12px] sm:leading-[14.32px] text-[14px] leading-[16.71px] text-[#292929]">Co-Founder</p>
-        </div>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      <div className="lg:w-[332px] md:w-[230px] sm:w-[230px] w-[335px] rounded-[24px] bg-[#FFFFFF] flex flex-col shadow-[0px_4px_60px_0px_rgba(0,0,0,0.12)]" style={{ boxShadow: "0px 10px 15px -3px rgba(0, 0, 0, 0.1)" }}>
-      <div className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px]">
-          <Image src={AnuImage} alt="Anu" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px] w-full object-cover rounded-t-[24px]"/>
+      {/* Content */}
+      <div
+        className={`p-6 py-3 border-b-4 border-amber-400 ${
+          isFounder ? "bg-slate-900" : "bg-white"
+        } transition-all duration-300`}
+      >
+        <div className="text-center space-y-1">
+          <h3
+            className={`text-xl lg:text-2xl font-bold ${
+              isFounder ? "text-white" : "text-gray-900"
+            }`}
+          >
+            {name}
+          </h3>
+          <p
+            className={`text-sm lg:text-base font-medium ${
+              isFounder ? "text-gray-200" : "text-gray-600"
+            }`}
+          >
+            {role}
+          </p>
         </div>
-        <div className="flex flex-col gap-2 items-center justify-center py-6 bg-[#06135B] border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
-          <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[16px] sm:leading-[19px] text-[20px] leading-[23.87px] text-[#FFFFFF]">Anu Js</p>
-          <p className="font-normal lg:text-[18px] lg:leading-[21.48px] md:text-[12px] md:leading-[14.32px] sm:text-[12px] sm:leading-[14.32px] text-[14px] leading-[16.71px] text-[#FFFFFF]">Founder</p>
-        </div>
-      </div>
 
-      <div className="lg:w-[290px] md:w-[200px] sm:w-[200px] w-[278px] rounded-[24px] bg-[#FFFFFF] flex flex-col">
-      <div className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px]">
-          <Image src={SandeshImage} alt="Sandesh" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px] w-full object-cover rounded-t-[24px]"/>
-        </div>
-        <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
-          <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[16px] sm:leading-[19px] text-[20px] leading-[23.87px] text-[#292929]">Sandesh</p>
-          <p className="font-normal lg:text-[18px] lg:leading-[21.48px] md:text-[12px] md:leading-[14.32px] sm:text-[12px] sm:leading-[14.32px] text-[14px] leading-[16.71px] text-[#292929]">Co-Founder</p>
-        </div>
-      </div>
-
-      <div className="lg:w-[290px] md:w-[200px] sm:w-[200px] w-[278px] rounded-[24px] bg-[#FFFFFF] flex flex-col block sm:hidden">
-        <div className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px]">
-          <Image src={TarushImage} alt="Tarush" width={323} height={343} className="lg:h-[343px] md:h-[250px] sm:h-[250px] h-[378px] w-full object-cover rounded-t-[24px]"/>
-        </div>
-        <div className="flex flex-col gap-2 items-center justify-center py-6 border-b-[2px] border-[#FBAE17] rounded-b-[24px]">
-          <p className="font-semibold lg:text-[24px] lg:leading-[28.64px] md:text-[16px] md:leading-[19px] sm:text-[16px] sm:leading-[19px] text-[20px] leading-[23.87px] text-[#292929]">Tarush</p>
-          <p className="font-normal lg:text-[18px] lg:leading-[21.48px] md:text-[12px] md:leading-[14.32px] sm:text-[12px] sm:leading-[14.32px] text-[14px] leading-[16.71px] text-[#292929]">Co-Founder</p>
-        </div>
       </div>
     </div>
+  );
+};
+
+const FoundingMembersSection = () => {
+  return (
+    <section className="py-16 bg-[#F5F6F8]">
+      <div className="container mx-auto px-4">
+
+        {/* Desktop Layout */}
+        <div className="hidden sm:flex items-end justify-center gap-8 lg:gap-12">
+          {/* Side Members - smaller height */}
+          <MemberCard
+            member={foundingMembers[0]}
+            className="w-72 lg:w-80"
+            imageHeight="h-64 sm:h-80"
+          />
+
+          {/* Center Founder - taller height */}
+          <MemberCard
+            member={foundingMembers[1]}
+            className="w-80 lg:w-96 shadow-xl z-10"
+            imageHeight="h-80 sm:h-96 lg:h-92"
+          />
+
+          {/* Side Members - smaller height */}
+          <MemberCard
+            member={foundingMembers[2]}
+            className="w-72 lg:w-80"
+            imageHeight="h-64 sm:h-80"
+          />
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="sm:hidden space-y-8">
+          {foundingMembers.map((member) => (
+            <div key={member.id} className="flex justify-center">
+              <MemberCard
+                member={member}
+                className="w-80 max-w-sm mx-auto"
+                imageHeight={member.isFounder ? "h-96" : "h-80"}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
