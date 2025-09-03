@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import ServicesContainer from "./ServiceContainer";
-import digitalMarketingImage from "@/utilities/images/digital-marketing-pr.svg";
 import brandingImage from "@/utilities/images/Branding-creative.svg";
 import photographyImage from "@/utilities/images/photography.svg";
 import technologyDevelopmentImage from "@/utilities/images/technology-development.svg";
