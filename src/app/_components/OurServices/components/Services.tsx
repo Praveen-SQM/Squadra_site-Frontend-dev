@@ -21,7 +21,7 @@ const services = [
       "Data & Analytics",
     ],
     link: "digital-marketing-and-pr",
-    image: digitalMarketingImage,
+    image: "https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_3720+2+(1).webp",
     video:
       "https://s3-figma-videos-production-sig.figma.com/video/1312412244029964973/TEAM/e676/95ad/-d85e-4252-ba31-17a50121e01d?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=pcXVBuTgsl5cCUkun~RmXOQSFQa0fwF3~EBmD~ukzpJSHfBTEJalvR0uQDYMe3foOyg0KIG6lPUhqzn1rt-qn8TwbHv4xju20AZFtZ659I9kB35dLJI9~G6iuIxviPZicHxPErUVoWQt2sl82sU7dHgyhQkvzxocIevMvQ2y48AOteJCgNKnpAsO9mDTFD2JA1kTtzt~wjrFD1zNnCEu4ALaAHs02OOzuBYypD~q5TVTbxJZ3Ek8kdmolZd~7TBsywqgx3HM3jm2ZXQ6QqG2JfitXD6vhCWEFmC-23LgYPIt3B3zPl-yI1n7iCNRQerA0aArzmbz4tHDko0IogWMWA__",
   },
