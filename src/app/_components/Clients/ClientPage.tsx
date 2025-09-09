@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { ArrowRight } from "lucide-react";
 import ClientsHeroImage from "@/utilities/images/mm.png";
 
 // Import client logos
@@ -96,7 +95,7 @@ const ClientPage = () => {
     { src: clientMisoSexy, alt: "Client MisoSexy", isLarge: true },
     { src: clientPrimeGold, alt: "Client PrimeGold", isLarge: true },
     { src: clientSynergy, alt: "Client Synergy", isLarge: true },
-      { src: clientVIDA, alt: "Client Vida" },
+    { src: clientVIDA, alt: "Client Vida" },
     { src: clientNior, alt: "Client Nior" },
     { src: clientVOIA, alt: "Client VOIA" },
     { src: clientS1522, alt: "Client Street" },
@@ -226,7 +225,7 @@ const ClientPage = () => {
                       className="w-[228px] h-[182px] flex items-center justify-center bg-[#FFFFFF] hover:bg-gray-100 transition-colors duration-300"
                     >
                       <div className="text-center flex items-center rounded-[50%] justify-center w-[116px] h-[116px] bg-[#E7EEFF42] border border-[#D2E1FF] backdrop-blur-[3px]">
-                        <span className="text-[22px] leading-[100%] font-medium text-center text-[#1227C5] font-[SF Pro Text]">
+                        <span className="text-[22px] leading-[100%] font-medium text-center text-[#06135B] font-[SF Pro Text]">
                           {remainingClients}+more
                         </span>
                       </div>
@@ -259,7 +258,9 @@ const ClientPage = () => {
                       alt={client.alt}
                       width={223}
                       height={168}
-                      className={`object-contain shadow-none rounded-lg ${client.isLarge ? "pb-16 px-16 pt-5" : ""}`}
+                      className={`object-contain shadow-none rounded-lg ${
+                        client.isLarge ? "pb-16 px-16 pt-5" : ""
+                      }`}
                     />
                   </div>
                 </div>
@@ -279,65 +280,109 @@ const ClientPage = () => {
 
   return (
     <>
-      <section className="min-h-screen flex items-center relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section className="py-96 md:py-20 flex items-center relative overflow-hidden ">
+        {/* Animated background elements */}
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end">
             <div className="order-1 lg:order-1 lg:col-span-6 space-y-4 lg:space-y-6">
-              <div className="inline-block">
-                <span className="text-[16px] sm:text-[16px] md:text-[18px] font-medium text-[#1122A1] uppercase">
-                  CASE STUDY. CLIENTS
-                </span>
+              <div
+                className={`inline-block ${
+                  true ? "animate-fade-in-up" : "opacity-0"
+                }`}
+              >
+                {/* <span className="sm:text-sm text-[11px] font-medium text-gray-600 uppercase tracking-wider">
+                  CLIENTS
+                </span> */}
               </div>
-              <div className="space-y-2">
-                <h1 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] font-medium leading-snug text-[#D96B06]">
-                  Proud to partner with clients for exceptional results.{" "}
-                  <span className="text-[#888888]">
-                    Explore our Client Stories to see the impact.
+
+              <div
+                className={`space-y-2 ${
+                  true ? "animate-fade-in-up" : "opacity-0"
+                }`}
+                style={{ animationDelay: "200ms" }}
+              >
+                <h1 className="text-6xl font-bold text-[#D96B06] leading-tight">
+                  Proud to partner with{" "}
+                  <span className="relative">
+                    <span className="bg-gradient-to-r from-[#D96B06] to-[#FF8C42] bg-clip-text text-transparent">
+                      exceptional clients
+                    </span>
+                    <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#D96B06] to-[#FF8C42] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  </span>{" "}
+                  <span className="text-[#666666] font-normal">
+                    for remarkable results.
                   </span>
                 </h1>
+                {/* <p className="text-lg text-gray-600 max-w-2xl leading-relaxed mt-4">
+                  Explore our Client Stories to see the transformative impact of
+                  our partnerships.
+                </p> */}
               </div>
-              <div className="pt-4 lg:pt-6">
-                <button className="inline-flex items-center px-6 py-3 lg:px-8 lg:py-4 text-white font-normal rounded-lg hover:opacity-80 transition-colors duration-300 group bg-black">
-                  <span className="text-md lg:text-base">Case Studies</span>
-                  <ArrowRight className="ml-3 w-4 h-4 lg:w-5 lg:h-5 transition-transform group-hover:translate-x-1" />
+
+              {/* <div
+                className={`pt-6 lg:pt-8 ${
+                  true ? "animate-fade-in-up" : "opacity-0"
+                }`}
+                style={{ animationDelay: "400ms" }}
+              >
+                <button className="group relative inline-flex items-center px-8 py-4 text-white font-semibold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-gradient-to-r from-gray-900 to-gray-800">
+                  <span className="relative text-lg">
+                    Read More
+                  </span>
+                  <ArrowRight className="relative ml-3 w-5 h-5 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-2" />
                 </button>
+              </div> */}
+
+              {/* Stats */}
+              <div
+                className={`grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8 ${
+                  true ? "animate-fade-in-up" : "opacity-0"
+                }`}
+                style={{ animationDelay: "600ms" }}
+              >
               </div>
             </div>
           </div>
         </div>
 
-        {/* Absolutely positioned image at bottom */}
-        <div className="absolute bottom-0 right-0 lg:right-8 w-full lg:w-1/2 h-64 sm:h-80 md:h-[400px] lg:h-[450px] xl:h-[500px]">
-          <div className="relative w-full h-full rounded-t-2xl lg:rounded-2xl overflow-hidden">
-            <Image
-              src={ClientsHeroImage}
-              alt="Team Collaboration"
-              fill
-              className="object-cover rounded-t-2xl lg:rounded-2xl"
-              priority
-            />
-            <div className="absolute top-4 right-4 w-3 h-3 rounded-full opacity-60 bg-white" />
-            <div className="absolute bottom-6 left-6 w-2 h-2 rounded-full opacity-80 bg-white" />
-            <div className="absolute top-1/3 left-4 w-1 h-1 rounded-full bg-white" />
-          </div>
+        {/* Hero Image */}
+        <div
+          className={`absolute bottom-0 right-0 lg:right-8 w-full lg:w-1/2 h-[450px] xl:h-[500px] ${
+            true ? "animate-slide-in-right" : "opacity-0 translate-x-full"
+          }`}
+          style={{ animationDelay: "800ms" }}
+        >
+          <Image
+            src={ClientsHeroImage}
+            alt="Team Collaboration"
+            fill
+            className="object-cover rounded-t-2xl lg:rounded-2xl"
+            priority
+          />
         </div>
       </section>
 
-      <section className="py-16 px-4 pb-24 w-full bg-[#F6F6F6]">
+      {/* Clients Section */}
+      <section className="py-20 px-4 pb-32 w-full bg-gradient-to-b from-[#F8F9FA] to-[#F1F3F5]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-0 md:mb-16">
-            <h2 className="font-sf font-[300] text-center text-[#131313] mb-4 text-[clamp(24px,5vw,62px)] leading-[clamp(28.64px,6vw,72px)]">
-              Our Clients
+          <div className="text-center mb-16">
+            <h2 className="font-light text-center text-[#131313] mb-6 text-[clamp(32px,5vw,72px)] leading-[clamp(36px,6vw,84px)] tracking-tight">
+              Our{" "}
+              <span className="bg-gradient-to-r from-[#1122A1] to-[#D96B06] bg-clip-text text-transparent font-semibold">
+                Clients
+              </span>
             </h2>
-            <p className="text-gray-500 mx-auto font-normal sm:text-[18px] text-[16px] leading-6 sm:max-w-[668px] max-w-[335px]">
+            <p className="text-gray-600 mx-auto font-normal text-lg leading-relaxed sm:max-w-[720px] max-w-[380px]">
               Our focus is on building true partnerships and exceeding client
               expectations. Discover what sets us apart in our Client Stories.
             </p>
+
+            {/* Decorative line */}
+            {/* <div className="w-24 h-1 bg-gradient-to-r from-[#1122A1] to-[#D96B06] mx-auto mt-8 rounded-full" /> */}
           </div>
 
-          <div className="space-y-4 mt-8 sm:mt-8 md:mt-0 lg:mt-0 relative">
-            {renderClientGrid()}
-          </div>
+          <div className="space-y-8 mt-12">{renderClientGrid()}</div>
         </div>
       </section>
     </>

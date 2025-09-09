@@ -61,24 +61,24 @@ function ClientsSection() {
   }, [logos.length]);
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0 max-w-7xl py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+    <div className="container mx-auto max-w-7xl px-4 sm:px-6 xl:px-4 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
       {/* ✅ Grid for larger screens */}
-      <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-8">
         {logos.map((logo, index) => (
           <div
             key={index}
-            className="flex items-center justify-center bg-white rounded-sm shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1"
+            className="flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1"
           >
             <div
-              className={`relative w-full h-28 ${
-                logo.noPadding ? "mx-20" : ""
+              className={`relative w-full h-20 sm:h-24 lg:h-28 ${
+                logo.noPadding ? "m-8" : "m-2"
               }`}
             >
               <Image
                 src={logo.url}
                 alt={`${logo.name} logo`}
                 fill
-                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                 className="object-contain"
               />
             </div>
@@ -87,36 +87,51 @@ function ClientsSection() {
       </div>
 
       {/* ✅ Carousel for mobile screens */}
-      <div className="md:hidden overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${scrollIndex * 100}%)`,
-            width: `${logos.length * 100}%`,
-          }}
-        >
-          {logos.map((logo, index) => (
-            <div
-              key={index}
-              className="w-full flex-shrink-0 px-4"
-              style={{ flex: "0 0 100%" }} // Each slide takes full width
-            >
-              <div className="flex items-center justify-center bg-white rounded-sm shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
-                <div className="relative w-full h-28">
-                  <Image
-                    src={logo.url}
-                    alt={`${logo.name} logo`}
-                    fill
-                    className="object-contain"
-                  />
+      <div className="md:hidden relative">
+        <div className="overflow-hidden rounded-lg">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${scrollIndex * 100}%)`,
+            }}
+          >
+            {logos.map((logo, index) => (
+              <div key={index} className="w-full flex-shrink-0 px-2">
+                <div className="flex items-center justify-center mx-2">
+                  <div
+                    className={`relative w-full h-28`}
+                  >
+                    <Image
+                      src={logo.url}
+                      alt={`${logo.name} logo`}
+                      fill
+                      sizes="100vw"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Optional: Add indicators for mobile carousel */}
+        <div className="flex justify-center mt-4 space-x-2">
+          {logos.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setScrollIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                index === scrollIndex
+                  ? "bg-gray-800 w-6"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
       </div>
     </div>
   );
 }
-
 export default ClientsSection;

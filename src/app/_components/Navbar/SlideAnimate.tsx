@@ -49,7 +49,7 @@ export default function TextSlideUp({ isScroll, isSidebarOpen }: { isScroll: boo
                         y: { type: 'spring', stiffness: 300, damping: 30 },
                         opacity: { duration: 0.2 }
                     }}
-                    className={`text-center text-${isScroll ? 'black' : pathname.includes("/contact-us") ? 'black' : 'white'} text-sm font-semibold`}
+                    className={`text-center text-${isScroll ? 'black' : pathname.includes("/contact-us") ? 'black' : 'white'} text-md font-semibold`}
                 >
                     {messages[currentIndex]}
                 </motion.div>

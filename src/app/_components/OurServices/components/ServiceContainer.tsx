@@ -49,9 +49,9 @@ export default function ServicesContainer({ service, index }: any) {
             {service?.list?.map((item: string, idx: number) => (
               <div
                 key={idx}
-                className={`cursor-pointer py-3 sm:py-3 transition-colors duration-200 border-b last:border-b-0 ${
+                className={` py-3 sm:py-3 transition-colors duration-200 border-b last:border-b-0 ${
                   service.text ? service.text : "text-gray-700"
-                } hover:text-gray-100 text-xs sm:text-sm md:text-base break-words border-gray-200`}
+                } hover:text-gray-500 text-xs sm:text-sm md:text-base break-words border-gray-200`}
               >
                 {item}
               </div>

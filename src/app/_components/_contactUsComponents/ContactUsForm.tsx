@@ -2,23 +2,36 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
-import { ArrowRight, Loader2 } from "lucide-react";
-import React, { useState } from "react";
+import { ArrowRight, ChevronDown, Loader2 } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export default function ContactUsForm() {
   const [activeTab] = useState("quote");
   const [loading, setLoading] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+
+  // Custom dropdown states
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const {
     register,
     handleSubmit,
     reset,
     watch,
+    setValue,
+    clearErrors,
     formState: { errors },
   } = useForm<FormData>({
     mode: "onChange",
   });
+
   type FormData = {
     firstName: string;
     lastName: string;
@@ -30,29 +43,81 @@ export default function ContactUsForm() {
     terms: boolean;
   };
 
+  const serviceOptions = [
+    { value: "IT", label: "IT" },
+    { value: "digital-marketing", label: "Digital Marketing" },
+    { value: "branding-creative", label: "Branding and Creative" },
+    { value: "E-Learning", label: "E-Learning" },
+  ];
+
+  const selectedOption = serviceOptions.find(
+    (option) => option.value === selectedService
+  );
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleServiceSelect = (value: string) => {
+    setSelectedService(value);
+    setIsDropdownOpen(false);
+    // Update your form value
+    setValue("services", value);
+    // Clear any existing errors
+    clearErrors("services");
+  };
+
+  // Validate phone number
+  const validatePhoneNumber = (phoneValue: string) => {
+    if (!phoneValue || phoneValue.length < 10) {
+      setPhoneError("Please enter a valid phone number");
+      return false;
+    }
+    setPhoneError("");
+    return true;
+  };
+
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     console.log("Form data:", data);
+
+    // Validate phone number
+    if (!validatePhoneNumber(phone)) {
+      return;
+    }
+
     setLoading(true);
 
     // Determine dynamic service-based CC
-  let serviceCcEmail = "";
-  switch (data.services) {
-    case "IT":
-      serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_1 || "";
-      break;
-    case "digital-marketing":
-      serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_2 || "";
-      break;
-    case "branding-creative":
-      serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_3 || "";
-      break;
-    case "E-Learning":
-      serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_4 || "";
-      break;
-    default:
-      serviceCcEmail = ""; // fallback if no match
-      break;
-  }
+    let serviceCcEmail = "";
+    switch (data.services) {
+      case "IT":
+        serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_1 || "";
+        break;
+      case "digital-marketing":
+        serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_2 || "";
+        break;
+      case "branding-creative":
+        serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_3 || "";
+        break;
+      case "E-Learning":
+        serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_4 || "";
+        break;
+      default:
+        serviceCcEmail = ""; // fallback if no match
+        break;
+    }
+
     try {
       const response = await fetch("/api/sendEmail", {
         method: "POST",
@@ -76,7 +141,7 @@ export default function ContactUsForm() {
               <p>Hello Team</p>
               <p><b>Full Name:</b> ${data.firstName}  ${data.lastName}</p>
               <p><b>Email:</b> ${data.email}</p>
-              <p><b>Phone number: </b> ${data.phone}</p>
+              <p><b>Phone number: </b> ${phone}</p>
               ${
                 activeTab === "inquiry"
                   ? `<p><b>Subject:</b> ${data.subject}</p>`
@@ -98,12 +163,15 @@ export default function ContactUsForm() {
           firstName: data?.firstName,
           lastName: data?.lastName,
           email: data?.email,
-          phoneNumber: data?.phone,
+          phoneNumber: phone,
           message: data?.message,
           leadSource: "Squadra Website",
-          service: data.services|| "",
+          service: data.services || "",
         });
         reset();
+        setPhone(""); // Reset phone input
+        setPhoneError(""); // Reset phone error
+        setSelectedService(""); // Reset dropdown selection
       } else {
         toast.error(result.message || "Failed to send email", {
           duration: 3000,
@@ -125,11 +193,11 @@ export default function ContactUsForm() {
       {/* top Section */}
       <div className="w-full flex flex-col items-center">
         <h2 className="text-[30px] sm:text-[32px] md:text-[48px] lg:text-[54px] font-[400] mb-3">
-          Let’s Talk
+          Let&apos;s Talk
         </h2>
         <p className="text-[#6D6D6D] text-center lg:max-w-[663px]">
           We value your insights and look forward to meaningful discussions.
-          Share your thoughts with us, and let’s explore the possibilities
+          Share your thoughts with us, and let&apos;s explore the possibilities
           together.
         </p>
       </div>
@@ -213,27 +281,72 @@ export default function ContactUsForm() {
               )}
             </div>
 
-            <div>
+            <div className="relative">
               <label htmlFor="phone" className="block text-sm mb-2">
                 Phone Number*
               </label>
-              <input
-                id="phone"
-                type="tel"
-                placeholder="Phone Number"
-                {...register("phone", {
-                  required: "Phone number is required",
-                  pattern: {
-                    value: /^[0-9]{10}$/,
-                    message: "Enter a valid 10-digit phone number",
-                  },
-                })}
-                className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm appearance-none"
+              <PhoneInput
+                country={"in"}
+                value={phone}
+                onChange={(value) => {
+                  setPhone(value);
+                  if (phoneError) {
+                    validatePhoneNumber(value);
+                  }
+                }}
+                onBlur={() => validatePhoneNumber(phone)}
+                inputStyle={{
+                  width: "100%",
+                  height: "52px",
+                  fontSize: "14px",
+                  border: phoneError
+                    ? "1px solid #ef4444"
+                    : "1px solid #D1D1D1",
+                  borderRadius: "8px",
+                  paddingLeft: "48px",
+                }}
+                containerStyle={{
+                  width: "100%",
+                  position: "relative",
+                }}
+                buttonStyle={{
+                  border: phoneError
+                    ? "1px solid #ef4444"
+                    : "1px solid #D1D1D1",
+                  borderRadius: "8px 0 0 8px",
+                }}
+                dropdownStyle={{
+                  position: "absolute",
+                  top: "100%",
+                  left: "0",
+                  zIndex: 999,
+                  backgroundColor: "white",
+                  border: "1px solid #D1D1D1",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                  maxHeight: "200px",
+                  overflowY: "auto",
+                  width: "300px",
+                }}
               />
-              {errors.phone && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors?.phone?.message?.toString()}
-                </p>
+              <style jsx>{`
+                :global(.react-tel-input .selected-flag.open) {
+                  border-radius: 8px !important;
+                }
+                :global(.react-tel-input .selected-flag.open + input) {
+                  border-radius: 8px !important;
+                  padding-left: 48px !important;
+                }
+                :global(.react-tel-input .selected-flag:hover) {
+                  border-radius: 8px !important;
+                }
+                :global(.react-tel-input .selected-flag:hover + input) {
+                  border-radius: 8px !important;
+                  padding-left: 48px !important;
+                }
+              `}</style>
+              {phoneError && (
+                <p className="text-red-500 text-sm mt-1">{phoneError}</p>
               )}
             </div>
           </div>
@@ -250,6 +363,7 @@ export default function ContactUsForm() {
               className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
             />
           </div>
+
           {/* Tell Us More */}
           <div className="mb-4">
             <label
@@ -280,21 +394,88 @@ export default function ContactUsForm() {
             )}
           </div>
 
+          {/* UPDATED SERVICES DROPDOWN */}
           <div className="mb-4 w-full">
             <label htmlFor="services" className="block text-sm mb-2">
-              Services and BD&apos;s Names*
+              Services
             </label>
-            <select
-              id="services"
-              {...register("services", { required: "Please select a service" })}
-              className="w-full h-[52px] px-[16px] py-[12px] border border-[#D1D1D1] rounded-[8px] placeholder:text-sm"
-            >
-              <option value="">Select a service</option>
-              <option value="IT">IT - Pratik</option>
-              <option value="digital-marketing">Digital Marketing - Sandeep</option>
-              <option value="branding-creative">Branding and Creative- Nithin</option>
-              <option value="E-Learning">E-Learning - Karthik</option>
-            </select>
+
+            <div className="relative" ref={dropdownRef}>
+              {/* Hidden input for form validation */}
+              <input
+                type="hidden"
+                {...register("services", {
+                  required: "Please select a service",
+                })}
+                value={selectedService}
+              />
+
+              {/* Custom Select Button */}
+              <button
+                type="button"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className={`w-full h-[52px] px-[16px] py-[12px] pr-12 
+                  border rounded-[8px] 
+                  bg-white text-left text-sm font-medium
+                  focus:outline-none 
+                  transition-all duration-200 ease-in-out
+                  ${
+                    errors.services
+                      ? "border-red-300 focus:border-red-500"
+                      : isDropdownOpen
+                      ? "border-gray-800"
+                      : "border-[#D1D1D1] hover:border-gray-400"
+                  }
+                  ${!selectedService ? "text-gray-500" : "text-gray-900"}
+                `}
+              >
+                {selectedOption ? selectedOption.label : "Select a service"}
+              </button>
+
+              {/* Dropdown Arrow */}
+              <div
+                className={`absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none `}
+              >
+                <ChevronDown
+                  className={`w-5 h-5 transition-colors duration-200 transition-transform duration-200 text-gray-400 ${
+                    errors.services
+                      ? "text-red-400"
+                      : isDropdownOpen
+                      ? " rotate-180"
+                      : ""
+                  }`}
+                />
+              </div>
+
+              {/* Custom Dropdown Options */}
+              {isDropdownOpen && (
+                <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-[8px] shadow-lg overflow-hidden animate-in slide-in-from-top-2 duration-200">
+                  {serviceOptions.map((option, index) => (
+                    <button
+                      key={option.value}
+                      type="button"
+                      onClick={() => handleServiceSelect(option.value)}
+                      className={`w-full px-[16px] py-[12px] text-left text-sm transition-colors duration-150
+                        ${
+                          selectedService === option.value
+                            ? "bg-blue-50 text-blue-900 font-medium"
+                            : "text-gray-900 hover:bg-gray-50"
+                        }
+                        ${
+                          index !== serviceOptions.length - 1
+                            ? "border-b border-gray-100"
+                            : ""
+                        }
+                        focus:outline-none focus:bg-blue-50 focus:text-blue-900
+                      `}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {errors.services && (
               <p className="text-red-500 text-sm mt-1">
                 {errors?.services?.message?.toString()}
@@ -307,7 +488,7 @@ export default function ContactUsForm() {
             <div className="flex gap-[10px]">
               <input
                 type="checkbox"
-                className={`form-checkbox h-[20px] cursor-pointer w-[20px] transition duration-150 ease-in-out border ${
+                className={`form-checkbox h-4 cursor-pointer w-4 transition duration-150 ease-in-out border ${
                   errors.terms ? "border-red-500" : ""
                 }`}
                 style={{ accentColor: "#1E3A76" }}
@@ -315,7 +496,7 @@ export default function ContactUsForm() {
                   required: "Please check Privacy Policy",
                 })}
               />
-              <p className="font-normal text-[13px] leading-[20px] text-[#6d6d6d] lg:w-[60%] md:w-[75%]">
+              <p className="font-normal text-[13px] leading-[20px] text-[#6d6d6d]">
                 I have read the privacy policy and consent to the processing of
                 my data for the purpose of handling my enquiry
               </p>

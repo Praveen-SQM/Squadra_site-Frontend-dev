@@ -1,7 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import AnuImage from "@/utilities/images/Anu JS-about.jpg";
-import SandeshImage from "@/utilities/images/Sandesh K-about.jpg";
+import SandeshImage from "@/utilities/images/sandesh.jpg";
 import TarushImage from "@/utilities/images/Tarush Chandnani-about.jpg";
 
 interface Member {
