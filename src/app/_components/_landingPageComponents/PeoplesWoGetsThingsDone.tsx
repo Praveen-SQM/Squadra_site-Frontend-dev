@@ -44,7 +44,7 @@ function PeoplesWoGetsThingsDone() {
             <Carousel />
           </div>
 
-          <div className="xl:w-fit lg:w-[714px] md:w-[714px] sm:w-[714px] w-[335px] flex flex-col gap-6">
+          <div className="xl:w-full lg:w-[714px] md:w-[714px] sm:w-[714px] w-[335px] flex flex-col gap-6">
             <div className="w-full xl:h-[363px] lg:h-[363px] md:h-[363px] rounded-[24px]">
               <Image
                 priority
@@ -53,7 +53,7 @@ function PeoplesWoGetsThingsDone() {
                 blurDataURL="data:image/webp;base64,UklGRjIAAABXRUJQVlA4WAoAAAAQAAAABwAIAQUxQSAwAWAAQUAA0JaQAA3AA/v+/gAA="
                 quality={100}
                 src={
-                  "https://squadra-media.s3.ap-south-1.amazonaws.com/DSC_3720+2+(1).webp"
+                  "https://squadra-media.s3.ap-south-1.amazonaws.com/5+(2).jpg"
                 }
                 width={711}
                 height={363}
@@ -61,7 +61,7 @@ function PeoplesWoGetsThingsDone() {
                 className="w-full h-[363px] aspect-square rounded-[24px] object-cover"
               />
             </div>
-            <div className="flex items-center justify-center xl:gap-6 lg:gap-6 md:gap-6 sm:gap-6 gap-3 xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col">
+            <div className="flex items-center justify-around xl:gap-6 lg:gap-6 md:gap-6 sm:gap-6 gap-3 xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col">
               <div className="flex items-center justify-center xl:gap-6  lg:gap-6 md:gap-6 sm:gap-6 gap-3">
                 <div className="xl:w-[221px] xl:h-[130px] lg:w-[221px] lg:h-[130px] md:w-[221px] md:h-[130px] sm:w-[221px] sm:h-[130px] w-[162px] h-[64px] flex flex-col justify-center items-center xl:rounded-[24px] lg:rounded-[24px] md:rounded-[24px] sm:rounded-[24px] rounded-[11px] border border-[#E7E7E7] bg-[#F8F8F8] xl:p-6 lg:p-6 md:p-6 sm:p-6 p-[11.26px]">
                   <p
