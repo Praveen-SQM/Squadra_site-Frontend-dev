@@ -70,9 +70,9 @@ function ClientsSection() {
             className="flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1"
           >
             <div
-              className={`relative w-full h-20 sm:h-24 lg:h-28 ${
-                logo.noPadding ? "m-8" : "m-2"
-              }`}
+              className={`relative w-full h-20 sm:h-24 lg:h-28 m-2 ${
+                logo.noPadding ? "scale-50" : "scale-100"
+              } transition-transform duration-300`}
             >
               <Image
                 src={logo.url}
@@ -98,9 +98,7 @@ function ClientsSection() {
             {logos.map((logo, index) => (
               <div key={index} className="w-full flex-shrink-0 px-2">
                 <div className="flex items-center justify-center mx-2">
-                  <div
-                    className={`relative w-full h-28`}
-                  >
+                  <div className={`relative w-full h-28`}>
                     <Image
                       src={logo.url}
                       alt={`${logo.name} logo`}
