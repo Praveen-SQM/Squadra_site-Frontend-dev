@@ -44,10 +44,12 @@ export default function ContactUsForm() {
   };
 
   const serviceOptions = [
-    { value: "IT", label: "IT" },
+    { value: "it", label: "IT" },
+    { value: "e-learning-content-development", label: "E-Learning Content Development" },
+    { value: "branding-creative", label: "Branding & Creative" },
     { value: "digital-marketing", label: "Digital Marketing" },
-    { value: "branding-creative", label: "Branding and Creative" },
-    { value: "E-Learning", label: "E-Learning" },
+    { value: "e-commerce-website-development", label: "E-Commerce / Website Development" },
+    { value: "2d-3d-animation-content", label: "2D / 3D Animation Content" },
   ];
 
   const selectedOption = serviceOptions.find(

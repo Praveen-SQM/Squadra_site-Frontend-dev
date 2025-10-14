@@ -14,15 +14,6 @@ export default function Footer() {
     <footer className="bg-black w-full text-gray-400 py-8 px-2 sm:py-12 sm:px-6 lg:py-16 xl:px-24">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Logo Section */}
-        <div className="pb-6 md:pb-6 lg:pb-9">
-          <Link href="/" className="inline-block">
-            <Image
-              src={!pathname.includes("/it-services") ? logoWhite : itLogocolor}
-              alt="Squadra"
-              className="h-12"
-            />
-          </Link>
-        </div>
 
         {/* Main Footer Content Grid */}
         <div className="grid grid-cols-1 text-sm sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -162,6 +153,13 @@ export default function Footer() {
           </div>
         </div>
 
+        <Link href="/" className="inline-block">
+          <Image
+            src={!pathname.includes("/it-services") ? logoWhite : itLogocolor}
+            alt="Squadra"
+            className="h-12"
+          />
+        </Link>
         {/* Bottom Bar */}
         <div className="mt-12 lg:mt-16 pt-8 border-t border-gray-800">
           <div className="flex flex-col space-y-6 lg:space-y-0 lg:flex-row lg:items-center lg:justify-between">
