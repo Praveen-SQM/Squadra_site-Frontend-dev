@@ -62,15 +62,15 @@ function ClientsSection() {
 
   return (
     <div className="container mx-auto max-w-7xl px-4 sm:px-6 xl:px-4 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
-      {/* ✅ Grid for larger screens */}
-      <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-8">
+      {/* ✅ Flexbox for larger screens - centers last row */}
+      <div className="hidden md:flex md:flex-wrap md:justify-center gap-6 lg:gap-8">
         {logos.map((logo, index) => (
           <div
             key={index}
-            className="flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1"
+            className="flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 w-48 lg:w-52 xl:w-56 2xl:w-54"
           >
             <div
-              className={`relative w-full h-20 sm:h-24 lg:h-28 m-2 ${
+              className={`relative w-full h-20 sm:h-28 lg:h-34 m-2 ${
                 logo.noPadding ? "scale-50" : "scale-100"
               } transition-transform duration-300`}
             >
@@ -78,7 +78,7 @@ function ClientsSection() {
                 src={logo.url}
                 alt={`${logo.name} logo`}
                 fill
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 30vw, 20vw"
                 className="object-contain"
               />
             </div>
@@ -132,4 +132,5 @@ function ClientsSection() {
     </div>
   );
 }
+
 export default ClientsSection;
