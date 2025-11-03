@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from "lucide-react";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 type FormData = {
   name: string;
@@ -26,23 +28,116 @@ const industries = [
 
 export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+
   const {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log("Form data:", data);
-    setIsSubmitted(true);
-    reset();
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      // Determine dynamic service-based CC based on industry
+      let serviceCcEmail = "";
+      switch (data.industry) {
+        case "IT & Technology":
+          serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_1 || "";
+          break;
+        case "Manufacturing & Logistics":
+          serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_2 || "";
+          break;
+        case "Healthcare":
+          serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_3 || "";
+          break;
+        case "Education & Government":
+          serviceCcEmail = process.env.NEXT_PUBLIC_EMAIL_SERVICE_CC_4 || "";
+          break;
+        default:
+          serviceCcEmail = "";
+          break;
+      }
+
+      // Send email
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+          cc: [
+            ...(serviceCcEmail ? [serviceCcEmail] : []),
+            process.env.NEXT_PUBLIC_EMAIL_CC_2,
+          ],
+          bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+          message: {
+            subject: `E-LEARNING INQUIRY - ${data.industry}`,
+            text: "E-Learning Contact Form Submission",
+            html: `
+              <html>
+                <head></head>
+                <body>
+                  <p>Hello Team,</p>
+                  <p>New e-learning inquiry received:</p>
+                  <br>
+                  <p><b>Full Name:</b> ${data.name}</p>
+                  <p><b>Email:</b> ${data.email}</p>
+                  <p><b>Company:</b> ${data.company}</p>
+                  ${
+                    data.phone
+                      ? `<p><b>Phone Number:</b> ${data.phone}</p>`
+                      : ""
+                  }
+                  <p><b>Industry:</b> ${data.industry}</p>
+                  <p><b>Message:</b> ${data.message}</p>
+                  <br>
+                  <p>Thank you & Regards,<br><b>Squadraverse Team</b></p>
+                </body>
+              </html>`,
+          },
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success(result.message || "Message sent successfully!", {
+          duration: 3000,
+        });
+
+        // Send to Zoho CRM
+        await axios.post("/api/zoho", {
+          firstName: data.name.split(" ")[0] || data.name,
+          lastName: data.name.split(" ").slice(1).join(" ") || data.name,
+          email: data.email,
+          phoneNumber: data.phone || "",
+          message: data.message,
+          leadSource: "Squadraverse Website",
+          service: data.industry,
+          company: data.company,
+        });
+
+        // Show success state
+        setIsSubmitted(true);
+        reset();
+
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        toast.error(result.message || "Failed to send message", {
+          duration: 3000,
+        });
+      }
+    } catch (error) {
+      toast.error("An error occurred while sending your message");
+      console.error("Error sending message:", error);
+    }
   };
+
+  const maxChars = 1000;
+  const charCount = watch("message")?.length || 0;
 
   return (
     <section
@@ -123,7 +218,7 @@ export default function ContactForm() {
                 <div>
                   <h4 className="text-white font-semibold mb-1">Email Us</h4>
                   <a
-                    href="mailto:hello@squadraverse.com"
+                    href="mailto:Tarush@squadramedia.com"
                     className="text-purple-400 hover:text-purple-300 transition-colors"
                   >
                     Tarush@squadramedia.com
@@ -144,7 +239,7 @@ export default function ContactForm() {
                 <div>
                   <h4 className="text-white font-semibold mb-1">Call Us</h4>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+916366726494"
                     className="text-blue-400 hover:text-blue-300 transition-colors"
                   >
                     +91 6366726494
@@ -227,6 +322,10 @@ export default function ContactForm() {
                           value: 2,
                           message: "Name must be at least 2 characters",
                         },
+                        pattern: {
+                          value: /^[A-Za-z\s]+$/,
+                          message: "Name must contain only letters",
+                        },
                       })}
                       type="text"
                       id="name"
@@ -252,8 +351,8 @@ export default function ContactForm() {
                       {...register("email", {
                         required: "Email is required",
                         pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "Invalid email address",
+                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                          message: "Enter a valid email address",
                         },
                       })}
                       type="email"
@@ -343,9 +442,12 @@ export default function ContactForm() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-300 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2 flex justify-between"
                     >
-                      Message *
+                      <span>Message *</span>
+                      <span className="text-gray-500">
+                        {charCount} / {maxChars}
+                      </span>
                     </label>
                     <textarea
                       {...register("message", {
@@ -353,6 +455,10 @@ export default function ContactForm() {
                         minLength: {
                           value: 10,
                           message: "Message must be at least 10 characters",
+                        },
+                        maxLength: {
+                          value: maxChars,
+                          message: `Message cannot exceed ${maxChars} characters`,
                         },
                       })}
                       id="message"
@@ -377,7 +483,7 @@ export default function ContactForm() {
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <Loader2 className="w-5 h-5 animate-spin" />
                         Sending...
                       </>
                     ) : (
