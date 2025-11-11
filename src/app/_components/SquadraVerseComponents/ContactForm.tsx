@@ -221,7 +221,7 @@ export default function ContactForm() {
                     href="mailto:Tarush@squadramedia.com"
                     className="text-purple-400 hover:text-purple-300 transition-colors"
                   >
-                    Tarush@squadramedia.com
+                    bd@squadramedia.com
                   </a>
                 </div>
               </motion.div>
