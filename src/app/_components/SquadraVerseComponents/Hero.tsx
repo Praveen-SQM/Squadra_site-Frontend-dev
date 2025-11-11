@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
+import Image from "next/image";
+import squadraVerseLogo from "../../../utilities/images/SquadraVerse_logo.png";
 
 export default function Hero() {
   return (
@@ -93,25 +95,42 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6"
+          className="sm:mb-6 mb-3"
         >
           <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-cyan-300 border border-cyan-500/30">
             An E-Learning Powerhouse by Squadra Media
           </span>
         </motion.div>
 
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-6 flex justify-center"
+        >
+          <div className="relative w-64 h-[55px] sm:w-80 sm:h-40 md:w-96 md:h-20">
+            <Image
+              src={squadraVerseLogo}
+              alt="SquadraVerse Logo"
+              fill
+              className="object-contain drop-shadow-2xl"
+              priority
+            />
+          </div>
+        </motion.div>
+
         {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6"
         >
-          <span className="block">Squadraverse</span>
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400"
           >
             Transform Learning
@@ -122,7 +141,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="text-base sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto"
         >
           Transforming corporate learning into intelligent, engaging, and
@@ -133,7 +152,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
         >
           {/* Primary CTA */}
@@ -147,7 +166,7 @@ export default function Hero() {
                 block: "start",
               });
             }}
-            className="group relative px-8 py-4 bg-gradient-to-r from-[#1E7FDC] to-[#0DB8D3] text-white rounded-full font-semibold text-lg shadow-2xl shadow-blue-500/60 overflow-hidden cursor-pointer border-2 border-white/30 hover:border-white/50 transition-all"
+            className="group relative px-8 py-2 sm:py-4 bg-gradient-to-r from-[#1E7FDC] to-[#0DB8D3] text-white rounded-full font-semibold text-lg shadow-2xl shadow-blue-500/60 overflow-hidden cursor-pointer border-2 border-white/30 hover:border-white/50 transition-all"
           >
             <span className="relative z-10 flex items-center gap-2 drop-shadow-lg">
               Start Your E-Learning Project
@@ -172,7 +191,7 @@ export default function Hero() {
                 block: "start",
               });
             }}
-            className="group px-8 py-4 bg-slate-800/60 backdrop-blur-md text-white rounded-full font-semibold text-lg border-2 border-white/40 hover:bg-slate-700/70 hover:border-white/60 transition-all shadow-xl cursor-pointer"
+            className="group px-8 py-2 sm:py-4 bg-slate-800/60 backdrop-blur-md text-white rounded-full font-semibold text-lg border-2 border-white/40 hover:bg-slate-700/70 hover:border-white/60 transition-all shadow-xl cursor-pointer"
           >
             <span className="flex items-center gap-2 drop-shadow-lg">
               <Play className="w-5 h-5" />
@@ -185,7 +204,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
+          transition={{ duration: 1, delay: 0.9 }}
           className="mt-8 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           {[
@@ -197,7 +216,7 @@ export default function Hero() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
               className="text-center"
             >
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
@@ -207,22 +226,6 @@ export default function Hero() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Scroll indicator - commented out as per your code */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
-          >
-            <motion.div className="w-1.5 h-1.5 bg-white rounded-full" />
-          </motion.div>
-        </motion.div> */}
       </div>
     </section>
   );
