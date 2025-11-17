@@ -21,7 +21,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#193546] via-[#0DB8D3] via-40% via-[#1B7FDC] via-65% to-[#065B98] [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#193546] via-[#0DB8D3] via-40% via-[#1B7FDC] via-65% to-[#065B98] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] pt-20 sm:pt-0">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
         {/* Purple wave texture behind the text */}
@@ -135,7 +135,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="sm:mb-6 mb-3"
+          className="sm:mb-6 mb-4 mt-4 sm:mt-0"
         >
           <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm min-[1920px]:text-base text-cyan-300 border border-cyan-500/30 [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
             An E-Learning Powerhouse by Squadra Media
