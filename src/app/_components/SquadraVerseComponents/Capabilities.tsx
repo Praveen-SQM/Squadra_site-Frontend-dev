@@ -96,28 +96,28 @@ export default function Capabilities() {
   return (
     <section
       id="capabilities"
-      className="py-16 bg-slate-950 relative overflow-hidden"
+      className="py-16 min-[1920px]:py-24 bg-slate-950 relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl min-[1920px]:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 min-[1920px]:px-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 min-[1920px]:mb-20"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-bold text-white mb-4"
+            className="text-4xl sm:text-5xl min-[1920px]:text-6xl font-bold text-white mb-4"
           >
             Our{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -129,7 +129,7 @@ export default function Capabilities() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            className="text-xl min-[1920px]:text-2xl text-gray-400 max-w-3xl min-[1920px]:max-w-4xl mx-auto"
           >
             We create and deliver full-scale learning ecosystems tailored to
             your goals — combining instructional design, creative excellence,
@@ -143,7 +143,7 @@ export default function Capabilities() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-[1920px]:gap-8"
         >
           {capabilities.map((capability, index) => {
             const Icon = capability.icon;
@@ -154,7 +154,7 @@ export default function Capabilities() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="group relative"
               >
-                <div className="relative h-full p-6 bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden">
+                <div className="relative h-full p-6 min-[1920px]:p-8 bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden">
                   {/* Hover gradient effect */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${capability.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
@@ -162,16 +162,19 @@ export default function Capabilities() {
 
                   {/* Icon - More Visible */}
                   <div
-                    className={`relative mb-4 w-14 h-14 rounded-xl bg-gradient-to-br ${capability.gradient} flex items-center justify-center shadow-lg`}
+                    className={`relative mb-4 min-[1920px]:mb-6 w-14 h-14 min-[1920px]:w-16 min-[1920px]:h-16 rounded-xl bg-gradient-to-br ${capability.gradient} flex items-center justify-center shadow-lg`}
                   >
-                    <Icon className="w-7 h-7 text-white" strokeWidth={2} />
+                    <Icon
+                      className="w-7 h-7 min-[1920px]:w-8 min-[1920px]:h-8 text-white"
+                      strokeWidth={2}
+                    />
                   </div>
 
                   {/* Content */}
-                  <h3 className="relative text-lg font-semibold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+                  <h3 className="relative text-lg min-[1920px]:text-xl font-semibold text-white mb-3 min-[1920px]:mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
                     {capability.title}
                   </h3>
-                  <p className="relative text-sm text-gray-400 leading-relaxed">
+                  <p className="relative text-sm min-[1920px]:text-base text-gray-400 leading-relaxed">
                     {capability.description}
                   </p>
 

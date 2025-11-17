@@ -1,53 +1,54 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { TrendingUp, Users, Clock, ArrowUpRight } from 'lucide-react';
+import { motion } from "framer-motion";
+import { TrendingUp, Users, Clock, ArrowUpRight } from "lucide-react";
 
 const caseStudies = [
   {
-    client: 'Maritime Client',
-    industry: 'Shipping & Maritime',
-    challenge: 'Global Crew Training Standardization',
-    solution: '60-module offline e-learning suite for global crew training',
+    client: "Maritime Client",
+    industry: "Shipping & Maritime",
+    challenge: "Global Crew Training Standardization",
+    solution: "60-module offline e-learning suite for global crew training",
     results: [
-      { metric: '70%', label: 'Increase in Engagement', icon: TrendingUp },
-      { metric: '5,000+', label: 'Crew Members Trained', icon: Users },
-      { metric: '40%', label: 'Faster Onboarding', icon: Clock },
+      { metric: "70%", label: "Increase in Engagement", icon: TrendingUp },
+      { metric: "5,000+", label: "Crew Members Trained", icon: Users },
+      { metric: "40%", label: "Faster Onboarding", icon: Clock },
     ],
     description:
-      'Developed a comprehensive offline learning platform for maritime crews across 20+ vessels, ensuring consistent training delivery in low-connectivity environments.',
-    gradient: 'from-blue-500 to-cyan-500',
-    bgColor: 'bg-blue-500/5',
+      "Developed a comprehensive offline learning platform for maritime crews across 20+ vessels, ensuring consistent training delivery in low-connectivity environments.",
+    gradient: "from-blue-500 to-cyan-500",
+    bgColor: "bg-blue-500/5",
   },
   {
-    client: 'University Network',
-    industry: 'Education',
-    challenge: 'Faculty-Student Engagement',
-    solution: 'Blended faculty-student learning programs with interactive modules',
+    client: "University Network",
+    industry: "Education",
+    challenge: "Faculty-Student Engagement",
+    solution:
+      "Blended faculty-student learning programs with interactive modules",
     results: [
-      { metric: '55%', label: 'Higher Completion', icon: TrendingUp },
-      { metric: '12,000+', label: 'Active Learners', icon: Users },
-      { metric: '30%', label: 'Time Saved', icon: Clock },
+      { metric: "55%", label: "Higher Completion", icon: TrendingUp },
+      { metric: "12,000+", label: "Active Learners", icon: Users },
+      { metric: "30%", label: "Time Saved", icon: Clock },
     ],
     description:
-      'Created engaging blended learning experiences combining live sessions with on-demand modules, resulting in dramatically improved student outcomes.',
-    gradient: 'from-purple-500 to-pink-500',
-    bgColor: 'bg-purple-500/5',
+      "Created engaging blended learning experiences combining live sessions with on-demand modules, resulting in dramatically improved student outcomes.",
+    gradient: "from-purple-500 to-pink-500",
+    bgColor: "bg-purple-500/5",
   },
   {
-    client: 'Tech Enterprise',
-    industry: 'IT & Technology',
-    challenge: 'Global Compliance Rollout',
-    solution: 'Multilingual compliance training across 15 regions',
+    client: "Tech Enterprise",
+    industry: "IT & Technology",
+    challenge: "Global Compliance Rollout",
+    solution: "Multilingual compliance training across 15 regions",
     results: [
-      { metric: '40%', label: 'Faster Implementation', icon: TrendingUp },
-      { metric: '25,000+', label: 'Employees Certified', icon: Users },
-      { metric: '95%', label: 'Completion Rate', icon: Clock },
+      { metric: "40%", label: "Faster Implementation", icon: TrendingUp },
+      { metric: "25,000+", label: "Employees Certified", icon: Users },
+      { metric: "95%", label: "Completion Rate", icon: Clock },
     ],
     description:
-      'Delivered compliance training in 12 languages with cultural adaptation, ensuring consistent understanding across diverse global teams.',
-    gradient: 'from-orange-500 to-red-500',
-    bgColor: 'bg-orange-500/5',
+      "Delivered compliance training in 12 languages with cultural adaptation, ensuring consistent understanding across diverse global teams.",
+    gradient: "from-orange-500 to-red-500",
+    bgColor: "bg-orange-500/5",
   },
 ];
 
@@ -55,30 +56,30 @@ export default function CaseStudies() {
   return (
     <section
       id="case-studies"
-      className="py-24 bg-gradient-to-b from-slate-950 to-slate-900 relative overflow-hidden"
+      className="py-24 min-[1920px]:py-32 bg-gradient-to-b from-slate-950 to-slate-900 relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl min-[1920px]:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 min-[1920px]:px-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 min-[1920px]:mb-20"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-bold text-white mb-4"
+            className="text-4xl sm:text-5xl min-[1920px]:text-6xl font-bold text-white mb-4"
           >
-            Proven{' '}
+            Proven{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
               Results
             </span>
@@ -88,7 +89,7 @@ export default function CaseStudies() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            className="text-xl min-[1920px]:text-2xl text-gray-400 max-w-3xl min-[1920px]:max-w-4xl mx-auto"
           >
             We&apos;ve helped forward-thinking organizations transform how they
             educate their people
@@ -96,7 +97,7 @@ export default function CaseStudies() {
         </motion.div>
 
         {/* Case Studies Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 min-[1920px]:gap-10">
           {caseStudies.map((study, index) => (
             <motion.div
               key={index}
@@ -108,7 +109,7 @@ export default function CaseStudies() {
               className="group relative h-full"
             >
               <div
-                className={`relative h-full p-8 ${study.bgColor} backdrop-blur-sm rounded-3xl border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden`}
+                className={`relative h-full p-8 min-[1920px]:p-10 ${study.bgColor} backdrop-blur-sm rounded-3xl border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden`}
               >
                 {/* Gradient overlay on hover */}
                 <div
@@ -120,29 +121,29 @@ export default function CaseStudies() {
                   {/* Industry tag */}
                   <div className="mb-4">
                     <span
-                      className={`inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${study.gradient} text-white`}
+                      className={`inline-block px-3 py-1 text-xs min-[1920px]:text-sm font-semibold rounded-full bg-gradient-to-r ${study.gradient} text-white`}
                     >
                       {study.industry}
                     </span>
                   </div>
 
                   {/* Client name */}
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-2xl min-[1920px]:text-3xl font-bold text-white mb-2">
                     {study.client}
                   </h3>
 
                   {/* Challenge */}
-                  <p className="text-sm text-purple-400 font-semibold mb-4">
+                  <p className="text-sm min-[1920px]:text-base text-purple-400 font-semibold mb-4">
                     {study.challenge}
                   </p>
 
                   {/* Solution */}
-                  <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+                  <p className="text-sm min-[1920px]:text-base text-gray-400 mb-6 min-[1920px]:mb-8 leading-relaxed">
                     {study.description}
                   </p>
 
                   {/* Results metrics */}
-                  <div className="space-y-4 mb-6">
+                  <div className="space-y-4 min-[1920px]:space-y-5 mb-6 min-[1920px]:mb-8">
                     {study.results.map((result, idx) => {
                       const Icon = result.icon;
                       return (
@@ -152,18 +153,18 @@ export default function CaseStudies() {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
-                          className="flex items-center gap-3"
+                          className="flex items-center gap-3 min-[1920px]:gap-4"
                         >
                           <div
-                            className={`w-10 h-10 rounded-lg bg-gradient-to-br ${study.gradient} flex items-center justify-center flex-shrink-0`}
+                            className={`w-10 h-10 min-[1920px]:w-12 min-[1920px]:h-12 rounded-lg bg-gradient-to-br ${study.gradient} flex items-center justify-center flex-shrink-0`}
                           >
-                            <Icon className="w-5 h-5 text-white" />
+                            <Icon className="w-5 h-5 min-[1920px]:w-6 min-[1920px]:h-6 text-white" />
                           </div>
                           <div>
-                            <div className="text-2xl font-bold text-white">
+                            <div className="text-2xl min-[1920px]:text-3xl font-bold text-white">
                               {result.metric}
                             </div>
-                            <div className="text-xs text-gray-400">
+                            <div className="text-xs min-[1920px]:text-sm text-gray-400">
                               {result.label}
                             </div>
                           </div>
@@ -175,10 +176,10 @@ export default function CaseStudies() {
                   {/* Learn more link */}
                   <motion.div
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-2 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition-colors cursor-pointer"
+                    className="flex items-center gap-2 text-sm min-[1920px]:text-base font-semibold text-purple-400 group-hover:text-purple-300 transition-colors cursor-pointer"
                   >
                     <span>View Case Study</span>
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-4 h-4 min-[1920px]:w-5 min-[1920px]:h-5" />
                   </motion.div>
                 </div>
 
@@ -197,18 +198,11 @@ export default function CaseStudies() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-12"
+          className="text-center mt-12 min-[1920px]:mt-16"
         >
-          <p className="text-gray-400 text-lg mb-6">
+          <p className="text-gray-400 text-lg min-[1920px]:text-xl mb-6">
             See how we can deliver similar results for your organization
           </p>
-          {/* <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full font-semibold border border-white/20 hover:bg-white/20 transition-colors"
-          >
-            Explore All Case Studies
-          </motion.button> */}
         </motion.div>
       </div>
     </section>

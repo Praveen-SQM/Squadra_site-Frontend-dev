@@ -87,27 +87,27 @@ export default function Industries() {
     <section
       id="industries"
       ref={containerRef}
-      className="py-16 bg-gradient-to-b from-slate-950 to-slate-900 relative overflow-hidden"
+      className="py-16 min-[1920px]:py-24 bg-gradient-to-b from-slate-950 to-slate-900 relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
 
       <motion.div style={{ opacity, scale }} className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="max-w-7xl min-[1920px]:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 min-[1920px]:px-20 mb-12 min-[1920px]:mb-16">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-16 min-[1920px]:mb-20"
           >
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl font-bold text-white mb-4"
+              className="text-4xl sm:text-5xl min-[1920px]:text-6xl font-bold text-white mb-4"
             >
               Industries We{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -119,7 +119,7 @@ export default function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-400 max-w-3xl mx-auto"
+              className="text-xl min-[1920px]:text-2xl text-gray-400 max-w-3xl min-[1920px]:max-w-4xl mx-auto"
             >
               Our solutions adapt to the unique learning needs of every sector
             </motion.p>
@@ -134,7 +134,7 @@ export default function Industries() {
 
           {/* Scrollable cards */}
           <div className="overflow-x-auto scrollbar-hide px-4 sm:px-6 lg:px-8">
-            <div className="flex gap-6 pb-8 min-w-max">
+            <div className="flex gap-6 min-[1920px]:gap-8 pb-8 min-w-max">
               {industries.map((industry, index) => {
                 const Icon = industry.icon;
                 return (
@@ -145,9 +145,9 @@ export default function Industries() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ y: -8 }}
-                    className="group flex-shrink-0 w-80 sm:w-96"
+                    className="group flex-shrink-0 w-80 sm:w-96 min-[1920px]:w-[450px]"
                   >
-                    <div className="relative h-full p-8 bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden">
+                    <div className="relative h-full p-8 min-[1920px]:p-10 bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden">
                       {/* Background gradient on hover */}
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
@@ -155,10 +155,10 @@ export default function Industries() {
 
                       {/* Icon */}
                       <div
-                        className={`relative mb-6 w-16 h-16 rounded-2xl ${industry.bgColor} flex items-center justify-center`}
+                        className={`relative mb-6 min-[1920px]:mb-8 w-16 h-16 min-[1920px]:w-20 min-[1920px]:h-20 rounded-2xl ${industry.bgColor} flex items-center justify-center`}
                       >
                         <div
-                          className={`w-12 h-12 rounded-xl bg-gradient-to-br ${industry.color} p-2`}
+                          className={`w-12 h-12 min-[1920px]:w-16 min-[1920px]:h-16 rounded-xl bg-gradient-to-br ${industry.color} p-2 min-[1920px]:p-3`}
                         >
                           <Icon
                             className="w-full h-full text-white"
@@ -168,13 +168,13 @@ export default function Industries() {
                       </div>
 
                       {/* Content */}
-                      <h3 className="relative text-2xl font-bold text-white mb-3">
+                      <h3 className="relative text-2xl min-[1920px]:text-3xl font-bold text-white mb-3 min-[1920px]:mb-4">
                         {industry.title}
                       </h3>
-                      <p className="relative text-sm font-semibold text-purple-400 mb-4">
+                      <p className="relative text-sm min-[1920px]:text-base font-semibold text-purple-400 mb-4 min-[1920px]:mb-5">
                         {industry.description}
                       </p>
-                      <p className="relative text-sm text-gray-400 leading-relaxed mb-6">
+                      <p className="relative text-sm min-[1920px]:text-base text-gray-400 leading-relaxed mb-6 min-[1920px]:mb-8">
                         {industry.details}
                       </p>
 
@@ -182,10 +182,10 @@ export default function Industries() {
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        className="relative flex items-center gap-2 text-sm text-purple-400 group-hover:text-purple-300 transition-colors"
+                        className="relative flex items-center gap-2 text-sm min-[1920px]:text-base text-purple-400 group-hover:text-purple-300 transition-colors"
                       >
                         <span>Learn more</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4 min-[1920px]:w-5 min-[1920px]:h-5 group-hover:translate-x-1 transition-transform" />
                       </motion.div>
 
                       {/* Bottom shine effect */}
@@ -204,9 +204,9 @@ export default function Industries() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-12 px-4"
+          className="text-center mt-12 min-[1920px]:mt-16 px-4"
         >
-          <p className="text-lg text-gray-400 max-w-4xl mx-auto">
+          <p className="text-lg min-[1920px]:text-xl text-gray-400 max-w-4xl min-[1920px]:max-w-5xl mx-auto">
             Whatever your industry, we design learning that your people{" "}
             <span className="text-white font-semibold">understand</span>,{" "}
             <span className="text-white font-semibold">remember</span>, and{" "}

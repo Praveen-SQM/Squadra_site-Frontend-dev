@@ -218,7 +218,7 @@ export default function ContactForm() {
                 <div>
                   <h4 className="text-white font-semibold mb-1">Email Us</h4>
                   <a
-                    href="mailto:Tarush@squadramedia.com"
+                    href="mailto:bd@squadramedia.com"
                     className="text-purple-400 hover:text-purple-300 transition-colors"
                   >
                     bd@squadramedia.com
