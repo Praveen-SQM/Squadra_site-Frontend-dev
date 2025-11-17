@@ -195,7 +195,7 @@ export default function Ecosystem() {
                 { part: satelliteNodes[0], angle: -90, name: "top" }, // Squadra Media - Top
                 { part: satelliteNodes[2], angle: 210, name: "left" }, // Squadra Production - Bottom Left
                 { part: satelliteNodes[1], angle: -30, name: "right" }, // Squadra IT - Top Right
-              ].map(({ part, angle, name }, index) => {
+              ].map(({ part, angle }, index) => {
                 const Icon = part.icon;
                 const radius = 220;
                 const angleRad = (angle * Math.PI) / 180;
