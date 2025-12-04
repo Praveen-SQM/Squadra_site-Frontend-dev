@@ -193,7 +193,7 @@ export default function Footer() {
               <div className="flex items-center space-x-4">
                 <Link
                   target="_blank"
-                  href="https://www.instagram.com/_squadra_media_?igsh=MW1lZWJjMW51NXhweA=="
+                  href="https://www.instagram.com/squadra_media_?igsh=MW1lZWJjMW51NXhweA=="
                   className="hover:text-gray-400 transition-colors"
                 >
                   <svg
