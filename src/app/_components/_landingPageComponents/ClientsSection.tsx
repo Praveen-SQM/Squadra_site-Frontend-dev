@@ -137,7 +137,6 @@ import clientColdStone from "../../../utilities/icons/client-coldStone.png";
 
 // export default ClientsSection;
 
-
 const clients = [
   { src: clientVIDA, alt: "VIDA" },
   { src: clientGREE, alt: "GREE" },
@@ -153,7 +152,7 @@ const clients = [
 
 const industries = [
   "Real Estate",
-  "FMCG", 
+  "FMCG",
   "Education",
   "Healthcare",
   "F&B",
@@ -169,7 +168,7 @@ const ClientsSection = () => {
           <p className="text-[hsl(var(--squadra-gold))] font-semibold uppercase text-sm tracking-wider mb-4">
             Trusted Partners
           </p>
-          
+
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-[hsl(var(--squadra-dark))]">
             Built for <span className="text-gradient">Ambitious Brands</span>
           </h2>
@@ -177,19 +176,20 @@ const ClientsSection = () => {
             We work with businesses that want to dominate, not just compete.
           </p>
           <p className="text-base text-muted-foreground">
-            From global leaders to fast-growing disruptors who trust Squadra to deliver clarity and performance at scale.
+            From global leaders to fast-growing disruptors who trust Squadra to
+            deliver clarity and performance at scale.
           </p>
         </div>
 
         {/* Client Logos */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
           {clients.map((client, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="card-clean p-8 flex items-center justify-center group hover:border-[hsl(var(--squadra-gold))] min-h-[120px]"
             >
               <Image
-                src={client.src} 
+                src={client.src}
                 alt={client.alt}
                 className="max-h-28 max-w-[180px] w-full h-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity scale-110"
                 width={180}
@@ -202,14 +202,44 @@ const ClientsSection = () => {
         {/* Additional Clients Text */}
         <div className="text-center mb-8">
           <p className="text-muted-foreground">
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]">Synergy Marine</span> | 
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]"> OIA Global</span> | 
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]"> Prime Golf</span> | 
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]"> Sea Learning</span> | 
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]"> Aisshpra Jewels</span> | 
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]"> NRRS</span> | 
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]"> Tradelink</span> | 
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]"> CMR</span>
+            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
+              Synergy Marine
+            </span>{" "}
+            |
+            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
+              {" "}
+              OIA Global
+            </span>{" "}
+            |
+            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
+              {" "}
+              Prime Golf
+            </span>{" "}
+            |
+            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
+              {" "}
+              Sea Learning
+            </span>{" "}
+            |
+            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
+              {" "}
+              Aisshpra Jewels
+            </span>{" "}
+            |
+            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
+              {" "}
+              NRRS
+            </span>{" "}
+            |
+            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
+              {" "}
+              Tradelink
+            </span>{" "}
+            |
+            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
+              {" "}
+              CMR
+            </span>
             <span className="text-muted-foreground"> and more</span>
           </p>
         </div>
@@ -217,8 +247,8 @@ const ClientsSection = () => {
         {/* Industries */}
         <div className="flex flex-wrap justify-center gap-3">
           {industries.map((industry, i) => (
-            <span 
-              key={i} 
+            <span
+              key={i}
               className="px-4 py-2 rounded-full bg-white border border-border text-sm font-medium text-[hsl(var(--squadra-dark))]"
             >
               {industry}
