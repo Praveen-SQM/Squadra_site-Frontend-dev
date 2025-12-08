@@ -1,78 +1,69 @@
+/* Fonts - Remove this line if using next/font in layout.tsx */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* html {
-  scroll-behavior: smooth;
-} */
-
-body {
-  /* font-family: Arial, Helvetica, sans-serif; */
-  padding: 0;
-  overflow-x: hidden;
-}
-
-.react-tel-input .flag-dropdown {
-  background-color: white !important;
-}
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  @keyframes slide-left {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slide-right {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  .animate-slide-left {
-    animation: slide-left 0.5s ease-in-out;
-  }
-
-  .animate-slide-right {
-    animation: slide-right 0.5s ease-in-out;
-  }
-}
 
 @layer base {
   :root {
+    /* Background & Foreground */
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 220 15% 15%;
+
+    /* Card */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 220 15% 15%;
+
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Primary */
+    --primary: 42 96% 53%;
+    --primary-foreground: 220 15% 15%;
+
+    /* Secondary */
+    --secondary: 45 30% 96%;
+    --secondary-foreground: 220 15% 15%;
+
+    /* Muted */
+    --muted: 45 20% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent */
+    --accent: 42 96% 53%;
+    --accent-foreground: 220 15% 15%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+
+    /* Border, Input, Ring */
+    --border: 45 20% 90%;
+    --input: 45 20% 90%;
+    --ring: 42 96% 53%;
+
+    /* Chart Colors (from Next.js project) */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+
+    /* Border Radius */
+    --radius: 0.75rem;
+
+    /* Squadra Brand Colors - Yellow/Gold focused */
+    --squadra-gold: 42 96% 53%;
+    --squadra-gold-light: 45 95% 70%;
+    --squadra-gold-dark: 38 90% 45%;
+    --squadra-dark: 220 15% 10%;
+    --squadra-gray: 220 10% 96%;
+    --squadra-gray-dark: 220 10% 30%;
   }
+
+  /* Dark Mode Support (from Next.js project) */
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -105,11 +96,35 @@ body {
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
   }
 }
 
+/* React Tel Input Styles (from Next.js project) */
+.react-tel-input .flag-dropdown {
+  background-color: white !important;
+}
+
+/* Custom Scrollbar Styles (from Next.js project) */
 ::-webkit-scrollbar {
   width: 0.7rem;
 }
@@ -123,5 +138,91 @@ body {
   border: 3px solid transparent;
   background-clip: content-box;
   border-radius: 15px;
-  /* height: 10%; */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient Text Utility (from React project) */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--squadra-gold-dark))] via-[hsl(var(--squadra-gold))] to-[hsl(var(--squadra-gold-light))];
+  }
+
+  /* Gradient Blob Utility (from React project) */
+  .gradient-blob {
+    @apply absolute rounded-full blur-3xl opacity-30 pointer-events-none;
+  }
+
+  /* Card Clean Utility (from React project) */
+  .card-clean {
+    @apply bg-white rounded-2xl border border-border shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+
+  /* Button Primary Utility (from React project) */
+  .btn-primary {
+    @apply bg-[hsl(var(--squadra-gold))] text-[hsl(var(--squadra-dark))] font-semibold hover:bg-[hsl(var(--squadra-gold-dark))] transition-colors;
+  }
+
+  /* Glass Dark Utility (from React project) */
+  .glass-dark {
+    @apply bg-[hsl(var(--squadra-dark))]/90 backdrop-blur-xl border border-white/10;
+  }
+
+  /* Slide Animations (from Next.js project) */
+  @keyframes slide-left {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-right {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-left {
+    animation: slide-left 0.5s ease-in-out;
+  }
+
+  .animate-slide-right {
+    animation: slide-right 0.5s ease-in-out;
+  }
+}
+
+/* Additional Animations (from React project) */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
 }
