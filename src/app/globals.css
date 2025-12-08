@@ -11,14 +11,14 @@ body {
   overflow-x: hidden;
 }
 
-.react-tel-input .flag-dropdown{
+.react-tel-input .flag-dropdown {
   background-color: white !important;
 }
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-    @keyframes slide-left {
+  @keyframes slide-left {
     from {
       transform: translateX(100%);
     }
@@ -125,5 +125,3 @@ body {
   border-radius: 15px;
   /* height: 10%; */
 }
-
-
