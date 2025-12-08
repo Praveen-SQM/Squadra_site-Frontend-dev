@@ -1,3 +1,5 @@
+"use client";
+
 import {
   TrendingUp,
   Users,
@@ -5,8 +7,11 @@ import {
   Smartphone,
   Globe,
   Target,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const caseStudies = [
   {
@@ -110,6 +115,40 @@ const caseStudies = [
 ];
 
 const CaseStudies = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Auto-slide functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % caseStudies.length);
+    }, 6000); // Change slide every 6 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000); // Resume auto-play after 10s
+  };
+
+  const goToPrevious = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + caseStudies.length) % caseStudies.length
+    );
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const goToNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % caseStudies.length);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
   return (
     <section
       id="case-studies"
@@ -127,102 +166,164 @@ const CaseStudies = () => {
           </h2>
         </div>
 
-        <div className="space-y-12">
-          {caseStudies.map((study, i) => (
-            <div key={i} className="card-clean overflow-hidden">
-              <div className="grid lg:grid-cols-2 gap-0">
-                {/* Image */}
-                <div className="relative h-64 lg:h-auto overflow-hidden">
-                  <Image
-                    src={study.image}
-                    alt={study.title}
-                    className="w-full h-full object-cover object-top"
-                    fill
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--squadra-dark))]/60 to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[hsl(var(--squadra-gold))] text-[hsl(var(--squadra-dark))] text-xs font-semibold">
-                    {study.industry}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <div className="p-8">
-                  <h3 className="text-2xl font-display font-bold mb-2 text-[hsl(var(--squadra-dark))]">
-                    {study.title}
-                  </h3>
-                  <p className="text-[hsl(var(--squadra-gold))] font-semibold mb-4">
-                    {study.subtitle}
-                  </p>
-
-                  <div className="space-y-4 mb-6">
-                    <div>
-                      <p className="text-xs font-semibold text-[hsl(var(--squadra-dark))] uppercase tracking-wider mb-1">
-                        The Challenge
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {study.challenge}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-[hsl(var(--squadra-dark))] uppercase tracking-wider mb-1">
-                        Our Approach
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {study.solution}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-[hsl(var(--squadra-dark))] uppercase tracking-wider mb-2">
-                        What We Did
-                      </p>
-                      <ul className="space-y-1">
-                        {study.whatWeDid.map((item, j) => (
-                          <li
-                            key={j}
-                            className="text-sm text-muted-foreground flex items-start gap-2"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--squadra-gold))] mt-1.5 flex-shrink-0" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Results */}
-                  <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border mb-4">
-                    {study.results.map((result, j) => (
-                      <div key={j} className="text-center">
-                        <result.icon className="w-5 h-5 text-[hsl(var(--squadra-gold))] mx-auto mb-1" />
-                        <p className="text-xl font-display font-bold text-[hsl(var(--squadra-gold))]">
-                          {result.value}
-                        </p>
-                        <p className="text-[10px] text-muted-foreground uppercase">
-                          {result.label}
-                        </p>
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Main Carousel */}
+          <div className="relative overflow-hidden">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+              }}
+            >
+              {caseStudies.map((study, i) => (
+                <div key={i} className="w-full flex-shrink-0 px-2">
+                  <div className="card-clean overflow-hidden">
+                    <div className="grid lg:grid-cols-2 gap-0">
+                      {/* Image */}
+                      <div className="relative h-64 lg:h-auto min-h-[400px] overflow-hidden">
+                        <Image
+                          src={study.image}
+                          alt={study.title}
+                          className="w-full h-full object-cover object-top"
+                          fill
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--squadra-dark))]/60 to-transparent" />
+                        <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[hsl(var(--squadra-gold))] text-[hsl(var(--squadra-dark))] text-xs font-semibold">
+                          {study.industry}
+                        </span>
                       </div>
-                    ))}
-                  </div>
 
-                  {/* Insight */}
-                  <div className="bg-[hsl(var(--squadra-gray))] rounded-xl p-4">
-                    <p className="text-xs font-semibold text-[hsl(var(--squadra-gold))] uppercase tracking-wider mb-1">
-                      Why It Worked
-                    </p>
-                    <p className="text-sm text-[hsl(var(--squadra-dark))] italic">
-                      {study.insight}
-                    </p>
-                  </div>
+                      {/* Content */}
+                      <div className="p-6 lg:p-8">
+                        <h3 className="text-xl lg:text-2xl font-display font-bold mb-2 text-[hsl(var(--squadra-dark))]">
+                          {study.title}
+                        </h3>
+                        <p className="text-[hsl(var(--squadra-gold))] font-semibold mb-4 text-sm lg:text-base">
+                          {study.subtitle}
+                        </p>
 
-                  {study.cta && (
-                    <p className="text-sm text-muted-foreground mt-4 font-medium">
-                      {study.cta}
-                    </p>
-                  )}
+                        <div className="space-y-4 mb-6">
+                          <div>
+                            <p className="text-xs font-semibold text-[hsl(var(--squadra-dark))] uppercase tracking-wider mb-1">
+                              The Challenge
+                            </p>
+                            <p className="text-sm text-muted-foreground line-clamp-3">
+                              {study.challenge}
+                            </p>
+                          </div>
+                          <div>
+                            <p className="text-xs font-semibold text-[hsl(var(--squadra-dark))] uppercase tracking-wider mb-1">
+                              Our Approach
+                            </p>
+                            <p className="text-sm text-muted-foreground line-clamp-2">
+                              {study.solution}
+                            </p>
+                          </div>
+                          <div>
+                            <p className="text-xs font-semibold text-[hsl(var(--squadra-dark))] uppercase tracking-wider mb-2">
+                              What We Did
+                            </p>
+                            <ul className="space-y-1">
+                              {study.whatWeDid.slice(0, 3).map((item, j) => (
+                                <li
+                                  key={j}
+                                  className="text-sm text-muted-foreground flex items-start gap-2"
+                                >
+                                  <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--squadra-gold))] mt-1.5 flex-shrink-0" />
+                                  <span className="line-clamp-1">{item}</span>
+                                </li>
+                              ))}
+                              {study.whatWeDid.length > 3 && (
+                                <li className="text-xs text-muted-foreground italic pl-3.5">
+                                  +{study.whatWeDid.length - 3} more initiatives
+                                </li>
+                              )}
+                            </ul>
+                          </div>
+                        </div>
+
+                        {/* Results */}
+                        <div className="grid grid-cols-3 gap-3 pt-4 border-t border-border mb-4">
+                          {study.results.map((result, j) => (
+                            <div key={j} className="text-center">
+                              <result.icon className="w-4 h-4 lg:w-5 lg:h-5 text-[hsl(var(--squadra-gold))] mx-auto mb-1" />
+                              <p className="text-lg lg:text-xl font-display font-bold text-[hsl(var(--squadra-gold))]">
+                                {result.value}
+                              </p>
+                              <p className="text-[9px] lg:text-[10px] text-muted-foreground uppercase">
+                                {result.label}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Insight */}
+                        <div className="bg-[hsl(var(--squadra-gray))] rounded-xl p-3 lg:p-4">
+                          <p className="text-xs font-semibold text-[hsl(var(--squadra-gold))] uppercase tracking-wider mb-1">
+                            Why It Worked
+                          </p>
+                          <p className="text-xs lg:text-sm text-[hsl(var(--squadra-dark))] italic line-clamp-3">
+                            {study.insight}
+                          </p>
+                        </div>
+
+                        {study.cta && (
+                          <p className="text-xs lg:text-sm text-muted-foreground mt-4 font-medium line-clamp-2">
+                            {study.cta}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-2 lg:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-[hsl(var(--squadra-gold))] hover:text-[hsl(var(--squadra-dark))] transition-all group"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-2 lg:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-[hsl(var(--squadra-gold))] hover:text-[hsl(var(--squadra-dark))] transition-all group"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {caseStudies.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? "w-8 bg-[hsl(var(--squadra-gold))]"
+                    : "w-2 bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Progress Bar */}
+          <div className="max-w-md mx-auto mt-4">
+            <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-[hsl(var(--squadra-gold))] transition-all duration-300 ease-linear"
+                style={{
+                  width: `${((currentSlide + 1) / caseStudies.length) * 100}%`,
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
