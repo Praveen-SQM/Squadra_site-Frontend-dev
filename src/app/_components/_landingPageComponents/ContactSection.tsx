@@ -4,27 +4,40 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ArrowRight, Check } from "lucide-react";
-// import { toast } from "sonner";
+import { ArrowRight, Check, Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
+import { useForm, SubmitHandler } from "react-hook-form";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import axios from "axios";
+
+type FormData = {
+  name: string;
+  company: string;
+  designation: string;
+  email: string;
+  website: string;
+  budget: string;
+  goal: string;
+  message: string;
+  sendCaseStudies: boolean;
+};
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    designation: "",
-    email: "",
-    website: "",
-    budget: "",
-    goal: "",
-    message: "",
-    sendCaseStudies: false,
-  });
+  const [loading, setLoading] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Thank you! We'll be in touch within 24 hours.");
-    setFormData({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    setValue,
+    formState: { errors },
+  } = useForm<FormData>({
+    mode: "onChange",
+    defaultValues: {
       name: "",
       company: "",
       designation: "",
@@ -34,8 +47,99 @@ const ContactSection = () => {
       goal: "",
       message: "",
       sendCaseStudies: false,
-    });
+    }
+  });
+
+  // Validate phone number
+  const validatePhoneNumber = (phoneValue: string) => {
+    if (!phoneValue || phoneValue.length < 10) {
+      setPhoneError("Please enter a valid phone number");
+      return false;
+    }
+    setPhoneError("");
+    return true;
   };
+
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    // Validate phone number
+    if (!validatePhoneNumber(phone)) {
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // Send Email
+      const emailResponse = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: [process.env.NEXT_PUBLIC_EMAIL_TO],
+          cc: [process.env.NEXT_PUBLIC_EMAIL_CC_2],
+          bcc: [process.env.NEXT_PUBLIC_EMAIL_BCC],
+          message: {
+            subject: "Growth Journey Inquiry - Squadra Media",
+            text: "New contact form submission",
+            html: `
+              <html>
+                <head></head>
+                <body>
+                  <h2>New Growth Journey Inquiry</h2>
+                  <p><b>Name:</b> ${data.name}</p>
+                  <p><b>Company:</b> ${data.company}</p>
+                  <p><b>Designation:</b> ${data.designation}</p>
+                  <p><b>Email:</b> ${data.email}</p>
+                  <p><b>Phone:</b> ${phone}</p>
+                  <p><b>Website:</b> ${data.website || "N/A"}</p>
+                  <p><b>Monthly Budget:</b> ${data.budget || "Not specified"}</p>
+                  <p><b>Primary Goal:</b> ${data.goal || "Not specified"}</p>
+                  <p><b>Message:</b> ${data.message || "No message provided"}</p>
+                  <p><b>Case Studies Requested:</b> ${data.sendCaseStudies ? "Yes" : "No"}</p>
+                  <br>
+                  <p>Thank you & Regards,<br><b>Squadra Media Team</b></p>
+                </body>
+              </html>
+            `,
+          },
+        }),
+      });
+
+      const emailResult = await emailResponse.json();
+
+      if (emailResponse.ok) {
+        // Send to Zoho CRM
+        await axios.post("/api/zoho", {
+          firstName: data.name.split(" ")[0] || data.name,
+          lastName: data.name.split(" ").slice(1).join(" ") || data.name,
+          email: data.email,
+          phoneNumber: phone,
+          message: data.message || `Budget: ${data.budget}, Goal: ${data.goal}`,
+          leadSource: "Squadra Website - Growth Journey",
+          service: data.goal || "Growth Inquiry",
+          company: data.company,
+        });
+
+        toast.success("Thank you! We'll be in touch within 24 hours.", { duration: 3000 });
+        
+        // Reset form
+        reset();
+        setPhone("");
+        setPhoneError("");
+      } else {
+        toast.error(emailResult.message || "Failed to send message", {
+          duration: 3000,
+        });
+      }
+    } catch (error) {
+      toast.error("An error occurred while sending your message");
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const maxChars = 1000;
+  const charCount = watch("message")?.length || 0;
 
   return (
     <section id="contact" className="py-20 lg:py-28 relative overflow-hidden bg-[hsl(var(--squadra-dark))]">
@@ -81,53 +185,112 @@ const ContactSection = () => {
               Start Your Growth Journey
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
-                <Input
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="rounded-xl"
-                />
-                <Input
-                  placeholder="Company Name"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  required
-                  className="rounded-xl"
-                />
+                <div>
+                  <Input
+                    placeholder="Your Name"
+                    {...register("name", {
+                      required: "Name is required",
+                      pattern: {
+                        value: /^[A-Za-z\s]+$/,
+                        message: "Name must contain only letters",
+                      },
+                    })}
+                    className="rounded-xl"
+                  />
+                  {errors.name && (
+                    <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
+                  )}
+                </div>
+                
+                <div>
+                  <Input
+                    placeholder="Company Name"
+                    {...register("company", {
+                      required: "Company name is required",
+                    })}
+                    className="rounded-xl"
+                  />
+                  {errors.company && (
+                    <p className="text-red-500 text-xs mt-1">{errors.company.message}</p>
+                  )}
+                </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
-                <Input
-                  placeholder="Designation"
-                  value={formData.designation}
-                  onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
-                  className="rounded-xl"
+                <div>
+                  <Input
+                    placeholder="Designation"
+                    {...register("designation")}
+                    className="rounded-xl"
+                  />
+                </div>
+                
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Work Email"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: "Enter a valid email address",
+                      },
+                    })}
+                    className="rounded-xl"
+                  />
+                  {errors.email && (
+                    <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Phone Number */}
+              <div>
+                <PhoneInput
+                  country={"in"}
+                  value={phone}
+                  onChange={(value) => {
+                    setPhone(value);
+                    if (phoneError) {
+                      validatePhoneNumber(value);
+                    }
+                  }}
+                  onBlur={() => validatePhoneNumber(phone)}
+                  placeholder="Phone Number"
+                  inputStyle={{
+                    width: "100%",
+                    height: "40px",
+                    fontSize: "14px",
+                    border: phoneError ? "1px solid #ef4444" : "1px solid #e2e8f0",
+                    borderRadius: "12px",
+                    paddingLeft: "48px",
+                  }}
+                  containerStyle={{
+                    width: "100%",
+                  }}
+                  buttonStyle={{
+                    border: phoneError ? "1px solid #ef4444" : "1px solid #e2e8f0",
+                    borderRadius: "12px 0 0 12px",
+                    backgroundColor: "white",
+                  }}
                 />
-                <Input
-                  type="email"
-                  placeholder="Work Email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="rounded-xl"
-                />
+                {phoneError && (
+                  <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+                )}
               </div>
 
               <Input
-                placeholder="Website URL"
-                value={formData.website}
-                onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                placeholder="Website URL (Optional)"
+                {...register("website")}
                 className="rounded-xl"
               />
 
               <div className="grid md:grid-cols-2 gap-4">
                 <select
-                  value={formData.budget}
-                  onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl border border-border bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--squadra-gold))]"
+                  {...register("budget")}
+                  className="w-full px-4 py-2.5 rounded-xl border border-input bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--squadra-gold))]"
                 >
                   <option value="">Monthly Budget</option>
                   <option value="<5L">Under ₹5 Lakhs</option>
@@ -137,9 +300,8 @@ const ContactSection = () => {
                 </select>
 
                 <select
-                  value={formData.goal}
-                  onChange={(e) => setFormData({ ...formData, goal: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl border border-border bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--squadra-gold))]"
+                  {...register("goal")}
+                  className="w-full px-4 py-2.5 rounded-xl border border-input bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--squadra-gold))]"
                 >
                   <option value="">Primary Goal</option>
                   <option value="leads">Lead Generation</option>
@@ -149,19 +311,33 @@ const ContactSection = () => {
                 </select>
               </div>
 
-              <Textarea
-                placeholder="Tell us about your growth challenges..."
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                rows={3}
-                className="rounded-xl resize-none"
-              />
+              <div>
+                <Textarea
+                  placeholder="Tell us about your growth challenges..."
+                  {...register("message", {
+                    maxLength: {
+                      value: maxChars,
+                      message: `Message cannot exceed ${maxChars} characters`,
+                    },
+                  })}
+                  rows={3}
+                  className="rounded-xl resize-none"
+                />
+                <div className="flex justify-between items-center mt-1">
+                  {errors.message && (
+                    <p className="text-red-500 text-xs">{errors.message.message}</p>
+                  )}
+                  <p className="text-xs text-muted-foreground ml-auto">
+                    {charCount} / {maxChars}
+                  </p>
+                </div>
+              </div>
 
               <div className="flex items-center gap-3">
                 <Checkbox 
                   id="caseStudies"
-                  checked={formData.sendCaseStudies}
-                  onCheckedChange={(checked) => setFormData({ ...formData, sendCaseStudies: checked as boolean })}
+                  checked={watch("sendCaseStudies")}
+                  onCheckedChange={(checked) => setValue("sendCaseStudies", checked as boolean)}
                 />
                 <label htmlFor="caseStudies" className="text-sm text-muted-foreground cursor-pointer">
                   Send me Squadra&apos;s latest case studies
@@ -171,10 +347,20 @@ const ContactSection = () => {
               <Button 
                 type="submit" 
                 size="lg" 
+                disabled={loading}
                 className="w-full text-base py-6 rounded-xl btn-primary group"
               >
-                Start Your Growth Journey
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    Start Your Growth Journey
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </Button>
             </form>
           </div>
