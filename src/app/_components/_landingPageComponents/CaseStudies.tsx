@@ -41,6 +41,29 @@ const caseStudies = [
     cta: "IBM's Dubai launch proved that even with a small budget, hyper-niche B2B campaigns can drive massive outcomes when the strategy is engineered for precision.",
   },
   {
+    title: "Seaverse (LMS App) — From Training Provider to Digital Powerhouse",
+    subtitle: "Built, branded, marketed, and scaled end-to-end by Squadra.",
+    image: "/images/casestudies/seaverse.png",
+    industry: "Maritime / E-Learning",
+    challenge:
+      "When Seaverse set out to modernize maritime training, they needed more than just content. They needed a complete digital ecosystem.",
+    solution: "Squadra became their one-stop growth partner.",
+    whatWeDid: [
+      "1200+ minutes of cinematic 2D/3D e-learning modules created for global fleets",
+      "Custom offline-first LMS designed for ships, with SCORM, multilingual support, role systems, and analytics",
+      "Unified brand voice across web, social, and product",
+      "End-to-end digital marketing that positioned Seaverse as a category leader",
+    ],
+    results: [
+      { icon: TrendingUp, value: "10x", label: "Digital Presence Growth" },
+      { icon: Globe, value: "Global", label: "Fleet Adoption" },
+      { icon: Smartphone, value: "Full", label: "Ecosystem Delivered" },
+    ],
+    insight:
+      "Training, technology, content, and marketing were all built under one roof. No fragmentation. No delays. Just one aligned growth system.",
+    cta: "",
+  },
+  {
     title: "OIA — Making Asia's Largest Pub Go Viral",
     subtitle: "26,000 followers in 60 days. Full bookings even on weekdays.",
     image: "/images/casestudies/oia.jpg",
@@ -66,29 +89,6 @@ const caseStudies = [
     cta: "If you want your restaurant, pub, or cafe to scale the same way, Squadra Media is the growth partner.",
   },
   {
-    title: "Seaverse (LMS App) — From Training Provider to Digital Powerhouse",
-    subtitle: "Built, branded, marketed, and scaled end-to-end by Squadra.",
-    image: "/images/casestudies/seaverse.png",
-    industry: "Maritime / E-Learning",
-    challenge:
-      "When Seaverse set out to modernize maritime training, they needed more than just content. They needed a complete digital ecosystem.",
-    solution: "Squadra became their one-stop growth partner.",
-    whatWeDid: [
-      "1200+ minutes of cinematic 2D/3D e-learning modules created for global fleets",
-      "Custom offline-first LMS designed for ships, with SCORM, multilingual support, role systems, and analytics",
-      "Unified brand voice across web, social, and product",
-      "End-to-end digital marketing that positioned Seaverse as a category leader",
-    ],
-    results: [
-      { icon: TrendingUp, value: "10x", label: "Digital Presence Growth" },
-      { icon: Globe, value: "Global", label: "Fleet Adoption" },
-      { icon: Smartphone, value: "Full", label: "Ecosystem Delivered" },
-    ],
-    insight:
-      "Training, technology, content, and marketing were all built under one roof. No fragmentation. No delays. Just one aligned growth system.",
-    cta: "",
-  },
-  {
     title: "Prime Golf — Turning a Sports Facility into a Lifestyle Brand",
     subtitle: "5x ROI on ad campaigns. 200% increase in membership sign-ups.",
     image: "/images/casestudies/prime-golf.jpg",
@@ -111,7 +111,7 @@ const caseStudies = [
     insight:
       "Prime Golf became the blueprint for how regional businesses can scale digitally with Squadra's ecosystem.",
     cta: "",
-  },
+  }
 ];
 
 const CaseStudies = () => {
