@@ -108,7 +108,8 @@ const LeadershipSection = () => {
                 src="/images/team/team.jpg" 
                 alt="Squadra Team"
                 className="w-full h-auto object-cover"
-                fill
+                width={1200}
+                height={600}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--squadra-dark))]/80 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
