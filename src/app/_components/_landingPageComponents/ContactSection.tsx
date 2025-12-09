@@ -180,7 +180,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-2xl">
+          <div className="bg-white rounded-2xl p-4 lg:p-8 shadow-2xl">
             <h3 className="text-xl font-display font-bold text-[hsl(var(--squadra-dark))] mb-6">
               Start Your Growth Journey
             </h3>

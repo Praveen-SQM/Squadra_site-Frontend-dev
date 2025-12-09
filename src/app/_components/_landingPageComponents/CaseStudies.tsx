@@ -284,14 +284,14 @@ const CaseStudies = () => {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-2 lg:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-[hsl(var(--squadra-gold))] hover:text-[hsl(var(--squadra-dark))] transition-all group"
+            className="absolute left-[-8px] lg:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-[hsl(var(--squadra-gold))] hover:text-[hsl(var(--squadra-dark))] transition-all group"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6" />
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-2 lg:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-[hsl(var(--squadra-gold))] hover:text-[hsl(var(--squadra-dark))] transition-all group"
+            className="absolute right-[-8px] lg:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-[hsl(var(--squadra-gold))] hover:text-[hsl(var(--squadra-dark))] transition-all group"
             aria-label="Next slide"
           >
             <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" />
