@@ -25,7 +25,7 @@ const features = [
 
 const WhoWeAreSection = () => {
   return (
-    <section id="who-we-are" className="py-20 lg:py-28 bg-white">
+    <section id="who-we-are" className="py-20 lg:pb-0 lg:pt-28 bg-white">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
