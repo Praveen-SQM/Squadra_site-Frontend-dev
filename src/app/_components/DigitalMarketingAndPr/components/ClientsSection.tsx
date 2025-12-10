@@ -7,7 +7,7 @@ import clientFerns from "../../../../utilities/icons/client-ferns.webp";
 // import clientHabitat from "../../../../utilities/icons/client-habitat.webp";
 import clientOneSta from "../../../../utilities/icons/client-onesta.webp";
 import clientPOI from "../../../../utilities/icons/client-poi-dm.jpg";
-import clientVOIA from "../../../../utilities/icons/client-voia-dm.jpg"; 
+import clientVOIA from "../../../../utilities/icons/client-voia-dm.jpg";
 // import clientVIDA from "../../../../utilities/icons/client-vida.webp";
 import clientColdStone from "../../../../utilities/icons/client-coldStone.png";
 import clientBhartiyaMall from "../../../../utilities/icons/bhartiya-mall.jpg";
@@ -18,9 +18,9 @@ import clientSobha from "../../../../utilities/icons/shobha-limited.webp";
 import clientThrilled from "../../../../utilities/icons/Thrilld_logo.png";
 import clientPrideGroup from "../../../../utilities/icons/pridegroup.jpeg";
 import clientbbathLogo from "../../../../utilities/icons/b bath logo-01.svg";
-import clientTataMotors from "../../../../utilities/icons/tata-motors.png"
-import clientIris from "../../../../utilities/icons/IRIS.webp"
-import clientHyattCentric from "../../../../utilities/icons/hyatt_centric.png"
+import clientTataMotors from "../../../../utilities/icons/tata-motors.png";
+import clientIris from "../../../../utilities/icons/IRIS.webp";
+import clientHyattCentric from "../../../../utilities/icons/hyatt_centric.png";
 
 const clients = [
   { src: clientHyattCentric, alt: "Hyatt Centric" },
