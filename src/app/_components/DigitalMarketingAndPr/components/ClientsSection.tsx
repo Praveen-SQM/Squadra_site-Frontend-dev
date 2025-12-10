@@ -92,52 +92,14 @@ const ClientsSection = () => {
               </div>
             </div>
           ))}
-        </div>
 
-        {/* Additional Clients Text */}
-        {/* <div className="text-center mb-8">
-          <p className="text-muted-foreground">
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
-              Synergy Marine
-            </span>{" "}
-            |
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
-              {" "}
-              OIA Global
-            </span>{" "}
-            |
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
-              {" "}
-              Prime Golf
-            </span>{" "}
-            |
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
-              {" "}
-              Sea Learning
-            </span>{" "}
-            |
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
-              {" "}
-              Aisshpra Jewels
-            </span>{" "}
-            |
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
-              {" "}
-              NRRS
-            </span>{" "}
-            |
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
-              {" "}
-              Tradelink
-            </span>{" "}
-            |
-            <span className="font-semibold text-[hsl(var(--squadra-dark))]">
-              {" "}
-              CMR
-            </span>
-            <span className="text-muted-foreground"> and more</span>
-          </p>
-        </div> */}
+          {/* And many more card */}
+          <div className="card-clean p-6 lg:p-8 flex items-center justify-center min-h-[120px]">
+            <p className="text-lg text-muted-foreground italic">
+              And many more...
+            </p>
+          </div>
+        </div>
 
         {/* Industries */}
         <div className="flex flex-wrap justify-center gap-3">
