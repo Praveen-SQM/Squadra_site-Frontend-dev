@@ -14,13 +14,14 @@ import clientBhartiyaMall from "../../../../utilities/icons/bhartiya-mall.jpg";
 import clientFTHDaily from "../../../../utilities/icons/client-freshHome.png";
 import clientIBMCloud from "../../../../utilities/icons/ibm_cloud_logo.jpg";
 import clientJWMarriott from "../../../../utilities/icons/JWMarriott.png";
-import clientSobha from "../../../../utilities/icons/shobha-limited.webp";
+import clientSobha from "../../../../utilities/icons/shobha-limited.jpg";
 import clientThrilled from "../../../../utilities/icons/Thrilld_logo.png";
 import clientPrideGroup from "../../../../utilities/icons/pridegroup.jpeg";
 import clientbbathLogo from "../../../../utilities/icons/b bath logo-01.svg";
 import clientTataMotors from "../../../../utilities/icons/tata-motors.png";
 import clientIris from "../../../../utilities/icons/IRIS.webp";
 import clientHyattCentric from "../../../../utilities/icons/hyatt_centric.png";
+import clientWipro from "../../../../utilities/icons/wipro.png";
 
 const clients = [
   { src: clientHyattCentric, alt: "Hyatt Centric" },
@@ -41,17 +42,18 @@ const clients = [
   { src: clientThrilled, alt: "Thrilled" },
   { src: clientbbathLogo, alt: "BBath" },
   { src: clientPrideGroup, alt: "Pride Group" },
+  { src: clientWipro, alt: "Wipro" },
 ];
 
-const industries = [
-  "Real Estate",
-  "FMCG",
-  "Education",
-  "Healthcare",
-  "F&B",
-  "Maritime",
-  "Sports & Lifestyle",
-];
+// const industries = [
+//   "Real Estate",
+//   "FMCG",
+//   "Education",
+//   "Healthcare",
+//   "F&B",
+//   "Maritime",
+//   "Sports & Lifestyle",
+// ];
 
 const ClientsSection = () => {
   return (
@@ -94,15 +96,20 @@ const ClientsSection = () => {
           ))}
 
           {/* And many more card */}
-          <div className="card-clean p-6 lg:p-8 flex items-center justify-center min-h-[120px]">
-            <p className="text-lg text-muted-foreground italic">
-              And many more...
-            </p>
+          <div className="card-clean p-6 lg:p-8 flex flex-col items-center justify-center min-h-[120px] group hover:border-[hsl(var(--squadra-gold))] transition-all duration-300">
+            <div className="text-center">
+              <p className="text-5xl font-bold text-[hsl(var(--squadra-gold))] mb-2 group-hover:scale-110 transition-transform duration-300">
+                50+
+              </p>
+              {/* <p className="text-sm font-medium text-[hsl(var(--squadra-dark))] opacity-70">
+                Brands Served
+              </p> */}
+            </div>
           </div>
         </div>
 
         {/* Industries */}
-        <div className="flex flex-wrap justify-center gap-3">
+        {/* <div className="flex flex-wrap justify-center gap-3">
           {industries.map((industry, i) => (
             <span
               key={i}
@@ -111,7 +118,7 @@ const ClientsSection = () => {
               {industry}
             </span>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
