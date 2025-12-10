@@ -1,25 +1,31 @@
 import Image from "next/image";
 
-import clientTorque from "../../../../utilities/icons/clent-torque.svg";
-import clientDoubleTree from "../../../../utilities/icons/client-doubleTree.webp";
+import clientTorque from "../../../../utilities/icons/clent-torque-dm.jpg";
+import clientDoubleTree from "../../../../utilities/icons/client-doubleTree-dm.jpg";
 import clientFerns from "../../../../utilities/icons/client-ferns.webp";
-import clientGREE from "../../../../utilities/icons/client-gree.webp";
-import clientHabitat from "../../../../utilities/icons/client-habitat.webp";
+// import clientGREE from "../../../../utilities/icons/client-gree.webp";
+// import clientHabitat from "../../../../utilities/icons/client-habitat.webp";
 import clientOneSta from "../../../../utilities/icons/client-onesta.webp";
-import clientPOI from "../../../../utilities/icons/client-poi.webp";
-import clientVOIA from "../../../../utilities/icons/client-voia.webp";
-import clientVIDA from "../../../../utilities/icons/client-vida.webp";
+import clientPOI from "../../../../utilities/icons/client-poi-dm.jpg";
+import clientVOIA from "../../../../utilities/icons/client-voia-dm.jpg"; 
+// import clientVIDA from "../../../../utilities/icons/client-vida.webp";
 import clientColdStone from "../../../../utilities/icons/client-coldStone.png";
 import clientBhartiyaMall from "../../../../utilities/icons/bhartiya-mall.jpg";
-import clientFTHDaily from "../../../../utilities/icons/fthdaily_logo.webp";
+import clientFTHDaily from "../../../../utilities/icons/client-freshHome.png";
 import clientIBMCloud from "../../../../utilities/icons/ibm_cloud_logo.jpg";
 import clientJWMarriott from "../../../../utilities/icons/JWMarriott.png";
 import clientSobha from "../../../../utilities/icons/shobha-limited.webp";
+import clientThrilled from "../../../../utilities/icons/Thrilld_logo.png";
+import clientPrideGroup from "../../../../utilities/icons/pridegroup.jpeg";
+import clientbbathLogo from "../../../../utilities/icons/b bath logo-01.svg";
+import clientTataMotors from "../../../../utilities/icons/tata-motors.png"
+import clientIris from "../../../../utilities/icons/IRIS.webp"
+import clientHyattCentric from "../../../../utilities/icons/hyatt_centric.png"
 
 const clients = [
-  { src: clientVIDA, alt: "VIDA" },
-  { src: clientGREE, alt: "GREE" },
-  { src: clientHabitat, alt: "Habitat" },
+  { src: clientHyattCentric, alt: "Hyatt Centric" },
+  { src: clientTataMotors, alt: "Tata Motors" },
+  { src: clientIris, alt: "IRIS" },
   { src: clientDoubleTree, alt: "DoubleTree" },
   { src: clientColdStone, alt: "Cold Stone Creamery" },
   { src: clientOneSta, alt: "Onesta" },
@@ -32,6 +38,9 @@ const clients = [
   { src: clientIBMCloud, alt: "IBM Cloud" },
   { src: clientJWMarriott, alt: "JW Marriott" },
   { src: clientSobha, alt: "Sobha Limited" },
+  { src: clientThrilled, alt: "Thrilled" },
+  { src: clientbbathLogo, alt: "BBath" },
+  { src: clientPrideGroup, alt: "Pride Group" },
 ];
 
 const industries = [
