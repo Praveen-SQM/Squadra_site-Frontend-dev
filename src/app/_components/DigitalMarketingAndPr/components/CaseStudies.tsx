@@ -89,12 +89,12 @@ const caseStudies = [
     cta: "If you want your restaurant, pub, or cafe to scale the same way, Squadra Media is the growth partner.",
   },
   {
-    title: "Prime Golf — Turning a Sports Facility into a Lifestyle Brand",
+    title: "Prime Golf — Turning a Restaurants Facility into a Lifestyle Brand",
     subtitle: "5x ROI on ad campaigns. 200% increase in membership sign-ups.",
     image: "/images/casestudies/prime-golf.jpg",
-    industry: "Sports & Lifestyle",
+    industry: "Restaurants & Lifestyle",
     challenge:
-      "Prime Golf needed to transform from a sports facility into a premium lifestyle brand that resonates with their target audience.",
+      "Prime Golf needed to transform from a Restaurants facility into a premium lifestyle brand that resonates with their target audience.",
     solution:
       "We partnered with Prime Golf to craft a social media experience that matched their premium positioning.",
     whatWeDid: [
