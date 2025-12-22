@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -61,15 +61,45 @@ const ContactSection = () => {
   };
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    // Validate phone number
-    if (!validatePhoneNumber(phone)) {
-      return;
-    }
+    if (!validatePhoneNumber(phone)) return;
 
     setLoading(true);
 
     try {
-      // Send Email
+      const verifyRes = await fetch("/api/verify-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email }),
+      });
+
+      const verifyResult = await verifyRes.json();
+
+      if (!verifyRes.ok) {
+        if (verifyResult.code === "PERSONAL_EMAIL") {
+          toast.error("Please use your work email address");
+        } else {
+          toast.error(verifyResult.message || "Email verification failed");
+        }
+        setLoading(false);
+        return;
+      }
+
+      const { classification, isDisposable } = verifyResult;
+
+      // ❌ Block rules
+      if (classification === "Undeliverable") {
+        toast.error("Email address is not deliverable");
+        setLoading(false);
+        return;
+      }
+
+      if (isDisposable) {
+        toast.error("Disposable email addresses are not allowed");
+        setLoading(false);
+        return;
+      }
+
+      // 2️⃣ Send email ONLY if verification passes
       const emailResponse = await fetch("/api/sendEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
